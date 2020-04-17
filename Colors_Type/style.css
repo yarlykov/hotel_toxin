@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	font-family: Quicksand sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 29px;
+	display: flex;
+	align-items: center;
+}
+.wrapper {
+	display: grid;
+	justify-content: start;
+}
+
+/*Rectangle start*/
+.rectangle {
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	left: 150px;
+	top: 145px;
+}
+
+.rectangle__designation {
+	position: absolute;
+	width: 159px;
+	height: 57px;
+	left: 260px;
+	top: 152px;
+}
+
+.rectangle__color_dark_100 {
+	background: #1F2041;
+	border-radius: 6px;
+}
+/*Rectangle end*/
+
+.logo {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 30px;
+	top: 30px;
+	border-radius: 50%;
+}
+
+
+
