@@ -1,9 +1,22 @@
 @font-face {
 	font-family: 'Quicksand';
 	src: url('fonts/Quicksand-Bold.eot');
-	src: local('☺'), url('fonts/Quicksand-Bold.woff') format('woff'), url('fonts/Quicksand-Bold.ttf') format('truetype'), url('fonts/Quicksand-Bold.svg') format('svg');
+	src: local('☺'), url('fonts/Quicksand-Bold.woff') format('woff'), 
+					url('fonts/Quicksand-Bold.ttf') format('truetype'), 
+					url('fonts/Quicksand-Bold.svg') format('svg');
 	font-weight: 700;
 	font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/Quicksand-Regular.eot');
+   	src: url('fonts/Quicksand-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Quicksand-Regular.woff') format('woff'),
+        url('fonts/Quicksand-Regular.ttf') format('truetype'),
+        url('fonts/Quicksand-Regular.svg#Quicksand-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
 }
 
 * {
@@ -12,7 +25,7 @@
 }
 
 .wrapper {
-	display: grid;
+	display: flex;
 	justify-content: start;
 	font-family: Quicksand;
 	font-style: normal;
@@ -21,8 +34,17 @@
 	line-height: 29px;
 }
 
-/*Rectangle start*/
-.rectangle {
+.regular {
+	font-family: Quicksand;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 29px;
+	font-size: 19px;
+	align-items: center;
+	display: flex;
+}
+/*square start*/
+.square {
 	position: absolute;
 	width: 70px;
 	height: 70px;
@@ -30,7 +52,7 @@
 	top: 145px;
 }
 
-.rectangle__designation {
+.square__designation {
 	position: absolute;
 	width: 159px;
 	height: 57px;
@@ -39,11 +61,11 @@
 	color: #1F2041;
 }
 
-.rectangle__color_dark_100 {
+.square__color_dark_100 {
 	background: #1F2041;
 	border-radius: 6px;
 }
-/*Rectangle end*/
+/*square end*/
 
 .logo {
 	position: absolute;
