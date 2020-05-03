@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Roman Yarlykov",
   "main": "index.js",
-  "scripts": {
+  "scripts":  {
     "dev": "webpack --mode development",
-    "build": "webpack --mode production --watch"
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
+    "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   }

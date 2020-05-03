@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nconsole.log('Hello World!');\nvar hae = {\n  name: 'Sergey!'\n};\nconsole.log(hae);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nconsole.log('Hello World!!!!');\nvar hae = {\n  name: 'Sergey!'\n};\nconsole.log(hae);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
