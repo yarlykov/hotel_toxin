@@ -1,0 +1,27 @@
+{
+  "name": "hotel-toxin",
+  "version": "1.0.0",
+  "description": "Roman Yarlykov",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yarlykov/Toxin.git"
+  },
+  "author": "Roman Yarlykov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yarlykov/Toxin/issues"
+  },
+  "homepage": "https://github.com/yarlykov/Toxin#readme",
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
