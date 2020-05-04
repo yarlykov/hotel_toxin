@@ -125,6 +125,7 @@ h6 {
 .header {
 }
 .logo {
+  background-image: url('../src/img/logo.svg');
   position: absolute;
   width: 48px;
   height: 48px;

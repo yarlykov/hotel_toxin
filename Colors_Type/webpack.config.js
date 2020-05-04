@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   context: path.resolve(__dirname, 'src'),
   entry: { 
     main: './index.js',
@@ -18,6 +19,10 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(png|jpg|svg|gif)$/,
+        use: ['file-loader'],
+      }
     ],
   },
   plugins: [new HtmlWebpackPlugin({
