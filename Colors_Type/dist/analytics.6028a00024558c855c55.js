@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/analytics.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./analytics.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/analytics.js":
-/*!**************************!*\
-  !*** ./src/analytics.js ***!
-  \**************************/
+/***/ "./analytics.js":
+/*!**********************!*\
+  !*** ./analytics.js ***!
+  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("function createAnalytics() {\n  let counter = 0;\n  let isDestroyed = false;\n\n  const listener = () => counter++;\n\n  document.addEventListener(\"click\", listener);\n\n  return {\n    destroy() {\n      document.removeEventListener(\"click\", listener);\n    },\n\n    getClicks() {\n      if (isDestroyed) {\n        return \"Analytics is destroyed\";\n      }\n      return counter;\n    },\n  };\n}\n\nwindow.analytics = createAnalytics();\n\n\n//# sourceURL=webpack:///./src/analytics.js?");
+eval("function createAnalytics() {\n  let counter = 0;\n  let destroyed = false;\n\n  console.log('test');\n\n  const listener = () => counter++;\n\n  document.addEventListener(\"click\", listener);\n\n  return {\n    destroy() {\n      document.removeEventListener(\"click\", listener);\n    },\n\n    getClicks() {\n      if (destroyed) {\n        return \"Analytics is destroyed. Total clicks = ${counter}\";\n      }\n      return counter;\n    }\n  }\n}\n\nwindow.analytics = createAnalytics();\n\n\n//# sourceURL=webpack:///./analytics.js?");
 
 /***/ })
 
