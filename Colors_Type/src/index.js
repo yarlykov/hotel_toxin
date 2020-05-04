@@ -1,5 +1,5 @@
 import "./style.css";
+import Post from './Post';
 
-console.log('Hello World!!!!');
-var hae = {name: 'Sergey!'};
-console.log(hae);
+const post = new Post('Webpack');
+console.log('Post to string:', post.toString());
