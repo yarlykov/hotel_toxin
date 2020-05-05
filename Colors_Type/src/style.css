@@ -1,12 +1,12 @@
 @import "./components/color.css";
-/*-------Quicksland; Montserrat---------
+/*-------Quicksland; Montserrat---------*/
 @font-face {
   font-family: "Quicksand";
-  src: url("../Colors_Type/fonts/Quicksand-Regular.eot");
-  src: url("../Colors_Type/fonts/Quicksand-Regular.eot?#iefix") format("embedded-opentype"),
-    url("../Colors_Type/fonts/Quicksand-Regular.woff") format("woff"),
-    url("../Colors_Type/fonts/Quicksand-Regular.ttf") format("truetype"),
-    url("../Colors_Type/fonts/Quicksand-Regular.svg#Quicksand-Regular") format("svg");
+  src: url("fonts/Quicksand-Regular.eot");
+  src: url("fonts/Quicksand-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Quicksand-Regular.woff") format("woff"),
+    url("fonts/Quicksand-Regular.ttf") format("truetype"),
+    url("fonts/Quicksand-Regular.svg#Quicksand-Regular") format("svg");
   font-weight: 400;
   font-style: normal;
 }
@@ -37,7 +37,7 @@
   font-weight: 700;
   font-style: normal;
 }
---------------------------Reset Styles-----------------------------------*/
+/*--------------------------Reset Styles-----------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -125,7 +125,6 @@ h6 {
 .header {
 }
 .logo {
-  background-image: url('../src/img/logo.svg');
   position: absolute;
   width: 48px;
   height: 48px;
@@ -155,7 +154,6 @@ h6 {
 }
 .colors__code {
   position: absolute;
-  left: ;
   font-family: Quicksand, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
