@@ -1,9 +1,10 @@
+import * as $ from 'jquery';
 import json from './assets/json.json';
 import logo from './img/logo.svg'
 import './style.css';
-import Post from './Post';
+import Post from '@/assets/Post';
 
 
 const post = new Post('Webpack', logo);
-console.log('Post to string:', post.toString());
-console.log('JSON', json);
+
+$('pre').html(post.toString());
