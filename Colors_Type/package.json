@@ -4,9 +4,9 @@
   "description": "Roman Yarlykov",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "dev": "NODE_ENV=development webpack --mode development",
+    "build": "NODE_ENV=prodaction webpack  --mode production",
+    "start": "NODE_ENV=development webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",

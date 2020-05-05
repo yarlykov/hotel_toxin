@@ -3,6 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = !isDev;
+
+
 module.exports = {
   mode: "development",
   context: path.resolve(__dirname, "src"),
@@ -26,6 +30,7 @@ module.exports = {
   },
   devServer: {
     port: 4200,
+    hot: isDev
   },
   module: {
     rules: [
@@ -33,7 +38,10 @@ module.exports = {
         test: /\.css$/,
         use: [{
           loader: MiniCssExtractPlugin.loader,
-          options: {}, 
+          options: {
+            hmr: isDev,
+            reloadAll: true
+          }, 
         },
          "css-loader"
         ],
@@ -51,6 +59,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html",
+      minify: {
+        collapseWhitespace: isProd
+      }
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
