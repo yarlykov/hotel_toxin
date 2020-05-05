@@ -7,4 +7,4 @@ import Post from '@/assets/Post';
 
 const post = new Post('Webpack', logo);
 
-$('pre').html(post.toString());
+$('pre').addClass('code').html(post.toString());

@@ -1,42 +1,60 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: 'development',
-  context: path.resolve(__dirname, 'src'),
-  entry: { 
-    main: './index.js',
-    analytics: './analytics.js' 
+  mode: "development",
+  context: path.resolve(__dirname, "src"),
+  entry: {
+    main: "./index.js",
+    analytics: "./analytics.js",
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].[contenthash].js",
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
+  devServer: {
+    port: 4200,
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [{
+          loader: MiniCssExtractPlugin.loader,
+          options: {}, 
+        },
+         "css-loader"
+        ],
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
-        use: ['file-loader'],
+        use: ["file-loader"],
       },
       {
         test: /\.(ttf|woff|svg|eot)$/,
-        use: ['file-loader'],
-      }
+        use: ["file-loader"],
+      },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: './index.html',
-  }),
-  new CleanWebpackPlugin()
-],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+    }),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
+    }),
+  ],
 };
