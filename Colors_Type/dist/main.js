@@ -167,6 +167,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./assets/components/size.scss":
+/*!*************************************!*\
+  !*** ./assets/components/size.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\n  \n\n//# sourceURL=webpack:///./assets/components/size.scss?");
+
+/***/ }),
+
 /***/ "./assets/json.json":
 /*!**************************!*\
   !*** ./assets/json.json ***!
@@ -198,7 +209,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_json_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/json.json */ \"./assets/json.json\");\nvar _assets_json_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./assets/json.json */ \"./assets/json.json\", 1);\n/* harmony import */ var _img_logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/logo.svg */ \"./img/logo.svg\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ \"./style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _assets_Post__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/assets/Post */ \"./assets/Post.js\");\n\n\n\n\n\n\n\nconst post = new _assets_Post__WEBPACK_IMPORTED_MODULE_4__[\"default\"]('Webpack', _img_logo_svg__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\n\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_json_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/json.json */ \"./assets/json.json\");\nvar _assets_json_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./assets/json.json */ \"./assets/json.json\", 1);\n/* harmony import */ var _img_logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/logo.svg */ \"./img/logo.svg\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ \"./style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _assets_components_size_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/components/size.scss */ \"./assets/components/size.scss\");\n/* harmony import */ var _assets_components_size_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_components_size_scss__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _assets_Post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/assets/Post */ \"./assets/Post.js\");\n\n\n\n\n\n\n\n\nconst post = new _assets_Post__WEBPACK_IMPORTED_MODULE_5__[\"default\"]('Webpack', _img_logo_svg__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\n\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
