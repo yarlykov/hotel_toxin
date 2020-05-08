@@ -1,3 +1,3 @@
-Roman Yarlykov
+author Roman Yarlykov
 
-Hotel TOXIN Website
+[Hotel TOXIN Website](https://yarlykov.github.io/hotel_toxin/Colors_Type/dist/ "Hotel TOXIN Website")
