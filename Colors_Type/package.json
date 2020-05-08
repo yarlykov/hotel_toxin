@@ -4,11 +4,9 @@
   "description": "Roman Yarlykov",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack --mode development",
-    "build": "NODE_ENV=prodaction webpack  --mode production",
-    "start": "NODE_ENV=development webpack-dev-server --mode development --open"
+    "dev": "webpack --mode development",
+    "build": "webpack  --mode production"
   },
-  "browserslist": "> 0.25%, not dead",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yarlykov/Toxin.git"
@@ -20,25 +18,13 @@
   },
   "homepage": "https://github.com/yarlykov/Toxin#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.9.6",
-    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.14.1",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
-    "terser-webpack-plugin": "^3.0.0",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-cli": "^3.3.11"
   },
-  "dependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/polyfill": "^7.8.7",
-    "babel-loader": "^8.1.0",
-    "jquery": "^3.5.1"
-  }
+  "dependencies": {}
 }
