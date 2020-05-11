@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js',
+    filename: 'bundle.js',
   },
 
   module: {
@@ -17,6 +17,13 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
+        ],
       },
       {
         test: /\.pug$/,
@@ -42,7 +49,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/pug/pages/index.pug',
+      template: './src/index.pug',
       filename: 'index.html'
     }),
     new MiniCssExtractPlugin({

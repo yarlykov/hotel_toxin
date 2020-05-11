@@ -94,18 +94,18 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/colors_type/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);\n// import logo from '../src/img/logo.svg'\n\n\n\n\n\n//# sourceURL=webpack:///./src/colors_type/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/colors_type/style.scss\");\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n// import logo from '../src/img/logo.svg'\n\n\n\n\n\n//# sourceURL=webpack:///./src/colors_type/index.js?");
 
 /***/ }),
 
-/***/ "./src/colors_type/style.css":
-/*!***********************************!*\
-  !*** ./src/colors_type/style.css ***!
-  \***********************************/
+/***/ "./src/colors_type/style.scss":
+/*!************************************!*\
+  !*** ./src/colors_type/style.scss ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/colors_type/style.css?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/colors_type/style.scss?");
 
 /***/ })
 
