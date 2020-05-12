@@ -1,4 +1,4 @@
-/*-------Quicksland; Montserrat---------*/
+/*-------Quicksland---------*/
 @font-face {
   font-family: "Quicksand";
   src: url(fonts/Quicksand-Regular.woff) format("woff"), url(fonts/Quicksand-Regular.ttf) format("truetype"), url(fonts/Quicksand-Regular.svg) format("svg");
@@ -11,6 +11,7 @@
   font-weight: 700;
   font-style: normal; }
 
+/*-------Montserrat---------*/
 @font-face {
   font-family: "Montserrat";
   src: url(fonts/Montserrat-Regular.woff) format("woff"), url(fonts/Montserrat-Regular.ttf) format("truetype"), url(fonts/Montserrat-Regular.svg) format("svg");
@@ -23,7 +24,6 @@
   font-weight: 700;
   font-style: normal; }
 
-/*--------------------------Reset Styles-----------------------------------*/
 * {
   margin: 0;
   padding: 0;
