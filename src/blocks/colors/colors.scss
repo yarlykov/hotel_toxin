@@ -1,0 +1,38 @@
+.colors__wrapper {
+	width: 269px;
+	height: 610px;
+	padding-left: 5px;
+}
+
+.colors {
+	display: flex;
+	justify-content: space-between;
+	width: 269px;
+	height: 70px;
+}
+
+.colors__square {
+	width: 70px;
+	height: 70px;
+} 
+
+.colors__text {
+	font-family: Quicksand, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	width: 159px;
+	height: 58px;
+	padding-top: 6px;
+	font-size: 19px;
+	line-height: 29px;
+}
+
+.colors__text_bold {
+	font-style: normal;
+	font-weight: 700;
+}
+
+.colors__square_dark_100 {
+	background: #1F2041;
+	border-radius: 6px;
+}

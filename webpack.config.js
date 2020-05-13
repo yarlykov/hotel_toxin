@@ -11,6 +11,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  devServer: {
+    port: 4200
+  },
 
   module: {
     rules: [
@@ -49,7 +52,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/pages/colorsType.pug',
+      template: './src/pages/headers_footers.pug',
       filename: 'index.html'
     }),
     new MiniCssExtractPlugin({
