@@ -4,7 +4,7 @@
   "description": "Roman Yarlykov",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
+    "dev": "webpack --watch --mode development",
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack  --mode production"
   },

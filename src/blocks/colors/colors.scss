@@ -14,6 +14,7 @@
 .colors__square {
 	width: 70px;
 	height: 70px;
+	border-radius: 6px;
 } 
 
 .colors__text {
@@ -34,5 +35,22 @@
 
 .colors__square_dark_100 {
 	background: #1F2041;
-	border-radius: 6px;
+}
+.colors__square_dark_75 {
+	background: rgba(31, 32, 65, 0.75);
+}
+.colors__square_dark_50 {
+	background: rgba(31, 32, 65, 0.5);
+}
+.colors__square_dark_25 {
+	background: rgba(31, 32, 65, 0.25);
+}
+.colors__square_dark_5 {
+	background: rgba(31, 32, 65, 0.05);
+}
+.colors__square_purple {
+	background: #BC9CFF;
+}
+.colors__square_green {
+	background: #6FCF97;
 }
