@@ -2,6 +2,7 @@
 // @import 'basic/null.scss';
 @import 'blocks/header_gray/header_gray.scss';
 @import 'blocks/colors/colors.scss';
+@import 'blocks/type/type.scss';
 // @import 'blocks/colors_type/colors-type.scss';
 
 .body-wrapper {
@@ -11,7 +12,8 @@
 
 .content-wrapper {
 	display: flex;
-	margin: 0px auto auto 145px;
+	justify-content: space-between;
+	margin: 0px auto 145px;
 	padding-top: 5px;
 	max-width: 1160px;
 	width: 80.55556%;
