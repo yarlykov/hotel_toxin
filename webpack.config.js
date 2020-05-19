@@ -52,8 +52,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      template: './src/pages/colors_type.pug',
+      filename: 'colors_type.html'
+    }),
+    new HtmlWebpackPlugin({
       template: './src/pages/headers_footers.pug',
-      filename: 'index.html'
+      filename: 'headers_footers.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
