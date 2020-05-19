@@ -53,7 +53,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/pages/colors_type/colors_type.pug',
-      filename: 'colors_type.html'
+      filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/headers_footers/headers_footers.pug',

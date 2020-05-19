@@ -1,0 +1,42 @@
+.bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 140px 0;
+	height: 70px;
+	background-color: #fff;
+}
+
+.bar__logo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 105.69px;
+	padding-top: 3px;
+}
+.bar__link {
+	display: flex;
+	justify-content: space-between;
+	width: 530px;
+	margin-left: 269px;
+}
+.bar__link_font{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 17px;
+		a{
+			color: rgba(31, 32, 65, 0.5);
+			text-decoration: none;
+		}
+		a:first-child {
+			font-weight: 700;
+		}
+}
+.bar__button {
+	display: flex;
+	justify-content: space-between;
+	width: 200px;
+	padding-top: 3px;
+}

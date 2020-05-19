@@ -1,9 +1,11 @@
 @import 'fonts/fonts.scss';
-@import 'blocks/header_uikit/header_uikit.scss';
+@import 'basis/header_uikit/header_uikit.scss';
 @import 'pages/colors_type/colors_type.scss';
+@import 'pages/headers_footers/headers_footers.scss';
 @import 'blocks/colors/colors.scss';
 @import 'blocks/type/type.scss';
-@import 'blocks/footer_uikit/footer_uikit.scss';
+@import 'basis/footer_uikit/footer_uikit.scss';
+@import 'basis/bar/standart-bar/standart-bar.scss';
 
 .body-wrapper {
   margin: 0;
