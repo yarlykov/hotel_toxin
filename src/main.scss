@@ -1,20 +1,16 @@
 @import 'fonts/fonts.scss';
-// @import 'basic/null.scss';
-@import 'blocks/header_gray/header_gray.scss';
+@import 'blocks/header_uikit/header_uikit.scss';
+@import 'pages/colors_type/colors_type.scss';
 @import 'blocks/colors/colors.scss';
 @import 'blocks/type/type.scss';
-//@import 'blocks/colors_type/colors-type.scss';
+@import 'blocks/footer_uikit/footer_uikit.scss';
 
 .body-wrapper {
-	display: block;
-	margin: 0px;
-}
-
-.content-wrapper {
-	display: flex;
-	justify-content: space-between;
-	margin: 0px auto 145px;
-	padding-top: 5px;
-	max-width: 1160px;
-	width: 80.55556%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main {
+    flex: 1;
+  }
 }
