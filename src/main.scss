@@ -6,6 +6,10 @@
 @import 'blocks/type/type.scss';
 @import 'basis/footer_uikit/footer_uikit.scss';
 @import 'basis/bar/standart-bar/standart-bar.scss';
+@import 'basis/bar/bar__navigation/navigation.scss';
+@import 'basis/bar/bar__logo/logo.scss';
+@import 'basis/bar/bar__button/entry-button.scss';
+@import 'basis/bar/logged-bar/logged-bar.scss';
 
 .body-wrapper {
   margin: 0;
