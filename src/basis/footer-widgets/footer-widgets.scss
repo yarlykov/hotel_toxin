@@ -2,9 +2,21 @@
 	height: 443px;
 }
 .footer-widgets {
+	display: flex;
 	height: 372px;
+	justify-content: space-between;
+	padding: 0px 140px 0px;
+	background-color: #fff;
 } 
 .footer-widgets__logo{
 	height: 156px;
 	width: 260px;
+}
+.foorer-widgets__description {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: rgba(31, 32, 65, 0.75);
 }

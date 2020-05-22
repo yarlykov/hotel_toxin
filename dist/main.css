@@ -236,11 +236,42 @@
   height: 443px; }
 
 .footer-widgets {
-  height: 372px; }
+  display: flex;
+  height: 372px;
+  justify-content: space-between;
+  padding: 0px 140px 0px;
+  background-color: #fff; }
 
 .footer-widgets__logo {
   height: 156px;
   width: 260px; }
+
+.foorer-widgets__description {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75); }
+
+.link {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px; }
+  .link li {
+    list-style-type: none;
+    margin-bottom: 20px; }
+  .link a {
+    color: rgba(31, 32, 65, 0.5);
+    text-decoration: none; }
+  .link a:first-child {
+    color: #1F2041; }
+  .link li:first-child {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 21px; }
 
 .body-wrapper {
   margin: 0;
