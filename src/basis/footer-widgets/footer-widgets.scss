@@ -20,3 +20,34 @@
 	line-height: 24px;
 	color: rgba(31, 32, 65, 0.75);
 }
+.subscribe h2 {
+	font-family: Montserrat, Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	color: #1F2041;
+	
+}
+.subscribe p {
+	font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 24px;
+width: 200px;
+height: 48px;
+color: rgba(31, 32, 65, 0.75);
+}
+.subscribe input {
+	width: 260px;
+	height: 44px;
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	box-sizing: border-box;
+	border-radius: 4px;
+	font-family: Montserrat;
+	font-size: 14px;
+line-height: 24px;
+    padding-left: 14px;
+    padding-bottom: 3px;
+}
