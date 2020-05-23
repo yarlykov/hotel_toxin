@@ -1,5 +1,6 @@
 .footer-widgets__wrapper {
 	height: 443px;
+		box-sizing: border-box;
 }
 .footer-widgets {
 	display: flex;
@@ -13,41 +14,56 @@
 	width: 260px;
 }
 .foorer-widgets__description {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
 	font-size: 14px;
 	line-height: 24px;
 	color: rgba(31, 32, 65, 0.75);
 }
+/*-----------------------------------------------------------------*/
 .subscribe h2 {
-	font-family: Montserrat, Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 12px;
 	line-height: 15px;
 	color: #1F2041;
-	
 }
 .subscribe p {
-	font-family: Montserrat;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
 line-height: 24px;
 width: 200px;
 height: 48px;
 color: rgba(31, 32, 65, 0.75);
 }
+
 .subscribe input {
 	width: 260px;
-	height: 44px;
-	border: 1px solid rgba(31, 32, 65, 0.25);
-	box-sizing: border-box;
+	border: 1px solid rgba(31, 32, 65, .25);
+	background: #fff;
 	border-radius: 4px;
-	font-family: Montserrat;
+	padding-left: 14px;
+	padding-bottom: 3px;
+		font-family: Montserrat;
 	font-size: 14px;
-line-height: 24px;
-    padding-left: 14px;
-    padding-bottom: 3px;
+	color: rgba(31, 32, 65, .25)
+}
+.subscribe form {
+	position: relative;
+}
+.subscribe input,button{
+		height: 44px;
+		box-sizing: border-box;
+}
+.subscribe button {
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	width: 44px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	border-radius: 0 4px 4px 0;
+	border-left: none;
+	cursor: pointer;
+}
+
+.subscribe__email_entry_icon {
+	display: flex;
+	align-items: center;
+	text-align: center;
 }
