@@ -1,23 +1,24 @@
-.link{
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 17px;
+ul {
+	display: block;
+	padding: 0px;
+	margin: 0px;
+}
+.link {
+		list-style-type: none;
 		li{
-			list-style-type: none;
 			margin-bottom: 20px;
 		}
-		a{
-			color: rgba(31, 32, 65, 0.5);
-			text-decoration: none;
+		li:last-child{
+			margin-bottom: 0;
 		}
-		a:first-child{
-		color: #1F2041;
-		}
-		li:first-child {
-			font-weight: 700;
+}
+.link li:first-child{
+			font-weight: bold;
+			font-size: 12px;
+			line-height: 15px;
 			text-transform: uppercase;
 			margin-bottom: 21px;
+		a{
+			color: #1F2041
 		}
 }
