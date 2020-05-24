@@ -27,10 +27,10 @@
 	color: #1F2041;
 }
 .subscribe p {
-line-height: 24px;
-width: 200px;
-height: 48px;
-color: rgba(31, 32, 65, 0.75);
+	line-height: 24px;
+	width: 200px;
+	height: 48px;
+	color: rgba(31, 32, 65, 0.75);
 }
 
 .subscribe input {
@@ -40,8 +40,6 @@ color: rgba(31, 32, 65, 0.75);
 	border-radius: 4px;
 	padding-left: 14px;
 	padding-bottom: 3px;
-		font-family: Montserrat;
-	font-size: 14px;
 	color: rgba(31, 32, 65, .25)
 }
 .subscribe form {
@@ -61,9 +59,34 @@ color: rgba(31, 32, 65, 0.75);
 	border-left: none;
 	cursor: pointer;
 }
-
 .subscribe__email_entry_icon {
 	display: flex;
 	align-items: center;
 	text-align: center;
+}
+/*________________________*/
+.bar__copyright {
+	font-size: 14px;
+	line-height: 17px;
+	color: rgba(31, 32, 65, 0.75);
+}
+.bar__sochial {
+	display: flex;
+	justify-content: space-between;
+	min-width: 112px;
+}
+.bar__logo_top-line {
+	box-sizing: border-box;
+	border-top: 1px solid rgba(31, 32, 65, 0.1);
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+.bar__sochial i::before {
+	font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+	font-style: normal;
+	font-weight: normal;
+	width: 24px;
+	height: 24px;
+	font-size: 24px;
+	line-height: 23px;
+	display: block;
 }
