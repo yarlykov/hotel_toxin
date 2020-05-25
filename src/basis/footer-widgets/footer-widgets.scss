@@ -1,25 +1,44 @@
 .footer-widgets__wrapper {
-	height: 443px;
 	box-sizing: border-box;
+	background-color: #fff;
 }
 .footer-widgets {
+	box-sizing: border-box;
 	display: flex;
 	height: 372px;
+	max-width: 1160px;
 	justify-content: space-between;
-	padding: 0px 140px 0px;
-	background-color: #fff;
+	margin: 0px auto;
+	padding: 100px 0 0 0;
 } 
 .footer-widgets__logo{
-	height: 156px;
-	width: 260px;
+	margin-top: -4px;
 }
 .foorer-widgets__description {
+	padding-top: 13px;
+	letter-spacing: -0.13px;
+	width: 260px;
+	margin: 0;
 	font-size: 14px;
 	line-height: 24px;
 	color: rgba(31, 32, 65, 0.75);
 }
+.link__wrapper{
+	display: flex;
+	justify-content: space-between;
+	min-width: 360px;
+  max-width: 512px;
+  padding-top: 2px;
+  padding-right: 48px;
+  flex: 1 1;
+}
 /*-----------------------------------------------------------------*/
+.subscribe {
+	box-sizing: border-box;
+}
 .subscribe h2 {
+	margin-top: 3px;
+	letter-spacing: -0.31px;
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 12px;
@@ -27,6 +46,9 @@
 	color: #1F2041;
 }
 .subscribe p {
+	letter-spacing: -0.15px;
+	padding-top: 4px;
+	margin-bottom: 22px;
 	line-height: 24px;
 	width: 200px;
 	height: 48px;
@@ -36,13 +58,16 @@
 .subscribe input {
 	font-size: 14px;
 	line-height: 24px;
+	letter-spacing: 0.54px;
 	width: 260px;
 	border: 1px solid rgba(31, 32, 65, .25);
 	background: #fff;
 	border-radius: 4px;
 	padding-left: 14px;
 	padding-bottom: 3px;
-	color: rgba(31, 32, 65, .25)
+}
+.subscribe input::placeholder {
+  color: rgba(31, 32, 65, .25);
 }
 .subscribe form {
 	position: relative;
@@ -55,6 +80,7 @@
 	border: 1px solid rgba(31, 32, 65, 0.25);
 	width: 44px;
 	position: absolute;
+	padding: 2px 0 0 10px;
 	top: 0px;
 	right: 0px;
 	border-radius: 0 4px 4px 0;
@@ -68,6 +94,7 @@
 }
 /*________________________*/
 .bar__copyright {
+	letter-spacing: -0.1px;
 	font-size: 14px;
 	line-height: 17px;
 	color: rgba(31, 32, 65, 0.75);
@@ -101,6 +128,7 @@
 	display: flex;
 	justify-content: center;
 	background-color: #fff;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 .footer-creative {
 	box-sizing: border-box;

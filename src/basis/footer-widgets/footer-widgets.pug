@@ -3,9 +3,10 @@
 		.footer-widgets__logo
 			include ../bar/bar__logo/logo.pug
 			p.foorer-widgets__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-		include ../../blocks/link/link-navigation.pug
-		include ../../blocks/link/link-aboutUs.pug
-		include ../../blocks/link/link-support.pug
+		.link__wrapper
+			include ../../blocks/link/link-navigation.pug
+			include ../../blocks/link/link-aboutUs.pug
+			include ../../blocks/link/link-support.pug
 		.subscribe
 			h2 Subscribe to our newsletter
 			p Receive our latest news and promotions in your inbox!
@@ -13,7 +14,7 @@
 				input(
 					type='text'
 					name='email'
-					placeholder='Your email adress'
+					placeholder='Your email address'
 				)
 				button(type='submit'): i.material-icons.subscribe__email_entry_icon.gradient arrow_forward
 	.bar.bar__logo_top-line
