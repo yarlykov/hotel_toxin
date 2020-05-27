@@ -67,8 +67,11 @@
 	padding-bottom: 3px;
 }
 .subscribe input::placeholder {
-  color: rgba(31, 32, 65, .25);
+	color: rgba(31, 32, 65, .25);
 }
+.subscribe input{
+		outline: none;
+	}
 .subscribe form {
 	position: relative;
 }
