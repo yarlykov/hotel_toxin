@@ -93,6 +93,15 @@
 	text-align: center;
 }
 /*________________________*/
+.bar-wrapper{
+	box-sizing: border-box;
+	display: flex;
+	height: 70px;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1160px;
+	margin: 0 auto;
+}
 .bar__copyright {
 	letter-spacing: -0.1px;
 	font-size: 14px;

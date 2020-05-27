@@ -9,3 +9,12 @@
 	.bar__logo_logged {
 		margin-right: 318px;
 	}
+	.bar-wrapper{
+	box-sizing: border-box;
+	display: flex;
+	height: 70px;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1160px;
+	margin: 0 auto;
+}

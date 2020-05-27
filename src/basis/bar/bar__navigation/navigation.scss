@@ -1,7 +1,7 @@
 .bar__navigation {
 	display: flex;
 	justify-content: space-between;
-	width: 530px;
+	min-width: 530px;
 }
 .bar__navigation_font{
 	font-family: Montserrat;
