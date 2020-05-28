@@ -1,0 +1,62 @@
+.subscribe {
+	box-sizing: border-box;
+}
+.subscribe h2 {
+	margin-top: 3px;
+	letter-spacing: -0.31px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	color: #1F2041;
+}
+.subscribe p {
+	letter-spacing: -0.15px;
+	padding-top: 4px;
+	margin-bottom: 22px;
+	line-height: 24px;
+	width: 200px;
+	height: 48px;
+	color: rgba(31, 32, 65, 0.75);
+}
+
+.subscribe input {
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 0.54px;
+	width: 260px;
+	border: 1px solid rgba(31, 32, 65, .25);
+	background: #fff;
+	border-radius: 4px;
+	padding-left: 14px;
+	padding-bottom: 3px;
+}
+.subscribe input::placeholder {
+	color: rgba(31, 32, 65, .25);
+}
+.subscribe input{
+		outline: none;
+	}
+.subscribe form {
+	position: relative;
+}
+.subscribe input,button{
+		height: 44px;
+		box-sizing: border-box;
+}
+.subscribe button {
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	width: 44px;
+	position: absolute;
+	padding: 2px 0 0 10px;
+	top: 0px;
+	right: 0px;
+	border-radius: 0 4px 4px 0;
+	border-left: none;
+	cursor: pointer;
+}
+.subscribe__email_entry_icon {
+	display: flex;
+	align-items: center;
+	text-align: center;
+}

@@ -7,31 +7,6 @@
 			include ../../blocks/link/link-navigation.pug
 			include ../../blocks/link/link-aboutUs.pug
 			include ../../blocks/link/link-support.pug
-		.subscribe
-			h2 Subscribe to our newsletter
-			p Receive our latest news and promotions in your inbox!
-			form
-				input(
-					type='text'
-					name='email'
-					placeholder='Your email address'
-				)
-				button(type='submit'): i.material-icons.subscribe__email_entry_icon.gradient arrow_forward
-	.bar.bar__logo_top-line
-		.bar-wrapper
-			.bar__copyright Copyright © 2018 Toxin UI Kit. All rights reserved
-			.bar__sochial 
-				a(href='#'): i.fab.fa-twitter.gradient
-				a(href='#'): i.fab.fa-facebook-square.gradient
-				a(href='#'): i.fab.fa-instagram.gradient
-.footer-creative__wrapper
-	.footer-creative
-		.footer-creative__logo
-			include ../bar/bar__logo/logo.pug
-		p.footer-creative__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-		.bar__sochial 
-			a(href='#'): i.fab.fa-twitter.gradient
-			a(href='#'): i.fab.fa-facebook-square.gradient
-			a(href='#'): i.fab.fa-instagram.gradient
-
+		include ../../blocks/subscribe/subscribe.pug
+	include ../bar/bar__sochial/sochial.pug
 
