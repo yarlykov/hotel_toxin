@@ -2,7 +2,6 @@
 	display: flex;
 	justify-content: space-between;
 	min-width: 200px;
-	// padding-top: 3px;
 }
 .bar__button_login_back{
 	position: relative;
@@ -39,7 +38,7 @@
 .bar__button_register{
 	box-sizing: border-box;
 	border: none;
-				cursor: pointer;
+	cursor: pointer;
 	width: 101px;
 	height: 34px;
 	border-radius: 100px;
