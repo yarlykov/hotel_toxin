@@ -59,6 +59,10 @@ module.exports = {
       template: './src/pages/headers_footers/headers_footers.pug',
       filename: 'headers_footers.html'
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/form_elements/form_elements.pug',
+      filename: 'form_elements.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
