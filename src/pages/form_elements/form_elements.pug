@@ -9,7 +9,11 @@ block content
 	body.body-wrapper
 		header 
 			include ../../basis/header_uikit/header_uikit.pug
-		main
-			include ../../basis/standart-bar/standart-bar.pug
+		main.content-wrapper_form-elements
+			label.text-field__wrapper
+				.text-field__name TEXT FIELD
+				.text-field__description DEFAULT
+				.text-field__input
+					input(type="Email" placeholder="Email")
 		footer 
 			include ../../basis/footer_uikit/footer_uikit.pug

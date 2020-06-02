@@ -63,6 +63,10 @@ module.exports = {
       template: './src/pages/form_elements/form_elements.pug',
       filename: 'form_elements.html'
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/cards/cards.pug',
+      filename: 'cards.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),

@@ -1,0 +1,20 @@
+.content-wrapper_form-elements{
+	display: grid;
+	box-sizing: border-box;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1em;
+	margin: 0 auto;
+	max-width: 1160px;
+	min-width: 1160px;
+	background: gray;
+}
+.text-field__wrapper {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	width: 320px;
+	height: 67px;
+}
+.text-field__input {
+	// grid-column: 2/3;
+	grid-row: 2/3;
+}

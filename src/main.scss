@@ -15,6 +15,8 @@
 @import 'basis/footer-creative/footer-creative.scss';
 @import 'basis/bar/bar__sochial/sochial.scss';
 @import 'blocks/subscribe/subscribe.scss';
+@import 'pages/cards/cards.scss';
+@import 'pages/form_elements/form_elements.scss';
 
 .body-wrapper {
   margin: 0;
@@ -44,4 +46,7 @@ a {
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+.border {
+	border: 1px solid red;
 }
