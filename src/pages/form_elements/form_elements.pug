@@ -10,10 +10,86 @@ block content
 		header 
 			include ../../basis/header_uikit/header_uikit.pug
 		main.content-wrapper_form-elements
-			label.text-field__wrapper
-				.text-field__name TEXT FIELD
-				.text-field__description DEFAULT
-				.text-field__input
-					input(type="Email" placeholder="Email")
+			form.form
+				label.form__text-field
+					span.form__title Text field
+					span.form__description Default
+					.text-field__input_wrapper
+						input(
+							class="text-field__input text-field__input_size_large" type="text" 
+							name='email' 
+							placeholder="Email")
+			p 2
+			p 3
+			form.form
+				label.form__text-field
+					span.form__title Text field
+					span.form__description Hover/Focus
+					.text-field__input_wrapper
+						input(
+							class="text-field__input text-field__input_size_large text-field__input_hover"
+							type="text" 
+							name="text"
+							placeholder="This is pretty awesome"
+							)
+			p 5
+			p 6
+			form.form
+				label.form__text-field
+					span.form__title Dropdown
+					span.form__description Default
+					.text-field__input_wrapper
+						input(
+							class="text-field__input text-field__input_size_large"
+							type="text" 
+							name="text"
+							placeholder="Сколько гостей"
+							)
+			p 8
+			p 9
+			form.form
+				label.form__text-field
+					span.form__title Masked text field
+					span.form__description Default
+					.text-field__input_wrapper
+						input(
+							class="text-field__input text-field__input_size_large"
+							type="text" 
+							name="text"
+							placeholder="ДД.ММ.ГГГГ"
+							)
+			p 11
+			p 12
+			form.form
+				label.form__text-field_s
+					span.form__title Date dropdown
+					.text-field__input_wrapper_s
+						input(
+							class="text-field__input text-field__input_size_s"
+							type="text" 
+							name="text"
+							placeholder="ДД.ММ.ГГГГ"
+							)
+				label.form__text-field_s
+					span.form__title Date dropdown
+					.text-field__input_wrapper_s
+						input(
+							class="text-field__input text-field__input_size_s"
+							type="text" 
+							name="text"
+							placeholder="19.08.2019"
+							)
+			p 14
+			p 15
+			form.form
+				label.form__text-field_s
+					span.form__title Filter Date dropdown
+					.text-field__input_wrapper_s
+						input(
+							class="text-field__input text-field__input_size_m"
+							type="text" 
+							name="text"
+							placeholder="19 авг - 23 авг"
+							)
 		footer 
 			include ../../basis/footer_uikit/footer_uikit.pug

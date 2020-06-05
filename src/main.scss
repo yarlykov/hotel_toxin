@@ -41,6 +41,10 @@ a {
 	color: rgba(31, 32, 65, 0.5);
 	text-decoration: none;
 }
+input:focus{
+	outline: none;
+		border: 1px solid rgba(31, 32, 65, 0.5);
+} 
 .gradient {
 	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 	background-clip: text;
