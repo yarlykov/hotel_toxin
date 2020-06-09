@@ -1,27 +1,14 @@
-form.checkbox__wrap
-	p.checkbox__title Checkbox buttons
+mixin checkbox(name, checked)
 	label.checkbox
 		input(
 			class="checkbox__input"
 			type="checkbox"
-			name="Можно курить"
+			name=name
+			checked=checked
 		)
 		span.checkbox__box
-		| Можно курить
-	label.checkbox
-		input(
-			class="checkbox__input"
-			type="checkbox"
-			name="Можно с питомцами"
-		)
-		span.checkbox__box
-		| Можно с питомцами
-	label.checkbox
-		input(
-			class="checkbox__input"
-			type="checkbox"
-			name="Можно пригласить гостей"
-			checked
-		)
-		span.checkbox__box 
-		| Можно пригласить гостей (до 10 человек)
+		span=name
+
++checkbox("Можно курить", false)
++checkbox("Можно с питомцами", false)
++checkbox("Можно пригласить гостей (до 10 человек)", true)

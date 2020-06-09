@@ -1,23 +1,12 @@
-.checkbox__wrap{
-	display: grid;
-}
-.checkbox__title{
-	font-family: $mainFont;
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 15px;
-	text-transform: uppercase;
-	color: #1F2041;
-	margin: 0;
-}
 .checkbox{
 	color: $textColor_50;
+	line-height: 18px;
 	display: block;
 	box-sizing: border-box;
-	height: 25px;
-	cursor: pointer;
-	width: 192px;
+	min-height: 20px;
+	max-width: 192px;
 	padding-left: 2em;
+	cursor: pointer;
 }
 .checkbox__input {
 	position: absolute;
