@@ -1,3 +1,25 @@
+/*variables*/
+//colors
+$mainTextColor: #1F2041;
+$textColor_75: rgba(31, 32, 65, 0.75);
+$textColor_50: rgba(31, 32, 65, 0.50);
+$textColor_25: rgba(31, 32, 65, 0.25);
+$textColor_5: rgba(31, 32, 65, 0.05);
+$designColor_main: #BC9CFF;
+$designColor_second: #6FCF97;
+$mainGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+// Fonts
+$mainFont: Montserrat, Areal, san-serif;
+$secondFont: Quiqksand, Areal, san-serif; 
+$mainFont_size: 14px;
+$mainFont_lh: 17px;
+
+//borders
+$mainBorder: 1px solid rgba(31, 32, 65, 0.25);
+$focusBorder: 1px solid rgba(31, 32, 65, 0.5); 
+$redBorder: 1px solid red;
+
 @import 'fonts/fonts.scss';
 @import 'basis/header_uikit/header_uikit.scss';
 @import 'pages/colors_type/colors_type.scss';
@@ -17,6 +39,9 @@
 @import 'blocks/subscribe/subscribe.scss';
 @import 'pages/cards/cards.scss';
 @import 'pages/form_elements/form_elements.scss';
+@import 'blocks/checkbox/checkbox.scss';
+
+
 
 .body-wrapper {
   margin: 0;
@@ -30,27 +55,28 @@ main {
 
 body {
   box-sizing: border-box;
-	font-family: Montserrat, Arial, Helvetica, sans-serif;
+	font-family: $mainFont;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 14px;
-  line-height: 17px;
+	font-size: $mainFont_size;
+  line-height: $mainFont_lh;
 }
 
 a {
-	color: rgba(31, 32, 65, 0.5);
+	color: $textColor_50;
 	text-decoration: none;
 }
 input:focus{
 	outline: none;
-		border: 1px solid rgba(31, 32, 65, 0.5);
+		border: $focusBorder;
 } 
 .gradient {
-	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	background: $mainGradient;
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 .border {
-	border: 1px solid red;
+	border: $redBorder;
 }
+

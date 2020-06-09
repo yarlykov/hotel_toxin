@@ -19,7 +19,9 @@ block content
 							class="text-field__input text-field__input_size_large" type="text" 
 							name='email' 
 							placeholder="Email")
-			p 2
+										//----------------------------------------
+			include ../../blocks/checkbox/checkbox.pug
+			//----------------------------------------
 			p 3
 			form.form
 				label.form__text-field
@@ -32,6 +34,7 @@ block content
 							name="text"
 							placeholder="This is pretty awesome"
 							)
+				//----------------------------------------
 			p 5
 			p 6
 			form.form
@@ -45,6 +48,7 @@ block content
 							name="text"
 							placeholder="Сколько гостей"
 							)
+				//----------------------------------------
 			p 8
 			p 9
 			form.form
@@ -60,36 +64,42 @@ block content
 							)
 			p 11
 			p 12
-			form.form
-				label.form__text-field_s
+			form.form.form__text-field_s
+				label
 					span.form__title Date dropdown
-					.text-field__input_wrapper_s
+					.text-field__input_wrapper
 						input(
 							class="text-field__input text-field__input_size_s"
 							type="text" 
 							name="text"
 							placeholder="ДД.ММ.ГГГГ"
 							)
-				label.form__text-field_s
-					span.form__title Date dropdown
-					.text-field__input_wrapper_s
-						input(
-							class="text-field__input text-field__input_size_s"
-							type="text" 
-							name="text"
-							placeholder="19.08.2019"
-							)
+				form.form
+					label
+						span.form__title Date dropdown
+						.text-field__input_wrapper
+							input(
+								class="text-field__input text-field__input_size_s"
+								type="text" 
+								name="text"
+								placeholder="19.08.2019"
+								)
 			p 14
 			p 15
 			form.form
-				label.form__text-field_s
+				label.form__text-field
 					span.form__title Filter Date dropdown
-					.text-field__input_wrapper_s
+					.text-field__input_wrapper
 						input(
 							class="text-field__input text-field__input_size_m"
 							type="text" 
 							name="text"
 							placeholder="19 авг - 23 авг"
 							)
+			p 17
+			p 18
+	
+					//- label
+					//- 	<input type="checkbox">Можно курить 
 		footer 
 			include ../../basis/footer_uikit/footer_uikit.pug

@@ -1,24 +1,27 @@
 .content-wrapper_form-elements{
 	display: grid;
 	box-sizing: border-box;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, 320px);
+	justify-content: space-between;
 	grid-gap: 1em;
 	margin: 0 auto;
 	max-width: 1160px;
 	min-width: 1160px;
 }
-.form__text-field{
+.form__text-field{ 		//form__text-field_wrap_large
 	display: grid;
 	grid-template-columns: 70% 30%;
 	width: 321px;
 	height: 67px;
 }
-// .form__text-field_s{
-// 	// display: grid;
-// 	// grid-template-columns: 50% 50%;
-// 	width: 321px;
-// 	height: 67px;
-// }
+.form__text-field_s{		//form__text-field_wrap_s
+	display: grid;
+	grid-column-gap: 10px;
+	grid-template-columns: 50% 50%;
+	width: 321px;
+	height: 67px;
+}
+
 .text-field__input_size_large{
 	width: 320px;
 }
@@ -35,41 +38,42 @@
 	text-transform: uppercase;
 	font-size: 12px;
 	line-height: 15px;
-	color: #1F2041;
+	color: $mainTextColor;
 }
 .text-field__input_wrapper{
 	grid-column: 1/3;
 	align-self: end;
 	padding-left: 1px;
 }
-.text-field__input_wrapper_s{
-	grid-column: 2/3;
-	align-self: end;
-	padding-left: 1px;
-}
+// .text-field__input_wrapper_s{
+// 	grid-column: 2/3;
+// 	align-self: end;
+// 	padding-left: 1px;
+// }
 .text-field__input {
 	box-sizing: border-box;
 	padding: 0 0px 0 14px;
 	height: 44px;
-	border: 1px solid rgba(31, 32, 65, 0.25);
+	border: $mainBorder;
 	border-radius: 4px;
-	font-family: Montserrat;
-	font-size: 14px;
+	font-family: $mainFont;
+	font-size: $mainFont_size;
 	line-height: 18px;
 }
 .text-field__input:hover{
-	border: 1px solid rgba(31, 32, 65, 0.5);
+	border: $focusBorder;
 } 
 .text-field__input:focus{
-	border: 1px solid rgba(31, 32, 65, 0.5);
+	border: $focusBorder;
 } 
 .form__description{
 	font-size: 12px;
 	line-height: 15px;
 	text-align: right;
 	text-transform: uppercase;
-	color: rgba(31, 32, 65, 0.5);
+	color: $textColor_50;
 }
 .text-field__input_hover{
-	border: 1px solid rgba(31, 32, 65, 0.5);
+	border: $focusBorder;
 }
+//---------------------------------
