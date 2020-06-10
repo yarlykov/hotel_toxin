@@ -3,7 +3,7 @@
 	box-sizing: border-box;
 	grid-template-columns: repeat(3, 320px);
 	justify-content: space-between;
-	grid-gap: 1em;
+	gap: 1em 8em;
 	margin: 0 auto;
 	max-width: 1160px;
 	min-width: 1160px;

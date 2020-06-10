@@ -13,7 +13,7 @@ $mainGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 $mainFont: Montserrat, Areal, san-serif;
 $secondFont: Quiqksand, Areal, san-serif; 
 $mainFont_size: 14px;
-$mainFont_lh: 17px;
+
 
 //borders
 $mainBorder: 1px solid rgba(31, 32, 65, 0.25);
@@ -59,7 +59,6 @@ body {
 	font-style: normal;
 	font-weight: normal;
 	font-size: $mainFont_size;
-  line-height: $mainFont_lh;
 }
 
 a {
