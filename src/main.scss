@@ -17,6 +17,7 @@ $mainFont_size: 14px;
 
 //borders
 $mainBorder: 1px solid rgba(31, 32, 65, 0.25);
+$colorBorder: 1px solid $designColor_main;
 $focusBorder: 1px solid rgba(31, 32, 65, 0.5); 
 $redBorder: 1px solid red;
 
@@ -41,7 +42,7 @@ $redBorder: 1px solid red;
 @import 'pages/form_elements/form_elements.scss';
 @import 'blocks/checkbox/checkbox.scss';
 @import 'blocks/radio/radio.scss';
-
+@import 'blocks/toogle/toogle.scss';
 
 
 .body-wrapper {

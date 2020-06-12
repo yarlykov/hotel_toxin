@@ -24,10 +24,7 @@ block content
 				h3.font__h3 Checkbox buttons
 				include ../../blocks/checkbox/checkbox.pug
 			//----------------------------------------
-			form.wrap__radio-buttons
-				h3.font__h3 Radio buttons
-				include ../../blocks/radio/radio.pug
-				//----------------------------------------
+			p 3
 			form.form
 				label.form__text-field
 					span.form__title Text field
@@ -55,8 +52,11 @@ block content
 							name="text"
 							placeholder="Сколько гостей"
 							)
-				//----------------------------------------
-			p 8
+									//----------------------------------------
+			form
+				h3.font__h3 Toggle
+				include ../../blocks/toogle/toogle.pug
+				//---------------------------------------
 			p 9
 			form.form
 				label.form__text-field

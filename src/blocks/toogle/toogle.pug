@@ -1,0 +1,13 @@
+mixin toogle(name, checked)
+	label.toogle
+		input(
+			class="toogle__input"
+			type="checkbox"
+			name=name
+			checked=checked
+		)
+		span.toogle__box
+		span=name
+	
++toogle("Получать спецпредложения", true)
++toogle("Получать спецпредложения", false)
