@@ -12,7 +12,8 @@ module.exports = {
     filename: 'bundle.js',
   },
   devServer: {
-    port: 8080
+    port: 8080,
+    index: "form_elements.html",
   },
 
   module: {
