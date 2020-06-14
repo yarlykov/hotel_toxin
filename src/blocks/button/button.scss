@@ -1,0 +1,49 @@
+.button__btn{
+	position: relative;
+	box-sizing: border-box;
+	border: none;
+	background: $mainGradient;
+	color:#fff;
+	border-radius: 100px;
+	cursor: pointer;
+}
+.button__btn_opasity{
+	opacity: 0.5;
+}
+.button__btn_reverse{
+	display: block;
+	position: absolute;
+	width: 95px;
+	height: 40px;
+	top: 2px;
+	left:	2px;
+	background: #fff;
+	color: red;
+	border-radius: 100px;
+	z-index: 0;
+}
+.button__btn_size_s{
+	width: 99px;
+}
+.button__btn_size_large{
+	width: 320px;
+}
+.button_inline{
+	border: none;
+	background: none;
+	padding: 0;
+	display: inline-block;
+	height: 1.5em;
+	cursor: pointer;
+}
+.button_text-color_main{
+	color: $designColor_main;
+}
+.button_text-color_second{
+	color: $textColor_50;
+}
+.button_text-color_none{
+	color: #fff;
+	position: relative;
+	z-index: 1;
+}
