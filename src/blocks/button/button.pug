@@ -1,38 +1,52 @@
+//-DEFAULT
 button(
-	class="button__btn button__btn_size_s"
+	class="button button_size_s"
 	type="submit"
 	name="click me"
 	)
-	span.button_text-color_none.font__h3 click me
+	span.button_text-color_white.font__h3 click me
+//-REVERSE
 button(
-	class="button__btn button__btn_size_s"
+	class="button button_size_s"
 	type="submit"
 	name="click me"
 	)
-	span.button_text-color_none.font__h3 click me
-	.button__btn_reverse
-	
+	span.button_text-color_purple.font__h3 click me
+	.button_border
+//-REVERSE-DISABLE
 button(
-	class="button__btn button__btn_size_s button__btn_opasity"
+	class="button button_size_s button_disable"
 	type="submit"
 	name="click me"
 	)
-	span.button_text-color_none.font__h3 click me
+	span.button_text-color_purple.font__h3 click me
+	.button_border
+//-DEFAULT-DISABLE
 button(
-	class="button__btn button_inline"
+	class="button button_size_s button_disable"
 	type="submit"
 	name="click me"
 	)
-	span.button_text-color_main.font__h3 click me
+	span.button_text-color_white.font__h3 click me
+//-INLINE-COLOR
 button(
-	class="button__btn button_inline"
+	class="button button_inline"
 	type="submit"
 	name="click me"
 	)
-	span.button_text-color_second.font__h3 click me
+	span.button_text-color_purple.font__h3 click me
+//-INLINE-NOT-COLOR
 button(
-	class="button__btn button__btn_size_large"
+	class="button button_inline"
 	type="submit"
 	name="click me"
 	)
-	span.button_text-color_none.font__h3 click me
+	span.button_text-color_gray.font__h3 click me
+//-DEFAULT-LARGE
+button(
+	class="button button_size_large"
+	type="submit"
+	name="click me"
+	)
+	span.button_text-color_white.font__h3 Перейти к оплате
+		i.button__arrow.material-icons arrow_forward

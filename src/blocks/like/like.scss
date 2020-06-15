@@ -1,0 +1,51 @@
+
+/*LIKE BUTTON*/
+
+.like__button{
+	display: inline-flex;
+	position: relative;
+	min-width: 40px;
+	height: 20px;
+	border: none;
+	background: $mainGradient;
+	border-radius: 100px;
+	outline: none;
+	cursor: pointer;
+}
+.button__like_border{
+	position: absolute;
+	width: calc(100% - 2px);
+	height: calc(100% - 2px);
+	top: 1px;
+	left:	1px;
+	background: #fff;
+	border-radius: 100px;
+}
+.like__icon{
+	position: absolute;
+	top: 4px;
+	left: 5px;
+	font-size: 10px;
+	color: $designColor_main;
+}
+.like__text{
+	margin: 2px 0px 0 15px;
+	position: relative;
+	color: $designColor_main;
+	font-family: $mainFont;
+	font-size: 10px;
+	z-index: 1;
+}
+.like__text_disable{
+	color: $textColor_25;
+}
+.like__button_disable{
+	background: $textColor_25;
+}
+.like__icon_disable{
+	color: $textColor_25;
+}
+.like_disable{
+	background: $textColor_25;
+	color: $textColor_25;
+}

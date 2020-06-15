@@ -1,49 +1,60 @@
-.button__btn{
+.button{
 	position: relative;
-	box-sizing: border-box;
 	border: none;
 	background: $mainGradient;
-	color:#fff;
 	border-radius: 100px;
+	outline: none;
 	cursor: pointer;
 }
-.button__btn_opasity{
+.button:focus{
+	box-shadow: 0 0 0 1px;
+	color: $designColor_main;
+}
+.button_disable{
 	opacity: 0.5;
 }
-.button__btn_reverse{
-	display: block;
+.button_border{
 	position: absolute;
-	width: 95px;
-	height: 40px;
+	width: calc(100% - 4px);
+	height: calc(100% - 4px);
 	top: 2px;
 	left:	2px;
 	background: #fff;
-	color: red;
 	border-radius: 100px;
-	z-index: 0;
 }
-.button__btn_size_s{
+
+/*Size*/
+
+.button_size_s{
 	width: 99px;
 }
-.button__btn_size_large{
+.button_size_large{
 	width: 320px;
 }
+/*Inline*/
 .button_inline{
 	border: none;
 	background: none;
 	padding: 0;
 	display: inline-block;
-	height: 1.5em;
+	height: 1.2em;
+	border-radius: 2px;
 	cursor: pointer;
 }
-.button_text-color_main{
+/*Text-Colors*/
+.button_text-color_purple{
 	color: $designColor_main;
-}
-.button_text-color_second{
-	color: $textColor_50;
-}
-.button_text-color_none{
-	color: #fff;
 	position: relative;
 	z-index: 1;
+}
+.button_text-color_gray{
+	color: $textColor_50;
+}
+.button_text-color_white{
+	color: #fff;
+}
+.button__arrow{
+	position: absolute;
+	right: 15px;
+	top: 10px;
 }
