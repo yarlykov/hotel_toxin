@@ -1,0 +1,13 @@
+mixin star_border(num)
+	- for (let i = 0; i < num; i++)
+		i.material-icons.gradient star_border
+mixin rating(rate)
+	.rating
+		if rate < 5
+		- let j = 5 - rate;
+		- for(let i = 0; i < rate; i++)
+			i.material-icons.gradient star
+		+star_border(j)
+
++rating(4)
++rating(5)
