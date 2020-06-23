@@ -1,5 +1,5 @@
-import './item-quantity-dropdown.min.css';
-import './item-quantity-dropdown.min.js';
+import './item-quantity-dropdown.css';
+import './item-quantity-dropdown.js';
 
 $(document).ready(function () {
 	$(".no-config").iqDropdown({
