@@ -8,6 +8,7 @@ $textColor_5: rgba(31, 32, 65, 0.05);
 $designColor_main: #BC9CFF;
 $designColor_second: #6FCF97;
 $mainGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$mainGradientTransperent: linear-gradient(180deg, rgba(#BC9CFF, 0.5) 0%, rgba(#8BA4F9, 0.5) 100%);
 
 // Fonts
 $mainFont: Montserrat, Areal, san-serif;

@@ -1,4 +1,4 @@
-import './item-quantity-dropdown.css';
+// import './item-quantity-dropdown.css';
 import './item-quantity-dropdown.js';
 
 $(document).ready(function () {

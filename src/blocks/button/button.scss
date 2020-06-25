@@ -7,11 +7,15 @@
 	cursor: pointer;
 }
 .button:focus{
-	box-shadow: 0 0 0 1px;
+	box-shadow: 0 0 0 1px;	
 	color: $designColor_main;
 }
-.button_disable{
-	opacity: 0.5;
+	
+.button:hover{ //как оставить подпись нерпозоачной?????
+	background: $mainGradientTransperent;
+}
+.button_hover{
+	background: $mainGradientTransperent;
 }
 .button_border{
 	position: absolute;
@@ -21,6 +25,7 @@
 	left:	2px;
 	background: #fff;
 	border-radius: 100px;
+	// z-index: 1;
 }
 
 /*Size*/
@@ -42,10 +47,11 @@
 	cursor: pointer;
 }
 /*Text-Colors*/
-.button_text-color_purple{
+.button{
+	&_text-color_purple{
 	color: $designColor_main;
 	position: relative;
-	z-index: 1;
+	z-index: 1;}
 }
 .button_text-color_gray{
 	color: $textColor_50;
