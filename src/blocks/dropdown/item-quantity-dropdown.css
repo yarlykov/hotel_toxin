@@ -1,9 +1,9 @@
 html {
     box-sizing: border-box
 }
-html * {
+/* html * {
     box-sizing: inherit
-}
+} */
 html *::after, html *::before {
     box-sizing: inherit
 }
