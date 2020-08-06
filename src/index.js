@@ -6,4 +6,4 @@ import './blocks/range-slider/range-slider';
 // import './blocks/dropdown/item-quantity-dropdown.min.css';
 // import './blocks/dropdown/item-quantity-dropdown.min.js';
 import './blocks/dropdown/dropdown';
-import './blocks/iQdropdown/iqDropdown';
+// import './blocks/iQdropdown/iqDropdown';
