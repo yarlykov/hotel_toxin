@@ -1,116 +1,12 @@
-.l-container
-  .no-config.iqdropdown
-    p.iqdropdown-selection
-    .iqdropdown-menu
-      .iqdropdown-menu-option(data-id="item1")
-        div
-          p.iqdropdown-item взрослые
-      .iqdropdown-menu-option(data-id='item2')
-        div
-          p.iqdropdown-item дети
-      .iqdropdown-menu-option(data-id='item3')
-        div
-          p.iqdropdown-item младенцы
-  h3 No config options with custom selection message
-  .no-config.iqdropdown
-    p.iqdropdown-selection(data-selection-text='passenger' data-text-plural='passengers')
-    .iqdropdown-menu
-      .iqdropdown-menu-option(data-id='adult' data-defaultcount='1' data-mincount='1')
-        div
-          p.iqdropdown-item Adults
-          p.iqdropdown-description 12+ years
-      .iqdropdown-maenu-option(data-id='minor' data-defaultcount='0' data-mincount='0')
-        div
-          p.iqdropdown-item Children
-          p.iqdropdown-description 2 - 11 years
-      .iqdropdown-menu-option(data-id='infant')
-        div
-          p.iqdropdown-item Infants
-          p.iqdropdown-description 2 years
-  h3 Custom config
-  .custom.iqdropdown
-    p.iqdropdown-selection
-    .iqdropdown-menu
-      .iqdropdown-menu-option(data-id='adult' data-defaultcount='1' data-mincount='1')
-        div
-          p.iqdropdown-item Adults
-          p.iqdropdown-description 12+ years
-      .iqdropdown-menu-option(data-id='minor' data-defaultcount='0' data-mincount='0')
-        div
-          p.iqdropdown-item Children
-          p.iqdropdown-description 2 - 11 years
-      .iqdropdown-menu-option(data-id='infant')
-        div
-          p.iqdropdown-item Infants
-          p.iqdropdown-description 2 years
-      button.iqdropdown-menu-close
-        | Cerrar
-  h3 Custom config (2nd instance)
-  .custom.iqdropdown
-    p.iqdropdown-selection
-    .iqdropdown-menu
-      .iqdropdown-menu-option(data-id='adult' data-defaultcount='1' data-mincount='1')
-        div
-          p.iqdropdown-item Adults
-          p.iqdropdown-description 12+ years
-      .iqdropdown-menu-option(data-id='minor' data-defaultcount='0' data-mincount='0')
-        div
-          p.iqdropdown-item Children
-          p.iqdropdown-description 2 - 11 years
-      .iqdropdown-menu-option(data-id='infant')
-        div
-          p.iqdropdown-item Infants
-          p.iqdropdown-description 2 years
-      button.iqdropdown-menu-close
-        | Cerrar
-  h3 Custom message
-  .custom-message.iqdropdown
-    p.iqdropdown-selection
-    .iqdropdown-menu
-      .iqdropdown-menu-option(data-id='item-a' data-defaultcount='0' data-mincount='0' data-maxcount='5')
-        div
-          p.iqdropdown-item Item A
-      .iqdropdown-menu-option(data-id='item-b' data-defaultcount='0' data-mincount='0' data-maxcount='5')
-        div
-          p.iqdropdown-item Item B
-      button.iqdropdown-menu-close
-        | Cerrar
-// Container
-//- script(src='https://code.jquery.com/jquery-3.0.0.min.js' integrity='sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=' crossorigin='anonymous')
-//- script(type='text/javascript').
-//-   $(document).ready(function() {
-//-   $(".no-config").iqDropdown();
-//-   $(".custom").iqDropdown({
-//-   minItems: 1,
-//-   maxItems: 5,
-//-   selectionText: "passenger",
-//-   textPlural: "passengers",
-//-   onChange: function(id, count, totalItems) {
-//-   console.log(id, count, totalItems);
-//-   },
-//-   beforeDecrement: function(id, itemCount) {
-//-   if (id === "adult") {
-//-   return itemCount.adult > itemCount.infant;
-//-   }
-//-   return true;
-//-   },
-//-   beforeIncrement: function(id, itemCount) {
-//-   if (id === "infant") {
-//-   return itemCount.adult > itemCount.infant;
-//-   }
-//-   return true;
-//-   }
-//-   });
-//-   $(".custom-message").iqDropdown({
-//-   minItems: 0,
-//-   onChange: function(id, count, totalItems) {
-//-   console.log(id, count, totalItems);
-//-   },
-//-   setSelectionText: function (itemCount, totalItems) {
-//-   const items = Object.keys(itemCount)
-//-   .map(key => itemCount[key])
-//-   .join(' + ');
-//-   return items + ' = ' + totalItems;
-//-   }
-//-   });
-//-   });
+.no-config.iqdropdown
+  p.iqdropdown-selection
+  .iqdropdown-menu
+    .iqdropdown-menu-option(data-id="item-1")
+      div
+        p.iqdropdown-item взрослые
+    .iqdropdown-menu-option(data-id='item-2')
+      div
+        p.iqdropdown-item дети
+    .iqdropdown-menu-option(data-id='item-3')
+      div
+        p.iqdropdown-item младенцы

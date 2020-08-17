@@ -1,12 +1,50 @@
 .dropdown.open
 	input(
 		type="text"
-		class='dropdown__input'
-		placeholder='Сколько гостей'
+		class="dropdown__input"
+		placeholder="Сколько гостей"
+		data-type="input"
 	)
-	.fa.fa-chevron-down
+	.fa.fa-chevron-down(data-type="arrow")
 	.dropdown__drop
-		ul.dropdown__list
-			li.dropdown__item Взрослые
-			li.dropdown__item Дети
-			li.dropdown__item Младенцы
+		.dropdown__menu.font__h3
+			div.dropdown__menu-item(data-id='0')
+				.dropdown__menu-item_text Взрослые
+				.dropdown__controls
+					div(
+						class="controls__decrement"
+						data-type="decrement"
+						)
+					span.controls__counter 0
+					div(
+						class="controls__increment"
+						data-type="increment"
+						)
+
+
+			div.dropdown__menu-item(data-id='1')
+				.dropdown__menu-item_text Дети
+				.dropdown__controls
+					div(
+						class="controls__decrement"
+						data-type="decrement"
+						)
+					span.controls__counter 0
+					div(
+						class="controls__increment"
+						data-type="increment"
+						)
+
+
+			div.dropdown__menu-item(data-id='2')
+				.dropdown__menu-item_text Младенцы
+				.dropdown__controls
+					div(
+						class="controls__decrement"
+						data-type="decrement"
+						)
+					span.controls__counter 0
+					div(
+						class="controls__increment"
+						data-type="increment"
+						)
