@@ -9,6 +9,7 @@
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack  --mode production"
   },
+  "browserslist": "> 0.25%, not dead",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yarlykov/Toxin.git"
@@ -20,6 +21,9 @@
   },
   "homepage": "https://github.com/yarlykov/Toxin#readme",
   "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",
     "file-loader": "^6.0.0",
@@ -34,6 +38,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.10.4",
     "jquery": "^3.5.1",
     "webpack-jquery-ui": "^2.0.1"
   }

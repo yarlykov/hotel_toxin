@@ -6,7 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: './src/index.js',
+    main: ['@babel/polyfill', './src/index.js'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -50,7 +50,19 @@ module.exports = {
           outputPath: 'fonts/',
         },
       },
-    ],
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env'
+            ]
+          }
+        }
+      },
+    ], 
   },
   plugins: [
     new HtmlWebpackPlugin({
