@@ -5,7 +5,7 @@ class Dropdown {
 	constructor(selector, options) {
 		this.$el = document.querySelector(selector)
 		
-
+		this.counter()
 		this.setup()
 	}
 
@@ -14,70 +14,33 @@ class Dropdown {
 		this.$el.addEventListener('click', this.clickHandler)
 	}
 
-	
+	counter() {
+		const block = this.$el.querySelectorAll('.dropdown__menu-item')
+
+		block.forEach(function(row){
+			const plus = row.querySelector('.controls__increment')
+			const minus = row.querySelector('.controls__decrement')
+			const val = row.querySelector('.controls__counter')
+			plus.addEventListener('click', function(){
+				let currentValue = +val.textContent
+				val.textContent = currentValue + 1
+			})
+			minus.addEventListener('click', function(){
+				let currentValue = +val.textContent
+				if (currentValue > 0){
+					val.textContent = currentValue - 1
+				}
+			})
+		})
+	}
 
 	clickHandler(event) {
 		const {type} = event.target.dataset
-
-
-
-
-			
-			const span = this.$el.parentElement.querySelector('.controls__counter')
-			const currentValue = +span.textContent
-			let newValue;
-	
-			if(type === 'increment'){
-				newValue = currentValue + 1
-			} else {
-				newValue = currentValue - 1 > 0 ? currentValue - 1 : 0
-			}
-	
-			span.textContent = newValue
-	
-
-
-
-		// const {id} = event.target.dataset
-		// let flag = Boolean
-		// const dataId = this.$el.parentElement.querySelector('.dropdown__menu-item').getAttribute('data-id')
 		
-
 		if (type === 'input' || type === 'arrow'){
 			this.toggle()
-			console.log(currentValue)
 		}
-		// if (id){
-		// 	console.log(id)
-		// }
-		// if (type === 'decrement'){
-		// 	flag = 'minus'
-		// 	console.log(dataId)
-		// 	this.counter(flag)
-		// }
-		// if (type === 'increment'){
-		// 	flag = 'plus'
-		// 	this.counter(flag)
-		// }
 	}
-
-	// counter(flag) {
-	// 	let countValue;
-	// 	let count = this.$el.querySelector('.controls__counter')
-
-	// 	// console.log(count)
-
-
-	// 	let currentCountValue = Number(count.textContent);	
-
-	// 	if (flag === 'minus' && currentCountValue !== 0){
-	// 		countValue = currentCountValue - 1
-	// 		count.textContent = `${countValue.toString()}`
-	// 	}else if(flag === 'plus'){
-	// 		countValue = currentCountValue + 1
-	// 		count.textContent = `${countValue.toString()}`
-	// 	}
-	// }
 
 	get isOpen() {
 		return this.$el.classList.contains('open')
@@ -108,3 +71,6 @@ const dropdown = new Dropdown('.dropdown', {
 })
 
 window.s = dropdown
+
+
+
