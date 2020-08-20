@@ -4,15 +4,13 @@ class Dropdown {
 
 	constructor(selector, options) {
 		this.$mainNode = document.querySelector(selector)
-		// this.$menuItems = this.$mainNode.querySelectorAll('.dropdown__menu-item')
+		this.options = options
 
 		this.init()
-		this.setPlaceholder()
-		this.counter()
 		this._setup()
 	}
 
-	init () {
+	init() {
 		this.totalItems = 0
 		this.baby = 0
 		this.$input = this.$mainNode.querySelector('.dropdown__input')
@@ -24,6 +22,9 @@ class Dropdown {
 			count: Number(item.querySelector('.controls__counter').getAttribute('value')),
 			id: item.dataset.id
 		}))
+
+		this.counter()
+
 	}
 
 	_setup() {
@@ -31,33 +32,73 @@ class Dropdown {
 		this.$mainNode.addEventListener('click', this.clickHandler)
 	}
 
-	counter() {
-		this.$menuItem.forEach(function(item){
 
+	counter() {
+		let that = this
+
+		this.$menuItem.forEach(function (item) {
 			const amount = item.countInput
 
 			item.increment.addEventListener('click', () => {
 				let currentValue = Number(amount.value)
+
 				amount.value = ++currentValue
+				that.totalItems++
+				// console.log('total', that.totalItems)
+				that.isBaby(item.id, 'increment')
+				that.inputText()
 			})
 
 			item.decrement.addEventListener('click', () => {
-				let currentValue = +amount.value
-				if (currentValue > 0){
+				let currentValue = Number(amount.value)
+
+				if (currentValue > 0) {
 					amount.value = --currentValue
+					that.totalItems--
+					// console.log('total', that.totalItems)
+					that.isBaby(item.id, 'decrement')
+					that.inputText()
 				}
-			}) 
+			})
 		})
 	}
 
-	setPlaceholder() {
+	declensionsOfInputText (amount){
+		const { pluralsGuests: guests, pluralsBabies: babies } = this.options
 
+		amount = Math.abs(amount)%100
+		let amount2 = amount%10
+		if (amount > 10 && amount < 20) {return guests[2]}
+		if (amount2 > 1 && amount2 < 5) {return guests[1]}
+		if (amount2 == 1) {return guests[0]}
+		return guests[2]
 	}
 
-	clickHandler(event) {
-		const {type} = event.target.dataset
+	inputText (){
+		const {defaultText} = this.options
+		const declensionsText = this.declensionsOfInputText(this.totalItems)
+		const textInput = `${this.totalItems} ${declensionsText}` 
+		// const textInputBabies = `${ this.baby } младенцев`
+	
+
+		this.totalItems > 0 
+		? this.$input.value = textInput 
+		: this.$input.value = defaultText
 		
-		if (type === 'input' || type === 'arrow'){
+	}
+
+	isBaby(id, operator) {
+		if (id === 'babies') {
+			operator === 'increment' ? this.baby++ : this.baby--
+			// console.log('babies:', this.baby)
+		}
+	}
+
+
+	clickHandler(event) {
+		const { type } = event.target.dataset
+
+		if (type === 'input' || type === 'arrow') {
 			this.toggle()
 		}
 	}
@@ -91,11 +132,10 @@ const dropdown = new Dropdown('.dropdown', {
 	defaultText: 'Сколько гостей',
 	minItems: 0,
 	maxItems: 20,
-	plurals: {
-		guests: ['гость', 'гостя', 'гостей'],
-		babies: ['младенец', 'младенца', 'младенцев']
+	pluralsGuests: ['гость', 'гостя', 'гостей'],
+	pluralsBabies: ['младенец', 'младенца', 'младенцев']
 	}
-})
+)
 
 window.s = dropdown
 
