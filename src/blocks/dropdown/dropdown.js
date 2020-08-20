@@ -3,35 +3,55 @@
 class Dropdown {
 
 	constructor(selector, options) {
-		this.$el = document.querySelector(selector)
-		
+		this.$mainNode = document.querySelector(selector)
+		// this.$menuItems = this.$mainNode.querySelectorAll('.dropdown__menu-item')
+
+		this.init()
+		this.setPlaceholder()
 		this.counter()
-		this.setup()
+		this._setup()
 	}
 
-	setup() {
+	init () {
+		this.totalItems = 0
+		this.baby = 0
+		this.$input = this.$mainNode.querySelector('.dropdown__input')
+		this.$menuItems = this.$mainNode.querySelectorAll('.dropdown__menu-item')
+		this.$menuItem = Array.from(this.$menuItems).map(item => ({
+			increment: item.querySelector('.controls__increment'),
+			decrement: item.querySelector('.controls__decrement'),
+			countInput: item.querySelector('.controls__counter'),
+			count: Number(item.querySelector('.controls__counter').getAttribute('value')),
+			id: item.dataset.id
+		}))
+	}
+
+	_setup() {
 		this.clickHandler = this.clickHandler.bind(this)
-		this.$el.addEventListener('click', this.clickHandler)
+		this.$mainNode.addEventListener('click', this.clickHandler)
 	}
 
 	counter() {
-		const block = this.$el.querySelectorAll('.dropdown__menu-item')
+		this.$menuItem.forEach(function(item){
 
-		block.forEach(function(row){
-			const plus = row.querySelector('.controls__increment')
-			const minus = row.querySelector('.controls__decrement')
-			const val = row.querySelector('.controls__counter')
-			plus.addEventListener('click', function(){
-				let currentValue = +val.textContent
-				val.textContent = currentValue + 1
+			const amount = item.countInput
+
+			item.increment.addEventListener('click', () => {
+				let currentValue = Number(amount.value)
+				amount.value = ++currentValue
 			})
-			minus.addEventListener('click', function(){
-				let currentValue = +val.textContent
+
+			item.decrement.addEventListener('click', () => {
+				let currentValue = +amount.value
 				if (currentValue > 0){
-					val.textContent = currentValue - 1
+					amount.value = --currentValue
 				}
-			})
+			}) 
 		})
+	}
+
+	setPlaceholder() {
+
 	}
 
 	clickHandler(event) {
@@ -43,7 +63,7 @@ class Dropdown {
 	}
 
 	get isOpen() {
-		return this.$el.classList.contains('open')
+		return this.$mainNode.classList.contains('open')
 	}
 
 	toggle() {
@@ -51,15 +71,15 @@ class Dropdown {
 	}
 
 	open() {
-		this.$el.classList.add('open')
+		this.$mainNode.classList.add('open')
 	}
 
 	close() {
-		this.$el.classList.remove('open')
+		this.$mainNode.classList.remove('open')
 	}
 
 	destroy() {
-		this.$el.removeEventListener('click', this.clickHandler)
+		this.$mainNode.removeEventListener('click', this.clickHandler)
 	}
 
 }
@@ -67,7 +87,14 @@ class Dropdown {
 
 
 const dropdown = new Dropdown('.dropdown', {
-
+	type: 'guests',
+	defaultText: 'Сколько гостей',
+	minItems: 0,
+	maxItems: 20,
+	plurals: {
+		guests: ['гость', 'гостя', 'гостей'],
+		babies: ['младенец', 'младенца', 'младенцев']
+	}
 })
 
 window.s = dropdown

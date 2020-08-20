@@ -31,6 +31,10 @@ $height: 44px;
 		line-height: 18px;
 		cursor: pointer;
 		caret-color: transparent;
+
+		&[value] {
+			color: rgba(31, 32, 65, 0.75);
+		}
 	}
 
 	&__drop{
@@ -74,7 +78,7 @@ $height: 44px;
 		&__controls {
 			width: 92px;
 			height: 30px;
-			// border: $mainBorder;
+			border: 0;
 			box-sizing: border-box;
 			display: flex;
 			justify-content: space-between;
@@ -99,8 +103,14 @@ $height: 44px;
 				}
 			}
 
-			.controls__counter {
-				align-self: center;
+			.controls__counter {  //refactor
+				border: 0;
+				width: 30px;
+				text-align: center;
+				font-family: inherit;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 12px;
 			}
 
 			.controls__increment {
