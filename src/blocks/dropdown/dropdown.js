@@ -47,13 +47,15 @@ class Dropdown {
 
 		clearBtn.classList.add('js-buttons-dropdown__button', 'font__h3')
 		clearBtn.setAttribute('type', 'button')
+		clearBtn.setAttribute('data-type', 'clear')
 		clearBtn.innerHTML = 'Очистить'
 
 		applyBtn.classList.add('js-buttons-dropdown__button', 'font__h3')
 		applyBtn.setAttribute('type', 'button')
+		applyBtn.setAttribute('data-type', 'apply')
 		applyBtn.innerHTML = 'Применить'
 
-		btnWrap.appendChild(clearBtn)
+		btnWrap.appendChild(clearBtn) 
 		btnWrap.appendChild(applyBtn)
 		this.$drop.appendChild(btnWrap) 
 	}
@@ -127,6 +129,12 @@ class Dropdown {
 	clickHandler(event) {
 		const { type } = event.target.dataset
 
+		if (type ==='apply'){
+			this.close()
+		}
+		if (type === 'clear'){
+			this.clear()
+		}
 		if (type === 'input' || type === 'arrow') {
 			this.toggle()
 		}
@@ -138,6 +146,17 @@ class Dropdown {
 
 	toggle() {
 		this.isOpen ? this.close() : this.open()
+	}
+
+	clear(){
+		const {defaultText} = this.options
+
+		this.$menuItem.map(item => {
+			item.countInput.value = 0
+		})
+		this.$input.value = defaultText
+		this.totalItems = 0
+		this.baby = 0
 	}
 
 	open() {
