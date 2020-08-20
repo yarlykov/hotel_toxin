@@ -4,8 +4,10 @@
 		class="dropdown__input"
 		data-type="input"
 		value="Сколько гостей"
+		readonly="readonly"
+		onmousedown="return false" 
 	)
-	.fa.fa-chevron-down(data-type="arrow")
+	.fa.fa-chevron-down(data-type="arrow" 		onmousedown="return false")
 	.dropdown__drop
 		.dropdown__menu.font__h3
 			div.dropdown__menu-item(data-id="adults")
