@@ -28,13 +28,13 @@ class Dropdown {
 			increment: item.querySelector('.controls__increment'),
 			decrement: item.querySelector('.controls__decrement'),
 			countInput: item.querySelector('.controls__counter'),
-			count: Number(item.querySelector('.controls__counter').getAttribute('value')),
 			id: item.dataset.id
 		}))
 	
 		buttons ? this.addButtons() : null
 
 		this.counter()
+		this.disabledButtons()
 
 	}
 
@@ -45,19 +45,21 @@ class Dropdown {
 
 		btnWrap.classList.add('js-buttons-dropdown__wrapper')
 
-		clearBtn.classList.add('js-buttons-dropdown__button', 'font__h3')
+		clearBtn.classList.add('js-buttons-dropdown__button', 'js-buttons-dropdown__button_clear', 'font__h3')
 		clearBtn.setAttribute('type', 'button')
 		clearBtn.setAttribute('data-type', 'clear')
 		clearBtn.innerHTML = 'Очистить'
 
-		applyBtn.classList.add('js-buttons-dropdown__button', 'font__h3')
+		applyBtn.classList.add('js-buttons-dropdown__button', 'js-buttons-dropdown__button_apply', 'font__h3')
 		applyBtn.setAttribute('type', 'button')
 		applyBtn.setAttribute('data-type', 'apply')
 		applyBtn.innerHTML = 'Применить'
 
-		btnWrap.appendChild(clearBtn) 
+		btnWrap.appendChild(clearBtn)
 		btnWrap.appendChild(applyBtn)
 		this.$drop.appendChild(btnWrap) 
+
+		this.clearBtn = this.$mainNode.querySelector('.js-buttons-dropdown__button_clear')
 	}
 
 	counter() {
@@ -72,11 +74,14 @@ class Dropdown {
 				if (that.totalItems < that.maxItems){
 					amount.value = ++currentValue
 					that.totalItems++
-					that.isBaby(item.id, 'increment')
+					that.isBaby(item.id, 'increment')  //babyCounter
 				}else{
 					alert(`Максимальное количество гостей: ${that.maxItems}`)
 				}
 				that.inputTextGuests()
+				that.delClearBtn()
+				that.disabledButtons()
+
 			})
 
 			item.decrement.addEventListener('click', () => {
@@ -87,6 +92,9 @@ class Dropdown {
 					that.totalItems--
 					that.isBaby(item.id, 'decrement')
 					that.inputTextGuests()
+					that.delClearBtn()
+					that.disabledButtons()
+
 				}
 			})
 
@@ -143,10 +151,28 @@ class Dropdown {
 	get isOpen() {
 		return this.$mainNode.classList.contains('open')
 	}
+	get isNotEmpty(){
+		return this.totalItems > 0
+	}
+	
+	delClearBtn(){
+		this.isNotEmpty ? this.clearBtn.classList.add('display') : this.clearBtn.classList.remove('display')
+	}
+
+	disabledButtons(){
+		const {minItems} = this.options
+
+		this.$menuItem.map(item => {
+			const itemCount = Number(item.countInput.value)
+
+			itemCount <= minItems ? item.decrement.classList.add('disabled') : item.decrement.classList.remove('disabled')
+		})
+	}
 
 	toggle() {
 		this.isOpen ? this.close() : this.open()
 	}
+
 
 	clear(){
 		const {defaultText} = this.options
@@ -154,9 +180,12 @@ class Dropdown {
 		this.$menuItem.map(item => {
 			item.countInput.value = 0
 		})
+		this.clearBtn.classList.remove('display')
 		this.$input.value = defaultText
 		this.totalItems = 0
 		this.baby = 0
+
+		this.disabledButtons()
 	}
 
 	open() {

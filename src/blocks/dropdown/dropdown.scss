@@ -97,6 +97,10 @@ $height: 44px;
 				&::after{
 					content: '-';
 				}
+
+				&.disabled {
+					opacity: 0.5;
+				}
 			}
 
 			.controls__counter {  //refactor
@@ -127,6 +131,7 @@ $height: 44px;
 				&::after{
 					content: '+';
 				}
+
 			}
 		}
 
@@ -151,10 +156,12 @@ $height: 44px;
 .dropdown.open{
 	.dropdown__drop{
 		display: block;
+		border: $focusBorder;
+		border-top: none;
 	}
 	.dropdown__input{
-		border-bottom: none;
 		border-radius: 4px 4px 0 0;
+		border: $focusBorder;
 	}
 }
 
@@ -166,6 +173,7 @@ $height: 44px;
 		text-transform: uppercase;
 		display: flex;
 		justify-content: space-between;
+
 		border-radius: 0 0 4px 4px;
 	}
 
@@ -173,10 +181,20 @@ $height: 44px;
 		margin: 0;
 		border: none;
 		background: #fff;
-	
 		height: 30px;
 		text-transform: uppercase;
 		cursor: pointer;
 		outline: none;
+
+		&_clear{
+			visibility: hidden;
+			
+			&.display{
+				visibility: visible;
+			}
+		}
+
+		&_apply{
+		}
 	}
 }
