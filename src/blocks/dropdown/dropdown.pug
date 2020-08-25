@@ -1,62 +1,29 @@
-.dropdown.open
-	input(
-		type="text"
-		class="dropdown__input"
-		data-type="input"
-		value="Сколько гостей"
-		readonly="readonly"
-		onmousedown="return false" 
-	)
-	.fa.fa-chevron-down(data-type="arrow" 		onmousedown="return false")
-	.dropdown__drop
-		.dropdown__menu.font__h3
-			div.dropdown__menu-item(data-id="adults")
-				.dropdown__menu-item_text Взрослые
-				.dropdown__controls
-					div(
-						class="controls__decrement"
-						data-type="decrement"
-						)
-					input(
-						type="text"
-						class="controls__counter"
-						value="0"
-						)
-					div(
-						class="controls__increment"
-						data-type="increment"
-						)
 
 
-			div.dropdown__menu-item(data-id="children")
-				.dropdown__menu-item_text Дети
-				.dropdown__controls
-					div(
-						class="controls__decrement"
-						data-type="decrement"
-						)
-					input(
-						type="text"
-						class="controls__counter"
-						value="0")
-					div(
-						class="controls__increment"
-						data-type="increment"
-						)
+mixin dropdown(options)
+	-
+		const isOpen = options.isOpen ? "open" : ""
+		const group = options.group == "guests" ? "Сколько гостей" : "Удобства"
+
+	.dropdown(class=isOpen)
+		input&attributes({
+			type: "text", 
+			class: "dropdown__input", 
+			"data-type": "input", 
+			value: group,
+			readonly: "readonly",
+			onmousedown: "return false"
+			})
+		div(class="fa fa-chevron-down")&attributes({"data-type": "arrow", onmousedown: "return false"})
+		.dropdown__drop
+			.dropdown__menu.font__h3
+				each elem in options.elements
+					.dropdown__menu-item(data-id="adults")
+						.dropdown__menu-item_text #{elem.title}
+						.dropdown__controls
+							div&attributes({class: "controls__decrement", "data-type": "decrement"})
+							input&attributes({class: "controls__counter", type: "text", value: elem.count})
+							div&attributes({class: "controls__increment", "data-type": "increment"})
 
 
-			div.dropdown__menu-item(data-id="babies")
-				.dropdown__menu-item_text Младенцы
-				.dropdown__controls
-					div(
-						class="controls__decrement"
-						data-type="decrement"
-						)
-					input(
-						type="text"
-						class="controls__counter"
-						value="0")
-					div(
-						class="controls__increment"
-						data-type="increment"
-						)
++dropdown({isOpen: true, group: "guests", elements: [{title: "Взрослые", count: 0}, {title: "Дети", count: 0}, {title: "Младенцы", count: 0}]})
