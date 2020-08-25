@@ -45,12 +45,12 @@ class Dropdown {
 
 		btnWrap.classList.add('js-buttons-dropdown__wrapper')
 
-		clearBtn.classList.add('js-buttons-dropdown__button', 'js-buttons-dropdown__button_clear', 'font__h3')
+		clearBtn.classList.add( 'button_text-color_gray', 'js-buttons-dropdown__button', 'js-buttons-dropdown__button_clear', 'font__h3')
 		clearBtn.setAttribute('type', 'button')
 		clearBtn.setAttribute('data-type', 'clear')
 		clearBtn.innerHTML = 'Очистить'
 
-		applyBtn.classList.add('js-buttons-dropdown__button', 'js-buttons-dropdown__button_apply', 'font__h3')
+		applyBtn.classList.add('button_text-color_purple', 'js-buttons-dropdown__button', 'js-buttons-dropdown__button_apply', 'font__h3')
 		applyBtn.setAttribute('type', 'button')
 		applyBtn.setAttribute('data-type', 'apply')
 		applyBtn.innerHTML = 'Применить'
@@ -81,6 +81,7 @@ class Dropdown {
 				that.inputTextGuests()
 				that.delClearBtn()
 				that.disabledButtons()
+
 
 			})
 
@@ -195,6 +196,7 @@ class Dropdown {
 	close() {
 		this.$mainNode.classList.remove('open')
 	}
+
 
 	destroy() {
 		this.$mainNode.removeEventListener('click', this.clickHandler)
