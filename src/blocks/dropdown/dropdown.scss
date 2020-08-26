@@ -10,7 +10,7 @@ $height: 44px;
 		color: rgba(31, 32, 65, 0.75);
 		cursor: pointer;
 	}
-	& .fa.fa-chevron-up{
+	& .fa.fa-chevron-up{        //need delete this class
 		position: absolute;
 		top: 16px;
 		right: 16px;
@@ -55,7 +55,6 @@ $height: 44px;
 
 	&__menu-item{
 		padding: 6px;
-		background: #fff;
 		text-transform: uppercase;
 		display: flex;
 		justify-content: space-between;
@@ -139,25 +138,13 @@ $height: 44px;
 
 }
 
-.dropdown i.fa {
-	// width: 26px;
-	// margin-right: -$height;
-  // height: 44px;
-  // line-height: 44px;
-  // text-align: center;
-  // margin-right: 1px;
-  position: relative;
-	z-index: 1;
-	// top: 44px;
-	left: 100px;
-  float: left;
-}
-
 .dropdown.open{
 	.dropdown__drop{
 		display: block;
 		border: $focusBorder;
 		border-top: none;
+		background: #fff;
+		z-index: 1000;
 	}
 	.dropdown__input{
 		border-radius: 4px 4px 0 0;
@@ -173,7 +160,7 @@ $height: 44px;
 		text-transform: uppercase;
 		display: flex;
 		justify-content: space-between;
-
+		z-index: 1000;
 		border-radius: 0 0 4px 4px;
 	}
 
