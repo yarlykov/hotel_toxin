@@ -1,5 +1,7 @@
 extends ../../blocks/main.pug
 
+include ../../blocks/dropdown/dropdown.pug
+
 block variables 
 	- var title = "Form Elements"
 	- var description = ""
@@ -49,12 +51,7 @@ block content
 					span.form__title Dropdown
 					span.form__description Default
 					.text-field__input_wrapper
-						input(
-							class="text-field__input text-field__input_size_large"
-							type="text" 
-							name="text"
-							placeholder="Сколько гостей"
-							)
+						+dropdown({isOpen: false, group: "guests", elements: [{title: "Взрослые", count: 0}, {title: "Дети", count: 0}, {title: "Младенцы", count: 0}]})
 									//----------------------------------------
 			form
 				h3.font__h3 Toggle
@@ -81,7 +78,7 @@ block content
 			//- 	include ../../blocks/iqDropdown/iqDropdown.pug 
 			form
 				h3.font__h3 Dropdown
-				include ../../blocks/dropdown/dropdown.pug
+					+dropdown({isOpen: true, group: "guests", elements: [{title: "Взрослые", count: 2}, {title: "Дети", count: 1}, {title: "Младенцы", count: 0}]})
 			form.form.form__text-field_s
 				label
 					span.form__title Date dropdown
@@ -116,7 +113,12 @@ block content
 							name="text"
 							placeholder="19 авг - 23 авг"
 							)
-			p 17
+			form
+				h3.font__h3 Dropdown
+					+dropdown({isOpen: true, group: "guests", elements: [{title: "Взрослые", count: 2}, {title: "Дети", count: 1}, {title: "Младенцы", count: 0}]})
+			form
+				h3.font__h3 Dropdown
+					+dropdown({isOpen: true, group: "guests", elements: [{title: "Взрослые", count: 2}, {title: "Дети", count: 1}, {title: "Младенцы", count: 0}]})
 			h3.font__h3 bullet list
 				include ../../blocks/bullet-list/bullet-list.pug
 			p 19
@@ -124,7 +126,9 @@ block content
 			p 21
 			p 22
 			p 23
-			p 24
+			form
+				h3.font__h3 Dropdown
+					+dropdown({isOpen: true, group: "comfort", elements: [{title: "Спальни", count: 2}, {title: "Кровати", count: 1}, {title: "Ванные комнаты", count: 0}]})
 			p 25
 			p 26
 			p 27
