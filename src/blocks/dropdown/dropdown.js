@@ -3,7 +3,7 @@
 class Dropdown {
 
 	constructor(selector, options) {
-		this.$mainNode = document.querySelector(selector)
+		this.$mainNode = selector
 		this.options = options
 
 		this.init()
@@ -28,10 +28,21 @@ class Dropdown {
 			increment: item.querySelector('.controls__increment'),
 			decrement: item.querySelector('.controls__decrement'),
 			countInput: item.querySelector('.controls__counter'),
-			id: item.dataset.id
+			id: item.dataset.id,
+			value: Number(item.querySelector('.controls__counter').value),
+			isBabyValue: item.dataset.id === 'Младенцы' ? Number(item.querySelector('.controls__counter').value) : 0
 		}))
-	
+
 		buttons ? this.addButtons() : null
+
+		const startItemsQuantity = this.$menuItem.reduce((acc, item) => item.value + acc, 0)
+		const startBabiesQuantity = this.$menuItem.reduce((acc, item) => item.isBabyValue + acc, 0)
+
+		this.totalItems = startItemsQuantity
+		this.baby = startBabiesQuantity
+		this.inputTextGuests()
+		this.delClearBtn()
+	
 
 		this.counter()
 		this.disabledButtons()
@@ -105,13 +116,14 @@ class Dropdown {
 
 	isBaby(id, operator) {
 
-		if (id === 'babies') {
+		if (id === 'Младенцы') {
 			operator === 'increment' ? this.baby++ : this.baby--
 		}
 	}
 
 	inputTextGuests() {
-		const { pluralsGuests: guests, pluralsBabies: babies, maxItems } = this.options
+		const {maxItems} = this.options
+		const { guests, babies} = this.options.plurals
 		const { defaultText } = this.options
 		const declTextGuests = this.declensionsOfInputText(this.totalItems, guests)
 		const declTextBabies = this.declensionsOfInputText(this.baby, babies)
@@ -205,19 +217,31 @@ class Dropdown {
 }
 
 
-
-const dropdown = new Dropdown('.dropdown', {
+const dropGuestsMainNode = document.querySelectorAll('.dropdown__guests')
+const defaultOptionsGuests = {
 	type: 'guests',
 	defaultText: 'Сколько гостей',
 	minItems: 0,
 	maxItems: 20,
 	buttons: true,
-	pluralsGuests: ['гость', 'гостя', 'гостей'],
-	pluralsBabies: ['младенец', 'младенца', 'младенцев']
-	}
-)
+	plurals: {
+		guests: ['гость', 'гостя', 'гостей'],
+		babies: ['младенец', 'младенца', 'младенцев']
+	},	
+}
+dropGuestsMainNode.forEach(selector => new Dropdown(selector, defaultOptionsGuests))
 
-window.s = dropdown
-
-
-
+const dropComfortMainNode = document.querySelectorAll('.dropdown__comfort')
+const defaultOptionsComfort = {
+	type: 'comfort',
+	defaultText: 'Удобства номера',
+	minItems: 0,
+	maxItems: 20,
+	buttons: false,
+	plurals: {
+		bedrooms: ['спальня', 'спальни', 'спален'],
+		beds: ['кровать', 'кровати', 'кроватей'],
+		baths: ['ванная комната', 'ванных комнаты', 'ванных комнат']
+	},
+}
+// dropComfortMainNode.forEach(selector => new Dropdown(selector, defaultOptionsComfort))
