@@ -3,6 +3,7 @@
 mixin dropdown(options)
 	-
 		const isOpen = options.isOpen ? "open" : ""
+		const isGroupComfort = options.group == "comfort"
 		const group = options.group == "guests" ? "Сколько гостей" : "Удобства номера"
 
 	.dropdown(class=isOpen, class=`dropdown__${options.group}`)

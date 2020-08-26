@@ -19,8 +19,9 @@ class Dropdown {
 		const {buttons} = this.options
 
 		this.totalItems = 0
-		this.baby = 0
 		this.maxItems = this.options.maxItems
+		this.menuItemValue = { baby: 0, bedrooms: 0, beds: 0, baths: 0 }
+
 		this.$input = this.$mainNode.querySelector('.dropdown__input')
 		this.$drop = this.$mainNode.querySelector('.dropdown__drop')
 		this.$menuItems = this.$mainNode.querySelectorAll('.dropdown__menu-item')
@@ -30,23 +31,33 @@ class Dropdown {
 			countInput: item.querySelector('.controls__counter'),
 			id: item.dataset.id,
 			value: Number(item.querySelector('.controls__counter').value),
-			isBabyValue: item.dataset.id === 'Младенцы' ? Number(item.querySelector('.controls__counter').value) : 0
+			isBabyValue: item.dataset.id === 'Младенцы' ? Number(item.querySelector('.controls__counter').value) : 0,
+			isBedroomsValue: item.dataset.id === 'Спальни' ? Number(item.querySelector('.controls__counter').value) : 0,
+			isBedsValue: item.dataset.id === 'Кровати' ? Number(item.querySelector('.controls__counter').value) : 0,
 		}))
 
 		buttons ? this.addButtons() : null
 
-		const startItemsQuantity = this.$menuItem.reduce((acc, item) => item.value + acc, 0)
-		const startBabiesQuantity = this.$menuItem.reduce((acc, item) => item.isBabyValue + acc, 0)
-
-		this.totalItems = startItemsQuantity
-		this.baby = startBabiesQuantity
+		this.startInputValue()
 		this.inputTextGuests()
+		this.inputTextComfort()
 		this.delClearBtn()
 	
-
 		this.counter()
 		this.disabledButtons()
 
+	}
+
+	startInputValue(){
+		const startItemsQuantity = this.$menuItem.reduce((acc, item) => item.value + acc, 0)
+		const startBabiesQuantity = this.$menuItem.reduce((acc, item) => item.isBabyValue + acc, 0)
+		const startBedroomsQuantity = this.$menuItem.reduce((acc, item) => item.isBedroomsValue + acc, 0)
+		const startBedsQuantity = this.$menuItem.reduce((acc, item) => item.isBedsValue + acc, 0)
+
+		this.totalItems = startItemsQuantity
+		this.menuItemValue.baby = startBabiesQuantity
+		this.menuItemValue.bedrooms = startBedroomsQuantity
+		this.menuItemValue.beds = startBedsQuantity
 	}
 
 	addButtons() {
@@ -85,15 +96,15 @@ class Dropdown {
 				if (that.totalItems < that.maxItems){
 					amount.value = ++currentValue
 					that.totalItems++
+
 					that.isBaby(item.id, 'increment')  //babyCounter
-				}else{
-					alert(`Максимальное количество гостей: ${that.maxItems}`)
+
 				}
+
 				that.inputTextGuests()
 				that.delClearBtn()
 				that.disabledButtons()
-
-
+				that.inputTextComfort()
 			})
 
 			item.decrement.addEventListener('click', () => {
@@ -102,10 +113,13 @@ class Dropdown {
 				if (currentValue > 0) {
 					amount.value = --currentValue
 					that.totalItems--
+
 					that.isBaby(item.id, 'decrement')
+
 					that.inputTextGuests()
 					that.delClearBtn()
 					that.disabledButtons()
+					that.inputTextComfort()
 
 				}
 			})
@@ -115,26 +129,73 @@ class Dropdown {
 	}
 
 	isBaby(id, operator) {
-
 		if (id === 'Младенцы') {
-			operator === 'increment' ? this.baby++ : this.baby--
+			operator === 'increment' ? this.menuItemValue.baby++ : this.menuItemValue.baby--
+
+		}
+		if (id === 'Спальни') {
+			operator === 'increment' ? this.menuItemValue.bedrooms++ : this.menuItemValue.bedrooms--
+		}
+		if (id === 'Кровати') {
+			operator === 'increment' ? this.menuItemValue.beds++ : this.menuItemValue.beds--
+		}
+		if (id === 'Ванные комнаты') {
+			operator === 'increment' ? this.menuItemValue.baths++ : this.menuItemValue.baths--
 		}
 	}
 
 	inputTextGuests() {
-		const {maxItems} = this.options
-		const { guests, babies} = this.options.plurals
-		const { defaultText } = this.options
-		const declTextGuests = this.declensionsOfInputText(this.totalItems, guests)
-		const declTextBabies = this.declensionsOfInputText(this.baby, babies)
+		const { maxItems, defaultText } = this.options
+		const { guests = [], babies = [] } = this.options.plurals
 
-		const textInput = this.baby === 0
+		const declTextGuests = this.declensionsOfInputText(this.totalItems, guests)
+		const declTextBabies = this.declensionsOfInputText(this.menuItemValue.baby, babies)
+
+		const textInput = this.menuItemValue.baby === 0
 			? `${this.totalItems} ${declTextGuests}`
-			: `${this.totalItems} ${declTextGuests}, ${this.baby} ${declTextBabies}`
+			: `${this.totalItems} ${declTextGuests}, ${this.menuItemValue.baby} ${declTextBabies}`
 
 		this.totalItems > 0 && this.totalItems <= maxItems
 			? this.$input.value = textInput
 			: this.$input.value = defaultText
+	}
+
+	inputTextComfort(){
+		const { maxItems, defaultText, type } = this.options
+
+		if (type === 'comfort'){
+			
+			let textInput = ''
+			if(this.totalItems > 0 && this.totalItems <= maxItems){
+
+				const plurals = Object.keys(this.options.plurals)
+
+				for(let plural of plurals){
+
+					if (this.menuItemValue[plural] === 0 ){
+						textInput += ''
+					}else{
+						textInput.length > 8 ? 	textInput += ', ' :	textInput += ''
+						
+						textInput += `${this.menuItemValue[plural] + ' ' + this.declensionsOfInputText(this.menuItemValue[plural], this.options.plurals[plural])}`
+					}
+				}
+
+				this.$input.value = this.cutLongText(textInput) 
+
+			}else{
+				this.$input.value = defaultText
+			}
+
+		}
+
+	}
+
+	cutLongText(str){
+		if (str.length > 19){
+			str = str.slice(0, 20) + '...'
+		}
+		return str
 	}
 
 	declensionsOfInputText (num, wordArray){
@@ -169,17 +230,25 @@ class Dropdown {
 	}
 	
 	delClearBtn(){
-		this.isNotEmpty ? this.clearBtn.classList.add('display') : this.clearBtn.classList.remove('display')
+		if(this.clearBtn){
+			this.isNotEmpty ? this.clearBtn.classList.add('display') : this.clearBtn.classList.remove('display')
+		}
 	}
 
 	disabledButtons(){
-		const {minItems} = this.options
+		const {maxItems, minItems} = this.options
 
 		this.$menuItem.map(item => {
 			const itemCount = Number(item.countInput.value)
 
 			itemCount <= minItems ? item.decrement.classList.add('disabled') : item.decrement.classList.remove('disabled')
 		})
+
+		// this.$menuItem.map(item => {
+
+		// 	maxItems == this.totalItems ? item.increment.classList.add('disabled') : item.increment.classList.remove('disabled')
+
+		// })        // Do you need this functionality?
 	}
 
 	toggle() {
@@ -196,7 +265,7 @@ class Dropdown {
 		this.clearBtn.classList.remove('display')
 		this.$input.value = defaultText
 		this.totalItems = 0
-		this.baby = 0
+		this.menuItemValue.baby = 0
 
 		this.disabledButtons()
 	}
@@ -244,4 +313,4 @@ const defaultOptionsComfort = {
 		baths: ['ванная комната', 'ванных комнаты', 'ванных комнат']
 	},
 }
-// dropComfortMainNode.forEach(selector => new Dropdown(selector, defaultOptionsComfort))
+dropComfortMainNode.forEach(selector => new Dropdown(selector, defaultOptionsComfort))

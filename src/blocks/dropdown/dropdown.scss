@@ -121,7 +121,7 @@ $height: 44px;
 				border: $mainBorder;
 				border-radius: 50%;
 				outline: none;
-				background: none;
+				background: #fff;
 				color: gray;
 				cursor: pointer;
 				text-align: center;
@@ -131,6 +131,9 @@ $height: 44px;
 					content: '+';
 				}
 
+				&.disabled {
+					opacity: 0.5;
+				}
 			}
 		}
 
