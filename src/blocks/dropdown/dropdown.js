@@ -21,7 +21,8 @@ class Dropdown {
 		this.totalItems = 0
 		this.maxItems = this.options.maxItems
 		this.menuItemValue = { baby: 0, bedrooms: 0, beds: 0, baths: 0 }
-
+		this.menuItemRusNames = ['Младенцы', 'Спальни', 'Кровати', 'Ванные комнаты']
+		
 		this.$input = this.$mainNode.querySelector('.dropdown__input')
 		this.$drop = this.$mainNode.querySelector('.dropdown__drop')
 		this.$menuItems = this.$mainNode.querySelectorAll('.dropdown__menu-item')
@@ -31,11 +32,13 @@ class Dropdown {
 			countInput: item.querySelector('.controls__counter'),
 			id: item.dataset.id,
 			value: Number(item.querySelector('.controls__counter').value),
+
 			isBabyValue: item.dataset.id === 'Младенцы' ? Number(item.querySelector('.controls__counter').value) : 0,
 			isBedroomsValue: item.dataset.id === 'Спальни' ? Number(item.querySelector('.controls__counter').value) : 0,
 			isBedsValue: item.dataset.id === 'Кровати' ? Number(item.querySelector('.controls__counter').value) : 0,
+			isBathsValue: item.dataset.id === 'Ванные комнаты' ? Number(item.querySelector('.controls__counter').value) : 0,
 		}))
-
+		
 		buttons ? this.addButtons() : null
 
 		this.startInputValue()
@@ -49,15 +52,17 @@ class Dropdown {
 	}
 
 	startInputValue(){
-		const startItemsQuantity = this.$menuItem.reduce((acc, item) => item.value + acc, 0)
-		const startBabiesQuantity = this.$menuItem.reduce((acc, item) => item.isBabyValue + acc, 0)
-		const startBedroomsQuantity = this.$menuItem.reduce((acc, item) => item.isBedroomsValue + acc, 0)
-		const startBedsQuantity = this.$menuItem.reduce((acc, item) => item.isBedsValue + acc, 0)
+		const itemsQuantity = this.$menuItem.reduce((acc, item) => item.value + acc, 0)
+		const babiesQuantity = this.$menuItem.reduce((acc, item) => item.isBabyValue + acc, 0)
+		const bedroomsQuantity = this.$menuItem.reduce((acc, item) => item.isBedroomsValue + acc, 0)
+		const bedsQuantity = this.$menuItem.reduce((acc, item) => item.isBedsValue + acc, 0)
+		const bathsQuantity = this.$menuItem.reduce((acc, item) => item.isBathsValue + acc, 0)
 
-		this.totalItems = startItemsQuantity
-		this.menuItemValue.baby = startBabiesQuantity
-		this.menuItemValue.bedrooms = startBedroomsQuantity
-		this.menuItemValue.beds = startBedsQuantity
+		this.totalItems = itemsQuantity
+		this.menuItemValue.baby = babiesQuantity
+		this.menuItemValue.bedrooms = bedroomsQuantity
+		this.menuItemValue.beds = bedsQuantity
+		this.menuItemValue.baths = bathsQuantity
 	}
 
 	addButtons() {
@@ -97,7 +102,7 @@ class Dropdown {
 					amount.value = ++currentValue
 					that.totalItems++
 
-					that.isBaby(item.id, 'increment')  //babyCounter
+					that.itemCounter(item.id, 'increment')  //babyCounter
 
 				}
 
@@ -114,7 +119,7 @@ class Dropdown {
 					amount.value = --currentValue
 					that.totalItems--
 
-					that.isBaby(item.id, 'decrement')
+					that.itemCounter(item.id, 'decrement')
 
 					that.inputTextGuests()
 					that.delClearBtn()
@@ -128,20 +133,15 @@ class Dropdown {
 
 	}
 
-	isBaby(id, operator) {
-		if (id === 'Младенцы') {
-			operator === 'increment' ? this.menuItemValue.baby++ : this.menuItemValue.baby--
+	itemCounter(id, operator) {
+		const menuItemEngName = Object.keys(this.menuItemValue)
+		const index = this.menuItemRusNames.indexOf(id)
+		const translateId = menuItemEngName[index]
 
-		}
-		if (id === 'Спальни') {
-			operator === 'increment' ? this.menuItemValue.bedrooms++ : this.menuItemValue.bedrooms--
-		}
-		if (id === 'Кровати') {
-			operator === 'increment' ? this.menuItemValue.beds++ : this.menuItemValue.beds--
-		}
-		if (id === 'Ванные комнаты') {
-			operator === 'increment' ? this.menuItemValue.baths++ : this.menuItemValue.baths--
-		}
+		operator === 'increment' 
+		? this.menuItemValue[translateId]++ 
+		: this.menuItemValue[translateId]--
+
 	}
 
 	inputTextGuests() {
@@ -164,20 +164,21 @@ class Dropdown {
 		const { maxItems, defaultText, type } = this.options
 
 		if (type === 'comfort'){
-			
 			let textInput = ''
+
 			if(this.totalItems > 0 && this.totalItems <= maxItems){
+				const pluralWords = Object.keys(this.options.plurals)
 
-				const plurals = Object.keys(this.options.plurals)
+				for (let itemName of pluralWords){
+					let currentValue = this.menuItemValue[itemName]
+					let currentPluralWords = this.options.plurals[itemName]
 
-				for(let plural of plurals){
-
-					if (this.menuItemValue[plural] === 0 ){
+					if (currentValue === 0 ){
 						textInput += ''
 					}else{
-						textInput.length > 8 ? 	textInput += ', ' :	textInput += ''
+						textInput.length >= 8 ? 	textInput += ', ' :	textInput += ''
 						
-						textInput += `${this.menuItemValue[plural] + ' ' + this.declensionsOfInputText(this.menuItemValue[plural], this.options.plurals[plural])}`
+						textInput += `${currentValue + ' ' + this.declensionsOfInputText(currentValue, currentPluralWords)}`
 					}
 				}
 
@@ -236,7 +237,7 @@ class Dropdown {
 	}
 
 	disabledButtons(){
-		const {maxItems, minItems} = this.options
+		const {minItems} = this.options
 
 		this.$menuItem.map(item => {
 			const itemCount = Number(item.countInput.value)
@@ -244,11 +245,6 @@ class Dropdown {
 			itemCount <= minItems ? item.decrement.classList.add('disabled') : item.decrement.classList.remove('disabled')
 		})
 
-		// this.$menuItem.map(item => {
-
-		// 	maxItems == this.totalItems ? item.increment.classList.add('disabled') : item.increment.classList.remove('disabled')
-
-		// })        // Do you need this functionality?
 	}
 
 	toggle() {
