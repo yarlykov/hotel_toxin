@@ -5,4 +5,3 @@ import './main.scss';
 import './blocks/range-slider/range-slider';
 
 import './blocks/dropdown/dropdown';
-// import './blocks/iQdropdown/iqDropdown';
