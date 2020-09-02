@@ -2,6 +2,8 @@ extends ../../blocks/main.pug
 
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/mask/mask.pug
+include ../../blocks/like/like.pug
+
 
 
 block variables 
@@ -68,7 +70,8 @@ block content
 
 			form
 				h3.font__h3 Like button
-				include ../../blocks/like/like.pug
+				+likeButton({icon: "favorite", value: 2, disable: true})
+				+likeButton({icon: "favorite", value: 12, disable: false})
 				
 			
 			//- form

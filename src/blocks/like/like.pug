@@ -1,16 +1,16 @@
-button(
-	class="like__button like__button_disable"
-	type="submit"
-	name="click me"
-	)
-	span.like__text.like__text_disable 2
-	.button__like_border
-		i.like__icon.like__icon_disable.material-icons favorite_border
-button(
-	class="like__button"
-	type="submit"
-	name="click me"
-	)
-	span.like__text 12
-	.button__like_border
-		i.like__icon.material-icons favorite
+mixin likeButton(options)
+	-
+		const value = options.value
+		
+		const btnDisableClassName = options.disable ? "like__disable_border" : ""
+		const disableClassName = options.disable ? "like__disable" : ""
+		const icon = options.disable ? options.icon + "_border" : options.icon 
+
+	button&attributes({
+		type: "button",
+		name: "like",
+		class: ["like__button", `${btnDisableClassName}`]
+	})
+		span(class=`${disableClassName}`).like__text #{value}
+		.like__button_border
+			i(class=`${disableClassName}`).like__icon.material-icons #{icon}
