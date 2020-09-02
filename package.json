@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
+    "inputmask": "^5.0.5",
     "jquery": "^3.5.1",
     "webpack-jquery-ui": "^2.0.1"
   }
