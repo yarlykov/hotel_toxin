@@ -46,29 +46,28 @@ block content
 			form
 				h3.font__h3 Buttons
 				include ../../blocks/button/button.pug
-			form.form
-				label.form__text-field
-					span.form__title Dropdown
+			.form
+				div.form__header
+					h2.form__title Dropdown
 					span.form__description Default
-					.text-field__input_wrapper
-						+dropdown({isOpen: false, group: "guests", elements: [{title: "Взрослые", count: 0}, {title: "Дети", count: 0}, {title: "Младенцы", count: 0}]})
-									//----------------------------------------
+				.text-field__input_wrapper
+					+dropdown({isOpen: false, group: "guests", elements: [{title: "Взрослые", count: 0},{title: "Дети", count: 0}, {title: "Младенцы", count: 0}]})
+				//----------------------------------------
 			form
 				h3.font__h3 Toggle
 				include ../../blocks/toogle/toogle.pug
 				//---------------------------------------
 			p 9
-			form.form
-				label.form__text-field
-					span.form__title Masked text field
+			.form
+				div.form__header
+					h2.form__title Masked text field
 					span.form__description Default
-					.text-field__input_wrapper
-						input(
-							class="text-field__input text-field__input_size_large"
-							type="text" 
-							name="text"
-							placeholder="ДД.ММ.ГГГГ"
-							)
+				input(
+					class="text-field__input	text-field__input_size_large masked__text-field_date"
+					type="text" 
+					name="text"
+					placeholder="ДД.ММ.ГГГГ"
+					)
 			form
 				h3.font__h3 Like button
 				include ../../blocks/like/like.pug

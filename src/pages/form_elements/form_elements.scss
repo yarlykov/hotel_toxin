@@ -7,11 +7,10 @@
 	max-width: 1160px;
 	min-width: 1160px;
 }
-.form__text-field{ 		//form__text-field_wrap_large
-	display: grid;
-	grid-template-columns: 70% 30%;
-	width: 321px;
-	height: 67px;
+.form__header{ 		//form__text-field_wrap_large
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
 }
 .form__text-field_s{		//form__text-field_wrap_s
 	display: grid;
@@ -31,9 +30,11 @@
 	width: 150px;
 }
 .form__title{
-	align-self: center;
+	margin: 0%;
+	padding: 0%;
+	// align-self: center;
 	padding: 1px 0 0px 1px;
-	font-weight: bold;
+	// font-weight: bold;
 	text-transform: uppercase;
 	font-size: 12px;
 	line-height: 15px;
@@ -82,3 +83,8 @@
 // .wrap__radio-buttons{
 // 	display: grid;
 // }
+
+
+.masked__text-field_date{
+	color: $textColor_75;
+}
