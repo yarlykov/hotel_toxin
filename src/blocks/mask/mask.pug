@@ -1,0 +1,10 @@
+mixin maskDate(options)
+	-	
+		const placeholder = options.placeholder
+		const size = options.size
+
+	input&attributes({
+		type: "text",
+		class: ["masked__text-field_date", "text-field__input", `text-field__input_size_${size}`],
+		placeholder: placeholder
+	})

@@ -1,6 +1,8 @@
 extends ../../blocks/main.pug
 
 include ../../blocks/dropdown/dropdown.pug
+include ../../blocks/mask/mask.pug
+
 
 block variables 
 	- var title = "Form Elements"
@@ -62,15 +64,12 @@ block content
 				div.form__header
 					h2.form__title Masked text field
 					span.form__description Default
-				input(
-					class="text-field__input	text-field__input_size_large masked__text-field_date"
-					type="text" 
-					name="text"
-					placeholder="ДД.ММ.ГГГГ"
-					)
+				+maskDate({placeholder: "ДД.ММ.ГГГГ", size: "large"})
+
 			form
 				h3.font__h3 Like button
 				include ../../blocks/like/like.pug
+				
 			
 			//- form
 			//- 	h3.font__h3 iqDropdown
