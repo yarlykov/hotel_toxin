@@ -8,6 +8,7 @@ class Dropdown {
 
 		this.init()
 		this._setup()
+
 	}
 
 	_setup() {
@@ -111,6 +112,8 @@ class Dropdown {
 				that.disabledButtons()
 				that.inputTextComfort()
 			})
+
+
 
 			item.decrement.addEventListener('click', () => {
 				let currentValue = Number(amount.value)

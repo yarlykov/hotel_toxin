@@ -1,7 +1,19 @@
-$height: 44px;
+$inputHeight: 44px;
+$inputWidthSizeL: 320px;
+$inputWidthSizeM: 266px;
+$inputWidthSizeS: 150px;
+
 
 .dropdown{
 	position: relative;
+
+	&__guests{
+		width: $inputWidthSizeL;
+	}
+
+	&__comfort{
+		width: $inputWidthSizeM;
+	}
 
 	& .fa.fa-chevron-down{
 		position: absolute;
@@ -19,12 +31,12 @@ $height: 44px;
 	}
 	
 	&__input{
+		width: 100%;
 		position: relative;
 		box-sizing: border-box;
 		padding: 0 0px 0 14px;
 		border: $mainBorder;
-		height: $height;
-		width: 320px;
+		height: $inputHeight;
 		border-radius: 4px;
 		font-family: $mainFont;
 		font-size: $mainFont_size;
@@ -42,7 +54,7 @@ $height: 44px;
 		position: absolute;
 		border: $mainBorder;
 		border-radius: 0 0 4px 4px;
-		top: $height;
+		top: $inputHeight;
 		left: 0;
 		right: 0;
 	}
