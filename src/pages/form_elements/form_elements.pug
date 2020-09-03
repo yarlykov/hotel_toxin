@@ -104,16 +104,16 @@ block content
 				h3.font__h3 Rate button
 				include ../../blocks/rating/rating.pug
 			p 15
-			form.form
-				label.form__text-field
-					span.form__title Filter Date dropdown
-					.text-field__input_wrapper
-						input(
-							class="text-field__input text-field__input_size_m"
-							type="text" 
-							name="text"
-							placeholder="19 авг - 23 авг"
-							)
+			.form
+				span.form__title Filter Date dropdown
+				.text-field__input_wrapper
+					input(
+						class="air-datepicker text-field__input text-field__input_size_m"
+						autocomplete="off"
+						type="text" 
+						name="text"
+						placeholder="19 авг - 23 авг"
+						)
 			form
 				h3.font__h3 Dropdown
 					+dropdown({isOpen: true, group: "guests", elements: [{title: "Взрослые", count: 2}, {title: "Дети", count: 1}, {title: "Младенцы", count: 0}]})
