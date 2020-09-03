@@ -1,3 +1,6 @@
+import 'jquery-ui-slider/jquery-ui.js'
+import 'jquery-ui-slider/jquery-ui.css'
+
 $( function() {
 	$( ".range-slider__scale" ).slider({
 			range: true,

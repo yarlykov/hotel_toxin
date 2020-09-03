@@ -39,8 +39,9 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
+    "air-datepicker": "^2.2.3",
     "inputmask": "^5.0.5",
     "jquery": "^3.5.1",
-    "webpack-jquery-ui": "^2.0.1"
+    "jquery-ui-slider": "^1.12.1"
   }
 }
