@@ -1,4 +1,3 @@
-// import {Dropdown} from './select'
 
 class Dropdown {
 
