@@ -12,8 +12,8 @@ todayDate = `${day}/${month}/${year}`
 const maskDateSelector = document.querySelector('.masked__text-field_date')
 
 Inputmask("datetime", {
-		inputFormat: "dd.mm.yyyy",
-		placeholder: "__.__.____",
-		min: todayDate,
-		max: "01/01/2025"
-	}).mask(maskDateSelector);
+    inputFormat: "dd.mm.yyyy",
+    placeholder: "__.__.____",
+    min: todayDate,
+    max: "01/01/2025"
+  }).mask(maskDateSelector);

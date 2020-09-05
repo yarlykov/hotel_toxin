@@ -1,49 +1,49 @@
 .range-slider__scale{
-	position: relative;
-	height: 6px;
-	box-sizing: border-box;
+  position: relative;
+  height: 6px;
+  box-sizing: border-box;
 }
 
 .range-slider__scale_border{
-	height: 6px;
-	border: $mainBorder;
-	border-radius: 6px;
-	box-sizing: border-box;
+  height: 6px;
+  border: $mainBorder;
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 .ui-slider {
-	position: relative;
-	text-align: left;
-	top: 10px;
+  position: relative;
+  text-align: left;
+  top: 10px;
 }
 .ui-slider .ui-slider-handle {
-	width: 12px;
-	height: 12px;
-	border-radius: 100%;
-	background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-	border: 2px solid #FFFFFF;
-	cursor: pointer;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border: 2px solid #FFFFFF;
+  cursor: pointer;
 }
 .ui-slider .ui-slider-handle:focus{
-	outline: none;
-	box-shadow: 0 0 0.5px 1px $designColor_second;
+  outline: none;
+  box-shadow: 0 0 0.5px 1px $designColor_second;
 }
 
 .ui-widget.ui-widget-content {
     border: none;
 }
 .ui-widget-header {
-		background:linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    background:linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 .ui-slider-horizontal .ui-slider-handle {
-	top: -.35em;
+  top: -.35em;
 }
 
 .range-slider{
-	font-family: $mainFont;
-	color: $textColor_50;
-	border: none;
-	text-align: right;
+  font-family: $mainFont;
+  color: $textColor_50;
+  border: none;
+  text-align: right;
 }
 .range-slider:focus{
-	border: none;
+  border: none;
 }

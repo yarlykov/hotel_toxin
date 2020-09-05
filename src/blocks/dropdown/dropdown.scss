@@ -5,198 +5,198 @@ $inputWidthSizeS: 150px;
 
 
 .dropdown{
-	position: relative;
+  position: relative;
 
-	&__guests{
-		width: $inputWidthSizeL;
-	}
+  &__guests{
+    width: $inputWidthSizeL;
+  }
 
-	&__comfort{
-		width: $inputWidthSizeM;
-	}
+  &__comfort{
+    width: $inputWidthSizeM;
+  }
 
-	& .fa.fa-chevron-down{
-		position: absolute;
-		top: 16px;
-		right: 16px;
-		color: rgba(31, 32, 65, 0.75);
-		cursor: pointer;
-	}
-	& .fa.fa-chevron-up{        //need delete this class
-		position: absolute;
-		top: 16px;
-		right: 16px;
-		color: rgba(31, 32, 65, 0.75);
-		cursor: pointer;
-	}
-	
-	&__input{
-		width: 100%;
-		position: relative;
-		box-sizing: border-box;
-		padding: 0 0px 0 14px;
-		border: $mainBorder;
-		height: $inputHeight;
-		border-radius: 4px;
-		font-family: $mainFont;
-		font-size: $mainFont_size;
-		line-height: 18px;
-		cursor: pointer;
-		caret-color: transparent;
+  & .fa.fa-chevron-down{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: rgba(31, 32, 65, 0.75);
+    cursor: pointer;
+  }
+  & .fa.fa-chevron-up{        //need delete this class
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: rgba(31, 32, 65, 0.75);
+    cursor: pointer;
+  }
+  
+  &__input{
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 0px 0 14px;
+    border: $mainBorder;
+    height: $inputHeight;
+    border-radius: 4px;
+    font-family: $mainFont;
+    font-size: $mainFont_size;
+    line-height: 18px;
+    cursor: pointer;
+    caret-color: transparent;
 
-		&[value] {
-			color: rgba(31, 32, 65, 0.75);
-		}
-	}
+    &[value] {
+      color: rgba(31, 32, 65, 0.75);
+    }
+  }
 
-	&__drop{
-		display: none;
-		position: absolute;
-		border: $mainBorder;
-		border-radius: 0 0 4px 4px;
-		top: $inputHeight;
-		left: 0;
-		right: 0;
-	}
+  &__drop{
+    display: none;
+    position: absolute;
+    border: $mainBorder;
+    border-radius: 0 0 4px 4px;
+    top: $inputHeight;
+    left: 0;
+    right: 0;
+  }
 
-	&__menu{
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
+  &__menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-	&__menu-item{
-		padding: 6px;
-		text-transform: uppercase;
-		display: flex;
-		justify-content: space-between;
+  &__menu-item{
+    padding: 6px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
 
-		&_text {
-			padding-top: 8px;
-			padding-left: 8px;
-		}
+    &_text {
+      padding-top: 8px;
+      padding-left: 8px;
+    }
 
-		&:last-child{
-			border-radius: 0  0 4px 4px;
-		}
+    &:last-child{
+      border-radius: 0  0 4px 4px;
+    }
 
-	}
+  }
 
-		&__controls {
-			width: 92px;
-			height: 30px;
-			border: 0;
-			box-sizing: border-box;
-			display: flex;
-			justify-content: space-between;
+    &__controls {
+      width: 92px;
+      height: 30px;
+      border: 0;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
 
-			.controls__decrement {
-				font-size: 18px;
-				line-height: 22px;
-				box-sizing: border-box;
-				width: 30px;
-				height: 30px;
-				border: $mainBorder;
-				border-radius: 50%;
-				outline: none;
-				background: none;
-				color: gray;
-				cursor: pointer;
-				text-align: center;
-				line-height: 27px;
+      .controls__decrement {
+        font-size: 18px;
+        line-height: 22px;
+        box-sizing: border-box;
+        width: 30px;
+        height: 30px;
+        border: $mainBorder;
+        border-radius: 50%;
+        outline: none;
+        background: none;
+        color: gray;
+        cursor: pointer;
+        text-align: center;
+        line-height: 27px;
 
-				&::after{
-					content: '-';
-				}
+        &::after{
+          content: '-';
+        }
 
-				&.disabled {
-					opacity: 0.5;
-				}
-			}
+        &.disabled {
+          opacity: 0.5;
+        }
+      }
 
-			.controls__counter {  //refactor
-				border: 0;
-				width: 30px;
-				text-align: center;
-				font-family: inherit;
-				font-style: normal;
-				font-weight: bold;
-				font-size: 12px;
-			}
+      .controls__counter {  //refactor
+        border: 0;
+        width: 30px;
+        text-align: center;
+        font-family: inherit;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+      }
 
-			.controls__increment {
-				font-size: 18px;
-				line-height: 22px;
-				box-sizing: border-box;
-				width: 30px;
-				height: 30px;
-				border: $mainBorder;
-				border-radius: 50%;
-				outline: none;
-				background: #fff;
-				color: gray;
-				cursor: pointer;
-				text-align: center;
-				line-height: 29px;
+      .controls__increment {
+        font-size: 18px;
+        line-height: 22px;
+        box-sizing: border-box;
+        width: 30px;
+        height: 30px;
+        border: $mainBorder;
+        border-radius: 50%;
+        outline: none;
+        background: #fff;
+        color: gray;
+        cursor: pointer;
+        text-align: center;
+        line-height: 29px;
 
-				&::after{
-					content: '+';
-				}
+        &::after{
+          content: '+';
+        }
 
-				&.disabled {
-					opacity: 0.5;
-				}
-			}
-		}
+        &.disabled {
+          opacity: 0.5;
+        }
+      }
+    }
 
 
 
 }
 
 .dropdown.open{
-	.dropdown__drop{
-		display: block;
-		border: $focusBorder;
-		border-top: none;
-		background: #fff;
-		z-index: 1000;
-	}
-	.dropdown__input{
-		border-radius: 4px 4px 0 0;
-		border: $focusBorder;
-	}
+  .dropdown__drop{
+    display: block;
+    border: $focusBorder;
+    border-top: none;
+    background: #fff;
+    z-index: 1000;
+  }
+  .dropdown__input{
+    border-radius: 4px 4px 0 0;
+    border: $focusBorder;
+  }
 }
 
 .js-buttons-dropdown {
 
-	&__wrapper{
-		padding: 6px;
-		background: #fff;
-		text-transform: uppercase;
-		display: flex;
-		justify-content: space-between;
-		z-index: 1000;
-		border-radius: 0 0 4px 4px;
-	}
+  &__wrapper{
+    padding: 6px;
+    background: #fff;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+    border-radius: 0 0 4px 4px;
+  }
 
-	&__button{
-		margin: 0;
-		border: none;
-		background: #fff;
-		height: 30px;
-		text-transform: uppercase;
-		cursor: pointer;
-		outline: none;
+  &__button{
+    margin: 0;
+    border: none;
+    background: #fff;
+    height: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
 
-		&_clear{
-			visibility: hidden;
-			
-			&.display{
-				visibility: visible;
-			}
-		}
+    &_clear{
+      visibility: hidden;
+      
+      &.display{
+        visibility: visible;
+      }
+    }
 
-		&_apply{
-		}
-	}
+    &_apply{
+    }
+  }
 }

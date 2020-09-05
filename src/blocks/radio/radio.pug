@@ -1,13 +1,13 @@
 mixin radio(groupName, name, checked)
-	label.radio
-		input(
-			class="radio__input"
-			type="radio"
-			name=groupName
-			checked=checked
-		)
-		span.radio__box
-		span=name
+  label.radio
+    input(
+      class="radio__input"
+      type="radio"
+      name=groupName
+      checked=checked
+    )
+    span.radio__box
+    span=name
 
 +radio("male", "Мужчина", true)
 +radio("male", "Женщина", false)

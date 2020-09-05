@@ -1,13 +1,13 @@
 mixin checkbox(name, checked)
-	label.checkbox
-		input(
-			class="checkbox__input"
-			type="checkbox"
-			name=name
-			checked=checked
-		)
-		span.checkbox__box
-		span=name
+  label.checkbox
+    input(
+      class="checkbox__input"
+      type="checkbox"
+      name=name
+      checked=checked
+    )
+    span.checkbox__box
+    span=name
 
 +checkbox("Можно курить", false)
 +checkbox("Можно с питомцами", false)

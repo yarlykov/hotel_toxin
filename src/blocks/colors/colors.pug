@@ -1,10 +1,10 @@
 //-colors
 mixin colors-item(color, description, colorCode)
-	.colors
-		div(class!=attributes.color).colors__square
-		.colors__text
-			div.colors__text_bold=description
-			span= colorCode
+  .colors
+    div(class!=attributes.color).colors__square
+    .colors__text
+      div.colors__text_bold=description
+      span= colorCode
 
 +colors-item(color, 'Dark Shade 100%', '#1F2041')(color!='colors__square_dark_100')
 +colors-item(color, 'Dark Shade 75%', '#1F2041')(color!='colors__square_dark_75')

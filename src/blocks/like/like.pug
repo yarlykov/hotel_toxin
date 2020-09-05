@@ -1,16 +1,16 @@
 mixin likeButton(options)
-	-
-		const value = options.value
-		
-		const btnDisableClassName = options.disable ? "like__disable_border" : ""
-		const disableClassName = options.disable ? "like__disable" : ""
-		const icon = options.disable ? options.icon + "_border" : options.icon 
+  -
+    const value = options.value
+    
+    const btnDisableClassName = options.disable ? "like__disable_border" : ""
+    const disableClassName = options.disable ? "like__disable" : ""
+    const icon = options.disable ? options.icon + "_border" : options.icon 
 
-	button&attributes({
-		type: "button",
-		name: "like",
-		class: ["like__button", `${btnDisableClassName}`]
-	})
-		span(class=`${disableClassName}`).like__text #{value}
-		.like__button_border
-			i(class=`${disableClassName}`).like__icon.material-icons #{icon}
+  button&attributes({
+    type: "button",
+    name: "like",
+    class: ["like__button", `${btnDisableClassName}`]
+  })
+    span(class=`${disableClassName}`).like__text #{value}
+    .like__button_border
+      i(class=`${disableClassName}`).like__icon.material-icons #{icon}

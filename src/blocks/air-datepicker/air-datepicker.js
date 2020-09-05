@@ -2,20 +2,20 @@ import 'air-datepicker/dist/js/datepicker.js';
 import 'air-datepicker/dist/css/datepicker.css';
 
 $('.air-datepicker').datepicker({
-	dateFormat: 'd M',
-	multipleDatesSeparator: ' - ',
-	range: true,
-	// inline: true,
-	// clearButton: true,
-	// todayButton: true,
-	prevHtml: '<span class="material-icons">arrow_back</span>',
-	nextHtml: '<span class="material-icons">arrow_forward</span>',
-	language: {
-		monthsShort: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
-		today: 'применить',
-		clear: 'очистить',
-	}
-	// offset: -10,
+  dateFormat: 'd M',
+  multipleDatesSeparator: ' - ',
+  range: true,
+  // inline: true,
+  // clearButton: true,
+  // todayButton: true,
+  prevHtml: '<span class="material-icons">arrow_back</span>',
+  nextHtml: '<span class="material-icons">arrow_forward</span>',
+  language: {
+    monthsShort: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
+    today: 'применить',
+    clear: 'очистить',
+  }
+  // offset: -10,
 })
 
 const root = $('.datepicker')
@@ -51,28 +51,28 @@ myDatepicker.selectDate([dddate, dddate2])
 clear.addClass('display')
 
 apply.on('click', function(){
-	myDatepicker.hide()
+  myDatepicker.hide()
 })
 clear.on('click', function () {
-	clear.removeClass('display')
-	myDatepicker.clear()
+  clear.removeClass('display')
+  myDatepicker.clear()
 })
 
 
 $('.datepickerRoot').each(function () {
-	const $datepickerInput = $('.air-datepicker', this);
+  const $datepickerInput = $('.air-datepicker', this);
 
-	$datepickerInput.datepicker({
-		onSelect: function(formattedDate, date, inst) {
-			if(formattedDate !== ''){
-				clear.addClass('display')
-				console.log(formattedDate)
-			}else{
-				clear.removeClass('display')
-			}
-		},
-	})
-	
+  $datepickerInput.datepicker({
+    onSelect: function(formattedDate, date, inst) {
+      if(formattedDate !== ''){
+        clear.addClass('display')
+        console.log(formattedDate)
+      }else{
+        clear.removeClass('display')
+      }
+    },
+  })
+  
 
 
 });

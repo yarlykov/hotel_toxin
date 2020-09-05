@@ -1,33 +1,33 @@
 .content-wrapper_cards {
-	// padding: 0px 0 0px;
-	display: flex;
-	flex-direction: column;
-	min-width: 1160px;
-	margin: 0 auto;
-	justify-content: space-between;
+  // padding: 0px 0 0px;
+  display: flex;
+  flex-direction: column;
+  min-width: 1160px;
+  margin: 0 auto;
+  justify-content: space-between;
 }
 
 .body-wrapper__background {
-	background: #E5E5E5;
+  background: #E5E5E5;
 }
 /*____________________*/
 .room-selection {
-	width: 380px;
-	height: 374px;
-	background:#fff;
+  width: 380px;
+  height: 374px;
+  background:#fff;
 }
 .room-selection_wrapper{
-	width: 320px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .room-selection__text {
-	height: 60px;
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 24px;
-	line-height: 30px;
-	color: #1F2041;
+  height: 60px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1F2041;
 }

@@ -7,146 +7,146 @@ include ../../blocks/like/like.pug
 
 
 block variables 
-	- var title = "Form Elements"
-	- var description = ""
-	- var keywords = ""
+  - var title = "Form Elements"
+  - var description = ""
+  - var keywords = ""
 
 block content
-	body.body-wrapper
-		header 
-			include ../../basis/header_uikit/header_uikit.pug
-		main.content-wrapper_form-elements
-			form.form
-				label.form__text-field
-					span.form__title Text field
-					span.form__description Default
-					.text-field__input_wrapper
-						input(
-							class="text-field__input text-field__input_size_large" type="text" 
-							name='email' 
-							placeholder="Email")
-										//----------------------------------------
-			form.wrap__checkbox
-				h3.font__h3 Checkbox buttons
-				include ../../blocks/checkbox/checkbox.pug
-			//----------------------------------------
-			form
-				include ../../blocks/range-slider/range-slider.pug
-			form.form
-				label.form__text-field
-					span.form__title Text field
-					span.form__description Hover/Focus
-					.text-field__input_wrapper
-						input(
-							class="text-field__input text-field__input_size_large text-field__input_hover"
-							type="text" 
-							name="text"
-							placeholder="This is pretty awesome"
-							)
-				//----------------------------------------
-			form.wrap__radio-buttons
-				h3.font__h3 Radio buttons
-				include ../../blocks/radio/radio.pug
-			form
-				h3.font__h3 Buttons
-				include ../../blocks/button/button.pug
-			.form
-				div.form__header
-					h2.form__title Dropdown
-					span.form__description Default
-				.text-field__input_wrapper
-					+dropdown({isOpen: false, group: "guests", elements: [{title: "Взрослые", count: 0},{title: "Дети", count: 0}, {title: "Младенцы", count: 0}]})
-				//----------------------------------------
-			form
-				h3.font__h3 Toggle
-				include ../../blocks/toogle/toogle.pug
-				//---------------------------------------
-			p 9
-			.form
-				div.form__header
-					h2.form__title Masked text field
-					span.form__description Default
-				+maskDate({placeholder: "ДД.ММ.ГГГГ", size: "large"})
+  body.body-wrapper
+    header 
+      include ../../basis/header_uikit/header_uikit.pug
+    main.content-wrapper_form-elements
+      form.form
+        label.form__text-field
+          span.form__title Text field
+          span.form__description Default
+          .text-field__input_wrapper
+            input(
+              class="text-field__input text-field__input_size_large" type="text" 
+              name='email' 
+              placeholder="Email")
+                    //----------------------------------------
+      form.wrap__checkbox
+        h3.font__h3 Checkbox buttons
+        include ../../blocks/checkbox/checkbox.pug
+      //----------------------------------------
+      form
+        include ../../blocks/range-slider/range-slider.pug
+      form.form
+        label.form__text-field
+          span.form__title Text field
+          span.form__description Hover/Focus
+          .text-field__input_wrapper
+            input(
+              class="text-field__input text-field__input_size_large text-field__input_hover"
+              type="text" 
+              name="text"
+              placeholder="This is pretty awesome"
+              )
+        //----------------------------------------
+      form.wrap__radio-buttons
+        h3.font__h3 Radio buttons
+        include ../../blocks/radio/radio.pug
+      form
+        h3.font__h3 Buttons
+        include ../../blocks/button/button.pug
+      .form
+        div.form__header
+          h2.form__title Dropdown
+          span.form__description Default
+        .text-field__input_wrapper
+          +dropdown({isOpen: false, group: "guests", elements: [{title: "Взрослые", count: 0},{title: "Дети", count: 0}, {title: "Младенцы", count: 0}]})
+        //----------------------------------------
+      form
+        h3.font__h3 Toggle
+        include ../../blocks/toogle/toogle.pug
+        //---------------------------------------
+      p 9
+      .form
+        div.form__header
+          h2.form__title Masked text field
+          span.form__description Default
+        +maskDate({placeholder: "ДД.ММ.ГГГГ", size: "large"})
 
-			form
-				h3.font__h3 Like button
-				+likeButton({icon: "favorite", value: 2, disable: true})
-				+likeButton({icon: "favorite", value: 12, disable: false})
-				
-			
-			//- form
-			//- 	h3.font__h3 iqDropdown
-			//- 	include ../../blocks/iqDropdown/iqDropdown.pug 
-			form
-				h3.font__h3 Dropdown
-					+dropdown({isOpen: false, group: "guests", elements: [{title: "Взрослые", count: 2}, {title: "Дети", count: 1}, {title: "Младенцы", count: 0}]})
-			form.form.form__text-field_s
-				label
-					span.form__title Date dropdown
-					.text-field__input_wrapper
-						input(
-							class="text-field__input text-field__input_size_s"
-							type="text" 
-							name="text"
-							placeholder="ДД.ММ.ГГГГ"
-							)
-				form.form
-					label
-						span.form__title Date dropdown
-						.text-field__input_wrapper
-							input(
-								class="text-field__input text-field__input_size_s"
-								type="text" 
-								name="text"
-								placeholder="19.08.2019"
-								)
-			form(action="")
-				h3.font__h3 Rate button
-				include ../../blocks/rating/rating.pug
-			p 15
-			.form.datepickerRoot
-				span.form__title Filter Date dropdown
-				.text-field__input_wrapper
-					input(
-						class="air-datepicker text-field__input text-field__input_size_m"
-						autocomplete="off"
-						type="text" 
-						name="text"
-						placeholder="19 авг - 23 авг"
-						)
-					p(id="demo")
-			form
-				h3.font__h3 Dropdown
-					+dropdown({isOpen: true, group: "guests", elements: [{title: "Взрослые", count: 2}, {title: "Дети", count: 1}, {title: "Младенцы", count: 0}]})
-			form
-				h3.font__h3 Dropdown
-					+dropdown({isOpen: true, group: "guests", elements: [{title: "Взрослые", count: 2}, {title: "Дети", count: 1}, {title: "Младенцы", count: 5}]})
-			h3.font__h3 bullet list
-				include ../../blocks/bullet-list/bullet-list.pug
-			p 19
-			p 20
-			p 21
-			p 22
-			p 23
-			form
-				h3.font__h3 Dropdown
-					+dropdown({isOpen: true, group: "comfort", elements: [{title: "Спальни", count: 2}, {title: "Кровати", count: 2}, {title: "Ванные комнаты", count: 0}]})
-			p 25
-			p 26
-			p 27
-			p 28
-			p 29
-			p 30
-			p 31
-			p 32
-			p 33
-			p 34
-			p 35
-			p 36
-			p 37
-			p 38
-			p 39
-					//- label
-					//- 	<input type="checkbox">Можно курить 
-		footer 
-			include ../../basis/footer_uikit/footer_uikit.pug
+      form
+        h3.font__h3 Like button
+        +likeButton({icon: "favorite", value: 2, disable: true})
+        +likeButton({icon: "favorite", value: 12, disable: false})
+        
+      
+      //- form
+      //- 	h3.font__h3 iqDropdown
+      //- 	include ../../blocks/iqDropdown/iqDropdown.pug 
+      form
+        h3.font__h3 Dropdown
+          +dropdown({isOpen: false, group: "guests", elements: [{title: "Взрослые", count: 2}, {title: "Дети", count: 1}, {title: "Младенцы", count: 0}]})
+      form.form.form__text-field_s
+        label
+          span.form__title Date dropdown
+          .text-field__input_wrapper
+            input(
+              class="text-field__input text-field__input_size_s"
+              type="text" 
+              name="text"
+              placeholder="ДД.ММ.ГГГГ"
+              )
+        form.form
+          label
+            span.form__title Date dropdown
+            .text-field__input_wrapper
+              input(
+                class="text-field__input text-field__input_size_s"
+                type="text" 
+                name="text"
+                placeholder="19.08.2019"
+                )
+      form(action="")
+        h3.font__h3 Rate button
+        include ../../blocks/rating/rating.pug
+      p 15
+      .form.datepickerRoot
+        span.form__title Filter Date dropdown
+        .text-field__input_wrapper
+          input(
+            class="air-datepicker text-field__input text-field__input_size_m"
+            autocomplete="off"
+            type="text" 
+            name="text"
+            placeholder="19 авг - 23 авг"
+            )
+          p(id="demo")
+      form
+        h3.font__h3 Dropdown
+          +dropdown({isOpen: true, group: "guests", elements: [{title: "Взрослые", count: 2}, {title: "Дети", count: 1}, {title: "Младенцы", count: 0}]})
+      form
+        h3.font__h3 Dropdown
+          +dropdown({isOpen: true, group: "guests", elements: [{title: "Взрослые", count: 2}, {title: "Дети", count: 1}, {title: "Младенцы", count: 5}]})
+      h3.font__h3 bullet list
+        include ../../blocks/bullet-list/bullet-list.pug
+      p 19
+      p 20
+      p 21
+      p 22
+      p 23
+      form
+        h3.font__h3 Dropdown
+          +dropdown({isOpen: true, group: "comfort", elements: [{title: "Спальни", count: 2}, {title: "Кровати", count: 2}, {title: "Ванные комнаты", count: 0}]})
+      p 25
+      p 26
+      p 27
+      p 28
+      p 29
+      p 30
+      p 31
+      p 32
+      p 33
+      p 34
+      p 35
+      p 36
+      p 37
+      p 38
+      p 39
+          //- label
+          //- 	<input type="checkbox">Можно курить 
+    footer 
+      include ../../basis/footer_uikit/footer_uikit.pug
