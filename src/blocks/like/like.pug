@@ -1,10 +1,8 @@
-mixin likeButton(options)
+mixin likeButton({ icon="", value=0, disable=false })
   -
-    const value = options.value
-    
-    const btnDisableClassName = options.disable ? "like__disable_border" : ""
-    const disableClassName = options.disable ? "like__disable" : ""
-    const icon = options.disable ? options.icon + "_border" : options.icon 
+    const btnDisableClassName = disable ? "like__disable_border" : ""
+    const disableClassName = disable ? "like__disable" : ""
+    icon = disable ? icon + "_border" : icon 
 
   button&attributes({
     type: "button",
