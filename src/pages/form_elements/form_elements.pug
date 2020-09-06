@@ -4,6 +4,7 @@ include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/mask/mask.pug
 include ../../blocks/like/like.pug
 include ../../blocks/checkbox/checkbox.pug
+include ../../blocks/radio/radio.pug
 
 
 
@@ -50,7 +51,8 @@ block content
         //----------------------------------------
       form.wrap__radio-buttons
         h3.font__h3 Radio buttons
-        include ../../blocks/radio/radio.pug
+        +radio({ group: "gender", title: "Мужчина", checked: true })
+        +radio({ group: "gender", title: "Женщина", checked: false })
       form
         h3.font__h3 Buttons
         include ../../blocks/button/button.pug

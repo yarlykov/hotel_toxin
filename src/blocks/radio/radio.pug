@@ -1,13 +1,10 @@
-mixin radio(groupName, name, checked)
+mixin radio({ group="", title="", checked=false })
   label.radio
-    input(
-      class="radio__input"
-      type="radio"
-      name=groupName
-      checked=checked
-    )
+    input&attributes({
+      class: "radio__input",
+      type: "radio",
+      name: group,
+      checked: checked,
+    })
     span.radio__box
-    span=name
-
-+radio("male", "Мужчина", true)
-+radio("male", "Женщина", false)
+    span.radio__title=title
