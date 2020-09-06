@@ -1,0 +1,10 @@
+mixin toggle({ title="", checked=false })
+  label.toggle
+    input&attributes({
+      class: "toggle__input",
+      type: "checkbox",
+      name: title,
+      checked: checked
+    })
+    span.toggle__box
+    span.toggle__title=title

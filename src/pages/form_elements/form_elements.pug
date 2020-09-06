@@ -5,6 +5,7 @@ include ../../blocks/mask/mask.pug
 include ../../blocks/like/like.pug
 include ../../blocks/checkbox/checkbox.pug
 include ../../blocks/radio/radio.pug
+include ../../blocks/toggle/toggle.pug
 
 
 
@@ -65,7 +66,8 @@ block content
         //----------------------------------------
       form
         h3.font__h3 Toggle
-        include ../../blocks/toogle/toogle.pug
+        +toggle({title: "Получать спецпредложения", checked: true})
+        +toggle({title: "Получать спецпредложения", checked: false})
         //---------------------------------------
       p 9
       .form
