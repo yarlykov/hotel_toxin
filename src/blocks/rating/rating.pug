@@ -1,15 +1,12 @@
 //- вспомогательный, для вывода пустых звезд
-mixin star_border(num)
-  - for (let i = 0; i < num; i++)
+mixin star_border({ emptyStar=0 })
+  - for (let i = 0; i < emptyStar; i++)
     i.material-icons.gradient star_border
   //-основной миксин принимает оценку и рассчитывает кол. пустых звезд
-mixin rating(rate) 
+mixin rating({ rating=0 }) 
   .rating
-    if rate < 5
-    - let j = 5 - rate;
-    - for(let i = 0; i < rate; i++)
+    if rating < 5
+    - let emptyStar = 5 - rating;
+    - for(let i = 0; i < rating; i++)
       i.material-icons.gradient star
-    +star_border(j)
-
-+rating(4)
-+rating(5)
+    +star_border({ emptyStar })
