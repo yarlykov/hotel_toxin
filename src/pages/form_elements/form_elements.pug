@@ -3,6 +3,8 @@ extends ../../blocks/main.pug
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/mask/mask.pug
 include ../../blocks/like/like.pug
+include ../../blocks/checkbox/checkbox.pug
+
 
 
 
@@ -28,7 +30,9 @@ block content
                     //----------------------------------------
       form.wrap__checkbox
         h3.font__h3 Checkbox buttons
-        include ../../blocks/checkbox/checkbox.pug
+        +checkbox({ title: "Можно курить", checked: false })
+        +checkbox({ title: "Можно с питомцами", checked: false })
+        +checkbox({ title: "Можно пригласить гостей (до 10 человек)", checked: true })
       //----------------------------------------
       form
         include ../../blocks/range-slider/range-slider.pug

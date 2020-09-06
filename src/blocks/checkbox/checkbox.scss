@@ -6,67 +6,58 @@
   max-width: 192px;
   padding-left: 2em;
   cursor: pointer;
-}
-.checkbox__input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0); //see this property!
-}
-.checkbox__box{
-  box-sizing: border-box;
-  position: absolute;
-  margin-left: -2em;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  background-color: #fff;
-  border: $mainBorder;
-}
-/************************Focus/Hover******************/
-.checkbox__box:focus{
-  border: $focusBorder;
-}
-.checkbox__input:checked + .checkbox__box {
-  border-color: $designColor_main;
-}
-.checkbox__input:focus + .checkbox__box {
-  box-sizing: border-box;
-  // border-color: $designColor_main;
-  box-shadow: 0 0 0 0.05em $designColor_main;
-  border: 1px solid $designColor_main;
-  // box-shadow: 0 0 0 0.05em $textColor_50;
-}
-.checkbox__input:hover + .checkbox__box {
-  box-sizing: border-box;
-  border-color: $designColor_main;
-  box-shadow: 0 0 0 0.05em $designColor_main;
-  // border: $focusBorder;
-  // box-shadow: 0 0 0 0.05em $textColor_50;
-}
-.checkbox__input:checked:focus + .checkbox__box {
-  box-sizing: border-box;
-  border-color: $designColor_main;
-  box-shadow: 0 0 0 0.05em $designColor_main;
+
+  &__input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0); //see this property!
+
+    &:checked + .checkbox__box{
+      border-color: $designColor_main;
+    }
+
+    &:checked + .checkbox__box::after {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      top: 4px;
+      left: 6px;
+      width: 6px;
+      height: 8px;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+      -moz-border-image:  $mainGradient; 
+      -webkit-border-image:  $mainGradient; 
+      border-image: $mainGradient; 
+      border-image-slice: 1; 
+      border-color: transparent;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+
+  &__box{
+    box-sizing: border-box;
+    position: absolute;
+    margin-left: -2em;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: $mainBorder;
+  }
+  /************************Focus/Hover******************/
+  &:hover{
+    color:$textColor_75;
+  }
+
+  &:focus-within{
+    color:$textColor_75;
+  }
+
 }
 
-.checkbox__input:checked + .checkbox__box::after {
-  content: "";
-  position: absolute;
-  box-sizing: border-box;
-  top: 4px;
-  left: 6px;
-  width: 6px;
-  height: 8px;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  -moz-border-image:  $mainGradient; 
-  -webkit-border-image:  $mainGradient; 
-  border-image: $mainGradient; 
-  border-image-slice: 1; 
-  border-color: transparent;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
+

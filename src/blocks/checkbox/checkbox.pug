@@ -1,14 +1,10 @@
-mixin checkbox(name, checked)
+mixin checkbox({ title="", checked=false })
   label.checkbox
-    input(
-      class="checkbox__input"
-      type="checkbox"
-      name=name
-      checked=checked
-    )
+    input&attributes({
+      class: "checkbox__input",
+      type: "checkbox",
+      title: title,
+      checked: checked
+    })
     span.checkbox__box
-    span=name
-
-+checkbox("Можно курить", false)
-+checkbox("Можно с питомцами", false)
-+checkbox("Можно пригласить гостей (до 10 человек)", true)
+    span.checkbox__title=title
