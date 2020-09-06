@@ -8,11 +8,7 @@ include ../../blocks/radio/radio.pug
 include ../../blocks/toggle/toggle.pug
 include ../../blocks/rating/rating.pug
 include ../../blocks/bullet-list/bullet-list.pug
-
-
-
-
-
+include ../../blocks/range-slider/range-slider.pug
 
 block variables 
   - var title = "Form Elements"
@@ -41,7 +37,7 @@ block content
         +checkbox({ title: "Можно пригласить гостей (до 10 человек)", checked: true })
       //----------------------------------------
       form
-        include ../../blocks/range-slider/range-slider.pug
+        +range-slider()
       form.form
         label.form__text-field
           span.form__title Text field
@@ -89,10 +85,6 @@ block content
         +likeButton({icon: "favorite", value: 2, disable: true})
         +likeButton({icon: "favorite", value: 12, disable: false})
         
-      
-      //- form
-      //- 	h3.font__h3 iqDropdown
-      //- 	include ../../blocks/iqDropdown/iqDropdown.pug 
       form
         h3.font__h3 Dropdown
           +dropdown({isOpen: false, group: "guests", elements: [

@@ -1,15 +1,34 @@
-.range-slider__scale{
-  position: relative;
-  height: 6px;
-  box-sizing: border-box;
+.range-slider{
+  font-family: $mainFont;
+  color: $textColor_50;
+  border: none;
+  text-align: right;
+
+  &__scale{
+    position: relative;
+    height: 6px;
+    box-sizing: border-box;
+
+    &_border{
+      height: 6px;
+      border: $mainBorder;
+      border-radius: 6px;
+      box-sizing: border-box;
+   }
+
+  }
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &:focus{
+    border: none;
+  }
+
 }
 
-.range-slider__scale_border{
-  height: 6px;
-  border: $mainBorder;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
 .ui-slider {
   position: relative;
   text-align: left;
@@ -36,14 +55,4 @@
 }
 .ui-slider-horizontal .ui-slider-handle {
   top: -.35em;
-}
-
-.range-slider{
-  font-family: $mainFont;
-  color: $textColor_50;
-  border: none;
-  text-align: right;
-}
-.range-slider:focus{
-  border: none;
 }
