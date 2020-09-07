@@ -6,6 +6,9 @@ $('.air-datepicker').datepicker({
   multipleDatesSeparator: ' - ',
   range: true,
   // inline: true,
+  navTitles: {
+    days: 'MM yyyy'
+  },
   // clearButton: true,
   // todayButton: true,
   prevHtml: '<span class="material-icons">arrow_back</span>',
@@ -25,7 +28,7 @@ const applyBtn = document.createElement('button')
 
 btnWrap.classList.add('js-buttons-dropdown__wrapper')
 
-clearBtn.classList.add('button_text-color_gray', 'js-buttons-dropdown__button', 'js-buttons-dropdown__button_clear', 'font__h3')
+clearBtn.classList.add('button_text-color_gray', 'js-buttons-dropdown__button', 'js-buttons-dropdown__button_clear', 'font__h3',)
 clearBtn.setAttribute('type', 'button')
 clearBtn.setAttribute('data-type', 'clear')
 clearBtn.innerHTML = 'Очистить'
@@ -44,8 +47,8 @@ const clear = $('.js-buttons-dropdown__button_clear')
 const myDatepicker = $('.air-datepicker').data('datepicker')
 
 
-const dddate = new Date('1995-12-17')
-const dddate2 = new Date('1995-12-22')
+const dddate = new Date('2020-09-17')
+const dddate2 = new Date('2020-09-23')
 
 myDatepicker.selectDate([dddate, dddate2])
 clear.addClass('display')
