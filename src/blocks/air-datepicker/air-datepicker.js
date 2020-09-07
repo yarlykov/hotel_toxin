@@ -13,11 +13,6 @@ $('.air-datepicker').datepicker({
   // todayButton: true,
   prevHtml: '<span class="material-icons">arrow_back</span>',
   nextHtml: '<span class="material-icons">arrow_forward</span>',
-  language: {
-    monthsShort: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
-    today: 'применить',
-    clear: 'очистить',
-  }
   // offset: -10,
 })
 
