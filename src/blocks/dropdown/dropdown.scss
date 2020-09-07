@@ -188,6 +188,10 @@ $inputWidthSizeS: 150px;
     cursor: pointer;
     outline: none;
 
+    &:hover{
+      opacity: 0.5;
+    }
+
     &_clear{
       visibility: hidden;
       
@@ -199,4 +203,8 @@ $inputWidthSizeS: 150px;
     &_apply{
     }
   }
+}
+
+.buttons-dropdown__wrapper_datepicker{
+  padding: 0 20px;
 }

@@ -26,7 +26,7 @@ const btnWrap = document.createElement('div')
 const clearBtn = document.createElement('button')
 const applyBtn = document.createElement('button')
 
-btnWrap.classList.add('js-buttons-dropdown__wrapper')
+btnWrap.classList.add('buttons-dropdown__wrapper_datepicker', 'js-buttons-dropdown__wrapper')
 
 clearBtn.classList.add('button_text-color_gray', 'js-buttons-dropdown__button', 'js-buttons-dropdown__button_clear', 'font__h3',)
 clearBtn.setAttribute('type', 'button')
