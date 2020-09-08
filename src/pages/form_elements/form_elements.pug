@@ -9,6 +9,7 @@ include ../../blocks/toggle/toggle.pug
 include ../../blocks/rating/rating.pug
 include ../../blocks/bullet-list/bullet-list.pug
 include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/dignity-room/dignity-room.pug
 
 block variables 
   - var title = "Form Elements"
@@ -190,7 +191,9 @@ block content
         +checkbox({ title: "Шампунь" })
       p 36
       p 37
-      p 38
+      .dignity-room
+        +dignity-room({ icon: "mood", title: "Комфорт", subtitle: "Шумопоглащающие стены"})
+        +dignity-room({ icon: "location_city", title: "Удобство", subtitle: "Окно в каждой из спален"})
       p 39
           //- label
           //- 	<input type="checkbox">Можно курить 
