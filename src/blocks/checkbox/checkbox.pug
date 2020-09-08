@@ -1,4 +1,10 @@
-mixin checkbox({ title="", checked=false })
+mixin checkbox({ title="", checked=false, rich=false, description="" })
+
+  - let titleClassName = "checkbox__title"
+  - let descriptionClassName = "checkbox__description"
+  - titleClassName += rich ? "_rich" : ""
+  - descriptionClassName += rich ? "_rich" : ""    
+
   label.checkbox
     input&attributes({
       class: "checkbox__input",
@@ -7,4 +13,5 @@ mixin checkbox({ title="", checked=false })
       checked: checked
     })
     span.checkbox__box
-    span.checkbox__title=title
+    div(class = titleClassName) #{title}
+      div(class = descriptionClassName) #{description}

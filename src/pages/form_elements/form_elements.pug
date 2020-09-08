@@ -32,8 +32,8 @@ block content
                     //----------------------------------------
       form.wrap__checkbox
         h3.font__h3 Checkbox buttons
-        +checkbox({ title: "Можно курить", checked: false })
-        +checkbox({ title: "Можно с питомцами", checked: false })
+        +checkbox({ title: "Можно курить" })
+        +checkbox({ title: "Можно с питомцами" })
         +checkbox({ title: "Можно пригласить гостей (до 10 человек)", checked: true })
       //----------------------------------------
       form
@@ -92,26 +92,29 @@ block content
             {title: "Дети", count: 1}, 
             {title: "Младенцы", count: 0}
             ]})
-      form.form.form__text-field_s
-        label
-          span.form__title Date dropdown
-          .text-field__input_wrapper
-            input(
-              class="text-field__input text-field__input_size_s"
-              type="text" 
-              name="text"
-              placeholder="ДД.ММ.ГГГГ"
-              )
-        form.form
+      .test
+        .form.form__text-field_s
           label
             span.form__title Date dropdown
             .text-field__input_wrapper
               input(
-                class="text-field__input text-field__input_size_s"
+                class="text-field__input text-field__input_size_s js-air-datepicker__day-start"
                 type="text" 
                 name="text"
-                placeholder="19.08.2019"
+                autocomplete="off"
+                placeholder="ДД.ММ.ГГГГ"
                 )
+          .form
+            label
+              span.form__title Date dropdown
+              .text-field__input_wrapper
+                input(
+                  class="text-field__input text-field__input_size_s js-air-datepicker__day-end"
+                  type="text" 
+                  name="text"
+                  autocomplete="off"
+                  placeholder="19.08.2019"
+                  )
       form(action="")
         h3.font__h3 Rate button
         +rating({ rating: 4 })
@@ -163,7 +166,16 @@ block content
       p 25
       p 26
       p 27
-      p 28
+      form.wrap__checkbox
+        h3.font__h3 rich checkbox buttons
+        +checkbox({ 
+          title: "Широкий коридор", rich: true, 
+          description: "Ширина коридоров в номере не\u00A0менее 91 см."
+          })
+        +checkbox({ 
+          title: "Помощник для инвалидов", rich: true, 
+          description: "На 1 этаже вас встретит специалист  и проводит до номера."
+          })
       p 29
       p 30
       p 31

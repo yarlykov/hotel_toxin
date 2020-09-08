@@ -49,6 +49,20 @@
     background-color: #fff;
     border: $mainBorder;
   }
+
+  &__title_rich{
+    width: 230px;
+    font-weight: bold;
+    color: $textColor_75;
+  }
+
+  &__description_rich{
+    color: $textColor_50;
+    font-weight: normal;
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 14px;
+  }
   /************************Focus/Hover******************/
   &:hover{
     color:$textColor_75;
