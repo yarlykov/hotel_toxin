@@ -1,6 +1,9 @@
 import 'air-datepicker/dist/js/datepicker.js';
 import 'air-datepicker/dist/css/datepicker.css';
 
+
+//Нужно тут все переписать!!!!
+
 $('.air-datepicker').datepicker({
   dateFormat: 'd M',
   multipleDatesSeparator: ' - ',
@@ -37,8 +40,13 @@ btnWrap.append(clearBtn)
 btnWrap.append(applyBtn)
 root.append(btnWrap)
 
-const apply = $('.js-buttons-dropdown__button_apply')
-const clear = $('.js-buttons-dropdown__button_clear')
+const datepickerButtons = {
+  apply: $('.js-buttons-dropdown__button_apply'),
+  clear: $('.js-buttons-dropdown__button_clear')
+}
+
+
+//----------------------------------------
 const myDatepicker = $('.air-datepicker').data('datepicker')
 
 
@@ -46,13 +54,15 @@ const dddate = new Date('2020-09-17')
 const dddate2 = new Date('2020-09-23')
 
 myDatepicker.selectDate([dddate, dddate2])
-clear.addClass('display')
+datepickerButtons.clear.addClass('display')
 
-apply.on('click', function(){
+//----------------------------------------
+
+datepickerButtons.apply.on('click', function(){
   myDatepicker.hide()
 })
-clear.on('click', function () {
-  clear.removeClass('display')
+datepickerButtons.clear.on('click', function () {
+  datepickerButtons.clear.removeClass('display')
   myDatepicker.clear()
 })
 
@@ -63,14 +73,54 @@ $('.datepickerRoot').each(function () {
   $datepickerInput.datepicker({
     onSelect: function(formattedDate, date, inst) {
       if(formattedDate !== ''){
-        clear.addClass('display')
-        console.log(formattedDate)
+        datepickerButtons.clear.addClass('display')
       }else{
-        clear.removeClass('display')
+        datepickerButtons.clear.removeClass('display')
       }
     },
   })
-  
-
-
 });
+
+
+$('.js-air-datepicker__day-start').datepicker({
+  dateFormat: 'dd.mm.yyyy',
+  position: "bottom left",
+  navTitles: {
+    days: 'MM yyyy'
+  },
+  prevHtml: '<span class="material-icons">arrow_back</span>',
+  nextHtml: '<span class="material-icons">arrow_forward</span>',
+  // offset: -10,
+})
+$('.js-air-datepicker__day-end').datepicker({
+  dateFormat: 'dd.mm.yyyy',
+  position: "bottom right",
+  navTitles: {
+    days: 'MM yyyy'
+  },
+  prevHtml: '<span class="material-icons">arrow_back</span>',
+  nextHtml: '<span class="material-icons">arrow_forward</span>',
+  // offset: -10,
+})
+
+
+const $dateStart = $('.js-air-datepicker__day-start')
+console.log($dateStart)
+const $dateEnd = $('.js-air-datepicker__day-end')
+console.log($dateEnd)
+
+$dateStart.datepicker({
+  onSelect: function (fd, date) {
+    $dateEnd.data('datepicker')
+      .update('minDate', date);
+
+    $dateEnd.focus();
+  }
+})
+
+$dateEnd.datepicker({
+  onSelect: function (fd, date) {
+    $dateStart.data('datepicker')
+      .update('maxDate', date)
+  }
+})
