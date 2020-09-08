@@ -1,0 +1,55 @@
+.comment{
+  box-sizing: border-box;
+  width: 711px;
+  background: #fff;
+  z-index: 1;
+
+  &__header{
+		display: flex;
+	}
+
+	&__avatar{
+		width: 47.67px;
+		height: 48px;
+		border: 2px solid #FFFFFF;
+		box-sizing: border-box;
+		box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+		border-radius: 32px;  
+	}
+
+	&__description{
+		font-size: 14px;
+		line-height: 24px;
+		color: $textColor_75;
+		padding-left: 8.93px;
+
+		&_name{
+			font-weight: bold;
+		}
+
+		&_date-of-visit{
+			font-variant: normal;
+		}
+	}
+
+	
+	&__body{
+		display: flex;
+		line-height: 24px;
+		color: $textColor_75;
+		
+		p{
+			margin: 0;
+		}
+	}
+	
+	&__like{
+		padding-left: 2px;
+		padding-top: 9px;
+	}
+
+	&__text{
+		padding-left: 14.31px;
+		padding-top: 10px;
+	}
+}

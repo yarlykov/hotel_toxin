@@ -1,0 +1,15 @@
+mixin comment({ imageName="", name="", commentText="", dateOfVisit="", likeCount=0 })
+	.comment__header
+		img&attributes({
+  	  src: `src/img/${imageName}.jpg`,
+  	  class: "comment__avatar"
+			})
+		.comment__description
+			.comment__description_name #{name}
+			.comment__description_date-of-visit #{dateOfVisit}
+	.comment__body
+		.comment__like
+			+likeButton({ icon: "favorite", value: likeCount})
+		.comment__text
+			p
+				| #{commentText}

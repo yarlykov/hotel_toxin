@@ -10,6 +10,7 @@ include ../../blocks/rating/rating.pug
 include ../../blocks/bullet-list/bullet-list.pug
 include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/dignity-room/dignity-room.pug
+include ../../blocks/comment/comment.pug
 
 block variables 
   - var title = "Form Elements"
@@ -189,7 +190,8 @@ block content
         +checkbox({ title: "Кроватка", checked: true })
         +checkbox({ title: "Телевизо" })
         +checkbox({ title: "Шампунь" })
-      p 36
+      .comment
+        +comment({ imageName: "comment-image-1", name: "Мурад Сарафанов", dateOfVisit: "5 дней назад", commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", likeCount: 12})
       p 37
       .dignity-room
         +dignity-room({ icon: "mood", title: "Комфорт", subtitle: "Шумопоглащающие стены"})
