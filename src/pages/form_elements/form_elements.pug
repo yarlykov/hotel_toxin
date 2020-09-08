@@ -174,15 +174,20 @@ block content
           })
         +checkbox({ 
           title: "Помощник для инвалидов", rich: true, 
-          description: "На 1 этаже вас встретит специалист  и проводит до номера."
+          description: "На 1 этаже вас встретит специалист и проводит до номера."
           })
       p 29
       p 30
       p 31
       p 32
-      p 33
-      p 34
-      p 35
+      form.wrap__checkbox
+        h3.font__h3 expandable checkbox list
+        +checkbox({ title: "Завтрак" })
+        +checkbox({ title: "Письменный стол", checked: true })
+        +checkbox({ title: "Стул для кормления", checked: true })
+        +checkbox({ title: "Кроватка", checked: true })
+        +checkbox({ title: "Телевизо" })
+        +checkbox({ title: "Шампунь" })
       p 36
       p 37
       p 38
