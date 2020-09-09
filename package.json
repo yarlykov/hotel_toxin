@@ -42,6 +42,7 @@
     "air-datepicker": "^2.2.3",
     "inputmask": "^5.0.5",
     "jquery": "^3.5.1",
-    "jquery-ui-slider": "^1.12.1"
+    "jquery-ui-slider": "^1.12.1",
+    "paginationjs": "^2.1.5"
   }
 }
