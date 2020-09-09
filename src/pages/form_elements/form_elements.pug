@@ -12,6 +12,8 @@ include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/dignity-room/dignity-room.pug
 include ../../blocks/comment/comment.pug
 include ../../blocks/pagination/pagination.pug
+include ../../blocks/text-field/text-field.pug
+
 
 block variables 
   - var title = "Form Elements"
@@ -27,11 +29,7 @@ block content
         label.form__text-field
           span.form__title Text field
           span.form__description Default
-          .text-field__input_wrapper
-            input(
-              class="text-field__input text-field__input_size_large" type="text" 
-              name='email' 
-              placeholder="Email")
+          +text-field({ classList: [], type: "text", placeholder: "Email", size:"large", name: "email", autocomplete: "on" })
                     //----------------------------------------
       form.wrap__checkbox
         h3.font__h3 Checkbox buttons
@@ -45,13 +43,8 @@ block content
         label.form__text-field
           span.form__title Text field
           span.form__description Hover/Focus
-          .text-field__input_wrapper
-            input(
-              class="text-field__input text-field__input_size_large text-field__input_hover"
-              type="text" 
-              name="text"
-              placeholder="This is pretty awesome"
-              )
+          +text-field({ classList: ["text-field__input_hover"], type: "text",  placeholder: "This is pretty awesome", size:"large", name: "email",  autocomplete: "off" })
+ 
         //----------------------------------------
       form.wrap__radio-buttons
         h3.font__h3 Radio buttons
@@ -182,8 +175,8 @@ block content
       .wrap__pagination
         h3.font__h3 pagination
         +pagination()
-      p 30
-      p 31
+      div 30
+        +text-field({ classList: [], type: "text", placeholder: "Email", size: "large", name: "email", autocomplete: "on" })
       p 32
       form.wrap__checkbox
         h3.font__h3 expandable checkbox list

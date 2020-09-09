@@ -1,3 +1,5 @@
+
+
 .content-wrapper_form-elements{
   display: grid;
   box-sizing: border-box;
@@ -20,15 +22,7 @@
   height: 67px;
 }
 
-.text-field__input_size_large{
-  width: 320px;
-}
-.text-field__input_size_m{
-  width: 266px;
-}
-.text-field__input_size_s{
-  width: 150px;
-}
+
 .form__title{
   margin: 0%;
   padding: 0%;
@@ -40,32 +34,9 @@
   line-height: 15px;
   color: $mainTextColor;
 }
-.text-field__input_wrapper{
-  grid-column: 1/3;
-  align-self: end;
-  padding-left: 1px;
-}
-// .text-field__input_wrapper_s{
-// 	grid-column: 2/3;
-// 	align-self: end;
-// 	padding-left: 1px;
-// }
-.text-field__input {
-  box-sizing: border-box;
-  padding: 0 0px 0 14px;
-  height: 44px;
-  border: $mainBorder;
-  border-radius: 4px;
-  font-family: $mainFont;
-  font-size: $mainFont_size;
-  line-height: 18px;
-}
-.text-field__input:hover{
-  border: $focusBorder;
-} 
-.text-field__input:focus{
-  border: $focusBorder;
-} 
+
+
+
 .form__description{
   font-size: 12px;
   line-height: 15px;
@@ -73,13 +44,11 @@
   text-transform: uppercase;
   color: $textColor_50;
 }
-.text-field__input_hover{
-  border: $focusBorder;
-}
+
 //---------------------------------
-.wrap__checkbox{
-  display: grid;
-}
+// .wrap__checkbox{
+//   display: grid;
+// }
 // .wrap__radio-buttons{
 // 	display: grid;
 // }

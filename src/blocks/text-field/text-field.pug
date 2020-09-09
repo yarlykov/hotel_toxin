@@ -1,0 +1,16 @@
+mixin text-field({ classList=[], type="", placeholder="", size="", name="", autocomplete="off"})
+
+  -
+    const mainTextFieldClass = "text-field__input"
+    const textFieldSizeClass = `text-field__size_${size}`
+    classList.push(mainTextFieldClass, textFieldSizeClass)
+
+    let inputAttributes = {
+      class: classList,
+      type: type,
+      name: name,
+      autocomplete: autocomplete,
+      placeholder: placeholder
+    }
+
+  input&attributes(inputAttributes)

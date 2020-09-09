@@ -1,0 +1,59 @@
+ input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    -webkit-text-fill-color: rgba(31, 32, 65, 0.75);
+  }
+
+.text-field{
+
+	&__size{
+		&_large{
+			width: 320px;
+		}
+		&_m{
+			width: 266px;
+		}
+		&_s{
+			width: 150px;
+		}
+	}
+
+  &__input{
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 0px 0 14px;
+    border: $mainBorder;
+    height: $inputHeight;
+    border-radius: 4px;
+    font-family: $mainFont;
+    font-size: $mainFont_size;
+    line-height: 18px;
+    cursor: pointer;
+    color: $textColor_75;
+
+    &::placeholder{
+      color: $textColor_25;
+    }
+
+    &:hover,
+    &:focus{
+      border: $focusBorder;
+      &::placeholder{
+        color: $textColor_75;
+      }
+		}
+
+		&_hover{
+			&::placeholder{
+    		color:$textColor_75;
+  		}
+  		border: $focusBorder;
+		}
+		
+  }
+}

@@ -16,6 +16,11 @@ $mainFont: Montserrat, Areal, san-serif;
 $secondFont: Quiqksand, Areal, san-serif; 
 $mainFont_size: 14px;
 
+$inputHeight: 44px;
+$inputWidthSizeL: 320px;
+$inputWidthSizeM: 266px;
+$inputWidthSizeS: 150px;
+
 
 //borders
 $mainBorder: 1px solid rgba(31, 32, 65, 0.25);
@@ -56,6 +61,7 @@ $redBorder: 1px solid red;
 @import 'blocks/dignity-room/dignity-room.scss';
 @import 'blocks/comment/comment.scss';
 @import 'blocks/pagination/pagination.scss';
+@import 'blocks/text-field/text-field.scss';
 
 .body-wrapper {
   margin: 0;
