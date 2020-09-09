@@ -1,7 +1,6 @@
 extends ../../blocks/main.pug
 
 include ../../blocks/dropdown/dropdown.pug
-include ../../blocks/mask/mask.pug
 include ../../blocks/like/like.pug
 include ../../blocks/checkbox/checkbox.pug
 include ../../blocks/radio/radio.pug
@@ -74,7 +73,7 @@ block content
         div.form__header
           h2.form__title Masked text field
           span.form__description Default
-        +maskDate({placeholder: "ДД.ММ.ГГГГ", size: "large"})
+        +text-field({ classList: ["js-masked__text-field"], type: "text",  placeholder: "ДД.ММ.ГГГГ", size:"large", name: "text"})
 
       form
         h3.font__h3 Like button
@@ -92,25 +91,11 @@ block content
         .form.form__text-field_s
           label
             span.form__title Date dropdown
-            .text-field__input_wrapper
-              input(
-                class="text-field__input text-field__input_size_s js-air-datepicker__day-start"
-                type="text" 
-                name="text"
-                autocomplete="off"
-                placeholder="ДД.ММ.ГГГГ"
-                )
-          .form
-            label
-              span.form__title Date dropdown
-              .text-field__input_wrapper
-                input(
-                  class="text-field__input text-field__input_size_s js-air-datepicker__day-end"
-                  type="text" 
-                  name="text"
-                  autocomplete="off"
-                  placeholder="19.08.2019"
-                  )
+            +text-field({ classList: ["js-air-datepicker__day-start"], type: "text", placeholder: "ДД.ММ.ГГГГ", size:"s", name: "date", autocomplete: "on" })
+          label
+            span.form__title Date dropdown
+            +text-field({ classList: ["js-air-datepicker__day-end"], type: "text",placeholder: "19.08.2019", size:"s", name: "date", autocomplete: "on" })
+
       form(action="")
         h3.font__h3 Rate button
         +rating({ rating: 4 })
@@ -118,15 +103,7 @@ block content
       p 15
       .form.datepickerRoot
         span.form__title Filter Date dropdown
-        .text-field__input_wrapper
-          input(
-            class="air-datepicker text-field__input text-field__input_size_m"
-            autocomplete="off"
-            type="text" 
-            name="text"
-            placeholder="19 авг - 23 авг"
-            )
-          p(id="demo")
+          +text-field({ classList: ["air-datepicker"], type: "text",  placeholder: "19 авг - 23 авг", size:"m", name: "text",  autocomplete: "off" })
       form
         h3.font__h3 Dropdown
           +dropdown({isOpen: true, group: "guests", elements: [
@@ -175,8 +152,7 @@ block content
       .wrap__pagination
         h3.font__h3 pagination
         +pagination()
-      div 30
-        +text-field({ classList: [], type: "text", placeholder: "Email", size: "large", name: "email", autocomplete: "on" })
+      p 30
       p 32
       form.wrap__checkbox
         h3.font__h3 expandable checkbox list
