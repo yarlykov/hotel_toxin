@@ -1,0 +1,65 @@
+.js-pagination__next-button{
+	color: #fff;
+	line-height: 40px;
+}
+
+.paginationjs {
+		font-family: $mainFont;
+		font-size: 12px;
+		line-height: 15px;
+}
+
+.paginationjs .paginationjs-pages li {
+    border: none;
+}
+
+.paginationjs .paginationjs-pages li>a {
+    min-width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    font-size: 12px;
+    color: $textColor_50;
+ 
+}
+
+.paginationjs .paginationjs-pages li>a:hover {
+		background: #eee;
+		border-radius: 22px;
+}
+
+.paginationjs .paginationjs-pages li.active>a {
+    height: 40px;
+		line-height: 40px;
+    background: $mainGradient;
+		color: #fff;
+		border-radius: 22px;
+		font-weight: bold;
+}
+
+.paginationjs .paginationjs-pages li.disabled>a {
+		opacity: 1;
+}
+
+.paginationjs .paginationjs-pages li:first-child, .paginationjs .paginationjs-pages li:first-child>a {
+		border-radius: 22px;
+}
+
+.paginationjs .paginationjs-pages li:last-child {
+		border-right: none;
+    border-radius: 22px;
+}
+
+	.paginationjs .paginationjs-pages li:last-child>a {
+		border-radius: 22px;
+		background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+		font-weight: bold;
+}
+
+.paginationjs .paginationjs-nav {
+    height: 24px;
+		line-height: 24px;
+		font-family: Montserrat, Arial, sans-serif;
+		color: $textColor_75;
+		margin: 8px 0 0 5px;
+}

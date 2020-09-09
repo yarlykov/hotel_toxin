@@ -11,6 +11,7 @@ include ../../blocks/bullet-list/bullet-list.pug
 include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/dignity-room/dignity-room.pug
 include ../../blocks/comment/comment.pug
+include ../../blocks/pagination/pagination.pug
 
 block variables 
   - var title = "Form Elements"
@@ -179,9 +180,8 @@ block content
           description: "На 1 этаже вас встретит специалист и проводит до номера."
           })
       .wrap__pagination
-        h3.font__h3 Pagination
-        <div id="data-container"></div>
-        <div id="pagination-container"></div>
+        h3.font__h3 pagination
+        +pagination()
       p 30
       p 31
       p 32
