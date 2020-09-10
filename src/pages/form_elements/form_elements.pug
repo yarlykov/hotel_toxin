@@ -12,6 +12,7 @@ include ../../blocks/dignity-room/dignity-room.pug
 include ../../blocks/comment/comment.pug
 include ../../blocks/pagination/pagination.pug
 include ../../blocks/text-field/text-field.pug
+include ../../blocks/button/button.pug
 
 
 block variables 
@@ -51,7 +52,13 @@ block content
         +radio({ group: "gender", title: "Женщина", checked: false })
       form
         h3.font__h3 Buttons
-        include ../../blocks/button/button.pug
+        +button({ classList: [], buttonName: "click me", size: "small", textColor: "white" })
+        +button({ classList: ["button_hover"], buttonName: "click me", size: "small", textColor: "white" })
+        +button({ classList: [], buttonName: "click me", size: "small", textColor: "purple", buttonVariation: "fillWhite" })
+        +button({ classList: ["button_hover"], buttonName: "click me", size: "small", textColor: "purple", buttonVariation: "fillWhite" })
+        +button({ classList: ["button_inline"], buttonName: "click me", textColor: "purple"})
+        +button({ classList: ["button_inline"], buttonName: "click me", textColor: "gray"})
+        +button({ classList: [], buttonName: "click me ", textColor: "white", size: "large",buttonVariation: "withArrow"})
       .form
         div.form__header
           h2.form__title Dropdown

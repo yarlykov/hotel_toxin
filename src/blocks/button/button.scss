@@ -5,62 +5,80 @@
   border-radius: 100px;
   outline: none;
   cursor: pointer;
-}
-.button:focus{
-  box-shadow: 0 0 0 1px;	
-  color: $designColor_main;
-}
+
+  &:hover,
+  &:focus{
+    background: $mainGradientTransperent;
+  }
+
+  &_hover{
+    background: $mainGradientTransperent;
+  }
+
+  &_fill-white{
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    top: 2px;
+    left:	2px;
+    background: #fff;
+    border-radius: 100px;
+  }
+  /*------Size------*/
+  &_size{
+    &_small{
+      min-width: 99px;
+    }
+    &_large{
+      min-width: 320px;
+    }
+    &_inline{
+      height: 1.2em;
+    }
+  }
+
+  /*------Inline------*/
+  &_inline{
+    border: none;
+    background: none;
+    display: inline-block;
+    cursor: pointer;
+    
+    &:hover,
+    &:focus{
+      opacity: 0.5;
+      background: none;
+    }
+  }
   
-.button:hover{ //как оставить подпись нерпозоачной?????
-  background: $mainGradientTransperent;
-}
-.button_hover{
-  background: $mainGradientTransperent;
-}
-.button_border{
-  position: absolute;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  top: 2px;
-  left:	2px;
-  background: #fff;
-  border-radius: 100px;
-  // z-index: 1;
-}
+  /*------Text-Colors------*/
+  &_text-color{
+    &_purple{
+      color: $designColor_main;
+      position: relative;
+      z-index: 1;
+    }
+    &_gray{
+      color: $textColor_50;
+    }
+    &_white{
+      color: #fff;
+    }
+  }
 
-/*Size*/
-
-.button_size_s{
-  width: 99px;
-}
-.button_size_large{
-  width: 320px;
-}
-/*Inline*/
-.button_inline{
-  border: none;
-  background: none;
-  // padding: 0;
-  display: inline-block;
-  height: 1.2em;
-  border-radius: 2px;
-  cursor: pointer;
-}
-/*Text-Colors*/
-.button{
-  &_text-color_purple{
-  color: $designColor_main;
-  position: relative;
-  z-index: 1;}
-}
-.button_text-color_gray{
-  color: $textColor_50;
-}
-.button_text-color_white{
-  color: #fff;
-}
-.button__arrow{
-  position: absolute;
-  right: 15px;
-  top: 10px;
+  &__arrow{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #fff;
+    
+    &:before{
+      content: "arrow_forward";
+      position: relative;
+      font-family: Material Icons;
+      color: #fff;
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
 }
