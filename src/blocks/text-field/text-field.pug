@@ -1,4 +1,4 @@
-mixin text-field({ classList=[], type="", placeholder="", size="", name="", autocomplete="off"})
+mixin text-field({ classList=[], type="", placeholder="", size="", name="", autocomplete="off", spellcheck=false})
 
   -
     const mainTextFieldClass = "text-field__input"
@@ -10,7 +10,8 @@ mixin text-field({ classList=[], type="", placeholder="", size="", name="", auto
       type: type,
       name: name,
       autocomplete: autocomplete,
-      placeholder: placeholder
+      placeholder: placeholder,
+      spellcheck: spellcheck
     }
 
   input&attributes(inputAttributes)
