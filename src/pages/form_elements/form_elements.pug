@@ -98,10 +98,10 @@ block content
         .form.form__text-field_s
           label
             span.form__title Date dropdown
-            +text-field({ classList: ["js-air-datepicker__day-start"], type: "text", placeholder: "ДД.ММ.ГГГГ", size:"s", name: "date", autocomplete: "on", arrow: true })
+            +text-field({ classList: ["js-air-datepicker__day-start", "text-field__input_placeholder_dark-75"], type: "text", placeholder: "ДД.ММ.ГГГГ", size:"s", name: "date", autocomplete: "on", arrow: true })
           label
             span.form__title Date dropdown
-            +text-field({ classList: ["js-air-datepicker__day-end"], type: "text",placeholder: "19.08.2019", size:"s", name: "date", autocomplete: "on", arrow: true })
+            +text-field({ classList: ["js-air-datepicker__day-end", "text-field__input_placeholder_dark-75"], type: "text",placeholder: "19.08.2019", size:"s", name: "date", autocomplete: "on", arrow: true })
 
       form(action="")
         h3.font__h3 Rate button
@@ -110,7 +110,7 @@ block content
       p 15
       .form.datepickerRoot
         span.form__title Filter Date dropdown
-          +text-field({ classList: ["air-datepicker", "text-field__input_lowercase"], type: "text",  placeholder: "19 авг - 23 авг", size:"m", name: "text",  autocomplete: "off", arrow: true })
+          +text-field({ classList: ["air-datepicker", "text-field__input_lowercase", "text-field__input_placeholder_dark-75"], type: "text",  placeholder: "19 авг - 23 авг", size:"m", name: "text",  autocomplete: "off", arrow: true })
       form
         h3.font__h3 Dropdown
           +dropdown({isOpen: true, group: "guests", elements: [

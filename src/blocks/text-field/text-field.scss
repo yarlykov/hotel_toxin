@@ -77,6 +77,12 @@
     &_lowercase{
       text-transform: lowercase;
     }
+
+    &_placeholder_dark-75{
+      &::placeholder{
+        color:$textColor_75;
+      }
+    }
 		
   }
 }
