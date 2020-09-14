@@ -3,7 +3,7 @@ mixin text-field({ classList=[], type="", placeholder="", size="", name="", auto
   -
     const mainTextFieldClass = "text-field__input"
     const textFieldSizeClass = `text-field__size_${size}`
-    classList.push(mainTextFieldClass, textFieldSizeClass)
+    classList.push(mainTextFieldClass)
 
     let inputAttributes = {
       class: classList,
@@ -13,5 +13,6 @@ mixin text-field({ classList=[], type="", placeholder="", size="", name="", auto
       placeholder: placeholder,
       spellcheck: spellcheck
     }
-
-  input&attributes(inputAttributes)
+  .text-field(class=textFieldSizeClass)
+    input&attributes(inputAttributes)
+    div(class="text-field__arrow_down")&attributes({"data-type": "arrow", onmousedown: "return false"})

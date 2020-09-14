@@ -10,6 +10,7 @@
   }
 
 .text-field{
+  position: relative;
 
 	&__size{
 		&_large{
@@ -21,9 +22,26 @@
 		&_s{
 			width: 150px;
 		}
-	}
+  }
+  
+  &__arrow{
+    &_down{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      &::before{
+        content: '\e5cf';
+        font-family: 'Material Icons';
+        font-size: 24px;
+        line-height: 24px;
+        color: $textColor_50;
+        cursor: pointer;
+      }
+    }
+  }
 
   &__input{
+    width: 100%;
     position: relative;
     box-sizing: border-box;
     padding: 0 0px 0 14px;
