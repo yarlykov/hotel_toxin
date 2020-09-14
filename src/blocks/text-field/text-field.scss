@@ -64,14 +64,19 @@
       &::placeholder{
         color: $textColor_75;
       }
-		}
+    }
+    
 
 		&_hover{
 			&::placeholder{
     		color:$textColor_75;
   		}
   		border: $focusBorder;
-		}
+    }
+    
+    &_lowercase{
+      text-transform: lowercase;
+    }
 		
   }
 }

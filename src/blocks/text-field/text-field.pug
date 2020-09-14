@@ -1,4 +1,4 @@
-mixin text-field({ classList=[], type="", placeholder="", size="", name="", autocomplete="off", spellcheck=false})
+mixin text-field({ classList=[], type="", placeholder="", size="", name="", autocomplete="off", spellcheck=false, arrow=false})
 
   -
     const mainTextFieldClass = "text-field__input"
@@ -15,4 +15,5 @@ mixin text-field({ classList=[], type="", placeholder="", size="", name="", auto
     }
   .text-field(class=textFieldSizeClass)
     input&attributes(inputAttributes)
-    div(class="text-field__arrow_down")&attributes({"data-type": "arrow", onmousedown: "return false"})
+    if arrow
+      div(class="text-field__arrow_down")&attributes({"data-type": "arrow", onmousedown: "return false"})
