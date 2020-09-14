@@ -15,7 +15,7 @@ mixin dropdown(options)
       readonly: "readonly",
       onmousedown: "return false"
       })
-    div(class="fa fa-chevron-down")&attributes({"data-type": "arrow", onmousedown: "return false"})
+    div(class="dropdown__arrow_down")&attributes({"data-type": "arrow", onmousedown: "return false"})
     .dropdown__drop
       .dropdown__menu.font__h3
         each elem in options.elements
