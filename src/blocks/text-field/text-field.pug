@@ -1,9 +1,10 @@
-mixin text-field({ classList=[], type="", placeholder="", size="", name="", autocomplete="off", spellcheck=false, arrow=false})
+mixin text-field({ classList=[], type="", placeholder="", size="", name="", autocomplete="off", spellcheck=false, subscribe=false, arrow=false})
 
   -
     const mainTextFieldClass = "text-field__input"
-    const textFieldSizeClass = `text-field__size_${size}`
     classList.push(mainTextFieldClass)
+    const sizeTextFieldClass = `text-field__size_${size}`
+    const hoverTextFieldClass = classList.includes("text-field_hover") ? "text-field_hover" : ""
 
     let inputAttributes = {
       class: classList,
@@ -13,7 +14,13 @@ mixin text-field({ classList=[], type="", placeholder="", size="", name="", auto
       placeholder: placeholder,
       spellcheck: spellcheck
     }
-  .text-field(class=textFieldSizeClass)
+  .text-field(class=[hoverTextFieldClass, sizeTextFieldClass])
     input&attributes(inputAttributes)
     if arrow
       div(class="text-field__arrow_down")&attributes({"data-type": "arrow", onmousedown: "return false"})
+    if subscribe
+      button&attributes({
+        class: ["text-field__subscribe_button", "gradient"],
+        type: "button",
+        name: "subscribe"
+      })
