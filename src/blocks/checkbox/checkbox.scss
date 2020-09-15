@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
+    cursor: pointer;
     &_title{
       padding-top: 4px;
     }
@@ -16,7 +17,7 @@
         line-height: 24px;
         padding-right: 10px;
         color: $textColor_50;
-        cursor: pointer;
+        // cursor: pointer;
       }
     }
   }

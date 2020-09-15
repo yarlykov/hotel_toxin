@@ -3,10 +3,13 @@ mixin checkbox({ mainTitle="", dropdown=false, rich=false, listItems=[]})
   -
     let titleClassName = "checkbox__title"
     let descriptionClassName = "checkbox__description"
+
     titleClassName += rich ? "_rich" : ""
     descriptionClassName += rich ? "_rich" : ""
 
-  .checkbox
+    let isDropdown = dropdown ? "js-checkbox" : ""
+
+  div(class=isDropdown).checkbox
     .checkbox__header
       div.checkbox__header_title.font__h3 #{mainTitle}
       if dropdown
