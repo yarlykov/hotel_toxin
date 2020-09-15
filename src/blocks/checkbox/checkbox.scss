@@ -9,6 +9,16 @@
     &_title{
       padding-top: 4px;
     }
+     &_arrow-up{
+      &::before{
+        content: '\e5ce';
+        font-family: 'Material Icons';
+        font-size: 24px;
+        line-height: 24px;
+        padding-right: 10px;
+        color: $textColor_50;
+      }
+    }
     &_arrow-down{
       &::before{
         content: '\e5cf';
@@ -17,9 +27,9 @@
         line-height: 24px;
         padding-right: 10px;
         color: $textColor_50;
-        // cursor: pointer;
       }
     }
+
   }
 
   &__item{

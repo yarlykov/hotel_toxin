@@ -13,14 +13,14 @@ mixin checkbox({ mainTitle="", dropdown=false, rich=false, listItems=[]})
     .checkbox__header
       div.checkbox__header_title.font__h3 #{mainTitle}
       if dropdown
-        .checkbox__header_arrow-down
+        .js-checkbox__header_arrow.checkbox__header_arrow-up
     each item in listItems
       label.checkbox__item
         input&attributes({
           class: "checkbox__input",
           type: "checkbox",
           title: item.title,
-          checked: item.checked
+          checked: item.checked,
         })
         span.checkbox__box
         div(class = titleClassName) #{item.title}

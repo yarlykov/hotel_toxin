@@ -1,12 +1,15 @@
 $(document).ready(function(){
 
 	const checkboxDropdown = $('.js-checkbox .checkbox__header')
-
+	
 	checkboxDropdown.on('click', function(){
-		if ($(this).parent().find('.checkbox__item').length){
-			$(this).parent().find('.checkbox__item').toggle()
+		const arrowDropdown = $(this).find('.js-checkbox__header_arrow')
+		const itemDropdown = $(this).parent().find('.checkbox__item')
 
-			return false
+		if (itemDropdown.length){
+			itemDropdown.toggle()
+			arrowDropdown.toggleClass('checkbox__header_arrow-up')
+			arrowDropdown.toggleClass('checkbox__header_arrow-down')
 		}
 	})
 
