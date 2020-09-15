@@ -1,11 +1,45 @@
 .checkbox{
-  color: $textColor_50;
-  display: block;
-  box-sizing: border-box;
-  min-height: 20px;
-  max-width: 192px;
-  padding-left: 2em;
-  cursor: pointer;
+  width: 266px;
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    &_title{
+      padding-top: 4px;
+    }
+    &_arrow-down{
+      &::before{
+        content: '\e5cf';
+        font-family: 'Material Icons';
+        font-size: 24px;
+        line-height: 24px;
+        padding-right: 10px;
+        color: $textColor_50;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__item{
+    color: $textColor_50;
+    display: block;
+    box-sizing: border-box;
+    min-height: 20px;
+    max-width: 192px;
+    padding-left: 2em;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    /*-----Focus/Hover-----*/
+    &:hover{
+      color:$textColor_75;
+    }
+
+    &:focus-within{
+      color:$textColor_75;
+    }
+  }
 
   &__input{
     position: absolute;
@@ -62,14 +96,6 @@
     margin-top: 5px;
     font-size: 12px;
     line-height: 14px;
-  }
-  /************************Focus/Hover******************/
-  &:hover{
-    color:$textColor_75;
-  }
-
-  &:focus-within{
-    color:$textColor_75;
   }
 
 }
