@@ -44,7 +44,7 @@
 
   &__subscribe_button{
     position: absolute;
-    width: 44px;
+    width: 42px;
     height: 44px;
     border: none;
     border-left: none;
@@ -66,12 +66,12 @@
     padding: 0 0px 0 14px;
 
     border: none;
-    height: $inputHeight;
+    height: 42px;
     border-radius: 4px;
 
     font-family: $mainFont;
     font-size: $mainFont_size;
-    line-height: 18px;
+    line-height: 24px;
     cursor: pointer;
     color: $textColor_75;
     text-overflow: ellipsis;
@@ -107,6 +107,11 @@
       border: none;
     }
     & .text-field__input::placeholder{
+      letter-spacing: -0.18px;
+      color:$textColor_75;
+    }
+    & .text-field__input{
+      padding-bottom: 2px;
       color:$textColor_75;
     }
   }

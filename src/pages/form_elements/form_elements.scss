@@ -1,39 +1,102 @@
 
 
-.content-wrapper_form-elements{
+.form-elements{
   display: grid;
-  box-sizing: border-box;
-  grid-template-columns: repeat(3, 320px);
-  justify-content: space-between;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto;
+  column-gap: 126px; 
   margin: 0 auto;
-  max-width: 1160px;
-  min-width: 1160px;
+  max-width: 1158px;
+  min-width: 1158px;
 }
-.form__header{ 		//form__text-field_wrap_large
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-.form__text-field_s{		//form__text-field_wrap_s
+
+.form-elements__text-fields-buttons{
   display: grid;
-  grid-column-gap: 10px;
-  grid-template-columns: 50% 50%;
-  width: 321px;
-  height: 67px;
+  grid-template-columns: 320px auto 320px;
+  column-gap: 126px;
+  margin-top: 3px;
+}
+
+.form-elements__text-fields {
+
+}
+
+.text-field {
+  &__wrapper {
+    padding-bottom: 20.5px;
+    &:nth-child(4) {
+      padding-top: 1px;
+    }
+    &:nth-child(5),
+    &:nth-child(6) {
+      padding-top: 20px;
+    }
+    &:nth-child(7) {
+      padding-top: 21px;
+    }
+    &_date-dropdown {
+      display: flex;
+      justifyspace-between;
+      width: 100%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    margin: 0px 0 5px 0;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 12px;
+    color: $mainTextColor;
+  }
+
+  &__description{
+    color: $textColor_50;
+  }
+}
+
+.form-elements__dropdowns{
+  background: gray;
+  grid-column: span 3;
+  display: grid;
+  // grid-template-columns: repeat(3, 320px);
+  grid-template-columns: 1fr 0.8fr 1fr;
+  // grid-row: span 3;
+}
+.dropdown__wrapper{
+  background: greenyellow;
+  align-self: start;
+}
+
+.form-elements__lists{
+  background: coral;
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+}
+
+.form-elements__room-review{
+  background: cornflowerblue;
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 }
 
 
-.form__title{
-  margin: 0%;
-  padding: 0%;
-  // align-self: center;
-  padding: 1px 0 0px 1px;
-  // font-weight: bold;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 15px;
-  color: $mainTextColor;
-}
+
+
+
+
+
+
+
 
 
 
