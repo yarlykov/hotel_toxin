@@ -84,6 +84,28 @@
     &:nth-child(5){
       padding-top: 39.5px;
     }
+    &:last-child{
+      padding-top: 40px;
+      padding-left: 1px;
+    }
+
+    &_range-slider {
+      width: 266px;
+      height: 46px;
+    }
+
+  }
+  &__block {
+    width: 218px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    &_inline {
+      width: 142px;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 30px;
+    }
   }
   &__title {
     padding-bottom: 16px;

@@ -111,18 +111,21 @@ block content
             +rating({ rating: 5 })
 
         .form-elements__buttons
-          .button__wrapper
+          .button__wrapper_range-slider
             +range-slider()
 
           .button__wrapper
             h3.button__title.font__h3 Buttons
-            +button({ classList: [], buttonName: "click me", size: "small", textColor: "white" })
-            +button({ classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "white" })
-            +button({ classList: [], buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" })
-            +button({ classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite" })
-            +button({ classList: ["button_inline"], buttonName: "click me", textColor: "purple"})
-            +button({ classList: ["button_inline"], buttonName: "click me", textColor: "gray"})
-            +button({ classList: [], buttonName: "click me ", textColor: "white", size: "large",buttonVariation: "withArrow"})
+            .button__block
+              +button({ classList: [], buttonName: "click me", size: "small", textColor: "white" })
+              +button({ classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "white" })
+            .button__block
+              +button({ classList: [], buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" })
+              +button({ classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite" })
+            .button__block_inline
+              +button({ classList: ["button_inline"], buttonName: "click me", textColor: "purple"})
+              +button({ classList: ["button_inline"], buttonName: "click me", textColor: "gray"})
+            +button({ classList: [], buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"})
 
           .button__wrapper
             h3.button__title.font__h3 pagination

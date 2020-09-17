@@ -62,6 +62,14 @@ $redBorder: 1px solid red;
 @import 'blocks/pagination/pagination.scss';
 @import 'blocks/text-field/text-field.scss';
 
+* {
+  box-sizing: border-box;
+}
+
+h1,h2,h3 {
+  margin: 0;
+}
+
 .body-wrapper {
   margin: 0;
   display: flex;
