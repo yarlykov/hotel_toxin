@@ -4,7 +4,9 @@
   display: block;
   cursor: pointer;
   margin-left: 3.5em;
-  margin-bottom: 1em;
+  &:not(:last-child){
+    margin-bottom: 16px;
+  }
 
   &__input{
     position: absolute;

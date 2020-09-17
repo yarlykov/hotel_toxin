@@ -4,12 +4,9 @@
   &__header{
     display: flex;
     justify-content: space-between;
-    padding-bottom: 10px;
+    padding-bottom: 17px;
     cursor: pointer;
-    &_title{
-      padding-top: 4px;
-    }
-     &_arrow-up{
+    &_arrow-up{
       &::before{
         content: '\e5ce';
         font-family: 'Material Icons';
@@ -38,9 +35,12 @@
     box-sizing: border-box;
     min-height: 20px;
     max-width: 192px;
-    padding-left: 2em;
-    padding-bottom: 10px;
+    padding-left: 28px;
+    padding-bottom: 12px;
     cursor: pointer;
+    &:last-child{
+      padding-bottom: 0;
+    }
 
     /*-----Focus/Hover-----*/
     &:hover{
