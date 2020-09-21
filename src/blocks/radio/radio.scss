@@ -3,7 +3,7 @@
   display: inline-block;
   color: $textColor_50;
   cursor: pointer;
-  margin-left: 2em;
+  margin-left: 30px;
 
   &__input{
     position: absolute;
@@ -38,7 +38,7 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    margin-left: -2em;
+    margin-left: -30px;
     box-sizing: border-box;
     border: $mainBorder;
     border-radius: 50%;

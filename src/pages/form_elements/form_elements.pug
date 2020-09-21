@@ -92,8 +92,9 @@ block content
 
           .button__wrapper
             h3.button__title.font__h3 Radio buttons
-            +radio({ group: "gender", title: "Мужчина", checked: true })
-            +radio({ group: "gender", title: "Женщина", checked: false })
+            .button__wrapper_radio
+              +radio({ group: "gender", title: "Мужчина", checked: true })
+              +radio({ group: "gender", title: "Женщина", checked: false })
           
           .button__wrapper
             h3.button__title.font__h3 Toggle

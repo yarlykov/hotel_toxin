@@ -95,6 +95,12 @@
       padding-right: 176px;
     }
 
+    &_radio {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 46px;
+    }
+
   }
   &__block {
     width: 218px;
