@@ -102,8 +102,9 @@ block content
 
           .button__wrapper
             h3.button__title.font__h3 Like button
-            +likeButton({icon: "favorite", value: 2, disable: true})
-            +likeButton({icon: "favorite", value: 12, disable: false})
+            .button__wrapper_like
+              +likeButton({icon: "favorite", value: 2, disable: true})
+              +likeButton({icon: "favorite", value: 12, disable: false})
 
           .button__wrapper
             h3.button__title.font__h3 Rate button

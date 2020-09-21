@@ -86,6 +86,13 @@
     &_rating {
       display: flex;
       justify-content: space-between;
+      padding-right: 6px;
+    }
+
+    &_like {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 176px;
     }
 
   }
