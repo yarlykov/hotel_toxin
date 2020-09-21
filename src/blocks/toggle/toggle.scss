@@ -3,7 +3,7 @@
   box-sizing: border-box;
   display: block;
   cursor: pointer;
-  margin-left: 3.5em;
+  margin-left: 50px;
   &:not(:last-child){
     margin-bottom: 16px;
   }
@@ -50,7 +50,7 @@
     height: 20px;
     border: $mainBorder;
     border-radius: 10px;
-    margin-left: -3.5em;
+    margin-left: -50px;
 
     &:before{
       content: "";
