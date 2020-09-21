@@ -107,8 +107,9 @@ block content
 
           .button__wrapper
             h3.button__title.font__h3 Rate button
-            +rating({ rating: 4 })
-            +rating({ rating: 5 })
+            .button__wrapper_rating
+              +rating({ rating: 4 })
+              +rating({ rating: 5 })
 
         .form-elements__buttons
           .button__wrapper_range-slider
@@ -132,43 +133,46 @@ block content
             +pagination()
 
       section.form-elements__dropdowns
-        .dropdown__wrapper
-          .dropdown__header
-            span.dropdown__title.font__h3 Dropdown
-            span.dropdown__description Default
-          +dropdown({isOpen: false, group: "comfort", elements: [
-            {title: "Спальни", count: 2}, 
-            {title: "Кровати", count: 2}, 
-            {title: "Ванные комнаты", count: 0}
+        .dropdown__block_left
+          .dropdown__wrapper
+            .text-field__header
+              span.text-field__title Dropdown
+              span.form__description Default
+            +dropdown({isOpen: false, group: "comfort", elements: [
+              {title: "Спальни", count: 2}, 
+              {title: "Кровати", count: 2}, 
+              {title: "Ванные комнаты", count: 0}
+              ]})
+          .dropdown__wrapper
+            .dropdown__header
+              span.dropdown__title.font__h3 Dropdown
+              span.dropdown__description Expanded
+            +dropdown({isOpen: false, group: "comfort", elements: [
+              {title: "Спальни", count: 2}, 
+              {title: "Кровати", count: 2}, 
+              {title: "Ванные комнаты", count: 0}
             ]})
 
-        .dropdown__wrapper
-          .dropdown__header
-            span.dropdown__title Dropdown
-          +dropdown({isOpen: false, group: "guests", elements: [
-            {title: "Взрослые", count: 0},
-            {title: "Дети", count: 0}, 
-            {title: "Младенцы", count: 0}
+        .dropdown__block_right
+          .dropdown__wrapper
+            .dropdown__header
+              span.dropdown__title Dropdown
+            +dropdown({isOpen: false, group: "guests", elements: [
+              {title: "Взрослые", count: 0},
+              {title: "Дети", count: 0}, 
+              {title: "Младенцы", count: 0}
             ]})
 
-        .dropdown__wrapper
-          .dropdown__header
-            span.dropdown__title Dropdown
-          +dropdown({isOpen: false, group: "guests", elements: [
-            {title: "Взрослые", count: 2},
-            {title: "Дети", count: 1}, 
-            {title: "Младенцы", count: 0}
+          .dropdown__wrapper
+            .dropdown__header
+              span.dropdown__title Dropdown
+            +dropdown({isOpen: false, group: "guests", elements: [
+              {title: "Взрослые", count: 2},
+              {title: "Дети", count: 1}, 
+              {title: "Младенцы", count: 0}
             ]})
 
-        .dropdown__wrapper
-          .dropdown__header
-            span.dropdown__title.font__h3 Dropdown
-            span.dropdown__description Expanded
-          +dropdown({isOpen: false, group: "comfort", elements: [
-            {title: "Спальни", count: 2}, 
-            {title: "Кровати", count: 2}, 
-            {title: "Ванные комнаты", count: 0}
-            ]})
+
 
       section.form-elements__lists
         .list__expandable

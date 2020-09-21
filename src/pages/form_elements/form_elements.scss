@@ -13,13 +13,10 @@
 .form-elements__text-fields-buttons{
   display: grid;
   grid-template-columns: 320px auto 320px;
-  column-gap: 126px;
+  column-gap: 126px; 
   margin-top: 3px;
 }
 
-.form-elements__text-fields {
-
-}
 
 .text-field {
   &__wrapper {
@@ -62,14 +59,6 @@
   }
 }
 
-.form-elements__buttons_small {
-  // height: 540px;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
-
-}
-
 .button {
   &__wrapper {
     &:nth-child(2){
@@ -94,6 +83,11 @@
       height: 46px;
     }
 
+    &_rating {
+      display: flex;
+      justify-content: space-between;
+    }
+
   }
   &__block {
     width: 218px;
@@ -113,15 +107,42 @@
 }
 
 .form-elements__dropdowns{
-  background: gray;
+  padding-top: 79px;
   grid-column: span 3;
   display: grid;
-  // grid-template-columns: repeat(3, 320px);
-  grid-template-columns: 1fr 0.8fr 1fr;
-  // grid-row: span 3;
+  max-width: 1158px;
+  grid-template-columns: minmax(266px, max-content) auto;
+  column-gap: 181px;
 }
+
+.dropdown {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    margin: 0px 0 5px 0;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 12px;
+    color: $mainTextColor;
+  }
+}
+
+.dropdown__block_right {
+  display: flex;  
+  min-width: 712px;
+  justify-content: space-between;
+}
+.dropdown__block_right {
+  grid-column: grid-column-start;
+}
+
 .dropdown__wrapper{
-  background: greenyellow;
   align-self: start;
 }
 
