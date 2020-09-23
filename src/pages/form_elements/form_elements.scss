@@ -175,10 +175,7 @@
   &__wrapper_bullet {
     padding-right: 54px;
   }
-  &__block_expandable {
-    display: flex;
-    flex-direction: column;
-  }
+
   &__block_other {
     display: flex;
     min-width: 712px;
@@ -194,4 +191,8 @@
   max-width: 1158px;
   grid-template-columns: 266px 2fr;
   column-gap: 180px;
+}
+
+.room-review__wrapper_comment {
+  padding-top: 10px;
 }
