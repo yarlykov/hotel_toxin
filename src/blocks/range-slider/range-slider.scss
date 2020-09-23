@@ -69,18 +69,15 @@
 }
 .ui-widget-header {
     background:linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    // margin-left: -12px;
 }
 .ui-slider-horizontal {
   top: 22px;
 }
 .ui-slider-horizontal .ui-slider-handle {
-  // top: -.22em;
-  // display: block;
-  // transform: translate(0% -40%);
+  top: -.22em;
 }
-.ui-slider .ui-slider-handle {
-  // top: 0px;
-}
+
 .ui-slider-horizontal .ui-slider-handle {
-	margin-left: -12px;
+	// margin-left: -14px;
 }
