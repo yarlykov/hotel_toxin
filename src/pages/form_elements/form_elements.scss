@@ -121,7 +121,6 @@
 
 .form-elements__dropdowns{
   padding-top: 79px;
-  padding-bottom: 152px;
   grid-column: span 3;
   display: grid;
   max-width: 1158px;
@@ -149,27 +148,17 @@
     font-size: 12px;
     color: $mainTextColor;
   }
-}
 
-.dropdown__block_right {
-  display: flex;  
-  min-width: 712px;
-  justify-content: space-between;
-}
-.dropdown__block_right {
-  grid-column: grid-column-start;
-}
-
-.dropdown__wrapper{
-  align-self: start;
-}
-
-
-.list__wrapper_bullet {
-  padding-right: 54px;
+  &__block_right {
+    display: flex;  
+    min-width: 712px;
+    justify-content: space-between;
+    grid-column: grid-column-start;
+  }
 }
 
 .form-elements__lists{
+  padding-top: 152px;
   grid-column: span 3;
   display: grid;
   max-width: 1158px;
@@ -177,42 +166,32 @@
   column-gap: 180px;
 }
 
-.list__block_other {
-  display: flex;  
-  min-width: 712px;
-  justify-content: space-between;
+.list {
+  &__wrapper {
+    &:first-child {
+      margin-bottom: 24px;
+    }
+  }
+  &__wrapper_bullet {
+    padding-right: 54px;
+  }
+  &__block_expandable {
+    display: flex;
+    flex-direction: column;
+  }
+  &__block_other {
+    display: flex;
+    min-width: 712px;
+    justify-content: space-between;
+  }
 }
+
 
 .form-elements__room-review{
-  background: cornflowerblue;
+  padding-top: 88px;
   grid-column: span 3;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  max-width: 1158px;
+  grid-template-columns: 266px 2fr;
+  column-gap: 180px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-.form__description{
-  font-size: 12px;
-  line-height: 15px;
-  text-align: right;
-  text-transform: uppercase;
-  color: $textColor_50;
-}
-
-//---------------------------------
-// .wrap__checkbox{
-//   display: grid;
-// }
-// .wrap__radio-buttons{
-// 	display: grid;
-// }
