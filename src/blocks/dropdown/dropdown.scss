@@ -68,13 +68,20 @@ $inputWidthSizeS: 150px;
   }
 
   &__menu-item{
-    padding: 6px;
+    box-sizing: border-box;
+    padding: 7px 6px 0 6px;
     text-transform: uppercase;
     display: flex;
     justify-content: space-between;
+    &:first-child {
+      padding-top: 6px;
+    }
+    &:last-child {
+      padding-bottom: 7px;
+    }
 
     &_text {
-      padding-top: 8px;
+      padding-top: 6px;
       padding-left: 8px;
     }
 
@@ -119,11 +126,13 @@ $inputWidthSizeS: 150px;
       .controls__counter {  //refactor
         border: 0;
         width: 30px;
+        height: 28px;
         text-align: center;
         font-family: inherit;
         font-style: normal;
         font-weight: bold;
         font-size: 12px;
+        padding: 0px;
       }
 
       .controls__increment {
@@ -151,8 +160,6 @@ $inputWidthSizeS: 150px;
       }
     }
 
-
-
 }
 
 .dropdown.open{
@@ -172,7 +179,7 @@ $inputWidthSizeS: 150px;
 .js-buttons-dropdown {
 
   &__wrapper{
-    padding: 6px;
+    padding: 6px 0 4px 7px;
     background: #fff;
     text-transform: uppercase;
     display: flex;

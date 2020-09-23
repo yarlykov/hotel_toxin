@@ -121,14 +121,19 @@
 
 .form-elements__dropdowns{
   padding-top: 79px;
+  padding-bottom: 160px;
   grid-column: span 3;
   display: grid;
   max-width: 1158px;
-  grid-template-columns: minmax(266px, max-content) auto;
-  column-gap: 181px;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 60px;
 }
 
 .dropdown {
+  &__wrapper {
+    margin-bottom: 20px;
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;

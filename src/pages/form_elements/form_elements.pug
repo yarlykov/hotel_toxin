@@ -139,17 +139,17 @@ block content
           .dropdown__wrapper
             .text-field__header
               span.text-field__title Dropdown
-              span.form__description Default
+              span.text-field__description Default
             +dropdown({isOpen: false, group: "comfort", elements: [
               {title: "Спальни", count: 2}, 
               {title: "Кровати", count: 2}, 
               {title: "Ванные комнаты", count: 0}
               ]})
           .dropdown__wrapper
-            .dropdown__header
-              span.dropdown__title.font__h3 Dropdown
-              span.dropdown__description Expanded
-            +dropdown({isOpen: false, group: "comfort", elements: [
+            .text-field__header
+              span.text-field__title.font__h3 Dropdown
+              span.text-field__description Expanded
+            +dropdown({isOpen: true, group: "comfort", elements: [
               {title: "Спальни", count: 2}, 
               {title: "Кровати", count: 2}, 
               {title: "Ванные комнаты", count: 0}
@@ -159,7 +159,7 @@ block content
           .dropdown__wrapper
             .dropdown__header
               span.dropdown__title Dropdown
-            +dropdown({isOpen: false, group: "guests", elements: [
+            +dropdown({isOpen: true, group: "guests", elements: [
               {title: "Взрослые", count: 0},
               {title: "Дети", count: 0}, 
               {title: "Младенцы", count: 0}
@@ -168,7 +168,7 @@ block content
           .dropdown__wrapper
             .dropdown__header
               span.dropdown__title Dropdown
-            +dropdown({isOpen: false, group: "guests", elements: [
+            +dropdown({isOpen: true, group: "guests", elements: [
               {title: "Взрослые", count: 2},
               {title: "Дети", count: 1}, 
               {title: "Младенцы", count: 0}
