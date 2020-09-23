@@ -86,7 +86,7 @@ block content
               listItems: [
                 { title: "Можно курить" },
                 { title: "Можно с питомцами" },
-                { title: "Можно пригласить гостей (до 10 человек)", checked: true }
+                { title: "Можно пригласить гостей (до\u00A010\u00A0человек)", checked: true }
               ]
             })
 
@@ -177,7 +177,7 @@ block content
 
 
       section.form-elements__lists
-        .list__expandable
+        .list__block_expandable
           .list__wrapper
             +checkbox({	
               mainTitle: "Expandable checkbox list",
@@ -201,27 +201,28 @@ block content
             ]
           })
 
-        .list__wrapper
-          +checkbox({	
-            mainTitle: "rich checkbox buttons",
-            dropdown: false,
-            rich: true,
-            listItems: [
-                { title: "Широкий коридор", rich: true, 
-                description: "Ширина коридоров в номере не\u00A0менее 91 см."},
-                { title: "Помощник для инвалидов", rich: true, 
-                description: "На 1 этаже вас встретит специалист и проводит до номера."
-              }
-            ]
-          })
+        .list__block_other
+          .list__wrapper
+            +checkbox({	
+              mainTitle: "rich checkbox buttons",
+              dropdown: false,
+              rich: true,
+              listItems: [
+                  { title: "Широкий коридор", rich: true, 
+                  description: "Ширина коридоров в номере не\u00A0менее 91 см."},
+                  { title: "Помощник для инвалидов", rich: true, 
+                  description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера."
+                }
+              ]
+            })
 
-        .list__wrapper
-          h3.list__title.font__h3 bullet list
-          +bullet-list({ listItems: [ 
-            {title: "Нельзя с питомцами"}, 
-            {title: "Без вечеринок и мероприятий"},  
-            {title: "Время прибытия — после 13:00, а выезд до 12:00"}
-            ]})
+          .list__wrapper_bullet
+            h3.list__title.font__h3 bullet list
+            +bullet-list({ listItems: [ 
+              {title: "Нельзя с питомцами"}, 
+              {title: "Без вечеринок и мероприятий"},  
+              {title: "Время прибытия — после 13:00, а\u00A0выезд до 12:00"}
+              ]})
 
 
 

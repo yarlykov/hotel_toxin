@@ -121,7 +121,7 @@
 
 .form-elements__dropdowns{
   padding-top: 79px;
-  padding-bottom: 160px;
+  padding-bottom: 152px;
   grid-column: span 3;
   display: grid;
   max-width: 1158px;
@@ -164,11 +164,23 @@
   align-self: start;
 }
 
+
+.list__wrapper_bullet {
+  padding-right: 54px;
+}
+
 .form-elements__lists{
-  background: coral;
   grid-column: span 3;
   display: grid;
-  grid-template-columns: repeat(3, 320px);
+  max-width: 1158px;
+  grid-template-columns: 266px 2fr;
+  column-gap: 180px;
+}
+
+.list__block_other {
+  display: flex;  
+  min-width: 712px;
+  justify-content: space-between;
 }
 
 .form-elements__room-review{
