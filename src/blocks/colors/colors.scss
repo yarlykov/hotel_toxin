@@ -1,59 +1,59 @@
 .colors__wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 269px;
-	height: 610px;
-	padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 269px;
+  height: 610px;
+  padding-left: 10px;
 }
 
 .colors {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 269px;
-	height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 269px;
+  height: 70px;
 }
 
 .colors__square {
-	width: 70px;
-	height: 70px;
-	border-radius: 6px;
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
 } 
 
 .colors__text {
-	font-family: Quicksand, Helvetica, sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	width: 159px;
-	height: 58px;
-	font-size: 19px;
-	line-height: 29px;
+  font-family: Quicksand, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  width: 159px;
+  height: 58px;
+  font-size: 19px;
+  line-height: 29px;
 }
 
 .colors__text_bold {
-	font-style: normal;
-	font-weight: 700;
+  font-style: normal;
+  font-weight: 700;
 }
 
 .colors__square_dark_100 {
-	background: #1F2041;
+  background: #1F2041;
 }
 .colors__square_dark_75 {
-	background: rgba(31, 32, 65, 0.75);
+  background: rgba(31, 32, 65, 0.75);
 }
 .colors__square_dark_50 {
-	background: rgba(31, 32, 65, 0.5);
+  background: rgba(31, 32, 65, 0.5);
 }
 .colors__square_dark_25 {
-	background: rgba(31, 32, 65, 0.25);
+  background: rgba(31, 32, 65, 0.25);
 }
 .colors__square_dark_5 {
-	background: rgba(31, 32, 65, 0.05);
+  background: rgba(31, 32, 65, 0.05);
 }
 .colors__square_purple {
-	background: #BC9CFF;
+  background: #BC9CFF;
 }
 .colors__square_green {
-	background: #6FCF97;
+  background: #6FCF97;
 }

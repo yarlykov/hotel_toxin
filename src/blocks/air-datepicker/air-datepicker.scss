@@ -1,0 +1,263 @@
+.datepicker{
+	border: $mainBorder;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.25);
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-family: Montserrat; // include Open Sans!!
+	font-size: 12px;
+	line-height: 15px;
+	color: $textColor_50;
+	width: 320px;
+	height: 369px;
+	z-index: 1500;
+}
+
+.datepicker--content{
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+/* -------------------------------------------------
+    Datepicker cells
+   ------------------------------------------------- */
+
+.datepicker--cells {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.datepicker--cell {
+  border-radius: 22px;
+  height: 40px;
+
+  &.-focus- {
+    background: $textColor_5;
+  }
+
+  &.-current- {
+		background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+		color: #fff;
+		font-weight: bold;
+
+    &.-focus- {
+			// color: red;
+    }
+
+    &.-in-range- {
+			color: #fff;
+		}
+  }
+
+  &.-in-range- {
+		background:$mainGradientTransperent_25;
+    color: $textColor_50;
+    border-radius: 0;
+
+    &.-focus- {
+			color: #fff;
+			background:$mainGradientTransperent_25;
+    }
+  }
+
+  &.-range-from- {
+		border: none;
+		background: $mainGradient;
+		border-radius: 22px;
+
+		&:after{
+			content: "";
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	background: $mainGradientTransperent_25;
+    	border-radius: 50% 0 0 50%;
+    	z-index: -1;
+		}
+
+		&.-focus- {
+      color: #fff;
+    }
+  }
+  &.-range-to- {
+		border: none;
+		background: $mainGradient;
+		border-radius: 22px;
+
+		&:before{
+			content: "";
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	background: $mainGradientTransperent_25;
+    	border-radius: 0 50% 50% 0;
+    	z-index: -1;
+		}
+		
+		&.-focus- {
+      color: #fff;
+    }
+  }
+
+  &.-range-from-.-range-to- {
+    border-radius: 22px;
+  }
+
+  &.-selected- {
+		color: #fff;
+		font-weight: bold;
+    border: none;
+    background: $mainGradient;
+
+    &.-current- {
+			color: #fff;
+      background: $mainGradient;
+    }
+
+    &.-focus- {
+      background: $mainGradientTransperent_25;
+    }
+  }
+}
+
+//  Day names
+// -------------------------------------------------
+.datepicker--day-name {
+	color: $designColor_main;
+	text-transform: none;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+//  Months
+// -------------------------------------------------
+
+.datepicker--cells-months {
+	box-sizing: border-box;
+  height: 226px;
+}
+
+//  Month cell
+// -------------------------
+
+.datepicker--cell-month {
+	border-radius: 100px;
+  width: 33.33%;
+	height: 25%;
+
+  &.-range-from- {
+
+		&:after{
+			content: "";
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	background: none;
+    	border-radius: 50% 0 0 50%;
+    	z-index: -1;
+		}
+  }
+  &.-range-to- {
+
+		&:before{
+			content: "";
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	background: none;
+    	border-radius: 0 50% 50% 0;
+    	z-index: -1;
+		}
+  }
+
+  &.-range-from-.-range-to- {
+    border-radius: 100px;
+  }
+}
+
+//  Years
+// -------------------------
+
+.datepicker--years {
+	box-sizing: border-box;
+  height: 226px;
+}
+
+//  Year cell
+// -------------------------
+
+.datepicker--cell-year {
+  border-radius: 100px;
+  width: 33.33%;
+	height: 35%;
+
+	&.-range-from- {
+
+		&:after{
+			content: "";
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	background: none;
+    	border-radius: 50% 0 0 50%;
+    	z-index: -1;
+		}
+  }
+  &.-range-to- {
+
+		&:before{
+			content: "";
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	background: none;
+    	border-radius: 0 50% 50% 0;
+    	z-index: -1;
+		}
+  }
+
+  &.-range-from-.-range-to- {
+    border-radius: 100px;
+  }
+}
+
+/* -------------------------------------------------
+    Navigation
+	 ------------------------------------------------- */
+.datepicker--nav {
+  border-bottom: none;
+	padding: 15px 14px;
+	
+	font-family: $mainFont;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 24px;
+	color:$mainTextColor;
+}
+
+.datepicker--nav-title {
+  &:hover {
+		background: none;
+		opacity: 0.5;
+  }
+}
+
+.datepicker--nav-action {
+	color: $designColor_main;
+
+  &:hover {
+    background: none;
+		opacity: 0.5;
+  }
+}

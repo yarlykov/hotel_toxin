@@ -1,0 +1,238 @@
+extends ../../blocks/main.pug
+
+include ../../blocks/dropdown/dropdown.pug
+include ../../blocks/like/like.pug
+include ../../blocks/checkbox/checkbox.pug
+include ../../blocks/radio/radio.pug
+include ../../blocks/toggle/toggle.pug
+include ../../blocks/rating/rating.pug
+include ../../blocks/bullet-list/bullet-list.pug
+include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/dignity-room/dignity-room.pug
+include ../../blocks/comment/comment.pug
+include ../../blocks/pagination/pagination.pug
+include ../../blocks/text-field/text-field.pug
+include ../../blocks/button/button.pug
+
+
+block variables 
+  - var title = "Form Elements"
+  - var description = ""
+  - var keywords = ""
+
+block content
+  body.body-wrapper
+    header 
+      include ../../basis/header_uikit/header_uikit.pug
+    main.form-elements
+      section.form-elements__text-fields-buttons
+        .form-elements__text-fields
+          .text-field__wrapper
+            .text-field__header
+              h3.text-field__title Text field
+              span.text-field__description Default
+            +text-field({ classList: [], type: "text", placeholder: "Email", size:"large", name: "email", autocomplete: "on" })
+
+          .text-field__wrapper
+            .text-field__header
+              span.text-field__title Text field
+              span.text-field__description Hover / Focus
+            +text-field({ classList: ["text-field_hover"], type: "text",  placeholder: "This is pretty awesome", size:"large", name: "email",  autocomplete: "off" })
+
+          .text-field__wrapper
+            .text-field__header
+              span.text-field__title Dropdown
+              span.text-field__description Default
+            +dropdown({isOpen: false, group: "guests", elements: [
+              {title: "Взрослые", count: 0},
+              {title: "Дети", count: 0}, 
+              {title: "Младенцы", count: 0}
+              ]})
+
+          .text-field__wrapper
+            .text-field__header
+              span.text-field__title Masked text field
+              span.text-field__description Default
+            +text-field({ classList: ["js-masked__text-field"], type: "text",  placeholder: "ДД.ММ.ГГГГ", size:"large", name: "text"})
+
+          .text-field__wrapper.text-field__wrapper_date-dropdown
+            label
+              .text-field__header
+                span.text-field__title Date dropdown
+              +text-field({ classList: ["js-air-datepicker__day-start", "text-field__input_placeholder_dark-75"], type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "on", arrow: true })
+            label
+              .text-field__header
+                span.text-field__title Date dropdown
+              +text-field({ classList: ["js-air-datepicker__day-end", "text-field__input_placeholder_dark-75"], type: "text",placeholder: "19.08.2019", size:"small", name: "date", autocomplete: "on", arrow: true })
+
+          .text-field__wrapper.js-datepicker__wrapper      
+            .text-field__header
+              span.text-field__title Filter Date dropdown
+            +text-field({ classList: ["air-datepicker","text-field__input_lowercase","text-field__input_placeholder_dark-75"], type: "text", placeholder: "19 авг - 23 авг", size:"medium", name:"text",  autocomplete: "off", arrow: true })
+        
+          .text-field__wrapper 
+            .text-field__header 
+              span.text-field__title subscription text field
+            +text-field({ classList: ["text-field__subscribe"], type: "text", placeholder: "Email", size:"medium", name: "email", autocomplete: "on", subscribe: true})    
+                      //----------------------------------------
+
+        .form-elements__buttons_small
+          .button__wrapper
+            +checkbox({	
+              mainTitle: "Checkbox buttons",
+              dropdown: false,
+              rich: false,
+              listItems: [
+                { title: "Можно курить" },
+                { title: "Можно с питомцами" },
+                { title: "Можно пригласить гостей (до\u00A010\u00A0человек)", checked: true }
+              ]
+            })
+
+          .button__wrapper
+            h3.button__title.font__h3 Radio buttons
+            .button__wrapper_radio
+              +radio({ group: "gender", title: "Мужчина", checked: true })
+              +radio({ group: "gender", title: "Женщина", checked: false })
+          
+          .button__wrapper
+            h3.button__title.font__h3 Toggle
+            +toggle({title: "Получать спецпредложения", checked: true})
+            +toggle({title: "Получать спецпредложения", checked: false})
+
+          .button__wrapper
+            h3.button__title.font__h3 Like button
+            .button__wrapper_like
+              +likeButton({icon: "favorite", value: 2, disable: true})
+              +likeButton({icon: "favorite", value: 12, disable: false})
+
+          .button__wrapper
+            h3.button__title.font__h3 Rate button
+            .button__wrapper_rating
+              +rating({ rating: 4 })
+              +rating({ rating: 5 })
+
+        .form-elements__buttons
+          .button__wrapper_range-slider
+            +range-slider()
+
+          .button__wrapper
+            h3.button__title.font__h3 Buttons
+            .button__block
+              +button({ classList: [], buttonName: "click me", size: "small", textColor: "white" })
+              +button({ classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "white" })
+            .button__block
+              +button({ classList: [], buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" })
+              +button({ classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite" })
+            .button__block_inline
+              +button({ classList: ["button_inline"], buttonName: "click me", textColor: "purple"})
+              +button({ classList: ["button_inline"], buttonName: "click me", textColor: "gray"})
+            +button({ classList: [], buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"})
+
+          .button__wrapper
+            h3.button__title.font__h3 pagination
+            +pagination()
+
+      section.form-elements__dropdowns
+        .dropdown__block_left
+          .dropdown__wrapper
+            .text-field__header
+              span.text-field__title Dropdown
+              span.text-field__description Default
+            +dropdown({isOpen: false, group: "comfort", elements: [
+              {title: "Спальни", count: 2}, 
+              {title: "Кровати", count: 2}, 
+              {title: "Ванные комнаты", count: 0}
+              ]})
+          .dropdown__wrapper
+            .text-field__header
+              span.text-field__title.font__h3 Dropdown
+              span.text-field__description Expanded
+            +dropdown({isOpen: true, group: "comfort", elements: [
+              {title: "Спальни", count: 2}, 
+              {title: "Кровати", count: 2}, 
+              {title: "Ванные комнаты", count: 0}
+            ]})
+
+        .dropdown__block_right
+          .dropdown__wrapper
+            .dropdown__header
+              span.dropdown__title Dropdown
+            +dropdown({isOpen: true, group: "guests", elements: [
+              {title: "Взрослые", count: 0},
+              {title: "Дети", count: 0}, 
+              {title: "Младенцы", count: 0}
+            ]})
+
+          .dropdown__wrapper
+            .dropdown__header
+              span.dropdown__title Dropdown
+            +dropdown({isOpen: true, group: "guests", elements: [
+              {title: "Взрослые", count: 2},
+              {title: "Дети", count: 1}, 
+              {title: "Младенцы", count: 0}
+            ]})
+
+
+
+      section.form-elements__lists
+        .list__block_expandable
+          .list__wrapper
+            +checkbox({	
+              mainTitle: "Expandable checkbox list",
+              dropdown: true,
+              rich: false,
+              listItems: [
+              ]
+            })
+          .list__wrapper
+          +checkbox({	
+            mainTitle: "Expandable checkbox list",
+            dropdown: true,
+            rich: false,
+            listItems: [
+              { title: "Завтрак" }, 
+              { title: "Письменный стол", checked: true }, 
+              { title: "Стул для кормления", checked: true },
+              { title: "Кроватка", checked: true },
+              { title: "Телевизор" },
+              { title: "Шампунь" }
+            ]
+          })
+
+        .list__block_other
+          .list__wrapper
+            +checkbox({	
+              mainTitle: "rich checkbox buttons",
+              dropdown: false,
+              rich: true,
+              listItems: [
+                  { title: "Широкий коридор", rich: true, 
+                  description: "Ширина коридоров в номере не\u00A0менее 91 см."},
+                  { title: "Помощник для инвалидов", rich: true, 
+                  description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера."
+                }
+              ]
+            })
+
+          .list__wrapper_bullet
+            h3.list__title.font__h3 bullet list
+            +bullet-list({ listItems: [ 
+              {title: "Нельзя с питомцами"}, 
+              {title: "Без вечеринок и мероприятий"},  
+              {title: "Время прибытия — после 13:00, а\u00A0выезд до 12:00"}
+              ]})
+
+
+
+      section.form-elements__room-review
+        .room-review__wrapper
+          +dignity-room({ icon: "mood", title: "Комфорт", subtitle: "Шумопоглощающие стены"})
+          +dignity-room({ icon: "location_city", title: "Удобство", subtitle: "Окно в каждой из спален"})
+
+        .room-review__wrapper_comment
+          .comment
+            +comment({ imageName: "comment-image-1", name: "Мурад Сарафанов", dateOfVisit: "5 дней назад", commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", likeCount: 12})
+
+    footer 
+      include ../../basis/footer_uikit/footer_uikit.pug

@@ -1,0 +1,28 @@
+mixin checkbox({ mainTitle="", dropdown=false, rich=false, listItems=[]})
+
+  -
+    let titleClassName = "checkbox__title"
+    let descriptionClassName = "checkbox__description"
+
+    titleClassName += rich ? "_rich" : ""
+    descriptionClassName += rich ? "_rich" : ""
+
+    let isDropdown = dropdown ? "js-checkbox" : ""
+
+  div(class=isDropdown).checkbox
+    .checkbox__header
+      div.checkbox__title.font__h3 #{mainTitle}
+      if dropdown
+        .js-checkbox__header_arrow.checkbox__header_arrow-up
+    each item in listItems
+      label.checkbox__item
+        input&attributes({
+          class: "checkbox__input",
+          type: "checkbox",
+          title: item.title,
+          checked: item.checked,
+        })
+        span.checkbox__box
+        div(class = titleClassName) #{item.title}
+          if rich
+            div(class = descriptionClassName) #{item.description}

@@ -1,0 +1,49 @@
+.bar__button {
+  display: flex;
+  justify-content: space-between;
+  min-width: 200px;
+}
+.bar__button_login_back{
+  position: relative;
+  box-sizing: border-box;
+  width: 79px;
+  height: 34px;
+  border-radius: 100px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.bar__button_login_front{
+  position: absolute;
+  box-sizing: border-box;
+  left: 2px;
+  top: 2px;
+  width: 75px;
+  height: 30px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+}
+.bar__button_text{
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #BC9CFF;
+}
+.bar__button_login_color{
+  color: #BC9CFF;
+}
+/*--------------------REGISTER-------------*/
+.bar__button_register{
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  width: 101px;
+  height: 34px;
+  border-radius: 100px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.bar__button_reg_color{
+  color: #fff;
+}

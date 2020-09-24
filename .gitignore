@@ -1,4 +1,6 @@
 .DS_Store
 *.code-workspace
+.vscode
 node_modules
 dist
+note.pug

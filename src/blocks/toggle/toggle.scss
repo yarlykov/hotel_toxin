@@ -1,0 +1,69 @@
+.toggle{
+  color: $textColor_50;
+  box-sizing: border-box;
+  display: block;
+  cursor: pointer;
+  margin-left: 50px;
+  &:not(:last-child){
+    margin-bottom: 16px;
+  }
+
+  &__input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:checked + .toggle__box{
+      border-color: $designColor_main;
+    }
+
+    &:hover ~ .toggle__title{
+      color: $textColor_75;
+    }
+
+    &:focus ~ .toggle__title{
+      color: $textColor_75;
+    }
+
+    &:checked + .toggle__box::before{
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      width: 12px;
+      height: 12px;
+      top: 3px;
+      left: 3px;
+      border-radius: 50%;
+      background: $mainGradient;
+      -webkit-transform: translateX(20px);
+      -ms-transform: translateX(20px);
+      transform: translateX(20px);
+    }
+  }
+
+  &__box{
+    position: absolute;
+    box-sizing: border-box;
+    width: 40px;
+    height: 20px;
+    border: $mainBorder;
+    border-radius: 10px;
+    margin-left: -50px;
+
+    &:before{
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 3px;
+      left: 3px;
+      border-radius: 50%;
+      background: $textColor_25;
+      transition: .3s;
+    }
+    
+  }
+
+}

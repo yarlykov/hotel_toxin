@@ -1,0 +1,28 @@
+
+
+mixin dropdown(options)
+  -
+    const isOpen = options.isOpen ? "open" : ""
+    const isGroupComfort = options.group == "comfort"
+    const group = options.group == "guests" ? "Сколько гостей" : "Удобства номера"
+
+  .dropdown(class=isOpen, class=`dropdown__${options.group}`)
+    input&attributes({
+      type: "text", 
+      class: "dropdown__input", 
+      "data-type": "input", 
+      value: group,
+      readonly: "readonly",
+      onmousedown: "return false"
+      })
+    div(class="dropdown__arrow_down")&attributes({"data-type": "arrow", onmousedown: "return false"})
+    .dropdown__drop
+      .dropdown__menu.font__h3
+        each elem in options.elements
+          .dropdown__menu-item(data-id= `${elem.title}`)
+            .dropdown__menu-item_text #{elem.title}
+            .dropdown__controls
+              div&attributes({class: "controls__decrement", "data-type": "decrement"})
+              input&attributes({class: "controls__counter", type: "text", value: elem.count})
+              div&attributes({class: "controls__increment", "data-type": "increment"})
+

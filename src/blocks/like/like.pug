@@ -1,0 +1,14 @@
+mixin likeButton({ icon="", value=0, disable=false })
+  -
+    const btnDisableClassName = disable ? "like__disable_border" : ""
+    const disableClassName = disable ? "like__disable" : ""
+    icon = disable ? icon + "_border" : icon 
+
+  button&attributes({
+    type: "button",
+    name: "like",
+    class: ["like__button", `${btnDisableClassName}`]
+  })
+    span(class=`${disableClassName}`).like__text #{value}
+    .like__button_border
+      i(class=`${disableClassName}`).like__icon.material-icons #{icon}

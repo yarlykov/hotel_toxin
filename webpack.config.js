@@ -1,18 +1,20 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: './src/index.js',
+    main: ['@babel/polyfill', './src/index.js'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   devServer: {
-    port: 4200
+    port: 8080,
+    index: "form_elements.html",
   },
 
   module: {
@@ -48,7 +50,19 @@ module.exports = {
           outputPath: 'fonts/',
         },
       },
-    ],
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env'
+            ]
+          }
+        }
+      },
+    ], 
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -59,9 +73,25 @@ module.exports = {
       template: './src/pages/headers_footers/headers_footers.pug',
       filename: 'headers_footers.html'
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/form_elements/form_elements.pug',
+      filename: 'form_elements.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/cards/cards.pug',
+      filename: 'cards.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
     new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      '$': 'jquery',
+      jQuery: 'jquery',
+      jquery: 'jquery',
+      'window.jQuery': 'jquery',
+      'window.$': "jquery",
+    })
   ],
 };

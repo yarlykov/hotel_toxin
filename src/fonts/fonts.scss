@@ -79,3 +79,37 @@
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
+.font__h1{
+  font-family: $secondFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;  
+  line-height: 30px;
+  color: $mainTextColor; 
+}
+.font__h2{
+  font-family: $secondFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;  
+  line-height: 24px;
+  color: $mainTextColor; 
+}
+.font__h3{
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;  
+  line-height: 15px;
+  color: $mainTextColor;
+  text-transform: uppercase; 
+  margin: 0;
+}
+.font__body{
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;  
+  line-height: 24px;
+  color: $textColor_75;
+}

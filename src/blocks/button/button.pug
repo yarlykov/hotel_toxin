@@ -1,0 +1,23 @@
+mixin button({ classList=[], type="button", buttonName="button", size="inline", textColor="gray", buttonVariation="inline"})
+  -
+    const mainButtonClass = "button"
+    const buttonSizeClass = `button_size_${size}`
+    const buttonTextColor = `button_text-color_${textColor}`
+    classList.push(mainButtonClass, buttonSizeClass)
+    
+    let buttonAttributes = {
+      class: classList,
+      type: type,
+      name: buttonName,
+    }
+
+  button&attributes(buttonAttributes) 
+    case buttonVariation
+      when "fillWhite"
+        span(class=buttonTextColor).font__h3 #{buttonName}
+        .button_fill-white
+      when "withArrow"
+        span(class=buttonTextColor).font__h3 #{buttonName}
+        .button__arrow
+      default
+        span(class=buttonTextColor).font__h3 #{buttonName}

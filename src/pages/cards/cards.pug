@@ -1,0 +1,17 @@
+extends ../../blocks/main.pug
+
+block variables
+  - var title = "Cards"
+  - var description = ""
+  - var keywords = ""
+
+block content
+  body.body-wrapper.body-wrapper__background
+    header
+      include ../../basis/header_uikit/header_uikit.pug
+    main.content-wrapper_cards
+      div.room-selection
+        .room-selection_wrapper.border
+          h1.room-selection__text.border Найдём номера под ваши пожелания
+    footer
+      include ../../basis/footer_uikit/footer_uikit.pug

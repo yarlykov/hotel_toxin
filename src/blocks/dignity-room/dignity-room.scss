@@ -1,0 +1,49 @@
+.dignity-room{
+  width: 280px;
+  
+  &__item{
+    display: flex;
+    align-items: center;
+    height: 48px;
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+  
+  &__icon{
+    font-family: "Material Icons";
+    font-size: 48px;
+    line-height: 41px;
+    background: $mainGradient;
+    background-clip: text;
+    margin-left: -1px;
+    padding-top: 1px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	}
+	
+  &__description{
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    height: 48px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &_title{
+      font-weight: bold;
+    }
+
+    &_subtitle{
+			font-weight: normal;
+    }
+  }
+
+  &__line {
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    width: 279px;
+    padding-top: 20px;
+  }
+}

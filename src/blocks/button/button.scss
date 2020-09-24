@@ -1,0 +1,85 @@
+.button{
+  position: relative;
+  border: none;
+  background: $mainGradient;
+  border-radius: 100px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus{
+    background: $mainGradientTransperent;
+  }
+
+  &_hover{
+    background: $mainGradientTransperent;
+  }
+
+  &_fill-white{
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    top: 2px;
+    left:	2px;
+    background: #fff;
+    border-radius: 100px;
+  }
+  /*------Size------*/
+  &_size{
+    &_small{
+      min-width: 99px;
+    }
+    &_large{
+      min-width: 320px;
+    }
+    &_inline{
+      height: 1.2em;
+    }
+  }
+
+  /*------Inline------*/
+  &_inline{
+    padding: 0;
+    border: none;
+    background: none;
+    display: inline-block;
+    cursor: pointer;
+    
+    &:hover,
+    &:focus{
+      opacity: 0.5;
+      background: none;
+    }
+  }
+  
+  /*------Text-Colors------*/
+  &_text-color{
+    &_purple{
+      color: $designColor_main;
+      position: relative;
+      z-index: 1;
+    }
+    &_gray{
+      color: $textColor_50;
+    }
+    &_white{
+      color: #fff;
+    }
+  }
+
+  &__arrow{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #fff;
+    
+    &:before{
+      content: "arrow_forward";
+      position: relative;
+      font-family: Material Icons;
+      color: #fff;
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+}
