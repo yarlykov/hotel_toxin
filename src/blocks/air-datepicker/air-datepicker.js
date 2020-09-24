@@ -48,13 +48,15 @@ const datepickerButtons = {
 
 //----------------------------------------
 const myDatepicker = $('.air-datepicker').data('datepicker')
+//----------------------------------------
 
+// Добавление даты по умолчанию
 
-const dddate = new Date('2020-09-17')
-const dddate2 = new Date('2020-09-23')
+// const dddate = new Date('2020-09-17')
+// const dddate2 = new Date('2020-09-23')
 
-myDatepicker.selectDate([dddate, dddate2])
-datepickerButtons.clear.addClass('display')
+// myDatepicker.selectDate([dddate, dddate2])
+// datepickerButtons.clear.addClass('display')
 
 //----------------------------------------
 
@@ -67,7 +69,7 @@ datepickerButtons.clear.on('click', function () {
 })
 
 
-$('.datepickerRoot').each(function () {
+$('.js-datepicker__wrapper').each(function () {
   const $datepickerInput = $('.air-datepicker', this);
 
   $datepickerInput.datepicker({
