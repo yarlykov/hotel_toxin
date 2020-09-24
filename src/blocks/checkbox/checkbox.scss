@@ -32,10 +32,10 @@
   &__item{
     color: $textColor_50;
     display: block;
-    box-sizing: border-box;
+    box-sizing: content-box;
     min-height: 20px;
     margin-left: 30px;
-    padding-bottom: 13px;
+    padding-bottom: 10px;
     cursor: pointer;
     &:last-child{
       padding-bottom: 0;
