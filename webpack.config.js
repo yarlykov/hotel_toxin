@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -39,15 +40,21 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
-        use: ['file-loader'],
-        exclude: [/fonts/],
+        exclude: [path.resolve(__dirname, './src/fonts')],
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/images',
+          }
+        }
       },
       {
         test: /\.(ttf|woff|svg|eot)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'fonts/',
+          outputPath: 'assets/fonts',
         },
       },
       {
@@ -92,6 +99,12 @@ module.exports = {
       jquery: 'jquery',
       'window.jQuery': 'jquery',
       'window.$': "jquery",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: './src/favicon', to: 'assets/favicon/'},
+        { from: './src/img', to: 'assets/images/'},
+      ]
     })
   ],
 };
