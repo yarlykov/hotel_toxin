@@ -7,11 +7,16 @@ $( function() {
       min: 0,
       max: 15000,
       step: 100,
-      values: [ 5000, 10000 ],
+      values: [5000, 10000],
       slide: function( event, ui ) {
-        $(".range-slider").val(ui.values[0] + "₽ - " +  ui.values[1] + "₽");
+        let startValue = ui.values[0].toLocaleString('ru-RU', { minimumFractionDigits: 0 }) + '₽';
+        let endValue = ui.values[1].toLocaleString('ru-RU', { minimumFractionDigits: 0 }) + '₽';
+        $(".range-slider").val(startValue + ' - ' +  endValue);
       },
     });
-  $(".range-slider").val( $( ".range-slider__scale" ).slider( "values", 0 ) +
-    "₽ - " + $(".range-slider__scale").slider("values", 1) + "₽");
+
+  const startValue = $(".range-slider__scale").slider("values", 0).toLocaleString('ru-RU', { minimumFractionDigits: 0 }) + '₽';
+  const endValue = $(".range-slider__scale").slider("values", 1).toLocaleString('ru-RU', { minimumFractionDigits: 0 }) + '₽';
+
+  $(".range-slider").val( startValue + " - " + endValue);
   } );
