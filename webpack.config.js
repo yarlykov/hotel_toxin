@@ -39,8 +39,8 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpg|svg|gif)$/,
-        exclude: [path.resolve(__dirname, './src/fonts')],
+        test: /\.(png|svg|jpg|gif)$/,
+        exclude: [/fonts/],
         use: {
           loader: 'file-loader',
           options: {
@@ -103,7 +103,6 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: './src/favicon', to: 'assets/favicon/'},
-        { from: './src/img', to: 'assets/images/'},
       ]
     })
   ],
