@@ -1,4 +1,5 @@
 extends ../../blocks/main
+include ../../blocks/colors/colors.pug
 
 block variables
   - var title = "Colors & Type"
@@ -11,7 +12,15 @@ block content
       include ../../basis/header_uikit/header_uikit.pug
     main.content-wrapper_colors-type
       section.colors__wrapper
-        include ../../blocks/colors/colors.pug
+        +colors({ colorItems: [
+          {color: "dark_100", description: "Dark Shade 100%", colorCode: "#1F2041"},
+          {color: "dark_75", description: "Dark Shade 75%", colorCode: "#1F2041"},
+          {color: "dark_50", description: "Dark Shade 50%", colorCode: "#1F2041"},
+          {color: "dark_25", description: "Dark Shade 25%", colorCode: "#1F2041"},
+          {color: "dark_5", description: "Dark Shade 5%", colorCode: "#1F2041"},
+          {color: "purple", description: "Purple", colorCode: "#BC9CFF"},
+          {color: "green", description: "Green", colorCode: "#6FCF97"},
+        ]})
       section.type__wrapper
         include ../../blocks/type/type.pug
     footer

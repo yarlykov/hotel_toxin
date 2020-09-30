@@ -1,15 +1,11 @@
 //-colors
-mixin colors-item(color, description, colorCode)
-  .colors
-    div(class!=attributes.color).colors__square
-    .colors__text
-      div.colors__text_bold=description
-      span= colorCode
-
-+colors-item(color, 'Dark Shade 100%', '#1F2041')(color!='colors__square_dark_100')
-+colors-item(color, 'Dark Shade 75%', '#1F2041')(color!='colors__square_dark_75')
-+colors-item(color, 'Dark Shade 50%', '#1F2041')(color!='colors__square_dark_50')
-+colors-item(color, 'Dark Shade 25%', '#1F2041')(color!='colors__square_dark_25')
-+colors-item(color, 'Dark Shade 5%', '#1F2041')(color!='colors__square_dark_5')
-+colors-item(color, 'Purple', '#BC9CFF')(color!='colors__square_purple')
-+colors-item(color, 'Green', '#6FCF97')(color!='colors__square_green')
+mixin colors({ colorItems=[] })
+  each colorItem in colorItems
+    .colors
+      - const colorClass = "colors__square_" + colorItem.color
+      div&attributes({
+        class: ["colors__square", colorClass]
+      })
+      .colors__description
+        .colors__name #{colorItem.description}
+        span.colors__code #{colorItem.colorCode}
