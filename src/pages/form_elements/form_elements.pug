@@ -1,5 +1,6 @@
 extends ../../blocks/main.pug
 
+include ../../blocks/ui-header/ui-header.pug
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/like/like.pug
 include ../../blocks/checkbox/checkbox.pug
@@ -23,7 +24,7 @@ block variables
 block content
   body.body-wrapper
     header 
-      include ../../blocks/ui-header/ui-header.pug
+      +ui-header()
     main.form-elements
       section.form-elements__text-fields-buttons
         .form-elements__text-fields

@@ -1,4 +1,5 @@
 extends ../../blocks/main
+include ../../blocks/ui-header/ui-header.pug
 
 block variables
   - var title = "Headers & Footers"
@@ -8,7 +9,7 @@ block variables
 block content
   body.body-wrapper.body-wrapper__background
     header
-      include ../../blocks/ui-header/ui-header.pug
+      +ui-header()
     main
       .content-wrapper_headers-footers
         include ../../basis/standart-bar/standart-bar.pug

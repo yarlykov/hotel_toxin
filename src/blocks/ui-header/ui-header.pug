@@ -1,3 +1,5 @@
-.header.screen-width
-	.logo
-		img(src='../src/img/logo.svg' alt='logo')
+include ../logo/logo.pug
+
+mixin ui-header()
+  .ui-header
+    +logo({ type: "colorless", height: "48px"})
