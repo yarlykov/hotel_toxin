@@ -1,9 +1,6 @@
-mixin type-item(classBlock, name, classDescr, descr)
-  .type(class!=attributes.classBlock)
-    div=name 
-    div(class!=attributes.classDescr)=descr
-
-+type-item(classBlock, 'H1', classDescr, 'This one is the sub-section or widget title')(classBlock!='type__block_h1')(classDescr!='type__block_h1_description')
-+type-item(classBlock, 'H2', classDescr, 'Next one is the item title inside widgets')(classBlock!='type__block_h2')(classDescr!='type__block_h2_description')
-+type-item(classBlock, 'H3', classDescr, 'This is a label or CTA text')(classBlock!='type__block_h3')(classDescr!='type__block_h3_description')
-+type-item(classBlock, 'Body', classDescr, 'This is the body text which is used for most of the design, like paragraphs, lists, etc.')(classBlock!='type__block_body')(classDescr!='type__block_body_description')
+mixin type({ typeList=[] })
+  each typeListItem in typeList
+    - const typeClassBlock = "type__" + typeListItem.type
+    div&attributes({ class: ["type", typeClassBlock] })
+      .type__header #{typeListItem.title}
+      .type__text #{typeListItem.text}

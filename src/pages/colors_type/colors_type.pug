@@ -1,4 +1,6 @@
 extends ../../blocks/main
+include ../../blocks/colors/colors.pug
+include ../../blocks/type/type.pug
 
 block variables
   - var title = "Colors & Type"
@@ -8,11 +10,24 @@ block variables
 block content
   body.body-wrapper
     header
-      include ../../basis/header_uikit/header_uikit.pug
+      include ../../blocks/ui-header/ui-header.pug
     main.content-wrapper_colors-type
       section.colors__wrapper
-        include ../../blocks/colors/colors.pug
+        +colors({ colorItems: [
+          {color: "dark_100", description: "Dark Shade 100%", colorCode: "#1F2041"},
+          {color: "dark_75", description: "Dark Shade 75%", colorCode: "#1F2041"},
+          {color: "dark_50", description: "Dark Shade 50%", colorCode: "#1F2041"},
+          {color: "dark_25", description: "Dark Shade 25%", colorCode: "#1F2041"},
+          {color: "dark_5", description: "Dark Shade 5%", colorCode: "#1F2041"},
+          {color: "purple", description: "Purple", colorCode: "#BC9CFF"},
+          {color: "green", description: "Green", colorCode: "#6FCF97"},
+        ]})
       section.type__wrapper
-        include ../../blocks/type/type.pug
+        +type({ typeList: [
+          {type: "h1", title: "h1", text: "This one is the sub-section or widget title"},
+          {type: "h2", title: "h2", text: "Next one is the item title inside widgets"},
+          {type: "h3", title: "h3", text: "This is a label or CTA text"},
+          {type: "body", title: "body", text: "This is the body text which is used for most of\u00A0the design, like paragraphs, lists, etc."},
+        ]})
     footer
       include ../../basis/footer_uikit/footer_uikit.pug

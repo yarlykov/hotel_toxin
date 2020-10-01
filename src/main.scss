@@ -13,7 +13,7 @@ $mainGradientTransperent_25: linear-gradient(180deg, rgba(#BC9CFF, 0.25) 0%, rgb
 
 // Fonts
 $mainFont: Montserrat, Areal, san-serif;
-$secondFont: Quiqksand, Areal, san-serif; 
+$secondFont: Quicksand, Arial, sans-serif; 
 $mainFont_size: 14px;
 
 $inputHeight: 44px;
@@ -29,7 +29,7 @@ $focusBorder: 1px solid rgba(31, 32, 65, 0.5);
 $redBorder: 1px solid red;
 
 @import 'fonts/fonts.scss';
-@import 'basis/header_uikit/header_uikit.scss';
+@import 'blocks/ui-header/ui-header.scss';
 @import 'pages/colors_type/colors_type.scss';
 @import 'pages/headers_footers/headers_footers.scss';
 @import 'blocks/colors/colors.scss';
