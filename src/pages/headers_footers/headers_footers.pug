@@ -1,5 +1,6 @@
 extends ../../blocks/main
 include ../../blocks/ui-kit-header/ui-kit-header.pug
+include ../../blocks/ui-kit-footer/ui-kit-footer.pug
 
 block variables
   - var title = "Headers & Footers"
@@ -17,4 +18,10 @@ block content
         include ../../basis/footer-widgets/footer-widgets.pug
         include ../../basis/footer-creative/footer-creative.pug
     footer
-      include ../../basis/footer_uikit/footer_uikit.pug
+      +ui-kit-footer({ footerLinks: [
+        { link: "index", name: "Colors & Type" },
+        { link: "headers_footers", name: "Headers & Footers" },
+        { link: "form_elements", name: "Form Elements" },
+        { link: "cards", name: "Cards" },
+        { link: "#", name: "Landing page" },
+      ]})

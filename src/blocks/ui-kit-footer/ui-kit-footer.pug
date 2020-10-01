@@ -1,0 +1,6 @@
+mixin ui-kit-footer({ footerLinks=[]})
+  .ui-kit-footer__wrapper
+    each footerLink in footerLinks
+      a&attributes({
+        href: `./${footerLink.link}.html`
+      }) #{footerLink.name}

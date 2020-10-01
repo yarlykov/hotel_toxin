@@ -2,6 +2,7 @@ extends ../../blocks/main
 include ../../blocks/colors/colors.pug
 include ../../blocks/type/type.pug
 include ../../blocks/ui-kit-header/ui-kit-header.pug
+include ../../blocks/ui-kit-footer/ui-kit-footer.pug
 
 block variables
   - var title = "Colors & Type"
@@ -31,4 +32,10 @@ block content
           {type: "body", title: "body", text: "This is the body text which is used for most of\u00A0the design, like paragraphs, lists, etc."},
         ]})
     footer
-      include ../../basis/footer_uikit/footer_uikit.pug
+      +ui-kit-footer({ footerLinks: [
+        { link: "index", name: "Colors & Type" },
+        { link: "headers_footers", name: "Headers & Footers" },
+        { link: "form_elements", name: "Form Elements" },
+        { link: "cards", name: "Cards" },
+        { link: "#", name: "Landing page" },
+      ]})

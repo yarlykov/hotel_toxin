@@ -14,6 +14,8 @@ include ../../blocks/comment/comment.pug
 include ../../blocks/pagination/pagination.pug
 include ../../blocks/text-field/text-field.pug
 include ../../blocks/button/button.pug
+include ../../blocks/ui-kit-footer/ui-kit-footer.pug
+
 
 
 block variables 
@@ -236,4 +238,10 @@ block content
             +comment({ imageName: "comment-image-1.jpg", name: "Мурад Сарафанов", dateOfVisit: "5 дней назад", commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", likeCount: 12})
 
     footer 
-      include ../../basis/footer_uikit/footer_uikit.pug
+      +ui-kit-footer({ footerLinks: [
+        { link: "index", name: "Colors & Type" },
+        { link: "headers_footers", name: "Headers & Footers" },
+        { link: "form_elements", name: "Form Elements" },
+        { link: "cards", name: "Cards" },
+        { link: "#", name: "Landing page" },
+      ]})
