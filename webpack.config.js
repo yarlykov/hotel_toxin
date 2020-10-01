@@ -73,7 +73,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/pages/colors_type/colors_type.pug',
+      template: './src/pages/ui-kit-colors-type.pug',
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
