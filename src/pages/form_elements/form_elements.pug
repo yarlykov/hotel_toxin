@@ -1,6 +1,6 @@
 extends ../../blocks/main.pug
 
-include ../../blocks/ui-header/ui-header.pug
+include ../../blocks/ui-kit-header/ui-kit-header.pug
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/like/like.pug
 include ../../blocks/checkbox/checkbox.pug
@@ -24,7 +24,7 @@ block variables
 block content
   body.body-wrapper
     header 
-      +ui-header()
+      +ui-kit-header()
     main.form-elements
       section.form-elements__text-fields-buttons
         .form-elements__text-fields
@@ -70,12 +70,12 @@ block content
             .text-field__header
               span.text-field__title Filter Date dropdown
             +text-field({ classList: ["air-datepicker","text-field__input_lowercase","text-field__input_placeholder_dark-75"], type: "text", placeholder: "19 авг - 23 авг", size:"medium", name:"text",  autocomplete: "off", arrow: true })
-        
+
           .text-field__wrapper 
             .text-field__header 
               span.text-field__title subscription text field
             +text-field({ classList: ["text-field__subscribe"], type: "text", placeholder: "Email", size:"medium", name: "email", autocomplete: "on", subscribe: true})    
-                      //----------------------------------------
+              //----------------------------------------
 
         .form-elements__buttons_small
           .button__wrapper
@@ -95,7 +95,7 @@ block content
             .button__wrapper_radio
               +radio({ group: "gender", title: "Мужчина", checked: true })
               +radio({ group: "gender", title: "Женщина", checked: false })
-          
+
           .button__wrapper
             h3.button__title.font__h3 Toggle
             +toggle({title: "Получать спецпредложения", checked: true})
@@ -208,10 +208,10 @@ block content
               dropdown: false,
               rich: true,
               listItems: [
-                  { title: "Широкий коридор", rich: true, 
-                  description: "Ширина коридоров в номере не\u00A0менее 91 см."},
-                  { title: "Помощник для инвалидов", rich: true, 
-                  description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера."
+                { title: "Широкий коридор", rich: true, 
+                description: "Ширина коридоров в номере не\u00A0менее 91 см."},
+                { title: "Помощник для инвалидов", rich: true, 
+                description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера."
                 }
               ]
             })

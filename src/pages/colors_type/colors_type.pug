@@ -1,7 +1,7 @@
 extends ../../blocks/main
 include ../../blocks/colors/colors.pug
 include ../../blocks/type/type.pug
-include ../../blocks/ui-header/ui-header.pug
+include ../../blocks/ui-kit-header/ui-kit-header.pug
 
 block variables
   - var title = "Colors & Type"
@@ -11,7 +11,7 @@ block variables
 block content
   body.body-wrapper
     header
-      +ui-header()
+      +ui-kit-header()
     main.content-wrapper_colors-type
       section.colors__wrapper
         +colors({ colorItems: [

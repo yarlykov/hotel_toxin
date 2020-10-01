@@ -1,5 +1,5 @@
 extends ../../blocks/main.pug
-include ../../blocks/ui-header/ui-header.pug
+include ../../blocks/ui-kit-header/ui-kit-header.pug
 
 block variables
   - var title = "Cards"
@@ -9,7 +9,7 @@ block variables
 block content
   body.body-wrapper.body-wrapper__background
     header
-      +ui-header()
+      +ui-kit-header()
     main.content-wrapper_cards
       div.room-selection
         .room-selection_wrapper.border
