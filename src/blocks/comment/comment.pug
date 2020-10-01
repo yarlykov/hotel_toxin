@@ -2,8 +2,9 @@ mixin comment({ imageName="", name="", commentText="", dateOfVisit="", likeCount
   .comment__header
     img&attributes({
       src: require(`../../blocks/comment/img/${imageName}`).default,
-      class: "comment__avatar"
-      })
+      class: "comment__avatar",
+      alt: "avatar"
+    })
     .comment__description
       .comment__description_name #{name}
       .comment__description_date-of-visit #{dateOfVisit}
