@@ -1,63 +1,55 @@
-.type__wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 403px;
-  height: 321px;
-  padding-right: 51px;
-  box-sizing: content-box;
-}
-
 .type {
-  display: flex;
-  justify-content: space-between;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
-  color: rgba(31, 32, 65, 0.25);
-  font-weight: 400;
-} 
+  padding-bottom: 50px;
+  
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 403px;
+    max-width: 403px;
+  }
 
-.type__block_h1 {
-  padding: 0 0px 50px 9px;
-  font-size: 24px;
-  line-height: 30px;
-}
-.type__block_h2 {
-  padding: 0px 54px 50px 10px;
-  font-size: 19px;
-  line-height: 24px;
-}
-.type__block_h3 {
-  padding: 0px 150px 47px 20px;
-  font-size: 12px;
-  line-height: 15px;
-}
-.type__block_body {
-  padding: 0px 35px 0px 0px;
-  font-size: 14px;
-  line-height: 24px;
-}
+  &__header {
+    font-family: $mainFont;
+    text-transform: capitalize;
+    color: $textColor_25;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 37px;
+    font-weight: 400;
+  }
+  &__text {
+    display: flex;
+    padding-left: 30px;
+    color: $mainTextColor;
+  }
 
+  &__h1 {
+    display: flex;
+    font-family: $secondFont;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+  }
 
-.type__block_h1_description{
-  font-family: Quicksand, Arial, Helvetica, sans-serif;
-  width: 336px;
-  font-weight: 700;
-  color: #1f2041;
+  &__h2 {
+    display: flex;
+    font-family: $secondFont;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: 700;
+  }
 
-}
-.type__block_h2_description{
-  font-family: Quicksand, Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  color: #1f2041;
-  width: 282px;
-}
-.type__block_h3_description{
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
-  color: #1f2041;
-  font-weight: 700;
-  text-transform: uppercase;
-  width: 186px;
-}
-.type__block_body_description{
-  width: 301px;
-  color: rgba(31, 32, 65, 0.75);
+  &__h3 {
+    display: flex;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  &__body {
+    display: flex;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+  }
 }

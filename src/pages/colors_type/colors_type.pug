@@ -1,5 +1,6 @@
 extends ../../blocks/main
 include ../../blocks/colors/colors.pug
+include ../../blocks/type/type.pug
 
 block variables
   - var title = "Colors & Type"
@@ -22,6 +23,11 @@ block content
           {color: "green", description: "Green", colorCode: "#6FCF97"},
         ]})
       section.type__wrapper
-        include ../../blocks/type/type.pug
+        +type({ typeList: [
+          {type: "h1", title: "h1", text: "This one is the sub-section or widget title"},
+          {type: "h2", title: "h2", text: "Next one is the item title inside widgets"},
+          {type: "h3", title: "h3", text: "This is a label or CTA text"},
+          {type: "body", title: "body", text: "This is the body text which is used for most of\u00A0the design, like paragraphs, lists, etc."},
+        ]})
     footer
       include ../../basis/footer_uikit/footer_uikit.pug
