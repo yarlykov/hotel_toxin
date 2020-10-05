@@ -1,12 +1,13 @@
-.footer-widgets__wrapper
-	.footer-widgets 
-		.footer-widgets__logo
-			include ../bar/bar__logo/logo.pug
-			p.foorer-widgets__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-		.link__wrapper
-			include ../../blocks/link/link-navigation.pug
-			include ../../blocks/link/link-aboutUs.pug
-			include ../../blocks/link/link-support.pug
-		include ../../blocks/subscribe/subscribe.pug
-	include ../bar/bar__sochial/sochial.pug
+include ../../blocks/copyright/copyright.pug
 
+.footer-widgets__wrapper
+  .footer-widgets 
+    .footer-widgets__logo
+      include ../bar/bar__logo/logo.pug
+      p.foorer-widgets__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+    .link__wrapper
+      include ../../blocks/link/link-navigation.pug
+      include ../../blocks/link/link-aboutUs.pug
+      include ../../blocks/link/link-support.pug
+    include ../../blocks/subscribe/subscribe.pug
+  +copyright({text: "Copyright © 2018 Toxin UI Kit. All rights reserved"})
