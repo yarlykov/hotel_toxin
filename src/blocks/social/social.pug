@@ -1,20 +1,10 @@
-mixin social()
+mixin social({ socialLinks })
   .social__wrapper
-    a&attributes({
-      class: "social social_twitter", 
-      href: "https://www.twitter.com/",
-      target: "_blank",
-      rel: "noopener noreferrer"
-    })
-    a&attributes({
-      class: "social social_facebook", 
-      href: "https://www.twitter.com/",
-      target: "_blank",
-      rel: "noopener noreferrer"
-    })
-    a&attributes({
-      class: "social social_instagram", 
-      href: "https://www.twitter.com/",
-      target: "_blank",
-      rel: "noopener noreferrer"
-    })
+    each socialLink in socialLinks
+      - const socialClass = "social_" + socialLink.title
+      a&attributes({
+        class: ["social", socialClass], 
+        href: `${socialLink.link}`,
+        target: "_blank",
+        rel: "noopener noreferrer"
+      })
