@@ -1,0 +1,22 @@
+.social{
+  font-family: 'Font Awesome';
+	font-size: 24px;
+  background: $mainGradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &:not(:first-child) {
+     margin-left: 17px;
+  }
+
+  &_twitter::before {
+    content: '\f099';
+  }
+  &_facebook::before {
+    content: '\f082';
+  }
+  &_instagram::before {
+    content: '\f16d';
+  }
+}
