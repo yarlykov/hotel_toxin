@@ -14,15 +14,18 @@
   border: $mainBorder;
   border-radius: 4px;
   
-	&__size{
-		&_large{
-			width: 320px;
-		}
-		&_medium{
-			width: 266px;
-		}
-		&_small{
-			width: 150px;
+  &__size{
+    &_large{
+      width: 320px;
+      height: 44px;
+    }
+    &_medium{
+      width: 266px;
+      height: 44px;
+    }
+    &_small{
+      width: 150px;
+      height: 44px;
     }
   }
   
@@ -94,7 +97,7 @@
         color:$textColor_75;
       }
     }
-		
+    
   }
 
   &__subscribe{
