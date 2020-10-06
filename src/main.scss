@@ -41,7 +41,7 @@ $redBorder: 1px solid red;
 @import 'blocks/user_form/entry-button.scss';
 @import 'basis/logged-bar/logged-bar.scss';
 @import 'basis/footer-widgets/footer-widgets.scss';
-@import 'blocks/link/link.scss';
+@import 'blocks/links/links.scss';
 @import 'basis/footer-creative/footer-creative.scss';
 @import 'blocks/copyright/copyright.scss';
 @import 'blocks/social/social';
@@ -89,11 +89,11 @@ body {
 a {
   color: $textColor_50;
   text-decoration: none;
+  &:hover {
+    color: $textColor_75;
+  }
 }
-input:focus{
-  outline: none;
-    border: $focusBorder;
-} 
+
 .gradient {
   background: $mainGradient;
   background-clip: text;

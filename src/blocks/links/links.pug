@@ -1,0 +1,8 @@
+mixin links({ title="", linksList=[] })
+  ul.links.links__title #{title}
+    each link in linksList
+      li
+        a&attributes({
+          class: ["links__element"], 
+          href: link.url,
+        }) #{link.name}
