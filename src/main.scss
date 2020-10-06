@@ -40,7 +40,7 @@ $redBorder: 1px solid red;
 @import 'basis/bar/bar__logo/logo.scss';
 @import 'blocks/user_form/entry-button.scss';
 @import 'basis/logged-bar/logged-bar.scss';
-@import 'basis/footer-widgets/footer-widgets.scss';
+@import 'blocks/footer/footer';
 @import 'blocks/links/links.scss';
 @import 'basis/footer-creative/footer-creative.scss';
 @import 'blocks/copyright/copyright.scss';
@@ -66,6 +66,9 @@ $redBorder: 1px solid red;
 
 h1,h2,h3 {
   margin: 0;
+}
+ul {
+  padding: 0;
 }
 
 .body-wrapper {

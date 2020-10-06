@@ -1,0 +1,33 @@
+.footer {
+  box-sizing: border-box;
+  display: flex;
+  max-width: 1160px;
+  justify-content: space-between;
+  margin: 0px auto;
+  padding: 100px 0 99px 0;
+
+   &__wrapper {
+     box-sizing: border-box;
+     background-color: #fff;
+   }
+
+   &__links {
+     display: flex;
+     flex: 1 1;
+     padding-top: 4px;
+     
+     &_column {
+       min-width: 160px;
+       padding-left: 40px;
+     }
+   }
+
+   &__award {
+     padding-top: 13px;
+     max-width: 260px;
+     margin: 0;
+     font-size: 14px;
+     line-height: 24px;
+     color: $textColor_75;
+   }
+}

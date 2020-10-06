@@ -1,0 +1,33 @@
+include ../../blocks/links/links.pug
+include ../../blocks/subscribe/subscribe.pug
+include ../../blocks/copyright/copyright.pug
+include ../../blocks/logo/logo.pug
+
+.footer__wrapper
+  .footer 
+    .footer__logo
+      +logo({ type: "colorWithText", width: "105.5px"})
+      p.footer__award Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+    .footer__links
+      .footer__links_column
+        +links({ title: "навигация", linksList: [
+          { name: "О нас", url: "#"},
+          { name: "Новости", url: "#"},
+          { name: "Служба поддержки", url: "#"},
+          { name: "Услуги", url: "#"},
+        ]})
+      .footer__links_column
+        +links({ title: "О нас", linksList: [
+          { name: "О сервисе", url: "#"},
+          { name: "Наша команда", url: "#"},
+          { name: "Вакансии", url: "#"},
+          { name: "Инвесторы", url: "#"},
+        ]})
+      .footer__links_column
+        +links({ title: "Служба поддержки", linksList: [
+          { name: "Соглашение", url: "#"},
+          { name: "Сообщества", url: "#"},
+          { name: "Связь с нами", url: "#"},
+        ]})
+    +subscribe({ title: "Подписка", text: "Получайте специальные предложения и новости сервиса"})
+  +copyright({text: "Copyright © 2018 Toxin отель. Все права зачищены."})
