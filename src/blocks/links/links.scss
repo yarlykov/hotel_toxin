@@ -1,6 +1,12 @@
 .links {
   list-style-type: none;
   font-family: $mainFont;
+  margin: 0;
+
+  &__wrapper {
+    display: flex;
+    flex: 1 1;
+  }
   
   &__title {
     font-size: 12px;

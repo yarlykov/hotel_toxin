@@ -11,11 +11,15 @@
     padding: 22.5px 0px;
     max-width: 1160px;
     margin: 0 auto;
+    & .social__wrapper {
+      padding: 0 2px 2px 0;
+    }
   }
 
   &__text {
     line-height: 17px;
     color: $textColor_75;
   }
+
 }
 

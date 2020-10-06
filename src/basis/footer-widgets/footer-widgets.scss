@@ -5,11 +5,11 @@
 .footer-widgets {
 	box-sizing: border-box;
 	display: flex;
-	height: 372px;
+	// height: 372px;
 	max-width: 1160px;
 	justify-content: space-between;
 	margin: 0px auto;
-	padding: 100px 0 0 0;
+	padding: 104px 0 100px 0;
 } 
 .footer-widgets__logo{
 	margin-top: -4px;
@@ -22,14 +22,5 @@
 	font-size: 14px;
 	line-height: 24px;
 	color: rgba(31, 32, 65, 0.75);
-}
-.link__wrapper{
-	display: flex;
-	justify-content: space-between;
-	min-width: 360px;
-  max-width: 512px;
-  padding-top: 2px;
-  padding-right: 48px;
-  flex: 1 1;
 }
 /*-----------------------------------------------------------------*/
