@@ -1,3 +1,4 @@
+include ../../blocks/links/links.pug
 include ../../blocks/subscribe/subscribe.pug
 include ../../blocks/copyright/copyright.pug
 
@@ -7,8 +8,22 @@ include ../../blocks/copyright/copyright.pug
       include ../bar/bar__logo/logo.pug
       p.foorer-widgets__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
     .link__wrapper
-      include ../../blocks/link/link-navigation.pug
-      include ../../blocks/link/link-aboutUs.pug
-      include ../../blocks/link/link-support.pug
+      +links({ title: "навигация", linksList: [
+        { name: "О нас", url: "#"},
+        { name: "Новости", url: "#"},
+        { name: "Служба поддержки", url: "#"},
+        { name: "Услуги", url: "#"},
+      ]})
+      +links({ title: "О нас", linksList: [
+        { name: "О сервисе", url: "#"},
+        { name: "Наша команда", url: "#"},
+        { name: "Вакансии", url: "#"},
+        { name: "Инвесторы", url: "#"},
+      ]})
+      +links({ title: "Служба поддержки", linksList: [
+        { name: "Соглашение", url: "#"},
+        { name: "Сообщества", url: "#"},
+        { name: "Связь с нами", url: "#"},
+      ]})
     +subscribe({ title: "Подписка", text: "Получайте специальные предложения и новости сервиса"})
-  +copyright({text: "Copyright © 2018 Toxin UI Kit. All rights reserved"})
+  +copyright({text: "Copyright © 2018 Toxin отель. Все права зачищены."})
