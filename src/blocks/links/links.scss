@@ -3,11 +3,6 @@
   font-family: $mainFont;
   margin: 0;
 
-  &__wrapper {
-    display: flex;
-    flex: 1 1;
-  }
-  
   &__title {
     font-size: 12px;
     color: $mainTextColor;
@@ -17,11 +12,13 @@
   }
   
   &__element {
-    display: inline-block;
     font-size: $mainFont_size;
     line-height: 17px;
     text-transform: none;
     font-weight: 400;
-    padding-top: 20px;
+    padding-top: 21px;
+    &:first-child {
+      padding-top: 22px;
+    }
   }
 }

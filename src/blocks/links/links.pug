@@ -1,8 +1,8 @@
 mixin links({ title="", linksList=[] })
   ul.links.links__title #{title}
     each link in linksList
-      li
+      li.links__element
         a&attributes({
-          class: ["links__element"], 
+          class: "links__link",
           href: link.url,
         }) #{link.name}
