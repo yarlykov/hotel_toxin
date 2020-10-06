@@ -1,10 +1,7 @@
-.subscribe
-  h2 Subscribe to our newsletter
-  p Receive our latest news and promotions in your inbox!
-  form
-    input(
-      type='text'
-      name='email'
-      placeholder='Your email address'
-    )
-    button(type='submit'): i.material-icons.subscribe__email_entry_icon.gradient arrow_forward
+include ../text-field/text-field.pug
+
+mixin subscribe({ title="", text=""})
+  .subscribe
+    h2.subscribe__title #{title}
+    p.subscribe__text #{text}
+    +text-field({ classList: ["text-field__subscribe"], type: "text", placeholder: "Email", name: "email", autocomplete: "on", subscribe: true})

@@ -1,3 +1,4 @@
+include ../../blocks/subscribe/subscribe.pug
 include ../../blocks/copyright/copyright.pug
 
 .footer-widgets__wrapper
@@ -9,5 +10,5 @@ include ../../blocks/copyright/copyright.pug
       include ../../blocks/link/link-navigation.pug
       include ../../blocks/link/link-aboutUs.pug
       include ../../blocks/link/link-support.pug
-    include ../../blocks/subscribe/subscribe.pug
+    +subscribe({ title: "Подписка", text: "Получайте специальные предложения и новости сервиса"})
   +copyright({text: "Copyright © 2018 Toxin UI Kit. All rights reserved"})
