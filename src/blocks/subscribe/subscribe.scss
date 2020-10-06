@@ -3,6 +3,7 @@
   min-width: 260px;
   max-width: 260px;
   font-family: $mainFont;
+  padding-top: 4px;
 
   &__title {
     text-transform: uppercase;
@@ -15,5 +16,7 @@
     font-size: $mainFont_size;
     line-height: 24px;
     color: $textColor_75;
+    margin: 0;
+    padding: 18px 0 23px 0;
   }
 }
