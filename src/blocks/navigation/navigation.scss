@@ -1,0 +1,27 @@
+.navigation {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+
+  &__item {
+    padding-right: 20px;
+  }
+
+  &__item_dropdown {
+    position: relative;
+    padding-right: 46px;
+    &::after {
+      position: absolute;
+      right: 20px;
+      content: '\e5cf';
+      font-family: 'Material Icons';
+      font-size: 24px;
+      line-height: 20px;
+      color: $textColor_50;
+      cursor: pointer;
+    }
+  }
+  &__link_active {
+    font-weight: 700;
+  }
+}
