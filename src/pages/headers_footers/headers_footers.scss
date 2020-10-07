@@ -1,11 +1,8 @@
-// .content-wrapper_headers-footers {
-//   // padding: 10px 0 0px;
-//   display: flex;
-//   flex-direction: column;
-//   height: 1070px;
-//   justify-content: space-between;
-// }
-
 .body-wrapper__background {
   background: #E5E5E5;
+}
+.headers-footers {
+  &__header_locked {
+    margin-bottom: 40px;
+  }
 }

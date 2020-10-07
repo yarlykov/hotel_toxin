@@ -1,0 +1,9 @@
+include ../../blocks/button/button.pug
+
+header.header
+  .header__content
+    +logo({ type: "colorWithText", width: "105.5px", height: "40px"})
+    .header__login
+      .header__login_entry
+        +button({ classList: [], buttonName: "войти", size: "stretch", textColor: "purple",  buttonVariation: "fillWhite" })
+      +button({ classList: [], buttonName: "зарегистрироваться", size: "stretch", textColor: "white" })
