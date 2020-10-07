@@ -12,11 +12,22 @@
     padding: 15px 140px 15px;
   }
 
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+
   &__login {
     display: flex;
 
-    &_entry {
-      margin-right: 20px;
+  }
+  &__login_entry {
+     margin-right: 20px;
+  }
+
+  &__navigation {
+    & .links li{
+      display: inline-block;
     }
   }
 }

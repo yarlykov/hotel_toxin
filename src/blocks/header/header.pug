@@ -1,9 +1,22 @@
+include ../../blocks/logo/logo.pug
+include ../../blocks/navigation/navigation.pug
 include ../../blocks/button/button.pug
 
-header.header
-  .header__content
-    +logo({ type: "colorWithText", width: "105.5px", height: "40px"})
-    .header__login
-      .header__login_entry
-        +button({ classList: [], buttonName: "войти", size: "stretch", textColor: "purple",  buttonVariation: "fillWhite" })
-      +button({ classList: [], buttonName: "зарегистрироваться", size: "stretch", textColor: "white" })
+mixin header()
+  header.header
+    .header__content
+      +logo({ type: "colorWithText", width: "105.5px", height: "40px"})
+      .header__menu
+        .header__navigation
+          +navigation({ navigationList: [
+            { name: "О нас", url: "#", active: true},
+            { name: "Услуги", url: "#", dropdown: true},
+            { name: "Вакансии", url: "#"},
+            { name: "Новости", url: "#"},
+            { name: "Соглашения", url: "#", dropdown: true},
+          ]})
+        .header__login
+          .header__login_entry
+            +button({ classList: [], buttonName: "войти", size: "stretch", textColor: "purple",  buttonVariation: "fillWhite" })
+          .header__login_registration
+            +button({ classList: [], buttonName: "зарегистрироваться", size: "stretch", textColor: "white" })

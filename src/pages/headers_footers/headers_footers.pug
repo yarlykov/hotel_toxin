@@ -1,5 +1,6 @@
 extends ../../blocks/main
 include ../../blocks/ui-kit-header/ui-kit-header.pug
+include ../../blocks/header/header.pug
 include ../../blocks/ui-kit-footer/ui-kit-footer.pug
 
 block variables
@@ -13,8 +14,9 @@ block content
       +ui-kit-header()
     main
       .content-wrapper_headers-footers
-        .headers-footers__header_locked
-          include ../../blocks/header/header.pug
+        .headers-footers__header_sing-in
+          +header()
+        .headers-footers__header_logged
         include ../../basis/logged-bar/logged-bar.pug
         include ../../blocks/footer/footer.pug
         include ../../basis/footer-creative/footer-creative.pug
