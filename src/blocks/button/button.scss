@@ -1,9 +1,15 @@
 .button{
+  width: 100%;
+  box-sizing: border-box;
   position: relative;
   border: none;
   background: $mainGradient;
   border-radius: 100px;
-  height: 44px;
+  font-family: $mainFont;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
   outline: none;
   cursor: pointer;
 
@@ -27,14 +33,15 @@
   }
   /*------Size------*/
   &_size{
+    
+    &_stretch {
+      padding: 9px 20px 10px;
+    }
     &_small{
-      min-width: 99px;
+      padding: 15px 19px 14px;
     }
     &_large{
-      min-width: 320px;
-    }
-    &_inline{
-      height: 1.2em;
+      padding: 15px 19px 14px;
     }
   }
 
@@ -75,10 +82,11 @@
     color: #fff;
     
     &:before{
-      content: "arrow_forward";
-      position: relative;
       font-family: Material Icons;
+      content: '\e5c8';
+      position: relative;
       color: #fff;
+      font-weight: 400;
       font-size: 24px;
       line-height: 24px;
     }

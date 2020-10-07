@@ -14,10 +14,10 @@ mixin button({ classList=[], type="button", buttonName="button", size="inline", 
   button&attributes(buttonAttributes) 
     case buttonVariation
       when "fillWhite"
-        span(class=buttonTextColor).font__h3 #{buttonName}
+        span(class=buttonTextColor) #{buttonName}
         .button_fill-white
       when "withArrow"
-        span(class=buttonTextColor).font__h3 #{buttonName}
+        span(class=buttonTextColor) #{buttonName}
         .button__arrow
       default
-        span(class=buttonTextColor).font__h3 #{buttonName}
+        span(class=buttonTextColor) #{buttonName}
