@@ -25,9 +25,9 @@
      margin-right: 20px;
   }
 
-  &__navigation {
-    & .links li{
-      display: inline-block;
-    }
+  &__logged {
+    border-left: $mainBorder;
+    padding-left: 20px;
+    padding: 6px 0 6px 20px;
   }
 }

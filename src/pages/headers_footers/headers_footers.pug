@@ -15,8 +15,9 @@ block content
     main
       .content-wrapper_headers-footers
         .headers-footers__header_sing-in
-          +header()
+          +header({})
         .headers-footers__header_logged
+          +header({ logged: true, userName: "Юлий Цезарь" })
         include ../../blocks/footer/footer.pug
     footer
       +ui-kit-footer({ footerLinks: [
