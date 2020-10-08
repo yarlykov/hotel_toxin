@@ -18,7 +18,10 @@ block content
           +header({})
         .headers-footers__header_logged
           +header({ logged: true, userName: "Юлий Цезарь" })
-        include ../../blocks/footer/footer.pug
+        .headers-footers__footer
+          include ../../blocks/footer/footer.pug
+        .headers-footers__footer-mobile
+          include ../../blocks/footer-mobile/footer-mobile.pug
     footer
       +ui-kit-footer({ footerLinks: [
         { link: "index", name: "Colors & Type" },
