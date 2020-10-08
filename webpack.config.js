@@ -25,7 +25,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|sass)$/,
         use: [MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
@@ -87,6 +87,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/pages/cards/cards.pug',
       filename: 'cards.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/error-page/error-page.pug',
+      filename: 'error-page.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
