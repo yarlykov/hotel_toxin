@@ -1,7 +1,7 @@
 include ../../blocks/links/links.pug
 include ../../blocks/subscribe/subscribe.pug
-include ../../blocks/copyright/copyright.pug
 include ../../blocks/logo/logo.pug
+include ../../blocks/social/social.pug
 
 .footer__wrapper
   .footer 
@@ -30,4 +30,12 @@ include ../../blocks/logo/logo.pug
           { name: "Связь с нами", url: "#"},
         ]})
     +subscribe({ title: "Подписка", text: "Получайте специальные предложения и новости сервиса"})
-  +copyright({text: "Copyright © 2018 Toxin отель. Все права зачищены."})
+  .footer__bottom
+    .footer__bottom_wrapper
+      .footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
+      .footer__social
+        +social({ socialLinks: [
+            { title: "twitter", link: "https://twitter.com"},
+            { title: "facebook", link: "https://facebook.com"},
+            { title: "instagram", link: "https://instagram.com"},
+        ]})
