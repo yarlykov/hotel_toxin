@@ -4,22 +4,25 @@ include ../../blocks/button/button.pug
 
 mixin header({ logged=false, userName="" })
   header.header
-    .header__content
-      +logo({ type: "colorWithText", width: "105.5px", height: "40px"})
-      .header__menu
-        .header__navigation
-          +navigation({ navigationList: [
-            { name: "О нас", url: "#", active: true},
-            { name: "Услуги", url: "#", dropdown: true},
-            { name: "Вакансии", url: "#"},
-            { name: "Новости", url: "#"},
-            { name: "Соглашения", url: "#", dropdown: true},
-          ]})
-        if logged
-          .header__logged #{userName}
-        else
-          .header__login
-            .header__login_entry
-              +button({ classList: [], buttonName: "войти", size: "stretch", textColor: "purple",  buttonVariation: "fillWhite" })
-            .header__login_register
-              +button({ classList: [], buttonName: "зарегистрироваться", size: "stretch", textColor: "white" })
+    .header__container
+      .header__body
+        +logo({ type: "colorWithText", width: "105.5px", height: "40px"})
+        .header__menu-burger
+          span.header__menu-burger_line
+        .header__menu
+          .header__navigation
+            +navigation({ navigationList: [
+              { name: "О нас", url: "#", active: true},
+              { name: "Услуги", url: "#", dropdown: true},
+              { name: "Вакансии", url: "#"},
+              { name: "Новости", url: "#"},
+              { name: "Соглашения", url: "#", dropdown: true},
+            ]})
+          if logged
+            .header__logged #{userName}
+          else
+            .header__login
+              .header__login_entry
+                +button({ classList: [], buttonName: "войти", size: "stretch", textColor: "purple",  buttonVariation: "fillWhite" })
+              .header__login_register
+                +button({ classList: [], buttonName: "зарегистрироваться", size: "stretch", textColor: "white" })
