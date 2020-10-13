@@ -370,11 +370,8 @@ body{
     right: 0;
     bottom: 0;
     left: 0;
-    
     height: 10px;
-    
     content: '';
-    
     background: #1d7fbb;
 }
 
@@ -386,4 +383,7 @@ body{
   position: absolute;
   top: 40%;
   left: 50%;
+  @media (max-width: 960px) {
+    left: 20%;
+  }
 }

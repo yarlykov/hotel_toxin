@@ -4,5 +4,11 @@
 	justify-content: space-around;
 	max-width: 700px;
 	margin: auto;
-	padding: 30px 0px;
+  padding: 30px 0px;
+  @media (max-width: 960px) {
+    flex-direction: column;
+    a {
+      margin-bottom: 5px;
+    }
+  }
 }
