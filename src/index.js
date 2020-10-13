@@ -5,5 +5,6 @@ import './blocks/mask/mask'
 import './blocks/like/like'
 import './blocks/pagination/pagination'
 import './blocks/checkbox/checkbox'
+import './blocks/header/header'
 
 import './main.scss';

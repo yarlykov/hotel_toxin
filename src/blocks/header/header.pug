@@ -7,16 +7,16 @@ mixin header({ logged=false, userName="" })
     .header__container
       .header__body
         +logo({ type: "colorWithText", width: "105.5px", height: "40px"})
-        .header__menu-burger
-          span.header__menu-burger_line
-        .header__menu
+        .header__menu-burger.js-header__menu-burger
+          span.header__menu-burger_line.js-header__menu-burger_line
+        .header__menu.js-header__menu
           .header__navigation
             +navigation({ navigationList: [
-              { name: "О нас", url: "#", active: true},
-              { name: "Услуги", url: "#", dropdown: true},
-              { name: "Вакансии", url: "#"},
-              { name: "Новости", url: "#"},
-              { name: "Соглашения", url: "#", dropdown: true},
+              { name: "О нас", url: "./error-page.html", active: true},
+              { name: "Услуги", url: "./error-page.html", dropdown: true},
+              { name: "Вакансии", url: "./error-page.html"},
+              { name: "Новости", url: "./error-page.html"},
+              { name: "Соглашения", url: "./error-page.html", dropdown: true},
             ]})
           if logged
             .header__logged #{userName}

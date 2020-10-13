@@ -31,26 +31,29 @@
     @media (max-width: 960px) {
       display: block;
       position: relative;
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
+      z-index: 2000;
 
       .header__menu-burger_line {
         position: absolute;
-        background-color: $designColor_main;
+        background-color: $textColor_50;
         left: 0;
         width: 100%;
         height: 2px;
-        top: 18px;
+        top: 17px;
+        transition: all 0.3s ease 0s;
       }
 
       &::after,
       &::before {
         content: '';
-        background-color: $designColor_main;
+        background-color: $textColor_50;
         position: absolute;
         width: 100%;
         height: 2px;
         left: 0; 
+        transition: all 0.3s ease 0s;
       }
       &::before {
         top: 0;
@@ -59,30 +62,85 @@
         bottom: 0;
       }    
     }
-    
-
   }
 
+  &__menu-burger.header__active::before {
+    transform: rotate(45deg);
+    top: 17px;
+  }
+  &__menu-burger.header__active::after {
+    transform: rotate(-45deg);
+    bottom: 17px;
+  }
+  &__menu-burger.header__active .header__menu-burger_line{
+    transform: scale(0);
+  }
+  &__menu-burger.header__active + .header__menu{
+    left: 0;
+  }
 
   &__menu {
     display: flex;
     align-items: center;
     @media (max-width: 960px) {
-      display: none;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #E5E5E5;
+      flex-direction: column;
+      justify-content: space-evenly;
+      z-index: 1000;
+      transition: 0.1s;
+    }
+  }
+
+  &__navigation .navigation{
+    @media (max-width: 960px) {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .navigation__item {
+      padding: 0 20px 20px 0;
+    }
+    .navigation__link{
+      font-size: 1.5rem;
+    }
+    .navigation__item_dropdown {
+      padding-right: 50px;
+      &::after {
+        right: 20px;
+        font-size: 2.2rem;
+        line-height: 2rem;
+      }
     }
   }
 
   &__login {
     display: flex;
-
+    @media (max-width: 960px) {
+      flex-direction: column;
+    }
   }
+
   &__login_entry {
      margin-right: 20px;
+    @media (max-width: 960px) {
+      margin: 0 0 15px 0;
+    }
   }
 
   &__logged {
     border-left: $mainBorder;
-    padding-left: 20px;
     padding: 6px 0 6px 20px;
+    @media (max-width: 960px) {
+      padding: 0;
+      border-left: none;
+      font-size: 1.5rem;
+      color: $mainTextColor;
+    }
   }
 }

@@ -59,6 +59,7 @@ $redBorder: 1px solid red;
 @import 'blocks/pagination/pagination.scss';
 @import 'blocks/text-field/text-field.scss';
 @import 'pages/error-page/error-page.scss';
+@import 'blocks/logo/logo';
 
 
 h1,h2,h3 {
@@ -73,12 +74,13 @@ ul {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-main { 
+  main { 
     flex-grow: 1;
   }
 }
 
-body {
+body, html {
+  margin: 0;
   box-sizing: border-box;
   font-family: $mainFont;
   font-style: normal;
