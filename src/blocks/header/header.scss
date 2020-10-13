@@ -64,19 +64,25 @@
     }
   }
 
-  &__menu-burger.header__active::before {
-    transform: rotate(45deg);
-    top: 17px;
-  }
-  &__menu-burger.header__active::after {
-    transform: rotate(-45deg);
-    bottom: 17px;
-  }
-  &__menu-burger.header__active .header__menu-burger_line{
-    transform: scale(0);
-  }
-  &__menu-burger.header__active + .header__menu{
-    left: 0;
+  &__menu-burger.header__active {
+    
+    &::before {
+      transform: rotate(45deg);
+      top: 17px;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      bottom: 17px;
+    }
+
+    & .header__menu-burger_line {
+      transform: scale(0);
+    }
+
+    & + .header__menu {
+      left: 0;
+    }
   }
 
   &__menu {
