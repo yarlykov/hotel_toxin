@@ -13,10 +13,10 @@ mixin header({ logged=false, userName="" })
           .header__navigation
             +navigation({ navigationList: [
               { name: "О нас", url: "./error-page.html", active: true},
-              { name: "Услуги", url: "./error-page.html", dropdown: true},
+              { name: "Услуги", dropdown: true},
               { name: "Вакансии", url: "./error-page.html"},
               { name: "Новости", url: "./error-page.html"},
-              { name: "Соглашения", url: "./error-page.html", dropdown: true},
+              { name: "Соглашения", dropdown: true},
             ]})
           if logged
             .header__logged #{userName}

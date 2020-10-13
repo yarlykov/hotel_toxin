@@ -4,7 +4,12 @@
   display: flex;
 
   &__item {
+    position: relative;
     padding-right: 20px;
+  }
+
+  &__link {
+    cursor: pointer;
   }
 
   &__item_dropdown {
@@ -20,8 +25,33 @@
       color: $textColor_50;
       cursor: pointer;
     }
+
+    &.navigation__dropdown_open {
+      .navigation__dropdown {
+        display: block;
+      }
+    }
   }
   &__link_active {
     font-weight: 700;
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    width: 100%;
+    right: 10px;
+    background: #E5E5E5;
+    z-index: 3000;
+    border-radius: 4px;
+
+    & .links__item {
+      padding: 0.5rem;
+      text-align: center;
+
+      &:first-child{
+        padding: 0.5rem 0 0.5rem 0;
+      }
+    }
   }
 }

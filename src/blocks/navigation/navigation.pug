@@ -1,3 +1,5 @@
+include ../links/links.pug
+
 mixin navigation({ navigationList=[] })
   nav
     ul.navigation
@@ -11,3 +13,11 @@ mixin navigation({ navigationList=[] })
             class: ["navigation__link", activeLinkClass ],
             href: navigationItem.url,
           }) #{navigationItem.name}
+          if navigationItem.dropdown
+            .navigation__dropdown
+              +links({ linksList: [
+                { name: "О нас", url: "./error-page.html"},
+                { name: "Новости", url: "./error-page.html"},
+                { name: "Служба поддержки", url: "./error-page.    html"},
+                { name: "Услуги", url: "./error-page.html"},
+              ]})

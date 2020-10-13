@@ -6,5 +6,6 @@ import './blocks/like/like'
 import './blocks/pagination/pagination'
 import './blocks/checkbox/checkbox'
 import './blocks/header/header'
+import './blocks/navigation/navigation'
 
 import './main.scss';
