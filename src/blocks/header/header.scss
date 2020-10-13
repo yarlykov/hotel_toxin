@@ -110,7 +110,8 @@
 
   @media (max-width: 960px) {
     .navigation__item {
-      padding: 0 20px 20px 0;
+      padding: 0 50px 20px 0;
+      text-align: center;
     }
     .navigation__link{
       font-size: 1.5rem;
@@ -118,7 +119,8 @@
     .navigation__item_dropdown {
       padding-right: 50px;
       &::after {
-        right: 20px;
+        // right: 50px;
+        // left: 0;
         font-size: 2.2rem;
         line-height: 2rem;
       }
@@ -135,7 +137,7 @@
   &__login_entry {
      margin-right: 20px;
     @media (max-width: 960px) {
-      margin: 0 0 15px 0;
+      margin: 0 0px 15px 0;
     }
   }
 
@@ -143,7 +145,7 @@
     border-left: $mainBorder;
     padding: 6px 0 6px 20px;
     @media (max-width: 960px) {
-      padding: 0;
+      padding: 0 50px 0 0;
       border-left: none;
       font-size: 1.5rem;
       color: $mainTextColor;
