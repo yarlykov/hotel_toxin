@@ -3,7 +3,7 @@ include ../../blocks/subscribe/subscribe.pug
 include ../../blocks/logo/logo.pug
 include ../../blocks/social/social.pug
 
-.footer__wrapper
+footer.footer__wrapper
   .footer 
     .footer__logo
       +logo({ type: "colorWithText", width: "105.5px"})
@@ -11,23 +11,23 @@ include ../../blocks/social/social.pug
     .footer__links
       .footer__links_column
         +links({ title: "навигация", linksList: [
-          { name: "О нас", url: "#"},
-          { name: "Новости", url: "#"},
-          { name: "Служба поддержки", url: "#"},
-          { name: "Услуги", url: "#"},
+          { name: "О нас", url: "./error-page.html"},
+          { name: "Новости", url: "./error-page.html"},
+          { name: "Служба поддержки", url: "./error-page.html"},
+          { name: "Услуги", url: "./error-page.html"},
         ]})
       .footer__links_column
         +links({ title: "О нас", linksList: [
-          { name: "О сервисе", url: "#"},
-          { name: "Наша команда", url: "#"},
-          { name: "Вакансии", url: "#"},
-          { name: "Инвесторы", url: "#"},
+          { name: "О сервисе", url: "./error-page.html"},
+          { name: "Наша команда", url: "./error-page.html"},
+          { name: "Вакансии", url: "./error-page.html"},
+          { name: "Инвесторы", url: "./error-page.html"},
         ]})
       .footer__links_column
         +links({ title: "Служба поддержки", linksList: [
-          { name: "Соглашение", url: "#"},
-          { name: "Сообщества", url: "#"},
-          { name: "Связь с нами", url: "#"},
+          { name: "Соглашение", url: "./error-page.html"},
+          { name: "Сообщества", url: "./error-page.html"},
+          { name: "Связь с нами", url: "./error-page.html"},
         ]})
     +subscribe({ title: "Подписка", text: "Получайте специальные предложения и новости сервиса"})
   .footer__bottom
@@ -39,3 +39,13 @@ include ../../blocks/social/social.pug
             { title: "facebook", link: "https://facebook.com"},
             { title: "instagram", link: "https://instagram.com"},
         ]})
+footer.footer-mobile
+  .footer-mobile__wrapper
+    +logo({ type: "colorWithText", width: "105.5px", height: "40px"})
+    .footer-mobile__copyright-text Copyright © 2018 Toxin отель. Все&nbsp;права&nbsp;зачищены.
+    .footer-mobile__social
+      +social({ socialLinks: [
+        { title: "twitter", link: "https://twitter.com"},
+        { title: "facebook", link: "https://facebook.com"},
+        { title: "instagram", link: "https://instagram.com"},
+      ]})

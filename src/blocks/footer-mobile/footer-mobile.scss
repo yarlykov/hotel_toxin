@@ -19,5 +19,12 @@
     line-height: 17px;
     color: $textColor_75;
     padding: 20px 0 25px;
+    @media (max-width: 480px) {
+      padding: 20px 50px;
+    }
+  }
+
+  &_show {
+    display: block;
   }
 }
