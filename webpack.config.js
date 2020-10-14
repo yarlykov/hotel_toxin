@@ -77,8 +77,8 @@ module.exports = {
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/pages/headers_footers/headers_footers.pug',
-      filename: 'headers_footers.html'
+      template: './src/pages/ui-kit-headers-footers.pug',
+      filename: 'headers-footers.html'
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/form_elements/form_elements.pug',

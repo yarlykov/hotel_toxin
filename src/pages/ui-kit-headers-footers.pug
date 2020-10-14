@@ -1,0 +1,11 @@
+extends ../blocks/main
+include ../blocks/headers-footers/headers-footers.pug
+
+block variables
+  - const title = "Headers & Footers"
+
+block content
+  +headers-footers({ 
+    loggedHeader: [{ logged: true, userName: "Юлий Цезарь" }],
+    footer: [{ awardText: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", copyrightText: "Copyright © 2018 Toxin отель. Все\u00A0права\u00A0зачищены." }] 
+  })
