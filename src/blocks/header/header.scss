@@ -105,6 +105,7 @@
   &__navigation .navigation{
     @media (max-width: 960px) {
       flex-direction: column;
+      padding-bottom: 70px;
     }
   }
 
