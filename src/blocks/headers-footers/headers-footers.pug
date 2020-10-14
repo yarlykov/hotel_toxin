@@ -1,0 +1,27 @@
+include ../ui-kit-header/ui-kit-header.pug
+include ../header/header.pug
+include ../footer/footer.pug
+include ../footer-mobile/footer-mobile.pug
+include ../ui-kit-footer/ui-kit-footer.pug
+
+mixin headers-footers({ loggedHeader=[], footer=[] })
+  body.body__background
+    header
+      +ui-kit-header()
+    main
+        .headers-footers__header_sing-in
+          +header({})
+        .headers-footers__header_logged
+          //- +header({ loggedHeader.logged, loggedHeader.userName })
+        .headers-footers__footer
+          //- +footer({ footer.awardText })
+        .headers-footers__footer-mobile
+          +footer-mobile()
+    footer
+      +ui-kit-footer({ footerLinks: [
+        { link: "index", name: "Colors & Type" },
+        { link: "headers_footers", name: "Headers & Footers" },
+        { link: "form_elements", name: "Form Elements" },
+        { link: "cards", name: "Cards" },
+        { link: "#", name: "Landing page" },
+      ]})
