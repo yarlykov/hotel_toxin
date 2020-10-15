@@ -1,0 +1,169 @@
+include ../ui-kit-header/ui-kit-header.pug
+include ../dropdown/dropdown.pug
+include ../like/like.pug
+include ../checkbox/checkbox.pug
+include ../radio/radio.pug
+include ../toggle/toggle.pug
+include ../rating/rating.pug
+include ../bullet-list/bullet-list.pug
+include ../range-slider/range-slider.pug
+include ../dignity-room/dignity-room.pug
+include ../comment/comment.pug
+include ../pagination/pagination.pug
+include ../text-field/text-field.pug
+include ../button/button.pug
+include ../ui-kit-footer/ui-kit-footer.pug
+
+mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomReview={}, footerLinks=[] })
+  -
+    const { defaultTextField, focused, dropdown, masked, dateDropdownStart, 
+            dateDropdownEnd, filterDateDropdown, subscribe } = textFields
+  body.body-wrapper
+    header 
+      +ui-kit-header()
+    main.form-elements
+      section.form-elements__text-fields-buttons
+        .form-elements__text-fields
+          .text-field__wrapper
+            .text-field__header
+              h3.text-field__title #{defaultTextField.title}
+              span.text-field__description #{defaultTextField.subtitle}
+            +text-field(defaultTextField.options)
+
+          .text-field__wrapper
+            .text-field__header
+              span.text-field__title #{focused.title}
+              span.text-field__description #{focused.subtitle}
+            +text-field({ classList: ["text-field_hover"], type: "text",  placeholder: "This is pretty awesome", size:"large", name: "email",  autocomplete: "off" })
+
+          .text-field__wrapper
+            .text-field__header
+              span.text-field__title #{dropdown.title}
+              span.text-field__description #{dropdown.subtitle}
+            +dropdown(dropdown.options)
+
+          .text-field__wrapper
+            .text-field__header
+              span.text-field__title #{masked.title}
+              span.text-field__description #{masked.subtitle}
+            +text-field(masked.options)
+
+          .text-field__wrapper.text-field__wrapper_date-dropdown
+            label
+              .text-field__header
+                span.text-field__title #{dateDropdownStart.title}
+              +text-field(dateDropdownStart.options)
+            label
+              .text-field__header
+                span.text-field__title #{dateDropdownEnd.title}
+              +text-field(dateDropdownEnd.options)
+
+          .text-field__wrapper.js-datepicker__wrapper      
+            .text-field__header
+              span.text-field__title #{filterDateDropdown.title}
+            +text-field(filterDateDropdown.options)
+
+          .text-field__wrapper 
+            .text-field__header 
+              span.text-field__title #{subscribe.title}
+            +text-field(subscribe.options)    
+              //----------------------------------------
+
+        .form-elements__buttons_small
+          .button__wrapper
+            +checkbox(buttons.checkbox)
+
+          .button__wrapper
+            h3.button__title.font__h3 Radio buttons
+            .button__wrapper_radio
+              +radio(buttons.radio.man)
+              +radio(buttons.radio.woman)
+
+          .button__wrapper
+            h3.button__title.font__h3 Toggle
+            +toggle(buttons.toggle.checked)
+            +toggle(buttons.toggle.unchecked)
+
+          .button__wrapper
+            h3.button__title.font__h3 Like button
+            .button__wrapper_like
+              +likeButton(buttons.likeButton.dislike)
+              +likeButton(buttons.likeButton.like)
+
+          .button__wrapper
+            h3.button__title.font__h3 Rate button
+            .button__wrapper_rating
+              +rating(buttons.rating.good)
+              +rating(buttons.rating.excellent)
+
+        .form-elements__buttons
+          .button__wrapper_range-slider
+            +range-slider()
+
+          .button__wrapper
+            h3.button__title.font__h3 Buttons
+            .button__block
+              +button(buttons.button[0])
+              +button(buttons.button[1])
+            .button__block
+              +button(buttons.button[2])
+              +button(buttons.button[3])
+            .button__block_inline
+              +button(buttons.button[4])
+              +button(buttons.button[5])
+            +button(buttons.button[6])
+
+          .button__wrapper
+            h3.button__title.font__h3 pagination
+            +pagination()
+
+      section.form-elements__dropdowns
+        .dropdown__block_left
+          .dropdown__wrapper
+            .text-field__header
+              span.text-field__title Dropdown
+              span.text-field__description Default
+            +dropdown(dropdowns.closeComfort)
+          .dropdown__wrapper
+            .text-field__header
+              span.text-field__title.font__h3 Dropdown
+              span.text-field__description Expanded
+            +dropdown(dropdowns.openComfort)
+
+        .dropdown__block_right
+          .dropdown__wrapper
+            .dropdown__header
+              span.dropdown__title Dropdown
+            +dropdown(dropdowns.openGuestsCleanCount)
+
+          .dropdown__wrapper
+            .dropdown__header
+              span.dropdown__title Dropdown
+            +dropdown(dropdowns.openGuests)
+
+      section.form-elements__lists
+        .list__block_expandable
+          .list__wrapper
+            +checkbox(lists.expandableCheckboxes.checkbox1)
+          .list__wrapper
+            +checkbox(lists.expandableCheckboxes.checkbox2)
+
+        .list__block_other
+          .list__wrapper
+            +checkbox(lists.richCheckboxButtons)
+
+          .list__wrapper_bullet
+            h3.list__title.font__h3 bullet list
+            +bullet-list(lists.bulletList)
+
+      section.form-elements__room-review
+        .room-review__wrapper
+          +dignity-room(roomReview.dignityRoom.dignity1)
+          +dignity-room(roomReview.dignityRoom.dignity2)
+
+        .room-review__wrapper_comment
+          .comment
+            +comment(roomReview.comment)
+
+    footer 
+      +ui-kit-footer({ footerLinks })

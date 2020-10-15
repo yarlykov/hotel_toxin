@@ -1,0 +1,223 @@
+extends ../blocks/main
+include ../blocks/form-elements/form-elements.pug
+
+block variables
+  - const title = "Form & Elements"
+
+block content
+ +form-elements({
+    textFields: {
+      defaultTextField: {
+        title: "text field",
+        subtitle: "default",
+        options: { 
+          classList: [], type: "text", placeholder: "Email", 
+          size:"large", name: "email", autocomplete: "on" 
+        }
+      },
+      focused: {
+        title: "text field",
+        subtitle: "hover / focus",
+        options: { 
+          classList: ["text-field_hover"], type: "text",  
+          placeholder: "This is pretty awesome", size:"large", 
+          name: "email",  autocomplete: "off" 
+        }
+      },
+      dropdown: {
+        title: "dropdown",
+        subtitle: "default",
+        options: {
+          isOpen: false, group: "guests", 
+          elements: [
+            {title: "Взрослые", count: 0},
+            {title: "Дети", count: 0}, 
+            {title: "Младенцы", count: 0}
+          ]
+        }
+      },
+      masked: {
+        title: "masked text field",
+        subtitle: "default",
+        options: { 
+          classList: ["js-masked__text-field"], type: "text",  
+          placeholder: "ДД.ММ.ГГГГ", size:"large", name: "text"
+        }
+      },
+      dateDropdownStart: {
+        title: "date dropdown",
+        options: { 
+          classList: ["js-air-datepicker__day-start", "text-field__input_placeholder_dark-75"], 
+          type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
+          name: "date", autocomplete: "on", arrow: true 
+        }
+      },
+      dateDropdownEnd: {
+        title: "date dropdown",
+        options: { 
+          classList: ["js-air-datepicker__day-end", "text-field__input_placeholder_dark-75"], 
+          type: "text",placeholder: "19.08.2019", size:"small", 
+          name: "date", autocomplete: "on", arrow: true 
+        }
+      },
+      filterDateDropdown: {
+        title: "filter date dropdown",
+        options: { 
+          classList: [ "air-datepicker", "text-field__input_lowercase", "text-field__input_placeholder_dark-75" ], 
+          type: "text", placeholder: "19 авг - 23 авг", size:"medium", 
+          name:"text",  autocomplete: "off", arrow: true 
+        }
+      },
+      subscribe: {
+        title: "subscription text field",
+        options: { 
+          classList: ["text-field__subscribe"], 
+          type: "text", placeholder: "Email", size:"medium", 
+          name: "email", autocomplete: "on", subscribe: true
+        }
+      }
+    },
+
+    buttons: {
+      checkbox: {	
+        mainTitle: "Checkbox buttons",
+        dropdown: false,
+        rich: false,
+        listItems: [
+          { title: "Можно курить" },
+          { title: "Можно с питомцами" },
+          { title: "Можно пригласить гостей (до\u00A010\u00A0человек)", checked: true }
+        ]
+      },
+      radio: {
+        man: { group: "gender", title: "Мужчина", checked: true },
+        woman: { group: "gender", title: "Женщина", checked: false }
+      },
+      toggle: {
+        checked: {title: "Получать спецпредложения", checked: true },
+        unchecked: {title: "Получать спецпредложения", checked: false}
+      },
+      likeButton: {
+        like: { icon: "favorite", value: 12, disable: false },
+        dislike: { icon: "favorite", value: 2, disable: true }
+      },
+      rating: {
+        excellent: { rating: 5 },
+        good: { rating: 4 }
+      },
+      rangeSlider: {},
+      button: [
+        { classList: [], buttonName: "click me", size: "small", textColor: "white" },
+        { classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "white" },
+        { classList: [], buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" },
+        { classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite" },
+        { classList: ["button_inline"], buttonName: "click me", textColor: "purple"},
+        { classList: ["button_inline"], buttonName: "click me", textColor: "gray"},
+        { classList: [], buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"}
+      ],
+      pagination: {}
+    },
+
+    dropdowns: {
+      closeComfort: { 
+        isOpen: false, 
+        group: "comfort", 
+        elements: [
+          {title: "Спальни", count: 2}, 
+          {title: "Кровати", count: 2}, 
+          {title: "Ванные комнаты", count: 0}
+        ]
+      },
+      openComfort: {
+        isOpen: true, 
+        group: "comfort", 
+        elements: [
+          {title: "Спальни", count: 2}, 
+          {title: "Кровати", count: 2}, 
+          {title: "Ванные комнаты", count: 0}
+        ]
+      },
+      openGuestsCleanCount: {
+        isOpen: true, 
+        group: "guests", 
+        elements: [
+          {title: "Взрослые", count: 0},
+          {title: "Дети", count: 0}, 
+          {title: "Младенцы", count: 0}
+        ]
+      },
+      openGuests: {
+        isOpen: true, 
+        group: "guests", 
+        elements: [
+          {title: "Взрослые", count: 2},
+          {title: "Дети", count: 1}, 
+          {title: "Младенцы", count: 0}
+        ]
+      },
+    },
+
+    lists: {
+      expandableCheckboxes: {
+        checkbox1: {	
+          mainTitle: "Expandable checkbox list",
+          dropdown: true,
+          rich: false,
+          listItems: []
+        },
+        checkbox2: {	
+          mainTitle: "Expandable checkbox list",
+          dropdown: true,
+          rich: false,
+          listItems: [
+            { title: "Завтрак" }, 
+            { title: "Письменный стол", checked: true }, 
+            { title: "Стул для кормления", checked: true },
+            { title: "Кроватка", checked: true },
+            { title: "Телевизор" },
+            { title: "Шампунь" }
+          ]
+        },
+      },
+      richCheckboxButtons: {	
+        mainTitle: "rich checkbox buttons",
+        dropdown: false,
+        rich: true,
+        listItems: [
+          { title: "Широкий коридор", rich: true, 
+            description: "Ширина коридоров в номере не\u00A0менее 91 см." },
+          { title: "Помощник для инвалидов", rich: true, 
+            description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера." }
+        ]
+      },
+      bulletList: { 
+        listItems: [ 
+          { title: "Нельзя с питомцами" }, 
+          { title: "Без вечеринок и мероприятий" },  
+          { title: "Время прибытия — после 13:00, а\u00A0выезд до 12:00" }
+        ]
+      }
+    },
+
+    roomReview: {
+      dignityRoom: {
+        dignity1: { icon: "mood", title: "Комфорт", subtitle: "Шумопоглощающие стены" },
+        dignity2: { icon: "location_city", title: "Удобство", subtitle: "Окно в каждой из спален" }
+      },
+      comment: { 
+        imageName: "comment-image-1.jpg", 
+        name: "Мурад Сарафанов", 
+        dateOfVisit: "5 дней назад", 
+        commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", 
+        likeCount: 12
+      }
+    },
+
+    footerLinks: [
+      { link: "index", name: "Colors & Type" },
+      { link: "headers-footers", name: "Headers & Footers" },
+      { link: "form_elements", name: "Form Elements" },
+      { link: "cards", name: "Cards" },
+      { link: "#", name: "Landing page" },
+    ]
+ })

@@ -15,7 +15,7 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    index: "form_elements.html",
+    index: "form-elements.html",
   },
 
   module: {
@@ -81,8 +81,8 @@ module.exports = {
       filename: 'headers-footers.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/pages/form_elements/form_elements.pug',
-      filename: 'form_elements.html'
+      template: './src/pages/ui-kit-form-elements.pug',
+      filename: 'form-elements.html'
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/cards/cards.pug',
