@@ -5,10 +5,6 @@ block variables
   - const title = "Headers & Footers"
 
 block content
-  //- +headers-footers({ 
-  //-   loggedHeader: [{ logged: true, userName: "Юлий Цезарь" }],
-    footer: [{ awardText: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", copyrightText: "Copyright © 2018 Toxin отель. Все\u00A0права\u00A0зачищены." }] 
-  //- })
   +headers-footers({
     headers: {
       login: {
@@ -76,4 +72,11 @@ block content
         ]
       },
     },
+    footerLinks: [
+        { link: "index", name: "Colors & Type" },
+        { link: "headers_footers", name: "Headers & Footers" },
+        { link: "form_elements", name: "Form Elements" },
+        { link: "cards", name: "Cards" },
+        { link: "error-page", name: "Landing page" },
+    ]
   })

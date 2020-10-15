@@ -11,7 +11,7 @@ mixin header({ logo={}, navigationList=[], buttonEntry="", buttonRegister="", lo
           span.header__menu-burger_line.js-header__menu-burger_line
         .header__menu.js-header__menu
           .header__navigation
-            +navigation({navigationList})
+            +navigation({ navigationList })
           if logged
             .header__logged #{userName}
           else
