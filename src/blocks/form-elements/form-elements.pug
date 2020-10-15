@@ -18,6 +18,7 @@ mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomRev
   -
     const { defaultTextField, focused, dropdown, masked, dateDropdownStart, 
             dateDropdownEnd, filterDateDropdown, subscribe } = textFields
+    const { checkbox, radio, toggle, likeButton, rating, rangeSlider, button, pagination} = buttons
   body.body-wrapper
     header 
       +ui-kit-header()
@@ -71,30 +72,30 @@ mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomRev
 
         .form-elements__buttons_small
           .button__wrapper
-            +checkbox(buttons.checkbox)
+            +checkbox(checkbox)
 
           .button__wrapper
-            h3.button__title.font__h3 Radio buttons
+            h3.button__title.font__h3 #{radio.title}
             .button__wrapper_radio
-              +radio(buttons.radio.man)
-              +radio(buttons.radio.woman)
+              each button in radio.buttons
+                +radio(button)
 
           .button__wrapper
-            h3.button__title.font__h3 Toggle
-            +toggle(buttons.toggle.checked)
-            +toggle(buttons.toggle.unchecked)
+            h3.button__title.font__h3 #{toggle.title}
+            each item in toggle.items
+              +toggle(item)
 
           .button__wrapper
-            h3.button__title.font__h3 Like button
+            h3.button__title.font__h3 #{likeButton.title}
             .button__wrapper_like
-              +likeButton(buttons.likeButton.dislike)
-              +likeButton(buttons.likeButton.like)
+              each button in likeButton.buttons
+                +likeButton(button)
 
           .button__wrapper
-            h3.button__title.font__h3 Rate button
+            h3.button__title.font__h3 #{rating.title}
             .button__wrapper_rating
-              +rating(buttons.rating.good)
-              +rating(buttons.rating.excellent)
+              each star in rating.stars
+                +rating(star)
 
         .form-elements__buttons
           .button__wrapper_range-slider
@@ -103,15 +104,15 @@ mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomRev
           .button__wrapper
             h3.button__title.font__h3 Buttons
             .button__block
-              +button(buttons.button[0])
-              +button(buttons.button[1])
+              +button(button[0])
+              +button(button[1])
             .button__block
-              +button(buttons.button[2])
-              +button(buttons.button[3])
+              +button(button[2])
+              +button(button[3])
             .button__block_inline
-              +button(buttons.button[4])
-              +button(buttons.button[5])
-            +button(buttons.button[6])
+              +button(button[4])
+              +button(button[5])
+            +button(button[6])
 
           .button__wrapper
             h3.button__title.font__h3 pagination

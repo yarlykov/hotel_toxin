@@ -90,22 +90,37 @@ block content
         ]
       },
       radio: {
-        man: { group: "gender", title: "Мужчина", checked: true },
-        woman: { group: "gender", title: "Женщина", checked: false }
+        title: "radio buttons",
+        buttons: [
+          { group: "gender", title: "Мужчина", checked: true },
+          { group: "gender", title: "Женщина", checked: false }
+        ]
       },
       toggle: {
-        checked: {title: "Получать спецпредложения", checked: true },
-        unchecked: {title: "Получать спецпредложения", checked: false}
+        title: "toggle",
+        items: [
+          {title: "Получать спецпредложения", checked: true },
+          {title: "Получать спецпредложения", checked: false}
+        ]
       },
       likeButton: {
-        like: { icon: "favorite", value: 12, disable: false },
-        dislike: { icon: "favorite", value: 2, disable: true }
+        title: "like button",
+        buttons: [
+          { icon: "favorite", value: 12, disable: false },
+          { icon: "favorite", value: 2, disable: true }
+        ]
       },
       rating: {
-        excellent: { rating: 5 },
-        good: { rating: 4 }
+        title: "rate button",
+        stars: [
+          { rating: 5 },
+          { rating: 4 }
+        ]
       },
-      rangeSlider: {},
+      rangeSlider: {
+        title: "range slider"
+      },
+      
       button: [
         { classList: [], buttonName: "click me", size: "small", textColor: "white" },
         { classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "white" },
