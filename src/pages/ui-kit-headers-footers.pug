@@ -5,7 +5,52 @@ block variables
   - const title = "Headers & Footers"
 
 block content
-  +headers-footers({ 
-    loggedHeader: [{ logged: true, userName: "Юлий Цезарь" }],
-    footer: [{ awardText: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", copyrightText: "Copyright © 2018 Toxin отель. Все\u00A0права\u00A0зачищены." }] 
+  //- +headers-footers({ 
+  //-   loggedHeader: [{ logged: true, userName: "Юлий Цезарь" }],
+  //-   footer: [{ awardText: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", copyrightText: "Copyright © 2018 Toxin отель. Все\u00A0права\u00A0зачищены." }] 
+  //- })
+  +headers-footers({
+    headers: {
+      login: {
+        logo: { type: "colorWithText", width: "106px", height: "40px"},
+        navigationList: [
+              { name: "О нас", url: "./error-page.html", active: true},
+              { name: "Услуги", dropdown: true},
+              { name: "Вакансии", url: "./error-page.html"},
+              { name: "Новости", url: "./error-page.html"},
+              { name: "Соглашения", dropdown: true},
+        ],
+        buttonEntry: "войти",
+        buttonRegister: "зарегистрироваться",
+      },
+      logged: {
+        logo: { type: "colorWithText", width: "106px", height: "40px"},
+        navigationList: [
+              { name: "О нас", url: "./error-page.html", active: true},
+              { name: "Услуги", dropdown: true},
+              { name: "Вакансии", url: "./error-page.html"},
+              { name: "Новости", url: "./error-page.html"},
+              { name: "Соглашения", dropdown: true},
+        ],
+        logged: true,
+        userName: "Юлий Цезарь",
+      },
+    },
+    footers: {
+      footerText: "",
+      footerNavigation: {
+        "block-1": {},
+        "block-2": {},
+        "block-3": {},
+      },
+      subscribe: {
+        title: "",
+        text: "",
+        placeholder: "",
+      },
+      copyright: {
+        text: ""
+      },
+      social: {}
+    }
   })

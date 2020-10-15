@@ -2,27 +2,21 @@ include ../../blocks/logo/logo.pug
 include ../../blocks/navigation/navigation.pug
 include ../../blocks/button/button.pug
 
-mixin header({ logged=false, userName="" })
+mixin header({ logo={}, navigationList=[], buttonEntry="", buttonRegister="", logged=false, userName="" })
   header.header
     .header__container
       .header__body
-        +logo({ type: "colorWithText", width: "105.5px", height: "40px"})
+        +logo(logo)
         .header__menu-burger.js-header__menu-burger
           span.header__menu-burger_line.js-header__menu-burger_line
         .header__menu.js-header__menu
           .header__navigation
-            +navigation({ navigationList: [
-              { name: "О нас", url: "./error-page.html", active: true},
-              { name: "Услуги", dropdown: true},
-              { name: "Вакансии", url: "./error-page.html"},
-              { name: "Новости", url: "./error-page.html"},
-              { name: "Соглашения", dropdown: true},
-            ]})
+            +navigation({navigationList})
           if logged
             .header__logged #{userName}
           else
             .header__login
               .header__login_entry
-                +button({ classList: [], buttonName: "войти", size: "stretch", textColor: "purple",  buttonVariation: "fillWhite" })
+                +button({ classList: [], buttonName: buttonEntry, size: "stretch", textColor: "purple",  buttonVariation: "fillWhite" })
               .header__login_register
-                +button({ classList: [], buttonName: "зарегистрироваться", size: "stretch", textColor: "white" })
+                +button({ classList: [], buttonName: buttonRegister, size: "stretch", textColor: "white" })

@@ -4,17 +4,17 @@ include ../footer/footer.pug
 include ../footer-mobile/footer-mobile.pug
 include ../ui-kit-footer/ui-kit-footer.pug
 
-mixin headers-footers({ loggedHeader=[], footer=[] })
+mixin headers-footers({ headers={}, footers={} })
   body.body__background
     header
       +ui-kit-header()
     main
         .headers-footers__header_sing-in
-          +header({})
+          +header(headers.login)
         .headers-footers__header_logged
-          //- +header({ loggedHeader.logged, loggedHeader.userName })
+          +header(headers.logged)
         .headers-footers__footer
-          //- +footer({ footer.awardText })
+          +footer(footers)
         .headers-footers__footer-mobile
           +footer-mobile()
     footer
