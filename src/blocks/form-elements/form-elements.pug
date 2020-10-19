@@ -20,6 +20,7 @@ mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomRev
             dateDropdownEnd, filterDateDropdown, subscribe } = textFields
     const { checkbox, radio, toggle, likeButton, rating, rangeSlider, button, pagination} = buttons
     const { generalTitle, closeComfort, openComfort, openGuestsCleanCount, openGuests} = dropdowns
+    const { expandableCheckboxes, richCheckboxButtons, bulletList } = lists
   body.body-wrapper
     header 
       +ui-kit-header()
@@ -146,17 +147,16 @@ mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomRev
       section.form-elements__lists
         .list__block_expandable
           .list__wrapper
-            +checkbox(lists.expandableCheckboxes.checkbox1)
-          .list__wrapper
-            +checkbox(lists.expandableCheckboxes.checkbox2)
+            each expandableCheckbox in expandableCheckboxes
+              +checkbox(expandableCheckbox)
 
         .list__block_other
           .list__wrapper
-            +checkbox(lists.richCheckboxButtons)
+            +checkbox(richCheckboxButtons)
 
           .list__wrapper_bullet
-            h3.list__title.font__h3 bullet list
-            +bullet-list(lists.bulletList)
+            h3.list__title.font__h3 #{bulletList.title}
+            +bullet-list(bulletList)
 
       section.form-elements__room-review
         .room-review__wrapper

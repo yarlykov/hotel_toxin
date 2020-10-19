@@ -184,14 +184,14 @@ block content
     },
 
     lists: {
-      expandableCheckboxes: {
-        checkbox1: {	
+      expandableCheckboxes: [
+        {	
           mainTitle: "Expandable checkbox list",
           dropdown: true,
           rich: false,
           listItems: []
         },
-        checkbox2: {	
+        {	
           mainTitle: "Expandable checkbox list",
           dropdown: true,
           rich: false,
@@ -204,7 +204,7 @@ block content
             { title: "Шампунь" }
           ]
         },
-      },
+      ],
       richCheckboxButtons: {	
         mainTitle: "rich checkbox buttons",
         dropdown: false,
@@ -217,6 +217,7 @@ block content
         ]
       },
       bulletList: { 
+        title: "bullet list",
         listItems: [ 
           { title: "Нельзя с питомцами" }, 
           { title: "Без вечеринок и мероприятий" },  
