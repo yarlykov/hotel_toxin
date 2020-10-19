@@ -120,21 +120,28 @@ block content
       rangeSlider: {
         title: "range slider"
       },
-      
-      button: [
-        { classList: [], buttonName: "click me", size: "small", textColor: "white" },
-        { classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "white" },
-        { classList: [], buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" },
-        { classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite" },
-        { classList: ["button_inline"], buttonName: "click me", textColor: "purple"},
-        { classList: ["button_inline"], buttonName: "click me", textColor: "gray"},
-        { classList: [], buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"}
-      ],
-      pagination: {}
+
+      button: {
+        title: "buttons",
+        items: [
+          { classList: [], buttonName: "click me", size: "small", textColor: "white" },
+          { classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "white" },
+          { classList: [], buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" },
+          { classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite" },
+          { classList: ["button_inline"], buttonName: "click me", textColor: "purple"},
+          { classList: ["button_inline"], buttonName: "click me", textColor: "gray"},
+          { classList: [], buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"}
+        ],
+      },
+      pagination: {
+        title: "pagination"
+      }
     },
 
     dropdowns: {
       closeComfort: { 
+        title: "dropdown",
+        subtitle: "default",
         isOpen: false, 
         group: "comfort", 
         elements: [
@@ -144,6 +151,8 @@ block content
         ]
       },
       openComfort: {
+        title: "dropdown",
+        subtitle: "expanded",
         isOpen: true, 
         group: "comfort", 
         elements: [
@@ -153,6 +162,7 @@ block content
         ]
       },
       openGuestsCleanCount: {
+        title: "dropdown",
         isOpen: true, 
         group: "guests", 
         elements: [
@@ -162,6 +172,7 @@ block content
         ]
       },
       openGuests: {
+        title: "dropdown",
         isOpen: true, 
         group: "guests", 
         elements: [

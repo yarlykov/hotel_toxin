@@ -19,6 +19,7 @@ mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomRev
     const { defaultTextField, focused, dropdown, masked, dateDropdownStart, 
             dateDropdownEnd, filterDateDropdown, subscribe } = textFields
     const { checkbox, radio, toggle, likeButton, rating, rangeSlider, button, pagination} = buttons
+    const { generalTitle, closeComfort, openComfort, openGuestsCleanCount, openGuests} = dropdowns
   body.body-wrapper
     header 
       +ui-kit-header()
@@ -102,45 +103,45 @@ mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomRev
             +range-slider()
 
           .button__wrapper
-            h3.button__title.font__h3 Buttons
+            h3.button__title.font__h3 #{button.title}
             .button__block
-              +button(button[0])
-              +button(button[1])
+              +button(button.items[0])
+              +button(button.items[1])
             .button__block
-              +button(button[2])
-              +button(button[3])
+              +button(button.items[2])
+              +button(button.items[3])
             .button__block_inline
-              +button(button[4])
-              +button(button[5])
-            +button(button[6])
+              +button(button.items[4])
+              +button(button.items[5])
+            +button(button.items[6])
 
           .button__wrapper
-            h3.button__title.font__h3 pagination
+            h3.button__title.font__h3 #{pagination.title}
             +pagination()
 
       section.form-elements__dropdowns
         .dropdown__block_left
           .dropdown__wrapper
             .text-field__header
-              span.text-field__title Dropdown
-              span.text-field__description Default
-            +dropdown(dropdowns.closeComfort)
+              span.text-field__title #{closeComfort.title}
+              span.text-field__description #{closeComfort.subtitle}
+            +dropdown(closeComfort)
           .dropdown__wrapper
             .text-field__header
-              span.text-field__title.font__h3 Dropdown
-              span.text-field__description Expanded
-            +dropdown(dropdowns.openComfort)
+              span.text-field__title.font__h3 #{openComfort.title}
+              span.text-field__description #{openComfort.subtitle}
+            +dropdown(openComfort)
 
         .dropdown__block_right
           .dropdown__wrapper
             .dropdown__header
-              span.dropdown__title Dropdown
-            +dropdown(dropdowns.openGuestsCleanCount)
+              span.dropdown__title #{openGuestsCleanCount.title}
+            +dropdown(openGuestsCleanCount)
 
           .dropdown__wrapper
             .dropdown__header
-              span.dropdown__title Dropdown
-            +dropdown(dropdowns.openGuests)
+              span.dropdown__title #{openGuests.title}
+            +dropdown(openGuests)
 
       section.form-elements__lists
         .list__block_expandable
