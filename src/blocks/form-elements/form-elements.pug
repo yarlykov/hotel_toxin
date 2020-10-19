@@ -21,6 +21,7 @@ mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomRev
     const { checkbox, radio, toggle, likeButton, rating, rangeSlider, button, pagination} = buttons
     const { generalTitle, closeComfort, openComfort, openGuestsCleanCount, openGuests} = dropdowns
     const { expandableCheckboxes, richCheckboxButtons, bulletList } = lists
+    const { dignityRoom, comment } = roomReview
   body.body-wrapper
     header 
       +ui-kit-header()
@@ -160,12 +161,12 @@ mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomRev
 
       section.form-elements__room-review
         .room-review__wrapper
-          +dignity-room(roomReview.dignityRoom.dignity1)
-          +dignity-room(roomReview.dignityRoom.dignity2)
+          each dignity in dignityRoom
+            +dignity-room(dignity)
 
         .room-review__wrapper_comment
           .comment
-            +comment(roomReview.comment)
+            +comment(comment)
 
     footer 
       +ui-kit-footer({ footerLinks })
