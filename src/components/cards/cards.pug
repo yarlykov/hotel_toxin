@@ -20,23 +20,23 @@ block content
 
           .cards__find-room.cards__block
 
-            h1.find-room__title Найдем номера под ваши&nbsp;пожелания
-            .find-room__text-field_date-dropdown
+            h1.find-room__title Найдём номера под ваши&nbsp;пожелания
+            .find-room__date-dropdown
               label
                 .text-field__header
                   span.text-field__title прибытие
                 +text-field({
-                  classList: ["js-air-datepicker__day-start", "text-field__input_placeholder_dark-75"], 
+                  classList: [], dropdown: "start",
                   type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-                  name: "date", autocomplete: "on", arrow: true
+                  name: "date", autocomplete: "off", arrow: true
                 })
               label
                 .text-field__header
                   span.text-field__title выезд
                 +text-field({
-                  classList: ["js-air-datepicker__day-end", "text-field__input_placeholder_dark-75"], 
+                  classList: [], dropdown: "end",
                   type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-                  name: "date", autocomplete: "on", arrow: true
+                  name: "date", autocomplete: "off", arrow: true
                 })
 
             .find-room__dropdown

@@ -15,7 +15,7 @@ body {
   &__container {
     max-width: 1160px;
     min-width: 1160px;
-    margin: 0 auto;
+    margin: 10px auto;
     flex: 1 0 auto;
   }
 
@@ -79,10 +79,12 @@ body {
   &__title {
     font-family: Quicksand, sans-serif;
     font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 1px;
     color: $mainTextColor;
   }
 
-  &__text-field_date-dropdown{
+  &__date-dropdown{
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
