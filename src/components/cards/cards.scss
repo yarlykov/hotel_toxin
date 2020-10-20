@@ -29,45 +29,46 @@ body {
     flex-shrink: 0;
   }
 
-  &__gag1 {
+  &__block {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    &_no-border{
+      border: none;
+    }
+  }
+
+  &__find-room {
     width: 380px;
     height: 374px;
-    background-color: #fff;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    margin-bottom: 40px;
   }
-  &__gag2 {
+
+  &__price-calc {
     width: 380px;
     height: 511px;
-    background-color: #fff;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    margin-bottom: 40px;
   }
-  &__gag3 {
+
+  &__calendar {
     width: 320px;
     height: 369px;
-    background-color: #fff;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    margin-bottom: 40px;
   }
-  &__gag4 {
-    align-self: flex-start;
+
+  &__register {
     width: 380px;
     height: 646px;
-    background-color: #fff;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
   }
-  &__gag5 {
+  &__enter {
     width: 380px;
     height: 358px;
-    background-color: #fff;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
   }
-  &__gag6 {
-    width: 320px;
+  &__room-review {
+    width: 270px;
     height: 257.5px;
-    background-color: #fff;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
   }
 
 }
