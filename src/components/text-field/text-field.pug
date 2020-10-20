@@ -1,10 +1,13 @@
-mixin text-field({ classList=[], type="", placeholder="", size="", name="", autocomplete="off", spellcheck=false, subscribe=false, arrow=false})
+mixin text-field({ classList=[], dropdown="", type="", placeholder="", size="", name="", autocomplete="off", spellcheck=false, subscribe=false, arrow=false})
 
   -
     const mainTextFieldClass = "text-field__input"
     classList.push(mainTextFieldClass)
     const sizeTextFieldClass = `text-field__size_${size}`
     const hoverTextFieldClass = classList.includes("text-field_hover") ? "text-field_hover" : ""
+    const dropdownStart = dropdown === "start" ? "js-air-datepicker__day-start" : ""
+    const dropdownEnd = dropdown === "end" ? "js-air-datepicker__day-end" : ""
+    classList.push(dropdownStart, dropdownEnd)
 
     let inputAttributes = {
       class: classList,
