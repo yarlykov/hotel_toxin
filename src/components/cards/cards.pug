@@ -1,6 +1,9 @@
-extends ../../components/main.pug
-include ../../components/ui-kit-header/ui-kit-header.pug
-include ../../components/ui-kit-footer/ui-kit-footer.pug
+extends ../main.pug
+include ../ui-kit-header/ui-kit-header.pug
+include ../ui-kit-footer/ui-kit-footer.pug
+include ../text-field/text-field.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
 
 block variables
   - var title = "Cards"
@@ -14,7 +17,42 @@ block content
     main.cards__container
       .cards__content
         .cards__column
+
           .cards__find-room.cards__block
+
+            h1.find-room__title Найдем номера под ваши&nbsp;пожелания
+            .find-room__text-field_date-dropdown
+              label
+                .text-field__header
+                  span.text-field__title прибытие
+                +text-field({
+                  classList: ["js-air-datepicker__day-start", "text-field__input_placeholder_dark-75"], 
+                  type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
+                  name: "date", autocomplete: "on", arrow: true
+                })
+              label
+                .text-field__header
+                  span.text-field__title выезд
+                +text-field({
+                  classList: ["js-air-datepicker__day-end", "text-field__input_placeholder_dark-75"], 
+                  type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
+                  name: "date", autocomplete: "on", arrow: true
+                })
+
+            .find-room__dropdown
+              .text-field__header
+                span.text-field__title гости
+              +dropdown({
+                isOpen: false, 
+                group: "guests", 
+                elements: [
+                  {title: "Взрослые", count: 0},
+                  {title: "Дети", count: 0}, 
+                  {title: "Младенцы", count: 0}
+                ]})
+            .find-room__button
+              +button({ buttonName: "подобрать номер", buttonVariation: "withArrow", textColor: "white", size: "large"})
+
           .cards__register.cards__block
         .cards-column
           .cards__price-calc.cards__block

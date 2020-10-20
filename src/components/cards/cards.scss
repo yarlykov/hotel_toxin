@@ -41,6 +41,8 @@ body {
   }
 
   &__find-room {
+    box-sizing: border-box;
+    padding: 40px 30px 30px 30px;
     width: 380px;
     height: 374px;
   }
@@ -71,4 +73,25 @@ body {
     margin-top: 40px;
   }
 
+}
+
+.find-room {
+  &__title {
+    font-family: Quicksand, sans-serif;
+    font-size: 24px;
+    color: $mainTextColor;
+  }
+
+  &__text-field_date-dropdown{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &__dropdown{
+    margin-top: 20px;
+  }
+  &__button{
+    margin-top: 30px;
+  }
 }
