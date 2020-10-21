@@ -23,7 +23,7 @@ block content
 
           .cards__find-room.cards__block
 
-            h1.cards__title Найдём номера под ваши&nbsp;пожелания
+            h2.cards__title Найдём номера под ваши&nbsp;пожелания
             .find-room__date-dropdown
               label
                 .text-field__header
@@ -57,7 +57,7 @@ block content
               +button({ buttonName: "подобрать номер", buttonVariation: "withArrow", textColor: "white", size: "large"})
 
           .cards__register.cards__block
-            h1.cards__title Регистрация аккаунта
+            h2.cards__title Регистрация аккаунта
             .register__details
               .register__name
                 +text-field({ placeholder: "Имя", type: "text", name: "name", autocomplete: "on" })
@@ -86,23 +86,29 @@ block content
               .register__question_button
                 +button({ buttonName: "войти", buttonVariation: "fillWhite", textColor: "purple", size: "small"})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         .cards-column
           .cards__price-calc.cards__block
+
           .cards__enter.cards__block
+            h2.cards__title Войти
+            .register__login-details
+              .login-details__email
+                +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
+              .login-details__password
+                +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
+            .register__button
+              +button({ buttonName: "перейти к оплате", buttonVariation: "withArrow", textColor: "white", size: "large"})
+            .register__question
+              span.register__question_text Нет аккаунта на Toxin
+              .register__question_button
+                +button({ buttonName: "создать", buttonVariation: "fillWhite", textColor: "purple", size: "small"})
+
+
+
+
+
+
+
         .cards__column
           .cards__calendar.cards__block.cards__block_no-border
           .cards__room-review.cards__block.cards__block_no-border

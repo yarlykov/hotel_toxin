@@ -70,7 +70,7 @@ body {
   }
   &__enter {
     width: 380px;
-    height: 358px;
+    padding: 40px 30px 30px 30px;
     margin-top: 40px;
   }
   &__room-review {
@@ -105,18 +105,26 @@ body {
     margin-top: 10px;
   }
   &__radio-buttons {
-    margin: 10px 0px 25px;
+    padding: 10px 100px 0 0;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 100px;
   }
   &__birthday {
-    margin-bottom: 20px;
+    padding-top: 20px;
   }
-  &__login-details .login-details__email {
-    margin-bottom: 10px;
-  }
+  &__login-details {
+    padding-top: 20px;
+    & .login-details__email {
+      margin-bottom: 10px;
+    }
+  
+  } 
   &__toggle {
-    margin: 10px 0 25px;
+    margin: 10px 0 0;
   }
   &__button {
+    padding-top: 20px;
     margin-bottom: 30px;
   }
   &__question {
