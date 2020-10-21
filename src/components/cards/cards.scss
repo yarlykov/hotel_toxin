@@ -145,7 +145,16 @@ body {
   align-items: baseline;
   font-family: Quicksand;
   font-weight: 700;
-  min-width: 280px;
+  @media (min-width: 235px) {
+    .room-data__number_value {
+      font-size: 19px;
+    }
+  }
+  @media (min-width: 235px) {
+    .room-data__price_text{
+      font-size: 12px;
+    }
+  }
 
   &__number_symbol {
     font-size: 14px;
@@ -275,4 +284,39 @@ body {
 }
 .cards__calendar .datepicker-inline .datepicker{
   border: none;
+}
+
+.room-review {
+  &__img {
+    height: 150px;
+    width: 100%;
+    background: $textColor_50;
+  }
+  &__data {
+    padding: 18px 17px 19px 20px;
+  }
+
+  &__border {
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    padding-top: 7px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+  }
+
+  &__reviews-counter {
+    padding-top: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    color: $textColor_50;
+    &_value {
+      font-weight: 700;
+    }
+    &_text {
+      padding: 0 4px 0 3px;
+    }
+  }
 }

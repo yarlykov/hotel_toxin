@@ -6,6 +6,7 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 include ../radio/radio.pug
 include ../toggle/toggle.pug
+include ../rating/rating.pug
 
 
 block variables
@@ -163,16 +164,44 @@ block content
                 +button({ buttonName: "создать", buttonVariation: "fillWhite", textColor: "purple", size: "small"})
 
 
-
-
-
-
-
         .cards__column
           .cards__calendar.cards__block.cards__block_no-border
             +text-field({classList: [ "air-datepicker__inline" ]})
+
           .cards__room-review.cards__block.cards__block_no-border
+            .room-review__img
+            .room-review__data
+              .room-data
+                .room-data__number
+                  span.room-data__number_symbol №
+                  span.room-data__number_value 888
+                  span.room-data__number_text люкс
+                .room-data__price
+                  span.room-data__price_value 9 990₽
+                  span.room-data__price_text в сутки
+              .room-review__border
+              .room-review__rating
+                +rating({ rating: 5 })
+                .room-review__reviews-counter
+                  span.room-review__reviews-counter_value 145
+                  span.room-review__reviews-counter_text Отзывов
+
           .cards__room-review.cards__block.cards__block_no-border
+            .room-review__img
+            .room-review__data
+              .room-data
+                .room-data__number
+                  span.room-data__number_symbol №
+                  span.room-data__number_value 840
+                .room-data__price
+                  span.room-data__price_value 9 900₽
+                  span.room-data__price_text в сутки
+              .room-review__border
+              .room-review__rating
+                +rating({ rating: 4 })
+                .room-review__reviews-counter
+                  span.room-review__reviews-counter_value 65
+                  span.room-review__reviews-counter_text Отзывов
 
     .cards__footer
       +ui-kit-footer({ footerLinks: [
