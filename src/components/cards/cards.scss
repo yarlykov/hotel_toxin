@@ -24,6 +24,14 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  &__title {
+    font-family: Quicksand, sans-serif;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: $mainTextColor;
+  }
   
   &__footer {
     flex-shrink: 0;
@@ -41,10 +49,8 @@ body {
   }
 
   &__find-room {
-    box-sizing: border-box;
     padding: 40px 30px 30px 30px;
-    width: 380px;
-    height: 374px;
+    max-width: 380px;
   }
 
   &__price-calc {
@@ -58,8 +64,8 @@ body {
   }
 
   &__register {
-    width: 380px;
-    height: 646px;
+    padding: 40px 30px 30px 30px;
+    max-width: 380px;
     margin-top: 40px;
   }
   &__enter {
@@ -76,13 +82,6 @@ body {
 }
 
 .find-room {
-  &__title {
-    font-family: Quicksand, sans-serif;
-    font-size: 24px;
-    line-height: 30px;
-    letter-spacing: 1px;
-    color: $mainTextColor;
-  }
 
   &__date-dropdown{
     display: flex;
@@ -95,5 +94,40 @@ body {
   }
   &__button{
     margin-top: 30px;
+  }
+}
+
+.register {
+  &__details {
+    margin-top: 20px;
+  }
+  &__surname {
+    margin-top: 10px;
+  }
+  &__radio-buttons {
+    margin: 10px 0px 25px;
+  }
+  &__birthday {
+    margin-bottom: 20px;
+  }
+  &__login-details .login-details__email {
+    margin-bottom: 10px;
+  }
+  &__toggle {
+    margin: 10px 0 25px;
+  }
+  &__button {
+    margin-bottom: 30px;
+  }
+  &__question {
+    display: flex;
+    justify-content: space-between;
+    &_text {
+      display: block;
+      align-self: center;
+    }
+    &_button {
+      min-width: 99px;
+    }
   }
 }
