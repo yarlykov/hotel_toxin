@@ -18,6 +18,17 @@ $('.air-datepicker').datepicker({
   nextHtml: '<span class="material-icons">arrow_forward</span>',
   // offset: -10,
 })
+$('.air-datepicker__inline').datepicker({
+  dateFormat: 'd M',
+  multipleDatesSeparator: ' - ',
+  range: true,
+  inline: true,
+  navTitles: {
+    days: 'MM yyyy'
+  },
+  prevHtml: '<span class="material-icons">arrow_back</span>',
+  nextHtml: '<span class="material-icons">arrow_forward</span>',
+})
 
 const root = $('.datepicker')
 const btnWrap = document.createElement('div')

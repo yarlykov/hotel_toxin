@@ -263,3 +263,16 @@ body {
     box-sizing: border-box;
   }
 }
+
+.cards__calendar .text-field__input{
+  display: none;
+}
+.cards__calendar .text-field{
+  border: none;
+  &:hover {
+    border: none;
+  }
+}
+.cards__calendar .datepicker-inline .datepicker{
+  border: none;
+}
