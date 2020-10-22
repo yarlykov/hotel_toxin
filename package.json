@@ -46,6 +46,7 @@
     "inputmask": "^5.0.5",
     "jquery": "^3.5.1",
     "jquery-ui-slider": "^1.12.1",
-    "paginationjs": "^2.1.5"
+    "paginationjs": "^2.1.5",
+    "slick-carousel": "^1.8.1"
   }
 }
