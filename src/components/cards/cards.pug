@@ -171,7 +171,14 @@ block content
 
           .cards__room-review.cards__block.cards__block_no-border
             .room-review__img
-              +carousel()
+              +carousel({ 
+                images: [
+                  { name: "room-img-1.png"},
+                  { name: "room-img-2.png"},
+                  { name: "room-img-3.png"},
+                  { name: "room-img-4.png"},
+                ] 
+              })
             .room-review__data
               .room-data
                 .room-data__number
@@ -190,7 +197,14 @@ block content
 
           .cards__room-review.cards__block.cards__block_no-border
             .room-review__img
-              +carousel
+              +carousel({ 
+                images: [
+                  { name: "room-img-2.png"},
+                  { name: "room-img-5.png"},
+                  { name: "room-img-6.png"},
+                  { name: "room-img-7.png"},
+                ] 
+              })
             .room-review__data
               .room-data
                 .room-data__number
