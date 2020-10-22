@@ -7,5 +7,6 @@ import './components/pagination/pagination'
 import './components/checkbox/checkbox'
 import './components/header/header'
 import './components/navigation/navigation'
+import './components/carousel/carousel'
 
 import './main.scss';
