@@ -43,9 +43,6 @@ body {
     box-sizing: border-box;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    &_no-border{
-      border: none;
-    }
   }
 
   &__find-room {
@@ -74,8 +71,6 @@ body {
     margin-top: 40px;
   }
   &__room-review {
-    width: 270px;
-    height: 257.5px;
     margin-top: 40px;
   }
 
@@ -139,58 +134,7 @@ body {
     }
   }
 }
-.room-data {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-family: Quicksand;
-  font-weight: 700;
-  @media (min-width: 235px) {
-    .room-data__number_value {
-      font-size: 19px;
-    }
-  }
-  @media (min-width: 235px) {
-    .room-data__price_text{
-      font-size: 12px;
-    }
-  }
 
-  &__number_symbol {
-    font-size: 14px;
-    line-height: 17px;
-    color: $mainTextColor;
-  }
-  &__number_value{
-    font-size: 24px;
-    line-height: 30px;
-    padding-left: 5px;
-    color: $mainTextColor;
-  }
-  &__number_text {
-    font-family: Montserrat;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    padding-left: 5px;
-    color: $designColor_main;
-  }
-
-  &__price_value {
-    font-family: Montserrat;
-    font-size: 14px;
-    line-height: 18px;
-    color: $textColor_50;
-  }
-  &__price_text {
-    font-family: Montserrat;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    color: $textColor_50;
-    padding-left: 5px;
-  }
-}
 
 .price-calc {
   font-family: Montserrat;
@@ -286,37 +230,3 @@ body {
   border: none;
 }
 
-.room-review {
-  &__img {
-    // height: 150px;
-    // width: 100%;
-    // background: $textColor_50;
-  }
-  &__data {
-    padding: 18px 17px 19px 20px;
-  }
-
-  &__border {
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-    padding-top: 7px;
-  }
-
-  &__rating {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 8px;
-  }
-
-  &__reviews-counter {
-    padding-top: 4px;
-    font-size: 14px;
-    line-height: 18px;
-    color: $textColor_50;
-    &_value {
-      font-weight: 700;
-    }
-    &_text {
-      padding: 0 4px 0 3px;
-    }
-  }
-}
