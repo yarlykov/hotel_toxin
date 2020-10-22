@@ -1,4 +1,5 @@
 include ../carousel/carousel.pug
+include ../room-number/room-number.pug
 include ../rating/rating.pug
 
 mixin room-review-card()
@@ -11,18 +12,15 @@ mixin room-review-card()
         { name: "room-img-4.png"},
       ] 
     })
-    .room-review__data
+    .room-review-card__data
       .room-data
-        .room-data__number
-          span.room-data__number_symbol №
-          span.room-data__number_value 888
-          span.room-data__number_text люкс
+        +room-number()
         .room-data__price
           span.room-data__price_value 9 990₽
           span.room-data__price_text в сутки
-      .room-review__border
-      .room-review__rating
+      .room-review-card__border
+      .room-review-card__rating
         +rating({ rating: 5 })
-        .room-review__reviews-counter
-          span.room-review__reviews-counter_value 145
-          span.room-review__reviews-counter_text Отзывов
+        .room-review-card__reviews-counter
+          span.room-review-card__reviews-counter_value 145
+          span.room-review-card__reviews-counter_text Отзывов

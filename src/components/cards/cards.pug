@@ -9,6 +9,7 @@ include ../toggle/toggle.pug
 include ../rating/rating.pug
 include ../carousel/carousel.pug
 include ../room-review-card/room-review-card.pug
+include ../room-number/room-number.pug
 
 block variables
   - var title = "Cards"
@@ -91,10 +92,7 @@ block content
         .cards-column
           .cards__price-calc.cards__block
             .room-data
-              .room-data__number
-                span.room-data__number_symbol №
-                span.room-data__number_value 888
-                span.room-data__number_text люкс
+              +room-number()
               .room-data__price
                 span.room-data__price_value 9 990₽
                 span.room-data__price_text в сутки
