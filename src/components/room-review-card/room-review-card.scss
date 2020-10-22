@@ -44,11 +44,7 @@
   align-items: baseline;
   font-family: Quicksand;
   font-weight: 700;
-  @media (min-width: 235px) {
-    .room-data__number_value {
-      font-size: 19px;
-    }
-  }
+
   @media (min-width: 235px) {
     .room-data__price_text{
       font-size: 12px;

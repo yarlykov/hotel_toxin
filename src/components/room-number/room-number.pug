@@ -1,5 +1,5 @@
-mixin room-number()
-  .room-data__number
-    span.room-data__number_symbol №
-    span.room-data__number_value 888
-    span.room-data__number_text люкс
+mixin room-number({ symbol="", value="", text="" })
+  .room-number
+    span.room-number__symbol #{symbol}
+    span.room-number__value #{value}
+    span.room-number__text #{text}

@@ -14,7 +14,7 @@ mixin room-review-card()
     })
     .room-review-card__data
       .room-data
-        +room-number()
+        +room-number({ symbol: "№", value: "888", text: "люкс" })
         .room-data__price
           span.room-data__price_value 9 990₽
           span.room-data__price_text в сутки
