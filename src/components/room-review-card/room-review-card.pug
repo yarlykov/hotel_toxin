@@ -1,6 +1,8 @@
 include ../carousel/carousel.pug
 include ../room-number/room-number.pug
 include ../rating/rating.pug
+include ../comment-count/comment-count.pug
+include ../room-price/room-price.pug
 
 mixin room-review-card()
   .room-review-card
@@ -16,9 +18,8 @@ mixin room-review-card()
     .room-review-card__info
       .room-review-card__data
         +room-number({ symbol: "№", value: "888", text: "люкс" })
-        .room-data__price
-          span.room-data__price_value 9 990₽
-          span.room-data__price_text в сутки
+        .room-review-card__price
+          +room-price({ value: "9 990₽", text: "в сутки"})
       .room-review-card__border
       .room-review-card__rating
         +rating({ rating: 5 })

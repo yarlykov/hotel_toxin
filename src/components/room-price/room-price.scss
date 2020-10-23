@@ -1,0 +1,15 @@
+.room-price {
+  font-family: Montserrat;
+  font-size: 14px;
+  color: $textColor_50;
+  line-height: 18px;
+
+  &__value {
+    line-height: 18px;
+    font-weight: 700;
+  }
+
+  &__text {
+    padding-left: 5px;
+  }
+}

@@ -20,6 +20,12 @@
     }
   }
 
+  &__price {
+    & .room-price__text {
+      font-size: 12px;
+    }
+  }
+
   &__border {
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
     padding-top: 7px;
@@ -29,24 +35,5 @@
     display: flex;
     justify-content: space-between;
     padding-top: 8px;
-  }
-}
-
-/*------------- ROOM REVIEW------------*/
-.room-data {
-
-  &__price_value {
-    font-family: Montserrat;
-    font-size: 14px;
-    line-height: 18px;
-    color: $textColor_50;
-  }
-  &__price_text {
-    font-family: Montserrat;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    color: $textColor_50;
-    padding-left: 5px;
   }
 }

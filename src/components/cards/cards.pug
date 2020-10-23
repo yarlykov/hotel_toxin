@@ -92,11 +92,9 @@ block content
 
         .cards-column
           .cards__price-calc.cards__block
-            .room-data
+            .price-calc__header
               +room-number({ symbol: "№", value: "888", text: "люкс" })
-              .room-data__price
-                span.room-data__price_value 9 990₽
-                span.room-data__price_text в сутки
+              +room-price({ value: "9 990₽", text: "в сутки"})
 
             .find-room__date-dropdown
               label

@@ -135,7 +135,7 @@ body {
   }
 }
 
-
+/*---------------PRICE CALC---------------*/
 .price-calc {
   font-family: Montserrat;
   font-style: normal;
@@ -144,6 +144,12 @@ body {
   line-height: 24px;
   color: $textColor_75;
   padding-top: 20px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
 
   &__days {
     display: flex;
@@ -216,7 +222,7 @@ body {
     box-sizing: border-box;
   }
 }
-
+/*---------------CARDS CALENDAR---------------*/
 .cards__calendar .text-field__input{
   display: none;
 }
