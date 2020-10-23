@@ -1,2 +1,7 @@
-mixin info-icon()
+mixin info-icon({ href="", text="" })
   .info-icon
+    a&attributes({
+      href: `./${href}.html`, 
+      class: "info-icon__text",
+      "data-tooltip": text
+    }) i
