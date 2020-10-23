@@ -9,6 +9,7 @@ include ../toggle/toggle.pug
 include ../carousel/carousel.pug
 include ../room-review-card/room-review-card.pug
 include ../room-number/room-number.pug
+include ../price-calc/price-calc.pug
 
 block variables
   - var title = "Cards"
@@ -122,25 +123,7 @@ block content
                   {title: "Дети", count: 0}, 
                   {title: "Младенцы", count: 0}
                 ]})
-            .price-calc
-              .price-calc__days
-                span.price-calc__days_value 9 990₽ x 4 суток
-                span.price-calc__days_full-value 39 960₽
-              .price-calc__service-charge
-                span.price-calc__service-charge_text Сбор за услуги: скидка 2 197₽
-                div.price-calc__info-icon
-                  span.price-calc__info-icon_text i
-                span.price-calc__service-charge_full-value 0₽
-              .price-calc__additional-services
-                span.price-calc__additional-services_text Сбор за дополнительные <br> услуги
-                div.price-calc__info-icon
-                  span.price-calc__info-icon_text i
-                span.price-calc__additional-services_value 300₽
-
-            .total-price
-              span.total-price__text Итого
-              .total-price__points
-              span.total-price__value 38081₽
+            +price-calc()
             .register__button
               +button({ buttonName: "забронировать", buttonVariation: "withArrow", textColor: "white", size: "large"})
 
