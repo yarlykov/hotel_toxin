@@ -1,3 +1,4 @@
+
 .room-review-card {
   max-width: 270px;
   max-height: 257.5px;
@@ -5,11 +6,18 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-}
-
-.room-review-card {
-  &__data {
+  
+  &__info {
     padding: 18px 17px 19px 20px;
+  }
+
+  &__data {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    & .room-number__value {
+      font-size: 20px;
+    }
   }
 
   &__border {
@@ -22,54 +30,10 @@
     justify-content: space-between;
     padding-top: 8px;
   }
-
-  &__reviews-counter {
-    padding-top: 4px;
-    font-size: 14px;
-    line-height: 18px;
-    color: $textColor_50;
-    &_value {
-      font-weight: 700;
-    }
-    &_text {
-      padding: 0 4px 0 3px;
-    }
-  }
 }
 
 /*------------- ROOM REVIEW------------*/
 .room-data {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-family: Quicksand;
-  font-weight: 700;
-
-  @media (min-width: 235px) {
-    .room-data__price_text{
-      font-size: 12px;
-    }
-  }
-
-  &__number_symbol {
-    font-size: 14px;
-    line-height: 17px;
-    color: $mainTextColor;
-  }
-  &__number_value{
-    font-size: 24px;
-    line-height: 30px;
-    padding-left: 5px;
-    color: $mainTextColor;
-  }
-  &__number_text {
-    font-family: Montserrat;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    padding-left: 5px;
-    color: $designColor_main;
-  }
 
   &__price_value {
     font-family: Montserrat;

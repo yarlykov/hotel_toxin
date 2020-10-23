@@ -4,16 +4,17 @@ include ../rating/rating.pug
 
 mixin room-review-card()
   .room-review-card
-    +carousel({ 
-      images: [
-        { name: "room-img-1.png"},
-        { name: "room-img-2.png"},
-        { name: "room-img-3.png"},
-        { name: "room-img-4.png"},
-      ] 
-    })
-    .room-review-card__data
-      .room-data
+    .room-review-card__image
+      +carousel({ 
+        images: [
+          { name: "room-img-1.png"},
+          { name: "room-img-2.png"},
+          { name: "room-img-3.png"},
+          { name: "room-img-4.png"},
+        ] 
+      })
+    .room-review-card__info
+      .room-review-card__data
         +room-number({ symbol: "№", value: "888", text: "люкс" })
         .room-data__price
           span.room-data__price_value 9 990₽
@@ -21,6 +22,4 @@ mixin room-review-card()
       .room-review-card__border
       .room-review-card__rating
         +rating({ rating: 5 })
-        .room-review-card__reviews-counter
-          span.room-review-card__reviews-counter_value 145
-          span.room-review-card__reviews-counter_text Отзывов
+        +comment-count({ value: "145", text: "Отзывов"})
