@@ -4,23 +4,16 @@ include ../rating/rating.pug
 include ../comment-count/comment-count.pug
 include ../room-price/room-price.pug
 
-mixin room-review-card()
+mixin room-review-card({ images=[], roomNumber={}, roomPrice={}, rating={}, commentCount={} })
   .room-review-card
     .room-review-card__image
-      +carousel({ 
-        images: [
-          { name: "room-img-1.png"},
-          { name: "room-img-2.png"},
-          { name: "room-img-3.png"},
-          { name: "room-img-4.png"},
-        ] 
-      })
+      +carousel({ images })
     .room-review-card__info
       .room-review-card__data
-        +room-number({ symbol: "№", value: "888", text: "люкс" })
+        +room-number(roomNumber)
         .room-review-card__price
-          +room-price({ value: "9 990₽", text: "в сутки"})
+          +room-price(roomPrice)
       .room-review-card__border
       .room-review-card__rating
-        +rating({ rating: 5 })
-        +comment-count({ value: "145", text: "Отзывов"})
+        +rating(rating)
+        +comment-count(commentCount)

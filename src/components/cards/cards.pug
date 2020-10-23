@@ -6,11 +6,9 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 include ../radio/radio.pug
 include ../toggle/toggle.pug
-include ../rating/rating.pug
 include ../carousel/carousel.pug
 include ../room-review-card/room-review-card.pug
 include ../room-number/room-number.pug
-include ../comment-count/comment-count.pug
 
 block variables
   - var title = "Cards"
@@ -167,10 +165,32 @@ block content
             +text-field({classList: [ "air-datepicker__inline" ]})
 
           .cards__room-review
-            +room-review-card()
+            +room-review-card({
+                images: [
+                  { name: "room-img-1.png"},
+                  { name: "room-img-2.png"},
+                  { name: "room-img-3.png"},
+                  { name: "room-img-4.png"},
+                ],
+                roomNumber: { symbol: "№", value: "888", text: "люкс" },
+                roomPrice: { value: "9 990₽", text: "в сутки"},
+                rating: { rating: 5 },
+                commentCount: { value: "145", text: "Отзывов"} 
+            })
 
           .cards__room-review
-            +room-review-card()
+            +room-review-card({
+                images: [
+                  { name: "room-img-2.png"},
+                  { name: "room-img-5.png"},
+                  { name: "room-img-6.png"},
+                  { name: "room-img-7.png"},
+                ],
+                roomNumber: { symbol: "№", value: "840", text: "люкс" },
+                roomPrice: { value: "9 900₽", text: "в сутки"},
+                rating: { rating: 4 },
+                commentCount: { value: "65", text: "Отзывов"} 
+            })
 
     .cards__footer
       +ui-kit-footer({ footerLinks: [
