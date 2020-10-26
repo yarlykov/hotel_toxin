@@ -9,6 +9,9 @@ body {
     & > :not(:first-child){
       margin-top: 40px;
     }
+    &:not(:first-child) {
+      margin-left: 40px;
+    }
   }
 
   &__wrapper {
@@ -28,7 +31,6 @@ body {
   &__content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
 
   &__footer {
@@ -49,4 +51,3 @@ body {
 .cards__calendar .datepicker-inline .datepicker{
   border: none;
 }
-

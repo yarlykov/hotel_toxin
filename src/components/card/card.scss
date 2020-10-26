@@ -6,12 +6,12 @@
     box-sizing: border-box;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    padding: 40px 30px 30px 30px;
+    padding: 39px 30px 30px 29px;
     max-width: 380px;
   }
 
   &__title {
-    font-family: Quicksand, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 24px;
     line-height: 30px;
     color: $mainTextColor;
@@ -26,12 +26,18 @@
 
   &__date-dropdown {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     margin-top: 20px;
+    & > :last-child {
+      margin-left: 20px;
+    }
   }
 
   &__guests-dropdown {
     margin-top: 20px;
+    &_search {
+      padding-bottom: 12px;
+    }
   }
 
   &__register-details {
@@ -49,7 +55,7 @@
   }
 
   &__birthday {
-    margin-top: 20px;
+    padding-top: 25px;
   }
 
   &__login-details {
@@ -60,17 +66,18 @@
   }
 
   &__toggle {
-    margin: 10px 0 0;
+    padding: 10px 0 7px;
   }
 
   &__button {
-    padding-top: 20px;
+    padding-top: 19px;
   }
 
   &__question {
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
+    align-items: center;
     &_text {
       display: block;
       align-self: center;
@@ -81,6 +88,7 @@
   }
 
   &__calculation {
-    padding-top: 20px;
+    padding-top: 21px;
+    padding-left: 1px;
   }
 }

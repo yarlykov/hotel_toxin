@@ -13,6 +13,7 @@
   position: relative;
   border: $mainBorder;
   border-radius: 4px;
+  box-sizing: border-box;
   
   &__size{
     &_large{

@@ -24,23 +24,23 @@ mixin card({ title, search=false, calculation=false, registration=false, entry=f
 
     if (search || calculation)
       .card__date-dropdown
-        label
+        .date-dropdown__start
           .text-field__header
             span.text-field__title прибытие
           +text-field({
-            classList: [], dropdown: "start",
-            type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-            name: "date", autocomplete: "off", arrow: true
+              classList: [], dropdown: "start",
+              type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
+              name: "date", autocomplete: "off", arrow: true
           })
-        label
+        .date-dropdown__end
           .text-field__header
             span.text-field__title выезд
           +text-field({
-            classList: [], dropdown: "end",
-            type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-            name: "date", autocomplete: "off", arrow: true
+              classList: [], dropdown: "end",
+              type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
+              name: "date", autocomplete: "off", arrow: true
           })
-      .card__guests-dropdown
+      div(class= search ? "card__guests-dropdown_search" : "").card__guests-dropdown
         .text-field__header
           span.text-field__title гости
         +dropdown({
