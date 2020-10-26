@@ -1,11 +1,11 @@
 extends ../components/main
-include ../components/cards/cards.pug
+include ../components/cards-page/cards-page.pug
 
 block variables
   - const title = "Cards"
 
 block content
-  +cards({
+  +cards-page({
     cards: {
       search: {
         title: "Найдём номера под ваши\u00A0пожелания",

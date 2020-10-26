@@ -4,29 +4,29 @@ include ../room-review-card/room-review-card.pug
 include ../air-datepicker/air-datepicker.pug
 include ../ui-kit-footer/ui-kit-footer.pug
 
-mixin cards({ cards={}, calendar={}, widgets={}, footerLinks=[] })
+mixin cards-page({ cards={}, calendar={}, widgets={}, footerLinks=[] })
 
   - const { search, registration, calculation, entry } = cards
   
-  body.cards__wrapper
-    .cards__header
+  body.cards-page__wrapper
+    .cards-page__header
       +ui-kit-header()
-    main.cards__container
-      .cards__content
-        .cards__column
+    main.cards-page__container
+      .cards-page__content
+        .cards-page__column
           +card(search)
           +card(registration)
-        .cards__column
+        .cards-page__column
           +card(calculation)
           +card(entry)
 
-        .cards__column
-          .cards__calendar
+        .cards-page__column
+          .cards-page__calendar
             +air-datepicker()
 
           each widget in widgets
             +room-review-card(widget)
 
-    .cards__footer
+    .cards-page__footer
       +ui-kit-footer({ footerLinks })
         
