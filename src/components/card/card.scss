@@ -26,24 +26,23 @@
 
   &__date-dropdown {
     display: flex;
-    // justify-content: space-between;
-    margin-top: 20px;
+    padding-top: 20px;
     & > :last-child {
-      margin-left: 20px;
+      padding-left: 20px;
     }
   }
 
   &__guests-dropdown {
-    margin-top: 20px;
+    padding-top: 20px;
     &_search {
       padding-bottom: 12px;
     }
   }
 
   &__register-details {
-    margin-top: 20px;
+    padding-top: 20px;
     & .register__surname {
-      margin-top: 10px;
+      padding-top: 10px;
     }
   }
 
@@ -61,7 +60,7 @@
   &__login-details {
       padding-top: 20px;
     & .login-details__email {
-      margin-bottom: 10px;
+      padding-bottom: 10px;
     }
   }
 

@@ -1,0 +1,25 @@
+extends ../components/main
+include ../components/cards/cards.pug
+
+block variables
+  - const title = "Cards"
+
+block content
+  +cards({
+    cards: {
+
+    },
+    calendar: {
+
+    },
+    widgets: {
+
+    },
+    footerLinks: [
+      { link: "index", name: "Colors & Type" },
+      { link: "headers-footers", name: "Headers & Footers" },
+      { link: "form-elements", name: "Form Elements" },
+      { link: "cards", name: "Cards" },
+      { link: "error-page", name: "Landing page" },
+    ]
+  })

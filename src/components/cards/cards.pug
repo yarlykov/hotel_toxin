@@ -1,16 +1,10 @@
-extends ../main.pug
 include ../ui-kit-header/ui-kit-header.pug
-include ../ui-kit-footer/ui-kit-footer.pug
+include ../card/card.pug
 include ../text-field/text-field.pug
 include ../room-review-card/room-review-card.pug
-include ../card/card.pug
+include ../ui-kit-footer/ui-kit-footer.pug
 
-block variables
-  - var title = "Cards"
-  - var description = ""
-  - var keywords = ""
-
-block content
+mixin cards({ cards={}, calendar={}, widgets={}, footerLinks=[] })
   body.cards__wrapper
     .cards__header
       +ui-kit-header()
@@ -42,7 +36,7 @@ block content
           })
 
         .cards__column
-          .cards__calendar.cards__block.cards__block_no-border
+          .cards__calendar
             +text-field({classList: [ "air-datepicker__inline" ]})
 
           +room-review-card({

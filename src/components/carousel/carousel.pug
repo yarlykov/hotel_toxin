@@ -2,4 +2,4 @@ mixin carousel({ images=[] })
   .carousel
     each image in images
       .carousel__item
-        img(src=require(`../carousel/image/${image.name}`).default)
+        img(src=require(`../components/carousel/image/${image.name}`).default)
