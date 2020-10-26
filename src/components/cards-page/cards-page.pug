@@ -1,10 +1,10 @@
 include ../ui-kit-header/ui-kit-header.pug
 include ../card/card.pug
-include ../room-review-card/room-review-card.pug
+include ../room-review-widget/room-review-widget.pug
 include ../air-datepicker/air-datepicker.pug
 include ../ui-kit-footer/ui-kit-footer.pug
 
-mixin cards-page({ cards={}, calendar={}, widgets={}, footerLinks=[] })
+mixin cards-page({ cards={}, calendar={}, roomReviewWidgets={}, footerLinks=[] })
 
   - const { search, registration, calculation, entry } = cards
   
@@ -24,8 +24,8 @@ mixin cards-page({ cards={}, calendar={}, widgets={}, footerLinks=[] })
           .cards-page__calendar
             +air-datepicker()
 
-          each widget in widgets
-            +room-review-card(widget)
+          each widget in roomReviewWidgets
+            +room-review-widget(widget)
 
     .cards-page__footer
       +ui-kit-footer({ footerLinks })
