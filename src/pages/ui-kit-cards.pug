@@ -7,14 +7,56 @@ block variables
 block content
   +cards({
     cards: {
-
+      search: {
+        title: "Найдём номера под ваши\u00A0пожелания",
+        type: "search",
+        buttonText: "подобрать номер",
+      },
+      registration: {
+        title: "Регистрация аккаунта",
+        type: "registration",
+        buttonText: "перейти к оплате",
+        question: "Уже есть аккаунт на Toxin"
+      },
+      calculation: {
+        type: "calculation",
+        buttonText: "забронировать",
+        numberOfGuests: 3,
+      },
+      entry: {
+        title: "Войти",
+        type: "entry",
+        buttonText: "войти",
+        question: "Нет аккаунта на Toxin?"
+      }
     },
-    calendar: {
-
-    },
-    widgets: {
-
-    },
+    calendar: {},
+    widgets: [
+      {
+        images: [
+          { name: "room-img-1.png"},
+          { name: "room-img-2.png"},
+          { name: "room-img-3.png"},
+          { name: "room-img-4.png"},
+        ],
+        roomNumber: { symbol: "№", value: "888", text: "люкс" },
+        roomPrice: { value: "9 990₽", text: "в сутки"},
+        rating: { rating: 5 },
+        commentCount: { value: "145", text: "Отзывов"} 
+      },
+      {
+        images: [
+          { name: "room-img-2.png"},
+          { name: "room-img-5.png"},
+          { name: "room-img-6.png"},
+          { name: "room-img-7.png"},
+        ],
+        roomNumber: { symbol: "№", value: "840", text: "люкс" },
+        roomPrice: { value: "9 900₽", text: "в сутки"},
+        rating: { rating: 4 },
+        commentCount: { value: "65", text: "Отзывов"} 
+      }
+    ],
     footerLinks: [
       { link: "index", name: "Colors & Type" },
       { link: "headers-footers", name: "Headers & Footers" },
