@@ -3,13 +3,13 @@ include ../info-icon/info-icon.pug
 mixin price-calc()
   .price-calc
     .price-calc__undiscounted
-      span.price-calc__undiscounted-value 9 990 x 4 суток
+      span.price-calc__undiscounted-value 9 990₽ x 4 суток
       span.price-calc__undiscounted-full-value 39 960₽
 
     .price-calc__service-charge
       .service-change
         span.service-charge__text Сбор за услуги: 
-        span.service-charge__discount скидка 2 197₽
+        span.service-charge__discount скидка 2 179₽
       +info-icon({ href: "error-page", text: "Здесь будет ваша подсказка, а подробности можно узнать кликнув на иконку" })
       span.service-charge__full-value 0₽
 
