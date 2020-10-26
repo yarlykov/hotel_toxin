@@ -23,4 +23,64 @@
     justify-content: space-between;
     align-items: baseline;
   }
+
+  &__date-dropdown {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &__guests-dropdown {
+    margin-top: 20px;
+  }
+
+  &__register-details {
+    margin-top: 20px;
+    & .register__surname {
+      margin-top: 10px;
+    }
+  }
+
+  &__radio-buttons {
+    padding: 10px 100px 0 0;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 100px;
+  }
+
+  &__birthday {
+    margin-top: 20px;
+  }
+
+  &__login-details {
+      padding-top: 20px;
+    & .login-details__email {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__toggle {
+    margin: 10px 0 0;
+  }
+
+  &__button {
+    padding-top: 20px;
+  }
+
+  &__question {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    &_text {
+      display: block;
+      align-self: center;
+    }
+    &_button {
+      min-width: 99px;
+    }
+  }
+
+  &__calculation {
+    padding-top: 20px;
+  }
 }

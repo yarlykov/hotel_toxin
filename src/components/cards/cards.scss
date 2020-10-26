@@ -5,10 +5,12 @@ body {
 
 .cards {
 
-  &__card {
-    margin-top: 40px;
+  &__column {
+    & > :not(:first-child){
+      margin-top: 40px;
+    }
   }
-  
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -29,116 +31,10 @@ body {
     justify-content: space-between;
   }
 
-  &__title {
-    font-family: Quicksand, sans-serif;
-    font-size: 24px;
-    line-height: 30px;
-    // letter-spacing: 1px;
-    color: $mainTextColor;
-  }
-  
   &__footer {
     flex-shrink: 0;
   }
-
-  &__block {
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-  }
-
-  &__find-room {
-    padding: 40px 30px 30px 30px;
-    max-width: 380px;
-  }
-
-  &__price-calc {
-    width: 380px;
-    padding: 40px 30px 30px 30px;
-  }
-
-  &__calendar {
-    width: 320px;
-    height: 369px;
-  }
-
-  &__register {
-    padding: 40px 30px 30px 30px;
-    max-width: 380px;
-    margin-top: 40px;
-  }
-  &__enter {
-    width: 380px;
-    padding: 40px 30px 30px 30px;
-    margin-top: 40px;
-  }
-  &__room-review {
-    margin-top: 40px;
-  }
-
 }
-
-.find-room {
-
-  &__date-dropdown{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-
-  &__dropdown{
-    margin-top: 20px;
-  }
-  &__button{
-    margin-top: 30px;
-  }
-}
-
-.register {
-  &__details {
-    margin-top: 20px;
-  }
-  &__surname {
-    margin-top: 10px;
-  }
-  &__radio-buttons {
-    padding: 10px 100px 0 0;
-    display: flex;
-    justify-content: space-between;
-    padding-right: 100px;
-  }
-  &__birthday {
-    padding-top: 20px;
-  }
-  &__login-details {
-    padding-top: 20px;
-    & .login-details__email {
-      margin-bottom: 10px;
-    }
-  
-  } 
-  &__toggle {
-    margin: 10px 0 0;
-  }
-  &__button {
-    padding-top: 20px;
-  }
-  &__question {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 30px;
-    &_text {
-      display: block;
-      align-self: center;
-    }
-    &_button {
-      min-width: 99px;
-    }
-  }
-}
-
 
 /*---------------CARDS CALENDAR---------------*/
 .cards__calendar .text-field__input{

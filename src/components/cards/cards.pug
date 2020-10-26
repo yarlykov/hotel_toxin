@@ -2,14 +2,7 @@ extends ../main.pug
 include ../ui-kit-header/ui-kit-header.pug
 include ../ui-kit-footer/ui-kit-footer.pug
 include ../text-field/text-field.pug
-include ../dropdown/dropdown.pug
-include ../button/button.pug
-include ../radio/radio.pug
-include ../toggle/toggle.pug
-include ../carousel/carousel.pug
 include ../room-review-card/room-review-card.pug
-include ../room-number/room-number.pug
-include ../price-calc/price-calc.pug
 include ../card/card.pug
 
 block variables
@@ -24,175 +17,60 @@ block content
     main.cards__container
       .cards__content
         .cards__column
-
-          .cards__find-room.cards__block
-
-            h2.cards__title Найдём номера под ваши&nbsp;пожелания
-            .find-room__date-dropdown
-              label
-                .text-field__header
-                  span.text-field__title прибытие
-                +text-field({
-                  classList: [], dropdown: "start",
-                  type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-                  name: "date", autocomplete: "off", arrow: true
-                })
-              label
-                .text-field__header
-                  span.text-field__title выезд
-                +text-field({
-                  classList: [], dropdown: "end",
-                  type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-                  name: "date", autocomplete: "off", arrow: true
-                })
-
-            .find-room__dropdown
-              .text-field__header
-                span.text-field__title гости
-              +dropdown({
-                isOpen: false, 
-                group: "guests", 
-                elements: [
-                  {title: "Взрослые", count: 0},
-                  {title: "Дети", count: 0}, 
-                  {title: "Младенцы", count: 0}
-                ]})
-            .find-room__button
-              +button({ buttonName: "подобрать номер", buttonVariation: "withArrow", textColor: "white", size: "large"})
-
-          .cards__register.cards__block
-            h2.cards__title Регистрация аккаунта
-            .register__details
-              .register__name
-                +text-field({ placeholder: "Имя", type: "text", name: "name", autocomplete: "on" })
-              .register__surname
-                +text-field({ placeholder: "Фамилия", type: "text", name: "surname", autocomplete: "on" })
-            .register__radio-buttons
-              +radio({ group: "gender", title: "Мужчина", checked: true})
-              +radio({ group: "gender", title: "Женщина", checked: false})
-            .register__birthday
-              .text-field__header
-                .text-field__title дата рождения
-              +text-field({ classList: ["js-masked__text-field"],placeholder: "ДД.ММ.ГГГГ", type: "text", name: "birthday", autocomplete: "on" })
-            .register__login-details
-              .text-field__header
-                .text-field__title данные для входа в сервис
-              .login-details__email
-                +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
-              .login-details__password
-                +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
-            .register__toggle
-              +toggle({ title: "Получать спецпредложения" })
-            .register__button
-              +button({ buttonName: "перейти к оплате", buttonVariation: "withArrow", textColor: "white", size: "large"})
-            .register__question
-              span.register__question_text Уже есть аккаунт на Toxin
-              .register__question_button
-                +button({ buttonName: "войти", buttonVariation: "fillWhite", textColor: "purple", size: "small"})
-
-
-
-
-
-          .cards__card
-            +card({ 
-              title: "Найдём номера под ваши\u00A0пожелания",
-              calculation: true
-            })
-
-
-
-
-
-
-
-        .cards-column
-          .cards__price-calc.cards__block
-            .price-calc__header
-              +room-number({ symbol: "№", value: "888", text: "люкс" })
-              +room-price({ value: "9 990₽", text: "в сутки"})
-
-            .find-room__date-dropdown
-              label
-                .text-field__header
-                  span.text-field__title прибытие
-                +text-field({
-                  classList: [], dropdown: "start",
-                  type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-                  name: "date", autocomplete: "off", arrow: true
-                })
-              label
-                .text-field__header
-                  span.text-field__title выезд
-                +text-field({
-                  classList: [], dropdown: "end",
-                  type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-                  name: "date", autocomplete: "off", arrow: true
-                })
-            .find-room__dropdown
-              .text-field__header
-                span.text-field__title гости
-              +dropdown({
-                isOpen: false, 
-                group: "guests", 
-                elements: [
-                  {title: "Взрослые", count: 0},
-                  {title: "Дети", count: 0}, 
-                  {title: "Младенцы", count: 0}
-                ]})
-                //-исправить класс !
-            .price-calc__class 
-              +price-calc()
-            .register__button
-              +button({ buttonName: "забронировать", buttonVariation: "withArrow", textColor: "white", size: "large"})
-
-
-          .cards__enter.cards__block
-            h2.cards__title Войти
-            .register__login-details
-              .login-details__email
-                +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
-              .login-details__password
-                +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
-            .register__button
-              +button({ buttonName: "войти", buttonVariation: "withArrow", textColor: "white", size: "large"})
-            .register__question
-              span.register__question_text Нет аккаунта на Toxin
-              .register__question_button
-                +button({ buttonName: "создать", buttonVariation: "fillWhite", textColor: "purple", size: "small"})
-
+          +card({ 
+            title: "Найдем номера под ваши\u00A0пожелания",
+            search: true,
+            buttonText: "подобрать номер",
+          })
+          +card({ 
+            title: "Регистрация аккаунта",
+            registration: true,
+            buttonText: "перейти к оплате",
+            question: "Уже есть акканут на Toxin"
+          })
+        .cards__column
+          +card({ 
+            title: "",
+            calculation: true,
+            buttonText: "забронировать",
+            numberOfGuests: 3,
+          })
+          +card({ 
+            title: "Войти",
+            entry: true,
+            buttonText: "войти",
+            question: "Нет аккаунта на Toxin?"
+          })
 
         .cards__column
           .cards__calendar.cards__block.cards__block_no-border
             +text-field({classList: [ "air-datepicker__inline" ]})
 
-          .cards__room-review
-            +room-review-card({
-                images: [
-                  { name: "room-img-1.png"},
-                  { name: "room-img-2.png"},
-                  { name: "room-img-3.png"},
-                  { name: "room-img-4.png"},
-                ],
-                roomNumber: { symbol: "№", value: "888", text: "люкс" },
-                roomPrice: { value: "9 990₽", text: "в сутки"},
-                rating: { rating: 5 },
-                commentCount: { value: "145", text: "Отзывов"} 
+          +room-review-card({
+            images: [
+              { name: "room-img-1.png"},
+              { name: "room-img-2.png"},
+              { name: "room-img-3.png"},
+              { name: "room-img-4.png"},
+            ],
+              roomNumber: { symbol: "№", value: "888", text: "люкс" },
+              roomPrice: { value: "9 990₽", text: "в сутки"},
+              rating: { rating: 5 },
+              commentCount: { value: "145", text: "Отзывов"} 
             })
 
-          .cards__room-review
-            +room-review-card({
-                images: [
-                  { name: "room-img-2.png"},
-                  { name: "room-img-5.png"},
-                  { name: "room-img-6.png"},
-                  { name: "room-img-7.png"},
-                ],
-                roomNumber: { symbol: "№", value: "840", text: "люкс" },
-                roomPrice: { value: "9 900₽", text: "в сутки"},
-                rating: { rating: 4 },
-                commentCount: { value: "65", text: "Отзывов"} 
-            })
+          +room-review-card({
+            images: [
+              { name: "room-img-2.png"},
+              { name: "room-img-5.png"},
+              { name: "room-img-6.png"},
+              { name: "room-img-7.png"},
+            ],
+            roomNumber: { symbol: "№", value: "840", text: "люкс" },
+            roomPrice: { value: "9 900₽", text: "в сутки"},
+            rating: { rating: 4 },
+            commentCount: { value: "65", text: "Отзывов"} 
+          })
 
     .cards__footer
       +ui-kit-footer({ footerLinks: [
