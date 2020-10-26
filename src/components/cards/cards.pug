@@ -10,6 +10,7 @@ include ../carousel/carousel.pug
 include ../room-review-card/room-review-card.pug
 include ../room-number/room-number.pug
 include ../price-calc/price-calc.pug
+include ../card/card.pug
 
 block variables
   - var title = "Cards"
@@ -89,6 +90,22 @@ block content
               .register__question_button
                 +button({ buttonName: "войти", buttonVariation: "fillWhite", textColor: "purple", size: "small"})
 
+
+
+
+
+          .cards__card
+            +card({ 
+              title: "Найдём номера под ваши\u00A0пожелания",
+              calculation: true
+            })
+
+
+
+
+
+
+
         .cards-column
           .cards__price-calc.cards__block
             .price-calc__header
@@ -123,7 +140,8 @@ block content
                   {title: "Дети", count: 0}, 
                   {title: "Младенцы", count: 0}
                 ]})
-            .price-calc__class
+                //-исправить класс !
+            .price-calc__class 
               +price-calc()
             .register__button
               +button({ buttonName: "забронировать", buttonVariation: "withArrow", textColor: "white", size: "large"})
@@ -148,33 +166,33 @@ block content
           .cards__calendar.cards__block.cards__block_no-border
             +text-field({classList: [ "air-datepicker__inline" ]})
 
-          //- .cards__room-review
-          //-   +room-review-card({
-          //-       images: [
-          //-         { name: "room-img-1.png"},
-          //-         { name: "room-img-2.png"},
-          //-         { name: "room-img-3.png"},
-          //-         { name: "room-img-4.png"},
-          //-       ],
-          //-       roomNumber: { symbol: "№", value: "888", text: "люкс" },
-          //-       roomPrice: { value: "9 990₽", text: "в сутки"},
-          //-       rating: { rating: 5 },
-          //-       commentCount: { value: "145", text: "Отзывов"} 
-          //-   })
+          .cards__room-review
+            +room-review-card({
+                images: [
+                  { name: "room-img-1.png"},
+                  { name: "room-img-2.png"},
+                  { name: "room-img-3.png"},
+                  { name: "room-img-4.png"},
+                ],
+                roomNumber: { symbol: "№", value: "888", text: "люкс" },
+                roomPrice: { value: "9 990₽", text: "в сутки"},
+                rating: { rating: 5 },
+                commentCount: { value: "145", text: "Отзывов"} 
+            })
 
-          //- .cards__room-review
-          //-   +room-review-card({
-          //-       images: [
-          //-         { name: "room-img-2.png"},
-          //-         { name: "room-img-5.png"},
-          //-         { name: "room-img-6.png"},
-          //-         { name: "room-img-7.png"},
-          //-       ],
-          //-       roomNumber: { symbol: "№", value: "840", text: "люкс" },
-          //-       roomPrice: { value: "9 900₽", text: "в сутки"},
-          //-       rating: { rating: 4 },
-          //-       commentCount: { value: "65", text: "Отзывов"} 
-          //-   })
+          .cards__room-review
+            +room-review-card({
+                images: [
+                  { name: "room-img-2.png"},
+                  { name: "room-img-5.png"},
+                  { name: "room-img-6.png"},
+                  { name: "room-img-7.png"},
+                ],
+                roomNumber: { symbol: "№", value: "840", text: "люкс" },
+                roomPrice: { value: "9 900₽", text: "в сутки"},
+                rating: { rating: 4 },
+                commentCount: { value: "65", text: "Отзывов"} 
+            })
 
     .cards__footer
       +ui-kit-footer({ footerLinks: [
