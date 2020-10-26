@@ -19,25 +19,24 @@ block content
         .cards__column
           +card({ 
             title: "Найдём номера под ваши\u00A0пожелания",
-            search: true,
+            type: "search",
             buttonText: "подобрать номер",
           })
           +card({ 
             title: "Регистрация аккаунта",
-            registration: true,
+            type: "registration",
             buttonText: "перейти к оплате",
             question: "Уже есть аккаунт на Toxin"
           })
         .cards__column
           +card({ 
-            title: "",
-            calculation: true,
+            type: "calculation",
             buttonText: "забронировать",
             numberOfGuests: 3,
           })
           +card({ 
             title: "Войти",
-            entry: true,
+            type: "entry",
             buttonText: "войти",
             question: "Нет аккаунта на Toxin?"
           })

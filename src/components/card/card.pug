@@ -10,9 +10,15 @@ include ../price-calc/price-calc.pug
 
 
 
-mixin card({ title, search=false, calculation=false, registration=false, entry=false, buttonText="", question="", numberOfGuests=0 })
+mixin card({ title, type="", buttonText="", question="", numberOfGuests=0 })
 
-  - const questionButton = question.toLowerCase().indexOf("нет") !== -1 ? "Создать" : "Войти"
+  -
+    const questionButton = question.toLowerCase().indexOf("нет") !== -1 ? "Создать" : "Войти"
+    const search = (type === "search")
+    const registration = (type === "registration")
+    const calculation = (type === "calculation")
+    const entry = (type === "entry")
+    const searchOrCalculation = (search || calculation)
 
   .card__wrapper
     if (calculation)
@@ -22,7 +28,7 @@ mixin card({ title, search=false, calculation=false, registration=false, entry=f
     else
       .card__title #{title}
 
-    if (search || calculation)
+    if (searchOrCalculation)
       .card__date-dropdown
         .date-dropdown__start
           .text-field__header
