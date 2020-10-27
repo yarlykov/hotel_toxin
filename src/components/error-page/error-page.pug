@@ -1,9 +1,4 @@
-extends ../../components/main
-
-block variables
-  - const title = "404"
-
-block content
+mixin error-page({ title="", mainText="", linkTitle="", linkText="", link="" })
   .canvas
     .box_front
       .sea
@@ -32,7 +27,7 @@ block content
       .cloud.cloud-4
       .cloud.cloud-5
       .errorPage
-        h1.errorPage__title Страница находится в разработке
-        h2.errorPage__text Пожалуйста, возвращайтесь позже
-          p.errorPage__link на главную 
-            a(href="./index.html") тык
+        h1.errorPage__title #{title}
+        h2.errorPage__text #{mainText}
+          p.errorPage__link #{linkTitle}
+            a(href=`./${link}`)  #{linkText}

@@ -89,7 +89,7 @@ module.exports = {
       filename: 'cards.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/pages/error-page/error-page.pug',
+      template: './src/pages/error-page.pug',
       filename: 'error-page.html'
     }),
     new MiniCssExtractPlugin({

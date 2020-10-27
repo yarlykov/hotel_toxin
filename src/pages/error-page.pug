@@ -1,0 +1,14 @@
+extends ../components/main
+include ../components/error-page/error-page.pug
+
+block variables
+  - const title = "404"
+
+block content
+  +error-page({
+    title: "Страница находится в разработке",
+    mainText: "Пожалуйста, возвращайтесь позже",
+    linkTitle: "на главную",
+    linkText: "тык",
+    link: "index.html"
+  })
