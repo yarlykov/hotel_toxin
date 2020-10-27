@@ -20,14 +20,15 @@ mixin landing()
           buttonRegister: "зарегистрироваться",
         })
       main.landing__content
-        .landing__search-room
-          +card({
-          title: "Найдём номера под ваши\u00A0пожелания",
-          type: "search",
-          buttonText: "подобрать номер",
-        })
-        .landing__self-presentation
-          p Лучшие номера для вашей работы, отдыха и просто вдохновения
+        .landing__container
+          .landing__search-room
+            +card({
+            title: "Найдём номера под ваши\u00A0пожелания",
+            type: "search",
+            buttonText: "подобрать номер",
+          })
+          .landing__self-presentation
+            p Лучшие номера для вашей работы, отдыха и просто вдохновения
 
     footer.landing__footer
       +footer({

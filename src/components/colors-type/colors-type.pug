@@ -4,10 +4,11 @@ include ../ui-kit-header/ui-kit-header.pug
 include ../ui-kit-footer/ui-kit-footer.pug
 
 mixin colors-type({ colorItems, typeList, footerLinks })
-  body.colors-type
-    +ui-kit-header()
-    main.colors-type__content-wrapper
-      section.colors__wrapper
-        +colors({ colorItems })
-      section.type__wrapper
-        +type({ typeList })
+  body
+    .colors-type
+      +ui-kit-header()
+      main.colors-type__content-wrapper
+        section.colors__wrapper
+          +colors({ colorItems })
+        section.type__wrapper
+          +type({ typeList })
