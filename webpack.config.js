@@ -94,7 +94,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/landing-page.pug',
-      filename: 'landing-page.html'
+      filename: 'landing.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',

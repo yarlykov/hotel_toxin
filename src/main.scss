@@ -69,11 +69,15 @@ $redBorder: 1px solid red;
 @import 'components/info-icon/info-icon';
 @import 'components/card/card.scss';
 
-@import 'components/landing-page/landing-page.scss';
+@import 'components/landing/landing.scss';
 
-html,
-body {
+html {
   height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 h1,h2,h3 {

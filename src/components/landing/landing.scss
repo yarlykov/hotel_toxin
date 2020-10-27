@@ -1,0 +1,32 @@
+.landing {
+  flex: 1 0 auto;
+  
+  &__content {
+    background: url('./components/landing/image/landing.jpg') no-repeat;
+    background-size: cover;
+    background-size: 107%;
+    background-position: 51% 68%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 70px 0 0 140px;
+  }
+
+  &__search-room {
+  }
+
+  &__self-presentation {
+    font-size: 14px;
+    line-height: 24px;
+    color: $textColor_75;
+    align-self: flex-end;
+    max-width: 300px;
+    text-align: end;
+    padding: 303px 134px 7px 0;
+  }
+
+  &__footer {
+    flex-shrink: 0;
+  }
+}
