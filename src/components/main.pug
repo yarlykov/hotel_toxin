@@ -1,3 +1,5 @@
+include ./ui-kit-footer/ui-kit-footer.pug
+
 block variables
 
 doctype html
@@ -9,4 +11,14 @@ html(lang="ru")
     link(rel='shortcut icon' href='./assets/favicon/favicon.png')
     block head
   block content
+  block foot
+    +ui-kit-footer({ 
+      footerLinks: [
+        { link: "index", name: "Colors & Type" },
+        { link: "headers-footers", name: "Headers & Footers" },
+        { link: "form-elements", name: "Form Elements" },
+        { link: "cards", name: "Cards" },
+        { link: "landing-page", name: "Landing page" },
+      ]
+    })
   
