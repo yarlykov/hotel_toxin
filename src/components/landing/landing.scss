@@ -8,7 +8,6 @@
     background-position: 51% 68%;
     box-sizing: border-box;
     
-    
     @media (max-width: 1280px) {
       background-size: cover;
     }
@@ -53,6 +52,7 @@
     max-width: 300px;
     text-align: end;
     padding: 318px 134px 20px 0;
+
     @media (max-width: 960px) {
       display: none;
     }
