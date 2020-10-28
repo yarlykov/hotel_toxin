@@ -1,0 +1,69 @@
+extends ../components/main
+include ../components/sing-in/sing-in.pug
+
+block variables
+  - const title = "Sing in page"
+
+block content
+  +sing-in({
+    header: {
+      logo: { type: "colorWithText", width: "106px", height: "40px"},
+      navigationList: [
+            { name: "О нас", url: "./error-page.html", active: true},
+            { name: "Услуги", dropdown: true},
+            { name: "Вакансии", url: "./error-page.html"},
+            { name: "Новости", url: "./error-page.html"},
+            { name: "Соглашения", dropdown: true},
+      ],
+      buttonEntry: "войти",
+      buttonRegister: "зарегистрироваться",
+    },
+    entryCard: {
+       title: "Войти",
+       type: "entry",
+       buttonText: "войти",
+       question: "Нет аккаунта на Toxin?"
+     },
+    footer: {
+      logo: { type: "colorWithText", width: "106px"},
+      footerText: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+      footerNavigation: {
+        column1: { title: "навигация", 
+          linksList: [
+            { name: "О нас", url: "./error-page.html"},
+            { name: "Новости", url: "./error-page.html"},
+            { name: "Служба поддержки", url: "./error-page.html"},
+            { name: "Услуги", url: "./error-page.html"},
+          ]
+        },
+        column2: { title: "О нас", 
+          linksList: [
+            { name: "О сервисе", url: "./error-page.html"},
+            { name: "Наша команда", url: "./error-page.html"},
+            { name: "Вакансии", url: "./error-page.html"},
+            { name: "Инвесторы", url: "./error-page.html"},
+          ]
+        },
+        column3: { title: "Служба поддержки", 
+          linksList: [
+            { name: "Соглашение", url: "./error-page.html"},
+            { name: "Сообщества", url: "./error-page.html"},
+            { name: "Связь с нами", url: "./error-page.html"},
+          ]
+        },
+      },
+      subscribe: { title: "Подписка", text: "Получайте специальные   предложения и новости сервиса"},
+      copyright: {
+        text: "Copyright © 2018 Toxin отель. Все\u00A0права\u00A0зачищены."
+      },
+      social: { 
+        socialLinks: [
+          { title: "twitter", link: "https://twitter.com"},
+          { title: "facebook", link: "https://facebook.com"},
+          { title: "instagram", link: "https://instagram.com"},
+        ]
+      },
+    }
+  })
+
+block foot

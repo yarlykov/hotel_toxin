@@ -1,0 +1,16 @@
+include ../header/header.pug
+include ../card/card.pug
+include ../footer/footer.pug
+
+mixin sing-in({ header={}, entryCard={}, footer={} })
+  body
+    .sing-in
+      header.sing-in__header
+        +header(header)
+      main.sing-in__content
+        .sing-in__container
+          .sing-in__entry
+            +card(entryCard)
+
+    footer.sing-in__footer
+      +footer(footer)
