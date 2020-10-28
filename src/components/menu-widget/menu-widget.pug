@@ -1,0 +1,6 @@
+mixin menu-widget({ menuItems=[] })
+  ul.menu-widget
+    each item in menuItems
+      li.menu-widget__item
+        a(href=`./${item.link}.html` class="menu-widget__text") #{item.title}
+          img(src=require(`../components/menu-widget/image/${item.image}`).default)

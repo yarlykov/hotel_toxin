@@ -1,15 +1,10 @@
 include ../logo/logo.pug
+include ../menu-widget/menu-widget.pug
 
-mixin start-page()
+mixin start-page({ logo={}, menuItems=[] })
   .start-page
     .start-page__container
       .start-page__logo
-        +logo({ type: "colorWithText", height: "80", width: "200"})
+        +logo(logo)
       .start-page__menu
-        ul.menu-widget
-          li.menu-widget__item
-            a(href="./index.html" class="menu-widget__text") Colors & Types
-              img(src=require("../components/start-page/image/colors-type.jpg").default)
-          li.menu-widget__item
-            a(href="./headers-footers.html" class="menu-widget__text") Headers & Footers
-              img(src=require("../components/start-page/image/headers-footers.jpg").default)
+        +menu-widget({ menuItems })
