@@ -72,16 +72,9 @@ $redBorder: 1px solid red;
 @import 'components/landing/landing.scss';
 @import 'components/start-page/start-page';
 
-html {
-  height: 100%;
-}
 
-body {
-  display: flex;
-  flex-direction: column;
-}
 
-h1,h2,h3,p {
+h1,h2,h3,p,ul,li {
   margin: 0;
 }
 ul {
@@ -98,13 +91,19 @@ ul {
   }
 }
 
-body, html {
+html {
+  height: 100%;
   margin: 0;
   box-sizing: border-box;
   font-family: $mainFont;
+  font-size: $mainFont_size;
   font-style: normal;
   font-weight: normal;
-  font-size: $mainFont_size;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 a {

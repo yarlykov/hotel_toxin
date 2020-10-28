@@ -2,4 +2,14 @@ include ../logo/logo.pug
 
 mixin start-page()
   .start-page
-    +logo({ type: "colorWithText"})
+    .start-page__container
+      .start-page__logo
+        +logo({ type: "colorWithText", height: "80", width: "200"})
+      .start-page__menu
+        ul.menu-widget
+          li.menu-widget__item
+            a(href="./index.html" class="menu-widget__text") Colors & Types
+              img(src=require("../components/start-page/image/colors-type.jpg").default)
+          li.menu-widget__item
+            a(href="./headers-footers.html" class="menu-widget__text") Headers & Footers
+              img(src=require("../components/start-page/image/headers-footers.jpg").default)
