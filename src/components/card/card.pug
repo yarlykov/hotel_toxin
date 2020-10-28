@@ -12,6 +12,7 @@ mixin card({ title, type="", buttonText="", question="", numberOfGuests=0 })
 
   -
     const questionButton = question.toLowerCase().indexOf("нет") !== -1 ? "Создать" : "Войти"
+    const questionButtonLink = questionButton === "Создать" ? "registration" : "sing-in"
     const search = (type === "search")
     const registration = (type === "registration")
     const calculation = (type === "calculation")
@@ -90,9 +91,9 @@ mixin card({ title, type="", buttonText="", question="", numberOfGuests=0 })
           +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
     if (buttonText !== "")
       .card__button
-        +button({ buttonName: buttonText, buttonVariation: "withArrow", textColor: "white", size: "large"})
+        +button({ buttonName: buttonText, buttonVariation: "withArrow", textColor: "white", size: "large", link: "error-page"})
     if (question !== "")
       .card__question
         span.register__question_text #{question}
         .register__question_button
-          +button({ buttonName: questionButton, buttonVariation: "fillWhite", textColor: "purple", size: "small"})
+          +button({ buttonName: questionButton, buttonVariation: "fillWhite", textColor: "purple", size: "small", link: questionButtonLink })

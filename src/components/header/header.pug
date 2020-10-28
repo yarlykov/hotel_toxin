@@ -17,6 +17,6 @@ mixin header({ logo={}, navigationList=[], buttonEntry="", buttonRegister="", lo
           else
             .header__login
               .header__login_entry
-                +button({ classList: [], buttonName: buttonEntry, size: "stretch", textColor: "purple",  buttonVariation: "fillWhite" })
+                +button({ classList: [], buttonName: buttonEntry, size: "stretch", textColor: "purple",  buttonVariation: "fillWhite", link: "sing-in" })
               .header__login_register
-                +button({ classList: [], buttonName: buttonRegister, size: "stretch", textColor: "white" })
+                +button({ classList: [], buttonName: buttonRegister, size: "stretch", textColor: "white", link: "registration" })
