@@ -1,4 +1,7 @@
 .button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -6,7 +9,7 @@
   background: $mainGradient;
   border-radius: 100px;
   font-family: $mainFont;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
