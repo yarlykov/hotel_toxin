@@ -1,11 +1,15 @@
 .logo {
-   &__colorless {
-     min-width: 48px;
-   }
-   &__color {
-     min-width: 40px;
-   }
-   &__color-with-text {
-     min-width: 106px;
-   }
+
+  &__link {
+    line-height: 0;
+  }
+  &__colorless {
+    min-width: 48px;
+  }
+  &__color {
+    min-width: 40px;
+  }
+  &__color-with-text {
+    min-width: 106px;
+  }
 }
