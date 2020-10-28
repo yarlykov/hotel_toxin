@@ -1,0 +1,16 @@
+include ../header/header.pug
+include ../card/card.pug
+include ../footer/footer.pug
+
+mixin registration({ header={}, registrationCard={}, footer={} })
+  body
+    .registration
+      header.registration__header
+        +header(header)
+      main.registration__content
+        .registration__container
+          .registration__registration
+            +card(registrationCard)
+
+    footer.registration__footer
+      +footer(footer)

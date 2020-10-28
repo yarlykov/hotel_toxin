@@ -97,6 +97,10 @@ module.exports = {
       filename: 'landing.html'
     }),
     new HtmlWebpackPlugin({
+      template: './src/pages/registration-page.pug',
+      filename: 'registration.html'
+    }),
+    new HtmlWebpackPlugin({
       template: './src/pages/start-page.pug',
       filename: 'start-page.html'
     }),
