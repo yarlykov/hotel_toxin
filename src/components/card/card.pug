@@ -45,8 +45,7 @@ mixin card({ title, type="", buttonText="", question="", numberOfGuests=0 })
               name: "date", autocomplete: "off", arrow: true
           })
       div(class= search ? "card__guests-dropdown_search" : "").card__guests-dropdown
-        .text-field__header
-          span.text-field__title гости
+        span.card__guests-dropdown_title гости
         +dropdown({
           isOpen: false, 
           group: "guests", 
