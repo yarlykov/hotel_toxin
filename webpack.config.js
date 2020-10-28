@@ -15,7 +15,7 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    index: "cards.html",
+    index: "start-page.html",
   },
 
   module: {
@@ -95,6 +95,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/pages/landing-page.pug',
       filename: 'landing.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/start-page.pug',
+      filename: 'start-page.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
