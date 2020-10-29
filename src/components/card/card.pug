@@ -8,7 +8,7 @@ include ../radio/radio.pug
 include ../button/button.pug
 include ../price-calc/price-calc.pug
 
-mixin card({ title, type="", buttonText="", question="", numberOfGuests=0 })
+mixin card({ title, type="", buttonText="", buttonLink="", question="", numberOfGuests=0 })
 
   -
     const questionButton = question.toLowerCase().indexOf("нет") !== -1 ? "Создать" : "Войти"
@@ -91,7 +91,7 @@ mixin card({ title, type="", buttonText="", question="", numberOfGuests=0 })
           +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
     if (buttonText !== "")
       .card__button
-        +button({ buttonName: buttonText, buttonVariation: "withArrow", textColor: "white", size: "large", link: "error-page"})
+        +button({ buttonName: buttonText, buttonVariation: "withArrow", textColor: "white", size: "large", link: buttonLink})
     if (question !== "")
       .card__question
         span.register__question_text #{question}
