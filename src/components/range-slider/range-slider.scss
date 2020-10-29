@@ -15,12 +15,19 @@
       border-radius: 6px;
       box-sizing: border-box;
    }
-
   }
 
   &__header{
     display: flex;
     justify-content: space-between;
+  }
+
+  &__subtitle {
+    font-family: Montserrat, "Open Sans", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    color: $textColor_50;
+    padding-top: 30px;
   }
 
   &:focus{

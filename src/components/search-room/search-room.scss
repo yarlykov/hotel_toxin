@@ -11,6 +11,25 @@
   &__filter {
     max-width: 266px;
     padding-top: 30px;
+
+    & .dropdown__guests { //это нужно пофиксить в dropdown!
+      width: 100%;
+    }
+  }
+  
+  .filter {
+    
+    &__dropdown-guests {
+      padding-top: 20px;
+    }
+
+    &__range-slider {
+      padding-top: 30px;
+    }
+
+    &__checkbox {
+      padding-top: 30px;
+    }
   }
 
   &__footer {

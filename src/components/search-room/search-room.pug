@@ -1,10 +1,12 @@
 include ../header/header.pug
 include ../text-field/text-field.pug
+include ../range-slider/range-slider.pug
+include ../checkbox/checkbox.pug
 include ../card/card.pug
 include ../footer/footer.pug
 
 mixin search-room({ header, filter, footer })
-  - const {dateDropdown} = filter
+  - const {dateDropdown, dropdownGuests, rangeSlider, checkbox } = filter
   body
     .search-room
       header.search-room__header
@@ -12,9 +14,18 @@ mixin search-room({ header, filter, footer })
       main.search-room__content
         .search-room__container
           aside.search-room__filter
-            .text-field__header
-              span.text-field__title #{dateDropdown.title}
-            +text-field(dateDropdown.options)
+            .filter__date-dropdown
+              .text-field__header
+                span.text-field__title #{dateDropdown.title}
+              +text-field(dateDropdown.options)
+            .filter__dropdown-guests
+              .text-field__header
+                span.text-field__title #{dropdownGuests.title}
+              +dropdown(dropdownGuests.options)
+            .filter__range-slider
+              +range-slider(rangeSlider)
+            .filter__checkbox
+              +checkbox(checkbox)
           section.search-room__selection-of-rooms
             .selection-of-rooms__widgets
             .selection-of-rooms__pagination

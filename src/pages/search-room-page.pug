@@ -26,8 +26,34 @@ block content
           type: "text", placeholder: "19 авг - 23 авг", size:"medium", 
           name:"text",  autocomplete: "off", arrow: true 
         }
+      },
+      dropdownGuests: {
+        title: "гости",
+        options: {
+          isOpen: false, group: "guests", 
+          elements: [
+            {title: "Взрослые", count: 2},
+            {title: "Дети", count: 0}, 
+            {title: "Младенцы", count: 1}
+          ]
+        }
+      },
+      rangeSlider: {
+        title: "диапазон цены",
+        subtitle: "Стоимость за сутки пребывания в номере"
+      },
+      checkbox: {	
+        mainTitle: "Checkbox buttons",
+        dropdown: false,
+        rich: false,
+        listItems: [
+          { title: "Можно курить" },
+          { title: "Можно с питомцами" },
+          { title: "Можно пригласить гостей (до\u00A010\u00A0человек)", checked: true }
+        ]
       }
     },
+
     footer: {
       logo: { type: "colorWithText", width: "106px"},
       footerText: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
