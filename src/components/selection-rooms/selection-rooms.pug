@@ -1,0 +1,12 @@
+include ../pagination/pagination.pug
+include ../room-review-widget/room-review-widget.pug
+
+mixin selection-rooms({ title, widgets })
+  .selection-rooms__container
+    .selection-rooms__title #{title}
+    .selection-rooms__widgets
+      each widget in widgets
+        .widgets__item
+          +room-review-widget(widget)
+    .selection-rooms__pagination
+      +pagination()
