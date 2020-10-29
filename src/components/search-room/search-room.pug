@@ -1,10 +1,11 @@
 include ../header/header.pug
 include ../filter/filter.pug
+include ../selection-rooms/selection-rooms.pug
 
 include ../card/card.pug
 include ../footer/footer.pug
 
-mixin search-room({ header, filter, footer })
+mixin search-room({ header, filter, selectionRooms, footer })
   body
     .search-room
       header.search-room__header
@@ -14,10 +15,8 @@ mixin search-room({ header, filter, footer })
           aside.search-room__filter
             +filter(filter)
             
-
-          section.search-room__selection-of-rooms
-            .selection-of-rooms__widgets
-            .selection-of-rooms__pagination
+          section.search-room__selection-rooms
+            +selection-rooms(selectionRooms)
 
     footer.search-room__footer
       +footer(footer)
