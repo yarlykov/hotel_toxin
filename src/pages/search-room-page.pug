@@ -51,7 +51,41 @@ block content
           { title: "Можно с питомцами" },
           { title: "Можно пригласить гостей (до\u00A010\u00A0человек)", checked: true }
         ]
-      }
+      },
+      richCheckbox: {	
+        mainTitle: "доступность",
+        dropdown: false,
+        rich: true,
+        listItems: [
+          { title: "Широкий коридор", rich: true, 
+            description: "Ширина коридоров в номере не\u00A0менее 91 см." },
+          { title: "Помощник для инвалидов", rich: true, 
+            description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера." }
+        ]
+      },
+      dropdownComfort: { 
+        title: "удобства номера",
+        isOpen: false, 
+        group: "comfort", 
+        elements: [
+          {title: "Спальни", count: 2}, 
+          {title: "Кровати", count: 2}, 
+          {title: "Ванные комнаты", count: 0}
+        ]
+      },
+      expandableCheckbox: {	
+        mainTitle: "дополнительные удобства",
+          dropdown: true,
+          rich: false,
+          listItems: [
+            { title: "Завтрак" }, 
+            { title: "Письменный стол", checked: true }, 
+            { title: "Стул для кормления", checked: true },
+            { title: "Кроватка", checked: true },
+            { title: "Телевизор" },
+            { title: "Шампунь" }
+          ]
+      },
     },
 
     footer: {

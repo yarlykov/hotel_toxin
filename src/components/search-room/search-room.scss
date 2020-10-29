@@ -4,7 +4,6 @@
   &__container {
     max-width: 1280px;
     margin: 0 auto;
-    height: 100vh;
     border: 1px solid royalblue;
   }
 
@@ -28,6 +27,18 @@
     }
 
     &__checkbox {
+      padding-top: 30px;
+    }
+
+    &__rich-checkbox {
+      padding-top: 30px;
+    }
+
+    &__dropdown-comfort {
+      padding-top: 30px;
+    }
+
+    &__expandable-checkbox{
       padding-top: 30px;
     }
   }

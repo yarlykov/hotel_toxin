@@ -6,7 +6,7 @@ include ../card/card.pug
 include ../footer/footer.pug
 
 mixin search-room({ header, filter, footer })
-  - const {dateDropdown, dropdownGuests, rangeSlider, checkbox } = filter
+  - const {dateDropdown, dropdownGuests, rangeSlider, checkbox, richCheckbox, dropdownComfort, expandableCheckbox } = filter
   body
     .search-room
       header.search-room__header
@@ -26,6 +26,15 @@ mixin search-room({ header, filter, footer })
               +range-slider(rangeSlider)
             .filter__checkbox
               +checkbox(checkbox)
+            .filter__rich-checkbox
+              +checkbox(richCheckbox)
+            .filter__dropdown-comfort
+              .text-field__header
+                span.text-field__title #{dropdownComfort.title}
+              +dropdown(dropdownComfort)
+            .filter__expandable-checkbox
+              +checkbox(expandableCheckbox)
+
           section.search-room__selection-of-rooms
             .selection-of-rooms__widgets
             .selection-of-rooms__pagination
