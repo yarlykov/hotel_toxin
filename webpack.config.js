@@ -105,6 +105,10 @@ module.exports = {
       filename: 'sing-in.html'
     }),
     new HtmlWebpackPlugin({
+      template: './src/pages/search-room-page.pug',
+      filename: 'search-room.html'
+    }),
+    new HtmlWebpackPlugin({
       template: './src/pages/start-page.pug',
       filename: 'start-page.html'
     }),

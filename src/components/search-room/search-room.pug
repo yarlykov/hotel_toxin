@@ -1,0 +1,23 @@
+include ../header/header.pug
+include ../text-field/text-field.pug
+include ../card/card.pug
+include ../footer/footer.pug
+
+mixin search-room({ header, filter, footer })
+  - const {dateDropdown} = filter
+  body
+    .search-room
+      header.search-room__header
+        +header(header)
+      main.search-room__content
+        .search-room__container
+          aside.search-room__filter
+            .text-field__header
+              span.text-field__title #{dateDropdown.title}
+            +text-field(dateDropdown.options)
+          section.search-room__selection-of-rooms
+            .selection-of-rooms__widgets
+            .selection-of-rooms__pagination
+
+    footer.search-room__footer
+      +footer(footer)
