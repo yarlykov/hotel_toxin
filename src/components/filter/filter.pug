@@ -1,0 +1,25 @@
+include ../text-field/text-field.pug
+include ../range-slider/range-slider.pug
+include ../checkbox/checkbox.pug
+
+mixin filter({ dateDropdown={}, dropdownGuests={}, rangeSlider={}, checkbox={}, richCheckbox={}, dropdownComfort={}, expandableCheckbox={} })
+  .filter__date-dropdown
+    .text-field__header
+      span.text-field__title #{dateDropdown.title}
+    +text-field(dateDropdown.options)
+    .filter__dropdown-guests
+      .text-field__header
+        span.text-field__title #{dropdownGuests.title}
+      +dropdown(dropdownGuests.options)
+    .filter__range-slider
+      +range-slider(rangeSlider)
+    .filter__checkbox
+      +checkbox(checkbox)
+    .filter__rich-checkbox
+      +checkbox(richCheckbox)
+    .filter__dropdown-comfort
+      .text-field__header
+        span.text-field__title #{dropdownComfort.title}
+      +dropdown(dropdownComfort)
+    .filter__expandable-checkbox
+      +checkbox(expandableCheckbox)
