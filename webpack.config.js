@@ -109,6 +109,10 @@ module.exports = {
       filename: 'search-room.html'
     }),
     new HtmlWebpackPlugin({
+      template: './src/pages/room-details-page.pug',
+      filename: 'room-details.html'
+    }),
+    new HtmlWebpackPlugin({
       template: './src/pages/start-page.pug',
       filename: 'start-page.html'
     }),
