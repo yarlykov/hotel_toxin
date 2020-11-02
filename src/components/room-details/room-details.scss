@@ -1,0 +1,7 @@
+.room-details {
+  flex: 1 0 auto;
+
+  &__footer {
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,11 @@
+include ../header/header.pug
+include ../footer/footer.pug
+
+mixin room-details({ header, footer })
+  body
+    .room-details 
+      header.room-details__header
+        +header(header)
+        
+    footer.room-details__footer
+      +footer(footer)
