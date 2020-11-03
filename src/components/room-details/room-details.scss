@@ -78,9 +78,9 @@
   }
 
   &__rules {
-    width: 292px;
-    height: 160px;
-    border: 1px dashed black;
+    & .information__title {
+      padding: 0 0 20px 20px;
+    }
   }
 
   &__cancel {

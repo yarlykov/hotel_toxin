@@ -2,10 +2,11 @@ include ../header/header.pug
 include ../room-photo/room-photo.pug
 include ../dignity-room/dignity-room.pug
 include ../comment/comment.pug
+include ../bullet-list/bullet-list.pug
 include ../card/card.pug
 include ../footer/footer.pug
 
-mixin room-details({ header, roomPhoto, roomDignities, feedback, footer })
+mixin room-details({ header, roomPhoto, roomDignities, feedback, bulletList, footer })
   body
     .room-details 
       header.room-details__header
@@ -28,8 +29,12 @@ mixin room-details({ header, roomPhoto, roomDignities, feedback, footer })
             .feedback__item
               each comment in feedback.items
                 +comment(comment)
-                
+
           .information__rules
+            h3.information__title #{bulletList.title}
+            .rules__list
+              +bullet-list(bulletList)
+
           .information__cancel
 
         .room-details__calculation
