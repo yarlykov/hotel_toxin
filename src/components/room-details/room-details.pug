@@ -1,10 +1,11 @@
 include ../header/header.pug
 include ../room-photo/room-photo.pug
 include ../dignity-room/dignity-room.pug
+include ../comment/comment.pug
 include ../card/card.pug
 include ../footer/footer.pug
 
-mixin room-details({ header, roomPhoto, roomDignities, footer })
+mixin room-details({ header, roomPhoto, roomDignities, feedback, footer })
   body
     .room-details 
       header.room-details__header
@@ -13,10 +14,23 @@ mixin room-details({ header, roomPhoto, roomDignities, footer })
         +room-photo({ roomPhoto })
       .room-details__content
         .room-details__information
-          .room-details__dignity
-            h3.room-details__title #{roomDignities.title}
+          .information__dignity
+            h3.information__title #{roomDignities.title}
             each dignity in roomDignities.items
               +dignity-room(dignity)
+
+          .information__impressions
+
+          .information__feedback
+            .feedback__header
+              h3.information__title #{feedback.title}
+              .information__subtitle #{feedback.subtitle}
+            .feedback__item
+              each comment in feedback.items
+                +comment(comment)
+                
+          .information__rules
+          .information__cancel
 
         .room-details__calculation
           +card({
