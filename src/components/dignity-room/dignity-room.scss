@@ -1,13 +1,9 @@
 .dignity-room{
-  width: 280px;
   
   &__item{
     display: flex;
     align-items: center;
-    height: 48px;
-    &:not(:first-child) {
-      margin-top: 20px;
-    }
+    padding: 20px 0;
   }
   
   &__icon{
@@ -16,7 +12,6 @@
     line-height: 41px;
     background: $mainGradient;
     background-clip: text;
-    margin-left: -1px;
     padding-top: 1px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -42,8 +37,10 @@
   }
 
   &__line {
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-    width: 279px;
-    padding-top: 20px;
+    border: none;
+    color: rgba(31, 32, 65, 0.1);
+    background-color: rgba(31, 32, 65, 0.1);
+    height: 1px;
+    margin: 0;
   }
 }
