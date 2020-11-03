@@ -84,9 +84,7 @@
   }
 
   &__cancel {
-    width: 292px;
-    height: 160px;
-    border: 1px dashed black;
+    max-width: 341px;
   }
 }
 
@@ -103,5 +101,16 @@
   }
   &__item .comment:first-child{
     padding-top: 22px;
+  }
+}
+
+.cancel {
+
+  &__text {
+    padding-top: 20px;
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 24px;
+    color: $textColor_75;
   }
 }

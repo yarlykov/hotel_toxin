@@ -6,7 +6,7 @@ include ../bullet-list/bullet-list.pug
 include ../card/card.pug
 include ../footer/footer.pug
 
-mixin room-details({ header, roomPhoto, roomDignities, feedback, bulletList, footer })
+mixin room-details({ header, roomPhoto, roomDignities, feedback, bulletList, cancel, footer })
   body
     .room-details 
       header.room-details__header
@@ -36,6 +36,8 @@ mixin room-details({ header, roomPhoto, roomDignities, feedback, bulletList, foo
               +bullet-list(bulletList)
 
           .information__cancel
+            h3.information__title #{cancel.title}
+            p.cancel__text #{cancel.text}
 
         .room-details__calculation
           +card({
