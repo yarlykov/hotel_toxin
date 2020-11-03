@@ -7,6 +7,42 @@
     margin: 0 auto;
     display: flex;
   }
+
+  &__content {
+    max-width: 1160px;
+    min-height: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+  }
+
+  &__title {
+    font-family: "Open Sans", Quicksand, sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    color: $mainTextColor;
+    
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__information {
+    flex: 1 0 auto;
+    margin-right: 69px;
+  }
+
+  &__dignity {
+    box-sizing: border-box;
+    max-width: 291px;
+    padding-right: 11px;
+  }
+
+  &__calculation{
+
+  }
   
   &__footer {
     flex-shrink: 0;

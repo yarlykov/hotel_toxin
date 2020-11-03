@@ -1,14 +1,29 @@
 include ../header/header.pug
 include ../room-photo/room-photo.pug
+include ../dignity-room/dignity-room.pug
+include ../card/card.pug
 include ../footer/footer.pug
 
-mixin room-details({ header, roomPhoto, footer })
+mixin room-details({ header, roomPhoto, roomDignities, footer })
   body
     .room-details 
       header.room-details__header
         +header(header)
       .room-details__room-photo
-        +room-photo({roomPhoto})
+        +room-photo({ roomPhoto })
+      .room-details__content
+        .room-details__information
+          .room-details__dignity
+            h3.room-details__title #{roomDignities.title}
+            each dignity in roomDignities.items
+              +dignity-room(dignity)
+
+        .room-details__calculation
+          +card({
+            type: "calculation",
+            buttonText: "забронировать",
+            numberOfGuests: 3,
+          })
 
     footer.room-details__footer
       +footer(footer)
