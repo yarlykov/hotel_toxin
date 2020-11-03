@@ -1,11 +1,14 @@
 include ../header/header.pug
+include ../room-photo/room-photo.pug
 include ../footer/footer.pug
 
-mixin room-details({ header, footer })
+mixin room-details({ header, roomPhoto, footer })
   body
     .room-details 
       header.room-details__header
         +header(header)
-        
+      .room-details__room-photo
+        +room-photo({roomPhoto})
+
     footer.room-details__footer
       +footer(footer)
