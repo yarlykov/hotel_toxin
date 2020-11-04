@@ -8,5 +8,6 @@ import './components/checkbox/checkbox'
 import './components/header/header'
 import './components/navigation/navigation'
 import './components/carousel/carousel'
+import './components/chart/chart'
 
 import './main.scss';

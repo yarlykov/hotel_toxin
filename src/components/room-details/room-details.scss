@@ -18,8 +18,8 @@
   }
 
   &__information {
-    flex: 1 0 auto;
-    margin-right: 69px;
+    // flex: 1 0 auto;
+    // margin-right: 69px;
     // border: 1px dashed black;
     display: grid;
     grid-template-columns: 291px 1fr;
@@ -54,7 +54,7 @@
 
   &__dignity {
     box-sizing: border-box;
-    max-width: 291px;
+    // max-width: 291px;
     padding-right: 11px;
 
     & .dignity-room__item:nth-last-child(2){

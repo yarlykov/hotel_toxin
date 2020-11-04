@@ -2,6 +2,7 @@ include ../header/header.pug
 include ../room-photo/room-photo.pug
 include ../dignity-room/dignity-room.pug
 include ../comment/comment.pug
+include ../chart/chart.pug
 include ../bullet-list/bullet-list.pug
 include ../card/card.pug
 include ../footer/footer.pug
@@ -21,6 +22,7 @@ mixin room-details({ header={}, roomPhoto={}, roomDignities={}, feedback={}, bul
               +dignity-room(dignity)
 
           .information__impressions
+            +chart()
 
           .information__feedback
             .feedback__header
