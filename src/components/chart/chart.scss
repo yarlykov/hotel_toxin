@@ -1,0 +1,29 @@
+.canvas {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 313px;
+  max-height: 172px;
+}
+
+.chart {
+  padding-bottom: 7px;
+}
+
+.unit {
+  fill: none;
+  stroke-width: 1.2;
+
+  &:nth-child(1){
+    stroke-dasharray: 49 100;
+    stroke-dashoffset: -25.5;
+  }
+  &:nth-child(2){
+    stroke-dasharray: 24.5 100;
+    stroke-dashoffset: -75;
+  }
+  &:nth-child(3){
+    stroke-dasharray: 24.7 100;
+    stroke-dashoffset: -0.2;
+  }
+}
