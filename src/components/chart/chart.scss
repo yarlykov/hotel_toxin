@@ -3,17 +3,89 @@
   justify-content: space-between;
   align-items: flex-end;
   max-width: 313px;
-  max-height: 172px;
+  max-height: 148px;
 }
 
 .chart {
   padding-bottom: 7px;
+  width: 120px;
+  height: 120px;
+
+  &__sum-of-vote {
+    font-family: Quicksand, "Open Sans", sans-serif;
+    font-weight: 700;
+    fill: #BC9CFF;
+  }
+}
+
+.sum-of-vote {
+
+  &__number {
+    font-size: 6.5px;
+    line-height: 30px;
+  }
+  &__text {
+    font-size: 4.5px;
+    line-height: 15px;
+  }
+}
+
+.legend {
+  
+  &__list {
+    list-style: none;
+    padding: 0 2px 5px 0;
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: $textColor_75;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: -15px;
+      width: 10px;
+      height: 10px;
+      border-radius: 8px;
+    }
+
+    &:nth-child(1)::before {
+      background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+    }
+    &:nth-child(2)::before {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    }
+    &:nth-child(3)::before {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+    &:nth-child(4)::before {
+      background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+    }
+
+    &:hover {
+      color: $textColor_50;
+    }
+  }
 }
 
 .unit {
   fill: none;
   stroke-width: 1.2;
+  cursor: pointer;
+  transition-property: all; 
+  transition-duration: .5s;
 
+  &:hover {
+    stroke-width: 2.3;
+  }
+  
   &:nth-child(1){
     stroke-dasharray: 49 100;
     stroke-dashoffset: -25.5;
@@ -26,4 +98,12 @@
     stroke-dasharray: 24.7 100;
     stroke-dashoffset: -0.2;
   }
+
+  &_hidden {
+    display: none;
+  }
+}
+
+.js-legend-hovered {
+  stroke-width: 2.3;
 }

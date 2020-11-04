@@ -1,9 +1,13 @@
 mixin chart()
   .canvas
-    svg(class="chart" width="120px" height="120px" viewBox="0 0 33 31")
+    svg(class="chart" viewBox="0 0 34 30")
       circle(class="unit" r="15.9" cx="50%" cy="50%" stroke="url(#yellow_gradient)")
       circle(class="unit" r="15.9" cx="50%" cy="50%" stroke="url(#purple_gradient)")
       circle(class="unit" r="15.9" cx="50%" cy="50%" stroke="url(#green_gradient)")
+      circle(class="unit unit_hidden" r="15.9" cx="50%" cy="50%" stroke="url(#black_gradient)")
+      g(class="chart__sum-of-vote")
+        text(class="sum-of-vote__number" text-anchor="middle" x="50%" y="49%") 260
+        text(class="sum-of-vote__text" text-anchor="middle" x="50%" y="67%") голосов
       linearGradient(id="purple_gradient" x1="60" y1="0" x2="60" y2="120")
         stop(stop-color="#BC9CFF")
         stop(offset="1" stop-color="#8BA4F9")
@@ -16,3 +20,9 @@ mixin chart()
       linearGradient(id="black_gradient" x1="60" y1="0" x2="60" y2="120")
         stop(stop-color="#919191")
         stop(offset="1" stop-color="#3D4975")
+    .chart__legend
+      ul.legend__list
+        li.legend__item Великолепно
+        li.legend__item Хорошо
+        li.legend__item Удовлетворительно
+        li.legend__item Разочарован
