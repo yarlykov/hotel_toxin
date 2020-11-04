@@ -43,7 +43,6 @@
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
     "air-datepicker": "^2.2.3",
-    "chart.js": "^2.9.4",
     "inputmask": "^5.0.5",
     "jquery": "^3.5.1",
     "jquery-ui-slider": "^1.12.1",
