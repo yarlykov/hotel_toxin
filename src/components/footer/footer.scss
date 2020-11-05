@@ -13,7 +13,10 @@
   &__wrapper {
     box-sizing: border-box;
     background-color: #fff;
-    border-top: 1px solid $textColor_25;
+    
+    &_border {
+      border-top: 1px solid $textColor_25;
+    }
     
     @media (max-width: 767px) {
       display: none;

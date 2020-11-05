@@ -3,8 +3,10 @@ include ../../components/subscribe/subscribe.pug
 include ../../components/logo/logo.pug
 include ../../components/social/social.pug
 
-mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyright={}, social={} })
-  footer.footer__wrapper
+mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyright={}, social={}, border=false })
+  - const borderTopClass = border ? "footer__wrapper_border" : ""
+  
+  footer(class=borderTopClass).footer__wrapper
     .footer 
       .footer__logo
         +logo(logo)
