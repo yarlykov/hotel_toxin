@@ -118,9 +118,7 @@ $('.js-air-datepicker__day-end').datepicker({
 
 
 const $dateStart = $('.js-air-datepicker__day-start')
-console.log($dateStart)
 const $dateEnd = $('.js-air-datepicker__day-end')
-console.log($dateEnd)
 
 $dateStart.datepicker({
   onSelect: function (fd, date) {
