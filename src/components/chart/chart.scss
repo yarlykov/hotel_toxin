@@ -7,9 +7,14 @@
 }
 
 .chart {
-  padding-bottom: 7px;
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
+  
+  &__doughnut {
+    padding-bottom: 7px;
+    width: 120px;
+    height: 120px;
+  }
 
   &__sum-of-vote {
     font-family: Quicksand, "Open Sans", sans-serif;
@@ -44,6 +49,10 @@
     line-height: 24px;
     color: $textColor_75;
     cursor: pointer;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
 
     &::before {
       content: "";

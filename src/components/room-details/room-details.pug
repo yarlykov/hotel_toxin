@@ -7,7 +7,7 @@ include ../bullet-list/bullet-list.pug
 include ../card/card.pug
 include ../footer/footer.pug
 
-mixin room-details({ header={}, roomPhoto={}, roomDignities={}, feedback={}, bulletList={}, cancel={}, calculationCard={}, footer={} })
+mixin room-details({ header={}, roomPhoto={}, roomDignities={}, chartDoughnut={}, feedback={}, bulletList={}, cancel={}, calculationCard={}, footer={} })
   body
     .room-details 
       header.room-details__header
@@ -22,8 +22,8 @@ mixin room-details({ header={}, roomPhoto={}, roomDignities={}, feedback={}, bul
               +dignity-room(dignity)
 
           .information__impressions
-            h3.information__title Впечатления от номера
-            +chart()
+            h3.information__title #{chartDoughnut.title}
+            +chart(chartDoughnut.options)
 
           .information__feedback
             .feedback__header
