@@ -2,15 +2,30 @@
   flex: 1 0 auto;
 
   &__container {
+    position: relative;
     max-width: 1160px;
     margin: 0 auto;
     display: flex;
     margin-bottom: 69px;
+
+    @media (max-width: 1280px) {
+      max-width: 1280px;
+    }
   }
 
   &__filter {
+    position: relative;
+    font-family: 'Font Awesome solid';
+    font-size: 24px;
+    color: #000000;
     max-width: 266px;
     padding-top: 30px;
+    transition: 0.3s;
+
+    @media (max-width: 1280px) {
+      position: absolute;
+      transform: translateX(-270px);
+    }
 
     & .dropdown__guests { //это нужно пофиксить в dropdown!
       width: 100%;
@@ -20,9 +35,33 @@
   &__selection-rooms {
     padding: 30px 0 0px 60px;
     width: 100%;
+
+    // @media (max-width: 1210px) {
+    //   padding: 25px;
+    // }
+    @media (max-width: 1168px) {
+      max-width: 850px;
+    }
   }
 
   &__footer {
     flex-shrink: 0;
   }
 }
+
+.search-room__filter::before {
+  content: "\f0b0";
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  display: none;
+  width: 50px;
+  height: 50px;
+  background: chartreuse;
+  right: -50px;
+
+  @media (max-width: 1280px) {
+    display: inline-block;
+  }
+}
+
