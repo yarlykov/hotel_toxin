@@ -15,13 +15,14 @@
     flex-direction: column;
     width: 100%;
     min-height: 400px;
-
+    
     @media (max-width: 1280px){
       display: none;
     }
-
+    
     &_top {
       height: 50%;
+      transform: scale(-1, 1);
     }
     &_bottom {
       height: 50%;

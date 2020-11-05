@@ -29,8 +29,8 @@ mixin room-details({ header={}, roomPhoto={}, roomDignities={}, chartDoughnut={}
             .feedback__header
               h3.information__title #{feedback.title}
               .information__subtitle #{feedback.subtitle}
-            .feedback__item
-              each comment in feedback.items
+            each comment in feedback.items
+              .feedback__item
                 +comment(comment)
 
           .information__rules

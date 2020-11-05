@@ -5,13 +5,16 @@
   justify-content: space-between;
   margin: 0px auto;
   padding: 100px 0 99px 0;
+  
   @media (max-width: 1280px) {
     justify-content: space-around;
   }
-
+  
   &__wrapper {
     box-sizing: border-box;
     background-color: #fff;
+    border-top: 1px solid $textColor_25;
+    
     @media (max-width: 767px) {
       display: none;
     }

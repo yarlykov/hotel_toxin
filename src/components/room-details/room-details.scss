@@ -1,6 +1,7 @@
 .room-details {
   flex: 1 0 auto;
 
+
   &__room-photo {
     max-width: 1440px;
     max-height: 485px;
@@ -18,12 +19,10 @@
   }
 
   &__information {
-    // flex: 1 0 auto;
-    // margin-right: 69px;
-    // border: 1px dashed black;
     display: grid;
     grid-template-columns: 291px 1fr;
-    grid-gap: 30px 70px;
+    grid-gap: 33px 70px;
+    padding-bottom: 72px;
   }
   
   &__footer {
@@ -54,7 +53,6 @@
 
   &__dignity {
     box-sizing: border-box;
-    // max-width: 291px;
     padding-right: 11px;
 
     & .dignity-room__item:nth-last-child(2){
@@ -65,20 +63,13 @@
     }
   }
   
-  &__impressions{
-    width: 311px;
-    height: 170px;
-  }
-
   &__feedback {
     grid-column: 1/3;
-    width: 712px;
-    height: 306px;
   }
 
   &__rules {
     & .information__title {
-      padding: 0 0 20px 20px;
+      padding: 0px 0 17px 20px;
     }
   }
 
@@ -95,19 +86,19 @@
     align-items: baseline;
   }
 
-  &__item .comment{
+  &__item {
     padding-top: 20px;
-  }
-  &__item .comment:first-child{
-    padding-top: 22px;
+    &:last-child {
+      padding-top: 23px;
+    }
   }
 }
 
 .cancel {
 
   &__text {
-    padding-top: 20px;
-    font-family: Montserrat;
+    padding-top: 17px;
+    font-family: Montserrat, sans-serif;
     font-size: 14px;
     line-height: 24px;
     color: $textColor_75;
