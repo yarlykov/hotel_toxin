@@ -2,4 +2,5 @@ mixin carousel({ images=[] })
   .carousel
     each image in images
       .carousel__item
-        img(src=require(`../components/carousel/image/${image.name}`).default)
+        a(href="./room-details.html")
+          img(src=require(`../components/carousel/image/${image.name}`).default)
