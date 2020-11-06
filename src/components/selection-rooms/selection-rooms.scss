@@ -27,14 +27,9 @@
     grid-row-gap: 20px;
     padding: 20.5px 0 40.5px 0;
     
+    
     @media (max-width: 1280px) {
       grid-template-rows: repeat(3, 1fr);
     }
   }
-}
-
-.test {
-  width: 44px;
-  height: 50px;
-  background-color: red;
 }

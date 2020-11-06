@@ -11,8 +11,8 @@ mixin search-room({ header, filter, selectionRooms, footer })
       header.search-room__header
         +header(header)
       main.search-room__content
-        .search-room__container
-          aside.search-room__filter
+        .search-room__container.js-search-room
+          aside.search-room__filter.js-search-room__filter
             +filter(filter)
             
           section.search-room__selection-rooms
