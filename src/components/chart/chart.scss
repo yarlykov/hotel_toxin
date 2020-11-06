@@ -4,6 +4,7 @@
   align-items: flex-end;
   max-width: 313px;
   max-height: 148px;
+  padding-top: 21px;
 }
 
 .chart {
@@ -12,6 +13,7 @@
   
   &__doughnut {
     padding-bottom: 7px;
+    margin-right: 25px;
     width: 120px;
     height: 120px;
   }
