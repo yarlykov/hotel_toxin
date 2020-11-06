@@ -9,5 +9,6 @@ import './components/header/header'
 import './components/navigation/navigation'
 import './components/carousel/carousel'
 import './components/chart/chart'
+import './components/filter/filter'
 
 import './main.scss';

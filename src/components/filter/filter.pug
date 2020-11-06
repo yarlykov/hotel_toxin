@@ -3,9 +3,9 @@ include ../range-slider/range-slider.pug
 include ../checkbox/checkbox.pug
 
 mixin filter({ dateDropdown={}, dropdownGuests={}, rangeSlider={}, checkbox={}, richCheckbox={}, dropdownComfort={}, expandableCheckbox={} })
-  .filter__date-dropdown
-    .text-field__header
-      span.text-field__title #{dateDropdown.title}
+    .filter__date-dropdown
+      .text-field__header
+        span.text-field__title #{dateDropdown.title}
     +text-field(dateDropdown.options)
     .filter__dropdown-guests
       .text-field__header
@@ -23,3 +23,4 @@ mixin filter({ dateDropdown={}, dropdownGuests={}, rangeSlider={}, checkbox={}, 
       +dropdown(dropdownComfort)
     .filter__expandable-checkbox
       +checkbox(expandableCheckbox)
+    .filter__icon.js-filter__icon
