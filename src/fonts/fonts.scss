@@ -88,44 +88,41 @@
 /*-------Material Icon---------*/
 @font-face {
   font-family: 'Material Icons';
-  src: local('MaterialIcons'),
+  src: local('Material Icons'),
+       url('fonts/MaterialIcons/MaterialIcons-Regular.woff2') format('woff2'),
        url('fonts/MaterialIcons/MaterialIcons-Regular.woff') format('woff'),
        url('fonts/MaterialIcons/MaterialIcons-Regular.ttf') format('truetype'),
        url('fonts/MaterialIcons/MaterialIcons-Regular.svg') format('svg');
   font-style: normal;
   font-weight: 400;
+  unicode-range: e5cf, e5ce, e5c8, e7f2, e7f3, e7f1, e80e;
 }
 
 @font-face {
   font-family: 'Font Awesome';
   src:  
     local('Font Awesome'),
-    url("fonts/Fontawesome5/fa-brands-400.woff") format("woff"), 
-    url("fonts/Fontawesome5/fa-brands-400.ttf") format("truetype"), 
-    url("fonts/Fontawesome5/fa-brands-400.svg") format("svg"); 
+    url("fonts/Fontawesome5/FontAwesome5Brands-Regular.woff2") format("woff2"), 
+    url("fonts/Fontawesome5/FontAwesome5Brands-Regular.woff") format("woff"), 
+    url("fonts/Fontawesome5/FontAwesome5Brands-Regular.ttf") format("truetype"), 
+    url("fonts/Fontawesome5/FontAwesome5Brands-Regular.svg") format("svg"); 
   font-style: normal;
   font-weight: 400;
   font-display: block;
-}
-
-@font-face {
-  font-family: 'Font Awesome regular';
-  src:  url("fonts/Fontawesome5/fa-regular-400.woff") format("woff"), 
-        url("fonts/Fontawesome5/fa-regular-400.ttf") format("truetype"), 
-        url("fonts/Fontawesome5/fa-regular-400.svg") format("svg"); 
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
+  unicode-range: f099, f082, f16d, f189;
 }
 
 @font-face {
   font-family: 'Font Awesome solid';
-  src:  url("fonts/Fontawesome5/fa-solid-900.woff") format("woff"), 
-        url("fonts/Fontawesome5/fa-solid-900.ttf") format("truetype"), 
-        url("fonts/Fontawesome5/fa-solid-900.svg") format("svg"); 
+  src:  
+      url("fonts/Fontawesome5/FontAwesome5Free-Solid.woff2") format("woff2"), 
+      url("fonts/Fontawesome5/FontAwesome5Free-Solid.woff") format("woff"), 
+      url("fonts/Fontawesome5/FontAwesome5Free-Solid.ttf") format("truetype"), 
+      url("fonts/Fontawesome5/FontAwesome5Free-Solid.svg") format("svg"); 
   font-style: normal;
   font-weight: 400;
   font-display: block;
+  unicode-range: f0b0;
 }
 
 .material-icons {

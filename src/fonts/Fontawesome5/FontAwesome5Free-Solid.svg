@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20170731 at Mon Mar 23 18:45:51 2020
+ By Aleksey,,,
+Copyright (c) Font Awesome
+</metadata>
+<defs>
+<font id="FontAwesome5Free-Solid" horiz-adv-x="512" >
+  <font-face 
+    font-family="Font Awesome 5 Free Solid"
+    font-weight="900"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="-0.44898 -64.4138 512.449 448"
+    underline-thickness="25"
+    underline-position="-73"
+    unicode-range="U+F0B0-F0B0"
+  />
+<missing-glyph 
+ />
+    <glyph glyph-name=".notdef" 
+ />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="170" 
+ />
+    <glyph glyph-name="glass-martini" 
+d="M502 390l-214 -214v-192h56q17 0 28.5 -11.5t11.5 -28.5q0 -8 -8 -8h-240q-8 0 -8 8q0 17 11.5 28.5t28.5 11.5h56v192l-214 214q-16 16 -7.5 37t31.5 21h444q23 0 31.5 -21t-7.5 -37z" />
+    <glyph glyph-name="filter" unicode="&#xf0b0;" 
+d="M488 448q16 0 22 -15t-5 -26l-185 -185v-262q0 -15 -13 -21.5t-25 1.5l-80 56q-10 8 -10 20v206l-185 185q-11 11 -5 26t22 15h464z" />
+  </font>
+</defs></svg>
