@@ -1,7 +1,9 @@
 /*-------Quicksland---------*/
 @font-face {
   font-family: 'Quicksand';
+  font-display: swap;
   src: 
+    local('Quicksand'),
     url('fonts/Quicksand/Quicksand-Regular.woff') format('woff'),
     url('fonts/Quicksand/Quicksand-Regular.ttf') format('truetype'),
     url('fonts/Quicksand/Quicksand-Regular.svg') format('svg');
@@ -10,7 +12,9 @@
 }
 @font-face {
   font-family: 'Quicksand';
+  font-display: swap;
   src: 
+    local('Quicksand'),
     url('fonts/Quicksand/Quicksand-Bold.woff') format('woff'),
     url('fonts/Quicksand/Quicksand-Bold.svg') format('svg'),
     url('fonts/Quicksand/Quicksand-Bold.ttf') format('truetype');
@@ -20,7 +24,9 @@
 /*-------Open Sans---------*/
 @font-face {
   font-family: 'Open Sans';
+  font-display: swap;
   src: 
+    local('Open Sans'),
     url('fonts/OpenSans/OpenSans-Regular.woff') format('woff'),
     url('fonts/OpenSans/OpenSans-Regular.ttf') format('truetype'),
     url('fonts/OpenSans/OpenSans-Regular.svg') format('svg');
@@ -29,30 +35,45 @@
 }
 @font-face {
   font-family: 'Open Sans';
+  font-display: swap;
   src: 
+    local('Open Sans'),
     url('fonts/OpenSans/OpenSans-Bold.woff') format('woff'),
     url('fonts/OpenSans/OpenSans-Bold.svg') format('svg'),
     url('fonts/OpenSans/OpenSans-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
-/*-------Montserrat---------*/
+
+
+/*-------Montserrat--Regular------*/
 @font-face {
   font-family: 'Montserrat';
-  src: url('fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
+  font-display: swap;
+  src: 
+    local('Montserrat'),
+    url('fonts/Montserrat/Montserrat-Regular.woff2') format('woff2'),
+    url('fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
     url('fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'),
     url('fonts/Montserrat/Montserrat-Regular.svg') format('svg');
   font-weight: 400;
   font-style: normal;
 }
+
+/*-------Montserrat--Bold------*/
 @font-face {
   font-family: 'Montserrat';
-  src: url('fonts/Montserrat/Montserrat-Bold.woff') format('woff'),
+  font-display: swap;
+  src:
+    local('Montserrat'), 
+    url('fonts/Montserrat/Montserrat-Bold.woff2') format('woff2'),
+    url('fonts/Montserrat/Montserrat-Bold.woff') format('woff'),
     url('fonts/Montserrat/Montserrat-Bold.ttf') format('truetype'),
     url('fonts/Montserrat/Montserrat-Bold.svg') format('svg');
   font-weight: 700;
   font-style: normal;
 }
+
 /*-------Material Icon---------*/
 @font-face {
   font-family: 'Material Icons';
@@ -67,9 +88,11 @@
 
 @font-face {
   font-family: 'Font Awesome';
-  src:  url("fonts/Fontawesome5/fa-brands-400.woff") format("woff"), 
-        url("fonts/Fontawesome5/fa-brands-400.ttf") format("truetype"), 
-        url("fonts/Fontawesome5/fa-brands-400.svg") format("svg"); 
+  src:  
+    local('Font Awesome'),
+    url("fonts/Fontawesome5/fa-brands-400.woff") format("woff"), 
+    url("fonts/Fontawesome5/fa-brands-400.ttf") format("truetype"), 
+    url("fonts/Fontawesome5/fa-brands-400.svg") format("svg"); 
   font-style: normal;
   font-weight: 400;
   font-display: block;
