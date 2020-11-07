@@ -11,7 +11,7 @@ paginationMainNode.each(function(){
     formatNavigator: '<span><%= currentPage %></span> – 12 из 100+ вариантов аренды',
     showPrevious: false,
     showNext: true,
-    nextText: '<span class="material-icons js-pagination__next-button">arrow_forward</span>',
+    nextText: '<span class="js-pagination__next-button"></span>',
     autoHideNext: true,
   })
 })

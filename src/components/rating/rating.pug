@@ -1,12 +1,12 @@
 //- вспомогательный, для вывода пустых звезд
 mixin star_border({ emptyStar=0 })
   - for (let i = 0; i < emptyStar; i++)
-    i.material-icons.gradient star_border
+    span.rating__star_border
   //-основной миксин принимает оценку и рассчитывает кол. пустых звезд
 mixin rating({ rating=0 }) 
   .rating
     if rating < 5
     - let emptyStar = 5 - rating;
     - for(let i = 0; i < rating; i++)
-      i.material-icons.gradient star
+      span.rating__star
     +star_border({ emptyStar })
