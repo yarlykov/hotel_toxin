@@ -15,6 +15,16 @@
     padding-top: 1px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    &_mood::before {
+      content: '\e7f2'
+    }
+    &_location_city::before {
+      content: '\e7f1'
+    }
+    &_whatshot::before {
+      content: '\e80e'
+    }
 	}
 	
   &__description{

@@ -29,7 +29,24 @@
     top: 4px;
     left: 5px;
     font-size: 10px;
-    color: $designColor_main;
+    font-family: "Material Icons";
+    font-size: 10px;
+    
+    &_favorite::before {
+      content: '\e87d';
+      background: $mainGradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    &_favorite_border::before {
+      content: '\e87e';
+      background: $textColor_25;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   &__text{

@@ -54,7 +54,6 @@
   font-style: normal;
 }
 
-
 /*-------Montserrat--Regular------*/
 @font-face {
   font-family: 'Montserrat';
@@ -95,7 +94,7 @@
        url('fonts/MaterialIcons/MaterialIcons-Regular.svg') format('svg');
   font-style: normal;
   font-weight: 400;
-  unicode-range: e5cf, e5ce, e5c8, e7f2, e7f3, e7f1, e80e;
+  unicode-range: e5cf, e5ce, e5c8, e7f2, e7f3, e7f1, e80e, e87d, e87e;
 }
 
 @font-face {
@@ -125,28 +124,6 @@
   unicode-range: f0b0;
 }
 
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
 .font__h1{
   font-family: $secondFont;
   font-style: normal;
