@@ -22,13 +22,34 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true }
+          },
+          {
+            loader: 'postcss-loader',
+            options: { sourceMap: true,}
+          },
+        ],
       },
       {
         test: /\.(scss|sass)$/,
-        use: [MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true }
+          },
+          {
+            loader: 'postcss-loader',
+            options: { sourceMap: true,}
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true }
+          },
         ],
       },
       {

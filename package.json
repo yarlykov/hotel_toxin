@@ -10,7 +10,10 @@
     "build": "webpack  --mode production",
     "deploy": "npm run build && gh-pages -d dist"
   },
-  "browserslist": "> 0.25%, not dead",
+  "browserslist": [
+    ">1%",
+    "last 3 version"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yarlykov/Toxin.git"
@@ -24,15 +27,20 @@
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
+    "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.1.1",
     "css-loader": "^3.6.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
     "file-loader": "^6.1.0",
     "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
+    "postcss": "^8.1.6",
+    "postcss-loader": "^4.0.4",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
     "sass-loader": "^8.0.2",
