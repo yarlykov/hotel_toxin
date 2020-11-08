@@ -1,5 +1,4 @@
 .room-details {
-  flex: 1 0 auto;
 
   &__room-photo {
     max-width: 1440px;
@@ -41,10 +40,6 @@
      @media (max-width: 1200px) {
       padding-bottom: 70px;
     }
-  }
-  
-  &__footer {
-    flex-shrink: 0;
   }
 }
 
