@@ -95,9 +95,6 @@ ul {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  main { 
-    flex-grow: 1;
-  }
 }
 
 html {
@@ -115,6 +112,10 @@ body {
   flex-direction: column;
 }
 
+.page-wrapper {
+  flex: 1 0 auto;
+}
+
 a {
   color: $textColor_50;
   text-decoration: none;
@@ -129,7 +130,3 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.border {
-  border: $redBorder;
-}
-

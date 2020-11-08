@@ -1,5 +1,4 @@
 .sing-in {
-  flex: 1 0 auto;
   
   &__content {
     background: url('./components/sing-in/image/sing-in-background.jpg') no-repeat;
@@ -44,9 +43,5 @@
     @media (max-width: 480px) {
       padding-bottom: 3.5714rem;
     }
-  }
-
-  &__footer {
-    flex-shrink: 0;
   }
 }
