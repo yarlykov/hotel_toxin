@@ -1,19 +1,9 @@
-include ../header/header.pug
 include ../card/card.pug
 
-include ../footer/footer.pug
-
-mixin landing({ header={}, searchCard={}, selfPresentation="", footer={} })
-  body
-    .landing
-      header.landing__header
-        +header(header)
-      main.landing__content
-        .landing__container
-          .landing__search-room
-            +card(searchCard)
-          .landing__self-presentation
-            p #{selfPresentation}
-
-    footer.landing__footer
-      +footer(footer)
+mixin landing({ searchCard={}, selfPresentation="" })
+  main.landing__content
+    .landing__container
+      .landing__search-room
+        +card(searchCard)
+      .landing__self-presentation
+        p #{selfPresentation}

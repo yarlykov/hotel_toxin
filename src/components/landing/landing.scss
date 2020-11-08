@@ -1,5 +1,4 @@
 .landing {
-  flex: 1 0 auto;
   
   &__content {
     background: url('./components/landing/image/landing.jpg') no-repeat;
@@ -56,9 +55,5 @@
     @media (max-width: 960px) {
       display: none;
     }
-  }
-
-  &__footer {
-    flex-shrink: 0;
   }
 }
