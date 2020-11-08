@@ -1,5 +1,5 @@
 # FSD 2 task - Hotel website layout and UI Kit
- Второе задание - практика верстки.
+ Второе задание - практика верстки [макета](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/FSD-frontend-education-program.-The-2nd-task?node-id=0%3A1) из Figma
  
  В проекте выполнен [***Ui Kit***](https://yarlykov.github.io/hotel_toxin/start-page.html), который состоит из четырех отдельных страниц:
  
