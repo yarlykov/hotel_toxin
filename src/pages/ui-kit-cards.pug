@@ -1,8 +1,11 @@
-extends ../components/main
+extends ./layouts/ui-kit-layout.pug
 include ../components/cards-page/cards-page.pug
 
 block variables
   - const title = "Cards"
+
+block header
+  +ui-kit-header({ background: true })  
 
 block content
   +cards-page({

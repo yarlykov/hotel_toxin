@@ -1,9 +1,10 @@
-extends ../components/main
+extends ./layouts/ui-kit-layout.pug
 include ../components/start-page/start-page.pug
 
 block variables
   - const title = "Стартовая страница"
 
+block header
 block content
   +start-page({
     logo: { type: "colorWithText", height: "80", width: "200"},
@@ -20,4 +21,4 @@ block content
     ]
   })
 
-block foot
+block footer

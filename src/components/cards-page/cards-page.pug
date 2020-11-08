@@ -1,16 +1,12 @@
-include ../ui-kit-header/ui-kit-header.pug
 include ../card/card.pug
 include ../room-review-widget/room-review-widget.pug
 include ../air-datepicker/air-datepicker.pug
-include ../ui-kit-footer/ui-kit-footer.pug
 
-mixin cards-page({ cards={}, calendar={}, roomReviewWidgets={}, footerLinks=[] })
+mixin cards-page({ cards={}, calendar={}, roomReviewWidgets={} })
 
   - const { search, registration, calculation, entry } = cards
   
-  body.cards-page__wrapper
-    .cards-page__header
-      +ui-kit-header({})
+  .cards-page__wrapper 
     main.cards-page__container
       .cards-page__content
         .cards-page__column

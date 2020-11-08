@@ -1,0 +1,29 @@
+include ../../components/ui-kit-header/ui-kit-header.pug
+include ../../components/ui-kit-footer/ui-kit-footer.pug
+
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title #{title}
+    link(rel='shortcut icon' href='./assets/favicon/favicon.png')
+
+body
+  .page-wrapper
+    block header
+      +ui-kit-header({})
+    block content
+
+block footer
+  +ui-kit-footer({ 
+    footerLinks: [
+      { link: "index", name: "Colors & Type" },
+      { link: "headers-footers", name: "Headers & Footers" },
+      { link: "form-elements", name: "Form Elements" },
+      { link: "cards", name: "Cards" },
+      { link: "landing", name: "Landing page" },
+    ]
+  })

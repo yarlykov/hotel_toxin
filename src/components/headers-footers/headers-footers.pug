@@ -3,12 +3,13 @@ include ../footer/footer.pug
 include ../footer-mobile/footer-mobile.pug
 
 mixin headers-footers({ headers={}, footers={} })
-  main.headers-footers__background
-    .headers-footers__header_sing-in
-      +header(headers.login)
-    .headers-footers__header_logged
-      +header(headers.logged)
-    .headers-footers__footer
-      +footer(footers)
-    .headers-footers__footer-mobile
-      +footer-mobile()
+  .headers-footers__wrapper  
+    main.headers-footers
+      .headers-footers__header_sing-in
+        +header(headers.login)
+      .headers-footers__header_logged
+        +header(headers.logged)
+      .headers-footers__footer
+        +footer(footers)
+      .headers-footers__footer-mobile
+        +footer-mobile()

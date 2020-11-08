@@ -1,9 +1,10 @@
-extends ../components/main
+extends ./layouts/ui-kit-layout.pug
 include ../components/error-page/error-page.pug
 
 block variables
   - const title = "404"
 
+block header
 block content
   +error-page({
     title: "Страница находится в разработке",
@@ -12,4 +13,5 @@ block content
     linkText: "тык",
     link: "start-page.html"
   })
-block foot
+
+block footer
