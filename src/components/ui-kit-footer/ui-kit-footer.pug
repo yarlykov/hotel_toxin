@@ -1,6 +1,9 @@
-mixin ui-kit-footer({ footerLinks=[]})
-  footer.ui-kit-footer__wrapper
-    each footerLink in footerLinks
-      a&attributes({
-        href: `./${footerLink.link}.html`
-      }) #{footerLink.name}
+mixin ui-kit-footer({ footerLinks=[], background=false })
+  - const backgroundClass = background ? "ui-kit-footer_background" : ""
+
+  footer(class=backgroundClass).ui-kit-footer
+    .ui-kit-footer__container
+      each footerLink in footerLinks
+        a&attributes({
+          href: `./${footerLink.link}.html`
+        }) #{footerLink.name}

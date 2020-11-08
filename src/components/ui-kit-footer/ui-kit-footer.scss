@@ -1,10 +1,15 @@
-.ui-kit-footer__wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	max-width: 700px;
-	margin: 0 auto;
+.ui-kit-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 100%;
+  margin: 0 auto;
   padding: 30px 0px;
+
+  &__container {
+    max-width: 700px;
+  }
+  
   & a {
     &:not(:first-child){
       margin-left: 50px;
@@ -15,5 +20,9 @@
     a {
       margin-bottom: 5px;
     }
+  }
+
+  &_background {
+    background: #E5E5E5;
   }
 }

@@ -1,4 +1,3 @@
-include ../ui-kit-header/ui-kit-header.pug
 include ../dropdown/dropdown.pug
 include ../like/like.pug
 include ../checkbox/checkbox.pug
@@ -12,7 +11,6 @@ include ../comment/comment.pug
 include ../pagination/pagination.pug
 include ../text-field/text-field.pug
 include ../button/button.pug
-include ../ui-kit-footer/ui-kit-footer.pug
 
 mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomReview={}, footerLinks=[] })
   -
@@ -22,148 +20,145 @@ mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomRev
     const { generalTitle, closeComfort, openComfort, openGuestsCleanCount, openGuests} = dropdowns
     const { expandableCheckboxes, richCheckboxButtons, bulletList } = lists
     const { dignityRoom, comment } = roomReview
-  body.body-wrapper
-    header 
-      +ui-kit-header({})
-    main.form-elements
-      section.form-elements__text-fields-buttons
-        .form-elements__text-fields
-          .text-field__wrapper
+
+  main.form-elements
+    section.form-elements__text-fields-buttons
+      .form-elements__text-fields
+        .text-field__wrapper
+          .text-field__header
+            h3.text-field__title #{defaultTextField.title}
+            span.text-field__description #{defaultTextField.subtitle}
+          +text-field(defaultTextField.options)
+
+        .text-field__wrapper
+          .text-field__header
+            span.text-field__title #{focused.title}
+            span.text-field__description #{focused.subtitle}
+          +text-field({ classList: ["text-field_hover"], type: "text",  placeholder: "This is pretty awesome", size:"large", name: "email",  autocomplete: "off" })
+
+        .text-field__wrapper
+          .text-field__header
+            span.text-field__title #{dropdown.title}
+            span.text-field__description #{dropdown.subtitle}
+          +dropdown(dropdown.options)
+
+        .text-field__wrapper
+          .text-field__header
+            span.text-field__title #{masked.title}
+            span.text-field__description #{masked.subtitle}
+          +text-field(masked.options)
+
+        .text-field__wrapper.text-field__wrapper_date-dropdown
+          label
             .text-field__header
-              h3.text-field__title #{defaultTextField.title}
-              span.text-field__description #{defaultTextField.subtitle}
-            +text-field(defaultTextField.options)
-
-          .text-field__wrapper
+              span.text-field__title #{dateDropdownStart.title}
+            +text-field(dateDropdownStart.options)
+          label
             .text-field__header
-              span.text-field__title #{focused.title}
-              span.text-field__description #{focused.subtitle}
-            +text-field({ classList: ["text-field_hover"], type: "text",  placeholder: "This is pretty awesome", size:"large", name: "email",  autocomplete: "off" })
+              span.text-field__title #{dateDropdownEnd.title}
+            +text-field(dateDropdownEnd.options)
 
-          .text-field__wrapper
-            .text-field__header
-              span.text-field__title #{dropdown.title}
-              span.text-field__description #{dropdown.subtitle}
-            +dropdown(dropdown.options)
+        .text-field__wrapper.js-datepicker__wrapper      
+          .text-field__header
+            span.text-field__title #{filterDateDropdown.title}
+          +text-field(filterDateDropdown.options)
 
-          .text-field__wrapper
-            .text-field__header
-              span.text-field__title #{masked.title}
-              span.text-field__description #{masked.subtitle}
-            +text-field(masked.options)
+        .text-field__wrapper 
+          .text-field__header 
+            span.text-field__title #{subscribe.title}
+          +text-field(subscribe.options)    
 
-          .text-field__wrapper.text-field__wrapper_date-dropdown
-            label
-              .text-field__header
-                span.text-field__title #{dateDropdownStart.title}
-              +text-field(dateDropdownStart.options)
-            label
-              .text-field__header
-                span.text-field__title #{dateDropdownEnd.title}
-              +text-field(dateDropdownEnd.options)
+      .form-elements__buttons_small
+        .button__wrapper
+          +checkbox(checkbox)
 
-          .text-field__wrapper.js-datepicker__wrapper      
-            .text-field__header
-              span.text-field__title #{filterDateDropdown.title}
-            +text-field(filterDateDropdown.options)
+        .button__wrapper
+          h3.button__title.font__h3 #{radio.title}
+          .button__wrapper_radio
+            each button in radio.buttons
+              +radio(button)
 
-          .text-field__wrapper 
-            .text-field__header 
-              span.text-field__title #{subscribe.title}
-            +text-field(subscribe.options)    
-              //----------------------------------------
+        .button__wrapper
+          h3.button__title.font__h3 #{toggle.title}
+          each item in toggle.items
+            +toggle(item)
 
-        .form-elements__buttons_small
-          .button__wrapper
-            +checkbox(checkbox)
+        .button__wrapper
+          h3.button__title.font__h3 #{likeButton.title}
+          .button__wrapper_like
+            each button in likeButton.buttons
+              +likeButton(button)
 
-          .button__wrapper
-            h3.button__title.font__h3 #{radio.title}
-            .button__wrapper_radio
-              each button in radio.buttons
-                +radio(button)
+        .button__wrapper
+          h3.button__title.font__h3 #{rating.title}
+          .button__wrapper_rating
+            each star in rating.stars
+              +rating(star)
 
-          .button__wrapper
-            h3.button__title.font__h3 #{toggle.title}
-            each item in toggle.items
-              +toggle(item)
+      .form-elements__buttons
+        .button__wrapper_range-slider
+          +range-slider(rangeSlider)
 
-          .button__wrapper
-            h3.button__title.font__h3 #{likeButton.title}
-            .button__wrapper_like
-              each button in likeButton.buttons
-                +likeButton(button)
+        .button__wrapper
+          h3.button__title.font__h3 #{button.title}
+          .button__block
+            +button(button.items[0])
+            +button(button.items[1])
+          .button__block
+            +button(button.items[2])
+            +button(button.items[3])
+          .button__block_inline
+            +button(button.items[4])
+            +button(button.items[5])
+          +button(button.items[6])
 
-          .button__wrapper
-            h3.button__title.font__h3 #{rating.title}
-            .button__wrapper_rating
-              each star in rating.stars
-                +rating(star)
+        .button__wrapper
+          h3.button__title.font__h3 #{pagination.title}
+          +pagination()
 
-        .form-elements__buttons
-          .button__wrapper_range-slider
-            +range-slider(rangeSlider)
+    section.form-elements__dropdowns
+      .dropdown__block_left
+        .dropdown__wrapper
+          .text-field__header
+            span.text-field__title #{closeComfort.title}
+            span.text-field__description #{closeComfort.subtitle}
+          +dropdown(closeComfort)
+        .dropdown__wrapper
+          .text-field__header
+            span.text-field__title.font__h3 #{openComfort.title}
+            span.text-field__description #{openComfort.subtitle}
+          +dropdown(openComfort)
 
-          .button__wrapper
-            h3.button__title.font__h3 #{button.title}
-            .button__block
-              +button(button.items[0])
-              +button(button.items[1])
-            .button__block
-              +button(button.items[2])
-              +button(button.items[3])
-            .button__block_inline
-              +button(button.items[4])
-              +button(button.items[5])
-            +button(button.items[6])
+      .dropdown__block_right
+        .dropdown__wrapper
+          .dropdown__header
+            span.dropdown__title #{openGuestsCleanCount.title}
+          +dropdown(openGuestsCleanCount)
 
-          .button__wrapper
-            h3.button__title.font__h3 #{pagination.title}
-            +pagination()
+        .dropdown__wrapper
+          .dropdown__header
+            span.dropdown__title #{openGuests.title}
+          +dropdown(openGuests)
 
-      section.form-elements__dropdowns
-        .dropdown__block_left
-          .dropdown__wrapper
-            .text-field__header
-              span.text-field__title #{closeComfort.title}
-              span.text-field__description #{closeComfort.subtitle}
-            +dropdown(closeComfort)
-          .dropdown__wrapper
-            .text-field__header
-              span.text-field__title.font__h3 #{openComfort.title}
-              span.text-field__description #{openComfort.subtitle}
-            +dropdown(openComfort)
+    section.form-elements__lists
+      .list__block_expandable
+        .list__wrapper
+          each expandableCheckbox in expandableCheckboxes
+            +checkbox(expandableCheckbox)
 
-        .dropdown__block_right
-          .dropdown__wrapper
-            .dropdown__header
-              span.dropdown__title #{openGuestsCleanCount.title}
-            +dropdown(openGuestsCleanCount)
+      .list__block_other
+        .list__wrapper
+          +checkbox(richCheckboxButtons)
 
-          .dropdown__wrapper
-            .dropdown__header
-              span.dropdown__title #{openGuests.title}
-            +dropdown(openGuests)
+        .list__wrapper_bullet
+          h3.list__title.font__h3 #{bulletList.title}
+          +bullet-list(bulletList)
 
-      section.form-elements__lists
-        .list__block_expandable
-          .list__wrapper
-            each expandableCheckbox in expandableCheckboxes
-              +checkbox(expandableCheckbox)
-
-        .list__block_other
-          .list__wrapper
-            +checkbox(richCheckboxButtons)
-
-          .list__wrapper_bullet
-            h3.list__title.font__h3 #{bulletList.title}
-            +bullet-list(bulletList)
-
-      section.form-elements__room-review
-        .room-review__wrapper
-          each dignity in dignityRoom
-            +dignity-room(dignity)
-
-        .room-review__wrapper_comment
-          .comment
-            +comment(comment)
+    section.form-elements__room-review
+      .room-review__wrapper
+        each dignity in dignityRoom
+          +dignity-room(dignity)
+          
+      .room-review__wrapper_comment
+        .comment
+          +comment(comment)
