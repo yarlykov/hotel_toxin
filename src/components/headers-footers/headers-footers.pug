@@ -1,19 +1,14 @@
-include ../ui-kit-header/ui-kit-header.pug
 include ../header/header.pug
 include ../footer/footer.pug
 include ../footer-mobile/footer-mobile.pug
-include ../ui-kit-footer/ui-kit-footer.pug
 
-mixin headers-footers({ headers={}, footers={}, footerLinks=[] })
-  body.body__background
-    header
-      +ui-kit-header()
-    main
-        .headers-footers__header_sing-in
-          +header(headers.login)
-        .headers-footers__header_logged
-          +header(headers.logged)
-        .headers-footers__footer
-          +footer(footers)
-        .headers-footers__footer-mobile
-          +footer-mobile()
+mixin headers-footers({ headers={}, footers={} })
+  main.headers-footers__background
+    .headers-footers__header_sing-in
+      +header(headers.login)
+    .headers-footers__header_logged
+      +header(headers.logged)
+    .headers-footers__footer
+      +footer(footers)
+    .headers-footers__footer-mobile
+      +footer-mobile()

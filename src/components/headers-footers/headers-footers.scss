@@ -1,8 +1,8 @@
-.body__background {
-  background: #E5E5E5;
-}
-
 .headers-footers {
+  
+  &__background {
+    background: #E5E5E5;
+  }
 
   &__header_sing-in {
     margin-bottom: 40px;
