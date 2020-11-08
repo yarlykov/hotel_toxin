@@ -14,8 +14,8 @@ $('.air-datepicker').datepicker({
   },
   // clearButton: true,
   // todayButton: true,
-  prevHtml: '<span class="material-icons">arrow_back</span>',
-  nextHtml: '<span class="material-icons">arrow_forward</span>',
+  prevHtml: '<span class="datepicker__arrow datepicker__arrow_back"></span>',
+  nextHtml: '<span class="datepicker__arrow datepicker__arrow_forward"></span>',
   // offset: -10,
 })
 $('.air-datepicker__inline').datepicker({
@@ -26,8 +26,8 @@ $('.air-datepicker__inline').datepicker({
   navTitles: {
     days: 'MM yyyy'
   },
-  prevHtml: '<span class="material-icons">arrow_back</span>',
-  nextHtml: '<span class="material-icons">arrow_forward</span>',
+  prevHtml: '<span class="datepicker__arrow datepicker__arrow_back"></span>',
+  nextHtml: '<span class="datepicker__arrow datepicker__arrow_forward"></span>',
 })
 
 const root = $('.datepicker')
@@ -101,8 +101,8 @@ $('.js-air-datepicker__day-start').datepicker({
   navTitles: {
     days: 'MM yyyy'
   },
-  prevHtml: '<span class="material-icons">arrow_back</span>',
-  nextHtml: '<span class="material-icons">arrow_forward</span>',
+  prevHtml: '<span class="datepicker__arrow datepicker__arrow_back"></span>',
+  nextHtml: '<span class="datepicker__arrow datepicker__arrow_forward"></span>',
   // offset: -10,
 })
 $('.js-air-datepicker__day-end').datepicker({
@@ -111,8 +111,8 @@ $('.js-air-datepicker__day-end').datepicker({
   navTitles: {
     days: 'MM yyyy'
   },
-  prevHtml: '<span class="material-icons">arrow_back</span>',
-  nextHtml: '<span class="material-icons">arrow_forward</span>',
+  prevHtml: '<span class="datepicker__arrow datepicker__arrow_back"></span>',
+  nextHtml: '<span class="datepicker__arrow datepicker__arrow_forward"></span>',
   // offset: -10,
 })
 
