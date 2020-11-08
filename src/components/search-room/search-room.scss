@@ -1,5 +1,4 @@
 .search-room {
-  flex: 1 0 auto;
 
   &__container {
     position: relative;
@@ -46,10 +45,6 @@
     @media (max-width: 400px) {
       padding: 60px 25px 25px 25px;
     }
-  }
-
-  &__footer {
-    flex-shrink: 0;
   }
 }
 
