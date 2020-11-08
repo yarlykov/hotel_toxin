@@ -19,7 +19,7 @@ Copyright 2015 Google, Inc. All Rights Reserved.
     bbox="17 0 469 498"
     underline-thickness="50"
     underline-position="-200"
-    unicode-range="U+E5C8-E87E"
+    unicode-range="U+E5C4-E87E"
   />
 <missing-glyph 
 d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
@@ -31,6 +31,8 @@ d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
  />
     <glyph glyph-name="zero" 
 d="M0 0z" />
+    <glyph glyph-name="uniE5C4" unicode="&#xe5c4;" 
+d="M427 277v-42h-260l119 -120l-30 -30l-171 171l171 171l30 -30l-119 -120h260z" />
     <glyph glyph-name="uniE5C8" unicode="&#xe5c8;" 
 d="M256 427l171 -171l-171 -171l-30 30l119 120h-260v42h260l-119 120z" />
     <glyph glyph-name="uniE5CE" unicode="&#xe5ce;" 
