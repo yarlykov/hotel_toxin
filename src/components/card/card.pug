@@ -12,7 +12,7 @@ mixin card({ title, type="", buttonText="", buttonLink="", question="", numberOf
 
   -
     const questionButton = question.toLowerCase().indexOf("нет") !== -1 ? "Создать" : "Войти"
-    const questionButtonLink = questionButton === "Создать" ? "registration" : "sing-in"
+    const questionButtonLink = questionButton === "Создать" ? "registration-page" : "sing-in-page"
     const search = (type === "search")
     const registration = (type === "registration")
     const calculation = (type === "calculation")

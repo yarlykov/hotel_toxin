@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -6,14 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
-const pagesDir = path.resolve(__dirname, './src/pages')
-const pages = fs.readdir(pagesDir, function(err, items){
-  if (err) {
-    throw err
-  }
-
-  console.log(items);
-})
+const PAGES_DIR = path.resolve(__dirname, 'src/pages');
+const PAGES = fs
+  .readdirSync(PAGES_DIR)
+  .map((item) => item.replace(/\.[^/.]+$/, ''));
 
 module.exports = {
   entry: {
@@ -25,7 +21,7 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    index: "start-page.html",
+    index: 'start-page.html',
   },
 
   module: {
@@ -36,11 +32,11 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           },
           {
             loader: 'postcss-loader',
-            options: { sourceMap: true,}
+            options: { sourceMap: true },
           },
         ],
       },
@@ -50,15 +46,15 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           },
           {
             loader: 'postcss-loader',
-            options: { sourceMap: true,}
+            options: { sourceMap: true },
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           },
         ],
       },
@@ -66,8 +62,8 @@ module.exports = {
         test: /\.pug$/,
         loader: 'pug-loader',
         options: {
-          pretty: true
-        }
+          pretty: true,
+        },
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -77,8 +73,8 @@ module.exports = {
           options: {
             name: '[name].[ext]',
             outputPath: 'assets/images',
-          }
-        }
+          },
+        },
       },
       {
         test: /\.(ttf|woff|woff2|svg|eot)$/,
@@ -94,75 +90,34 @@ module.exports = {
         loader: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              '@babel/preset-env'
-            ]
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
-    ], 
+    ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/pages/ui-kit-colors-type.pug',
-      filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/ui-kit-headers-footers.pug',
-      filename: 'headers-footers.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/ui-kit-form-elements.pug',
-      filename: 'form-elements.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/ui-kit-cards.pug',
-      filename: 'cards.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/error-page.pug',
-      filename: 'error-page.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/landing-page.pug',
-      filename: 'landing.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/registration-page.pug',
-      filename: 'registration.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/sing-in-page.pug',
-      filename: 'sing-in.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/search-room-page.pug',
-      filename: 'search-room.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/room-details-page.pug',
-      filename: 'room-details.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/start-page.pug',
-      filename: 'start-page.html'
-    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
+    ...PAGES.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          filename: `${page}.html`,
+          template: `${PAGES_DIR}/${page}.pug`,
+        })
+    ),
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      '$': 'jquery',
+      $: 'jquery',
       jQuery: 'jquery',
       jquery: 'jquery',
       'window.jQuery': 'jquery',
-      'window.$': "jquery",
+      'window.$': 'jquery',
     }),
     new CopyPlugin({
-      patterns: [
-        { from: './src/favicon', to: 'assets/favicon/'},
-      ]
-    })
+      patterns: [{ from: './src/favicon', to: 'assets/favicon/' }],
+    }),
   ],
 };
