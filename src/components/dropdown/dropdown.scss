@@ -3,25 +3,24 @@ $inputWidthSizeL: 320px;
 $inputWidthSizeM: 266px;
 $inputWidthSizeS: 150px;
 
-
-.dropdown{
+.dropdown {
   position: relative;
 
-  &__guests{
+  &__guests {
     width: $inputWidthSizeL;
   }
 
-  &__comfort{
+  &__comfort {
     width: $inputWidthSizeM;
   }
 
-  &__arrow{
-    &_down{
+  &__arrow {
+    &_down {
       position: absolute;
       top: 10px;
       right: 10px;
-  
-      &::before{
+
+      &::before {
         content: '\e5cf';
         font-family: 'Material Icons';
         font-size: 24px;
@@ -31,8 +30,8 @@ $inputWidthSizeS: 150px;
       }
     }
   }
-  
-  &__input{
+
+  &__input {
     width: 100%;
     position: relative;
     box-sizing: border-box;
@@ -51,7 +50,7 @@ $inputWidthSizeS: 150px;
     }
   }
 
-  &__drop{
+  &__drop {
     display: none;
     position: absolute;
     border: $mainBorder;
@@ -61,13 +60,13 @@ $inputWidthSizeS: 150px;
     right: 0;
   }
 
-  &__menu{
+  &__menu {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  &__menu-item{
+  &__menu-item {
     box-sizing: border-box;
     padding: 7px 6px 0 6px;
     text-transform: uppercase;
@@ -85,100 +84,98 @@ $inputWidthSizeS: 150px;
       padding-left: 8px;
     }
 
-    &:last-child{
-      border-radius: 0  0 4px 4px;
+    &:last-child {
+      border-radius: 0 0 4px 4px;
     }
-
   }
 
-    &__controls {
-      width: 92px;
-      height: 30px;
-      border: 0;
+  &__controls {
+    width: 92px;
+    height: 30px;
+    border: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+
+    .controls__decrement {
+      font-size: 18px;
+      line-height: 22px;
       box-sizing: border-box;
-      display: flex;
-      justify-content: space-between;
+      width: 30px;
+      height: 30px;
+      border: $mainBorder;
+      border-radius: 50%;
+      outline: none;
+      background: none;
+      color: gray;
+      cursor: pointer;
+      text-align: center;
+      line-height: 27px;
 
-      .controls__decrement {
-        font-size: 18px;
-        line-height: 22px;
-        box-sizing: border-box;
-        width: 30px;
-        height: 30px;
-        border: $mainBorder;
-        border-radius: 50%;
-        outline: none;
-        background: none;
-        color: gray;
-        cursor: pointer;
-        text-align: center;
-        line-height: 27px;
-
-        &::after{
-          content: '-';
-        }
-
-        &.disabled {
-          opacity: 0.5;
-        }
+      &::after {
+        content: '-';
       }
 
-      .controls__counter {  //refactor
-        border: 0;
-        width: 30px;
-        height: 28px;
-        text-align: center;
-        font-family: inherit;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 12px;
-        padding: 0px;
-      }
-
-      .controls__increment {
-        font-size: 18px;
-        line-height: 22px;
-        box-sizing: border-box;
-        width: 30px;
-        height: 30px;
-        border: $mainBorder;
-        border-radius: 50%;
-        outline: none;
-        background: #fff;
-        color: gray;
-        cursor: pointer;
-        text-align: center;
-        line-height: 29px;
-
-        &::after{
-          content: '+';
-        }
-
-        &.disabled {
-          opacity: 0.5;
-        }
+      &.disabled {
+        opacity: 0.5;
       }
     }
 
+    .controls__counter {
+      //refactor
+      border: 0;
+      width: 30px;
+      height: 28px;
+      text-align: center;
+      font-family: inherit;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      padding: 0px;
+    }
+
+    .controls__increment {
+      font-size: 18px;
+      line-height: 22px;
+      box-sizing: border-box;
+      width: 30px;
+      height: 30px;
+      border: $mainBorder;
+      border-radius: 50%;
+      outline: none;
+      background: #fff;
+      color: gray;
+      cursor: pointer;
+      text-align: center;
+      line-height: 29px;
+
+      &::after {
+        content: '+';
+      }
+
+      &.disabled {
+        opacity: 0.5;
+      }
+    }
+  }
 }
 
-.dropdown.open{
-  .dropdown__drop{
+.dropdown.open {
+  .dropdown__drop {
     display: block;
     border: $focusBorder;
     border-top: none;
     background: #fff;
     z-index: 1000;
   }
-  .dropdown__input{
+  .dropdown__input {
     border-radius: 4px 4px 0 0;
     border: $focusBorder;
   }
 }
 
 .js-buttons-dropdown {
-
-  &__wrapper{
+  &__wrapper {
     padding: 6px 0 4px 7px;
     background: #fff;
     text-transform: uppercase;
@@ -188,7 +185,7 @@ $inputWidthSizeS: 150px;
     border-radius: 0 0 4px 4px;
   }
 
-  &__button{
+  &__button {
     margin: 0;
     border: none;
     background: #fff;
@@ -197,23 +194,23 @@ $inputWidthSizeS: 150px;
     cursor: pointer;
     outline: none;
 
-    &:hover{
+    &:hover {
       opacity: 0.5;
     }
 
-    &_clear{
+    &_clear {
       visibility: hidden;
-      
-      &.display{
+
+      &.display {
         visibility: visible;
       }
     }
 
-    &_apply{
+    &_apply {
     }
   }
 }
 
-.buttons-dropdown__wrapper_datepicker{
+.buttons-dropdown__wrapper_datepicker {
   padding: 0 20px;
 }

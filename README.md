@@ -18,8 +18,8 @@
  
  ## Installation
  
-**Clone repository**
- `https://github.com/yarlykov/hotel_toxin.git`
+**Clone repository:**
+ `git clone https://github.com/yarlykov/hotel_toxin.git`
  
  `npm install` - **installing dependencies**
  
