@@ -1,9 +1,19 @@
+const fs = require('fs')
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+
+const pagesDir = path.resolve(__dirname, './src/pages')
+const pages = fs.readdir(pagesDir, function(err, items){
+  if (err) {
+    throw err
+  }
+
+  console.log(items);
+})
 
 module.exports = {
   entry: {
