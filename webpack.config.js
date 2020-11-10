@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
+const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -10,6 +11,11 @@ const PAGES_DIR = path.resolve(__dirname, 'src/pages');
 const PAGES = fs
   .readdirSync(PAGES_DIR)
   .map((item) => item.replace(/\.[^/.]+$/, ''));
+
+const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+const IS_PRODUCTION = !IS_DEVELOPMENT;
+console.log(IS_DEVELOPMENT);
+console.log(IS_PRODUCTION);
 
 module.exports = {
   entry: {
@@ -22,8 +28,6 @@ module.exports = {
   resolve: {
     alias: {
       '@variables': path.resolve(__dirname, 'src/styles/variables.scss'),
-      '@fonts': path.resolve(__dirname, 'src/fonts/'),
-      '@components': path.resolve(__dirname, 'src/components'),
     },
   },
   devServer: {
