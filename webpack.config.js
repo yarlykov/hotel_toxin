@@ -29,21 +29,21 @@ const PATHS = {
 const common = merge([
   {
     entry: {
-      main: ['@babel/polyfill', './src/index.js'],
+      main: ['@babel/polyfill', `${PATHS.src}/index.js`],
     },
     output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'bundle.js',
+      path: PATHS.dist,
+      filename: IS_DEVELOPMENT ? 'bundle.js' : 'bundle.[contenthash].js',
     },
     resolve: {
       alias: {
-        '@variables': path.resolve(__dirname, 'src/styles/variables.scss'),
+        '@variables': path.resolve(__dirname, `${PATHS.src}/styles/variables.scss`),
       },
     },
 
     plugins: [
       new MiniCssExtractPlugin({
-        filename: '[name].css',
+        filename: IS_DEVELOPMENT ? '[name].css' : '[name].[contenthash].css',
       }),
       ...PAGES.map(
         (page) =>
@@ -62,7 +62,7 @@ const common = merge([
         'window.$': 'jquery',
       }),
       new CopyPlugin({
-        patterns: [{ from: './src/favicon', to: 'assets/favicon/' }],
+        patterns: [{ from: `${PATHS.src}/favicon`, to: 'assets/favicon/' }],
       }),
     ],
   },
