@@ -1,8 +1,7 @@
-
+@import '@variables';
 /*LIKE BUTTON*/
 .like {
-
-  &__button{
+  &__button {
     display: inline-flex;
     position: relative;
     min-width: 40px;
@@ -14,23 +13,23 @@
     cursor: pointer;
   }
 
-  &__button_border{
+  &__button_border {
     position: absolute;
     width: calc(100% - 2px);
     height: calc(100% - 2px);
     top: 1px;
-    left:	1px;
+    left: 1px;
     background: #fff;
     border-radius: 100px;
-	}
+  }
 
-  &__icon{
+  &__icon {
     position: absolute;
     top: 4px;
     left: 5px;
     font-size: 10px;
-    font-family: "Material Icons";
-    
+    font-family: 'Material Icons';
+
     &_favorite::before {
       content: '\e87d';
       background: $mainGradient;
@@ -38,7 +37,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     &_favorite_border::before {
       content: '\e87e';
       background: $textColor_25;
@@ -48,21 +47,20 @@
     }
   }
 
-  &__text{
+  &__text {
     margin: 2px 0px 0 15px;
     position: relative;
     color: $designColor_main;
     font-family: $mainFont;
     font-size: 10px;
     z-index: 1;
-	}
+  }
 
-  &__disable{
+  &__disable {
     color: $textColor_25;
   }
-	
-  &__disable_border{
+
+  &__disable_border {
     background: $textColor_25;
   }
-
 }

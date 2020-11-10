@@ -1,9 +1,11 @@
+@import '@variables';
+
 .colors {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding-bottom: 20px;
-  
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -11,12 +13,12 @@
     min-width: 270px;
     margin-right: 50px;
   }
-  
+
   &__square {
     width: 70px;
     height: 70px;
     border-radius: 6px;
-    
+
     &_dark_100 {
       background: $mainTextColor;
     }

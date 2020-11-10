@@ -1,3 +1,5 @@
+@import '@variables';
+
 .footer {
   box-sizing: border-box;
   display: flex;
@@ -5,19 +7,19 @@
   justify-content: space-between;
   margin: 0px auto;
   padding: 100px 0 99px 0;
-  
+
   @media (max-width: 1280px) {
     justify-content: space-around;
   }
-  
+
   &__wrapper {
     box-sizing: border-box;
     background-color: #fff;
-    
+
     &_border {
       border-top: 1px solid $textColor_25;
     }
-    
+
     @media (max-width: 767px) {
       display: none;
     }
@@ -31,7 +33,7 @@
     @media (max-width: 1280px) {
       display: none;
     }
-    
+
     &_column {
       min-width: 160px;
       padding-left: 40px;
@@ -48,7 +50,7 @@
   &__bottom {
     border-top: 1px solid rgba(31, 32, 65, 0.1);
     box-shadow: 0px 10px 20px $textColor_5;
-    
+
     &_wrapper {
       display: flex;
       justify-content: space-between;

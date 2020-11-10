@@ -1,0 +1,152 @@
+@import '@variables';
+/*-------Quicksland---------*/
+@font-face {
+  font-family: 'Quicksand';
+  font-display: swap;
+  src: local('Quicksand'), local('Quicksand-Regular'),
+    url('../fonts/Quicksand/Quicksand-Regular.svg') format('woff2'),
+    url('../fonts/Quicksand/Quicksand-Regular.woff') format('woff'),
+    url('../fonts/Quicksand/Quicksand-Regular.ttf') format('truetype'),
+    url('../fonts/Quicksand/Quicksand-Regular.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  font-display: swap;
+  src: local('Quicksand'), local('Quicksand-Bold'),
+    url('../fonts/Quicksand/Quicksand-Bold.woff2') format('woff2'),
+    url('../fonts/Quicksand/Quicksand-Bold.woff') format('woff'),
+    url('../fonts/Quicksand/Quicksand-Bold.svg') format('svg'),
+    url('../fonts/Quicksand/Quicksand-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*-------Open Sans---------*/
+@font-face {
+  font-family: 'Open Sans';
+  font-display: swap;
+  src: local('Open Sans'),
+    url('../fonts/OpenSans/OpenSans-Regular.woff2') format('woff2'),
+    url('../fonts/OpenSans/OpenSans-Regular.woff') format('woff'),
+    url('../fonts/OpenSans/OpenSans-Regular.ttf') format('truetype'),
+    url('../fonts/OpenSans/OpenSans-Regular.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-display: swap;
+  src: local('Open Sans'),
+    url('../fonts/OpenSans/OpenSans-Bold.woff2') format('woff2'),
+    url('../fonts/OpenSans/OpenSans-Bold.woff') format('woff'),
+    url('../fonts/OpenSans/OpenSans-Bold.svg') format('svg'),
+    url('../fonts/OpenSans/OpenSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*-------Montserrat--Regular------*/
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  src: local('Montserrat'), local('Montserrat-Regular'),
+    url('../fonts/Montserrat/Montserrat-Regular.woff2') format('woff2'),
+    url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
+    url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'),
+    url('../fonts/Montserrat/Montserrat-Regular.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*-------Montserrat--Bold------*/
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  src: local('Montserrat'), local('Montserrat-Bold'),
+    url('../fonts/Montserrat/Montserrat-Bold.woff2') format('woff2'),
+    url('../fonts/Montserrat/Montserrat-Bold.woff') format('woff'),
+    url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype'),
+    url('../fonts/Montserrat/Montserrat-Bold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*-------Material Icon---------*/
+@font-face {
+  font-family: 'Material Icons';
+  src: local('Material Icons'),
+    url('../fonts/MaterialIcons/MaterialIcons-Regular.woff2') format('woff2'),
+    url('../fonts/MaterialIcons/MaterialIcons-Regular.woff') format('woff'),
+    url('../fonts/MaterialIcons/MaterialIcons-Regular.ttf') format('truetype'),
+    url('../fonts/MaterialIcons/MaterialIcons-Regular.svg') format('svg');
+  font-style: normal;
+  font-weight: 400;
+  unicode-range: e5cf, e5ce, e5c8, e5c4, e7f2, e7f3, e7f1, e80e, e87d, e87e,
+    e5c8, e838, e83a;
+}
+
+@font-face {
+  font-family: 'Font Awesome';
+  src: local('Font Awesome'),
+    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.woff2')
+      format('woff2'),
+    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.woff') format('woff'),
+    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.ttf')
+      format('truetype'),
+    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.svg') format('svg');
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  unicode-range: f099, f082, f16d, f189;
+}
+
+@font-face {
+  font-family: 'Font Awesome solid';
+  src: url('../fonts/Fontawesome5/FontAwesome5Free-Solid.woff2') format('woff2'),
+    url('../fonts/Fontawesome5/FontAwesome5Free-Solid.woff') format('woff'),
+    url('../fonts/Fontawesome5/FontAwesome5Free-Solid.ttf') format('truetype'),
+    url('../fonts/Fontawesome5/FontAwesome5Free-Solid.svg') format('svg');
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  unicode-range: f0b0;
+}
+
+.font__h1 {
+  font-family: $secondFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: $mainTextColor;
+}
+.font__h2 {
+  font-family: $secondFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 24px;
+  color: $mainTextColor;
+}
+.font__h3 {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: $mainTextColor;
+  text-transform: uppercase;
+  margin: 0;
+}
+.font__body {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: $textColor_75;
+}

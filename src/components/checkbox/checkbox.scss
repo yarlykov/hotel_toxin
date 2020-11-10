@@ -1,13 +1,15 @@
-.checkbox{
+@import '@variables';
+
+.checkbox {
   width: 266px;
 
-  &__header{
+  &__header {
     display: flex;
     justify-content: space-between;
     padding-bottom: 17px;
     cursor: pointer;
-    &_arrow-up{
-      &::before{
+    &_arrow-up {
+      &::before {
         content: '\e5ce';
         font-family: 'Material Icons';
         font-size: 24px;
@@ -16,8 +18,8 @@
         color: $textColor_50;
       }
     }
-    &_arrow-down{
-      &::before{
+    &_arrow-down {
+      &::before {
         content: '\e5cf';
         font-family: 'Material Icons';
         font-size: 24px;
@@ -26,10 +28,9 @@
         color: $textColor_50;
       }
     }
-
   }
 
-  &__item{
+  &__item {
     color: $textColor_50;
     display: block;
     box-sizing: content-box;
@@ -37,33 +38,33 @@
     margin-left: 30px;
     padding-bottom: 10px;
     cursor: pointer;
-    &:last-child{
+    &:last-child {
       padding-bottom: 0;
     }
 
     /*-----Focus/Hover-----*/
-    &:hover{
-      color:$textColor_75;
+    &:hover {
+      color: $textColor_75;
     }
 
-    &:focus-within{
-      color:$textColor_75;
+    &:focus-within {
+      color: $textColor_75;
     }
   }
 
-  &__input{
+  &__input {
     position: absolute;
     width: 1px;
     height: 1px;
     overflow: hidden;
     clip: rect(0 0 0 0); //see this property!
 
-    &:checked + .checkbox__box{
+    &:checked + .checkbox__box {
       border-color: $designColor_main;
     }
 
     &:checked + .checkbox__box::after {
-      content: "";
+      content: '';
       position: absolute;
       box-sizing: border-box;
       top: 4px;
@@ -72,10 +73,10 @@
       height: 8px;
       border-style: solid;
       border-width: 0 2px 2px 0;
-      -moz-border-image:  $mainGradient; 
-      -webkit-border-image:  $mainGradient; 
-      border-image: $mainGradient; 
-      border-image-slice: 1; 
+      -moz-border-image: $mainGradient;
+      -webkit-border-image: $mainGradient;
+      border-image: $mainGradient;
+      border-image-slice: 1;
       border-color: transparent;
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
@@ -83,7 +84,7 @@
     }
   }
 
-  &__box{
+  &__box {
     box-sizing: border-box;
     position: absolute;
     margin-left: -30px;
@@ -94,17 +95,16 @@
     border: $mainBorder;
   }
 
-  &__title_rich{
+  &__title_rich {
     font-weight: bold;
     color: $textColor_75;
   }
 
-  &__description_rich{
+  &__description_rich {
     color: $textColor_50;
     font-weight: normal;
     margin-top: 5px;
     font-size: 12px;
     line-height: 14px;
   }
-
 }

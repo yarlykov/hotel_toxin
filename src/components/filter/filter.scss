@@ -1,5 +1,6 @@
+@import '@variables';
+
 .filter {
-    
   &__dropdown-guests {
     padding-top: 20px;
   }
@@ -19,8 +20,8 @@
   &__dropdown-comfort {
     padding-top: 30px;
   }
-  
-  &__expandable-checkbox{
+
+  &__expandable-checkbox {
     padding-top: 30px;
   }
 
@@ -29,9 +30,9 @@
     font-size: 24px;
     line-height: 50px;
     color: $textColor_75;
-    
+
     &::before {
-      content: "\f0b0";
+      content: '\f0b0';
       position: absolute;
       text-align: center;
       display: none;

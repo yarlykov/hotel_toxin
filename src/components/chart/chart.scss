@@ -1,3 +1,5 @@
+@import '@variables';
+
 .canvas {
   display: flex;
   justify-content: space-between;
@@ -10,7 +12,7 @@
 .chart {
   width: 100%;
   height: 100%;
-  
+
   &__doughnut {
     padding-bottom: 7px;
     margin-right: 25px;
@@ -19,13 +21,12 @@
   }
 
   &__sum-of-vote {
-    font-family: Quicksand, "Open Sans", sans-serif;
+    font-family: Quicksand, 'Open Sans', sans-serif;
     font-weight: 700;
   }
 }
 
 .sum-of-vote {
-
   &__number {
     font-size: 6.5px;
     line-height: 30px;
@@ -37,7 +38,6 @@
 }
 
 .legend {
-  
   &__list {
     list-style: none;
     padding: 0 2px 5px 0;
@@ -57,7 +57,7 @@
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 7px;
       left: -15px;
@@ -67,16 +67,16 @@
     }
 
     &:nth-child(1)::before {
-      background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+      background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
     }
     &:nth-child(2)::before {
-      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     }
     &:nth-child(3)::before {
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     }
     &:nth-child(4)::before {
-      background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+      background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
     }
 
     &:hover {
@@ -89,22 +89,22 @@
   fill: none;
   stroke-width: 1.2;
   cursor: pointer;
-  transition-property: all; 
-  transition-duration: .5s;
+  transition-property: all;
+  transition-duration: 0.5s;
 
   &:hover {
     stroke-width: 2.3;
   }
-  
-  &:nth-child(1){
+
+  &:nth-child(1) {
     stroke-dasharray: 49 100;
     stroke-dashoffset: -25.5;
   }
-  &:nth-child(2){
+  &:nth-child(2) {
     stroke-dasharray: 24.5 100;
     stroke-dashoffset: -75;
   }
-  &:nth-child(3){
+  &:nth-child(3) {
     stroke-dasharray: 24.7 100;
     stroke-dashoffset: -0.2;
   }

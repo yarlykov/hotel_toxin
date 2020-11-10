@@ -1,13 +1,15 @@
+@import '@variables';
+
 .registration {
-  
   &__content {
-    background: url('./components/registration/image/registration-background.jpg') no-repeat;
+    background: url('../registration/image/registration-background.jpg')
+      no-repeat;
     background-size: cover;
     background-size: 107%;
     background-position: 49% 53.5%;
     box-sizing: border-box;
     // padding-left: 0.3571rem;
-    
+
     @media (max-width: 1280px) {
       background-size: cover;
     }
@@ -31,7 +33,7 @@
     }
   }
 
-  &__registration{
+  &__registration {
     min-width: 380px;
 
     @media (max-width: 960px) {

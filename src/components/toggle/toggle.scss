@@ -1,34 +1,36 @@
-.toggle{
+@import '@variables';
+
+.toggle {
   color: $textColor_50;
   box-sizing: border-box;
   display: block;
   cursor: pointer;
   margin-left: 50px;
-  &:not(:last-child){
+  &:not(:last-child) {
     margin-bottom: 16px;
   }
 
-  &__input{
+  &__input {
     position: absolute;
     width: 1px;
     height: 1px;
     overflow: hidden;
     clip: rect(0 0 0 0);
 
-    &:checked + .toggle__box{
+    &:checked + .toggle__box {
       border-color: $designColor_main;
     }
 
-    &:hover ~ .toggle__title{
+    &:hover ~ .toggle__title {
       color: $textColor_75;
     }
 
-    &:focus ~ .toggle__title{
+    &:focus ~ .toggle__title {
       color: $textColor_75;
     }
 
-    &:checked + .toggle__box::before{
-      content: "";
+    &:checked + .toggle__box::before {
+      content: '';
       position: absolute;
       box-sizing: border-box;
       width: 12px;
@@ -43,7 +45,7 @@
     }
   }
 
-  &__box{
+  &__box {
     position: absolute;
     box-sizing: border-box;
     width: 40px;
@@ -52,8 +54,8 @@
     border-radius: 10px;
     margin-left: -50px;
 
-    &:before{
-      content: "";
+    &:before {
+      content: '';
       position: absolute;
       width: 12px;
       height: 12px;
@@ -61,9 +63,7 @@
       left: 3px;
       border-radius: 50%;
       background: $textColor_25;
-      transition: .3s;
+      transition: 0.3s;
     }
-    
   }
-
 }

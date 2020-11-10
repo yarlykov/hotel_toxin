@@ -1,4 +1,6 @@
-.button{
+@import '@variables';
+
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,75 +19,74 @@
   cursor: pointer;
 
   &:hover,
-  &:focus{
+  &:focus {
     background: $mainGradientTransperent;
   }
 
-  &_hover{
+  &_hover {
     background: $mainGradientTransperent;
   }
 
-  &_fill-white{
+  &_fill-white {
     position: absolute;
     width: calc(100% - 4px);
     height: calc(100% - 4px);
     top: 2px;
-    left:	2px;
+    left: 2px;
     background: #fff;
     border-radius: 100px;
   }
   /*------Size------*/
-  &_size{
-    
+  &_size {
     &_stretch {
       padding: 9px 20px 10px;
     }
-    &_small{
+    &_small {
       min-width: 98px;
       padding: 15px 0px 14px;
     }
-    &_large{
+    &_large {
       padding: 15px 19px 14px;
     }
   }
 
   /*------Inline------*/
-  &_inline{
+  &_inline {
     padding: 0;
     border: none;
     background: none;
     display: inline-block;
     cursor: pointer;
-    
+
     &:hover,
-    &:focus{
+    &:focus {
       opacity: 0.5;
       background: none;
     }
   }
-  
+
   /*------Text-Colors------*/
-  &_text-color{
-    &_purple{
+  &_text-color {
+    &_purple {
       color: $designColor_main;
       position: relative;
       z-index: 1;
     }
-    &_gray{
+    &_gray {
       color: $textColor_50;
     }
-    &_white{
+    &_white {
       color: #fff;
     }
   }
 
-  &__arrow{
+  &__arrow {
     position: absolute;
     right: 10px;
     top: 10px;
     color: #fff;
-    
-    &:before{
+
+    &:before {
       font-family: 'Material Icons';
       content: '\e5c8';
       position: relative;

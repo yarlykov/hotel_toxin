@@ -19,6 +19,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  resolve: {
+    alias: {
+      '@variables': path.resolve(__dirname, 'src/styles/variables.scss'),
+      '@fonts': path.resolve(__dirname, 'src/fonts/'),
+      '@components': path.resolve(__dirname, 'src/components'),
+    },
+  },
   devServer: {
     port: 8080,
     index: 'start-page.html',

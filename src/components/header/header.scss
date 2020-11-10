@@ -1,3 +1,5 @@
+@import '@variables';
+
 .header {
   background-color: #fff;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -7,13 +9,13 @@
     min-width: 320px;
     margin: 0 auto;
   }
-  
+
   &__body {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: rgba(31,32,65,.5);
+    color: rgba(31, 32, 65, 0.5);
     padding: 15px 140px 15px;
 
     @media (max-width: 1280px) {
@@ -52,20 +54,19 @@
         position: absolute;
         width: 100%;
         height: 2px;
-        left: 0; 
+        left: 0;
         transition: all 0.3s ease 0s;
       }
       &::before {
         top: 0;
-      }    
+      }
       &::after {
         bottom: 0;
-      }    
+      }
     }
   }
 
   &__menu-burger.header__active {
-    
     &::before {
       transform: rotate(45deg);
       top: 17px;
@@ -94,7 +95,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background-color: #E5E5E5;
+      background-color: #e5e5e5;
       flex-direction: column;
       justify-content: space-evenly;
       z-index: 1000;
@@ -102,7 +103,7 @@
     }
   }
 
-  &__navigation .navigation{
+  &__navigation .navigation {
     @media (max-width: 960px) {
       flex-direction: column;
       padding-bottom: 70px;
@@ -114,7 +115,7 @@
       padding: 0 50px 20px 0;
       text-align: center;
     }
-    .navigation__link{
+    .navigation__link {
       font-size: 1.5rem;
     }
     .navigation__item_dropdown {
@@ -136,7 +137,7 @@
   }
 
   &__login_entry {
-     margin-right: 20px;
+    margin-right: 20px;
     @media (max-width: 960px) {
       margin: 0 0px 15px 0;
     }

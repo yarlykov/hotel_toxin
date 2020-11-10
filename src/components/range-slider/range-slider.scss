@@ -1,39 +1,40 @@
-.range-slider{
+@import '@variables';
+
+.range-slider {
   font-family: $mainFont;
   font-size: 12px;
   color: $textColor_50;
   border: none;
   text-align: right;
 
-  &__scale{
+  &__scale {
     position: relative;
     height: 6px;
 
-    &_border{
+    &_border {
       height: 6px;
       border: $mainBorder;
       border-radius: 6px;
       box-sizing: border-box;
-   }
+    }
   }
 
-  &__header{
+  &__header {
     display: flex;
     justify-content: space-between;
   }
 
   &__subtitle {
-    font-family: Montserrat, "Open Sans", sans-serif;
+    font-family: Montserrat, 'Open Sans', sans-serif;
     font-size: 12px;
     line-height: 14px;
     color: $textColor_50;
     padding-top: 35px;
   }
 
-  &:focus{
+  &:focus {
     border: none;
   }
-
 }
 
 .ui-slider {
@@ -41,7 +42,6 @@
   text-align: left;
   top: 10px;
 }
-
 
 .ui-slider-horizontal .ui-slider-range {
   // top: 12px;
@@ -63,20 +63,20 @@
   width: 12px;
   height: 12px;
   border-radius: 100%;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  border: 2px solid #FFFFFF;
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  border: 2px solid #ffffff;
   cursor: pointer;
 }
-.ui-slider .ui-slider-handle:focus{
+.ui-slider .ui-slider-handle:focus {
   outline: none;
 }
 
 .ui-widget.ui-widget-content {
-    border: none;
+  border: none;
 }
 .ui-widget-header {
-    background:linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    // margin-left: -12px;
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  // margin-left: -12px;
 }
 .ui-slider-horizontal {
   top: 22px;
@@ -86,5 +86,5 @@
 }
 
 .ui-slider-horizontal .ui-slider-handle {
-	// margin-left: -14px;
+  // margin-left: -14px;
 }

@@ -1,13 +1,14 @@
-.dignity-room{
-  
-  &__item{
+@import '@variables';
+
+.dignity-room {
+  &__item {
     display: flex;
     align-items: center;
     padding: 20px 0;
   }
-  
-  &__icon{
-    font-family: "Material Icons";
+
+  &__icon {
+    font-family: 'Material Icons';
     font-size: 48px;
     line-height: 41px;
     background: $mainGradient;
@@ -17,17 +18,17 @@
     -webkit-text-fill-color: transparent;
 
     &_mood::before {
-      content: '\e7f2'
+      content: '\e7f2';
     }
     &_location_city::before {
-      content: '\e7f1'
+      content: '\e7f1';
     }
     &_whatshot::before {
-      content: '\e80e'
+      content: '\e80e';
     }
-	}
-	
-  &__description{
+  }
+
+  &__description {
     font-size: 14px;
     line-height: 24px;
     color: rgba(31, 32, 65, 0.75);
@@ -37,12 +38,12 @@
     flex-direction: column;
     justify-content: space-between;
 
-    &_title{
+    &_title {
       font-weight: bold;
     }
 
-    &_subtitle{
-			font-weight: normal;
+    &_subtitle {
+      font-weight: normal;
     }
   }
 

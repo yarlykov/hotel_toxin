@@ -1,0 +1,59 @@
+@import '@variables';
+
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+
+.body-wrapper {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $mainFont;
+  font-size: $mainFont_size;
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-wrapper {
+  flex: 1 0 auto;
+
+  &_background {
+    background: #e5e5e5;
+  }
+}
+
+a {
+  color: $textColor_50;
+  text-decoration: none;
+  &:hover {
+    color: $textColor_75;
+  }
+}
+
+.gradient {
+  background: $mainGradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

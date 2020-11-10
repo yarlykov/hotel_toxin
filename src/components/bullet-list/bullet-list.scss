@@ -1,21 +1,23 @@
-.bullet-list{
+@import '@variables';
+
+.bullet-list {
   list-style: none;
   width: 266px;
-  &__item{
+  &__item {
     display: flex;
     align-items: baseline;
     font-family: $mainFont;
     font-weight: 400;
     line-height: 24px;
-    color:$textColor_75;
+    color: $textColor_75;
     text-transform: none;
     padding-top: 10px;
     &:first-child {
       padding-top: 0px;
     }
   }
-  &__item::before{
-    content: "";
+  &__item::before {
+    content: '';
     flex-shrink: 0;
     display: inline-block;
     height: 10px;

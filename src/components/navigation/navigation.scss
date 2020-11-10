@@ -1,3 +1,5 @@
+@import '@variables';
+
 .navigation {
   list-style-type: none;
   margin: 0;
@@ -41,7 +43,7 @@
     position: absolute;
     width: 100%;
     right: 10px;
-    background: #E5E5E5;
+    background: #e5e5e5;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     z-index: 3000;
     border-radius: 4px;
@@ -58,7 +60,7 @@
         line-height: 1.5rem;
       }
 
-      &:first-child{
+      &:first-child {
         padding: 0.5rem 0 0.5rem 0;
       }
     }

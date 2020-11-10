@@ -1,8 +1,10 @@
+@import '@variables';
+
 .carousel {
   position: relative;
   height: 151px;
 
-  &__item img{
+  &__item img {
     width: 100%;
     height: 151px;
     border-radius: 4px 4px 0 0;
@@ -10,20 +12,25 @@
   }
 }
 
-.slick-slider:hover:after{
-  content: "";
+.slick-slider:hover:after {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 42px;
   height: 100%;
   border-radius: 4px 0 0 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 99.99%,
+    rgba(255, 255, 255, 0) 100%
+  );
   z-index: 5;
 }
 
-.slick-slider:hover:before{
-  content: "";
+.slick-slider:hover:before {
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
@@ -31,15 +38,20 @@
   height: 100%;
   border-radius: 0px 0 0 4px;
   transform: rotate(180deg);
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 99.99%,
+    rgba(255, 255, 255, 0) 100%
+  );
   z-index: 5;
 }
 
-.slick-slider:hover{
-  .slick-arrow.slick-prev::before{
+.slick-slider:hover {
+  .slick-arrow.slick-prev::before {
     visibility: visible;
   }
-  .slick-arrow.slick-next::before{
+  .slick-arrow.slick-next::before {
     visibility: visible;
   }
 }
@@ -50,19 +62,19 @@
 }
 
 /* Лента слайдов */
-.slick-track{
+.slick-track {
   display: flex;
 }
 
 /* Стрелка */
-.slick-arrow{
+.slick-arrow {
   position: absolute;
   top: 40%;
   z-index: 10;
 }
 
 /* Стрелка влево */
-.slick-arrow.slick-prev{
+.slick-arrow.slick-prev {
   left: 0px;
   background: transparent;
   font-size: 0;
@@ -71,13 +83,13 @@
   outline: none;
 }
 
-.slick-arrow.slick-prev::after{
+.slick-arrow.slick-prev::after {
   width: 42px;
   height: 151px;
   background-color: turquoise;
 }
 
-.slick-arrow.slick-prev::before{
+.slick-arrow.slick-prev::before {
   visibility: hidden;
   content: '\e5cf';
   font-family: 'Material Icons';
@@ -88,7 +100,7 @@
 }
 
 /* Стрелка вправо */
-.slick-arrow.slick-next{
+.slick-arrow.slick-next {
   right: 4px;
   background: transparent;
   font-size: 0;
@@ -97,7 +109,7 @@
   outline: none;
 }
 
-.slick-arrow.slick-next::before{
+.slick-arrow.slick-next::before {
   visibility: hidden;
   content: '\e5cf';
   font-family: 'Material Icons';
@@ -109,7 +121,7 @@
 }
 
 /* Точки (булиты) */
-.slick-dots{
+.slick-dots {
   display: flex;
   position: absolute;
   right: 13px;
@@ -117,12 +129,12 @@
   z-index: 10;
 }
 
-.slick-dots li{
+.slick-dots li {
   list-style: none;
   margin: 0 2px;
 }
 
-.slick-dots li button{
+.slick-dots li button {
   padding: 0;
   font-size: 0;
   width: 7px;
@@ -133,10 +145,9 @@
   background-color: transparent;
   outline: none;
   cursor: pointer;
-
 }
 
 /* Активная точка */
-.slick-dots li.slick-active button{
+.slick-dots li.slick-active button {
   background-color: #fff;
 }

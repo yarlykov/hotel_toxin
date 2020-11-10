@@ -1,27 +1,29 @@
-.radio{
+@import '@variables';
+
+.radio {
   box-sizing: border-box;
   display: inline-block;
   color: $textColor_50;
   cursor: pointer;
   margin-left: 30px;
 
-  &__input{
+  &__input {
     position: absolute;
     height: 1px;
     width: 1px;
     overflow: hidden;
     clip: rect(0 0 0 0);
 
-    &:checked + .radio__box{
+    &:checked + .radio__box {
       border-color: $designColor_main;
     }
 
-    &:checked ~ .radio__title{
+    &:checked ~ .radio__title {
       color: $textColor_75;
     }
 
-    &:checked + .radio__box:before{
-      content: "";
+    &:checked + .radio__box:before {
+      content: '';
       box-sizing: border-box;
       position: absolute;
       top: 3px;
@@ -31,10 +33,9 @@
       border-radius: 50%;
       background: $mainGradient;
     }
-
   }
 
-  &__box{
+  &__box {
     position: absolute;
     width: 20px;
     height: 20px;

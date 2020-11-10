@@ -1,12 +1,13 @@
+@import '@variables';
+
 .landing {
-  
   &__content {
-    background: url('./components/landing/image/landing.jpg') no-repeat;
+    background: url('../landing/image/landing.jpg') no-repeat;
     background-size: cover;
     background-size: 107%;
     background-position: 51% 68%;
     box-sizing: border-box;
-    
+
     @media (max-width: 1280px) {
       background-size: cover;
     }
@@ -40,7 +41,6 @@
     @media (max-width: 480px) {
       padding-bottom: 3.5714rem;
     }
-
   }
 
   &__self-presentation {

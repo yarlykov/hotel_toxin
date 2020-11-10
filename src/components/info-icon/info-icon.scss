@@ -1,3 +1,5 @@
+@import '@variables';
+
 .info-icon {
   display: inline-flex;
   margin: 0 auto 0 5px;
@@ -15,7 +17,7 @@
       color: $textColor_50;
     }
   }
-  
+
   & [data-tooltip] {
     position: relative;
   }
@@ -26,16 +28,16 @@
     width: 200px;
     right: -50px;
     top: 0;
-    background: #E5E5E5;
+    background: #e5e5e5;
     color: $textColor_50;
     padding: 0.5rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     pointer-events: none;
     opacity: 0;
-    transition: .5s;
+    transition: 0.5s;
   }
-  
+
   & [data-tooltip]:hover:after {
     opacity: 1;
     top: 1.5rem;

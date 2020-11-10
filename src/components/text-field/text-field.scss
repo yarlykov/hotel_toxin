@@ -1,41 +1,43 @@
- input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus textarea:-webkit-autofill,
-  textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
-  select:-webkit-autofill,
-  select:-webkit-autofill:hover,
-  select:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
-    -webkit-text-fill-color: rgba(31, 32, 65, 0.75);
-  }
+@import '@variables';
 
-.text-field{
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  -webkit-text-fill-color: rgba(31, 32, 65, 0.75);
+}
+
+.text-field {
   position: relative;
   border: $mainBorder;
   border-radius: 4px;
   box-sizing: border-box;
-  
-  &__size{
-    &_large{
+
+  &__size {
+    &_large {
       // width: 320px;
       // height: 44px;
     }
-    &_medium{
+    &_medium {
       width: 266px;
       // height: 44px;
     }
-    &_small{
+    &_small {
       width: 150px;
       // height: 44px;
     }
   }
-  
-  &__arrow{
-    &_down{
+
+  &__arrow {
+    &_down {
       position: absolute;
       top: 10px;
       right: 10px;
-      &::before{
+      &::before {
         content: '\e5cf';
         font-family: 'Material Icons';
         font-size: 24px;
@@ -46,7 +48,7 @@
     }
   }
 
-  &__subscribe_button{
+  &__subscribe_button {
     position: absolute;
     width: 42px;
     height: 44px;
@@ -55,7 +57,7 @@
     border-radius: 0 4px 4px 0px;
     outline: none;
     right: 0;
-    &::before{
+    &::before {
       content: '\e5c8';
       font-family: 'Material Icons';
       font-size: 24px;
@@ -64,7 +66,7 @@
     }
   }
 
-  &__input{
+  &__input {
     width: 100%;
     box-sizing: border-box;
     padding: 0 0px 0 14px;
@@ -81,49 +83,48 @@
     text-overflow: ellipsis;
     outline: none;
 
-    &:focus{
+    &:focus {
       border: none;
     }
 
-    &::placeholder{
+    &::placeholder {
       color: $textColor_25;
     }
 
-    &_lowercase{
+    &_lowercase {
       text-transform: lowercase;
     }
 
-    &_placeholder_dark-75{
-      &::placeholder{
-        color:$textColor_75;
+    &_placeholder_dark-75 {
+      &::placeholder {
+        color: $textColor_75;
       }
     }
-    
   }
 
-  &__subscribe{
+  &__subscribe {
     width: 266px - $inputHeight;
   }
 
-  &_hover{
+  &_hover {
     border: $focusBorder;
-    & .text-field__input{
+    & .text-field__input {
       border: none;
     }
-    & .text-field__input::placeholder{
+    & .text-field__input::placeholder {
       letter-spacing: -0.18px;
-      color:$textColor_75;
+      color: $textColor_75;
     }
-    & .text-field__input{
+    & .text-field__input {
       padding-bottom: 2px;
-      color:$textColor_75;
+      color: $textColor_75;
     }
   }
 
   &:hover,
-  &:focus-within{
+  &:focus-within {
     border: $focusBorder;
-    & .text-field__input::placeholder{
+    & .text-field__input::placeholder {
       color: $textColor_75;
     }
   }
