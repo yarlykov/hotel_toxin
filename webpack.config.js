@@ -42,7 +42,19 @@ const common = merge([
         '@variables': path.resolve(__dirname, `${PATHS.src}/styles/variables.scss`),
       },
     },
-
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            name: 'vendors',
+            test: /node_modules/,
+            chunks: 'all',
+            enforce: true,
+          }
+        }
+      }
+    },
+    
     plugins: [
       new MiniCssExtractPlugin({
         filename: IS_DEVELOPMENT ? '[name].css' : '[name].[contenthash].css',
