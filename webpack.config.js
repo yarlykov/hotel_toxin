@@ -35,7 +35,7 @@ const common = merge([
     },
     output: {
       path: PATHS.dist,
-      filename: IS_DEVELOPMENT ? 'bundle.js' : 'bundle.[contenthash].js',
+      filename: IS_DEVELOPMENT ? 'bundle.js' : '[name].[contenthash].js',
     },
     resolve: {
       alias: {

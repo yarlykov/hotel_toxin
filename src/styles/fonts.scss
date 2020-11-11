@@ -57,9 +57,20 @@
     url('../fonts/Montserrat/Montserrat-Regular.woff2') format('woff2'),
     url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
     url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'),
-    url('../fonts/Montserrat/Montserrat-Regular.svg') format('svg');
+    url('../fonts/Montserrat/Montserrat-Regular-Latin.svg') format('svg');
   font-weight: 400;
   font-style: normal;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  src: url('../fonts/Montserrat/Montserrat-Regular-Cyrillic.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /*-------Montserrat--Bold------*/
@@ -70,9 +81,20 @@
     url('../fonts/Montserrat/Montserrat-Bold.woff2') format('woff2'),
     url('../fonts/Montserrat/Montserrat-Bold.woff') format('woff'),
     url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype'),
-    url('../fonts/Montserrat/Montserrat-Bold.svg') format('svg');
+    url('../fonts/Montserrat/Montserrat-Bold-Latin.svg') format('svg');
   font-weight: 700;
   font-style: normal;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  src: url('../fonts/Montserrat/Montserrat-Bold-Cyrillic.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /*-------Material Icon---------*/
@@ -92,11 +114,9 @@
 @font-face {
   font-family: 'Font Awesome';
   src: local('Font Awesome'),
-    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.woff2')
-      format('woff2'),
+    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.woff2') format('woff2'),
     url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.woff') format('woff'),
-    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.ttf')
-      format('truetype'),
+    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.ttf') format('truetype'),
     url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.svg') format('svg');
   font-style: normal;
   font-weight: 400;
