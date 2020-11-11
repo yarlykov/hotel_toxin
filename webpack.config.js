@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const devServer = require('./webpack/devServer');
 const stylesModule = require('./webpack/stylesModule');
+const postcss = require('./webpack/postcss');
 const pugModule = require('./webpack/pugModule');
 const imageModule = require('./webpack/imageModule');
 const fontsModule = require('./webpack/fontsModule');
@@ -55,7 +56,6 @@ const common = merge([
       new CleanWebpackPlugin(),
       new webpack.ProvidePlugin({
         $: 'jquery',
-        $: 'jquery',
         jQuery: 'jquery',
         jquery: 'jquery',
         'window.jQuery': 'jquery',
@@ -66,7 +66,6 @@ const common = merge([
       }),
     ],
   },
-  stylesModule(IS_DEVELOPMENT),
   pugModule(IS_DEVELOPMENT),
   imageModule(),
   fontsModule(),
@@ -77,11 +76,13 @@ module.exports = function() {
   if (IS_PRODUCTION) {
     return merge([
       common,
+      postcss(),
     ])
   }
   if (IS_DEVELOPMENT) {
     return merge([
       common,
+      stylesModule(),
       devServer(),
     ])
   }
