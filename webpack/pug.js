@@ -1,4 +1,4 @@
-module.exports = function (mode) {
+module.exports = function (devMode) {
   return {
     module: {
       rules: [
@@ -6,7 +6,7 @@ module.exports = function (mode) {
           test: /\.pug$/,
           loader: 'pug-loader',
           options: {
-            pretty: mode,
+            pretty: devMode,
           },
         },
       ],

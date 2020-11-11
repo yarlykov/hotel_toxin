@@ -19,20 +19,20 @@ const PAGES_DIR = path.resolve(__dirname, 'src/pages');
 const PAGES = fs
   .readdirSync(PAGES_DIR)
   .map((item) => item.replace(/\.[^/.]+$/, ''));
+  
+  const PATHS = {
+    src: path.join(__dirname, './src'), 
+    dist: path.join(__dirname, './dist'),
+  }
 
-const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
-const IS_PRODUCTION = !IS_DEVELOPMENT;
+const devMode = process.env.NODE_ENV === 'development';
+const productionMode = !devMode;
 
-const PATHS = {
-  src: path.join(__dirname, './src'), 
-  dist: path.join(__dirname, './dist'),
-}
-
-const filename = (ext) => (IS_DEVELOPMENT ? `[name].${ext}` : `[name].[hash].${ext}`);
+const filename = (ext) => (devMode ? `[name].${ext}` : `[name].[hash].${ext}`);
 
 const common = merge([
   {
-    entry: { 
+    entry: {
       main: ['@babel/polyfill', `${PATHS.src}/index.js`],
     },
     output: {
@@ -41,25 +41,29 @@ const common = merge([
     },
     resolve: {
       alias: {
-        '@variables': path.resolve(__dirname, `${PATHS.src}/styles/variables.scss`),
+        '@variables': path.resolve(
+          __dirname,
+          `${PATHS.src}/styles/variables.scss`
+        ),
       },
     },
     optimization: {
       splitChunks: {
         cacheGroups: {
           vendor: {
+            test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
-            test: /node_modules/,
             chunks: 'all',
             enforce: true,
-          }
-        }
-      }
+          },
+        },
+      },
     },
-    
+
     plugins: [
       new MiniCssExtractPlugin({
         filename: filename('css'),
+        chunkFilename: '[id].css',
       }),
       ...PAGES.map(
         (page) =>
@@ -81,20 +85,20 @@ const common = merge([
       }),
     ],
   },
-  pug(IS_DEVELOPMENT),
+  pug(devMode),
   images(),
   fonts(),
   javaScript(),
 ]);
 
 module.exports = function() {
-  if (IS_PRODUCTION) {
+  if (productionMode) {
     return merge([
       common,
       postcss(),
     ])
   }
-  if (IS_DEVELOPMENT) {
+  if (devMode) {
     return merge([
       common,
       styles(),
