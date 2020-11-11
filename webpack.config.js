@@ -2,12 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const devServer = require('./webpack/devServer');
-const stylesModule = require('./webpack/stylesModule');
+const styles = require('./webpack/styles');
 const postcss = require('./webpack/postcss');
-const pugModule = require('./webpack/pugModule');
-const imageModule = require('./webpack/imageModule');
-const fontsModule = require('./webpack/fontsModule');
-const jsModule = require('./webpack/jsModule');
+const pug = require('./webpack/pug');
+const images = require('./webpack/images');
+const fonts = require('./webpack/fonts');
+const javaScript = require('./webpack/javaScript');
+const sourceMap = require('./webpack/sourceMap');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -23,7 +24,7 @@ const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const IS_PRODUCTION = !IS_DEVELOPMENT;
 
 const PATHS = {
-  src: path.join(__dirname, './src'),
+  src: path.join(__dirname, './src'), 
   dist: path.join(__dirname, './dist'),
 }
 
@@ -66,10 +67,10 @@ const common = merge([
       }),
     ],
   },
-  pugModule(IS_DEVELOPMENT),
-  imageModule(),
-  fontsModule(),
-  jsModule(),
+  pug(IS_DEVELOPMENT),
+  images(),
+  fonts(),
+  javaScript(),
 ]);
 
 module.exports = function() {
@@ -82,8 +83,9 @@ module.exports = function() {
   if (IS_DEVELOPMENT) {
     return merge([
       common,
-      stylesModule(),
+      styles(),
       devServer(),
+      sourceMap(),
     ])
   }
 }
