@@ -28,14 +28,16 @@ const PATHS = {
   dist: path.join(__dirname, './dist'),
 }
 
+const filename = (ext) => (IS_DEVELOPMENT ? `[name].${ext}` : `[name].[hash].${ext}`);
+
 const common = merge([
   {
-    entry: {
+    entry: { 
       main: ['@babel/polyfill', `${PATHS.src}/index.js`],
     },
     output: {
       path: PATHS.dist,
-      filename: IS_DEVELOPMENT ? 'bundle.js' : '[name].[contenthash].js',
+      filename: filename('js'),
     },
     resolve: {
       alias: {
@@ -57,7 +59,7 @@ const common = merge([
     
     plugins: [
       new MiniCssExtractPlugin({
-        filename: IS_DEVELOPMENT ? '[name].css' : '[name].[contenthash].css',
+        filename: filename('css'),
       }),
       ...PAGES.map(
         (page) =>
