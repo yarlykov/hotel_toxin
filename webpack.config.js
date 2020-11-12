@@ -63,7 +63,6 @@ const common = merge([
     plugins: [
       new MiniCssExtractPlugin({
         filename: filename('css'),
-        chunkFilename: '[id].css',
       }),
       ...PAGES.map(
         (page) =>
