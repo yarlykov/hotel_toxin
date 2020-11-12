@@ -42,6 +42,7 @@ const common = merge([
     resolve: {
       alias: {
         '@variables': path.resolve(__dirname, `${PATHS.src}/styles/variables.scss`),
+        '@mixins': path.resolve(__dirname, `${PATHS.src}/styles/mixins.scss`),
       },
     },
     optimization: {
