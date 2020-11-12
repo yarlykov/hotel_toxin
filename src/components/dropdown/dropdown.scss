@@ -3,6 +3,7 @@ $inputWidthSizeL: 320px;
 $inputWidthSizeM: 266px;
 $inputWidthSizeS: 150px;
 @import '@variables';
+@import '../../styles/mixins';
 
 .dropdown {
   position: relative;
@@ -62,6 +63,7 @@ $inputWidthSizeS: 150px;
   }
 
   &__menu {
+    @include font-h3;
     list-style: none;
     padding: 0;
     margin: 0;

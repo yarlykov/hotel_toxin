@@ -103,8 +103,7 @@ class Dropdown {
     clearBtn.classList.add(
       'button_text-color_gray',
       'js-buttons-dropdown__button',
-      'js-buttons-dropdown__button_clear',
-      'font__h3'
+      'js-buttons-dropdown__button_clear'
     );
     clearBtn.setAttribute('type', 'button');
     clearBtn.setAttribute('data-type', 'clear');
@@ -113,8 +112,7 @@ class Dropdown {
     applyBtn.classList.add(
       'button_text-color_purple',
       'js-buttons-dropdown__button',
-      'js-buttons-dropdown__button_apply',
-      'font__h3'
+      'js-buttons-dropdown__button_apply'
     );
     applyBtn.setAttribute('type', 'button');
     applyBtn.setAttribute('data-type', 'apply');

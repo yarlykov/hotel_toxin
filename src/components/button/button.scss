@@ -1,4 +1,5 @@
 @import '@variables';
+@import '../../styles/mixins';
 
 .button {
   display: flex;
@@ -20,11 +21,11 @@
 
   &:hover,
   &:focus {
-    background: $mainGradientTransperent;
+    background: $mainGradientTransparent;
   }
 
   &_hover {
-    background: $mainGradientTransperent;
+    background: $mainGradientTransparent;
   }
 
   &_fill-white {
@@ -68,11 +69,13 @@
   /*------Text-Colors------*/
   &_text-color {
     &_purple {
+      @include font-h3;
       color: $designColor_main;
       position: relative;
       z-index: 1;
     }
     &_gray {
+      @include font-h3;
       color: $textColor_50;
     }
     &_white {

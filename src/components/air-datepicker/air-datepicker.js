@@ -17,6 +17,7 @@ $(".air-datepicker").datepicker({
   nextHtml: '<span class="datepicker__arrow datepicker__arrow_forward"></span>',
   // offset: -10,
 });
+
 $(".air-datepicker__inline").datepicker({
   dateFormat: "d M",
   multipleDatesSeparator: " - ",

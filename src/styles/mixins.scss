@@ -1,0 +1,38 @@
+@import '@variables';
+
+@mixin font-h1 {
+  font-family: $secondFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.7143rem;
+  line-height: 2.1429rem;
+  color: $mainTextColor;
+}
+
+@mixin font-h2 {
+  font-family: $secondFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3571rem;
+  line-height: 1.7143rem;
+  color: $mainTextColor;
+}
+
+@mixin font-h3 {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.8571rem;
+  line-height: 1.0714rem;
+  color: $mainTextColor;
+  text-transform: uppercase;
+}
+
+@mixin font-body {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7143rem;
+  color: $textColor_75;
+}
