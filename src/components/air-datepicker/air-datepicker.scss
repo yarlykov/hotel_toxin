@@ -65,13 +65,13 @@
   }
 
   &.-in-range- {
-    background: $mainGradientTransperent_25;
+    background: $mainGradientTransparent _25;
     color: $textColor_50;
     border-radius: 0;
 
     &.-focus- {
       color: #fff;
-      background: $mainGradientTransperent_25;
+      background: $mainGradientTransparent _25;
     }
   }
 
@@ -87,7 +87,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: $mainGradientTransperent_25;
+      background: $mainGradientTransparent _25;
       border-radius: 50% 0 0 50%;
       z-index: -1;
     }
@@ -108,7 +108,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: $mainGradientTransperent_25;
+      background: $mainGradientTransparent _25;
       border-radius: 0 50% 50% 0;
       z-index: -1;
     }
@@ -134,7 +134,7 @@
     }
 
     &.-focus- {
-      background: $mainGradientTransperent_25;
+      background: $mainGradientTransparent _25;
     }
   }
 }
