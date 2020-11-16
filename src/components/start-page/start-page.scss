@@ -13,10 +13,10 @@
     @include font-h2;
     @include text-gradient-fill($mainGradient);
 
-    min-height: 30px;
+    min-height: 2.1429rem;
     display: flex;
     justify-content: space-around;
-    padding-top: 50px;
+    padding-top: 3.5714rem;
 
     @media (max-width: 659px) {
       display: none;
@@ -30,6 +30,6 @@
   }
 
   &__menu {
-    padding-top: 20px;
+    padding-top: 1.4286rem;
   }
 }
