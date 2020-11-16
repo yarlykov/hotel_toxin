@@ -36,3 +36,10 @@
   line-height: 1.7143rem;
   color: $textColor_75;
 }
+
+@mixin text-gradient-fill($color) {
+  background: $color;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
