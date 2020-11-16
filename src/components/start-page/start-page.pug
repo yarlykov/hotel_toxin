@@ -6,5 +6,8 @@ mixin start-page({ logo={}, uiKit=[], sitePages=[] })
     .start-page__container
       .start-page__logo
         +logo(logo)
+      .start-page__header
+        h2.start-page__header-ui-kit Ui Kit
+        h2.start-page__header-pages Pages
       .start-page__menu
         +menu-widget({ uiKit, sitePages })
