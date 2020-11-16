@@ -1,10 +1,10 @@
 include ../logo/logo.pug
 include ../menu-widget/menu-widget.pug
 
-mixin start-page({ logo={}, menuItems=[] })
+mixin start-page({ logo={}, uiKit=[], sitePages=[] })
   .start-page
     .start-page__container
       .start-page__logo
         +logo(logo)
       .start-page__menu
-        +menu-widget({ menuItems })
+        +menu-widget({ uiKit, sitePages })
