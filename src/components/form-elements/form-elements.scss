@@ -1,4 +1,5 @@
 @import '@variables';
+@import '@mixins';
 
 .form-elements {
   display: grid;
@@ -177,6 +178,11 @@
 }
 
 .list {
+  &__title {
+    @include font-h3;
+    padding-top: 1px;
+    padding-bottom: 13px;
+  }
   &__wrapper {
     &:first-child {
       margin-bottom: 24px;

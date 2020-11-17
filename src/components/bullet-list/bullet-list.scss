@@ -1,29 +1,29 @@
 @import '@variables';
+@import '@mixins';
 
 .bullet-list {
   list-style: none;
   width: 266px;
+
   &__item {
+    @include font-body;
     display: flex;
     align-items: baseline;
-    font-family: $mainFont;
-    font-weight: 400;
-    line-height: 24px;
-    color: $textColor_75;
     text-transform: none;
-    padding-top: 10px;
+    padding-top: 0.7143rem;
+
     &:first-child {
-      padding-top: 0px;
+      padding-top: 0rem;
     }
   }
+
   &__item::before {
     content: '';
-    flex-shrink: 0;
     display: inline-block;
-    height: 10px;
-    width: 10px;
+    height: 0.7143rem;
+    width: 0.7143rem;
     background: $textColor_25;
     border-radius: 50%;
-    margin-right: 11px;
+    margin-right: 0.7857rem;
   }
 }
