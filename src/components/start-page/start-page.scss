@@ -16,7 +16,12 @@
     min-height: 2.1429rem;
     display: flex;
     justify-content: space-around;
+    padding: 0 100px 0 100px;
     padding-top: 2.1429rem;
+
+    @media (max-width: 840px) {
+      padding: 30px 0 0 0;
+    }
 
     @media (max-width: 659px) {
       display: none;
@@ -25,14 +30,15 @@
 
   &__toggle {
     display: flex;
-    padding: 20px 0 20px 50px;
-    justify-content: start;
+    padding: 20px 50px 20px 0px;
+    justify-content: flex-end;
   }
 
   &__logo {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     padding-top: 5vh;
+    padding-left: 50px;
   }
 
   &__menu {

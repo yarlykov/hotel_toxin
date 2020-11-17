@@ -5,6 +5,11 @@
   &__list {
     display: flex;
     justify-content: space-around;
+    padding: 0 100px 0 100px;
+    
+    @media (max-width: 840px) {
+      padding: 0;
+    }
 
     &_ui-kit {
       @media (max-width: 659px) {
