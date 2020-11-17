@@ -2,15 +2,16 @@
 @import '@mixins';
 
 .bullet-list {
-  list-style: none;
   width: 266px;
+  list-style: none;
 
   &__item {
     @include font-body;
+    
     display: flex;
     align-items: baseline;
-    text-transform: none;
     padding-top: 0.7143rem;
+    text-transform: none;
 
     &:first-child {
       padding-top: 0rem;
@@ -22,8 +23,8 @@
     display: inline-block;
     height: 0.7143rem;
     width: 0.7143rem;
-    background: $textColor_25;
-    border-radius: 50%;
     margin-right: 0.7857rem;
+    border-radius: 50%;
+    background: $textColor_25;
   }
 }
