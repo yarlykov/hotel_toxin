@@ -16,11 +16,17 @@
     min-height: 2.1429rem;
     display: flex;
     justify-content: space-around;
-    padding-top: 3.5714rem;
+    padding-top: 2.1429rem;
 
     @media (max-width: 659px) {
       display: none;
     }
+  }
+
+  &__toggle {
+    display: flex;
+    padding: 20px 0 20px 50px;
+    justify-content: start;
   }
 
   &__logo {

@@ -1,5 +1,5 @@
 mixin menu-widget({ uiKit=[], sitePages=[] })
-  .menu-widget__list
+  .menu-widget__list.js-menu-widget__list
     ul.menu-widget__list_ui-kit
       each item in uiKit
         li.menu-widget__item
@@ -9,7 +9,7 @@ mixin menu-widget({ uiKit=[], sitePages=[] })
         li.menu-widget__item
           a(href=`./${item.link}.html` class="menu-widget__text") #{item.title}
 
-  .menu-widget__images-container
+  .menu-widget__images-container.js-menu-widget__images-container
     ul.menu-widget__images
       each item in uiKit
         li.menu-widget__item
