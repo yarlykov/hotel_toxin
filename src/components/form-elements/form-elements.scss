@@ -126,6 +126,7 @@
   }
 
   &__title {
+    @include font-h3;
     padding-bottom: 16px;
   }
 }

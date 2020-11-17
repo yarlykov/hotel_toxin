@@ -2,20 +2,16 @@
 @import '@mixins';
 
 .button {
+  @include font-h3;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  position: relative;
   border: none;
+  border-radius: 7.1429rem;
   background: $mainGradient;
-  border-radius: 100px;
-  font-family: $mainFont;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
   outline: none;
   cursor: pointer;
 
@@ -30,29 +26,29 @@
 
   &_fill-white {
     position: absolute;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    top: 2px;
-    left: 2px;
+    width: calc(100% - 0.2857rem);
+    height: calc(100% - 0.2857rem);
+    top: 0.1429rem;
+    left: 0.1429rem;
     background: #fff;
-    border-radius: 100px;
+    border-radius: 7.1429rem;
   }
-  /*------Size------*/
+
   &_size {
     &_stretch {
-      padding: 9px 20px 10px;
+      padding: 0.6429rem 1.4286rem 0.7143rem;
     }
     &_small {
-      min-width: 98px;
-      padding: 15px 0px 14px;
+      min-width: 7rem;
+      padding: 1.0714rem 0rem 1rem;
     }
     &_large {
-      padding: 15px 19px 14px;
+      padding: 1.0714rem 1.3571rem 1rem;
     }
   }
 
-  /*------Inline------*/
   &_inline {
+    @include font-h3;
     padding: 0;
     border: none;
     background: none;
@@ -66,16 +62,13 @@
     }
   }
 
-  /*------Text-Colors------*/
   &_text-color {
     &_purple {
-      @include font-h3;
-      color: $designColor_main;
       position: relative;
       z-index: 1;
+      color: $designColor_main;
     }
     &_gray {
-      @include font-h3;
       color: $textColor_50;
     }
     &_white {
@@ -85,18 +78,14 @@
 
   &__arrow {
     position: absolute;
-    right: 10px;
-    top: 10px;
-    color: #fff;
-
+    right: 0.7143rem;
+    top: 0.7143rem;
+    
     &:before {
-      font-family: 'Material Icons';
-      content: '\e5c8';
       position: relative;
+      content: '\e5c8';
+      font: 400 1.7143rem/1.7143rem 'Material Icons';
       color: #fff;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 24px;
     }
   }
 }
