@@ -1,23 +1,24 @@
 @import '@variables';
+@import '@mixins';
 
 .colors {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 1.4286rem;
 
   &__wrapper {
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
-    min-width: 270px;
-    margin-right: 50px;
+    min-width: 19.2857rem;
+    margin-right: 3.5714rem;
+    padding-left: 0.7143rem;
   }
 
   &__square {
-    width: 70px;
-    height: 70px;
-    border-radius: 6px;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.4286rem;
 
     &_dark_100 {
       background: $mainTextColor;
@@ -43,11 +44,8 @@
   }
 
   &__description {
-    font-family: Quicksand, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 29px;
-    padding-left: 40px;
+    font: 400 1.3571rem/2.0714rem Quicksand, Arial, sans-serif;
+    padding-left: 2.8571rem;
   }
 
   &__name {
