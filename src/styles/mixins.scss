@@ -37,6 +37,13 @@
   color: $textColor_75;
 }
 
+@mixin font-material-icons {
+  font-family: 'Material Icons';
+  font-size: 1.7143rem;
+  line-height: 1.7143rem;
+  font-weight: 400;
+}
+
 @mixin text-gradient-fill($color) {
   background: $color;
   background-clip: text;
