@@ -1,48 +1,49 @@
 @import '@variables';
+@import '@mixins';
 
 .checkbox {
-  width: 266px;
+  min-width: 19rem;
+  max-width: 19rem;
 
   &__header {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 17px;
+    padding-bottom: 1.2143rem;
     cursor: pointer;
+
     &_arrow-up {
       &::before {
+        @include font-material-icons;
         content: '\e5ce';
-        font-family: 'Material Icons';
-        font-size: 24px;
-        line-height: 15px;
-        padding-right: 10px;
+        line-height: 1.0714rem;
+        padding-right: 0.7143rem;
         color: $textColor_50;
       }
     }
     &_arrow-down {
       &::before {
+        @include font-material-icons;
         content: '\e5cf';
-        font-family: 'Material Icons';
-        font-size: 24px;
-        line-height: 15px;
-        padding-right: 10px;
+        line-height: 1.0714rem;
+        padding-right: 0.7143rem;
         color: $textColor_50;
       }
     }
   }
 
   &__item {
-    color: $textColor_50;
     display: block;
+    min-height: 1.4286rem;
+    margin-left: 2.1429rem;
+    padding-bottom: 0.7143rem;
     box-sizing: content-box;
-    min-height: 20px;
-    margin-left: 30px;
-    padding-bottom: 10px;
+    color: $textColor_50;
     cursor: pointer;
+
     &:last-child {
       padding-bottom: 0;
     }
 
-    /*-----Focus/Hover-----*/
     &:hover {
       color: $textColor_75;
     }
@@ -54,10 +55,10 @@
 
   &__input {
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: 0.0714rem;
+    height: 0.0714rem;
     overflow: hidden;
-    clip: rect(0 0 0 0); //see this property!
+    clip: rect(0 0 0 0);
 
     &:checked + .checkbox__box {
       border-color: $designColor_main;
@@ -66,11 +67,11 @@
     &:checked + .checkbox__box::after {
       content: '';
       position: absolute;
-      box-sizing: border-box;
       top: 4px;
       left: 6px;
       width: 6px;
       height: 8px;
+      box-sizing: border-box;
       border-style: solid;
       border-width: 0 2px 2px 0;
       -moz-border-image: $mainGradient;
@@ -87,10 +88,10 @@
   &__box {
     box-sizing: border-box;
     position: absolute;
-    margin-left: -30px;
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
+    width: 1.4286rem;
+    height: 1.4286rem;
+    margin-left: -2.1429rem;
+    border-radius: 0.2857rem;
     background-color: #fff;
     border: $mainBorder;
   }
@@ -101,9 +102,9 @@
   }
 
   &__description_rich {
+    margin-top: 5px;
     color: $textColor_50;
     font-weight: normal;
-    margin-top: 5px;
     font-size: 12px;
     line-height: 14px;
   }
