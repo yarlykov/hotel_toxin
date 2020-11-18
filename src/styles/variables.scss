@@ -14,6 +14,15 @@ $mainGradientTransparent          : linear-gradient(180deg,
 $mainGradientTransparent_25      : linear-gradient(180deg, 
                                     rgba(#BC9CFF, 0.25) 0%, 
                                     rgba(#8BA4F9, 0.25) 100%);
+$gradientForShadow               : linear-gradient(
+                                    90deg,
+                                    rgba(0, 0, 0, 0.5) 0%,
+                                    rgba(0, 0, 0, 0) 99.99%,
+                                    rgba(255, 255, 255, 0) 100%); 
+
+$arrowColorCarousel              : #fff;
+$dotsBorderCarousel              : 1px solid #fff;
+
 $mainBoxShadow                   : 0px 0px 25px rgba(0, 0, 0, 0.2);
 $cardsBorderRadius               : 4px;
 $cardsBackground                 : #fff;
