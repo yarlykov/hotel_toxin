@@ -2,13 +2,13 @@
 
 .headers-footers {
   &__wrapper {
-    background: #e5e5e5;
+    background: $uiKitPagesBackground;
   }
 
   &__header_sing-in {
-    margin-bottom: 40px;
+    margin-bottom: 2.8571rem;
   }
   &__header_logged {
-    margin-bottom: 40px;
+    margin-bottom: 2.8571rem;
   }
 }
