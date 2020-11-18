@@ -2,17 +2,18 @@
 
 .info-icon {
   display: inline-flex;
-  margin: 0 auto 0 5px;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
+  width: 1.4286rem;
+  height: 1.4286rem;
+  margin: 0 auto 0 0.3571rem;
   border-radius: 50%;
-  line-height: 24px;
-  width: 20px;
-  height: 20px;
+  border: $infoIconBorder;
+  line-height: 1.7143rem;
+  cursor: pointer;
 
   &:hover {
-    border: 1px solid $textColor_50;
+    border: $focusBorder;
+
     .info-icon__text {
       color: $textColor_50;
     }
@@ -25,17 +26,18 @@
   & [data-tooltip]::after {
     content: attr(data-tooltip);
     position: absolute;
-    width: 200px;
-    right: -50px;
     top: 0;
-    background: #e5e5e5;
-    color: $textColor_50;
+    width: 14.2857rem;
+    right: -3.5714rem;
+    border-radius: $mainBorderRadius;
     padding: 0.5rem;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-    pointer-events: none;
     opacity: 0;
     transition: 0.5s;
+
+    background: $uiKitPagesBackground;
+    color: $textColor_50;
+    box-shadow: $infoIconBoxShadow ;
+    pointer-events: none;
   }
 
   & [data-tooltip]:hover:after {
@@ -44,12 +46,9 @@
   }
 
   &__text {
+    font: 700 12px/14px Montserrat, Arial, sans-serif;
     align-self: center;
-    line-height: 14px;
-    font-family: Montserrat;
-    font-weight: 700;
-    font-size: 12px;
     color: rgba(85, 86, 126, 0.25);
-    padding: 0px 7px;
+    padding: 0rem 0.5rem;
   }
 }
