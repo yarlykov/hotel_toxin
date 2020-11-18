@@ -1,13 +1,14 @@
 @import '@variables';
+@import '@mixins';
 
 .carousel {
   position: relative;
-  height: 151px;
+  height: 10.7857rem;
 
   &__item img {
     width: 100%;
-    height: 151px;
-    border-radius: 4px 4px 0 0;
+    height: 10.7857rem;
+    border-radius: 0.2857rem 0.2857rem 0 0;
     object-fit: cover;
   }
 }
@@ -17,16 +18,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 42px;
-  height: 100%;
-  border-radius: 4px 0 0 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0) 99.99%,
-    rgba(255, 255, 255, 0) 100%
-  );
   z-index: 5;
+  width: 3rem;
+  height: 100%;
+  border-radius: $cardsBorderRadius 0 0 0;
+  background: $gradientForShadow;
 }
 
 .slick-slider:hover:before {
@@ -34,17 +30,12 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 42px;
-  height: 100%;
-  border-radius: 0px 0 0 4px;
-  transform: rotate(180deg);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0) 99.99%,
-    rgba(255, 255, 255, 0) 100%
-  );
   z-index: 5;
+  width: 3rem;
+  height: 100%;
+  border-radius: 0 0 0 $cardsBorderRadius;
+  transform: rotate(180deg);
+  background: $gradientForShadow;
 }
 
 .slick-slider:hover {
@@ -75,27 +66,26 @@
 
 /* Стрелка влево */
 .slick-arrow.slick-prev {
-  left: 0px;
+  left: 0;
+  transform: rotate(90deg);
   background: transparent;
   font-size: 0;
-  transform: rotate(90deg);
   border: none;
   outline: none;
 }
 
 .slick-arrow.slick-prev::after {
-  width: 42px;
-  height: 151px;
+  width: 3rem;
+  height: 10.7857rem;
   background-color: turquoise;
 }
 
 .slick-arrow.slick-prev::before {
-  visibility: hidden;
+  @include font-material-icons;
   content: '\e5cf';
-  font-family: 'Material Icons';
-  font-size: 24px;
-  line-height: 24px;
-  color: #fff;
+  visibility: hidden;
+  z-index: 10;
+  color: $arrowColorCarousel;
   cursor: pointer;
 }
 
@@ -110,37 +100,35 @@
 }
 
 .slick-arrow.slick-next::before {
-  visibility: hidden;
+  @include font-material-icons;
   content: '\e5cf';
-  font-family: 'Material Icons';
-  font-size: 24px;
-  line-height: 24px;
-  color: #fff;
-  cursor: pointer;
+  visibility: hidden;
   z-index: 10;
+  color: $arrowColorCarousel;
+  cursor: pointer;
 }
 
 /* Точки (булиты) */
 .slick-dots {
   display: flex;
   position: absolute;
-  right: 13px;
-  bottom: 4px;
+  right: 1.0714rem;
+  bottom: 1.0714rem;
   z-index: 10;
 }
 
 .slick-dots li {
   list-style: none;
-  margin: 0 2px;
+  margin: 0 0.1429rem;
 }
 
 .slick-dots li button {
+  width: 0.5rem;
+  height: 0.5rem;
+  box-sizing: border-box;
   padding: 0;
   font-size: 0;
-  width: 7px;
-  height: 7px;
-  box-sizing: border-box;
-  border: 1px solid #fff;
+  border: $dotsBorderCarousel;
   border-radius: 50%;
   background-color: transparent;
   outline: none;
@@ -149,5 +137,5 @@
 
 /* Активная точка */
 .slick-dots li.slick-active button {
-  background-color: #fff;
+  background-color: $cardsBackground ;
 }
