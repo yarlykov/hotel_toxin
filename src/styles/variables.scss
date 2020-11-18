@@ -14,6 +14,9 @@ $mainGradientTransparent          : linear-gradient(180deg,
 $mainGradientTransparent_25      : linear-gradient(180deg, 
                                     rgba(#BC9CFF, 0.25) 0%, 
                                     rgba(#8BA4F9, 0.25) 100%);
+$mainBoxShadow                   : 0px 0px 25px rgba(0, 0, 0, 0.2);
+$cardsBorderRadius               : 4px;
+$cardsBackground                 : #fff;
 
 // fonts
 $mainFont                        : Montserrat, Areal, san-serif;
@@ -30,3 +33,4 @@ $inputWidthSizeS                 : 150px;
 $mainBorder                      : 1px solid rgba(31, 32, 65, 0.25);
 $colorBorder                     : 1px solid $designColor_main;
 $focusBorder                     : 1px solid rgba(31, 32, 65, 0.5); 
+$cardsBorder                     : 1px solid rgba(0, 0, 0, 0.12);

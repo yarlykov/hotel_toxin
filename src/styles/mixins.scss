@@ -1,11 +1,11 @@
 @import '@variables';
 
 @mixin font-h1 {
-  font-family: $secondFont;
+  font-family: $mainFont;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.7143rem;
-  line-height: 2.1429rem;
+  font-size: 24px;
+  line-height: 29px;
   color: $mainTextColor;
 }
 
@@ -13,8 +13,8 @@
   font-family: $secondFont;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.3571rem;
-  line-height: 1.7143rem;
+  font-size: 19px;
+  line-height: 23px;
   color: $mainTextColor;
 }
 
@@ -22,8 +22,8 @@
   font-family: $mainFont;
   font-style: normal;
   font-weight: 700;
-  font-size: 0.8571rem;
-  line-height: 1.0714rem;
+  font-size: 12px;
+  line-height: 15px;
   color: $mainTextColor;
   text-transform: uppercase;
 }
@@ -32,8 +32,8 @@
   font-family: $mainFont;
   font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.7143rem;
+  font-size: 14px;
+  line-height: 24px;
   color: $textColor_75;
 }
 
