@@ -1,12 +1,13 @@
 @import '@variables';
+@import '@mixins';
 
 .canvas {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  max-width: 313px;
-  max-height: 148px;
-  padding-top: 21px;
+  max-width: 22.3571rem;
+  max-height: 10.5714rem;
+  padding-top: 1.5rem;
 }
 
 .chart {
@@ -14,42 +15,38 @@
   height: 100%;
 
   &__doughnut {
-    padding-bottom: 7px;
-    margin-right: 25px;
-    width: 120px;
-    height: 120px;
+    width: 8.5714rem;
+    height: 8.5714rem;
+    padding-bottom: 0.5rem;
+    margin-right: 1.7857rem;
   }
 
   &__sum-of-vote {
-    font-family: Quicksand, 'Open Sans', sans-serif;
-    font-weight: 700;
+    @include font-h1;
   }
 }
 
 .sum-of-vote {
   &__number {
-    font-size: 6.5px;
-    line-height: 30px;
+    font-size: 0.4643rem;
+    line-height: 2.1429rem;
   }
   &__text {
-    font-size: 4.5px;
-    line-height: 15px;
+    font-size: 0.3214rem;
+    line-height: 1.0714rem;
   }
 }
 
 .legend {
   &__list {
     list-style: none;
-    padding: 0 2px 5px 0;
+    padding: 0 0.1429rem 0.3571rem 0;
   }
 
   &__item {
+    @include font-body;
     position: relative;
     display: block;
-    font-family: Montserrat, sans-serif;
-    font-size: 14px;
-    line-height: 24px;
-    color: $textColor_75;
     cursor: pointer;
 
     &::first-letter {
@@ -59,24 +56,24 @@
     &::before {
       content: '';
       position: absolute;
-      top: 7px;
-      left: -15px;
-      width: 10px;
-      height: 10px;
-      border-radius: 8px;
+      top: 0.5rem;
+      left: -1.0714rem;
+      width: 0.7143rem;
+      height: 0.7143rem;
+      border-radius: 0.5714rem;
     }
 
     &:nth-child(1)::before {
-      background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+      background: $sumptuouslyRatingGradient;
     }
     &:nth-child(2)::before {
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      background: $goodRatingGradient;
     }
     &:nth-child(3)::before {
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      background: $satisfactorilyRatingGradient;
     }
     &:nth-child(4)::before {
-      background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+      background: $badRatingGradient;
     }
 
     &:hover {
@@ -88,9 +85,9 @@
 .unit {
   fill: none;
   stroke-width: 1.2;
-  cursor: pointer;
   transition-property: all;
   transition-duration: 0.5s;
+  cursor: pointer;
 
   &:hover {
     stroke-width: 2.3;
