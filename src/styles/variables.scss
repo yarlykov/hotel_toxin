@@ -19,6 +19,15 @@ $gradientForShadow               : linear-gradient(
                                     rgba(0, 0, 0, 0.5) 0%,
                                     rgba(0, 0, 0, 0) 99.99%,
                                     rgba(255, 255, 255, 0) 100%); 
+$sumptuouslyRatingGradient       : linear-gradient(180deg,
+                                   #ffe39c 0%, #ffba9c 100%);
+$goodRatingGradient              : linear-gradient(180deg, 
+                                   #6fcf97 0%, #66d2ea 100%);
+$satisfactorilyRatingGradient    : linear-gradient(180deg,
+                                   #bc9cff 0%, #8ba4f9 100%);
+$badRatingGradient               : linear-gradient(180deg, 
+                                   #919191 0%, #3d4975 100%);
+
 
 $arrowColorCarousel              : #fff;
 $dotsBorderCarousel              : 1px solid #fff;
