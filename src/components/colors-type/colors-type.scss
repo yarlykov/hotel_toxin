@@ -1,14 +1,14 @@
 @import '@variables';
+@import '@mixins';
 
 .colors-type {
   &__content-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0px auto 145px;
-    padding-top: 5px;
-    padding-right: 51px;
-    max-width: 1160px;
     box-sizing: border-box;
+    margin: 0rem auto 10.3571rem;
+    padding: 0.3571rem 3.6429rem 0 0;
+    max-width: 1160px;
   }
 }
