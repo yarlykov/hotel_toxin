@@ -5,7 +5,7 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   box-sizing: border-box;
-  font-family: 'Open Sans', Montserrat, sans-serif; // include Open Sans!!
+  font-family: 'Open Sans', Montserrat, sans-serif;
   font-size: 12px;
   line-height: 15px;
   color: $textColor_50;
@@ -65,13 +65,13 @@
   }
 
   &.-in-range- {
-    background: $mainGradientTransparent _25;
+    background: $mainGradientTransparent_25;
     color: $textColor_50;
     border-radius: 0;
 
     &.-focus- {
       color: #fff;
-      background: $mainGradientTransparent _25;
+      background: $mainGradientTransparent_25;
     }
   }
 
@@ -87,7 +87,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: $mainGradientTransparent _25;
+      background: $mainGradientTransparent_25;
       border-radius: 50% 0 0 50%;
       z-index: -1;
     }
@@ -108,7 +108,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: $mainGradientTransparent _25;
+      background: $mainGradientTransparent_25;
       border-radius: 0 50% 50% 0;
       z-index: -1;
     }
@@ -134,7 +134,7 @@
     }
 
     &.-focus- {
-      background: $mainGradientTransparent _25;
+      background: $mainGradientTransparent_25;
     }
   }
 }
@@ -273,3 +273,6 @@
     opacity: 0.5;
   }
 }
+
+
+
