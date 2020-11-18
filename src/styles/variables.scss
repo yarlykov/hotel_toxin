@@ -34,9 +34,13 @@ $dotsBorderCarousel              : 1px solid #fff;
 
 $mainBoxShadow                   : 0px 0px 25px rgba(0, 0, 0, 0.2);
 $avatarBoxShadow                 : 0px 10px 20px rgba(31, 32, 65, 0.1);
+$headerFooterBoxShadow           : 0px 10px 20px rgba(31, 32, 65, 0.05);
+$infoIconBoxShadow               : 2px 2px 5px rgba(0, 0, 0, 0.3);
+$mainBorderRadius                : 4px;
 $cardsBorderRadius               : 4px;
 $cardsBackground                 : #fff;
 $uiKitPagesBackground            : #e5e5e5;
+$headerFooterBackground          : #fff;
 
 // fonts
 $mainFont                        : Montserrat, Areal, san-serif;
@@ -55,3 +59,4 @@ $colorBorder                     : 1px solid $designColor_main;
 $focusBorder                     : 1px solid rgba(31, 32, 65, 0.5); 
 $cardsBorder                     : 1px solid rgba(0, 0, 0, 0.12);
 $avatarBorder                    : 2px solid #fff;
+$infoIconBorder                  : 1px solid rgba(0, 0, 0, 0.12);
