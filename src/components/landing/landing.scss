@@ -1,4 +1,5 @@
 @import '@variables';
+@import '@mixins';
 
 .landing {
   &__content {
@@ -14,10 +15,10 @@
   }
 
   &__container {
-    max-width: 1440px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    max-width: 1440px;
     padding: 5rem 0 0 10rem;
     min-width: 22.8571rem;
     margin: 0 auto;
@@ -44,13 +45,11 @@
   }
 
   &__self-presentation {
-    font-size: 1rem;
-    line-height: 1.7143rem;
-    color: $textColor_75;
+    @include font-body;
     align-self: flex-end;
     max-width: 21.4286rem;
-    text-align: end;
     padding: 22.7143rem 9.5714rem 1.4286rem 0;
+    text-align: end;
 
     @media (max-width: 960px) {
       display: none;
