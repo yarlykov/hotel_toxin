@@ -8,7 +8,9 @@ $designColor_main                : #BC9CFF;
 $designColor_second              : #6FCF97;
 $mainGradient                    : linear-gradient(180deg,
                                    #BC9CFF 0%, #8BA4F9 100%);
-$mainGradientTransparent          : linear-gradient(180deg, 
+$secondGradient                  : linear-gradient(180deg,
+                                   #6fcf97 0%, #66d2ea 100%);
+$mainGradientTransparent         : linear-gradient(180deg, 
                                     rgba(#BC9CFF, 0.5) 0%, 
                                     rgba(#8BA4F9, 0.5) 100%);
 $mainGradientTransparent_25      : linear-gradient(180deg, 
