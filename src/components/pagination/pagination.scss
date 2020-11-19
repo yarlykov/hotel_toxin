@@ -1,26 +1,22 @@
 @import '@variables';
+@import '@mixins';
 
 .paginationjs {
-  font-family: $mainFont;
-  font-size: 12px;
-  line-height: 15px;
-  max-width: 320px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  max-width: 22.8571rem;
+  font: 0.8571rem/1.0714rem $mainFont;
 }
 
 .js-pagination__next-button {
   color: #fff;
-  line-height: 40px;
+  line-height: 2.8571rem;
 }
 .js-pagination__next-button::before {
-  font-family: 'Material Icons';
+  @include font-material-icons;
   content: '\e5c8';
-  font-size: 24px;
-  font-weight: 400;
   color: #fff;
-  line-height: 40px;
+  line-height: 2.8571rem;
 }
 
 .js-pagination__next-button:hover::before {
@@ -32,27 +28,27 @@
 }
 
 .paginationjs .paginationjs-pages li > a {
-  min-width: 40px;
-  height: 40px;
-  line-height: 40px;
+  min-width: 2.8571rem;
+  height: 2.8571rem;
+  line-height: 2.8571rem;
   background: #fff;
-  font-size: 12px;
+  font-size: 0.8571rem;
   color: $textColor_50;
   outline: none;
 }
 
 .paginationjs .paginationjs-pages li > a:hover {
   background: #eee;
-  border-radius: 22px;
+  border-radius: 1.5714rem;
 }
 
 .paginationjs .paginationjs-pages li.active > a {
   height: 40px;
+  border-radius: 22px;
   line-height: 40px;
   background: $mainGradient;
+  font-weight: 700;
   color: #fff;
-  border-radius: 22px;
-  font-weight: bold;
 }
 .paginationjs .paginationjs-pages li.active > a:hover {
   color: $textColor_75;
@@ -64,24 +60,24 @@
 
 .paginationjs .paginationjs-pages li:first-child,
 .paginationjs .paginationjs-pages li:first-child > a {
-  border-radius: 22px;
+  border-radius: 1.5714rem;
 }
 
 .paginationjs .paginationjs-pages li:last-child {
   border-right: none;
-  border-radius: 22px;
+  border-radius: 1.5714rem;
 }
 
 .paginationjs .paginationjs-pages li:last-child > a {
-  border-radius: 22px;
+  border-radius: 1.5714rem;
   background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .paginationjs .paginationjs-nav {
-  height: 24px;
-  line-height: 24px;
+  height: 1.7143rem;
+  margin: 0.5714rem 0 0 0.3571rem;
+  line-height: 1.7143rem;
   font-family: Montserrat, Arial, sans-serif;
   color: $textColor_75;
-  margin: 8px 0 0 5px;
 }
