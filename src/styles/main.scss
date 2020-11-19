@@ -1,4 +1,5 @@
 @import '@variables';
+@import '@mixins';
 
 h1,
 h2,
@@ -13,16 +14,16 @@ ul {
 }
 
 .body-wrapper {
-  margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
 }
 
 html {
   height: 100%;
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
   font-family: $mainFont;
   font-size: 14px;
   font-style: normal;
@@ -30,30 +31,28 @@ html {
 }
 
 body {
-  margin: 0;
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 .page-wrapper {
   flex: 1 0 auto;
 
   &_background {
-    background: #e5e5e5;
+    background: $uiKitPagesBackground;
   }
 }
 
 a {
   color: $textColor_50;
   text-decoration: none;
+
   &:hover {
     color: $textColor_75;
   }
 }
 
 .gradient {
-  background: $mainGradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @include text-gradient-fill($mainGradient);
 }
