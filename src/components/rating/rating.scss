@@ -1,14 +1,14 @@
 @import '@variables';
+@import '@mixins';
 
 .rating {
+  @include font-material-icons;
   display: inline-block;
   font-family: 'Material Icons';
-  font-weight: normal;
-  font-size: 24px;
   background: $mainGradient;
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 
   &__star::before {
     content: '\e838';
