@@ -6,7 +6,7 @@
   justify-content: space-around;
   max-width: 100%;
   margin: 0 auto;
-  padding: 30px 0px;
+  padding: 2.1429rem 0rem;
 
   &__container {
     max-width: 700px;
@@ -14,17 +14,18 @@
   
   & a {
     &:not(:first-child){
-      margin-left: 50px;
+      margin-left: 3.5714rem;
     }
   }
   @media (max-width: 960px) {
     flex-direction: column;
+
     a {
-      margin-bottom: 5px;
+      margin-bottom: 0.3571rem;
     }
   }
 
   &_background {
-    background: #E5E5E5;
+    background: $uiKitPagesBackground;
   }
 }
