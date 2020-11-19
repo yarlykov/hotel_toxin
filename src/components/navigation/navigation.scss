@@ -1,13 +1,14 @@
 @import '@variables';
+@import '@mixins';
 
 .navigation {
-  list-style-type: none;
-  margin: 0;
   display: flex;
+  margin: 0;
+  list-style-type: none;
 
   &__item {
     position: relative;
-    padding-right: 20px;
+    padding-right: 1.4286rem;
   }
 
   &__link {
@@ -16,13 +17,13 @@
 
   &__item_dropdown {
     position: relative;
-    padding-right: 46px;
+    padding-right: 3.2857rem;
+
     &::after {
+      @include font-material-icons;
+      content: '\e5cf';
       position: absolute;
       right: 20px;
-      content: '\e5cf';
-      font-family: 'Material Icons';
-      font-size: 24px;
       line-height: 20px;
       color: $textColor_50;
       cursor: pointer;
@@ -41,20 +42,22 @@
   &__dropdown {
     display: none;
     position: absolute;
+    z-index: 3000;
     width: 100%;
     right: 10px;
-    background: #e5e5e5;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    z-index: 3000;
-    border-radius: 4px;
+    box-shadow: $headerFooterBoxShadow;
+    border-radius: $mainBorderRadius;
+    background: $uiKitPagesBackground;
+
     @media (max-width: 960px) {
-      background: #fff;
-      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+      background: $cardsBackground;
+      box-shadow: $headerFooterBoxShadow;
     }
 
     & .links__item {
       padding: 0.5rem;
       text-align: center;
+
       @media (max-width: 960px) {
         font-size: 1.5rem;
         line-height: 1.5rem;
