@@ -8,7 +8,6 @@
     background-size: 107%;
     background-position: 49% 53.5%;
     box-sizing: border-box;
-    // padding-left: 0.3571rem;
 
     @media (max-width: 1280px) {
       background-size: cover;
@@ -16,10 +15,10 @@
   }
 
   &__container {
-    max-width: 1440px;
     display: flex;
     justify-content: center;
-    padding: 18.9994px 0 37px 0;
+    max-width: 1440px;
+    padding: 1.3571rem 0 2.6429rem 0;
     margin: 0 auto;
 
     @media (max-width: 960px) {
