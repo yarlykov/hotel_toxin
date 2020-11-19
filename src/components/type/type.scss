@@ -1,7 +1,8 @@
 @import '@variables';
+@import '@mixins';
 
 .type {
-  padding-bottom: 50px;
+  padding-bottom: 3.5714rem;
 
   &__wrapper {
     display: flex;
@@ -11,47 +12,38 @@
   }
 
   &__header {
-    font-family: $mainFont;
-    text-transform: capitalize;
-    color: $textColor_25;
     display: flex;
     justify-content: flex-end;
     min-width: 37px;
+    font-family: $mainFont;
     font-weight: 400;
+    text-transform: capitalize;
+    color: $textColor_25;
   }
+
   &__text {
     display: flex;
-    padding-left: 30px;
+    padding-left: 2.1429rem;
     color: $mainTextColor;
   }
 
   &__h1 {
+    @include font-h1;
     display: flex;
-    font-family: $secondFont;
-    font-size: 24px;
-    line-height: 30px;
-    font-weight: 700;
   }
 
   &__h2 {
+    @include font-h2;
     display: flex;
-    font-family: $secondFont;
-    font-size: 19px;
-    line-height: 24px;
-    font-weight: 700;
   }
 
   &__h3 {
+    @include font-h3;
     display: flex;
-    font-size: 12px;
-    line-height: 15px;
-    font-weight: 700;
-    text-transform: uppercase;
   }
+
   &__body {
+    @include font-body;
     display: flex;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
   }
 }
