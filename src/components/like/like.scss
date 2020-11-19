@@ -1,59 +1,59 @@
 @import '@variables';
-/*LIKE BUTTON*/
+
 .like {
   &__button {
     display: inline-flex;
     position: relative;
-    min-width: 40px;
-    height: 20px;
+    min-width: 2.8571rem;
+    height: 1.4286rem;
     border: none;
+    border-radius: 7.1429rem;
     background: $mainGradient;
-    border-radius: 100px;
     outline: none;
     cursor: pointer;
   }
 
   &__button_border {
     position: absolute;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    top: 1px;
-    left: 1px;
-    background: #fff;
+    top: 0.0714rem;
+    left: 0.0714rem;
+    width: calc(100% - 0.1429rem);
+    height: calc(100% - 0.1429rem);
     border-radius: 100px;
+    background: #fff;
   }
 
   &__icon {
     position: absolute;
     top: 4px;
     left: 5px;
-    font-size: 10px;
     font-family: 'Material Icons';
+    font-size: 10px;
 
     &_favorite::before {
       content: '\e87d';
       background: $mainGradient;
-      background-clip: text;
-      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
     }
 
     &_favorite_border::before {
       content: '\e87e';
       background: $textColor_25;
-      background-clip: text;
-      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
     }
   }
 
   &__text {
-    margin: 2px 0px 0 15px;
     position: relative;
+    z-index: 1;
+    margin: 0.1429rem 0rem 0 1.0714rem;
     color: $designColor_main;
     font-family: $mainFont;
     font-size: 10px;
-    z-index: 1;
   }
 
   &__disable {
