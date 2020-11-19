@@ -15,10 +15,10 @@
   }
 
   &__container {
-    max-width: 1440px;
     display: flex;
     justify-content: center;
-    padding: 172px 0 172px 0;
+    max-width: 1440px;
+    padding: 12.2857rem 0 12.2857rem 0;
     margin: 0 auto;
 
     @media (max-width: 960px) {
