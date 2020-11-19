@@ -24,12 +24,12 @@
   }
 
   &__images {
-    list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding-left: 3.5714rem;
     grid-gap: 0.7143rem;
     grid-auto-flow: dense;
+    padding-left: 3.5714rem;
+    list-style: none;
 
     @media (max-width: 659px) {
       display: flex;
@@ -42,8 +42,8 @@
   &__item {
     display: block;
     max-width: 16.4286rem;
-    text-align: center;
     margin-bottom: 1.4286rem;
+    text-align: center;
 
     @media (max-width: 480px) {
       margin-left: 0;
@@ -52,11 +52,11 @@
 
   &__item img {
     display: block;
-    margin-top: 1.3rem;
     width: 100%;
     min-height: 10.7143rem;
+    margin-top: 1.3rem;
+    border-radius: 1.4286rem;
     object-fit: cover;
-    border-radius: 20px;
     box-shadow: 0rem 0.7143rem 1.4286rem rgba(31, 32, 65, 0.2);
     transition: 0.3s;
   }
@@ -67,11 +67,11 @@
 
   &__text {
     display: block;
+    margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 700;
     color: $mainTextColor;
-    margin-bottom: 1rem;
-    transition: 0.3s;
+    transition: .3s;
   }
 
   &__text:hover {
