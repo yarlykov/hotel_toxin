@@ -15,10 +15,10 @@
 
   &__button_border {
     position: absolute;
-    top: 0.0714rem;
-    left: 0.0714rem;
-    width: calc(100% - 0.1429rem);
-    height: calc(100% - 0.1429rem);
+    top: 1px;
+    left: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
     border-radius: 100px;
     background: #fff;
   }
@@ -28,7 +28,7 @@
     top: 4px;
     left: 5px;
     font-family: 'Material Icons';
-    font-size: 10px;
+    font-size: 0.7143rem;
 
     &_favorite::before {
       content: '\e87d';
@@ -53,7 +53,7 @@
     margin: 0.1429rem 0rem 0 1.0714rem;
     color: $designColor_main;
     font-family: $mainFont;
-    font-size: 10px;
+    font-size: 0.7143rem;
   }
 
   &__disable {
