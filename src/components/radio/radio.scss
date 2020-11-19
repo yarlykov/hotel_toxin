@@ -1,11 +1,11 @@
 @import '@variables';
 
 .radio {
-  box-sizing: border-box;
   display: inline-block;
+  margin-left: 2.1429rem;
+  box-sizing: border-box;
   color: $textColor_50;
   cursor: pointer;
-  margin-left: 30px;
 
   &__input {
     position: absolute;
@@ -24,12 +24,12 @@
 
     &:checked + .radio__box:before {
       content: '';
-      box-sizing: border-box;
       position: absolute;
       top: 3px;
       left: 3px;
       width: 12px;
       height: 12px;
+      box-sizing: border-box;
       border-radius: 50%;
       background: $mainGradient;
     }
