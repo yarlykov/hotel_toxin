@@ -101,8 +101,7 @@ class Dropdown {
     btnWrap.classList.add('js-buttons-dropdown__wrapper');
 
     clearBtn.classList.add(
-      'button_text-color_gray',
-      'js-buttons-dropdown__button',
+      'button_inline',
       'js-buttons-dropdown__button_clear'
     );
     clearBtn.setAttribute('type', 'button');
@@ -110,9 +109,7 @@ class Dropdown {
     clearBtn.innerHTML = 'Очистить';
 
     applyBtn.classList.add(
-      'button_text-color_purple',
-      'js-buttons-dropdown__button',
-      'js-buttons-dropdown__button_apply'
+      'button_inline',
     );
     applyBtn.setAttribute('type', 'button');
     applyBtn.setAttribute('data-type', 'apply');
