@@ -1,5 +1,20 @@
 {
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true
+  },
   "extends": [
     "airbnb/base"
-  ]
+  ],
+  "globals": {
+    "$": "readonly",
+    "jQuery": "readonly"
+  },
+    "rules": {
+    "linebreak-style": "off",
+    "no-underscore-dangle": "off",
+    "no-new": "off",
+    "class-methods-use-this": "off"
+  }
 }
