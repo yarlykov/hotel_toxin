@@ -6,8 +6,6 @@ mixin menu-widget({ uiKit=[], sitePages=[] })
             a&attributes({
               class: 'menu-widget__text',
               href: `./${item.link}.html`,
-              target: '_blank',
-              rel: 'noopener noreferrer'
             }) #{item.title}
       ul.menu-widget__list_pages
         each item in sitePages
@@ -15,8 +13,6 @@ mixin menu-widget({ uiKit=[], sitePages=[] })
             a&attributes({
               class: 'menu-widget__text',
               href: `./${item.link}.html`,
-              target: '_blank',
-              rel: 'noopener noreferrer'
             }) #{item.title}
 
   .menu-widget__images-container.js-menu-widget__images-container
@@ -26,8 +22,6 @@ mixin menu-widget({ uiKit=[], sitePages=[] })
           a&attributes({
               class: 'menu-widget__text',
               href: `./${item.link}.html`,
-              target: '_blank',
-              rel: 'noopener noreferrer'
           }) #{item.title}
             img(src=require(`../components/menu-widget/image/${item.image}`).default)
       each item in sitePages
@@ -35,7 +29,5 @@ mixin menu-widget({ uiKit=[], sitePages=[] })
           a&attributes({
               class: 'menu-widget__text',
               href: `./${item.link}.html`,
-              target: '_blank',
-              rel: 'noopener noreferrer'
           }) #{item.title}
             img(src=require(`../components/menu-widget/image/${item.image}`).default)
