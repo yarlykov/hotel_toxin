@@ -1,17 +1,16 @@
+const $filterMainNode = $('.js-search-room__filter');
+const $searchRoomMainNode = $('.js-search-room');
 
-const $filterMainNode = $('.js-search-room__filter')
-const $searchRoomMainNode = $('.js-search-room')
+$searchRoomMainNode.each(() => {
+  const $filterIcon = $('.js-filter__icon');
 
-$searchRoomMainNode.each(function () {
-  const $filterIcon = $('.js-filter__icon')
+  $filterIcon.on('click', () => {
+    $searchRoomMainNode.toggleClass('js-search-room__active');
+  });
+});
 
-  $filterIcon.on('click', function () {
-    $searchRoomMainNode.toggleClass('js-search-room__active')
-  })
-})
-
-$(document).on('mouseup', function(e) {
+$(document).on('mouseup', (e) => {
   if (!$filterMainNode.is(e.target) && $filterMainNode.has(e.target).length === 0) {
-    $searchRoomMainNode.removeClass('js-search-room__active')
+    $searchRoomMainNode.removeClass('js-search-room__active');
   }
-})
+});
