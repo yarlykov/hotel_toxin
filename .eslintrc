@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "es6": true,
-    "jquery": true
+    "jquery": true,
+    "node": true
   },
   "extends": [
     "airbnb/base"
@@ -11,10 +12,11 @@
     "$": "readonly",
     "jQuery": "readonly"
   },
-    "rules": {
+  "rules": {
     "linebreak-style": "off",
     "no-underscore-dangle": "off",
     "no-new": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "func-names": "off",
   }
 }
