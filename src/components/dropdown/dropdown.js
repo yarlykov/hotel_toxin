@@ -1,3 +1,8 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable array-callback-return */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-restricted-syntax */
+
 class Dropdown {
   constructor(selector, options) {
     this.$mainNode = selector;
@@ -211,7 +216,6 @@ class Dropdown {
       if (this.totalItems > 0 && this.totalItems <= maxItems) {
         const pluralWords = Object.keys(this.options.plurals);
 
-        // eslint-disable-next-line no-restricted-syntax
         for (const itemName of pluralWords) {
           const currentValue = this.menuItemValue[itemName];
           const currentPluralWords = this.options.plurals[itemName];
@@ -219,7 +223,6 @@ class Dropdown {
           if (currentValue === 0) {
             textInput += '';
           } else {
-            // eslint-disable-next-line no-unused-expressions
             textInput.length >= 8 ? (textInput += ', ') : (textInput += '');
 
             textInput += `${`${currentValue} ${this.declensionsOfInputText(
@@ -289,7 +292,6 @@ class Dropdown {
   disabledButtons() {
     const { minItems } = this.options;
 
-    // eslint-disable-next-line array-callback-return
     this.$menuItem.map((item) => {
       const itemCount = Number(item.countInput.value);
 
@@ -312,9 +314,7 @@ class Dropdown {
   clear() {
     const { defaultText } = this.options;
 
-    // eslint-disable-next-line array-callback-return
     this.$menuItem.map((item) => {
-      // eslint-disable-next-line no-param-reassign
       item.countInput.value = 0;
     });
     this.clearBtn.classList.remove('display');
