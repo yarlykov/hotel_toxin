@@ -6,7 +6,7 @@
   - Применен подход отзывчиво-адаптивной (responsive) верстки для разрешений экрана от 320px до 1980px
   - Компонентный подход выполнен по принципу разделения интерфейса на независимые блоки (методология [БЭМ](https://ru.bem.info/methodology/quick-start/))
   - Для соблюдения компонентного подхода были использованы такие инструменты, как сборщик проектов [Webpack](https://webpack.js.org) (version 4), шаблонизатор [Pug(Jade)](https://gist.github.com/neretin-trike/53aff5afb76153f050c958b82abd9228) и препроцессор [SCSS](https://sass-scss.ru)
-  - Для преобразования кода ECMAScript 2015+ в обратно совместимую версию JavaScript использован [Babel](https://babeljs.io) (version 7), а для обратной совместимости новых свойств CSS - [PostCss](https://postcss.org) autoprefixer
+  - Для преобразования кода ECMAScript 2015+ в обратно совместимую версию JavaScript использован [Babel](https://babeljs.io) (version 7), а для обратной совместимости новых свойств CSS применен [PostCSS](https://postcss.org) (autoprefixer, css-mqpacker, cssnano)
   - В прокте используется [стайлгайд от AirBnB](https://github.com/airbnb/javascript) для соблюдения лучшей читаймости, единообразия и чистоты кода
   - Использованы шрифты, находящиеся в свободном доступе: [Montserrat](https://fonts.google.com/specimen/Montserrat), [Quicksand](https://fonts.google.com/specimen/Quicksand). Все шрифты подключены локально в форматах: *woff2*, *woff*, *ttf* и *svg*.
   - Также некоторые элементы дизайна выполнены иконочными шрифтами [Material Icons](https://google.github.io/material-design-icons/) и [Font Awesome 5](https://fontawesome.com)
