@@ -17,7 +17,12 @@ class Dropdown {
 
     this.totalItems = 0;
     this.maxItems = this.options.maxItems;
-    this.menuItemValue = { baby: 0, bedrooms: 0, beds: 0, baths: 0 };
+    this.menuItemValue = {
+      baby: 0,
+      bedrooms: 0,
+      beds: 0,
+      baths: 0,
+    };
     this.menuItemRusNames = [
       'Младенцы',
       'Спальни',
@@ -53,7 +58,9 @@ class Dropdown {
           : 0,
     }));
 
-    buttons ? this.addButtons() : null;
+    if (buttons) {
+      this.addButtons();
+    }
 
     this.startInputValue();
     this.inputTextGuests();
@@ -67,23 +74,23 @@ class Dropdown {
   startInputValue() {
     const itemsQuantity = this.$menuItem.reduce(
       (acc, item) => item.value + acc,
-      0
+      0,
     );
     const babiesQuantity = this.$menuItem.reduce(
       (acc, item) => item.isBabyValue + acc,
-      0
+      0,
     );
     const bedroomsQuantity = this.$menuItem.reduce(
       (acc, item) => item.isBedroomsValue + acc,
-      0
+      0,
     );
     const bedsQuantity = this.$menuItem.reduce(
       (acc, item) => item.isBedsValue + acc,
-      0
+      0,
     );
     const bathsQuantity = this.$menuItem.reduce(
       (acc, item) => item.isBathsValue + acc,
-      0
+      0,
     );
 
     this.totalItems = itemsQuantity;
@@ -102,15 +109,13 @@ class Dropdown {
 
     clearBtn.classList.add(
       'button_inline',
-      'js-buttons-dropdown__button_clear'
+      'js-buttons-dropdown__button_clear',
     );
     clearBtn.setAttribute('type', 'button');
     clearBtn.setAttribute('data-type', 'clear');
     clearBtn.innerHTML = 'Очистить';
 
-    applyBtn.classList.add(
-      'button_inline',
-    );
+    applyBtn.classList.add('button_inline');
     applyBtn.setAttribute('type', 'button');
     applyBtn.setAttribute('data-type', 'apply');
     applyBtn.innerHTML = 'Применить';
@@ -120,24 +125,24 @@ class Dropdown {
     this.$drop.appendChild(btnWrap);
 
     this.clearBtn = this.$mainNode.querySelector(
-      '.js-buttons-dropdown__button_clear'
+      '.js-buttons-dropdown__button_clear',
     );
   }
 
   counter() {
     const that = this;
 
-    this.$menuItem.forEach(function (item) {
+    this.$menuItem.forEach((item) => {
       const amount = item.countInput;
 
       item.increment.addEventListener('click', () => {
-        let currentValue = Number(amount.value);
+        const currentValue = Number(amount.value);
 
         if (that.totalItems < that.maxItems) {
-          amount.value = ++currentValue;
-          that.totalItems++;
+          amount.value = currentValue + 1;
+          that.totalItems += 1;
 
-          that.itemCounter(item.id, 'increment'); //babyCounter
+          that.itemCounter(item.id, 'increment');
         }
 
         that.inputTextGuests();
@@ -147,11 +152,11 @@ class Dropdown {
       });
 
       item.decrement.addEventListener('click', () => {
-        let currentValue = Number(amount.value);
+        const currentValue = Number(amount.value);
 
         if (currentValue > 0) {
-          amount.value = --currentValue;
-          that.totalItems--;
+          amount.value = currentValue - 1;
+          that.totalItems -= 1;
 
           that.itemCounter(item.id, 'decrement');
 
@@ -169,9 +174,11 @@ class Dropdown {
     const index = this.menuItemRusNames.indexOf(id);
     const translateId = menuItemEngName[index];
 
-    operator === 'increment'
-      ? this.menuItemValue[translateId]++
-      : this.menuItemValue[translateId]--;
+    if (operator === 'increment') {
+      this.menuItemValue[translateId] += 1;
+    } else {
+      this.menuItemValue[translateId] -= 1;
+    }
   }
 
   inputTextGuests() {
@@ -181,17 +188,18 @@ class Dropdown {
     const declTextGuests = this.declensionsOfInputText(this.totalItems, guests);
     const declTextBabies = this.declensionsOfInputText(
       this.menuItemValue.baby,
-      babies
+      babies,
     );
 
-    const textInput =
-      this.menuItemValue.baby === 0
-        ? `${this.totalItems} ${declTextGuests}`
-        : `${this.totalItems} ${declTextGuests}, ${this.menuItemValue.baby} ${declTextBabies}`;
+    const textInput = this.menuItemValue.baby === 0
+      ? `${this.totalItems} ${declTextGuests}`
+      : `${this.totalItems} ${declTextGuests}, ${this.menuItemValue.baby} ${declTextBabies}`;
 
-    this.totalItems > 0 && this.totalItems <= maxItems
-      ? (this.$input.value = textInput)
-      : (this.$input.value = defaultText);
+    if (this.totalItems > 0 && this.totalItems <= maxItems) {
+      (this.$input.value = textInput);
+    } else {
+      (this.$input.value = defaultText);
+    }
   }
 
   inputTextComfort() {
@@ -203,20 +211,21 @@ class Dropdown {
       if (this.totalItems > 0 && this.totalItems <= maxItems) {
         const pluralWords = Object.keys(this.options.plurals);
 
-        for (let itemName of pluralWords) {
-          let currentValue = this.menuItemValue[itemName];
-          let currentPluralWords = this.options.plurals[itemName];
+        // eslint-disable-next-line no-restricted-syntax
+        for (const itemName of pluralWords) {
+          const currentValue = this.menuItemValue[itemName];
+          const currentPluralWords = this.options.plurals[itemName];
 
           if (currentValue === 0) {
             textInput += '';
           } else {
+            // eslint-disable-next-line no-unused-expressions
             textInput.length >= 8 ? (textInput += ', ') : (textInput += '');
 
-            textInput += `${
-              currentValue +
-              ' ' +
-              this.declensionsOfInputText(currentValue, currentPluralWords)
-            }`;
+            textInput += `${`${currentValue} ${this.declensionsOfInputText(
+              currentValue,
+              currentPluralWords,
+            )}`}`;
           }
         }
 
@@ -228,23 +237,21 @@ class Dropdown {
   }
 
   cutLongText(str) {
+    let changedStr = str;
     if (str.length > 19) {
-      str = str.slice(0, 20) + '...';
+      changedStr = `${str.slice(0, 20)}...`;
     }
-    return str;
+    return changedStr;
   }
 
   declensionsOfInputText(num, wordArray) {
-    num = num % 100;
-    let num2 = num % 10;
+    const num100 = num % 100;
+    const num10 = num % 10;
 
-    return num > 10 && num < 20
-      ? wordArray[2]
-      : num2 > 1 && num2 < 5
-      ? wordArray[1]
-      : num2 == 1
-      ? wordArray[0]
-      : wordArray[2];
+    if (num100 > 10 && num100 < 20) { return wordArray[2]; }
+    if (num10 > 1 && num10 < 5) { return wordArray[1]; }
+    if (num10 === 1) { return wordArray[0]; }
+    return wordArray[2];
   }
 
   clickHandler(event) {
@@ -264,38 +271,50 @@ class Dropdown {
   get isOpen() {
     return this.$mainNode.classList.contains('open');
   }
+
   get isNotEmpty() {
     return this.totalItems > 0;
   }
 
   delClearBtn() {
     if (this.clearBtn) {
-      this.isNotEmpty
-        ? this.clearBtn.classList.add('display')
-        : this.clearBtn.classList.remove('display');
+      if (this.isNotEmpty) {
+        this.clearBtn.classList.add('display');
+      } else {
+        this.clearBtn.classList.remove('display');
+      }
     }
   }
 
   disabledButtons() {
     const { minItems } = this.options;
 
+    // eslint-disable-next-line array-callback-return
     this.$menuItem.map((item) => {
       const itemCount = Number(item.countInput.value);
 
-      itemCount <= minItems
-        ? item.decrement.classList.add('disabled')
-        : item.decrement.classList.remove('disabled');
+      if (itemCount <= minItems) {
+        item.decrement.classList.add('disabled');
+      } else {
+        item.decrement.classList.remove('disabled');
+      }
     });
   }
 
   toggle() {
-    this.isOpen ? this.close() : this.open();
+    if (this.isOpen) {
+      this.close();
+    } else {
+      this.open();
+    }
   }
 
   clear() {
     const { defaultText } = this.options;
 
+    // eslint-disable-next-line array-callback-return
     this.$menuItem.map((item) => {
+      // eslint-disable-next-line no-param-reassign
       item.countInput.value = 0;
     });
     this.clearBtn.classList.remove('display');
@@ -332,7 +351,7 @@ const defaultOptionsGuests = {
   },
 };
 dropGuestsMainNode.forEach(
-  (selector) => new Dropdown(selector, defaultOptionsGuests)
+  (selector) => new Dropdown(selector, defaultOptionsGuests),
 );
 
 const dropComfortMainNode = document.querySelectorAll('.dropdown__comfort');
@@ -349,5 +368,5 @@ const defaultOptionsComfort = {
   },
 };
 dropComfortMainNode.forEach(
-  (selector) => new Dropdown(selector, defaultOptionsComfort)
+  (selector) => new Dropdown(selector, defaultOptionsComfort),
 );
