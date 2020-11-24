@@ -1,8 +1,8 @@
-import 'paginationjs/dist/pagination.js'
-import 'paginationjs/dist/pagination.css'
+import 'paginationjs/dist/pagination';
+import 'paginationjs/dist/pagination.css';
 
-const paginationMainNode = $('.js-pagination')
-paginationMainNode.each(function(){
+const paginationMainNode = $('.js-pagination');
+paginationMainNode.each(function () {
   $(this).pagination({
     dataSource: [1, 2, 3, 4, 5],
     pageSize: 0.35,
@@ -13,5 +13,5 @@ paginationMainNode.each(function(){
     showNext: true,
     nextText: '<span class="js-pagination__next-button"></span>',
     autoHideNext: true,
-  })
-})
+  });
+});
