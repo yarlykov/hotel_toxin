@@ -6,7 +6,7 @@ $(document).ready(() => {
     const likesCount = $likesCounter.text();
 
     $(this).toggleClass('like__disable_border');
-    $('.like__text', this).toggleClass('like__disable');
+    $('.js-like__text', this).toggleClass('like__disable');
 
     const isClicked = $(this).hasClass('like__disable_border');
     $likesCounter.text((isClicked)

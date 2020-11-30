@@ -2,10 +2,10 @@ mixin range-slider({ title="", subtitle="" })
   .range-slider__header
     .font__h3 #{title}
     input&attributes({
-      class: "range-slider",
+      class: ["range-slider", "js-range-slider"],
       type: "text",
       readonly: "readonly"
       })
-  .range-slider__scale
+  .range-slider__scale.js-range-slider__scale
     .range-slider__scale_border
   .range-slider__subtitle #{subtitle}

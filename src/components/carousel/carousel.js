@@ -1,6 +1,6 @@
 import 'slick-carousel/slick/slick';
 
-$('.carousel').slick({
+$('.js-carousel').slick({
   dots: true,
   zIndex: 10,
 });
