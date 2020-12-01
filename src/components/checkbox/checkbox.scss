@@ -6,6 +6,7 @@
   max-width: 19rem;
 
   &__header {
+    @include font-h3;
     display: flex;
     justify-content: space-between;
     padding-bottom: 1.2143rem;
@@ -31,6 +32,10 @@
     }
   }
 
+  &__title {
+    font-weight: inherit;
+  }
+
   &__item {
     display: block;
     min-height: 1.4286rem;
@@ -39,20 +44,20 @@
     box-sizing: content-box;
     color: $textColor_50;
     cursor: pointer;
-
+    
     &:last-child {
       padding-bottom: 0;
     }
-
+    
     &:hover {
       color: $textColor_75;
     }
-
+    
     &:focus-within {
       color: $textColor_75;
     }
   }
-
+  
   &__input {
     position: absolute;
     width: 0.0714rem;
@@ -74,11 +79,10 @@
       box-sizing: border-box;
       border-style: solid;
       border-width: 0 2px 2px 0;
-      -moz-border-image: $mainGradient;
       -webkit-border-image: $mainGradient;
+      -moz-border-image: $mainGradient;
       border-image: $mainGradient;
       border-image-slice: 1;
-      border-color: transparent;
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);

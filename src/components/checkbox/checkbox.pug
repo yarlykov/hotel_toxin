@@ -11,7 +11,7 @@ mixin checkbox({ mainTitle="", dropdown=false, rich=false, listItems=[]})
 
   div(class=isDropdown).checkbox
     .checkbox__header
-      div.checkbox__title.font__h3 #{mainTitle}
+      div.checkbox__title #{mainTitle}
       if dropdown
         .js-checkbox__header_arrow.checkbox__header_arrow-up
     each item in listItems
