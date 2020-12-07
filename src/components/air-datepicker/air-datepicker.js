@@ -41,20 +41,16 @@ btnWrap.classList.add(
 );
 
 clearBtn.classList.add(
-  "button_text-color_gray",
-  "js-buttons-dropdown__button",
+  "button_inline",
   "js-buttons-dropdown__button_clear",
-  "font__h3"
 );
 clearBtn.setAttribute("type", "button");
 clearBtn.setAttribute("data-type", "clear");
 clearBtn.innerHTML = "Очистить";
 
 applyBtn.classList.add(
-  "button_text-color_purple",
-  "js-buttons-dropdown__button",
+  "button_inline",
   "js-buttons-dropdown__button_apply",
-  "font__h3"
 );
 applyBtn.setAttribute("type", "button");
 applyBtn.setAttribute("data-type", "apply");
