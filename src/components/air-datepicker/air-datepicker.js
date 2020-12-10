@@ -36,8 +36,7 @@ const clearBtn = document.createElement("button");
 const applyBtn = document.createElement("button");
 
 btnWrap.classList.add(
-  "buttons-dropdown__wrapper_datepicker",
-  "js-buttons-dropdown__wrapper"
+  "datepicker__buttons",
 );
 
 clearBtn.classList.add(
