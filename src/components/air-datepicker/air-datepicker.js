@@ -9,7 +9,7 @@ $(".air-datepicker").datepicker({
   range: true,
   // inline: true,
   navTitles: {
-    days: "MM yyyy",
+    days: `<span>MM<br>yyyy</span>`,
   },
   // clearButton: true,
   // todayButton: true,
@@ -24,7 +24,7 @@ $(".air-datepicker__inline").datepicker({
   range: true,
   inline: true,
   navTitles: {
-    days: "MM yyyy",
+    days: `<span>MM<br>yyyy</span>`,
   },
   prevHtml: '<span class="datepicker__arrow datepicker__arrow_back"></span>',
   nextHtml: '<span class="datepicker__arrow datepicker__arrow_forward"></span>',

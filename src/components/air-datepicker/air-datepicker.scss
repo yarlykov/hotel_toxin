@@ -35,7 +35,7 @@
 
 .datepicker--content {
   box-sizing: border-box;
-  padding: 20px;
+  padding: 18px 20px 20px 21px;
 }
 
 /* -------------------------------------------------
@@ -254,16 +254,18 @@
 	 ------------------------------------------------- */
 .datepicker--nav {
   border-bottom: none;
-  padding: 15px 14px;
+  padding: 20px 20px 0 20px;
+  align-items: flex-start;
 
   font-family: $mainFont;
-  font-weight: bold;
   font-size: 19px;
   line-height: 24px;
   color: $mainTextColor;
 }
 
 .datepicker--nav-title {
+  font-weight: 700;
+  text-align: center;
   &:hover {
     background: none;
     opacity: 0.5;
@@ -272,9 +274,18 @@
 
 .datepicker--nav-action {
   color: $designColor_main;
-
+  max-width: 24px;
+  padding-top: 2px;
   &:hover {
     background: none;
     opacity: 0.5;
   }
+}
+
+.datepicker--days-names {
+  margin: 0;
+}
+
+.datepicker--cells {
+  padding-top: 12px;
 }
