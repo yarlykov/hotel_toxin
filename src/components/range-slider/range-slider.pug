@@ -1,6 +1,6 @@
-mixin range-slider({ title="", subtitle="" })
+mixin range-slider({ title="" })
   .range-slider__header
-    .font__h3 #{title}
+    .range-slider__title #{title}
     input&attributes({
       class: ["range-slider", "js-range-slider"],
       type: "text",
@@ -8,4 +8,4 @@ mixin range-slider({ title="", subtitle="" })
       })
   .range-slider__scale.js-range-slider__scale
     .range-slider__scale_border
-  .range-slider__subtitle #{subtitle}
+    

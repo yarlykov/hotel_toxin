@@ -1,8 +1,10 @@
 @import '@variables';
+@import '@mixins';
 
 .range-slider {
-  font-family: $mainFont;
+  @include font-body;
   font-size: 12px;
+  line-height: 15px;
   color: $textColor_50;
   border: none;
   text-align: right;
@@ -20,16 +22,14 @@
   }
 
   &__header {
+    @include font-h3;
     display: flex;
+    flex-shrink: 0;
     justify-content: space-between;
   }
 
-  &__subtitle {
-    font-family: $mainFont;
-    font-size: 0.8571rem;
-    line-height: 1rem;
-    color: $textColor_50;
-    padding-top: 2.5rem;
+  &__title { 
+    flex-shrink: 0;
   }
 
   &:focus {
