@@ -2,7 +2,7 @@
 @import '@mixins';
 
 .room-number {
-  font-family: Quicksand, Arial, sans-serif;
+  font-family: $mainFont;
   font-weight: 700;
 
   &__symbol {
@@ -11,7 +11,7 @@
     color: $mainTextColor;
   }
   &__value {
-    padding-left: 0.3571rem;
+    padding-left: 4px;
     font-size: 1.7143rem;
     line-height: 2.1429rem;
     color: $mainTextColor;
