@@ -23,7 +23,7 @@ mixin card({ title, type="", buttonText="", buttonLink="", question="", numberOf
     if (calculation)
       .card__title-calculation
         +room-number({ symbol: "№", value: "888", text: "люкс" })
-        +room-price({ value: "9 990₽", text: "в сутки"})
+        +room-price({ value: "9 990", text: "в сутки"})
     else
       .card__title #{title}
 

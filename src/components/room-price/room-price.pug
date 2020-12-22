@@ -1,4 +1,8 @@
-mixin room-price({ value="", text="" })
+mixin room-price({ value="", text="", currency="RUB" })
+  -
+    const currencySymbol = currency === "RUB" ? "\u20BD" : currency
+    const priceText = value + currencySymbol
+
   .room-price
-    span.room-price__value #{value}
+  span.room-price__value #{priceText}
     span.room-price__text #{text}
