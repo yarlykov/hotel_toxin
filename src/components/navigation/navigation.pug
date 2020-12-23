@@ -14,7 +14,7 @@ mixin navigation({ navigationList=[] })
             href: navigationItem.url,
           }) #{navigationItem.name}
           if navigationItem.dropdown
-            .navigation__dropdown
+            .navigation__dropdown.navigation__dropdown_visibility-hidden
               +links({ linksList: [
                 { name: "О нас", url: "./error-page.html"},
                 { name: "Новости", url: "./error-page.html"},

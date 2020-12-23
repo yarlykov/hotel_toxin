@@ -28,19 +28,12 @@
       color: $textColor_50;
       cursor: pointer;
     }
-
-    &.navigation__dropdown_open {
-      .navigation__dropdown {
-        display: block;
-      }
-    }
   }
   &__link_active {
     font-weight: 700;
   }
 
   &__dropdown {
-    display: none;
     position: absolute;
     z-index: 3000;
     width: 100%;
@@ -48,6 +41,10 @@
     box-shadow: $headerFooterBoxShadow;
     border-radius: $mainBorderRadius;
     background: $uiKitPagesBackground;
+
+    &_visibility-hidden {
+      visibility: hidden;
+    }
 
     @media (max-width: 960px) {
       background: $cardsBackground;
