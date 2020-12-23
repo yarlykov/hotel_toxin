@@ -13,6 +13,11 @@
 
   &__link {
     cursor: pointer;
+
+    &:focus {
+      outline: none;
+      color: $textColor_75;
+    }
   }
 
   &__item_dropdown {

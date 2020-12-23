@@ -12,6 +12,7 @@ mixin navigation({ navigationList=[] })
           a&attributes({
             class: ["navigation__link", activeLinkClass ],
             href: navigationItem.url,
+            tabindex: "0",
           }) #{navigationItem.name}
           if navigationItem.dropdown
             .navigation__dropdown.navigation__dropdown_visibility-hidden
