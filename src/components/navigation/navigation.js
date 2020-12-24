@@ -24,9 +24,10 @@ class Navigation {
     document.addEventListener('click', this.hideAll);
   }
 
-  clickHandler() {
+  clickHandler(event) {
     this.toggleDropdown();
     this.addDocumentHandlers();
+    event.stopPropagation();
   }
 
   keydownHandler(event) {
