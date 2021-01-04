@@ -2,21 +2,16 @@
 @import '@mixins';
 
 .room-number {
-<<<<<<< HEAD
   @include font-h1;
-=======
->>>>>>> dev
-
+  font-weight: 700;
+  
   &__symbol {
     font-size: 1rem;
     line-height: 1.2143rem;
     color: $mainTextColor;
   }
   &__value {
-<<<<<<< HEAD
     padding-left: 0.2857rem;
-=======
->>>>>>> dev
     font-size: 1.7143rem;
     line-height: 2.1429rem;
     color: $mainTextColor;
