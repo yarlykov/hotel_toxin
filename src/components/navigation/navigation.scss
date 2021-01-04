@@ -13,25 +13,37 @@
 
   &__link {
     cursor: pointer;
+
+    &:focus {
+      outline: none;
+      color: $textColor_75;
+    }
   }
 
   &__item_dropdown {
     position: relative;
     padding-right: 3.2857rem;
 
-    &::after {
-      @include font-material-icons;
-      content: '\e5cf';
-      position: absolute;
-      right: 20px;
-      line-height: 20px;
-      color: $textColor_50;
-      cursor: pointer;
+    &_arrow-up {
+      &::after {
+        @include font-material-icons;
+        content: '\e5ce';
+        position: absolute;
+        right: 20px;
+        line-height: 20px;
+        color: $textColor_50;
+        cursor: pointer;
+      }
     }
-
-    &.navigation__dropdown_open {
-      .navigation__dropdown {
-        display: block;
+    &_arrow-down {
+      &::after {
+        @include font-material-icons;
+        content: '\e5cf';
+        position: absolute;
+        right: 20px;
+        line-height: 20px;
+        color: $textColor_50;
+        cursor: pointer;
       }
     }
   }
@@ -40,14 +52,18 @@
   }
 
   &__dropdown {
-    display: none;
     position: absolute;
     z-index: 3000;
-    width: 100%;
-    right: 10px;
-    box-shadow: $headerFooterBoxShadow;
+    min-width: 140px;
+    top: 25px;
+    right: 8%;
+    box-shadow: $mainBoxShadow;
     border-radius: $mainBorderRadius;
-    background: $uiKitPagesBackground;
+    background: $cardsBackground;
+
+    &_visibility-hidden {
+      visibility: hidden;
+    }
 
     @media (max-width: 960px) {
       background: $cardsBackground;
@@ -55,16 +71,12 @@
     }
 
     & .links__item {
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
       text-align: center;
 
       @media (max-width: 960px) {
         font-size: 1.5rem;
         line-height: 1.5rem;
-      }
-
-      &:first-child {
-        padding: 0.5rem 0 0.5rem 0;
       }
     }
   }

@@ -70,14 +70,12 @@
 
 .paginationjs .paginationjs-pages li:last-child > a {
   border-radius: 1.5714rem;
-  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  background: $secondGradient;
   font-weight: 700;
 }
 
 .paginationjs .paginationjs-nav {
-  height: 1.7143rem;
   margin: 0.5714rem 0 0 0.3571rem;
-  line-height: 1.7143rem;
-  font-family: Montserrat, Arial, sans-serif;
   color: $textColor_75;
+  font: 1rem/1.7143rem $mainFont;
 }

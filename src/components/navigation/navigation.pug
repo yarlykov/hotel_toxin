@@ -6,18 +6,15 @@ mixin navigation({ navigationList=[] })
       each navigationItem in navigationList
         -
           const activeLinkClass = navigationItem.active ? "navigation__link_active" : ""
-          const dropdownItemClass = navigationItem.dropdown ? "navigation__item_dropdown" : ""
+          const dropdownItemClass = navigationItem.dropdown ? "navigation__item_dropdown navigation__item_dropdown_arrow-down" : ""
 
         li.navigation__item(class=dropdownItemClass)
           a&attributes({
             class: ["navigation__link", activeLinkClass ],
             href: navigationItem.url,
+            tabindex: "0",
+            "data-type": "link-dropdown", 
           }) #{navigationItem.name}
           if navigationItem.dropdown
-            .navigation__dropdown
-              +links({ linksList: [
-                { name: "О нас", url: "./error-page.html"},
-                { name: "Новости", url: "./error-page.html"},
-                { name: "Служба поддержки", url: "./error-page.html"},
-                { name: "Услуги", url: "./error-page.html"},
-              ]})
+            .navigation__dropdown.navigation__dropdown_visibility-hidden
+              +links({ linksList: navigationItem.subMenuItems || [] })

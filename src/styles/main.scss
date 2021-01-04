@@ -56,3 +56,7 @@ a {
 .gradient {
   @include text-gradient-fill($mainGradient);
 }
+
+.visibility_hidden {
+  visibility: hidden;
+}

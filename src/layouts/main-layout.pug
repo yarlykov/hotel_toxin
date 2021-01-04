@@ -18,10 +18,24 @@ body
       logo: { type: "colorWithText", width: "106px", height: "40px"},
       navigationList: [
             { name: "О нас", url: "./error-page.html", active: true},
-            { name: "Услуги", dropdown: true},
+            { name: "Услуги", dropdown: true,
+              subMenuItems: [
+                  { name: "Работа или отдых", url: "./error-page.html"},
+                  { name: "Мероприятия", url: "./error-page.html"},
+                  { name: "Размещение животных", url: "./error-page.html"},
+                  { name: "Бесплатная отмена", url: "./error-page.html"},
+              ]
+            },
             { name: "Вакансии", url: "./error-page.html"},
             { name: "Новости", url: "./error-page.html"},
-            { name: "Соглашения", dropdown: true},
+            { name: "Соглашения", dropdown: true,
+              subMenuItems: [
+                  { name: "Общие положения", url: "./error-page.html"},
+                  { name: "Условия пользования", url: "./error-page.html"},
+                  { name: "Гаранитии пользователя", url: "./error-page.html"},
+                  { name: "Уведомления и рассылка", url: "./error-page.html"},
+              ]
+            },
       ],
       buttonEntry: "войти",
       buttonRegister: "зарегистрироваться",
