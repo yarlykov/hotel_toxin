@@ -24,14 +24,27 @@
     position: relative;
     padding-right: 3.2857rem;
 
-    &::after {
-      @include font-material-icons;
-      content: '\e5cf';
-      position: absolute;
-      right: 20px;
-      line-height: 20px;
-      color: $textColor_50;
-      cursor: pointer;
+    &_arrow-up {
+      &::after {
+        @include font-material-icons;
+        content: '\e5ce';
+        position: absolute;
+        right: 20px;
+        line-height: 20px;
+        color: $textColor_50;
+        cursor: pointer;
+      }
+    }
+    &_arrow-down {
+      &::after {
+        @include font-material-icons;
+        content: '\e5cf';
+        position: absolute;
+        right: 20px;
+        line-height: 20px;
+        color: $textColor_50;
+        cursor: pointer;
+      }
     }
   }
   &__link_active {
