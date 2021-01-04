@@ -41,11 +41,12 @@
   &__dropdown {
     position: absolute;
     z-index: 3000;
-    width: 100%;
-    right: 10px;
-    box-shadow: $headerFooterBoxShadow;
+    min-width: 140px;
+    top: 25px;
+    right: 8%;
+    box-shadow: $mainBoxShadow;
     border-radius: $mainBorderRadius;
-    background: $uiKitPagesBackground;
+    background: $cardsBackground;
 
     &_visibility-hidden {
       visibility: hidden;
@@ -57,16 +58,12 @@
     }
 
     & .links__item {
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
       text-align: center;
 
       @media (max-width: 960px) {
         font-size: 1.5rem;
         line-height: 1.5rem;
-      }
-
-      &:first-child {
-        padding: 0.5rem 0 0.5rem 0;
       }
     }
   }
