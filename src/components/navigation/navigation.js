@@ -9,6 +9,8 @@ class Navigation {
   _init() {
     this.$itemDropdown = this.$mainNode.querySelector('.navigation__dropdown');
     this.$visibilityHiddenClass = 'navigation__dropdown_visibility-hidden';
+    this.$UpArrowDropdownClass = 'navigation__item_dropdown_arrow-up';
+    this.$DownArrowDropdownClass = 'navigation__item_dropdown_arrow-down';
   }
 
   _setup() {
@@ -45,6 +47,7 @@ class Navigation {
   onDropdownEnterPress(event) {
     if (event.code === 'Enter') {
       this.toggleDropdown();
+      this.addDocumentHandlers();
     }
   }
 
@@ -56,14 +59,22 @@ class Navigation {
 
   toggleDropdown() {
     this.$itemDropdown.classList.toggle(this.$visibilityHiddenClass);
-  }
-
-  openDropdown() {
-    this.$itemDropdown.classList.remove(this.$visibilityHiddenClass);
+    this.arrowToggle();
   }
 
   closeDropdown() {
     this.$itemDropdown.classList.add(this.$visibilityHiddenClass);
+    this.arrowDown();
+  }
+
+  arrowToggle() {
+    this.$mainNode.classList.toggle(this.$DownArrowDropdownClass);
+    this.$mainNode.classList.toggle(this.$UpArrowDropdownClass);
+  }
+
+  arrowDown() {
+    this.$mainNode.classList.remove(this.$UpArrowDropdownClass);
+    this.$mainNode.classList.add(this.$DownArrowDropdownClass);
   }
 
   removeDocumentHandlers() {
