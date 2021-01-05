@@ -45,6 +45,7 @@
 
 .ui-slider .ui-slider-handle {
   position: absolute;
+  box-sizing: content-box;
   left: 3.5714rem;
   width: 0.8571rem;
   height: 0.8571rem;

@@ -1,18 +1,6 @@
 @import '@variables';
 @import '@mixins';
 
-h1,
-h2,
-h3,
-p,
-ul,
-li {
-  margin: 0;
-}
-ul {
-  padding: 0;
-}
-
 .body-wrapper {
   display: flex;
   flex-direction: column;
