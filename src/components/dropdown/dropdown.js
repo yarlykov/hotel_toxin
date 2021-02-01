@@ -78,8 +78,7 @@ class Dropdown {
 
   startInputValue() {
     const itemsQuantity = this.$menuItem.reduce(
-      (acc, item) => item.value + acc,
-      0,
+      (acc, item) => item.value + acc, 0,
     );
     const babiesQuantity = this.$menuItem.reduce(
       (acc, item) => item.isBabyValue + acc,
