@@ -1,3 +1,6 @@
+import createStore from './createStore';
+import rootReducer from './redux/rootReducer';
+
 const startPage = document.body;
 const toggleStartPage = startPage.querySelector('.js-start-page__toggle');
 const dayToggleTitle = toggleStartPage.querySelector('.js-toggle-title');
@@ -41,16 +44,23 @@ const night = function () {
 
 const theme = function (timesOfDay) {
   if (timesOfDay === 'day') {
-    night();
-  } else {
     day();
+  } else {
+    night();
   }
 };
 
+const store = createStore(rootReducer);
+
+store.subscribe(() => {
+  const state = store.getState();
+
+  theme(state.value);
+});
+
+store.dispatchEvent({ type: 'INIT_APPLICATION' });
+
 toggleStartPage.addEventListener('change', () => {
-  if (dayToggleTitle.textContent === 'День') {
-    theme('day');
-  } else {
-    theme('night');
-  }
+  const newTheme = dayToggleTitle.textContent === 'День' ? 'night' : 'day';
+  store.dispatchEvent({ type: 'CHANGE_THEME', payload: newTheme });
 });
