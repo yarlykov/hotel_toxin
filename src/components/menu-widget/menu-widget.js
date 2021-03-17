@@ -1,74 +1,85 @@
 import createStore from './createStore';
 import rootReducer from './redux/rootReducer';
+import storage from './utils';
 
-const startPage = document.body;
-const toggleStartPage = startPage.querySelector('.js-start-page__toggle');
-const toggleInput = startPage.querySelector('.toggle__input');
-const dayToggleTitle = toggleStartPage.querySelector('.js-toggle-title');
-const startPageStyle = startPage.style;
+class MenuWidget {
+  constructor(selector) {
+    this.$page = selector;
+    this.store = createStore(rootReducer, storage('theme'));
+    this.init();
+  }
 
-const menuTextColor = startPage.querySelectorAll('.js-menu-widget__text');
-const logo = startPage.querySelector('.js-logo__color-with-text');
-const logoTextColor = logo.querySelectorAll('.js-logo__letter');
+  init() {
+    this.toggleStartPage = this.$page.querySelector('.js-start-page__toggle');
+    this.toggleInput = this.$page.querySelector('.toggle__input');
+    this.dayToggleTitle = this.$page.querySelector('.js-toggle-title');
+    this.startPageStyle = this.$page.style;
 
-function themeTextColor(timesOfDay) {
-  const color = timesOfDay === 'day' ? '#1F2041' : '#66d2ea';
+    this.menuTextColor = this.$page.querySelectorAll('.js-menu-widget__text');
+    this.logo = this.$page.querySelector('.js-logo__color-with-text');
+    this.logoTextColor = this.$page.querySelectorAll('.js-logo__letter');
 
-  menuTextColor.forEach((item) => {
-    const menuItem = item;
-    menuItem.style.color = `${color}`;
-  });
+    this.store.subscribe((state) => {
+      storage('theme', state.value);
 
-  logoTextColor.forEach((item) => {
-    const logoLetter = item;
-    logoLetter.setAttribute('fill', `${color}`);
-  });
+      this.theme(storage('theme'));
+    });
+
+    this.store.dispatchEvent({ type: 'INIT_APPLICATION' });
+    this.toggle();
+  }
+
+  toggle() {
+    this.toggleStartPage.addEventListener('change', () => {
+      const newTheme = this.dayToggleTitle.textContent === 'День' ? 'night' : 'day';
+
+      this.store.dispatchEvent({ type: 'CHANGE_THEME', payload: newTheme });
+    });
+  }
+
+  themeTextColor(timesOfDay) {
+    const color = timesOfDay === 'day' ? '#1F2041' : '#66d2ea';
+
+    this.menuTextColor.forEach((item) => {
+      const menuItem = item;
+      menuItem.style.color = `${color}`;
+    });
+
+    this.logoTextColor.forEach((item) => {
+      const logoLetter = item;
+      logoLetter.setAttribute('fill', `${color}`);
+    });
+  }
+
+  day() {
+    this.dayToggleTitle.textContent = 'День';
+    this.dayToggleTitle.style.color = '#c7c7d0';
+    this.startPageStyle.background = '#fff';
+
+    this.themeTextColor('day');
+  }
+
+  night() {
+    this.dayToggleTitle.textContent = 'Ночь';
+    this.dayToggleTitle.style.color = '#BC9CFF';
+    this.startPageStyle.background = '#1D1E33';
+    this.toggleInput.checked = true;
+
+    this.themeTextColor('night');
+  }
+
+  theme(timesOfDay = 'day') {
+    if (timesOfDay === 'day') {
+      this.day();
+    } else {
+      this.night();
+    }
+  }
 }
 
-const day = function () {
-  dayToggleTitle.textContent = 'День';
-  dayToggleTitle.style.color = '#c7c7d0';
-  startPageStyle.background = '#fff';
+const isStartPage = document.querySelector('.start-page');
 
-  themeTextColor('day');
-};
-
-const night = function () {
-  dayToggleTitle.textContent = 'Ночь';
-  dayToggleTitle.style.color = '#BC9CFF';
-  startPageStyle.background = '#1D1E33';
-  toggleInput.checked = true;
-
-  themeTextColor('night');
-};
-
-const theme = function (timesOfDay = 'day') {
-  if (timesOfDay === 'day') {
-    day();
-  } else {
-    night();
-  }
-};
-
-function storage(key, data = null) {
-  if (!data) {
-    return JSON.parse(localStorage.getItem(key)) || 'day';
-  }
-  localStorage.setItem(key, JSON.stringify(data));
-  return key;
+if (isStartPage !== null) {
+  const startPage = document.body;
+  new MenuWidget(startPage);
 }
-
-const store = createStore(rootReducer, storage('theme'));
-
-store.subscribe((state) => {
-  storage('theme', state.value);
-
-  theme(storage('theme'));
-});
-
-store.dispatchEvent({ type: 'INIT_APPLICATION' });
-
-toggleStartPage.addEventListener('change', () => {
-  const newTheme = dayToggleTitle.textContent === 'День' ? 'night' : 'day';
-  store.dispatchEvent({ type: 'CHANGE_THEME', payload: newTheme });
-});
