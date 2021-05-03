@@ -6,57 +6,6 @@ class Navigation {
     this._setup();
   }
 
-  _init() {
-    this.$itemDropdown = this.$mainNode.querySelector('.navigation__dropdown');
-    this.$visibilityHiddenClass = 'navigation__dropdown_visibility-hidden';
-    this.$UpArrowDropdownClass = 'navigation__item_dropdown_arrow-up';
-    this.$DownArrowDropdownClass = 'navigation__item_dropdown_arrow-down';
-  }
-
-  _setup() {
-    this.clickHandler = this.clickHandler.bind(this);
-    this.keydownHandler = this.keydownHandler.bind(this);
-    this.hideAll = this.hideAll.bind(this);
-
-    this.$mainNode.addEventListener('click', this.clickHandler);
-    this.$mainNode.addEventListener('keydown', this.keydownHandler);
-  }
-
-  addDocumentHandlers() {
-    document.addEventListener('click', this.hideAll);
-  }
-
-  clickHandler(event) {
-    this.toggleDropdown();
-    this.addDocumentHandlers();
-    event.stopPropagation();
-  }
-
-  keydownHandler(event) {
-    this.onDropdownEnterPress(event);
-    this.onDropdownEscapePress(event);
-  }
-
-  hideAll(event) {
-    if (event.target.dataset.type !== 'link-dropdown') {
-      this.closeDropdown();
-      this.removeDocumentHandlers();
-    }
-  }
-
-  onDropdownEnterPress(event) {
-    if (event.code === 'Enter') {
-      this.toggleDropdown();
-      this.addDocumentHandlers();
-    }
-  }
-
-  onDropdownEscapePress(event) {
-    if (event.code === 'Escape') {
-      this.closeDropdown();
-    }
-  }
-
   toggleDropdown() {
     this.$itemDropdown.classList.toggle(this.$visibilityHiddenClass);
     this.arrowToggle();
@@ -77,8 +26,59 @@ class Navigation {
     this.$mainNode.classList.add(this.$DownArrowDropdownClass);
   }
 
-  removeDocumentHandlers() {
-    document.removeEventListener('click', this.hideAll);
+  _init() {
+    this.$itemDropdown = this.$mainNode.querySelector('.navigation__dropdown');
+    this.$visibilityHiddenClass = 'navigation__dropdown_visibility-hidden';
+    this.$UpArrowDropdownClass = 'navigation__item_dropdown_arrow-up';
+    this.$DownArrowDropdownClass = 'navigation__item_dropdown_arrow-down';
+  }
+
+  _setup() {
+    this._clickHandler = this._clickHandler.bind(this);
+    this._keydownHandler = this._keydownHandler.bind(this);
+    this._hideAll = this._hideAll.bind(this);
+
+    this.$mainNode.addEventListener('click', this._clickHandler);
+    this.$mainNode.addEventListener('keydown', this._keydownHandler);
+  }
+
+  _clickHandler(event) {
+    this.toggleDropdown();
+    this._addDocumentHandlers();
+    event.stopPropagation();
+  }
+
+  _addDocumentHandlers() {
+    document.addEventListener('click', this._hideAll);
+  }
+
+  _keydownHandler(event) {
+    this._onDropdownEnterPress(event);
+    this._onDropdownEscapePress(event);
+  }
+
+  _hideAll(event) {
+    if (event.target.dataset.type !== 'link-dropdown') {
+      this.closeDropdown();
+      this._removeDocumentHandlers();
+    }
+  }
+
+  _onDropdownEnterPress(event) {
+    if (event.code === 'Enter') {
+      this.toggleDropdown();
+      this._addDocumentHandlers();
+    }
+  }
+
+  _onDropdownEscapePress(event) {
+    if (event.code === 'Escape') {
+      this.closeDropdown();
+    }
+  }
+
+  _removeDocumentHandlers() {
+    document.removeEventListener('click', this._hideAll);
   }
 }
 
