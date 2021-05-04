@@ -337,4 +337,35 @@ class Dropdown {
   }
 }
 
-export default Dropdown;
+const dropGuestsMainNode = document.querySelectorAll('.dropdown__guests');
+const defaultOptionsGuests = {
+  type: 'guests',
+  defaultText: 'Сколько гостей',
+  minItems: 0,
+  maxItems: 20,
+  buttons: true,
+  plurals: {
+    guests: ['гость', 'гостя', 'гостей'],
+    babies: ['младенец', 'младенца', 'младенцев'],
+  },
+};
+dropGuestsMainNode.forEach(
+  (selector) => new Dropdown(selector, defaultOptionsGuests),
+);
+
+const dropComfortMainNode = document.querySelectorAll('.dropdown__comfort');
+const defaultOptionsComfort = {
+  type: 'comfort',
+  defaultText: 'Удобства номера',
+  minItems: 0,
+  maxItems: 20,
+  buttons: false,
+  plurals: {
+    bedrooms: ['спальня', 'спальни', 'спален'],
+    beds: ['кровать', 'кровати', 'кроватей'],
+    baths: ['ванная комната', 'ванных комнаты', 'ванных комнат'],
+  },
+};
+dropComfortMainNode.forEach(
+  (selector) => new Dropdown(selector, defaultOptionsComfort),
+);
