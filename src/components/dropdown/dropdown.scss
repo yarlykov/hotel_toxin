@@ -159,7 +159,7 @@
   }
 }
 
-.dropdown.open {
+.dropdown.js-dropdown__open {
   .dropdown__drop {
     display: block;
     border: $focusBorder;

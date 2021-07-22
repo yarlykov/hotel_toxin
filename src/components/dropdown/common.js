@@ -1,16 +1,12 @@
-/* eslint-disable no-param-reassign */
 import Dropdown from './dropdown';
 
-(function ($) {
-  $.fn.dropdown = function (options) {
-    return this.each(function () {
-      new Dropdown(this, options);
-    });
-  };
-}(jQuery));
+$.fn.dropdown = function (options) {
+  return this.each(function () {
+    new Dropdown(this, options);
+  });
+};
 
-// eslint-disable-next-line fsd/jq-use-js-prefix-in-selector
-$('.dropdown__comfort').dropdown({
+$('.js-dropdown__comfort').dropdown({
   type: 'comfort',
   defaultText: 'Удобства номера',
   minItems: 0,
@@ -22,8 +18,8 @@ $('.dropdown__comfort').dropdown({
     baths: ['ванная комната', 'ванных комнаты', 'ванных комнат'],
   },
 });
-// eslint-disable-next-line fsd/jq-use-js-prefix-in-selector
-$('.dropdown__guests').dropdown({
+
+$('.js-dropdown__guests').dropdown({
   type: 'guests',
   defaultText: 'Сколько гостей',
   minItems: 0,
