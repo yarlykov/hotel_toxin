@@ -1,6 +1,8 @@
 # FSD 2 task - Hotel website layout and UI Kit
  Второе задание - практика верстки [макета](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/FSD-frontend-education-program.-The-2nd-task?node-id=0%3A1) сайта по поиску номеров отеля из Figma.
 
+ [**Ссылка на стартовую страницу проекта**](https://yarlykov.github.io/hotel_toxin/start-page.html)
+
  ##  Особенности проекта
   - Разработка велась под последние версии Chrome и Firefox (last 3 version)
   - Применен подход отзывчиво-адаптивной (responsive) верстки для разрешений экрана от 320px до 1980px
