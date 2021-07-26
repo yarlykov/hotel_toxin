@@ -12,7 +12,7 @@ function cutLongText(str) {
   return changedStr;
 }
 
-function declensionsOfInputText(num, wordArray) {
+function declensionsText(num, wordArray) {
   const num100 = num % 100;
   const num10 = num % 10;
 
@@ -22,4 +22,4 @@ function declensionsOfInputText(num, wordArray) {
   return wordArray[2];
 }
 
-export { addCommaInText, cutLongText, declensionsOfInputText };
+export { addCommaInText, cutLongText, declensionsText };

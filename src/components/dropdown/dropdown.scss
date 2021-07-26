@@ -159,7 +159,7 @@
   }
 }
 
-.dropdown.js-dropdown__open {
+.dropdown.dropdown__open {
   .dropdown__drop {
     display: block;
     border: $focusBorder;
@@ -173,7 +173,7 @@
   }
 }
 
-.js-buttons-dropdown {
+.buttons-dropdown {
   &__wrapper {
     display: flex;
     z-index: 1000;

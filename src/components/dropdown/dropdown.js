@@ -1,4 +1,4 @@
-import { addCommaInText, cutLongText, declensionsOfInputText } from './utils';
+import { addCommaInText, cutLongText, declensionsText } from './utils';
 import { count, targetType } from './constants';
 
 class Dropdown {
@@ -7,8 +7,6 @@ class Dropdown {
     this.options = options;
 
     this.init();
-    this.handleDropdownClick = this.handleDropdownClick.bind(this);
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.bindEventListeners();
   }
 
@@ -39,7 +37,6 @@ class Dropdown {
       countInput: item.querySelector('.js-controls__counter'),
       id: item.dataset.id,
       value: Number(item.querySelector('.js-controls__counter').value),
-
       isBabyValue:
         item.dataset.id === 'Младенцы'
           ? Number(item.querySelector('.js-controls__counter').value)
@@ -72,8 +69,8 @@ class Dropdown {
   }
 
   bindEventListeners() {
-    this.mainNode.addEventListener('click', this.handleDropdownClick);
-    document.addEventListener('click', this.handleOutsideClick);
+    this.mainNode.addEventListener('click', this.handleDropdownClick.bind(this));
+    document.addEventListener('click', this.handleOutsideClick.bind(this));
   }
 
   addButtons() {
@@ -81,11 +78,11 @@ class Dropdown {
     const clearBtn = document.createElement('button');
     const applyBtn = document.createElement('button');
 
-    btnWrap.classList.add('js-buttons-dropdown__wrapper');
+    btnWrap.classList.add('buttons-dropdown__wrapper');
 
     clearBtn.classList.add(
       'button_inline',
-      'js-buttons-dropdown__button_clear',
+      'buttons-dropdown__button_clear',
     );
     clearBtn.setAttribute('type', 'button');
     clearBtn.setAttribute('data-type', 'clear');
@@ -101,7 +98,7 @@ class Dropdown {
     this.drop.appendChild(btnWrap);
 
     this.clearBtn = this.mainNode.querySelector(
-      '.js-buttons-dropdown__button_clear',
+      '[data-type="clear"]',
     );
   }
 
@@ -137,8 +134,8 @@ class Dropdown {
     const { maxItems, defaultText } = this.options;
     const { guests = [], babies = [] } = this.options.plurals;
 
-    const declTextGuests = declensionsOfInputText(this.totalItems, guests);
-    const declTextBabies = declensionsOfInputText(
+    const declTextGuests = declensionsText(this.totalItems, guests);
+    const declTextBabies = declensionsText(
       this.menuItemValue.baby,
       babies,
     );
@@ -172,7 +169,7 @@ class Dropdown {
           } else {
             textInput = addCommaInText(textInput);
 
-            textInput += `${`${currentValue} ${declensionsOfInputText(
+            textInput += `${`${currentValue} ${declensionsText(
               currentValue,
               currentPluralWords,
             )}`}`;
@@ -283,7 +280,7 @@ class Dropdown {
   }
 
   get isOpen() {
-    return this.mainNode.classList.contains('js-dropdown__open');
+    return this.mainNode.classList.contains('dropdown__open');
   }
 
   get isNotEmpty() {
@@ -314,11 +311,11 @@ class Dropdown {
   }
 
   open() {
-    this.mainNode.classList.add('js-dropdown__open');
+    this.mainNode.classList.add('dropdown__open');
   }
 
   close() {
-    this.mainNode.classList.remove('js-dropdown__open');
+    this.mainNode.classList.remove('dropdown__open');
   }
 }
 
