@@ -11,19 +11,19 @@ html(lang="ru")
     title #{title}
     link(rel='shortcut icon' href='./assets/favicon/favicon.png')
 
-body
-  .page-wrapper
-    block header
-      +ui-kit-header({})
-    block content
+  body
+    .page-wrapper
+      block header
+        +ui-kit-header({})
+      block content
 
-block footer
-  +ui-kit-footer({ 
-    footerLinks: [
-      { link: "ui-kit-colors-type", name: "Colors & Type" },
-      { link: "ui-kit-headers-footers", name: "Headers & Footers" },
-      { link: "ui-kit-form-elements", name: "Form Elements" },
-      { link: "ui-kit-cards", name: "Cards" },
-      { link: "landing-page", name: "Landing page" },
-    ]
-  })
+    block footer
+      +ui-kit-footer({ 
+        footerLinks: [
+          { link: "ui-kit-colors-type", name: "Colors & Type" },
+          { link: "ui-kit-headers-footers", name: "Headers & Footers" },
+          { link: "ui-kit-form-elements", name: "Form Elements" },
+          { link: "ui-kit-cards", name: "Cards" },
+          { link: "landing-page", name: "Landing page" },
+        ]
+      })
