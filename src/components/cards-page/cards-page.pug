@@ -1,6 +1,6 @@
 include ../card/card.pug
 include ../room-review-widget/room-review-widget.pug
-include ../air-datepicker/air-datepicker.pug
+include ../date-dropdown/date-dropdown.pug
 
 mixin cards-page({ cards={}, calendar={}, roomReviewWidgets={} })
 
@@ -18,7 +18,7 @@ mixin cards-page({ cards={}, calendar={}, roomReviewWidgets={} })
 
         .cards-page__column
           .cards-page__calendar
-            +air-datepicker()
+            +date-dropdown()
 
           each widget in roomReviewWidgets
             +room-review-widget(widget)

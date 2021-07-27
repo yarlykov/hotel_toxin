@@ -5,8 +5,8 @@ mixin text-field({ classList=[], dropdown="", type="", placeholder="", size="", 
     classList.push(mainTextFieldClass)
     const sizeTextFieldClass = `text-field__size_${size}`
     const hoverTextFieldClass = classList.includes("text-field_hover") ? "text-field_hover" : ""
-    const dropdownStart = dropdown === "start" ? "js-air-datepicker__day-start" : ""
-    const dropdownEnd = dropdown === "end" ? "js-air-datepicker__day-end" : ""
+    const dropdownStart = dropdown === "start" ? "js-date-dropdown__day-start" : ""
+    const dropdownEnd = dropdown === "end" ? "js-date-dropdown__day-end" : ""
     classList.push(dropdownStart, dropdownEnd)
 
     let inputAttributes = {
