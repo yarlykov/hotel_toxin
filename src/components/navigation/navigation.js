@@ -2,8 +2,8 @@ class Navigation {
   constructor(selector) {
     this.$mainNode = selector;
 
-    this._init();
-    this._setup();
+    this.init();
+    this.setup();
   }
 
   toggleDropdown() {
@@ -26,59 +26,59 @@ class Navigation {
     this.$mainNode.classList.add(this.$DownArrowDropdownClass);
   }
 
-  _init() {
+  init() {
     this.$itemDropdown = this.$mainNode.querySelector('.navigation__dropdown');
     this.$visibilityHiddenClass = 'navigation__dropdown_visibility-hidden';
     this.$UpArrowDropdownClass = 'navigation__item_dropdown_arrow-up';
     this.$DownArrowDropdownClass = 'navigation__item_dropdown_arrow-down';
   }
 
-  _setup() {
-    this._clickHandler = this._clickHandler.bind(this);
-    this._keydownHandler = this._keydownHandler.bind(this);
-    this._hideAll = this._hideAll.bind(this);
+  setup() {
+    this.clickHandler = this.clickHandler.bind(this);
+    this.keydownHandler = this.keydownHandler.bind(this);
+    this.hideAll = this.hideAll.bind(this);
 
-    this.$mainNode.addEventListener('click', this._clickHandler);
-    this.$mainNode.addEventListener('keydown', this._keydownHandler);
+    this.$mainNode.addEventListener('click', this.clickHandler);
+    this.$mainNode.addEventListener('keydown', this.keydownHandler);
   }
 
-  _clickHandler(event) {
+  clickHandler(event) {
     this.toggleDropdown();
-    this._addDocumentHandlers();
+    this.addDocumentHandlers();
     event.stopPropagation();
   }
 
-  _addDocumentHandlers() {
-    document.addEventListener('click', this._hideAll);
+  addDocumentHandlers() {
+    document.addEventListener('click', this.hideAll);
   }
 
-  _keydownHandler(event) {
-    this._onDropdownEnterPress(event);
-    this._onDropdownEscapePress(event);
+  keydownHandler(event) {
+    this.onDropdownEnterPress(event);
+    this.onDropdownEscapePress(event);
   }
 
-  _hideAll(event) {
+  hideAll(event) {
     if (event.target.dataset.type !== 'link-dropdown') {
       this.closeDropdown();
-      this._removeDocumentHandlers();
+      this.removeDocumentHandlers();
     }
   }
 
-  _onDropdownEnterPress(event) {
+  onDropdownEnterPress(event) {
     if (event.code === 'Enter') {
       this.toggleDropdown();
-      this._addDocumentHandlers();
+      this.addDocumentHandlers();
     }
   }
 
-  _onDropdownEscapePress(event) {
+  onDropdownEscapePress(event) {
     if (event.code === 'Escape') {
       this.closeDropdown();
     }
   }
 
-  _removeDocumentHandlers() {
-    document.removeEventListener('click', this._hideAll);
+  removeDocumentHandlers() {
+    document.removeEventListener('click', this.hideAll);
   }
 }
 

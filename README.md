@@ -1,4 +1,4 @@
-# FSD 2 task - Hotel website layout and UI Kit
+# MetaLamp 2 task - Hotel website layout and UI Kit
  Второе задание - практика верстки [макета](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/FSD-frontend-education-program.-The-2nd-task?node-id=0%3A1) сайта по поиску номеров отеля из Figma.
 
  [**Ссылка на стартовую страницу проекта**](https://yarlykov.github.io/hotel_toxin/start-page.html)
@@ -32,7 +32,9 @@
  ## Развертывание
  
 **Clone repository:**
- `git clone https://github.com/yarlykov/hotel_toxin.git`
+  ```bash
+    git clone https://github.com/yarlykov/hotel_toxin.git
+  ```
  
  `npm install` - **installing dependencies**
 
