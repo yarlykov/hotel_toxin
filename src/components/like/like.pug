@@ -12,8 +12,8 @@ mixin likeButton({ icon="", value=0, disable=false })
     class: ["like__button", `${btnDisableClassName}`]
   })
     span(class=`${disableClassName}`).like__text.js-like__text #{value}
-    .like__button_border
-      div&attributes({
+    span.like__button_border
+      span&attributes({
         class: [
           likeIconClass,
           disableClassName,

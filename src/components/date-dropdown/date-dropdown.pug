@@ -1,4 +1,4 @@
 include ../text-field/text-field.pug
 
 mixin date-dropdown()
-  +text-field({classList: [ "js-date-dropdown__inline" ]})
+  +text-field({classList: [ "js-date-dropdown__inline" ], type: "text", name: "calendar", placeholder: "calendar"})

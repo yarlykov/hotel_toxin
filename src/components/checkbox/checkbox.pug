@@ -23,6 +23,6 @@ mixin checkbox({ mainTitle="", dropdown=false, rich=false, listItems=[]})
           checked: item.checked,
         })
         span.checkbox__box
-        div(class = titleClassName) #{item.title}
+        span(class = titleClassName) #{item.title}
           if rich
-            div(class = descriptionClassName) #{item.description}
+            span(class = descriptionClassName) #{item.description}

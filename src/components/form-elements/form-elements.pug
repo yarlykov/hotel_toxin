@@ -49,11 +49,11 @@ mixin form-elements({ textFields={}, buttons={}, dropdowns={}, lists={}, roomRev
           +text-field(masked.options)
 
         .text-field__wrapper.text-field__wrapper_date-dropdown
-          label
+          div
             .text-field__header
               span.text-field__title #{dateDropdownStart.title}
             +text-field(dateDropdownStart.options)
-          label
+          div
             .text-field__header
               span.text-field__title #{dateDropdownEnd.title}
             +text-field(dateDropdownEnd.options)

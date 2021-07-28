@@ -44,20 +44,20 @@
     box-sizing: content-box;
     color: $textColor_50;
     cursor: pointer;
-    
+
     &:last-child {
       padding-bottom: 0;
     }
-    
+
     &:hover {
       color: $textColor_75;
     }
-    
+
     &:focus-within {
       color: $textColor_75;
     }
   }
-  
+
   &__input {
     position: absolute;
     width: 0.0714rem;
@@ -106,6 +106,7 @@
   }
 
   &__description_rich {
+    display: inline-block;
     margin-top: 5px;
     color: $textColor_50;
     font-weight: normal;

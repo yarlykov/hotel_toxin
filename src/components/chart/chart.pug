@@ -10,16 +10,16 @@ mixin chart({ sumOfVote="", legendItems=[] })
           text(class="sum-of-vote__number" text-anchor="middle" x="50%" y="49%") #{sumOfVote}
           text(class="sum-of-vote__text" text-anchor="middle" x="50%" y="67%") голосов
         linearGradient(id="purple_gradient" x1="60" y1="0" x2="60" y2="120")
-          stop(stop-color="#BC9CFF")
+          stop(offset="0" stop-color="#BC9CFF")
           stop(offset="1" stop-color="#8BA4F9")
         linearGradient(id="green_gradient" x1="60" y1="0" x2="60" y2="120")
-          stop(stop-color="#6FCF97")
+          stop(offset="0" stop-color="#6FCF97")
           stop(offset="1" stop-color="#66D2EA")
         linearGradient(id="yellow_gradient" x1="60" y1="0" x2="60" y2="120")
-          stop(stop-color="#FFE39C")
+          stop(offset="0" stop-color="#FFE39C")
           stop(offset="1" stop-color="#FFBA9C")
         linearGradient(id="black_gradient" x1="60" y1="0" x2="60" y2="120")
-          stop(stop-color="#919191")
+          stop(offset="0" stop-color="#919191")
           stop(offset="1" stop-color="#3D4975")
     .chart__legend
       ul.legend__list
