@@ -9,12 +9,14 @@ class DateDropdown {
 
   init() {
     this.$calendar = this.$root.datepicker(this.options).data('datepicker');
+    this.input = this.$root.get(0);
     this.addButtons();
     this.buttons = this.$calendar.$datepicker.find('.js-datepicker__buttons');
     this.clearButton = this.$calendar.$datepicker.find('[data-type="clear"]');
     this.applyButton = this.$calendar.$datepicker.find('[data-type="apply"]');
     const arrow = this.$root[0].nextElementSibling;
     arrow.addEventListener('click', this.handleArrowDropdownClick.bind(this));
+    this.input.addEventListener('change', this.handleChangeInput.bind(this));
 
     this.$root.datepicker({
       onSelect: this.onSelect.bind(this),
@@ -30,11 +32,18 @@ class DateDropdown {
   initTwoInputsDropdown() {
     this.dateStart = document.querySelector('.js-date-dropdown__day-start');
     this.dateEnd = document.querySelector('.js-date-dropdown__day-end');
-    const dateEndArrow = this.dateEnd.nextElementSibling;
+    this.dateEndArrow = this.dateEnd.nextElementSibling;
 
+    this.twoInputHandlers();
+  }
+
+  twoInputHandlers() {
     this.handleDateEndClick = this.handleDateEndClick.bind(this);
+
     this.dateEnd.addEventListener('click', this.handleDateEndClick);
-    dateEndArrow.addEventListener('click', this.handleDateEndClick);
+    this.dateEndArrow.addEventListener('click', this.handleDateEndClick);
+    this.dateEnd.addEventListener('change', this.handleChangeInput.bind(this));
+    this.dateEnd.addEventListener('focus', this.handleDateEndFocus.bind(this));
   }
 
   addButtons() {
@@ -100,6 +109,15 @@ class DateDropdown {
     this.$calendar.selectDate(dates);
   }
 
+  handleChangeInput(event) {
+    const { value } = event.target;
+    const correctDate = value.split('.').reverse().join('-');
+
+    const dates = [];
+    dates.push(new Date(correctDate));
+    this.setInitialDates(dates);
+  }
+
   handleClearButtonClick() {
     this.$calendar.clear();
   }
@@ -109,10 +127,17 @@ class DateDropdown {
   }
 
   handleDateEndClick() {
+    console.log('click');
+    this.$calendar.show();
+  }
+
+  handleDateEndFocus() {
+    console.log('focusin');
     this.$calendar.show();
   }
 
   handleArrowDropdownClick() {
+    console.log('click arrow');
     this.$calendar.show();
   }
 

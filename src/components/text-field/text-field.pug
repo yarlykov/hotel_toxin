@@ -1,4 +1,4 @@
-mixin text-field({ classList=[], dropdown="", type="", placeholder="", size="", name="", autocomplete="off", spellcheck=false, subscribe=false, arrow=false})
+mixin text-field({ classList=[], dropdown="", type="", placeholder="", size="", name="", autocomplete="off", spellcheck=false, subscribe=false, arrow=false, readonly=false })
 
   -
     const mainTextFieldClass = "text-field__input"
@@ -15,7 +15,8 @@ mixin text-field({ classList=[], dropdown="", type="", placeholder="", size="", 
       name: name,
       autocomplete: autocomplete,
       placeholder: placeholder,
-      spellcheck: spellcheck
+      spellcheck: spellcheck,
+      readonly: readonly,
     }
   .text-field(class=[hoverTextFieldClass, sizeTextFieldClass])
     input&attributes(inputAttributes)

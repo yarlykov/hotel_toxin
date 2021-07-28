@@ -8,7 +8,7 @@ include ../radio/radio.pug
 include ../button/button.pug
 include ../price-calc/price-calc.pug
 
-mixin card({ title, type="", buttonText="", buttonLink="", question="", numberOfGuests=0 })
+mixin card({ title="", type="", buttonText="", buttonLink="", question="", numberOfGuests=0 })
 
   -
     const questionButton = question.toLowerCase().indexOf("нет") !== -1 ? "Создать" : "Войти"
@@ -25,7 +25,7 @@ mixin card({ title, type="", buttonText="", buttonLink="", question="", numberOf
         +room-number({ symbol: "№", value: "888", text: "люкс" })
         +room-price({ value: "9 990", text: "в сутки"})
     else
-      .card__title #{title}
+      h2.card__title #{title}
 
     if (searchOrCalculation)
       .card__date-dropdown

@@ -14,13 +14,40 @@ function getToday() {
   return todayDate;
 }
 
-const maskDateSelector = document.querySelectorAll('.js-masked__text-field');
-maskDateSelector.forEach((selector) => {
+/* =============== Masked Text Field ================== */
+const maskedTextField = document.querySelectorAll('.js-masked__text-field');
+maskedTextField.forEach((selector) => {
   Inputmask('datetime', {
     inputFormat: 'dd.mm.yyyy',
     placeholder: '__.__.____',
     min: '01/01/1900',
     max: getToday(),
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+  }).mask(selector);
+});
+
+/* =============== Date dropdown Start ================== */
+const maskDateDropdownStart = document.querySelectorAll('.js-date-dropdown__day-start');
+maskDateDropdownStart.forEach((selector) => {
+  Inputmask('datetime', {
+    inputFormat: 'dd.mm.yyyy',
+    placeholder: '__.__.____',
+    min: getToday(),
+    max: '01/01/2023',
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+  }).mask(selector);
+});
+
+/* =============== Date dropdown end ================== */
+const maskDateDropdownEnd = document.querySelectorAll('.js-date-dropdown__day-end');
+maskDateDropdownEnd.forEach((selector) => {
+  Inputmask('datetime', {
+    inputFormat: 'dd.mm.yyyy',
+    placeholder: '__.__.____',
+    min: getToday(),
+    max: '01/01/2023',
     showMaskOnHover: false,
     showMaskOnFocus: false,
   }).mask(selector);
