@@ -8,33 +8,34 @@ include ../card/card.pug
 mixin room-details({ roomPhoto={}, roomDignities={}, chartDoughnut={}, feedback={}, bulletList={}, cancel={}, calculationCard={}})
   .room-details__room-photo
     +room-photo({ roomPhoto })
-  .room-details__content
-    .room-details__information
-      .information__dignity
-        h3.information__title #{roomDignities.title}
-        each dignity in roomDignities.items
-          +dignity-room(dignity)
+  .room-details__container
+    .room-details__content
+      .room-details__information
+        .information__dignity
+          h3.information__title #{roomDignities.title}
+          each dignity in roomDignities.items
+            +dignity-room(dignity)
 
-      .information__impressions
-        h3.information__title #{chartDoughnut.title}
-        +chart(chartDoughnut.options)
+        .information__impressions
+          h3.information__title #{chartDoughnut.title}
+          +chart(chartDoughnut.options)
 
-      .information__feedback
-        .feedback__header
-          h3.information__title #{feedback.title}
-          .information__subtitle #{feedback.subtitle}
-        each comment in feedback.items
-          .feedback__item
-            +comment(comment)
+        .information__feedback
+          .feedback__header
+            h3.information__title #{feedback.title}
+            .information__subtitle #{feedback.subtitle}
+          each comment in feedback.items
+            .feedback__item
+              +comment(comment)
 
-      .information__rules
-        h3.information__title #{bulletList.title}
-        .rules__list
-          +bullet-list(bulletList)
+        .information__rules
+          h3.information__title #{bulletList.title}
+          .rules__list
+            +bullet-list(bulletList)
 
-      .information__cancel
-        h3.information__title #{cancel.title}
-        p.cancel__text #{cancel.text}
+        .information__cancel
+          h3.information__title #{cancel.title}
+          p.cancel__text #{cancel.text}
 
-    .room-details__calculation
-      +card(calculationCard)
+      .room-details__calculation
+        +card(calculationCard)

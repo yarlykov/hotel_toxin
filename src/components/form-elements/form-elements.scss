@@ -9,6 +9,7 @@
   margin: 0 auto;
   max-width: 1158px;
   min-width: 1158px;
+  padding-left: 8px;
 }
 
 .form-elements__text-fields-buttons {
@@ -201,7 +202,7 @@
 }
 
 .form-elements__room-review {
-  padding-top: 92px;
+  padding-top: 76px;
   grid-column: span 3;
   display: grid;
   max-width: 1158px;
@@ -210,5 +211,5 @@
 }
 
 .room-review__wrapper_comment {
-  padding-top: 10px;
+  padding-top: 30px;
 }

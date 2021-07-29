@@ -5,8 +5,8 @@
     background: url('../sing-in/image/sing-in-background.jpg')
       no-repeat;
     background-size: cover;
-    background-size: 107%;
-    background-position: 49% 53.5%;
+    background-size: 108%;
+    background-position: 40% 53.5%;
     box-sizing: border-box;
 
     @media (max-width: 1280px) {
@@ -20,6 +20,7 @@
     max-width: 1440px;
     padding: 12.2857rem 0 12.2857rem 0;
     margin: 0 auto;
+    padding-left: 13px;
 
     @media (max-width: 960px) {
       flex-direction: row;

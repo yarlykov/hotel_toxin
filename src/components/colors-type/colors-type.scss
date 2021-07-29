@@ -4,11 +4,10 @@
 .colors-type {
   &__content-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     box-sizing: border-box;
     margin: 0rem auto 10.3571rem;
-    padding: 0.3571rem 3.6429rem 0 0;
-    max-width: 1160px;
+    padding-top: 0.3571rem;
+    padding-left: 0.5rem;
+    max-width: 82.8571rem;
   }
 }

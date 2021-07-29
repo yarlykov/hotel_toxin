@@ -1,4 +1,4 @@
-mixin range-slider({ title="" })
+mixin range-slider({ title="", description="" })
   .range-slider__header
     .range-slider__title #{title}
     input&attributes({
@@ -8,4 +8,5 @@ mixin range-slider({ title="" })
       })
   .range-slider__scale.js-range-slider__scale
     .range-slider__scale_border
+  p.slider-text #{description}
     

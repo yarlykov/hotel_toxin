@@ -5,8 +5,8 @@
     background: url('../registration/image/registration-background.jpg')
       no-repeat;
     background-size: cover;
-    background-size: 107%;
-    background-position: 49% 53.5%;
+    background-size: 107.5%;
+    background-position: 40.2% 51.5%;
     box-sizing: border-box;
 
     @media (max-width: 1280px) {
@@ -18,8 +18,9 @@
     display: flex;
     justify-content: center;
     max-width: 1440px;
-    padding: 1.3571rem 0 2.6429rem 0;
+    padding: 18.9994px 0 18px 0;
     margin: 0 auto;
+    padding-left: 20px;
 
     @media (max-width: 960px) {
       flex-direction: row;

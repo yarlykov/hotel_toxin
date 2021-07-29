@@ -2,19 +2,19 @@
 @import '@mixins';
 
 .type {
-  padding-bottom: 3.5714rem;
+  padding-bottom: 3.7143rem;
 
   &__wrapper {
     display: flex;
     flex-direction: column;
-    min-width: 403px;
-    max-width: 403px;
+    min-width: 28.7857rem;
+    max-width: 31.1429rem;
   }
 
   &__header {
     display: flex;
     justify-content: flex-end;
-    min-width: 37px;
+    min-width: 2.6429rem;
     font-family: $mainFont;
     font-weight: 400;
     text-transform: capitalize;
@@ -35,15 +35,18 @@
   &__h2 {
     @include font-h2;
     display: flex;
+    padding-right: 1.4286rem;
   }
 
   &__h3 {
     @include font-h3;
     display: flex;
+    padding-bottom: 3.4286rem
   }
 
   &__body {
     @include font-body;
     display: flex;
+    padding-right: 3.9286rem;
   }
 }

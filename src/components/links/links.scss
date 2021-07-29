@@ -11,14 +11,15 @@
   }
 
   &__item {
-    padding-top: 21px;
+    padding-top: 1.5rem;
     font-size: $mainFont_size;
     font-weight: 400;
-    line-height: 17px;
+    line-height: 1.2143rem;
     text-transform: none;
+    white-space: nowrap;
     
     &:first-child {
-      padding-top: 22px;
+      padding-top: 1.5714rem;
     }
   }
 }

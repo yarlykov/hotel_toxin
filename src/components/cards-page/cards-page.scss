@@ -3,7 +3,7 @@
 .cards-page {
   &__column {
     & > :not(:first-child) {
-      margin-top: 2.8571rem;
+      margin-top: 39.9994px;
     }
     &:not(:first-child) {
       margin-left: 2.8571rem;
@@ -20,13 +20,13 @@
   &__container {
     max-width: 1160px;
     min-width: 1160px;
-    flex: 1 0 auto;
-    margin: 0.7143rem auto;
+    margin: 12px auto;
+    padding-left: 8px;
   }
 
   &__content {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
   }
 
   &__footer {

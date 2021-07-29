@@ -7,23 +7,24 @@ mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyri
   - const borderTopClass = border ? "footer__wrapper_border" : ""
   
   footer(class=borderTopClass).footer__wrapper
-    .footer 
-      .footer__logo
-        +logo(logo)
-        p.footer__award #{footerText}
-      .footer__links
-        .footer__links_column
-          +links(footerNavigation.column1)
-        .footer__links_column
-          +links(footerNavigation.column2)
-        .footer__links_column
-          +links(footerNavigation.column3)
-      +subscribe(subscribe)
-    .footer__bottom
-      .footer__bottom_wrapper
-        .footer__copyright-text #{copyright.text}
-        .footer__social
-          +social(social)
+    .footer__container
+      .footer 
+        .footer__logo
+          +logo(logo)
+          p.footer__award #{footerText}
+        .footer__links
+          .footer__links_column
+            +links(footerNavigation.column1)
+          .footer__links_column
+            +links(footerNavigation.column2)
+          .footer__links_column
+            +links(footerNavigation.column3)
+        +subscribe(subscribe)
+      .footer__bottom
+        .footer__bottom_wrapper
+          .footer__copyright-text #{copyright.text}
+          .footer__social
+            +social(social)
   footer.footer-mobile
     .footer-mobile__wrapper
       +logo(logo)

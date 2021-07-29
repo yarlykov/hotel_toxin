@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding-top: 1.1429rem;
+    padding-top: 0.7143rem;
   }
 
   &__additional-services {
@@ -44,7 +44,7 @@
   @include font-h2;
   display: flex;
   align-items: baseline;
-  padding-top: 2.1429rem;
+  padding-top: 2.2143rem;
 
   &__text {
     font-family: Montserrat, Arial, sans-serif;

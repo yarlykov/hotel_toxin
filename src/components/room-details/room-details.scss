@@ -9,18 +9,29 @@
     margin: 0 auto;
   }
 
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
   &__content {
     display: flex;
     justify-content: space-between;
-    max-width: 1160px;
     min-height: 400px;
-    margin: 0 auto;
     padding-top: 5rem;
+    padding-left: 140px;
+    padding-right: 125px;
 
     @media (max-width: 1200px) {
       flex-wrap: wrap;
       flex-direction: column;
       align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      padding-top: 2rem;
+      padding-right: 0px;
+      padding-left: 0px;
     }
   }
 
@@ -39,19 +50,19 @@
   }
 
   &__calculation {
+    margin-left: 20px;
     @media (max-width: 1200px) {
       padding-bottom: 70px;
+    }
+    @media (max-width: 800px) {
+      margin-left: 0;
     }
   }
 }
 
 .information {
   &__title {
-    font-family: 'Open Sans', Quicksand, sans-serif;
-    font-weight: 700;
-    font-size: 1.3571rem;
-    line-height: 1.7143rem;
-    color: $mainTextColor;
+    @include font-h2;
 
     &::first-letter {
       text-transform: uppercase;
@@ -84,6 +95,7 @@
   &__feedback {
     max-width: 50.7857rem;
     grid-column: 1/3;
+    padding-top: 2px;
 
     @media (max-width: 800px) {
       grid-column: 1/2;
@@ -110,7 +122,7 @@
 
   &__item {
     padding-top: 1.4286rem;
-  
+
     &:last-child {
       padding-top: 1.6429rem;
     }
@@ -120,5 +132,6 @@
 .cancel {
   &__text {
     @include font-body;
+    padding-top: 19px;
   }
 }

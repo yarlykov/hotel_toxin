@@ -5,8 +5,8 @@
   &__content {
     background: url('../landing/image/landing.jpg') no-repeat;
     background-size: cover;
-    background-size: 107%;
-    background-position: 51% 68%;
+    background-size: 108%;
+    background-position: 44% 68%;
     box-sizing: border-box;
 
     @media (max-width: 1280px) {
@@ -47,8 +47,10 @@
   &__self-presentation {
     @include font-body;
     align-self: flex-end;
-    max-width: 21.4286rem;
-    padding: 22.7143rem 9.5714rem 1.4286rem 0;
+    max-width: 28.5714rem;
+    padding-top: 22.7143rem;
+    padding-right: 8.5rem;
+    padding-bottom: 1.4286rem;
     text-align: end;
 
     @media (max-width: 960px) {
