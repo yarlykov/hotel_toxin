@@ -127,17 +127,14 @@ class DateDropdown {
   }
 
   handleDateEndClick() {
-    console.log('click');
     this.$calendar.show();
   }
 
   handleDateEndFocus() {
-    console.log('focusin');
     this.$calendar.show();
   }
 
   handleArrowDropdownClick() {
-    console.log('click arrow');
     this.$calendar.show();
   }
 
