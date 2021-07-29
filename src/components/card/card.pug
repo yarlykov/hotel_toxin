@@ -8,7 +8,7 @@ include ../radio/radio.pug
 include ../button/button.pug
 include ../price-calc/price-calc.pug
 
-mixin card({ title="", type="", buttonText="", buttonLink="", question="", numberOfGuests=0 })
+mixin card({ formMethod="", formAction="", title="", type="", buttonText="", buttonType="", question="", numberOfGuests=0 })
 
   -
     const questionButton = question.toLowerCase().indexOf("нет") !== -1 ? "Создать" : "Войти"
@@ -26,74 +26,76 @@ mixin card({ title="", type="", buttonText="", buttonLink="", question="", numbe
         +room-price({ value: "9 990", text: "в сутки"})
     else
       h2.card__title #{title}
+    form(method=`${formMethod}`, action=`./${formAction}.html`)
+      if (searchOrCalculation)
+        .card__date-dropdown
+          .date-dropdown__start
+            .text-field__header
+              span.text-field__title прибытие
+            +text-field({
+                classList: [], dropdown: "start",
+                type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
+                name: "date", autocomplete: "off", arrow: true
+            })
+          .date-dropdown__end
+            .text-field__header
+              span.text-field__title выезд
+            +text-field({
+                classList: [], dropdown: "end",
+                type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
+                name: "date", autocomplete: "off", arrow: true
+            })
+        div(class= search ? "card__guests-dropdown_search" : "").card__guests-dropdown
+          span.card__guests-dropdown_title гости
+          +dropdown({
+            isOpen: false, 
+            group: "guests", 
+            elements: [
+              {title: "Взрослые", count: numberOfGuests},
+              {title: "Дети", count: 0}, 
+              {title: "Младенцы", count: 0}
+            ]})
+        if calculation
+          .card__calculation
+            +price-calc()
 
-    if (searchOrCalculation)
-      .card__date-dropdown
-        .date-dropdown__start
+      else if (registration)
+        .card__register-details
+          .register__details
+            .register__name
+              +text-field({ placeholder: "Имя", type: "text", name: "name", autocomplete: "on" })
+            .register__surname
+              +text-field({ placeholder: "Фамилия", type: "text", name: "surname", autocomplete: "on" })
+        .card__radio-buttons
+          +radio({ group: "gender", title: "Мужчина", checked: true})
+          +radio({ group: "gender", title: "Женщина", checked: false})
+        .card__birthday
           .text-field__header
-            span.text-field__title прибытие
-          +text-field({
-              classList: [], dropdown: "start",
-              type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-              name: "date", autocomplete: "off", arrow: true
-          })
-        .date-dropdown__end
+            .text-field__title дата рождения
+          +text-field({ classList: ["js-masked__text-field"],placeholder: "ДД.ММ.ГГГГ", type: "text", name: "birthday", autocomplete: "on" })
+        .card__login-details
           .text-field__header
-            span.text-field__title выезд
-          +text-field({
-              classList: [], dropdown: "end",
-              type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-              name: "date", autocomplete: "off", arrow: true
-          })
-      div(class= search ? "card__guests-dropdown_search" : "").card__guests-dropdown
-        span.card__guests-dropdown_title гости
-        +dropdown({
-          isOpen: false, 
-          group: "guests", 
-          elements: [
-            {title: "Взрослые", count: numberOfGuests},
-            {title: "Дети", count: 0}, 
-            {title: "Младенцы", count: 0}
-          ]})
-      if calculation
-        .card__calculation
-          +price-calc()
+            .text-field__title данные для входа в сервис
+          .login-details__email
+            +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
+          .login-details__password
+            +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
+        .card__toggle
+          +toggle({ title: "Получать спецпредложения" })
 
-    else if (registration)
-      .card__register-details
-        .register__details
-          .register__name
-            +text-field({ placeholder: "Имя", type: "text", name: "name", autocomplete: "on" })
-          .register__surname
-            +text-field({ placeholder: "Фамилия", type: "text", name: "surname", autocomplete: "on" })
-      .card__radio-buttons
-        +radio({ group: "gender", title: "Мужчина", checked: true})
-        +radio({ group: "gender", title: "Женщина", checked: false})
-      .card__birthday
-        .text-field__header
-          .text-field__title дата рождения
-        +text-field({ classList: ["js-masked__text-field"],placeholder: "ДД.ММ.ГГГГ", type: "text", name: "birthday", autocomplete: "on" })
-      .card__login-details
-        .text-field__header
-          .text-field__title данные для входа в сервис
-        .login-details__email
-          +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
-        .login-details__password
-          +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
-      .card__toggle
-        +toggle({ title: "Получать спецпредложения" })
-
-    else if (entry)
-      .card__login-details
-        .login-details__email
-          +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
-        .login-details__password
-          +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
-    if (buttonText !== "")
-      .card__button
-        +button({ buttonName: buttonText, buttonVariation: "withArrow", textColor: "white", size: "large", link: buttonLink})
-    if (question !== "")
-      .card__question
-        span.register__question_text #{question}
-        .register__question_button
-          +button({ buttonName: questionButton, buttonVariation: "fillWhite", textColor: "purple", size: "small", link: questionButtonLink })
+      else if (entry)
+        .card__login-details
+          .login-details__email
+            +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
+          .login-details__password
+            +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
+      //- Add button
+      if (buttonText !== "")
+        .card__button
+          +button({ buttonName: buttonText, type: buttonType, buttonVariation: "withArrow", textColor: "white", size: "large"})
+      //- Add question
+      if (question !== "")
+        .card__question
+          span.register__question_text #{question}
+          .register__question_button
+            +button({ buttonName: questionButton, buttonVariation: "fillWhite", textColor: "purple", size: "small", link: questionButtonLink })

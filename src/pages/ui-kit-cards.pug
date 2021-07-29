@@ -10,31 +10,35 @@ block header
 block content
   +cards-page({
     cards: {
-      search: {
+        search: {
         title: "Найдём номера под ваши\u00A0пожелания",
         type: "search",
+        formAction: "error-page",
         buttonText: "подобрать номер",
-        buttonLink: "search-room"
+        buttonType: "button",
       },
       registration: {
         title: "Регистрация аккаунта",
         type: "registration",
+        formAction: "error-page",
         buttonText: "перейти к оплате",
+        buttonType: "button",
         question: "Уже есть аккаунт на Toxin",
-        buttonLink: "error-page"
       },
       calculation: {
         type: "calculation",
+        formAction: "error-page",
         buttonText: "забронировать",
+        buttonType: "button",
         numberOfGuests: 3,
-        buttonLink: "error-page"
       },
       entry: {
         title: "Войти",
         type: "entry",
+        formAction: "error-page",
         buttonText: "войти",
+        buttonType: "button",
         question: "Нет аккаунта на Toxin?",
-        buttonLink: "error-page"
       }
     },
     calendar: {},

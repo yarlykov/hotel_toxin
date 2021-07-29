@@ -1,4 +1,4 @@
-mixin button({ classList=[], type="button", buttonName="button", link="error-page", size="inline", textColor="gray", buttonVariation="inline"})
+mixin button({ classList=[], type="button", buttonName="button", link="", size="inline", textColor="gray", buttonVariation="inline"})
   -
     const mainButtonClass = "button"
     const buttonSizeClass = `button_size_${size}`
@@ -6,17 +6,34 @@ mixin button({ classList=[], type="button", buttonName="button", link="error-pag
     classList.push(mainButtonClass, buttonSizeClass)
     
     let buttonAttributes = {
-      class: classList,
-      href: `./${link}.html`,
+      link: {
+        class: classList,
+        href: `./${link}.html`,
+      },
+      button: {
+        class: classList,
+        type: type,
+      }
     }
-
-  a&attributes(buttonAttributes) 
-    case buttonVariation
-      when "fillWhite"
-        span(class=buttonTextColor) #{buttonName}
-        .button_fill-white
-      when "withArrow"
-        span(class=buttonTextColor) #{buttonName}
-        .button__arrow
-      default
-        span(class=buttonTextColor) #{buttonName}
+  if link
+    a&attributes(buttonAttributes.link) 
+      case buttonVariation
+        when "fillWhite"
+          span(class=buttonTextColor) #{buttonName}
+          .button_fill-white
+        when "withArrow"
+          span(class=buttonTextColor) #{buttonName}
+          .button__arrow
+        default
+          span(class=buttonTextColor) #{buttonName}
+  else
+    button&attributes(buttonAttributes.button) 
+      case buttonVariation
+        when "fillWhite"
+          span(class=buttonTextColor) #{buttonName}
+          .button_fill-white
+        when "withArrow"
+          span(class=buttonTextColor) #{buttonName}
+          .button__arrow
+        default
+          span(class=buttonTextColor) #{buttonName}
