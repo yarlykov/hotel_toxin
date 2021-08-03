@@ -1,0 +1,37 @@
+extends ../../layouts/ui-kit-layout.pug
+include ../../components/logo/logo.pug
+include ../../components/menu-widget/menu-widget.pug
+include ../../components/toggle/toggle.pug
+
+block variables
+  - const title = "Стартовая страница"
+
+block header
+block content
+  .start-page
+    .start-page__container
+      .start-page__logo
+        +logo({ type: "colorWithText", height: "80", width: "200" })
+      .start-page__toggle.js-start-page__toggle
+        +toggle({title: "День"})
+      .start-page__header.js-start-page__header
+        h2.start-page__header-ui-kit Ui Kit
+        h2.start-page__header-pages Pages
+      .start-page__menu
+        +menu-widget({ 
+          uiKit: [
+            { title: "Colors & Types", link: "ui-kit-colors-type" },
+            { title: "Headers & Footers", link: "ui-kit-headers-footers" },
+            { title: "Form & Elements", link: "ui-kit-form-elements" },
+            { title: "Cards", link: "ui-kit-cards" },
+          ], 
+          sitePages: [
+            { title: "Landing page", link: "landing-page" },
+            { title: "Registration page", link: "registration-page" },
+            { title: "Sing in page", link: "sing-in-page" },
+            { title: "Search room", link: "search-room-page" },
+            { title: "Room details", link: "room-details-page" },
+          ] 
+        })
+
+block footer

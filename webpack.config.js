@@ -66,7 +66,7 @@ const common = merge([
         (page) =>
           new HtmlWebpackPlugin({
             filename: `${page}.html`,
-            template: `${PAGES_DIR}/${page}.pug`,
+            template: `${PAGES_DIR}/${page}/${page}.pug`,
           })
       ),
       new CleanWebpackPlugin(),

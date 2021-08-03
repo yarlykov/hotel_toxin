@@ -1,0 +1,122 @@
+extends ../../layouts/ui-kit-layout.pug
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+include ../../components/footer-mobile/footer-mobile.pug
+
+block variables
+  - const title = "Headers & Footers"
+
+block header
+  +ui-kit-header({ background: true })  
+
+block content
+  .headers-footers__wrapper  
+    main.headers-footers
+      .headers-footers__header_sing-in
+        +header({
+          logo: { type: "colorWithText", width: "106px", height: "40px"},
+          navigationList: [
+                { name: "О нас", url: "./error-page.html", active: true},
+                { name: "Услуги", dropdown: true,
+                  subMenuItems: [
+                    { name: "Работа или отдых", url: "./error-page.html"},
+                    { name: "Мероприятия", url: "./error-page.html"},
+                    { name: "Размещение животных", url: "./error-page.html"},
+                    { name: "Бесплатная отмена", url: "./error-page.html"},
+                  ]
+                },
+                { name: "Вакансии", url: "./error-page.html"},
+                { name: "Новости", url: "./error-page.html"},
+                { name: "Соглашения", dropdown: true,
+                  subMenuItems: [
+                    { name: "Общие положения", url: "./error-page.html"},
+                    { name: "Условия пользования", url: "./error-page.html"},
+                    { name: "Гаранитии пользователя", url: "./error-page.html"},
+                    { name: "Уведомления и рассылка", url: "./error-page.html"},
+                  ]},
+          ],
+          buttonEntry: "войти",
+          buttonRegister: "зарегистрироваться",
+        })
+      .headers-footers__header_logged
+        +header({
+          logo: { type: "colorWithText", width: "106px", height: "40px"},
+          navigationList: [
+                { name: "О нас", url: "./error-page.html", active: true},
+                { name: "Услуги", dropdown: true,
+                  subMenuItems: [
+                    { name: "Работа или отдых", url: "./error-page.html"},
+                    { name: "Мероприятия", url: "./error-page.html"},
+                    { name: "Размещение животных", url: "./error-page.html"},
+                    { name: "Бесплатная отмена", url: "./error-page.html"},
+                  ]
+                },
+                { name: "Вакансии", url: "./error-page.html"},
+                { name: "Новости", url: "./error-page.html"},
+                { name: "Соглашения", dropdown: true,
+                subMenuItems: [
+                    { name: "Общие положения", url: "./error-page.html"},
+                    { name: "Условия пользования", url: "./error-page.html"},
+                    { name: "Гаранитии пользователя", url: "./error-page.html"},
+                    { name: "Уведомления и рассылка", url: "./error-page.html"},
+                  ]
+                },
+          ],
+          logged: true,
+          userName: "Юлий Цезарь",
+        })
+      .headers-footers__footer
+        +footer({
+          logo: { type: "colorWithText", width: "106px"},
+          footerText: "Бронирование номеров в лучшем отеле 2019   года по версии ассоциации «Отельные взгляды»",
+          footerNavigation: {
+            column1: { title: "навигация", 
+              linksList: [
+                { name: "О нас", url: "./error-page.html"},
+                { name: "Новости", url: "./error-page.html"},
+                { name: "Служба поддержки", url: "./error-page.html"},
+                { name: "Услуги", url: "./error-page.html"},
+              ]
+            },
+            column2: { title: "О нас", 
+              linksList: [
+                { name: "О сервисе", url: "./error-page.html"},
+                { name: "Наша команда", url: "./error-page.html"},
+                { name: "Вакансии", url: "./error-page.html"},
+                { name: "Инвесторы", url: "./error-page.html"},
+              ]
+            },
+            column3: { title: "Служба поддержки", 
+              linksList: [
+                { name: "Соглашение", url: "./error-page.html"},
+                { name: "Сообщества", url: "./error-page.html"},
+                { name: "Связь с нами", url: "./error-page.html"},
+              ]
+            },
+          },
+          subscribe: { title: "Подписка", text: "Получайте        специальные предложения и новости сервиса"},
+          copyright: {
+            text: "Copyright © 2018 Toxin отель. Все\u00A0права\u00A0зачищены."
+          },
+          social: { 
+            socialLinks: [
+              { title: "twitter", link: "https://twitter.com"},
+              { title: "facebook", link: "https://facebook.com"},
+              { title: "instagram", link: "https://instagram.com"},
+            ]
+          },
+        })
+      .headers-footers__footer-mobile
+        +footer-mobile()
+
+  block footer
+  +ui-kit-footer({ 
+    footerLinks: [
+      { link: "ui-kit-colors-type", name: "Colors & Type" },
+      { link: "ui-kit-headers-footers", name: "Headers & Footers" },
+      { link: "ui-kit-form-elements", name: "Form Elements" },
+      { link: "ui-kit-cards", name: "Cards" },
+      { link: "landing-page", name: "Landing page" },
+    ],
+    background: true
+  })

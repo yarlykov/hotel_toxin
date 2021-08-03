@@ -1,4 +1,10 @@
-mixin error-page({ title="", mainText="", linkTitle="", linkText="", link="" })
+extends ../../layouts/ui-kit-layout.pug
+
+block variables
+  - const title = "404"
+
+block header
+block content
   .canvas-error
     .box_front
       .sea
@@ -27,7 +33,9 @@ mixin error-page({ title="", mainText="", linkTitle="", linkText="", link="" })
       .cloud.cloud-4
       .cloud.cloud-5
       .errorPage
-        h1.errorPage__title #{title}
-        h2.errorPage__text #{mainText}
-          p.errorPage__link #{linkTitle}
-            a(href=`./${link}`)  #{linkText}
+        h1.errorPage__title Страница находится в разработке
+        h2.errorPage__text Пожалуйста, возвращайтесь позже
+          p.errorPage__link на главную
+            a(href=`./start-page.html`)  тык
+
+block footer

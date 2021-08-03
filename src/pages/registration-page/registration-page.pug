@@ -1,0 +1,18 @@
+extends ../../layouts/main-layout.pug
+include ../../components/card/card.pug
+
+block variables
+  - const title = "Registration page"
+
+block content
+  main.registration__content
+    .registration__container
+      .registration__registration
+        +card({
+          title: "Регистрация аккаунта",
+          type: "registration",
+          buttonText: "перейти к оплате",
+          formAction: 'registration-page',
+          buttonType: "submit",
+          question: "Уже есть аккаунт на Toxin",
+         })

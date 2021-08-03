@@ -1,4 +1,4 @@
-mixin type({ typeList=[] })
+mixin type( typeList=[] )
   each typeListItem in typeList
     - const typeClassBlock = "type__" + typeListItem.type
     div&attributes({ class: ["type", typeClassBlock] })

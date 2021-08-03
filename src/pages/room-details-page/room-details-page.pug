@@ -1,0 +1,83 @@
+extends ../../layouts/main-layout.pug
+include ../../components/room-photo/room-photo.pug
+include ../../components/dignity-room/dignity-room.pug
+include ../../components/comment/comment.pug
+include ../../components/chart/chart.pug
+include ../../components/bullet-list/bullet-list.pug
+include ../../components/card/card.pug
+
+block variables
+  - const title = "Room details"
+
+block content
+  .room-details__room-photo
+    +room-photo({
+      main: "room-details-main.jpg",
+      asideTop: "room-details-aside-top.jpg",
+      asideBottom: "room-details-aside-bottom.jpg",
+      alt: "room photo"
+    })
+  .room-details__container
+    .room-details__content
+      .room-details__information
+        .information__dignity
+          h3.information__title сведения о номере
+          +dignity-room({ icon: "mood", title: "Комфорт", subtitle: "Шумопоглощающие стены" })
+          +dignity-room({ icon: "location_city", title: "Удобство", subtitle: "Окно в каждой из спален" })
+          +dignity-room({ icon: "whatshot", title: "Уют", subtitle: "Номер оснащён камином" })
+
+        .information__impressions
+          h3.information__title впечатления от номера
+          +chart({
+            sumOfVote: "260",
+            legendItems: [
+              { label: "великолепно" },
+              { label: "хорошо" },
+              { label: "удовлетворительно" },
+              { label: "разочарован" },
+            ]
+          })
+
+        .information__feedback
+          .feedback__header
+            h3.information__title Отзывы посетителей номера
+            .information__subtitle 2 отзыва
+          .feedback__item
+            +comment({ 
+              imageName: "comment-image-1.jpg", 
+              name: "Мурад Сарафанов", 
+              dateOfVisit: "5 дней назад", 
+              commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", 
+              likeCount: 12
+            })
+          .feedback__item
+            +comment({ 
+              imageName: "comment-image-2.jpg", 
+              name: "Патрисия Стёклышкова", 
+              dateOfVisit: "Неделю назад", 
+              commentText: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент", 
+              likeCount: 2,
+              isDisable: true
+            })
+
+        .information__rules
+          h3.information__title правила
+          .rules__list
+            +bullet-list([ 
+              { title: "Нельзя с питомцами" }, 
+              { title: "Без вечеринок и мероприятий" },  
+              { title: "Время прибытия — после 13:00, а\u00A0выезд до 12:00" }
+             ])
+
+        .information__cancel
+          h3.information__title отмена
+          p.cancel__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+      .room-details__calculation
+        +card({
+          type: "calculation",
+          buttonText: "забронировать",
+          numberOfGuests: 3,
+          formAction: "room-details-page",
+          buttonType: "submit"
+        })

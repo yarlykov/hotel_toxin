@@ -1,21 +1,20 @@
-mixin room-photo({ roomPhoto={} })
-  - const { main, asideTop, asideBottom, alt } = roomPhoto
+mixin room-photo({ main, asideTop, asideBottom, alt })
   .room-photo__main
     img&attributes({
       class: "room-photo__item",
-      src: require(`../components/room-details/image/${main}`).default,
+      src: require(`./image/${main}`).default,
       alt: `${alt}`
     })
   .room-photo__aside
     .room-photo__aside_top
       img&attributes({
         class: "room-photo__item",
-        src: require(`../components/room-details/image/${asideTop}`).default,
+        src: require(`./image/${asideTop}`).default,
         alt: `${alt}`
       })
     .room-photo__aside_bottom
       img&attributes({
         class: "room-photo__item",
-        src: require(`../components/room-details/image/${asideBottom}`).default,
+        src: require(`./image/${asideBottom}`).default,
         alt: `${alt}`
       })
