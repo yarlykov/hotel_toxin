@@ -4,10 +4,10 @@
 .social {
   @include text-gradient-fill($mainGradient);
   font-family: 'Font Awesome';
-  font-size: 1.7143rem;
+  font-size: 24px;
 
   &:not(:first-child) {
-    margin-left: 1.5714rem;
+    margin-left: 22px;
   }
 
   &_twitter::before {

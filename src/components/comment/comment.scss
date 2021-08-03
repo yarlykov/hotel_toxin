@@ -11,12 +11,12 @@
   }
 
   &__avatar {
-    width: 3.405rem;
-    height: 3.4286rem;
+    width: 47.67px;
+    height: 48px;
     border: $avatarBorder;
     box-sizing: border-box;
     box-shadow: $avatarBoxShadow;
-    border-radius: 2.2857rem;
+    border-radius: 32px;
   }
 
   &__description {
@@ -34,7 +34,7 @@
 
   &__body {
     display: flex;
-    line-height: 1.7143rem;
+    line-height: 24px;
     color: $textColor_75;
 
     p {
@@ -43,12 +43,12 @@
   }
 
   &__like {
-    padding-left: 0.25rem;
-    padding-top: 0.5714rem;
+    padding-left: 3.5px;
+    padding-top: 8px;
   }
 
   &__text {
-    padding-left: 1.0221rem;
-    padding-top: 0.7143rem;
+    padding-left: 14.3px;
+    padding-top: 10px;
   }
 }

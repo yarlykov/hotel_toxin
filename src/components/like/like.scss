@@ -4,10 +4,10 @@
   &__button {
     display: inline-flex;
     position: relative;
-    min-width: 2.8571rem;
-    height: 1.4286rem;
+    min-width: 40px;
+    height: 20px;
     border: none;
-    border-radius: 7.1429rem;
+    border-radius: 100px;
     background: $mainGradient;
     outline: none;
     cursor: pointer;
@@ -28,7 +28,7 @@
     top: 4px;
     left: 5px;
     font-family: 'Material Icons';
-    font-size: 0.7143rem;
+    font-size: 10px;
 
     &_favorite::before {
       content: '\e87d';
@@ -50,10 +50,10 @@
   &__text {
     position: relative;
     z-index: 1;
-    margin: 0.1429rem 0rem 0 1.0714rem;
+    margin: 2px 0px 0 15px;
     color: $designColor_main;
     font-family: $mainFont;
-    font-size: 0.7143rem;
+    font-size: 10px;
   }
 
   &__disable {

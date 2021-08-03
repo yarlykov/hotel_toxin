@@ -40,18 +40,18 @@
 .ui-slider {
   position: relative;
   text-align: left;
-  top: 0.7143rem;
+  top: 10px;
 }
 
 .ui-slider .ui-slider-handle {
   position: absolute;
   box-sizing: content-box;
-  left: 3.5714rem;
-  width: 0.8571rem;
-  height: 0.8571rem;
+  left: 50px;
+  width: 12px;
+  height: 12px;
   border-radius: 100%;
   background: $secondGradient;
-  border: 0.1429rem solid #fff;
+  border: 2px solid #fff;
   cursor: pointer;
 }
 .ui-slider .ui-slider-handle:focus {
@@ -65,10 +65,10 @@
   background: $secondGradient;
 }
 .ui-slider-horizontal {
-  top: 1.5714rem;
+  top: 22px;
 }
 .ui-slider-horizontal .ui-slider-handle {
-  top: -0.3571rem;
+  top: -5px;
 }
 
 .slider-text {

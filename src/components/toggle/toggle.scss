@@ -2,13 +2,13 @@
 
 .toggle {
   display: block;
-  margin-left: 3.5714rem;
+  margin-left: 50px;
   box-sizing: border-box;
   color: $textColor_50;
   cursor: pointer;
 
   &:not(:last-child) {
-    margin-bottom: 1.1429rem;
+    margin-bottom: 16px;
   }
 
   &__input {

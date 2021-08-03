@@ -19,32 +19,32 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding-top: 0.7143rem;
+    padding-top: 10px;
   }
 
   &__additional-services {
     display: flex;
     justify-content: space-between;
-    padding-top: 1rem;
-    line-height: 1.2857rem;
+    padding-top: 14px;
+    line-height: 18px;
   }
 }
 
 .service-charge {
-  max-width: 15.2857rem;
-  min-width: 15.2857rem;
+  max-width: 214px;
+  min-width: 214px;
 }
 
 .additional-services {
-  max-width: 15.2857rem;
-  min-width: 15.2857rem;
+  max-width: 214px;
+  min-width: 214px;
 }
 
 .total-price {
   @include font-h2;
   display: flex;
   align-items: baseline;
-  padding-top: 2.2143rem;
+  padding-top: 31px;
 
   &__text {
     font-family: Montserrat, Arial, sans-serif;
@@ -53,7 +53,7 @@
 
   &__points {
     width: 100%;
-    margin: 0 0.3571rem;
+    margin: 0 5px;
     border-bottom: dotted 1px $textColor_25;
     box-sizing: border-box;
   }

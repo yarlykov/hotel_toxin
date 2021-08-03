@@ -6,18 +6,18 @@
   justify-content: space-around;
   max-width: 100%;
   margin: 0 auto;
-  padding: 2.1429rem 0rem;
+  padding: 30px 0px;
   
   & a {
     &:not(:first-child){
-      margin-left: 3.5714rem;
+      margin-left: 50px;
     }
   }
   @media (max-width: 960px) {
     flex-direction: column;
 
     a {
-      margin-bottom: 0.3571rem;
+      margin-bottom: 5px;
     }
   }
 

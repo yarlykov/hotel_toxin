@@ -10,7 +10,7 @@
   width: 100%;
   box-sizing: border-box;
   border: none;
-  border-radius: 7.1429rem;
+  border-radius: 100px;
   background: $mainGradient;
   outline: none;
   cursor: pointer;
@@ -26,24 +26,24 @@
 
   &_fill-white {
     position: absolute;
-    width: calc(100% - 0.2857rem);
-    height: calc(100% - 0.2857rem);
-    top: 0.1429rem;
-    left: 0.1429rem;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    top: 2px;
+    left: 2px;
     background: #fff;
-    border-radius: 7.1429rem;
+    border-radius: 100px;
   }
 
   &_size {
     &_stretch {
-      padding: 0.6429rem 1.4286rem 0.7143rem;
+      padding: 9px 20px 10px;
     }
     &_small {
-      min-width: 7rem;
-      padding: 1.0714rem 0rem 1rem;
+      min-width: 98px;
+      padding: 15px 0px 14px;
     }
     &_large {
-      padding: 1.0714rem 1.3571rem 1rem;
+      padding: 15px 19px 14px;
     }
   }
 
@@ -79,13 +79,13 @@
 
   &__arrow {
     position: absolute;
-    right: 0.7143rem;
-    top: 0.7143rem;
+    right: 10px;
+    top: 10px;
     
     &:before {
       position: relative;
       content: '\e5c8';
-      font: 400 1.7143rem/1.7143rem 'Material Icons';
+      font: 400 24px/24px 'Material Icons';
       color: #fff;
     }
   }

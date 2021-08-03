@@ -5,20 +5,20 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-bottom: 1.4286rem;
+  padding-bottom: 20px;
 
   &__wrapper {
     display: flex;
     flex-direction: column;
-    min-width: 19.2857rem;
-    margin-right: 29.6429rem;
-    padding-left: 0.7143rem;
+    min-width: 270px;
+    margin-right: 415px;
+    padding-left: 10px;
   }
 
   &__square {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 0.4286rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
 
     &_dark_100 {
       background: $mainTextColor;
@@ -44,8 +44,8 @@
   }
 
   &__description {
-    font: 400 1.3571rem/2.0714rem $mainFont;
-    padding-left: 2.8571rem;
+    font: 400 19px/29px $mainFont;
+    padding-left: 40px;
   }
 
   &__name {

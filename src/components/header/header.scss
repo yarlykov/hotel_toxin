@@ -15,15 +15,15 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 1.0714rem 9rem 1.0714rem 10rem;
+    padding: 15px 126px 15px 140px;
     color: $textColor_50;
 
     @media (max-width: 1280px) {
-      padding: 1.0714rem 2.1429rem 1.0714rem;
+      padding: 15px 30px 15px;
     }
 
     @media (max-width: 480px) {
-      padding: 0.8571rem 2.1429rem 0.8571rem;
+      padding: 12px 30px 12px;
     }
   }
 
@@ -34,15 +34,15 @@
       display: block;
       position: relative;
       z-index: 2000;
-      width: 2.5714rem;
-      height: 2.5714rem;
+      width: 36px;
+      height: 36px;
 
       .header__menu-burger_line {
         position: absolute;
-        top: 1.2143rem;
+        top: 17px;
         left: 0;
         width: 100%;
-        height: 0.1429rem;
+        height: 2px;
         transition: all .3s ease 0s;
         background-color: $textColor_50;
       }
@@ -53,7 +53,7 @@
         position: absolute;
         left: 0;
         width: 100%;
-        height: 0.1429rem;
+        height: 2px;
         transition: all 0.3s ease 0s;
         background-color: $textColor_50;
       }
@@ -68,12 +68,12 @@
 
   &__menu-burger.header__active {
     &::before {
-      top: 1.2143rem;
+      top: 17px;
       transform: rotate(45deg);
     }
 
     &::after {
-      bottom: 1.2143rem;
+      bottom: 17px;
       transform: rotate(-45deg);
     }
 
@@ -107,24 +107,24 @@
   &__navigation .navigation {
     @media (max-width: 960px) {
       flex-direction: column;
-      padding-bottom: 5rem;
+      padding-bottom: 70px;
     }
   }
 
   @media (max-width: 960px) {
     .navigation__item {
-      padding: 0 3.5714rem 1.4286rem 0;
+      padding: 0 50px 20px 0;
       text-align: center;
     }
     .navigation__link {
-      font-size: 1.5rem;
+      font-size: 21px;
     }
     .navigation__item_dropdown {
-      padding-right: 3.5714rem;
+      padding-right: 50px;
 
       &::after {
-        font-size: 2.2rem;
-        line-height: 2rem;
+        font-size: 31px;
+        line-height: 28px;
       }
     }
   }
@@ -138,21 +138,21 @@
   }
 
   &__login_entry {
-    margin-right: 1.4286rem;
+    margin-right: 20px;
 
     @media (max-width: 960px) {
-      margin: 0 0 1.0714rem 0;
+      margin: 0 0 15px 0;
     }
   }
 
   &__logged {
     border-left: $mainBorder;
-    padding: 0.4286rem 0 0.4286rem 1.4286rem;
+    padding: 6px 0 6px 20px;
 
     @media (max-width: 960px) {
-      padding: 0 3.5714rem 0 0;
+      padding: 0 50px 0 0;
       border-left: none;
-      font-size: 1.5rem;
+      font-size: 21px;
       color: $mainTextColor;
     }
   }

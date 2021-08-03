@@ -13,7 +13,7 @@
 
     &_ui-kit {
       @media (max-width: 659px) {
-        padding: 2.1429rem 0;
+        padding: 30px 0;
       }
     }
 
@@ -25,8 +25,8 @@
 
   &__item {
     display: block;
-    max-width: 16.4286rem;
-    margin-bottom: 1.4286rem;
+    max-width: 230px;
+    margin-bottom: 20px;
 
     @media (max-width: 480px) {
       margin-left: 0;
@@ -35,8 +35,8 @@
 
   &__text {
     display: block;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 14px;
+    font-size: 21px;
     font-weight: 700;
     color: $mainTextColor;
     transition: .3s;

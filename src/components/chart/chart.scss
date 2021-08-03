@@ -5,9 +5,9 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  max-width: 22.3571rem;
-  max-height: 10.5714rem;
-  padding-top: 1.5rem;
+  max-width: 313px;
+  max-height: 148px;
+  padding-top: 21px;
 }
 
 .chart {
@@ -16,10 +16,10 @@
   
   &__doughnut {
     box-sizing: content-box;
-    width: 8.5714rem;
-    height: 8.5714rem;
-    padding-bottom: 0.5rem;
-    margin-right: 1.7857rem;
+    width: 120px;
+    height: 120px;
+    padding-bottom: 7px;
+    margin-right: 25px;
   }
 
   &__sum-of-vote {
@@ -29,19 +29,19 @@
 
 .sum-of-vote {
   &__number {
-    font-size: 0.4643rem;
-    line-height: 2.1429rem;
+    font-size: 6.5px;
+    line-height: 30px;
   }
   &__text {
-    font-size: 0.3214rem;
-    line-height: 1.0714rem;
+    font-size: 5px;
+    line-height: 15px;
   }
 }
 
 .legend {
   &__list {
     list-style: none;
-    padding: 0 0.1429rem 0.3571rem 0;
+    padding: 0 2px 5px 0;
   }
 
   &__item {
@@ -57,11 +57,11 @@
     &::before {
       content: '';
       position: absolute;
-      top: 0.5rem;
-      left: -1.0714rem;
-      width: 0.7143rem;
-      height: 0.7143rem;
-      border-radius: 0.5714rem;
+      top: 7px;
+      left: -15px;
+      width: 10px;
+      height: 10px;
+      border-radius: 8px;
     }
 
     &:nth-child(1)::before {

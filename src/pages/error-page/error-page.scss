@@ -37,21 +37,6 @@
   }
 }
 
-/*TODO
-Цвета неба задаются следующими свойствами:
-    День:
-        background: skyblue;
-        box-shadow: 0 -400px 300px -300px steelblue inset;
-    Вечер:
-        background: darkslateblue;
-        box-shadow: 0 -400px 300px -300px orangered inset;
-    Ночь:
-        background: darkslateblue;
-        box-shadow: 0 -400px 300px -300px transparent inset;
-        
-Нужно реализовать плавный переход между ними и зациклить его.
-*/
-
 .ship::after {
   position: absolute;
   bottom: 0;

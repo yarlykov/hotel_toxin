@@ -10,20 +10,20 @@
 
     display: flex;
     align-items: baseline;
-    padding-top: 0.7143rem;
+    padding-top: 10px;
     text-transform: none;
 
     &:first-child {
-      padding-top: 0rem;
+      padding-top: 0px;
     }
   }
 
   &__item::before {
     content: '';
     display: inline-block;
-    height: 0.7143rem;
-    width: 0.7143rem;
-    margin-right: 0.7857rem;
+    min-height: 10px;
+    min-width: 10px;
+    margin-right: 11px;
     border-radius: 50%;
     background: $textColor_25;
   }

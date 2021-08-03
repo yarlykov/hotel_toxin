@@ -8,7 +8,7 @@
 
   &__item {
     position: relative;
-    padding-right: 1.4286rem;
+    padding-right: 20px;
   }
 
   &__link {
@@ -22,7 +22,7 @@
 
   &__item_dropdown {
     position: relative;
-    padding-right: 3.2857rem;
+    padding-right: 46px;
 
     &_arrow-up {
       &::after {
@@ -71,12 +71,12 @@
     }
 
     & .links__item {
-      padding: 0.5rem 1rem;
+      padding: 7px 14px;
       text-align: center;
 
       @media (max-width: 960px) {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: 21px;
+        line-height: 21px;
       }
     }
   }

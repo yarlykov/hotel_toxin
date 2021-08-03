@@ -3,10 +3,10 @@
 .cards-page {
   &__column {
     & > :not(:first-child) {
-      margin-top: 39.9994px;
+      margin-top: 40px;
     }
     &:not(:first-child) {
-      margin-left: 2.8571rem;
+      margin-left: 40px;
     }
   }
 
@@ -26,7 +26,6 @@
 
   &__content {
     display: flex;
-    // flex-wrap: wrap;
   }
 
   &__footer {
