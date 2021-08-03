@@ -14,7 +14,7 @@ block content
     main.headers-footers
       .headers-footers__header_sing-in
         +header({
-          logo: { type: "colorWithText", width: "106px", height: "40px"},
+          logo: { type: "colorWithText" },
           navigationList: [
                 { name: "О нас", url: "./error-page.html", active: true},
                 { name: "Услуги", dropdown: true,
@@ -40,7 +40,7 @@ block content
         })
       .headers-footers__header_logged
         +header({
-          logo: { type: "colorWithText", width: "106px", height: "40px"},
+          logo: { type: "colorWithText" },
           navigationList: [
                 { name: "О нас", url: "./error-page.html", active: true},
                 { name: "Услуги", dropdown: true,
@@ -67,7 +67,7 @@ block content
         })
       .headers-footers__footer
         +footer({
-          logo: { type: "colorWithText", width: "106px"},
+          logo: { type: "colorWithText" },
           footerText: "Бронирование номеров в лучшем отеле 2019   года по версии ассоциации «Отельные взгляды»",
           footerNavigation: {
             column1: { title: "навигация", 

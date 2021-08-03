@@ -4,13 +4,22 @@
   &__link {
     line-height: 0;
   }
-  &__colorless {
+
+  &_colorless {
     min-width: 48px;
+    min-height: 48px;
   }
-  &__color {
+
+  &_color {
     min-width: 40px;
   }
-  &__color-with-text {
+
+  &_color-with-text {
     min-width: 106px;
+  }
+
+  &_big-size {
+    min-width: 200px;
+    min-height: 80px;
   }
 }
