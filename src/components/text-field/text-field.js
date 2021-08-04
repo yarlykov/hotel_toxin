@@ -15,7 +15,7 @@ function getToday() {
 }
 
 /* =============== Masked Text Field ================== */
-const maskedTextField = document.querySelectorAll('.js-masked__text-field');
+const maskedTextField = document.querySelectorAll('[data-type="masked-text-field"]');
 maskedTextField.forEach((selector) => {
   Inputmask('datetime', {
     inputFormat: 'dd.mm.yyyy',
@@ -28,7 +28,7 @@ maskedTextField.forEach((selector) => {
 });
 
 /* =============== Date dropdown Start ================== */
-const maskDateDropdownStart = document.querySelectorAll('.js-date-dropdown__day-start');
+const maskDateDropdownStart = document.querySelectorAll('[data-type="date-dropdown-start"]');
 maskDateDropdownStart.forEach((selector) => {
   Inputmask('datetime', {
     inputFormat: 'dd.mm.yyyy',
@@ -41,7 +41,7 @@ maskDateDropdownStart.forEach((selector) => {
 });
 
 /* =============== Date dropdown end ================== */
-const maskDateDropdownEnd = document.querySelectorAll('.js-date-dropdown__day-end');
+const maskDateDropdownEnd = document.querySelectorAll('[data-type="date-dropdown-end"]');
 maskDateDropdownEnd.forEach((selector) => {
   Inputmask('datetime', {
     inputFormat: 'dd.mm.yyyy',

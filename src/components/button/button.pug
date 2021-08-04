@@ -1,17 +1,17 @@
-mixin button({ classList=[], type="button", buttonName="button", link="", size="inline", textColor="gray", buttonVariation="inline"})
+mixin button({ classList=[], type="button", buttonName="button", link="", size="inline", textColor="gray", buttonVariation="inline", focused=false })
   -
-    const mainButtonClass = "button"
-    const buttonSizeClass = `button_size_${size}`
-    const buttonTextColor = `button_text-color_${textColor}`
-    classList.push(mainButtonClass, buttonSizeClass)
+    const mainClass = "button"
+    const sizeClass = `button_${size}`
+    const textColorClass = `button__text_${textColor}`
+    const focusedClass = focused ? "button_focused" : ""
     
     let buttonAttributes = {
       link: {
-        class: classList,
+        class: [ mainClass, sizeClass, focusedClass ],
         href: `./${link}.html`,
       },
       button: {
-        class: classList,
+        class: [ mainClass, sizeClass, focusedClass ],
         type: type,
       }
     }
@@ -19,21 +19,21 @@ mixin button({ classList=[], type="button", buttonName="button", link="", size="
     a&attributes(buttonAttributes.link) 
       case buttonVariation
         when "fillWhite"
-          span(class=buttonTextColor) #{buttonName}
+          span(class=textColorClass) #{buttonName}
           .button_fill-white
         when "withArrow"
-          span(class=buttonTextColor) #{buttonName}
+          span(class=textColorClass) #{buttonName}
           .button__arrow
         default
-          span(class=buttonTextColor) #{buttonName}
+          span(class=textColorClass) #{buttonName}
   else
     button&attributes(buttonAttributes.button) 
       case buttonVariation
         when "fillWhite"
-          span(class=buttonTextColor) #{buttonName}
+          span(class=textColorClass) #{buttonName}
           .button_fill-white
         when "withArrow"
-          span(class=buttonTextColor) #{buttonName}
+          span(class=textColorClass) #{buttonName}
           .button__arrow
         default
-          span(class=buttonTextColor) #{buttonName}
+          span(class=textColorClass) #{buttonName}

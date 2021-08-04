@@ -1,30 +1,30 @@
-mixin text-field({ classList=[], dropdown="", type="", placeholder="", size="", name="", autocomplete="off", spellcheck=false, subscribe=false, arrow=false, readonly=false })
+mixin text-field({ type="", dataType="", placeholder="", size="", name="", autocomplete="off", focused=false, lowercase=false, spellcheck=false, subscribe=false, arrow=false, readonly=false })
 
   -
-    const mainTextFieldClass = "text-field__input"
-    classList.push(mainTextFieldClass)
-    const sizeTextFieldClass = `text-field__size_${size}`
-    const hoverTextFieldClass = classList.includes("text-field_hover") ? "text-field_hover" : ""
-    const dropdownStart = dropdown === "start" ? "js-date-dropdown__day-start" : ""
-    const dropdownEnd = dropdown === "end" ? "js-date-dropdown__day-end" : ""
-    classList.push(dropdownStart, dropdownEnd)
+    const mainClass = "text-field__input"
+    const sizeClass = `text-field_size_${size}`
+    const focusedClass = focused ? "text-field_focused" : ""
+    const textLowercaseClass = lowercase ? "text-field__input_lowercase-text" : ""
+    const inputWithoutArrowClass = subscribe ? "text-field__input_without-arrow" : ""
 
     let inputAttributes = {
-      class: classList,
+      class: [mainClass, maskedClass, filterDropdown, textLowercaseClass, inputWithoutArrowClass],
       type: type,
+      "data-type": dataType,
       name: name,
       autocomplete: autocomplete,
       placeholder: placeholder,
       spellcheck: spellcheck,
       readonly: readonly,
     }
-  .text-field(class=[hoverTextFieldClass, sizeTextFieldClass])
+
+  .text-field(class=[focusedClass, sizeClass])
     input&attributes(inputAttributes)
     if arrow
-      div(class="text-field__arrow_down")&attributes({"data-type": "arrow", onmousedown: "return false"})
+      div(class="text-field__arrow-down")&attributes({"data-type": "arrow", onmousedown: "return false"})
     if subscribe
       button&attributes({
-        class: ["text-field__subscribe_button", "gradient"],
+        class: ["text-field__arrow-subscribe", "text-field__arrow-subscribe_with-gradient-fill"],
         type: "button",
         name: "subscribe"
       })

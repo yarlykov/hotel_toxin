@@ -18,31 +18,58 @@ select:-webkit-autofill:focus {
   border-radius: $mainBorderRadius;
   box-sizing: border-box;
 
-  &__size {
+  &_size {
+    &_large {
+      max-width: 320px;
+    }
+
     &_medium {
-      width: 266px;
+      max-width: 266px;
     }
+
     &_small {
-      width: 150px;
+      max-width: 150px;
     }
   }
 
-  &__arrow {
-    &_down {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-
-      &::before {
-        @include font-material-icons;
-        content: '\e5cf';
-        color: $textColor_50;
-        cursor: pointer;
-      }
+  &_focused {
+    border: $focusBorder;
+    & .text-field__input {
+      border: none;
+    }
+    & .text-field__input::placeholder {
+      letter-spacing: -0.18px;
+      color: $textColor_75;
+    }
+    & .text-field__input {
+      padding-bottom: 2px;
+      color: $textColor_75;
     }
   }
 
-  &__subscribe_button {
+  &:hover,
+  &:focus-within {
+    border: $focusBorder;
+
+    & .text-field__input::placeholder {
+      color: $textColor_75;
+    }
+  }
+
+  &__arrow-down {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    &::before {
+      @include font-material-icons;
+      content: '\e5cf';
+      color: $textColor_50;
+      cursor: pointer;
+    }
+  }
+
+  &__arrow-subscribe {
     position: absolute;
     right: 0;
     width: 42px;
@@ -56,6 +83,10 @@ select:-webkit-autofill:focus {
       @include font-material-icons;
       content: '\e5c8';
       cursor: pointer;
+    }
+
+    &_with-gradient-fill {
+      @include text-gradient-fill($mainGradient);
     }
   }
 
@@ -79,42 +110,12 @@ select:-webkit-autofill:focus {
       color: $textColor_25;
     }
 
-    &_lowercase {
+    &_without-arrow {
+      width: 266px - $inputHeight;
+    }
+
+    &_lowercase-text {
       text-transform: lowercase;
-    }
-
-    &_placeholder_dark-75 {
-      &::placeholder {
-        color: $textColor_75;
-      }
-    }
-  }
-
-  &__subscribe {
-    width: 266px - $inputHeight;
-  }
-
-  &_hover {
-    border: $focusBorder;
-    & .text-field__input {
-      border: none;
-    }
-    & .text-field__input::placeholder {
-      letter-spacing: -0.18px;
-      color: $textColor_75;
-    }
-    & .text-field__input {
-      padding-bottom: 2px;
-      color: $textColor_75;
-    }
-  }
-
-  &:hover,
-  &:focus-within {
-    border: $focusBorder;
-    
-    & .text-field__input::placeholder {
-      color: $textColor_75;
     }
   }
 }

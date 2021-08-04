@@ -33,17 +33,13 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
             .text-field__header
               span.text-field__title прибытие
             +text-field({
-                classList: [], dropdown: "start",
-                type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-                name: "date", autocomplete: "off", arrow: true
+                type: "text", dataType: "date-dropdown-start", placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", arrow: true
             })
           .date-dropdown__end
             .text-field__header
               span.text-field__title выезд
             +text-field({
-                classList: [], dropdown: "end",
-                type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-                name: "date", autocomplete: "off", arrow: true
+                type: "text", dataType: "date-dropdown-end", placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", arrow: true
             })
         div(class= search ? "card__guests-dropdown_search" : "").card__guests-dropdown
           span.card__guests-dropdown_title гости
@@ -72,7 +68,7 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
         .card__birthday
           .text-field__header
             .text-field__title дата рождения
-          +text-field({ classList: ["js-masked__text-field"],placeholder: "ДД.ММ.ГГГГ", type: "text", name: "birthday", autocomplete: "on" })
+          +text-field({ dataType: "masked-text-field", placeholder: "ДД.ММ.ГГГГ", type: "text", name: "birthday", autocomplete: "on" })
         .card__login-details
           .text-field__header
             .text-field__title данные для входа в сервис

@@ -3,7 +3,7 @@ import 'air-datepicker/dist/css/datepicker.css';
 import DateDropdown from './DateDropdown';
 
 /* =============== Date dropdown ================== */
-const twoInputsDateDropdown = $('.js-date-dropdown__day-start');
+const twoInputsDateDropdown = $('[data-type="date-dropdown-start"]');
 new DateDropdown(twoInputsDateDropdown, {
   dateFormat: 'dd.mm.yyyy',
   position: 'bottom left',
@@ -18,7 +18,7 @@ new DateDropdown(twoInputsDateDropdown, {
 });
 
 /* =============== Filter date dropdown ================== */
-const filterDateDropdown = $('.js-date-dropdown__filter');
+const filterDateDropdown = $('[data-type="filter-date-dropdown"]');
 new DateDropdown(filterDateDropdown, {
   dateFormat: 'd M',
   multipleDatesSeparator: ' - ',
@@ -34,7 +34,7 @@ new DateDropdown(filterDateDropdown, {
 });
 
 /* =============== For Cards page ================== */
-const inlineDateDropdown = $('.js-date-dropdown__inline');
+const inlineDateDropdown = $('[data-type="inline-date-dropdown"]');
 new DateDropdown(inlineDateDropdown, {
   dateFormat: 'd M',
   multipleDatesSeparator: ' - ',

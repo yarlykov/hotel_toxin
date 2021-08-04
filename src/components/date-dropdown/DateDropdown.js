@@ -30,8 +30,8 @@ class DateDropdown {
   }
 
   initTwoInputsDropdown() {
-    this.dateStart = document.querySelector('.js-date-dropdown__day-start');
-    this.dateEnd = document.querySelector('.js-date-dropdown__day-end');
+    this.dateStart = document.querySelector('[data-type="date-dropdown-start"]');
+    this.dateEnd = document.querySelector('[data-type="date-dropdown-end"]');
     this.dateEndArrow = this.dateEnd.nextElementSibling;
 
     this.twoInputHandlers();

@@ -1,5 +1,6 @@
 extends ../../layouts/ui-kit-layout.pug
 include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/like/like.pug
 include ../../components/checkbox/checkbox.pug
 include ../../components/radio/radio.pug
@@ -25,7 +26,7 @@ block content
             h3.text-field__title text field
             span.text-field__description default
           +text-field({ 
-            classList: [], type: "text", placeholder: "Email", 
+            type: "text", placeholder: "Email", 
             size:"large", name: "email", autocomplete: "on" 
           })
 
@@ -34,7 +35,8 @@ block content
             h3.text-field__title text field
             span.text-field__description hover / focus
           +text-field({ 
-            classList: ["text-field_hover"], type: "text",  placeholder: "This is pretty awesome", size:"large", name: "email",  autocomplete: "off" 
+            type: "text",  placeholder: "This is pretty awesome", 
+            size:"large", name: "email",  autocomplete: "off", focused: true, 
           })
 
         .text-field__wrapper
@@ -55,7 +57,7 @@ block content
             h3.text-field__title masked text field
             span.text-field__description default
           +text-field({ 
-            classList: ["js-masked__text-field"], type: "text",  
+            type: "text", dataType: "masked-text-field", masked: true, 
             placeholder: "ДД.ММ.ГГГГ", size:"large", name: "text"
           })
 
@@ -63,36 +65,32 @@ block content
           div
             .text-field__header
               span.text-field__title date dropdown
-            +text-field({ 
-              classList: [], dropdown: "start",
-              type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-              name: "date", autocomplete: "off", arrow: true 
+            +date-dropdown({ 
+              type: "text", dataType: "date-dropdown-start", placeholder: "ДД.ММ.ГГГГ",
+              size:"small", name: "date", autocomplete: "off", arrow: true 
             })
           div
             .text-field__header
               span.text-field__title date dropdown
-            +text-field({ 
-              classList: [], dropdown: "end",
-              type: "text",placeholder: "ДД.ММ.ГГГГ", size:"small", 
-              name: "date", autocomplete: "off", arrow: true 
+            +date-dropdown({ 
+              type: "text", dataType: "date-dropdown-end", placeholder: "ДД.ММ.ГГГГ", 
+              size:"small", name: "date", autocomplete: "off", arrow: true 
              })
 
-        .text-field__wrapper.js-datepicker__wrapper      
+        .text-field__wrapper   
           .text-field__header
             span.text-field__title filter date dropdown
-          +text-field({ 
-            classList: [ "js-date-dropdown__filter", "text-field__input_lowercase", "text-field__input_placeholder_dark-75" ], 
-            type: "text", placeholder: "ДД.ММ - ДД.ММ", size:"medium", 
-            name:"text",  autocomplete: "off", arrow: true, readonly: true, 
+          +date-dropdown({ 
+            type: "text", dataType: "filter-date-dropdown", placeholder: "ДД.ММ - ДД.ММ", size:"medium", name:"text",  autocomplete: "off", arrow: true,
+            readonly: true, lowercase: true,
            })
 
         .text-field__wrapper 
           .text-field__header 
             span.text-field__title subscription text field
           +text-field({ 
-            classList: ["text-field__subscribe"], 
-            type: "text", placeholder: "Email", size:"medium", 
-            name: "email", autocomplete: "on", subscribe: true
+            type: "text", dataType: "subscription-text-field", placeholder: "Email", size:"medium", 
+            name: "email", autocomplete: "on", subscribe: true,
           })    
 
       .form-elements__buttons_small
@@ -140,15 +138,15 @@ block content
         .button__wrapper
           h3.button__title buttons
           .button__block
-            +button({ classList: [], buttonName: "click me", size: "small", textColor: "white" })
-            +button({ classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "white" })
+            +button({ buttonName: "click me", size: "small", textColor: "white" })
+            +button({ buttonName: "click me", size: "small", textColor:  "white", focused: true })
           .button__block
-            +button({ classList: [], buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" })
-            +button({ classList: ["button_hover"], buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite" })
+            +button({ buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" })
+            +button({ buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite", focused: true })
           .button__block_inline
-            +button({ classList: ["button_inline"], buttonName: "click me", textColor: "purple"})
-            +button({ classList: ["button_inline"], buttonName: "click me", textColor: "gray"})
-          +button({ classList: [], buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"})
+            +button({ buttonName: "click me", textColor: "purple"})
+            +button({ buttonName: "click me", textColor: "gray"})
+          +button({ buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"})
 
         .button__wrapper
           h3.button__title.font__h3 pagination

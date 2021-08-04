@@ -13,8 +13,7 @@ block content
           dateDropdown: {
             title: "даты пребывания в отеле",
             options: { 
-              classList: [ "js-date-dropdown__filter", "text-field__input_lowercase", "text-field__input_placeholder_dark-75" ], 
-              type: "text", placeholder: "дд.мм - дд.мм", size:"medium", 
+              type: "text", dataType: "filter-date-dropdown", placeholder: "дд.мм - дд.мм", size:"medium", lowercase: true,
               name:"text",  autocomplete: "off", arrow: true, readonly: true, 
             }
           },
@@ -32,6 +31,7 @@ block content
           rangeSlider: {
             title: "диапазон цены",
             description: "Стоимость за сутки пребывания в номере"
+
           },
           checkbox: {	
             mainTitle: "Правила дома",

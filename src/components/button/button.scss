@@ -20,7 +20,7 @@
     background: $mainGradientTransparent;
   }
 
-  &_hover {
+  &_focused {
     background: $mainGradientTransparent;
   }
 
@@ -34,17 +34,17 @@
     border-radius: 100px;
   }
 
-  &_size {
-    &_stretch {
-      padding: 9px 20px 10px;
-    }
-    &_small {
-      min-width: 98px;
-      padding: 15px 0px 14px;
-    }
-    &_large {
-      padding: 15px 19px 14px;
-    }
+  &_large {
+    padding: 15px 19px 14px;
+  }
+
+  &_small {
+    min-width: 98px;
+    padding: 15px 0px 14px;
+  }
+
+  &_stretching {
+    padding: 9px 20px 10px;
   }
 
   &_inline {
@@ -63,7 +63,7 @@
     }
   }
 
-  &_text-color {
+  &__text {
     &_purple {
       position: relative;
       z-index: 1;
@@ -81,7 +81,7 @@
     position: absolute;
     right: 10px;
     top: 10px;
-    
+
     &:before {
       position: relative;
       content: '\e5c8';
