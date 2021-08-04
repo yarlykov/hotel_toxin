@@ -1,7 +1,7 @@
 mixin colors( colorItems=[] )
   each colorItem in colorItems
     .colors
-      - const colorClass = "colors__square_" + colorItem.color
+      - const colorClass = "colors__square_color_" + colorItem.color
       div&attributes({
         class: ["colors__square", colorClass]
       })

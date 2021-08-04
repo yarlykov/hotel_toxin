@@ -2,20 +2,18 @@
 @import '@mixins';
 
 .card {
-  &__wrapper {
-    max-width: 380px;
-    min-width: 200px;
-    border: $cardsBorder;
-    padding: 39px 30px 30px 29px;
-    border-radius: $cardsBorderRadius ;
-    box-sizing: border-box;
-    background: $cardsBackground ;
-    box-shadow: $mainBoxShadow;
+  max-width: 380px;
+  min-width: 200px;
+  border: $cardsBorder;
+  padding: 39px 30px 30px 29px;
+  border-radius: $cardsBorderRadius;
+  box-sizing: border-box;
+  background: $cardsBackground;
+  box-shadow: $mainBoxShadow;
 
-    @media (max-width: 480px) {
-      padding: 10px;
-      margin: 0 10px;
-    }
+  @media (max-width: 480px) {
+    padding: 10px;
+    margin: 0 10px;
   }
 
   &__title {
@@ -38,39 +36,47 @@
     display: flex;
     padding-top: 22px;
 
-    & > :last-child {
-      padding-left: 20px;
-    }
-
     @media (max-width: 480px) {
       flex-direction: column;
       padding: 20px;
 
-      .text-field__size_small {
+      .text-field_size-small {
         width: 100%;
       }
 
-      & > :last-child {
+      .card__date-dropdown-end {
         padding-left: 0;
         padding-top: 10px;
       }
     }
   }
 
+  &__date-dropdown-end {
+    padding-left: 20px;
+  }
+
   &__guests-dropdown {
     padding-top: 20px;
 
-    &_search {
-      padding-bottom: 12px;
-    }
+    @media (max-width: 480px) {
+      padding: 20px;
 
-    &_title {
-      @include font-h3;
-      display: block;
-      margin: 0px 0 5px 0;
-      color: $mainTextColor;
-
+      .dropdown__guests {
+        width: 100%;
+      }
     }
+  }
+
+  &__guests-dropdown-title {
+    @include font-h3;
+    display: block;
+    margin: 0px 0 5px 0;
+    color: $mainTextColor;
+  }
+
+  &__guests-dropdown-search {
+    padding-top: 20px;
+    padding-bottom: 12px;
 
     @media (max-width: 480px) {
       padding: 20px;
@@ -83,7 +89,7 @@
 
   &__register-details {
     padding-top: 20px;
-    & .register__surname {
+    & .card__register-details-surname {
       padding-top: 10px;
     }
   }
@@ -101,7 +107,7 @@
 
   &__login-details {
     padding-top: 20px;
-    & .login-details__email {
+    & .card__login-details-email {
       padding-bottom: 10px;
     }
   }
@@ -122,13 +128,15 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 30px;
-    &_text {
-      display: block;
-      align-self: center;
-    }
-    &_button {
-      min-width: 100px;
-    }
+  }
+
+  &__question-text {
+    display: block;
+    align-self: center;
+  }
+
+  &__question-button {
+    min-width: 100px;
   }
 
   &__calculation {

@@ -12,20 +12,18 @@
     width: $inputWidthSizeM;
   }
 
-  &__arrow {
-    &_down {
-      position: absolute;
-      top: 10px;
-      right: 10px;
+  &__arrow-down {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 
-      &::before {
-        content: '\e5cf';
-        font-family: 'Material Icons';
-        font-size: 24px;
-        line-height: 24px;
-        color: $textColor_75;
-        cursor: pointer;
-      }
+    &::before {
+      content: '\e5cf';
+      font-family: 'Material Icons';
+      font-size: 24px;
+      line-height: 24px;
+      color: $textColor_75;
+      cursor: pointer;
     }
   }
 
@@ -78,14 +76,14 @@
       padding-bottom: 7px;
     }
 
-    &_text {
-      padding-top: 6px;
-      padding-left: 8px;
-    }
-
     &:last-child {
       border-radius: 0 0 4px 4px;
     }
+  }
+
+  &__menu-item-text {
+    padding-top: 6px;
+    padding-left: 8px;
   }
 
   &__controls {
@@ -121,16 +119,15 @@
     }
 
     .controls__counter {
-      //refactor
-      border: 0;
       width: 30px;
       height: 28px;
-      text-align: center;
-      font-family: inherit;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
       padding: 0px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      font-style: normal;
+      border: 0;
     }
 
     .controls__increment {
@@ -157,6 +154,23 @@
       }
     }
   }
+
+  &__buttons {
+    display: flex;
+    z-index: 1000;
+    justify-content: space-between;
+    padding: 6px 7px 13px 14px;
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+  }
+
+  &__button-clear {
+    visibility: hidden;
+
+    &.dropdown__button-clear_show {
+      visibility: visible;
+    }
+  }
 }
 
 .dropdown.dropdown__open {
@@ -170,24 +184,5 @@
   .dropdown__input {
     border-radius: 4px 4px 0 0;
     border: $focusBorder;
-  }
-}
-
-.buttons-dropdown {
-  &__wrapper {
-    display: flex;
-    z-index: 1000;
-    justify-content: space-between;
-    padding: 6px 7px 13px 14px;
-    background: #fff;
-    border-radius: 0 0 4px 4px;
-  }
-
-  &__button_clear {
-    visibility: hidden;
-
-    &.display {
-      visibility: visible;
-    }
   }
 }

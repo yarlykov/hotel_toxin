@@ -19,20 +19,22 @@
     width: 70px;
     height: 70px;
     border-radius: 6px;
+  }
 
-    &_dark_100 {
+  &__square_color {
+    &_opaque {
       background: $mainTextColor;
     }
-    &_dark_75 {
+    &_75-percent-transparent {
       background: $textColor_75;
     }
-    &_dark_50 {
+    &_translucent {
       background: $textColor_50;
     }
-    &_dark_25 {
+    &_25-percent-transparent {
       background: $textColor_25;
     }
-    &_dark_5 {
+    &_5-percent-transparent {
       background: $textColor_5;
     }
     &_purple {

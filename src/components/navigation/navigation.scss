@@ -20,33 +20,35 @@
     }
   }
 
-  &__item_dropdown {
+  &__dropdown-arrow-up {
     position: relative;
     padding-right: 46px;
 
-    &_arrow-up {
-      &::after {
-        @include font-material-icons;
-        content: '\e5ce';
-        position: absolute;
-        right: 20px;
-        line-height: 20px;
-        color: $textColor_50;
-        cursor: pointer;
-      }
-    }
-    &_arrow-down {
-      &::after {
-        @include font-material-icons;
-        content: '\e5cf';
-        position: absolute;
-        right: 20px;
-        line-height: 20px;
-        color: $textColor_50;
-        cursor: pointer;
-      }
+    &::after {
+      @include font-material-icons;
+      content: '\e5ce';
+      position: absolute;
+      right: 20px;
+      line-height: 20px;
+      color: $textColor_50;
+      cursor: pointer;
     }
   }
+  &__dropdown-arrow-down {
+    position: relative;
+    padding-right: 46px;
+
+    &::after {
+      @include font-material-icons;
+      content: '\e5cf';
+      position: absolute;
+      right: 20px;
+      line-height: 20px;
+      color: $textColor_50;
+      cursor: pointer;
+    }
+  }
+
   &__link_active {
     font-weight: 700;
   }

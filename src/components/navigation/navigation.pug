@@ -6,9 +6,9 @@ mixin navigation({ navigationList=[] })
       each navigationItem in navigationList
         -
           const activeLinkClass = navigationItem.active ? "navigation__link_active" : ""
-          const dropdownItemClass = navigationItem.dropdown ? "navigation__item_dropdown navigation__item_dropdown_arrow-down" : ""
+          const dropdownClass = navigationItem.dropdown ? "js-navigation__item-dropdown navigation__dropdown-arrow-down" : ""
 
-        li.navigation__item(class=dropdownItemClass)
+        li.navigation__item(class=dropdownClass)
           a&attributes({
             class: ["navigation__link", activeLinkClass ],
             href: navigationItem.url,

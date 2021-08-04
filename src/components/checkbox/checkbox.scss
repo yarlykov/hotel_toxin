@@ -11,24 +11,24 @@
     justify-content: space-between;
     padding-bottom: 17px;
     cursor: pointer;
-
-    &_arrow-up {
-      &::before {
-        @include font-material-icons;
-        content: '\e5ce';
-        line-height: 15px;
-        padding-right: 10px;
-        color: $textColor_50;
-      }
+  }
+  
+  &__header-arrow-up {
+    &::before {
+      @include font-material-icons;
+      content: '\e5ce';
+      line-height: 15px;
+      padding-right: 10px;
+      color: $textColor_50;
     }
-    &_arrow-down {
-      &::before {
-        @include font-material-icons;
-        content: '\e5cf';
-        line-height: 15px;
-        padding-right: 10px;
-        color: $textColor_50;
-      }
+  }
+  &__header-arrow-down {
+    &::before {
+      @include font-material-icons;
+      content: '\e5cf';
+      line-height: 15px;
+      padding-right: 10px;
+      color: $textColor_50;
     }
   }
 
@@ -100,12 +100,12 @@
     border: $mainBorder;
   }
 
-  &__title_rich {
+  &__title-rich {
     font-weight: bold;
     color: $textColor_75;
   }
 
-  &__description_rich {
+  &__description-rich {
     display: inline-block;
     margin-top: 5px;
     color: $textColor_50;

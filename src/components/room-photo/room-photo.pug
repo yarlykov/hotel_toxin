@@ -6,13 +6,13 @@ mixin room-photo({ main, asideTop, asideBottom, alt })
       alt: `${alt}`
     })
   .room-photo__aside
-    .room-photo__aside_top
+    .room-photo__aside-top
       img&attributes({
         class: "room-photo__item",
         src: require(`./image/${asideTop}`).default,
         alt: `${alt}`
       })
-    .room-photo__aside_bottom
+    .room-photo__aside-bottom
       img&attributes({
         class: "room-photo__item",
         src: require(`./image/${asideBottom}`).default,

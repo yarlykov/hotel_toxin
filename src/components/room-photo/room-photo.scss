@@ -20,14 +20,14 @@
     @media (max-width: 1280px) {
       display: none;
     }
+  }
 
-    &_top {
-      height: 50%;
-      transform: scale(-1, 1);
-    }
-    &_bottom {
-      height: 50%;
-    }
+  &__aside-top {
+    height: 50%;
+    transform: scale(-1, 1);
+  }
+  &__aside-bottom {
+    height: 50%;
   }
 
   &__item {

@@ -19,7 +19,7 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
     const entry = (type === "entry")
     const searchOrCalculation = (search || calculation)
 
-  .card__wrapper
+  .card
     if (calculation)
       .card__title-calculation
         +room-number({ symbol: "№", value: "888", text: "люкс" })
@@ -29,20 +29,20 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
     form(method=`${formMethod}`, action=`./${formAction}.html`)
       if (searchOrCalculation)
         .card__date-dropdown
-          .date-dropdown__start
+          .card__date-dropdown-start
             .text-field__header
               span.text-field__title прибытие
             +text-field({
                 type: "text", dataType: "date-dropdown-start", placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", arrow: true
             })
-          .date-dropdown__end
+          .card__date-dropdown-end
             .text-field__header
               span.text-field__title выезд
             +text-field({
                 type: "text", dataType: "date-dropdown-end", placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", arrow: true
             })
-        div(class= search ? "card__guests-dropdown_search" : "").card__guests-dropdown
-          span.card__guests-dropdown_title гости
+        div(class= search ? "card__guests-dropdown-search" : "card__guests-dropdown")
+          span.card__guests-dropdown-title гости
           +dropdown({
             isOpen: false, 
             group: "guests", 
@@ -57,11 +57,10 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
 
       else if (registration)
         .card__register-details
-          .register__details
-            .register__name
-              +text-field({ placeholder: "Имя", type: "text", name: "name", autocomplete: "on" })
-            .register__surname
-              +text-field({ placeholder: "Фамилия", type: "text", name: "surname", autocomplete: "on" })
+          .card__register-details-name
+            +text-field({ placeholder: "Имя", type: "text", name: "name", autocomplete: "on" })
+          .card__register-details-surname
+            +text-field({ placeholder: "Фамилия", type: "text", name: "surname", autocomplete: "on" })
         .card__radio-buttons
           +radio({ group: "gender", title: "Мужчина", checked: true})
           +radio({ group: "gender", title: "Женщина", checked: false})
@@ -72,18 +71,18 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
         .card__login-details
           .text-field__header
             .text-field__title данные для входа в сервис
-          .login-details__email
+          .card__login-details-email
             +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
-          .login-details__password
+          .card__login-details-password
             +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
         .card__toggle
           +toggle({ title: "Получать спецпредложения" })
 
       else if (entry)
         .card__login-details
-          .login-details__email
+          .card__login-details-email
             +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
-          .login-details__password
+          .login-details-password
             +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
       //- Add button
       if (buttonText !== "")
@@ -92,6 +91,6 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
       //- Add question
       if (question !== "")
         .card__question
-          span.register__question_text #{question}
-          .register__question_button
+          span.card__question-text #{question}
+          .card__question-button
             +button({ buttonName: questionButton, buttonVariation: "fillWhite", textColor: "purple", size: "small", link: questionButtonLink })

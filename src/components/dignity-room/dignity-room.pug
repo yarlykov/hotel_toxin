@@ -1,8 +1,9 @@
 mixin dignity-room({ icon="", title="", subtitle=""})
-  - const iconClass = "dignity-room__icon_" + icon
+  - const iconClass = "dignity-room__icon-" + icon
   div.dignity-room__item
-    div(class=iconClass).dignity-room__icon
+    div.dignity-room__icon
+      span(class=iconClass).dignity-room__icon_color_purple-gradient
     .dignity-room__description
-      .dignity-room__description_title #{title}
-      .dignity-room__description_subtitle #{subtitle}
+      .dignity-room__title #{title}
+      .dignity-room__subtitle #{subtitle}
   hr.dignity-room__line

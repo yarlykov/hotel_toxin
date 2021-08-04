@@ -4,7 +4,7 @@ include ../../components/logo/logo.pug
 include ../../components/social/social.pug
 
 mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyright={}, social={}, border=false })
-  - const borderTopClass = border ? "footer__wrapper_border" : ""
+  - const borderTopClass = border ? "footer__wrapper_with-top-border" : ""
   
   footer(class=borderTopClass).footer__wrapper
     .footer__container
@@ -13,15 +13,15 @@ mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyri
           +logo(logo)
           p.footer__award #{footerText}
         .footer__links
-          .footer__links_column
+          .footer__links-column
             +links(footerNavigation.column1)
-          .footer__links_column
+          .footer__links-column
             +links(footerNavigation.column2)
-          .footer__links_column
+          .footer__links-column
             +links(footerNavigation.column3)
         +subscribe(subscribe)
       .footer__bottom
-        .footer__bottom_wrapper
+        .footer__bottom-container
           .footer__copyright-text #{copyright.text}
           .footer__social
             +social(social)

@@ -36,8 +36,9 @@
       z-index: 2000;
       width: 36px;
       height: 36px;
+      cursor: pointer;
 
-      .header__menu-burger_line {
+      .header__menu-burger-line {
         position: absolute;
         top: 17px;
         left: 0;
@@ -77,7 +78,7 @@
       transform: rotate(-45deg);
     }
 
-    & .header__menu-burger_line {
+    & .header__menu-burger-line {
       transform: scale(0);
     }
 
@@ -119,7 +120,7 @@
     .navigation__link {
       font-size: 21px;
     }
-    .navigation__item_dropdown {
+    .navigation__item-dropdown {
       padding-right: 50px;
 
       &::after {
@@ -137,7 +138,7 @@
     }
   }
 
-  &__login_entry {
+  &__login-entry {
     margin-right: 20px;
 
     @media (max-width: 960px) {

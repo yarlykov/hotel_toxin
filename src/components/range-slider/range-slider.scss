@@ -13,12 +13,13 @@
     position: relative;
     height: 6px;
 
-    &_border {
-      height: 6px;
-      border: $mainBorder;
-      border-radius: 6px;
-      box-sizing: border-box;
-    }
+  }
+
+  &__scale-border {
+    height: 6px;
+    border: $mainBorder;
+    border-radius: 6px;
+    box-sizing: border-box;
   }
 
   &__header {

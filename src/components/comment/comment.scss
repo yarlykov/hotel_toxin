@@ -22,14 +22,14 @@
   &__description {
     @include font-body;
     padding-left: 10px;
+  }
 
-    &_name {
-      font-weight: 700;
-    }
+  &__name {
+    font-weight: 700;
+  }
 
-    &_date-of-visit {
-      font-variant: normal;
-    }
+  &__date-of-visit {
+    font-variant: normal;
   }
 
   &__body {

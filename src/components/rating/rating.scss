@@ -13,7 +13,8 @@
   &__star::before {
     content: '\e838';
   }
-  &__star_border::before {
+
+  &__empty-star::before {
     content: '\e83a';
   }
 }

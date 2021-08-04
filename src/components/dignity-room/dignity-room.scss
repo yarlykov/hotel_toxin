@@ -8,23 +8,26 @@
   }
 
   &__icon {
+    padding-top: 1px;
     font-family: 'Material Icons';
     font-size: 48px;
     line-height: 41px;
-    background: $mainGradient;
-    background-clip: text;
-    padding-top: 1px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 
-    &_mood::before {
+    .dignity-room__icon-mood::before {
       content: '\e7f2';
     }
-    &_location_city::before {
+    .dignity-room__icon-location_city::before {
       content: '\e7f1';
     }
-    &_whatshot::before {
+    .dignity-room__icon-whatshot::before {
       content: '\e80e';
+    }
+
+    &_color_purple-gradient {
+      background: $mainGradient;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
     }
   }
 
@@ -38,13 +41,14 @@
     flex-direction: column;
     justify-content: space-between;
 
-    &_title {
-      font-weight: bold;
-    }
+  }
 
-    &_subtitle {
-      font-weight: normal;
-    }
+  &__title {
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    font-weight: normal;
   }
 
   &__line {

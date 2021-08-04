@@ -78,11 +78,11 @@ class Dropdown {
     const clearBtn = document.createElement('button');
     const applyBtn = document.createElement('button');
 
-    btnWrap.classList.add('buttons-dropdown__wrapper');
+    btnWrap.classList.add('dropdown__buttons');
 
     clearBtn.classList.add(
       'button_inline',
-      'buttons-dropdown__button_clear',
+      'dropdown__button-clear',
     );
     clearBtn.setAttribute('type', 'button');
     clearBtn.setAttribute('data-type', 'clear');
@@ -186,9 +186,9 @@ class Dropdown {
   deleteClearButton() {
     if (this.clearBtn) {
       if (this.isNotEmpty) {
-        this.clearBtn.classList.add('display');
+        this.clearBtn.classList.add('dropdown__button-clear_show');
       } else {
-        this.clearBtn.classList.remove('display');
+        this.clearBtn.classList.remove('dropdown__button-clear_show');
       }
     }
   }
@@ -302,7 +302,7 @@ class Dropdown {
       // eslint-disable-next-line no-param-reassign
       item.countInput.value = 0;
     });
-    this.clearBtn.classList.remove('display');
+    this.clearBtn.classList.remove('dropdown__button-clear_show');
     this.input.value = defaultText;
     this.totalItems = 0;
     this.menuItemValue.baby = 0;

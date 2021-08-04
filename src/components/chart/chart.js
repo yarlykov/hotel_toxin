@@ -36,21 +36,21 @@ captionsList.forEach((item, index) => {
 
   item.addEventListener('mouseover', () => {
     sumOfVoteColors(changeIndex);
-    unitsList[changeIndex].classList.add('js-legend-hovered');
+    unitsList[changeIndex].classList.add('legend_hovered');
   });
 
   item.addEventListener('mouseout', () => {
-    unitsList[changeIndex].classList.remove('js-legend-hovered');
+    unitsList[changeIndex].classList.remove('legend_hovered');
   });
 });
 
 unitsList.forEach((item, index) => {
   item.addEventListener('mouseover', () => {
     sumOfVoteColors(index);
-    unitsList[index].classList.add('js-legend-hovered');
+    unitsList[index].classList.add('legend_hovered');
   });
 
   item.addEventListener('mouseout', () => {
-    unitsList[index].classList.remove('js-legend-hovered');
+    unitsList[index].classList.remove('legend_hovered');
   });
 });
