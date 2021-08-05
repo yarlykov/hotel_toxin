@@ -1,14 +1,17 @@
 @import '@variables';
 
 .headers-footers {
-  &__wrapper {
-    background: $uiKitPagesBackground;
-  }
+  background: $uiKitPagesBackground;
 
-  &__header_sing-in {
+  &__header-sing-in {
     margin-bottom: 40px;
   }
-  &__header_logged {
+
+  &__header-logged {
+    margin-bottom: 40px;
+  }
+
+  &__footer {
     margin-bottom: 40px;
   }
 }

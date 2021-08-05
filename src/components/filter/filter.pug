@@ -4,6 +4,7 @@ include ../checkbox/checkbox.pug
 include ../dropdown/dropdown.pug
 
 mixin filter({ dateDropdown={}, dropdownGuests={}, rangeSlider={}, checkbox={}, richCheckbox={}, dropdownComfort={}, expandableCheckbox={} })
+  .filter
     .filter__date-dropdown
       .text-field__header
         span.text-field__title #{dateDropdown.title}

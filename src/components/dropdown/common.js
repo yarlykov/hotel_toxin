@@ -6,7 +6,7 @@ $.fn.dropdown = function (options) {
   });
 };
 
-$('.js-dropdown__comfort').dropdown({
+$('[data-group="comfort"]').dropdown({
   type: 'comfort',
   defaultText: 'Удобства номера',
   minItems: 0,
@@ -19,7 +19,7 @@ $('.js-dropdown__comfort').dropdown({
   },
 });
 
-$('.js-dropdown__guests').dropdown({
+$('[data-group="guests"]').dropdown({
   type: 'guests',
   defaultText: 'Сколько гостей',
   minItems: 0,

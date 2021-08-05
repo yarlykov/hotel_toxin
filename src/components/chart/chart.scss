@@ -1,19 +1,19 @@
 @import '@variables';
 @import '@mixins';
 
-.canvas {
+.chart {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   max-width: 313px;
   max-height: 148px;
   padding-top: 21px;
-}
 
-.chart {
-  width: 100%;
-  height: 100%;
-  
+  &__body {
+    width: 100%;
+    height: 100%;
+  }
+
   &__doughnut {
     box-sizing: content-box;
     width: 120px;
@@ -25,9 +25,7 @@
   &__sum-of-vote {
     @include font-h1;
   }
-}
 
-.sum-of-vote {
   &__number {
     font-size: 6.5px;
     line-height: 30px;
@@ -36,15 +34,13 @@
     font-size: 5px;
     line-height: 15px;
   }
-}
 
-.legend {
-  &__list {
+  &__legend-list {
     list-style: none;
     padding: 0 2px 5px 0;
   }
 
-  &__item {
+  &__legend-item {
     @include font-body;
     position: relative;
     display: block;
@@ -81,37 +77,37 @@
       color: $textColor_50;
     }
   }
-}
 
-.unit {
-  fill: none;
-  stroke-width: 1.2;
-  transition-property: all;
-  transition-duration: 0.5s;
-  cursor: pointer;
+  &__unit {
+    fill: none;
+    stroke-width: 1.2;
+    transition-property: all;
+    transition-duration: 0.5s;
+    cursor: pointer;
 
-  &:hover {
-    stroke-width: 2.3;
-  }
+    &:hover {
+      stroke-width: 2.3;
+    }
 
-  &:nth-child(1) {
-    stroke-dasharray: 49 100;
-    stroke-dashoffset: -25.5;
-  }
-  &:nth-child(2) {
-    stroke-dasharray: 24.5 100;
-    stroke-dashoffset: -75;
-  }
-  &:nth-child(3) {
-    stroke-dasharray: 24.7 100;
-    stroke-dashoffset: -0.2;
-  }
+    &:nth-child(1) {
+      stroke-dasharray: 49 100;
+      stroke-dashoffset: -25.5;
+    }
+    &:nth-child(2) {
+      stroke-dasharray: 24.5 100;
+      stroke-dashoffset: -75;
+    }
+    &:nth-child(3) {
+      stroke-dasharray: 24.7 100;
+      stroke-dashoffset: -0.2;
+    }
 
-  &_hidden {
-    display: none;
-  }
-}
+    &_hidden {
+      display: none;
+    }
 
-.legend_hovered {
-  stroke-width: 2.3;
+    &_focused {
+      stroke-width: 2.3;
+    }
+  }
 }

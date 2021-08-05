@@ -3,25 +3,25 @@
 
 .colors {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-bottom: 20px;
+  flex-direction: column;
+  min-width: 270px;
+  margin-right: 415px;
+  padding-left: 10px;
 
-  &__wrapper {
+  &__item {
     display: flex;
-    flex-direction: column;
-    min-width: 270px;
-    margin-right: 415px;
-    padding-left: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 20px;
   }
 
-  &__square {
-    width: 70px;
-    height: 70px;
+  &__preview {
+    min-width: 70px;
+    min-height: 70px;
     border-radius: 6px;
   }
 
-  &__square_color {
+  &__preview_color {
     &_opaque {
       background: $mainTextColor;
     }
@@ -46,8 +46,9 @@
   }
 
   &__description {
-    font: 400 19px/29px $mainFont;
+    max-width: 300px;
     padding-left: 40px;
+    font: 400 19px/29px $mainFont;
   }
 
   &__name {

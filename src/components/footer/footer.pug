@@ -4,11 +4,11 @@ include ../../components/logo/logo.pug
 include ../../components/social/social.pug
 
 mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyright={}, social={}, border=false })
-  - const borderTopClass = border ? "footer__wrapper_with-top-border" : ""
+  - const borderTopClass = border ? "footer_with-top-border" : ""
   
-  footer(class=borderTopClass).footer__wrapper
+  footer.footer(class=borderTopClass)
     .footer__container
-      .footer 
+      .footer__wrapper 
         .footer__logo
           +logo(logo)
           p.footer__award #{footerText}
@@ -25,6 +25,7 @@ mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyri
           .footer__copyright-text #{copyright.text}
           .footer__social
             +social(social)
+
   footer.footer-mobile
     .footer-mobile__wrapper
       +logo(logo)

@@ -4,7 +4,7 @@ mixin dropdown(options)
     const isGroupComfort = options.group == "comfort"
     const group = options.group == "guests" ? "Сколько гостей" : "Удобства номера"
 
-  .dropdown(class=isOpen, class=`dropdown__${options.group} js-dropdown__${options.group}`)
+  .dropdown(class=isOpen, class=`dropdown_${options.group}` data-group=`${options.group}`,)
     input&attributes({
       type: "text", 
       class: "dropdown__input js-dropdown__input", 

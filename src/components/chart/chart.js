@@ -1,11 +1,11 @@
-const captionsList = document.querySelectorAll('.legend__item');
-const unitsList = document.querySelectorAll('.unit');
+const captionsList = document.querySelectorAll('.chart__legend-item');
+const unitsList = document.querySelectorAll('.chart__unit');
 const sumOfVote = document.querySelector('.chart__sum-of-vote');
 
 const getTemplate = (number, color) => `
   <g class="chart__sum-of-vote" fill=${color}>
-    <text class="sum-of-vote__number" text-anchor="middle" x="50%" y="49%">${number}</text>
-    <text class="sum-of-vote__text" text-anchor="middle" x="50%" y="67%">голосов</text>
+    <text class="chart__number" text-anchor="middle" x="50%" y="49%">${number}</text>
+    <text class="chart__text" text-anchor="middle" x="50%" y="67%">голосов</text>
   </g>
   `;
 
@@ -36,21 +36,21 @@ captionsList.forEach((item, index) => {
 
   item.addEventListener('mouseover', () => {
     sumOfVoteColors(changeIndex);
-    unitsList[changeIndex].classList.add('legend_hovered');
+    unitsList[changeIndex].classList.add('chart__unit_focused');
   });
 
   item.addEventListener('mouseout', () => {
-    unitsList[changeIndex].classList.remove('legend_hovered');
+    unitsList[changeIndex].classList.remove('chart__unit_focused');
   });
 });
 
 unitsList.forEach((item, index) => {
   item.addEventListener('mouseover', () => {
     sumOfVoteColors(index);
-    unitsList[index].classList.add('legend_hovered');
+    unitsList[index].classList.add('chart__unit_focused');
   });
 
   item.addEventListener('mouseout', () => {
-    unitsList[index].classList.remove('legend_hovered');
+    unitsList[index].classList.remove('chart__unit_focused');
   });
 });

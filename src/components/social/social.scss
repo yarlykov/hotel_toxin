@@ -2,24 +2,26 @@
 @import '@mixins';
 
 .social {
-  @include text-gradient-fill($mainGradient);
-  font-family: 'Font Awesome';
-  font-size: 24px;
+  &__link {
+    @include text-gradient-fill($mainGradient);
+    font-family: 'Font Awesome';
+    font-size: 24px;
 
-  &:not(:first-child) {
-    margin-left: 22px;
-  }
+    &:not(:first-child) {
+      margin-left: 22px;
+    }
 
-  &_twitter::before {
-    content: '\f099';
-  }
-  &_facebook::before {
-    content: '\f082';
-  }
-  &_instagram::before {
-    content: '\f16d';
-  }
-  &_vk::before {
-    content: '\f189';
+    &_twitter::before {
+      content: '\f099';
+    }
+    &_facebook::before {
+      content: '\f082';
+    }
+    &_instagram::before {
+      content: '\f16d';
+    }
+    &_vk::before {
+      content: '\f189';
+    }
   }
 }

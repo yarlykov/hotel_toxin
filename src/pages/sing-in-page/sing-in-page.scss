@@ -1,17 +1,15 @@
 @import '@variables';
 
 .sing-in {
-  &__content {
-    background: url('./image/sing-in-background.jpg')
-      no-repeat;
-    background-size: cover;
-    background-size: 108%;
-    background-position: 40% 53.5%;
-    box-sizing: border-box;
+  background: url('./image/sing-in-background.jpg')
+    no-repeat;
+  background-size: cover;
+  background-size: 108%;
+  background-position: 40% 53.5%;
+  box-sizing: border-box;
 
-    @media (max-width: 1280px) {
-      background-size: cover;
-    }
+  @media (max-width: 1280px) {
+    background-size: cover;
   }
 
   &__container {

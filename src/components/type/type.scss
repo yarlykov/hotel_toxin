@@ -2,23 +2,21 @@
 @import '@mixins';
 
 .type {
-  padding-bottom: 52px;
-
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    min-width: 403px;
-    max-width: 436px;
-  }
+  display: flex;
+  flex-direction: column;
+  min-width: 403px;
+  max-width: 436px;
 
   &__header {
     display: flex;
     justify-content: flex-end;
     min-width: 37px;
+    max-width: 50px;
     font-family: $mainFont;
     font-weight: 400;
     text-transform: capitalize;
     color: $textColor_25;
+    padding: 1px;
   }
 
   &__text {
@@ -30,23 +28,26 @@
   &__h1 {
     @include font-h1;
     display: flex;
+    padding-bottom: 52px;
   }
 
   &__h2 {
     @include font-h2;
     display: flex;
     padding-right: 20px;
+    padding-bottom: 52px;
   }
 
   &__h3 {
     @include font-h3;
     display: flex;
-    padding-bottom: 48px
+    padding-bottom: 48px;
   }
 
   &__body {
     @include font-body;
     display: flex;
     padding-right: 55px;
+    padding-bottom: 52px;
   }
 }

@@ -10,17 +10,8 @@
   max-width: 1158px;
   min-width: 1158px;
   padding-left: 8px;
-}
 
-.form-elements__text-fields-buttons {
-  display: grid;
-  grid-template-columns: 320px auto 320px;
-  column-gap: 126px;
-  margin-top: 3px;
-}
-
-.text-field {
-  &__wrapper {
+  &__text-field-wrapper {
     padding-bottom: 20.5px;
     &:nth-child(4) {
       padding-top: 1px;
@@ -32,13 +23,60 @@
     &:nth-child(7) {
       padding-top: 21px;
     }
-    &_date-dropdown {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
+  }
+
+  &__text-field-wrapper-date-dropdown {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__small-buttons-wrapper {
+    &:nth-child(2) {
+      padding-top: 41.5px;
+    }
+    &:nth-child(3) {
+      padding-top: 43px;
+    }
+    &:nth-child(4) {
+      padding-top: 46px;
+    }
+    &:nth-child(5) {
+      padding-top: 39.5px;
+    }
+    &:last-child {
+      padding-top: 40px;
+      padding-left: 1px;
     }
   }
 
+  &__radio-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 46px;
+  }
+
+  &__like-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 176px;
+  }
+
+  &__rating-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 6px;
+  }
+}
+
+.form-elements__text-fields-buttons {
+  display: grid;
+  grid-template-columns: 320px auto 320px;
+  column-gap: 126px;
+  margin-top: 3px;
+}
+
+.text-field {
   &__header {
     display: flex;
     justify-content: space-between;
@@ -61,47 +99,7 @@
 }
 
 .button {
-  &__wrapper {
-    &:nth-child(2) {
-      padding-top: 41.5px;
-    }
-    &:nth-child(3) {
-      padding-top: 43px;
-    }
-    &:nth-child(4) {
-      padding-top: 46px;
-    }
-    &:nth-child(5) {
-      padding-top: 39.5px;
-    }
-    &:last-child {
-      padding-top: 40px;
-      padding-left: 1px;
-    }
 
-    &_range-slider {
-      width: 266px;
-      height: 46px;
-    }
-
-    &_rating {
-      display: flex;
-      justify-content: space-between;
-      padding-right: 6px;
-    }
-
-    &_like {
-      display: flex;
-      justify-content: space-between;
-      padding-right: 176px;
-    }
-
-    &_radio {
-      display: flex;
-      justify-content: space-between;
-      padding-right: 46px;
-    }
-  }
   &__block {
     display: flex;
     justify-content: space-between;

@@ -1,17 +1,14 @@
 @import '@variables';
 
 .registration {
-  &__content {
-    background: url('./image/registration-background.jpg')
-      no-repeat;
-    background-size: cover;
-    background-size: 107.5%;
-    background-position: 40.2% 51.5%;
-    box-sizing: border-box;
+  background: url('./image/registration-background.jpg') no-repeat;
+  background-size: cover;
+  background-size: 107.5%;
+  background-position: 40.2% 51.5%;
+  box-sizing: border-box;
 
-    @media (max-width: 1280px) {
-      background-size: cover;
-    }
+  @media (max-width: 1280px) {
+    background-size: cover;
   }
 
   &__container {

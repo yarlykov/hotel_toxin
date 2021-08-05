@@ -1,12 +1,13 @@
 mixin range-slider({ title="", description="" })
-  .range-slider__header
-    .range-slider__title #{title}
-    input&attributes({
-      class: ["range-slider", "js-range-slider"],
-      type: "text",
-      readonly: "readonly"
-      })
-  .range-slider__scale.js-range-slider__scale
-    .range-slider__scale-border
-  p.slider-text #{description}
+  .range-slider
+    .range-slider__header
+      .range-slider__title #{title}
+      input&attributes({
+        class: ["range-slider", "js-range-slider"],
+        type: "text",
+        readonly: "readonly"
+        })
+    .range-slider__scale.js-range-slider__scale
+      .range-slider__scale-border
+    p.slider-text #{description}
     

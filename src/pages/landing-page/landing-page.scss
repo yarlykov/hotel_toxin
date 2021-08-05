@@ -2,16 +2,14 @@
 @import '@mixins';
 
 .landing {
-  &__content {
-    background: url('./image/landing.jpg') no-repeat;
-    background-size: cover;
-    background-size: 108%;
-    background-position: 44% 68%;
-    box-sizing: border-box;
+  background: url('./image/landing.jpg') no-repeat;
+  background-size: cover;
+  background-size: 108%;
+  background-position: 44% 68%;
+  box-sizing: border-box;
 
-    @media (max-width: 1280px) {
-      background-size: cover;
-    }
+  @media (max-width: 1280px) {
+    background-size: cover;
   }
 
   &__container {

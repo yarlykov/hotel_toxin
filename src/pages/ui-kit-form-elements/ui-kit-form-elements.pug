@@ -8,7 +8,7 @@ include ../../components/toggle/toggle.pug
 include ../../components/rating/rating.pug
 include ../../components/bullet-list/bullet-list.pug
 include ../../components/range-slider/range-slider.pug
-include ../../components/dignity-room/dignity-room.pug
+include ../../components/room-dignities/room-dignities.pug
 include ../../components/comment/comment.pug
 include ../../components/pagination/pagination.pug
 include ../../components/text-field/text-field.pug
@@ -21,7 +21,7 @@ block content
   main.form-elements
     section.form-elements__text-fields-buttons
       .form-elements__text-fields
-        .text-field__wrapper
+        .form-elements__text-field-wrapper
           .text-field__header
             h3.text-field__title text field
             span.text-field__description default
@@ -30,7 +30,7 @@ block content
             size:"large", name: "email", autocomplete: "on" 
           })
 
-        .text-field__wrapper
+        .form-elements__text-field-wrapper
           .text-field__header
             h3.text-field__title text field
             span.text-field__description hover / focus
@@ -39,7 +39,7 @@ block content
             size:"large", name: "email",  autocomplete: "off", focused: true, 
           })
 
-        .text-field__wrapper
+        .form-elements__text-field-wrapper
           .text-field__header
             span.text-field__title dropdown
             span.text-field__description default
@@ -52,7 +52,7 @@ block content
             ]
           })
 
-        .text-field__wrapper
+        .form-elements__text-field-wrapper
           .text-field__header
             h3.text-field__title masked text field
             span.text-field__description default
@@ -61,23 +61,24 @@ block content
             placeholder: "ДД.ММ.ГГГГ", size:"large", name: "text"
           })
 
-        .text-field__wrapper.text-field__wrapper_date-dropdown
-          div
-            .text-field__header
-              span.text-field__title date dropdown
-            +date-dropdown({ 
-              type: "text", dataType: "date-dropdown-start", placeholder: "ДД.ММ.ГГГГ",
-              size:"small", name: "date", autocomplete: "off", arrow: true 
-            })
-          div
-            .text-field__header
-              span.text-field__title date dropdown
-            +date-dropdown({ 
-              type: "text", dataType: "date-dropdown-end", placeholder: "ДД.ММ.ГГГГ", 
-              size:"small", name: "date", autocomplete: "off", arrow: true 
-             })
+        .form-elements__text-field-wrapper
+          .form-elements__text-field-wrapper-date-dropdown
+            div
+              .text-field__header
+                span.text-field__title date dropdown
+              +date-dropdown({ 
+                type: "text", dataType: "date-dropdown-start", placeholder: "ДД.ММ.ГГГГ",
+                size:"small", name: "date", autocomplete: "off", arrow: true 
+              })
+            div
+              .text-field__header
+                span.text-field__title date dropdown
+              +date-dropdown({ 
+                type: "text", dataType: "date-dropdown-end", placeholder: "ДД.ММ.ГГГГ", 
+                size:"small", name: "date", autocomplete: "off", arrow: true 
+              })
 
-        .text-field__wrapper   
+        .form-elements__text-field-wrapper   
           .text-field__header
             span.text-field__title filter date dropdown
           +date-dropdown({ 
@@ -85,7 +86,7 @@ block content
             readonly: true, lowercase: true,
            })
 
-        .text-field__wrapper 
+        .form-elements__text-field-wrapper 
           .text-field__header 
             span.text-field__title subscription text field
           +text-field({ 
@@ -93,8 +94,8 @@ block content
             name: "email", autocomplete: "on", subscribe: true,
           })    
 
-      .form-elements__buttons_small
-        .button__wrapper
+      .form-elements__small-buttons
+        .form-elements__small-buttons-wrapper
           +checkbox({	
             mainTitle: "Checkbox buttons",
             dropdown: false,
@@ -106,36 +107,36 @@ block content
             ]
           })
 
-        .button__wrapper
+        .form-elements__small-buttons-wrapper
           h3.button__title.font__h3 radio buttons
-          .button__wrapper_radio
+          .form-elements__radio-buttons-container
             +radio({ group: "gender", title: "Мужчина", checked: true })
             +radio({ group: "gender", title: "Женщина", checked: false })
 
-        .button__wrapper
+        .form-elements__small-buttons-wrapper
           h3.button__title.font__h3 toggle
           +toggle({title: "Получать спецпредложения", checked: true })
           +toggle({title: "Получать спецпредложения", checked: false})
 
-        .button__wrapper
+        .form-elements__small-buttons-wrapper
           h3.button__title.font__h3 like button
-          .button__wrapper_like
+          .form-elements__like-buttons-container
             +like({ icon: "heart", value: 2, disable: true })
             +like({ icon: "heart", value: 12, disable: false })
 
-        .button__wrapper
+        .form-elements__small-buttons-wrapper
           h3.button__title.font__h3 rate button
-          .button__wrapper_rating
+          .form-elements__rating-buttons-container
             +rating({ rating: 5 })
             +rating({ rating: 4 })
 
       .form-elements__buttons
-        .button__wrapper_range-slider
+        .form-elements__buttons-wrapper
           +range-slider({
             title: "range slider"
           })
 
-        .button__wrapper
+        .form-elements__buttons-wrapper
           h3.button__title buttons
           .button__block
             +button({ buttonName: "click me", size: "small", textColor: "white" })
@@ -148,7 +149,7 @@ block content
             +button({ buttonName: "click me", textColor: "gray"})
           +button({ buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"})
 
-        .button__wrapper
+        .form-elements__buttons-wrapper
           h3.button__title.font__h3 pagination
           +pagination()
 
@@ -261,8 +262,8 @@ block content
 
     section.form-elements__room-review
       .room-review__wrapper
-        +dignity-room({ icon: "mood", title: "Комфорт", subtitle: "Шумопоглощающие стены" })
-        +dignity-room({ icon: "location_city", title: "Удобство", subtitle: "Окно в каждой из спален" })
+        +room-dignities({ icon: "mood", title: "Комфорт", subtitle: "Шумопоглощающие стены" })
+        +room-dignities({ icon: "location_city", title: "Удобство", subtitle: "Окно в каждой из спален" })
           
       .room-review__wrapper_comment
         .comment

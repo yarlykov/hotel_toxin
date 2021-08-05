@@ -1,6 +1,6 @@
 @import '@variables';
 
-.dignity-room {
+.room-dignities {
   &__item {
     display: flex;
     align-items: center;
@@ -13,14 +13,16 @@
     font-size: 48px;
     line-height: 41px;
 
-    .dignity-room__icon-mood::before {
-      content: '\e7f2';
-    }
-    .dignity-room__icon-location_city::before {
-      content: '\e7f1';
-    }
-    .dignity-room__icon-whatshot::before {
-      content: '\e80e';
+    &_type {
+      &_mood:before {
+        content: '\e7f2';
+      }
+      &_location-city:before {
+        content: '\e7f1';
+      }
+      &_whatshot:before {
+        content: '\e80e';
+      }
     }
 
     &_color_purple-gradient {
@@ -40,7 +42,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
   }
 
   &__title {

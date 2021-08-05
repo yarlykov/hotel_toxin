@@ -1,13 +1,11 @@
 @import '@variables';
 @import '@mixins';
 
-.colors-type {
-  &__content-wrapper {
-    display: flex;
-    box-sizing: border-box;
-    margin: 0px auto 145px;
-    padding-top: 5px;
-    padding-left: 7px;
-    max-width: 1160px;
-  }
+.colors-type-page {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0px auto 145px;
+  padding-top: 5px;
+  padding-left: 7px;
+  max-width: 1160px;
 }

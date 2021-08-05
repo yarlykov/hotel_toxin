@@ -1,9 +1,9 @@
 mixin social({ socialLinks })
-  .social__wrapper
+  .social
     each socialLink in socialLinks
-      - const socialClass = "social_" + socialLink.title
+      - const socialClass = "social__link_" + socialLink.title
       a&attributes({
-        class: ["social", socialClass], 
+        class: ["social__link", socialClass], 
         href: `${socialLink.link}`,
         target: "_blank",
         rel: "noopener noreferrer"

@@ -2,23 +2,23 @@
 
 .footer {
   box-sizing: border-box;
-  display: flex;
-  padding: 100px 126px 100px 140px;
+  background-color: #fff;
 
-  @media (max-width: 1280px) {
-    justify-content: space-around;
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  &_with-top-border {
+    border-top: 1px solid $textColor_25;
   }
 
   &__wrapper {
     box-sizing: border-box;
-    background-color: #fff;
+    display: flex;
+    padding: 100px 126px 100px 140px;
 
-    &_with-top-border {
-      border-top: 1px solid $textColor_25;
-    }
-
-    @media (max-width: 767px) {
-      display: none;
+    @media (max-width: 1280px) {
+      justify-content: space-around;
     }
   }
 
@@ -40,7 +40,6 @@
     @media (max-width: 1280px) {
       display: none;
     }
-
   }
 
   &__links-column {
@@ -59,10 +58,10 @@
     line-height: 24px;
     color: $textColor_75;
   }
+
   &__bottom {
     border-top: 1px solid rgba(31, 32, 65, 0.1);
     box-shadow: 0px 10px 20px $textColor_5;
-
   }
 
   &__bottom-container {

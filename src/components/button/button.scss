@@ -24,16 +24,6 @@
     background: $mainGradientTransparent;
   }
 
-  &_fill-white {
-    position: absolute;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    top: 2px;
-    left: 2px;
-    background: #fff;
-    border-radius: 100px;
-  }
-
   &_large {
     padding: 15px 19px 14px;
   }
@@ -74,6 +64,18 @@
     }
     &_white {
       color: #fff;
+    }
+  }
+
+  &__fill {
+    &_white {
+      position: absolute;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      top: 2px;
+      left: 2px;
+      background: #fff;
+      border-radius: 100px;
     }
   }
 
