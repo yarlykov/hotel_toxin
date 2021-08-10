@@ -1,4 +1,4 @@
-mixin checkbox({ mainTitle="", dropdown=false, rich=false, listItems=[]})
+mixin checkbox({ title="", dropdown=false, rich=false, listItems=[]})
 
   -
     let titleClassName = "checkbox__title"
@@ -10,10 +10,10 @@ mixin checkbox({ mainTitle="", dropdown=false, rich=false, listItems=[]})
     let isDropdown = dropdown ? "js-checkbox" : ""
 
   div(class=isDropdown).checkbox
-    .checkbox__header
-      div.checkbox__title #{mainTitle}
-      if dropdown
-        .js-checkbox__header-arrow.checkbox__header-arrow-down
+    if dropdown
+      .checkbox__header
+        h3.checkbox__title #{title}
+        span.js-checkbox__header-arrow.checkbox__header-arrow-down
     each item in listItems
       label.checkbox__item
         input&attributes({

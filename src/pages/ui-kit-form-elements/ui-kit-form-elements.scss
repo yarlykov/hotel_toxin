@@ -25,7 +25,7 @@
     }
   }
 
-  &__text-field-wrapper-date-dropdown {
+  &__text-field-containers-date-dropdown {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -74,28 +74,6 @@
   grid-template-columns: 320px auto 320px;
   column-gap: 126px;
   margin-top: 3px;
-}
-
-.text-field {
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    margin: 0px 0 5px 0;
-  }
-
-  &__title {
-    font-weight: bold;
-    font-size: 12px;
-    color: $mainTextColor;
-  }
-
-  &__description {
-    color: $textColor_50;
-  }
 }
 
 .button {

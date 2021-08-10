@@ -5,6 +5,7 @@ include ../../components/comment/comment.pug
 include ../../components/chart/chart.pug
 include ../../components/bullet-list/bullet-list.pug
 include ../../components/card/card.pug
+include ../../components/heading/heading.pug
 
 block variables
   - const title = "Room details"
@@ -22,13 +23,13 @@ block content
       .room-details__content
         .room-details__information
           .room-details__dignities
-            h3.room-details__title сведения о номере
+            +heading({ level: "h2",  title: "сведения о номере" })
             +room-dignities({ icon: "mood", title: "Комфорт", subtitle: "Шумопоглощающие стены" })
             +room-dignities({ icon: "location-city", title: "Удобство", subtitle: "Окно в каждой из спален" })
             +room-dignities({ icon: "whatshot", title: "Уют", subtitle: "Номер оснащён камином" })
 
           .room-details__impressions
-            h3.information__title впечатления от номера
+            +heading({ level: "h2",  title: "впечатления от номера" })
             +chart({
               sumOfVote: "260",
               legendItems: [
@@ -40,9 +41,7 @@ block content
             })
 
           .room-details__feedback
-            .room-details__fidback-header
-              h3.information__title Отзывы посетителей номера
-              .information__subtitle 2 отзыва
+            +heading({ level: "h2",  title: "Отзывы посетителей номера", description: "2 отзыва" })
             .room-details__feedback-item
               +comment({ 
                 imageName: "comment-image-1.jpg", 
@@ -62,7 +61,7 @@ block content
               })
 
           .room-details__rules
-            h3.information__title правила
+            +heading({ level: "h2",  title: "правила"})
             .room-details__rules-list
               +bullet-list([ 
                 { title: "Нельзя с питомцами" }, 
@@ -71,8 +70,8 @@ block content
               ])
 
           .room-details__cancel
-            h3.information__title отмена
-            p.cancel__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            +heading({ level: "h2",  title: "отмена"})
+            p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
         .room-details__calculation
           +card({

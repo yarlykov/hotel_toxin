@@ -51,6 +51,11 @@
       margin-left: 0;
     }
   }
+
+  &__cancel-text {
+    @include font-body;
+    padding-top: 19px;
+  }
 }
 
 .room-details {
@@ -119,12 +124,5 @@
     &:last-child {
       padding-top: 23px;
     }
-  }
-}
-
-.cancel {
-  &__text {
-    @include font-body;
-    padding-top: 19px;
   }
 }

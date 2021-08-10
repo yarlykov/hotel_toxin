@@ -13,6 +13,7 @@ include ../../components/comment/comment.pug
 include ../../components/pagination/pagination.pug
 include ../../components/text-field/text-field.pug
 include ../../components/button/button.pug
+include ../../components/heading/heading.pug
 
 block variables
   - const title = "Form & Elements"
@@ -22,27 +23,21 @@ block content
     section.form-elements__text-fields-buttons
       .form-elements__text-fields
         .form-elements__text-field-wrapper
-          .text-field__header
-            h3.text-field__title text field
-            span.text-field__description default
+          +heading({level: "h3", title: "text field", description: "default"})
           +text-field({ 
             type: "text", placeholder: "Email", 
             size:"large", name: "email", autocomplete: "on" 
           })
 
         .form-elements__text-field-wrapper
-          .text-field__header
-            h3.text-field__title text field
-            span.text-field__description hover / focus
+          +heading({level: "h3", title: "text field", description: "hover / focus"})
           +text-field({ 
             type: "text",  placeholder: "This is pretty awesome", 
             size:"large", name: "email",  autocomplete: "off", focused: true, 
           })
 
         .form-elements__text-field-wrapper
-          .text-field__header
-            span.text-field__title dropdown
-            span.text-field__description default
+          +heading({level: "h3", title: "dropdown", description: "default"})
           +dropdown({
             isOpen: false, group: "guests", 
             elements: [
@@ -53,42 +48,36 @@ block content
           })
 
         .form-elements__text-field-wrapper
-          .text-field__header
-            h3.text-field__title masked text field
-            span.text-field__description default
+          +heading({level: "h3", title: "masked text field", description: "default"})
           +text-field({ 
             type: "text", dataType: "masked-text-field", masked: true, 
             placeholder: "ДД.ММ.ГГГГ", size:"large", name: "text"
           })
 
         .form-elements__text-field-wrapper
-          .form-elements__text-field-wrapper-date-dropdown
-            div
-              .text-field__header
-                span.text-field__title date dropdown
+          .form-elements__text-field-containers-date-dropdown
+            .form-elements__text-field-container
+              +heading({level: "h3", title: "date dropdown" })
               +date-dropdown({ 
                 type: "text", dataType: "date-dropdown-start", placeholder: "ДД.ММ.ГГГГ",
                 size:"small", name: "date", autocomplete: "off", arrow: true 
               })
-            div
-              .text-field__header
-                span.text-field__title date dropdown
+            .form-elements__text-field-container
+              +heading({level: "h3", title: "date dropdown" })
               +date-dropdown({ 
                 type: "text", dataType: "date-dropdown-end", placeholder: "ДД.ММ.ГГГГ", 
                 size:"small", name: "date", autocomplete: "off", arrow: true 
               })
 
-        .form-elements__text-field-wrapper   
-          .text-field__header
-            span.text-field__title filter date dropdown
+        .form-elements__text-field-wrapper 
+          +heading({level: "h3", title: "filter date dropdown" })  
           +date-dropdown({ 
             type: "text", dataType: "filter-date-dropdown", placeholder: "ДД.ММ - ДД.ММ", size:"medium", name:"text",  autocomplete: "off", arrow: true,
             readonly: true, lowercase: true,
            })
 
         .form-elements__text-field-wrapper 
-          .text-field__header 
-            span.text-field__title subscription text field
+          +heading({level: "h3", title: "subscription text field" })
           +text-field({ 
             type: "text", dataType: "subscription-text-field", placeholder: "Email", size:"medium", 
             name: "email", autocomplete: "on", subscribe: true,
@@ -96,10 +85,8 @@ block content
 
       .form-elements__small-buttons
         .form-elements__small-buttons-wrapper
+          +heading({level: "h3", title: "checkbox buttons"})
           +checkbox({	
-            mainTitle: "Checkbox buttons",
-            dropdown: false,
-            rich: false,
             listItems: [
               { title: "Можно курить" },
               { title: "Можно с питомцами" },
@@ -108,24 +95,24 @@ block content
           })
 
         .form-elements__small-buttons-wrapper
-          h3.button__title.font__h3 radio buttons
+          +heading({level: "h3", title: "radio buttons"})
           .form-elements__radio-buttons-container
             +radio({ group: "gender", title: "Мужчина", checked: true })
             +radio({ group: "gender", title: "Женщина", checked: false })
 
         .form-elements__small-buttons-wrapper
-          h3.button__title.font__h3 toggle
+          +heading({level: "h3", title: "toggle"})
           +toggle({title: "Получать спецпредложения", checked: true })
           +toggle({title: "Получать спецпредложения", checked: false})
 
         .form-elements__small-buttons-wrapper
-          h3.button__title.font__h3 like button
+          +heading({level: "h3", title: "like button"})
           .form-elements__like-buttons-container
             +like({ icon: "heart", value: 2, disable: true })
             +like({ icon: "heart", value: 12, disable: false })
 
         .form-elements__small-buttons-wrapper
-          h3.button__title.font__h3 rate button
+          +heading({level: "h3", title: "rate button"})
           .form-elements__rating-buttons-container
             +rating({ rating: 5 })
             +rating({ rating: 4 })
@@ -137,7 +124,7 @@ block content
           })
 
         .form-elements__buttons-wrapper
-          h3.button__title buttons
+          +heading({level: "h3", title: "buttons"})
           .button__block
             +button({ buttonName: "click me", size: "small", textColor: "white" })
             +button({ buttonName: "click me", size: "small", textColor:  "white", focused: true })
@@ -150,15 +137,13 @@ block content
           +button({ buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"})
 
         .form-elements__buttons-wrapper
-          h3.button__title.font__h3 pagination
+          +heading({level: "h3", title: "pagination"})
           +pagination()
 
     section.form-elements__dropdowns
       .dropdown__block_left
         .dropdown__wrapper
-          .text-field__header
-            h3.text-field__title dropdown
-            span.text-field__description default
+          +heading({level: "h3", title: "dropdown", description: "default"})
           +dropdown({ 
             title: "dropdown",
             subtitle: "default",
@@ -171,9 +156,7 @@ block content
             ]
           })
         .dropdown__wrapper
-          .text-field__header
-            h3.text-field__title.font__h3 dropdown
-            span.text-field__description expanded
+          +heading({level: "h3", title: "dropdown", description: "default"})
           +dropdown({
             title: "dropdown",
             subtitle: "expanded",
@@ -188,8 +171,7 @@ block content
 
       .dropdown__block_right
         .dropdown__wrapper
-          .dropdown__header
-            span.dropdown__title dropdown
+          +heading({level: "h3", title: "dropdown"})
           +dropdown({
             title: "dropdown",
             isOpen: true, 
@@ -202,8 +184,7 @@ block content
           })
 
         .dropdown__wrapper
-          .dropdown__header
-            span.dropdown__title dropdown
+          +heading({level: "h3", title: "dropdown"})
           +dropdown({
             title: "dropdown",
             isOpen: true, 
@@ -219,13 +200,13 @@ block content
       .list__block_expandable
         .list__wrapper
           +checkbox({	
-            mainTitle: "Expandable checkbox list",
+            title: "Expandable checkbox list",
             dropdown: true,
             rich: false,
             listItems: []
           })
           +checkbox({	
-            mainTitle: "Expandable checkbox list",
+            title: "Expandable checkbox list",
             dropdown: true,
             rich: false,
             listItems: [
@@ -240,9 +221,8 @@ block content
 
       .list__block_other
         .list__wrapper
+          +heading({level: "h3", title: "rich checkbox buttons"})
           +checkbox({	
-            mainTitle: "rich checkbox buttons",
-            dropdown: false,
             rich: true,
             listItems: [
               { title: "Широкий коридор", rich: true, 
@@ -253,7 +233,7 @@ block content
           })
 
         .list__wrapper_bullet
-          h3.list__title.font__h3 bullet list
+          +heading({level: "h3", title: "bullet list"})
           +bullet-list([ 
             { title: "Нельзя с питомцами" }, 
             { title: "Без вечеринок и мероприятий" },  
@@ -263,7 +243,7 @@ block content
     section.form-elements__room-review
       .room-review__wrapper
         +room-dignities({ icon: "mood", title: "Комфорт", subtitle: "Шумопоглощающие стены" })
-        +room-dignities({ icon: "location_city", title: "Удобство", subtitle: "Окно в каждой из спален" })
+        +room-dignities({ icon: "location-city", title: "Удобство", subtitle: "Окно в каждой из спален" })
           
       .room-review__wrapper_comment
         .comment

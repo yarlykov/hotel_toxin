@@ -6,10 +6,6 @@
   flex-direction: column;
   min-height: 100%;
 
-  &__title {
-    @include font-h1;
-  }
-
   &__pagination {
     display: flex;
     justify-content: center;
