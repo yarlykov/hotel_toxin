@@ -34,6 +34,12 @@
     justify-content: flex-end;
   }
 
+  &__toggle {
+    & .toggle__box:before {
+      transition: 0s;
+    }
+  }
+
   &__logo {
     display: flex;
     justify-content: start;
