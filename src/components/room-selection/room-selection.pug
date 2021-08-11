@@ -2,12 +2,12 @@ include ../pagination/pagination.pug
 include ../room-review-widget/room-review-widget.pug
 include ../heading/heading.pug
 
-mixin selection-rooms({ title, widgets })
-  .selection-rooms
+mixin room-selection({ title, widgets })
+  .room-selection
     +heading({ level: "h1", title: title })
-    ul.selection-rooms__widgets
+    ul.room-selection__widgets-list
       each widget in widgets
-        li.room-review-widget-item
+        li.room-selection__widgets-item
           +room-review-widget(widget)
-    .selection-rooms__pagination
+    .room-selection__pagination
       +pagination()

@@ -1,6 +1,6 @@
 extends ../../layouts/main-layout.pug
 include ../../components/filter/filter.pug
-include ../../components/selection-rooms/selection-rooms.pug
+include ../../components/room-selection/room-selection.pug
 
 block variables
   - const title = "Search room"
@@ -79,8 +79,8 @@ block content
           },
         })
         
-      section.search-room__selection-rooms
-        +selection-rooms({
+      section.search-room__room-selection
+        +room-selection({
           title: "Номера, которые мы для вас подобрали",
           widgets: [
             {
