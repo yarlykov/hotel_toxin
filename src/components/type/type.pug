@@ -1,7 +1,7 @@
 mixin type( typeList=[] )
-  section.type
+  ul.type
     each typeListItem in typeList
       - const typeClassBlock = "type__" + typeListItem.type
-      div&attributes({ class: [typeClassBlock] })
-        .type__header #{typeListItem.title}
-        .type__text #{typeListItem.text}
+      li&attributes({ class: [typeClassBlock] })
+        p.type__header #{typeListItem.title}
+        p.type__text #{typeListItem.text}

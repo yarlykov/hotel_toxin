@@ -1,11 +1,11 @@
 mixin colors( colorItems=[] )
-  section.colors
+  ul.colors
     each colorItem in colorItems
-      .colors__item
+      li.colors__item
         - const colorClass = "colors__preview_color_" + colorItem.color
         div&attributes({
           class: ["colors__preview", colorClass]
         })
         .colors__description
-          .colors__name #{colorItem.description}
-          span.colors__code #{colorItem.colorCode}
+          p.colors__name #{colorItem.description}
+          p.colors__code #{colorItem.colorCode}

@@ -30,7 +30,7 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
         +heading({ level: "h1", title: title })
     form(method=`${formMethod}`, action=`./${formAction}.html`)
       if (searchOrCalculation)
-        .card__date-dropdown
+        section.card__date-dropdown
           .card__date-dropdown-start
             +heading({ level: "h3", title: "прибытие" })
             +text-field({
@@ -56,18 +56,18 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
             +price-calc()
 
       else if (registration)
-        .card__register-details
+        section.card__register-details
           .card__register-details-name
             +text-field({ placeholder: "Имя", type: "text", name: "name", autocomplete: "on" })
           .card__register-details-surname
             +text-field({ placeholder: "Фамилия", type: "text", name: "surname", autocomplete: "on" })
-        .card__radio-buttons
+        section.card__radio-buttons
           +radio({ group: "gender", title: "Мужчина", checked: true})
           +radio({ group: "gender", title: "Женщина", checked: false})
         .card__birthday
           +heading({ level: "h3", title: "дата рождения" })
           +text-field({ dataType: "masked-text-field", placeholder: "ДД.ММ.ГГГГ", type: "text", name: "birthday", autocomplete: "on" })
-        .card__login-details
+        section.card__login-details
           +heading({ level: "h3", title: "данные для входа в сервис" })
           .card__login-details-email
             +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
@@ -77,7 +77,7 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
           +toggle({ title: "Получать спецпредложения" })
 
       else if (entry)
-        .card__login-details
+        section.card__login-details
           .card__login-details-email
             +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
           .card__login-details-password

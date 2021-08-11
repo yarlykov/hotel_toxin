@@ -1,6 +1,6 @@
 mixin links({ title="", linksList=[] })
-  ul.links
-    li.links__title #{title}
+  h3.links.links__title #{title}
+  ul.links__list
     each linkItem in linksList
       li.links__item
         a&attributes({

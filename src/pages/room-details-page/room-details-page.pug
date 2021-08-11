@@ -22,13 +22,13 @@ block content
     .room-details__container
       .room-details__content
         .room-details__information
-          .room-details__dignities
+          section.room-details__dignities
             +heading({ level: "h2",  title: "сведения о номере" })
             +room-dignities({ icon: "mood", title: "Комфорт", subtitle: "Шумопоглощающие стены" })
             +room-dignities({ icon: "location-city", title: "Удобство", subtitle: "Окно в каждой из спален" })
             +room-dignities({ icon: "whatshot", title: "Уют", subtitle: "Номер оснащён камином" })
 
-          .room-details__impressions
+          section.room-details__impressions
             +heading({ level: "h2",  title: "впечатления от номера" })
             +chart({
               sumOfVote: "260",
@@ -40,7 +40,7 @@ block content
               ]
             })
 
-          .room-details__feedback
+          section.room-details__feedback
             +heading({ level: "h2",  title: "Отзывы посетителей номера", description: "2 отзыва" })
             .room-details__feedback-item
               +comment({ 
@@ -60,7 +60,7 @@ block content
                 isDisable: true
               })
 
-          .room-details__rules
+          section.room-details__rules
             +heading({ level: "h2",  title: "правила"})
             .room-details__rules-list
               +bullet-list([ 

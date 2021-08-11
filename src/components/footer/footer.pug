@@ -9,10 +9,10 @@ mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyri
   footer.footer(class=borderTopClass)
     .footer__container
       .footer__wrapper 
-        .footer__logo
+        section.footer__about
           +logo(logo)
-          p.footer__award #{footerText}
-        .footer__links
+          p.footer__presentation #{footerText}
+        section.footer__links
           .footer__links-column
             +links(footerNavigation.column1)
           .footer__links-column
@@ -20,15 +20,15 @@ mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyri
           .footer__links-column
             +links(footerNavigation.column3)
         +subscribe(subscribe)
-      .footer__bottom
-        .footer__bottom-container
-          .footer__copyright-text #{copyright.text}
-          .footer__social
-            +social(social)
+    .footer__bottom
+      .footer__bottom-container
+        p.footer__copyright-text #{copyright.text}
+        section.footer__social
+          +social(social)
 
   footer.footer-mobile
     .footer-mobile__wrapper
       +logo(logo)
-      .footer-mobile__copyright-text #{copyright.text}
-      .footer-mobile__social
+      p.footer-mobile__copyright-text #{copyright.text}
+      section.footer-mobile__social
         +social(social)

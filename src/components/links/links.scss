@@ -2,12 +2,14 @@
 @import '@mixins';
 
 .links {
-  margin: 0;
-  list-style-type: none;
-  font-family: $mainFont;
-
   &__title {
     @include font-h3;
+  }
+
+  &__list {
+    margin: 0;
+    list-style-type: none;
+    font-family: $mainFont;
   }
 
   &__item {
@@ -17,7 +19,7 @@
     line-height: 17px;
     text-transform: none;
     white-space: nowrap;
-    
+
     &:first-child {
       padding-top: 22px;
     }

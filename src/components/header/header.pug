@@ -13,7 +13,7 @@ mixin header({ logo={}, navigationList=[], buttonEntry="", buttonRegister="", lo
           .header__navigation
             +navigation({ navigationList, navigationSubList })
           if logged
-            .header__logged #{userName}
+            p.header__logged #{userName}
           else
             .header__login
               .header__login-entry
