@@ -14,43 +14,14 @@
   &__link {
     cursor: pointer;
 
+    &_active {
+      font-weight: 700;
+    }
+
     &:focus {
       outline: none;
       color: $textColor_75;
     }
-  }
-
-  &__dropdown-arrow-up {
-    position: relative;
-    padding-right: 46px;
-
-    &::after {
-      @include font-material-icons;
-      content: '\e5ce';
-      position: absolute;
-      right: 20px;
-      line-height: 20px;
-      color: $textColor_50;
-      cursor: pointer;
-    }
-  }
-  &__dropdown-arrow-down {
-    position: relative;
-    padding-right: 46px;
-
-    &::after {
-      @include font-material-icons;
-      content: '\e5cf';
-      position: absolute;
-      right: 20px;
-      line-height: 20px;
-      color: $textColor_50;
-      cursor: pointer;
-    }
-  }
-
-  &__link_active {
-    font-weight: 700;
   }
 
   &__dropdown {
@@ -62,6 +33,36 @@
     box-shadow: $mainBoxShadow;
     border-radius: $mainBorderRadius;
     background: $cardsBackground;
+
+    &_with-arrow-up {
+      position: relative;
+      padding-right: 46px;
+
+      &::after {
+        @include font-material-icons;
+        content: '\e5ce';
+        position: absolute;
+        right: 20px;
+        line-height: 20px;
+        color: $textColor_50;
+        cursor: pointer;
+      }
+    }
+
+    &_with-arrow-down {
+      position: relative;
+      padding-right: 46px;
+
+      &::after {
+        @include font-material-icons;
+        content: '\e5cf';
+        position: absolute;
+        right: 20px;
+        line-height: 20px;
+        color: $textColor_50;
+        cursor: pointer;
+      }
+    }
 
     &_visibility-hidden {
       visibility: hidden;

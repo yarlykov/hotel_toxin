@@ -29,8 +29,8 @@ class Navigation {
   init() {
     this.$itemDropdown = this.$mainNode.querySelector('.navigation__dropdown');
     this.$visibilityHiddenClass = 'navigation__dropdown_visibility-hidden';
-    this.$UpArrowDropdownClass = 'navigation__dropdown-arrow-up';
-    this.$DownArrowDropdownClass = 'navigation__dropdown-arrow-down';
+    this.$UpArrowDropdownClass = 'navigation__dropdown_with-arrow-up';
+    this.$DownArrowDropdownClass = 'navigation__dropdown_with-arrow-down';
   }
 
   setup() {
@@ -82,6 +82,6 @@ class Navigation {
   }
 }
 
-const navigationItemDropdown = document.querySelectorAll('.js-navigation__item-dropdown');
+const navigationItemDropdown = document.querySelectorAll('[data-id="navigation-dropdown-item"]');
 
 navigationItemDropdown.forEach((selector) => new Navigation(selector));
