@@ -67,7 +67,7 @@
     }
   }
 
-  &__menu-burger.header__active {
+  &__menu-burger.header__menu-burger_active {
     &::before {
       top: 17px;
       transform: rotate(45deg);

@@ -51,12 +51,10 @@
   }
 }
 
-.search-room__container.js-search-room__active {
-  .search-room__filter {
-    z-index: 1000;
-    min-height: 100%;
-    padding: 20px;
-    background: $cardsBackground;
-    transform: translateX(10px);
-  }
+.search-room__filter.search-room__filter_opened {
+  z-index: 1000;
+  min-height: 100%;
+  padding: 20px;
+  background: $cardsBackground;
+  transform: translateX(10px);
 }

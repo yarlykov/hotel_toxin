@@ -5,15 +5,18 @@
   min-width: 266px;
   max-width: 266px;
 
-  &__header {
+  &__dropdown {
     @include font-h3;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 17px;
     cursor: pointer;
   }
-  
-  &__header-arrow-up {
+
+  &__dropdown-title {
+    font-size: 12px;
+  }
+
+  &__dropdown-arrow-up {
     &::before {
       @include font-material-icons;
       content: '\e5ce';
@@ -22,7 +25,7 @@
       color: $textColor_50;
     }
   }
-  &__header-arrow-down {
+  &__dropdown-arrow-down {
     &::before {
       @include font-material-icons;
       content: '\e5cf';
@@ -33,7 +36,19 @@
   }
 
   &__title {
-    font-weight: inherit;
+    &_font_bold {
+      font-weight: bold;
+      color: $textColor_75;
+    }
+  }
+
+  &__list {
+    padding-top: 17px;
+    visibility: hidden;
+
+    &_opened {
+      visibility: visible;
+    }
   }
 
   &__item {
@@ -43,7 +58,6 @@
     padding-bottom: 10px;
     box-sizing: content-box;
     color: $textColor_50;
-    cursor: pointer;
 
     &:last-child {
       padding-bottom: 0;
@@ -56,6 +70,10 @@
     &:focus-within {
       color: $textColor_75;
     }
+  }
+
+  &__item-container {
+    cursor: pointer;
   }
 
   &__input {
@@ -100,12 +118,7 @@
     border: $mainBorder;
   }
 
-  &__title-rich {
-    font-weight: bold;
-    color: $textColor_75;
-  }
-
-  &__description-rich {
+  &__description {
     display: inline-block;
     margin-top: 5px;
     color: $textColor_50;

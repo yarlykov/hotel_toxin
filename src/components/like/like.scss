@@ -11,6 +11,10 @@
   outline: none;
   cursor: pointer;
 
+  &_inactive-border {
+    background: $textColor_25;
+  }
+
   &__button-border {
     position: absolute;
     top: 1px;
@@ -52,13 +56,9 @@
     color: $designColor_main;
     font-family: $mainFont;
     font-size: 10px;
-  }
 
-  &__inactive{
-    color: $textColor_25;
-  }
-
-  &__inactive-border {
-    background: $textColor_25;
+    &_inactive {
+      color: $textColor_25;
+    }
   }
 }

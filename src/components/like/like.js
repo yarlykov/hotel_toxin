@@ -1,30 +1,57 @@
-const $likeButtons = $('.js-like__button');
-
-const handleLikeButtonClick = function () {
-  const $likesCounter = $('.js-like__text', this);
-  const likesCount = $likesCounter.text();
-
-  $(this).toggleClass('like__inactive-border');
-  $likesCounter.toggleClass('like__inactive');
-
-  const isClicked = $(this).hasClass('like__inactive-border');
-  $likesCounter.text((isClicked)
-    ? +likesCount - 1
-    : +likesCount + 1);
-
-  const $likeIcon = $('.like__icon', this);
-
-  if ($likeIcon.hasClass('like__icon_heart')) {
-    $likeIcon.removeClass('like__icon_heart');
-  } else {
-    $likeIcon.addClass('like__icon_heart');
+class Like {
+  constructor(selector) {
+    this.root = selector;
+    this.init();
   }
 
-  if ($likeIcon.hasClass('like__icon_empty-heart')) {
-    $likeIcon.removeClass('like__icon_empty-heart');
-  } else {
-    $likeIcon.addClass('like__icon_empty-heart');
-  }
-};
+  init() {
+    this.text = this.root.querySelector('[data-id="like-text"]');
+    this.heart = this.root.querySelector('[data-id="like-icon"]');
 
-$likeButtons.on('click', handleLikeButtonClick);
+    this.root.addEventListener('click', this.handleLikeButtonClick.bind(this));
+  }
+
+  handleLikeButtonClick() {
+    this.buttonToggle();
+    this.iconToggle();
+    this.counter();
+  }
+
+  buttonToggle() {
+    this.root.classList.toggle('like_inactive-border');
+    this.text.classList.toggle('like__text_inactive');
+  }
+
+  isEnabled() {
+    return this.heart.classList.contains('like__icon_heart');
+  }
+
+  iconToggle() {
+    if (this.isEnabled()) {
+      this.heart.classList.remove('like__icon_heart');
+      this.heart.classList.add('like__icon_empty-heart');
+    } else {
+      this.heart.classList.remove('like__icon_empty-heart');
+      this.heart.classList.add('like__icon_heart');
+    }
+  }
+
+  counter() {
+    const currentValue = Number(this.text.textContent);
+    if (!this.isEnabled()) {
+      this.text.innerHTML = this.decrement(currentValue);
+    } else {
+      this.text.innerHTML = this.increment(currentValue);
+    }
+  }
+
+  increment(value) {
+    return `${value + 1}`;
+  }
+
+  decrement(value) {
+    return `${value - 1}`;
+  }
+}
+
+export default Like;

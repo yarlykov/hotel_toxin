@@ -1,16 +1,21 @@
-const $filterMainNode = $('.js-search-room__filter');
-const $searchRoomMainNode = $('.js-search-room');
-
-$searchRoomMainNode.each(() => {
-  const $filterIcon = $('.js-filter__icon');
-
-  $filterIcon.on('click', () => {
-    $searchRoomMainNode.toggleClass('js-search-room__active');
-  });
-});
-
-$(document).on('mouseup', (e) => {
-  if (!$filterMainNode.is(e.target) && $filterMainNode.has(e.target).length === 0) {
-    $searchRoomMainNode.removeClass('js-search-room__active');
+class Filter {
+  constructor(selector) {
+    this.root = selector;
+    this.init();
   }
-});
+
+  init() {
+    this.openLabel = this.root.querySelector('.js-filter__open-label');
+    this.openLabel.addEventListener('click', this.handleFilterOpenLabelClick.bind(this));
+  }
+
+  handleFilterOpenLabelClick() {
+    this.filterToggle();
+  }
+
+  filterToggle() {
+    this.root.classList.toggle('search-room__filter_opened');
+  }
+}
+
+export default Filter;

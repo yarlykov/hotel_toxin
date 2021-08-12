@@ -7,8 +7,8 @@ block variables
 
 block content
   main.search-room
-    .search-room__container.js-search-room
-      aside.search-room__filter.js-search-room__filter
+    .search-room__container
+      aside.search-room__filter(data-id="search-room-filter")
         +filter({
           dateDropdown: {
             title: "даты пребывания в отеле",
