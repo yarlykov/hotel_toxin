@@ -1,4 +1,4 @@
-import Chart from './chart';
+import Chart from './Chart';
 
 const chartElement = document.querySelector('[data-id="chart"]');
 const options = {
@@ -9,4 +9,5 @@ const options = {
     disappointed: 0,
   },
 };
-if (chartElement) new Chart(chartElement, options);
+
+if (chartElement !== null) new Chart(chartElement, options);

@@ -1,36 +1,16 @@
 class Navigation {
   constructor(selector) {
-    this.$mainNode = selector;
+    this.mainNode = selector;
 
     this.init();
     this.setup();
   }
 
-  toggleDropdown() {
-    this.$itemDropdown.classList.toggle(this.$visibilityHiddenClass);
-    this.arrowToggle();
-  }
-
-  closeDropdown() {
-    this.$itemDropdown.classList.add(this.$visibilityHiddenClass);
-    this.arrowDown();
-  }
-
-  arrowToggle() {
-    this.$mainNode.classList.toggle(this.$DownArrowDropdownClass);
-    this.$mainNode.classList.toggle(this.$UpArrowDropdownClass);
-  }
-
-  arrowDown() {
-    this.$mainNode.classList.remove(this.$UpArrowDropdownClass);
-    this.$mainNode.classList.add(this.$DownArrowDropdownClass);
-  }
-
   init() {
-    this.$itemDropdown = this.$mainNode.querySelector('.navigation__dropdown');
-    this.$visibilityHiddenClass = 'navigation__dropdown_visibility-hidden';
-    this.$UpArrowDropdownClass = 'navigation__dropdown_with-arrow-up';
-    this.$DownArrowDropdownClass = 'navigation__dropdown_with-arrow-down';
+    this.itemDropdown = this.mainNode.querySelector('.navigation__dropdown');
+    this.visibilityHiddenClass = 'navigation__dropdown_visibility-hidden';
+    this.UpArrowDropdownClass = 'navigation__dropdown_with-arrow-up';
+    this.DownArrowDropdownClass = 'navigation__dropdown_with-arrow-down';
   }
 
   setup() {
@@ -38,8 +18,28 @@ class Navigation {
     this.keydownHandler = this.keydownHandler.bind(this);
     this.hideAll = this.hideAll.bind(this);
 
-    this.$mainNode.addEventListener('click', this.clickHandler);
-    this.$mainNode.addEventListener('keydown', this.keydownHandler);
+    this.mainNode.addEventListener('click', this.clickHandler);
+    this.mainNode.addEventListener('keydown', this.keydownHandler);
+  }
+
+  toggleDropdown() {
+    this.itemDropdown.classList.toggle(this.visibilityHiddenClass);
+    this.arrowToggle();
+  }
+
+  closeDropdown() {
+    this.itemDropdown.classList.add(this.visibilityHiddenClass);
+    this.arrowDown();
+  }
+
+  arrowToggle() {
+    this.mainNode.classList.toggle(this.DownArrowDropdownClass);
+    this.mainNode.classList.toggle(this.UpArrowDropdownClass);
+  }
+
+  arrowDown() {
+    this.mainNode.classList.remove(this.UpArrowDropdownClass);
+    this.mainNode.classList.add(this.DownArrowDropdownClass);
   }
 
   clickHandler(event) {
@@ -82,6 +82,4 @@ class Navigation {
   }
 }
 
-const navigationItemDropdown = document.querySelectorAll('[data-id="navigation-dropdown-item"]');
-
-navigationItemDropdown.forEach((selector) => new Navigation(selector));
+export default Navigation;

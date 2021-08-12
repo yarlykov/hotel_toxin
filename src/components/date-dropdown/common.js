@@ -3,8 +3,8 @@ import 'air-datepicker/dist/css/datepicker.css';
 import DateDropdown from './DateDropdown';
 
 /* =============== Date dropdown ================== */
-const twoInputsDateDropdown = $('[data-type="date-dropdown-start"]');
-new DateDropdown(twoInputsDateDropdown, {
+const $twoInputsDateDropdown = $('[data-type="date-dropdown-start"]');
+new DateDropdown($twoInputsDateDropdown, {
   dateFormat: 'dd.mm.yyyy',
   position: 'bottom left',
   offset: 5,
@@ -18,8 +18,8 @@ new DateDropdown(twoInputsDateDropdown, {
 });
 
 /* =============== Filter date dropdown ================== */
-const filterDateDropdown = $('[data-type="filter-date-dropdown"]');
-new DateDropdown(filterDateDropdown, {
+const $filterDateDropdown = $('[data-type="filter-date-dropdown"]');
+new DateDropdown($filterDateDropdown, {
   dateFormat: 'd M',
   multipleDatesSeparator: ' - ',
   offset: 5,
@@ -34,8 +34,8 @@ new DateDropdown(filterDateDropdown, {
 });
 
 /* =============== For Cards page ================== */
-const inlineDateDropdown = $('[data-type="inline-date-dropdown"]');
-new DateDropdown(inlineDateDropdown, {
+const $inlineDateDropdown = $('[data-type="inline-date-dropdown"]');
+new DateDropdown($inlineDateDropdown, {
   dateFormat: 'd M',
   multipleDatesSeparator: ' - ',
   range: true,

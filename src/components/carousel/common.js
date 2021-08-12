@@ -1,8 +1,9 @@
-import Carousel from './carousel';
+import Carousel from './Carousel';
 
-const $carouselElements = document.querySelectorAll('.js-carousel');
+const carouselElements = document.querySelectorAll('.js-carousel');
 const options = {
   dots: true,
   zIndex: 10,
 };
-if ($carouselElements) new Carousel($carouselElements, options);
+
+if (carouselElements.length > 0) new Carousel(carouselElements, options);
