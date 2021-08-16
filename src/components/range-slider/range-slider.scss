@@ -2,17 +2,18 @@
 @import '@mixins';
 
 .range-slider {
-  @include font-body;
-  font-size: 12px;
-  line-height: 15px;
-  color: $textColor_50;
-  border: none;
-  text-align: right;
+  &__value {
+    @include font-body;
+    font-size: 12px;
+    line-height: 15px;
+    color: $textColor_50;
+    border: none;
+    text-align: right;
+  }
 
   &__scale {
     position: relative;
     height: 6px;
-
   }
 
   &__scale-border {
@@ -79,6 +80,5 @@
   font-weight: normal;
   font-size: 12px;
   line-height: 14px;
-
   color: rgba(31, 32, 65, 0.5);
 }

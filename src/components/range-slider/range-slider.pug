@@ -3,9 +3,10 @@ mixin range-slider({ title="", description="" })
     .range-slider__header
       .range-slider__title #{title}
       input&attributes({
-        class: ["range-slider", "js-range-slider"],
+        class: "range-slider__value",
         type: "text",
-        readonly: "readonly"
+        readonly: "readonly",
+        "data-id": "slider-value", 
         })
     .range-slider__scale.js-range-slider__scale
       .range-slider__scale-border

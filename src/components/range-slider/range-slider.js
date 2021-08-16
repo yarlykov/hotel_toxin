@@ -1,25 +1,41 @@
 import 'jquery-ui-slider/jquery-ui';
 import 'jquery-ui-slider/jquery-ui.css';
 
-$(() => {
-  const rangeSlider = $('.js-range-slider');
-  const scaleRangeSlider = $('.js-range-slider__scale');
+class RangeSlider {
+  constructor(selector, options) {
+    this.$root = $(selector);
+    this.options = options;
+    this.init();
+  }
 
-  scaleRangeSlider.slider({
-    range: true,
-    min: 0,
-    max: 15000,
-    step: 100,
-    values: [5000, 10000],
-    slide(event, ui) {
+  init() {
+    this.$root.slider(this.options);
+    this.$root.slider({
+      slide: this.slide.bind(this),
+    });
+    this.sliderInput = document.querySelector('[data-id="slider-value"]');
+    const values = this.getValues();
+    const [startValue, endValue] = values;
+    this.setValues(startValue, endValue);
+  }
+
+  slide(event, ui) {
+    if (event.type === 'slide') {
       const startValue = `${ui.values[0].toLocaleString('ru-RU', { minimumFractionDigits: 0 })}₽`;
       const endValue = `${ui.values[1].toLocaleString('ru-RU', { minimumFractionDigits: 0 })}₽`;
-      rangeSlider.val(`${startValue} - ${endValue}`);
-    },
-  });
+      this.setValues(startValue, endValue);
+    }
+  }
 
-  const startValue = `${scaleRangeSlider.slider('values', 0).toLocaleString('ru-RU', { minimumFractionDigits: 0 })}₽`;
-  const endValue = `${scaleRangeSlider.slider('values', 1).toLocaleString('ru-RU', { minimumFractionDigits: 0 })}₽`;
+  getValues() {
+    const startValue = `${this.$root.slider('values', 0).toLocaleString('ru-RU', { minimumFractionDigits: 0 })}₽`;
+    const endValue = `${this.$root.slider('values', 1).toLocaleString('ru-RU', { minimumFractionDigits: 0 })}₽`;
+    return [startValue, endValue];
+  }
 
-  rangeSlider.val(`${startValue} - ${endValue}`);
-});
+  setValues(startValue, endValue) {
+    this.sliderInput.value = `${startValue} - ${endValue}`;
+  }
+}
+
+export default RangeSlider;

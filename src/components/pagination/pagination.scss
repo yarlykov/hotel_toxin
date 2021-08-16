@@ -8,18 +8,18 @@
   font: 12px/15px $mainFont;
 }
 
-.js-pagination__next-button {
+.paginationjs-next-button {
   color: #fff;
   line-height: 40px;
 }
-.js-pagination__next-button::before {
+.paginationjs-next-button::before {
   @include font-material-icons;
   content: '\e5c8';
   color: #fff;
   line-height: 40px;
 }
 
-.js-pagination__next-button:hover::before {
+.paginationjs-next-button:hover::before {
   color: $textColor_75;
 }
 
