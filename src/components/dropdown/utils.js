@@ -1,13 +1,13 @@
 function addCommaInText(text) {
-  let textCopy = text;
-  const textWithComma = text.length >= 8 ? (textCopy += ', ') : (textCopy += '');
+  const textCopy = text;
+  const textWithComma = text.length >= 8 ? `${textCopy}, ` : textCopy;
   return textWithComma;
 }
 
 function cutLongText(str) {
-  let changedStr = str;
+  const changedStr = str;
   if (str.length > 19) {
-    changedStr = `${str.slice(0, 20)}...`;
+    return `${str.slice(0, 20)}...`;
   }
   return changedStr;
 }

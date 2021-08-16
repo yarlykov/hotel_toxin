@@ -5,7 +5,7 @@ mixin button({ classList=[], type="button", buttonName="button", link="", size="
     const textClassModifier = `button__text_${textColor}`
     const focusedClassModifier = focused ? "button_focused" : ""
     
-    let buttonAttributes = {
+    const buttonAttributes = {
       link: {
         class: [ mainClass, sizeClassModifier, focusedClassModifier ],
         href: `./${link}.html`,
@@ -15,6 +15,7 @@ mixin button({ classList=[], type="button", buttonName="button", link="", size="
         type: type,
       }
     }
+
   if link
     a&attributes(buttonAttributes.link) 
       case buttonVariation

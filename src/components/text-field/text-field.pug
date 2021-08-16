@@ -7,7 +7,7 @@ mixin text-field({ type="", dataType="", placeholder="", size="", name="", autoc
     const textLowercaseClass = lowercase ? "text-field__input_lowercase-text" : ""
     const inputWithoutArrowClass = subscribe ? "text-field__input_without-arrow" : ""
 
-    let inputAttributes = {
+    const inputAttributes = {
       class: [mainClass, maskedClass, filterDropdown, textLowercaseClass, inputWithoutArrowClass],
       type: type,
       "data-type": dataType,
