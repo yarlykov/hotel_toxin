@@ -2,16 +2,15 @@
 import Inputmask from 'inputmask';
 
 function getToday() {
-  let todayDate = new Date();
-  let day = todayDate.getDate();
-  let month = todayDate.getMonth() + 1;
+  const todayDate = new Date();
+  const day = todayDate.getDate();
+  const month = todayDate.getMonth() + 1;
   const year = todayDate.getFullYear();
+  const formattedDay = (day < 10) ? `0${day}` : day;
+  const formattedMonth = (month < 10) ? `0${month}` : month;
+  const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
 
-  (day < 10) ? day = `0${day}` : day;
-  (month < 10) ? month = `0${month}` : month;
-  todayDate = `${day}/${month}/${year}`;
-
-  return todayDate;
+  return formattedDate;
 }
 
 /* =============== Masked Text Field ================== */
