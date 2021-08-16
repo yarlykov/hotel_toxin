@@ -1,4 +1,4 @@
-import Checkbox from './Checkbox';
+import Checkbox from './checkbox';
 
 const checkboxDropdownList = document.querySelectorAll('[data-id="checkbox-dropdown"]');
 

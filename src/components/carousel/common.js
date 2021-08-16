@@ -1,4 +1,4 @@
-import Carousel from './Carousel';
+import Carousel from './carousel';
 
 const carouselElements = document.querySelectorAll('.js-carousel');
 const options = {

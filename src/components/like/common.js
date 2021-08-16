@@ -1,4 +1,4 @@
-import Like from './Like';
+import Like from './like';
 
 const likeButtonNodes = document.querySelectorAll('[data-id="like-button"]');
 if (likeButtonNodes.length > 0) {

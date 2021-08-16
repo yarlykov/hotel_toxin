@@ -1,4 +1,4 @@
-import Dropdown from './Dropdown';
+import Dropdown from './dropdown';
 
 $.fn.dropdown = function (options) {
   return this.each(function () {

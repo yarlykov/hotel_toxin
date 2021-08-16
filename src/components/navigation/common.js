@@ -1,4 +1,4 @@
-import Navigation from './Navigation';
+import Navigation from './navigation';
 
 const navigationItemDropdown = document.querySelectorAll('[data-id="navigation-dropdown-item"]');
 

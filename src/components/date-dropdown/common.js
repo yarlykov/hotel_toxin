@@ -1,6 +1,6 @@
 import 'air-datepicker/dist/js/datepicker';
 import 'air-datepicker/dist/css/datepicker.css';
-import DateDropdown from './DateDropdown';
+import DateDropdown from './date-dropdown';
 
 /* =============== Date dropdown ================== */
 const $twoInputsDateDropdown = $('[data-type="date-dropdown-start"]');

@@ -1,4 +1,4 @@
-import Chart from './Chart';
+import Chart from './chart';
 
 const chartElement = document.querySelector('[data-id="chart"]');
 const options = {
