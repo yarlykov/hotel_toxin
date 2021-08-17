@@ -4,11 +4,16 @@
   &__item {
     display: flex;
     align-items: center;
-    padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 17px;
+  }
+
+  &__icon-wrapper {
+    padding-top: 4px;
   }
 
   &__icon {
-    padding-top: 1px;
+    display: inline-block;
     font-family: 'Material Icons';
     font-size: 48px;
     line-height: 41px;

@@ -53,35 +53,53 @@
   &__radio-buttons-container {
     display: flex;
     justify-content: space-between;
+    padding-top: 11px;
     padding-right: 46px;
+  }
+
+  &__toggle-buttons-container {
+    padding-top: 11px;
   }
 
   &__like-buttons-container {
     display: flex;
     justify-content: space-between;
+    padding-top: 11px;
     padding-right: 176px;
   }
 
   &__rating-buttons-container {
     display: flex;
     justify-content: space-between;
+    padding-top: 11px;
     padding-right: 6px;
   }
-}
 
-.form-elements__text-fields-buttons {
-  display: grid;
-  grid-template-columns: 320px auto 320px;
-  column-gap: 126px;
-  margin-top: 3px;
-}
+  &__buttons-wrapper {
+    &:nth-child(1) {
+      padding-top: 0;
+    }
+    &:nth-child(2) {
+      padding-top: 30px;
+    }
+    &:nth-child(3) {
+      padding-top: 40px;
+    }
+  }
 
-.button {
+  &__range-slider-container {
+    max-width: 266px;
+  }
 
-  &__block {
+  &__buttons-container {
     display: flex;
     justify-content: space-between;
     padding-bottom: 30px;
+    padding-top: 11px;
+
+    &:nth-child(3) {
+      padding-top: 0;
+    }
 
     & .button:nth-child(1) {
       margin-right: 19px;
@@ -92,98 +110,89 @@
     & .button:nth-child(3) {
       margin-right: 102px;
     }
-    &_inline {
-      display: inline-flex;
-      justify-content: space-between;
-      padding-bottom: 29px;
-      & .button_inline {
-        padding-right: 21px;
-      }
+  }
+
+  &__buttons-container-inline {
+    display: inline-flex;
+    justify-content: space-between;
+    padding-bottom: 29px;
+    & .button_inline {
+      padding-right: 21px;
     }
   }
 
-  &__title {
-    @include font-h3;
-    padding-bottom: 16px;
+  &__pagination-container {
+    padding-top: 11px;
   }
-}
 
-.form-elements__dropdowns {
-  padding-top: 79px;
-  grid-column: span 3;
-  display: grid;
-  max-width: 1158px;
-  grid-template-columns: 1fr 2fr;
-  column-gap: 60px;
-}
+  &__dropdowns {
+    display: grid;
+    grid-column: span 3;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 60px;
+    max-width: 1158px;
+    padding-top: 79px;
+  }
 
-.dropdown {
-  &__wrapper {
+  &__dropdowns-wrapper {
     margin-bottom: 20px;
   }
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    margin: 0px 0 5px 0;
+  &__dropdowns-container {
+    min-width: 320px;
   }
 
-  &__title {
-    font-weight: bold;
-    font-size: 12px;
-    color: $mainTextColor;
-  }
-
-  &__block_right {
+  &__dropdowns-block-right {
     display: flex;
     min-width: 712px;
     justify-content: space-between;
     grid-column: grid-column-start;
   }
-}
 
-.form-elements__lists {
-  padding-top: 152px;
-  grid-column: span 3;
-  display: grid;
-  max-width: 1158px;
-  grid-template-columns: 266px 2fr;
-  column-gap: 180px;
-}
-
-.list {
-  &__title {
-    @include font-h3;
-    padding-top: 1px;
-    padding-bottom: 13px;
-  }
-  &__wrapper {
-    &:first-child {
-      margin-bottom: 24px;
-    }
-  }
-  &__wrapper_bullet {
-    padding-right: 54px;
+  &__text-fields-buttons {
+    display: grid;
+    grid-template-columns: 320px auto 320px;
+    column-gap: 126px;
+    margin-top: 3px;
   }
 
-  &__block_other {
+  &__lists {
+    padding-top: 152px;
+    grid-column: span 3;
+    display: grid;
+    max-width: 1158px;
+    grid-template-columns: 266px 2fr;
+    column-gap: 180px;
+  }
+
+  &__lists-wrapper-expandable {
+    padding-bottom: 30px;
+  }
+
+  &__lists-block-other {
     display: flex;
     min-width: 712px;
     justify-content: space-between;
   }
-}
 
-.form-elements__room-review {
-  padding-top: 76px;
-  grid-column: span 3;
-  display: grid;
-  max-width: 1158px;
-  grid-template-columns: 266px 2fr;
-  column-gap: 180px;
+  &__lists-wrapper-bullet {
+    padding-right: 54px;
+  }
+
+  &__room-review {
+    display: grid;
+    grid-column: span 3;
+    grid-template-columns: 266px 2fr;
+    column-gap: 180px;
+    max-width: 1158px;
+    padding-top: 49px;
+  }
+
+  &__room-review-wrapper {
+    &:last-child {
+      padding-top: 30px;
+    }
+  }
 }
 
 .room-review__wrapper_comment {

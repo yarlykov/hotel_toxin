@@ -31,8 +31,8 @@
   &__information {
     display: grid;
     grid-template-columns: 291px 1fr;
-    grid-gap: 33px 70px;
-    padding-bottom: 72px;
+    grid-gap: 10px 70px;
+    padding-bottom: 71px;
 
     @media (max-width: 800px) {
       grid-template-columns: 320px;
@@ -56,9 +56,11 @@
     @include font-body;
     padding-top: 19px;
   }
-}
 
-.room-details {
+  &__rules-list {
+    padding-top: 10px;
+  }
+
   &__title {
     @include font-h2;
 
@@ -94,6 +96,7 @@
     max-width: 711px;
     grid-column: 1/3;
     padding-top: 2px;
+    padding-bottom: 23px;
 
     @media (max-width: 800px) {
       grid-column: 1/2;
@@ -109,9 +112,7 @@
   &__cancel {
     max-width: 341px;
   }
-}
 
-.room-details {
   &__feedback-header {
     display: flex;
     justify-content: space-between;

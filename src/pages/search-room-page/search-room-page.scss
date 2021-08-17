@@ -6,7 +6,7 @@
     display: flex;
     max-width: 1160px;
     margin: 0 auto;
-    margin-bottom: 68px;
+    margin-bottom: 65px;
 
     @media (max-width: 1280px) {
       max-width: 1280px;
@@ -23,7 +23,7 @@
 
     @media (max-width: 1280px) {
       position: absolute;
-      transform: translateX(-270px);
+      transform: translateX(-275px);
     }
 
     & .dropdown__guests {

@@ -20,6 +20,7 @@ new DateDropdown($twoInputsDateDropdown, {
 /* =============== Filter date dropdown ================== */
 const $filterDateDropdown = $('[data-type="filter-date-dropdown"]');
 new DateDropdown($filterDateDropdown, {
+  startDate: new Date('2019-08-08'),
   dateFormat: 'd M',
   multipleDatesSeparator: ' - ',
   offset: 5,
@@ -36,6 +37,7 @@ new DateDropdown($filterDateDropdown, {
 /* =============== For Cards page ================== */
 const $inlineDateDropdown = $('[data-type="inline-date-dropdown"]');
 new DateDropdown($inlineDateDropdown, {
+  startDate: new Date('2019-08-08'),
   dateFormat: 'd M',
   multipleDatesSeparator: ' - ',
   range: true,

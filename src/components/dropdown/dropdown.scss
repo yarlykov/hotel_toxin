@@ -5,7 +5,7 @@
   position: relative;
 
   &_guests {
-    width: $inputWidthSizeL;
+    min-width: 100%;
   }
 
   &_comfort {
@@ -165,7 +165,7 @@
     display: flex;
     z-index: 1000;
     justify-content: space-between;
-    padding: 6px 7px 13px 14px;
+    padding: 12px 7px 13px 14px;
     background: #fff;
     border-radius: 0 0 4px 4px;
   }
