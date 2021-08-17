@@ -1,22 +1,26 @@
-mixin likeButton({ icon="", value=0, disable=false })
+mixin like({ icon="", value=0, disable=false })
   -
-    const btnDisableClassName = disable ? "like__disable_border" : ""
-    const disableClassName = disable ? "like__disable" : ""
-    icon = disable ? icon + "_border" : icon 
+    const btnDisableClassName = disable ? "like_inactive-border" : ""
+    const disableText = disable ? "like__text_inactive" : ""
+    const iconName = disable ? `empty-${icon}` : icon 
     const likeIconClass = "like__icon"
-    const likeIconType = "like__icon_" + icon
+    const likeIconModifier = `like__icon_${iconName}`
 
   button&attributes({
+    class: ["like", `${btnDisableClassName}`],
     type: "button",
+    "data-id": "like-button",
     name: "like",
-    class: ["like__button", `${btnDisableClassName}`, "js-like__button" ]
   })
-    span(class=`${disableClassName}`).like__text.js-like__text #{value}
-    span.like__button_border
+    span&attributes({
+      class: ["like__text", disableText],
+      "data-id": "like-text"
+    }) #{value}
+    span.like__button-border
       span&attributes({
         class: [
           likeIconClass,
-          disableClassName,
-          likeIconType
-        ]
+          likeIconModifier,
+        ],
+        "data-id": "like-icon",
       })

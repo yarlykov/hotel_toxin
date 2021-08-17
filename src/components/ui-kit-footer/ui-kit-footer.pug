@@ -1,7 +1,7 @@
 mixin ui-kit-footer({ footerLinks=[], background=false })
-  - const backgroundClass = background ? "ui-kit-footer_background" : ""
+  - const backgroundClass = background ? "ui-kit-header_background_gray" : ""
 
-  footer(class=backgroundClass).ui-kit-footer
+  footer.ui-kit-footer
     .ui-kit-footer__container
       each footerLink in footerLinks
         a&attributes({

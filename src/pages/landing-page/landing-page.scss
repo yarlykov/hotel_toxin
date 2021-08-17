@@ -1,0 +1,58 @@
+@import '@variables';
+@import '@mixins';
+
+.landing {
+  background: url('./image/landing.jpg') no-repeat;
+  background-size: cover;
+  background-size: 108%;
+  background-position: 44% 68%;
+  box-sizing: border-box;
+
+  @media (max-width: 1280px) {
+    background-size: cover;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 1440px;
+    padding: 70px 0 0 140px;
+    min-width: 320px;
+    margin: 0 auto;
+
+    @media (max-width: 960px) {
+      flex-direction: row;
+      justify-content: center;
+      padding: 100px 0 100px 0;
+    }
+
+    @media (max-width: 480px) {
+      padding: 100px 0 200px 0;
+    }
+  }
+
+  &__search-room {
+    @media (max-width: 960px) {
+      align-items: center;
+      padding-bottom: 100px;
+    }
+    @media (max-width: 480px) {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__self-presentation {
+    @include font-body;
+    align-self: flex-end;
+    max-width: 400px;
+    padding-top: 318px;
+    padding-right: 119px;
+    padding-bottom: 20px;
+    text-align: end;
+
+    @media (max-width: 960px) {
+      display: none;
+    }
+  }
+}

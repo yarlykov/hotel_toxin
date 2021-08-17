@@ -1,6 +1,11 @@
 @import '@variables';
 
 .room-photo {
+  display: flex;
+  max-width: 1440px;
+  max-height: 485px;
+  margin: 0 auto;
+
   &__main {
     flex: 1 0 981px;
     min-width: 320px;
@@ -20,14 +25,14 @@
     @media (max-width: 1280px) {
       display: none;
     }
+  }
 
-    &_top {
-      height: 50%;
-      transform: scale(-1, 1);
-    }
-    &_bottom {
-      height: 50%;
-    }
+  &__aside-top {
+    height: 50%;
+    transform: scale(-1, 1);
+  }
+  &__aside-bottom {
+    height: 50%;
   }
 
   &__item {

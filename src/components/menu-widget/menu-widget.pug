@@ -1,13 +1,13 @@
 mixin menu-widget({ uiKit=[], sitePages=[] })
   .menu-widget__list
-      ul.menu-widget__list_ui-kit
+      ul.menu-widget__list-ui-kit
         each item in uiKit
           li.menu-widget__item
             a&attributes({
               class: ['menu-widget__text', 'js-menu-widget__text'],
               href: `./${item.link}.html`,
             }) #{item.title}
-      ul.menu-widget__list_pages
+      ul.menu-widget__list-pages
         each item in sitePages
           li.menu-widget__item
             a&attributes({

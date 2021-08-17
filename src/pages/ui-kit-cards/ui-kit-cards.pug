@@ -1,0 +1,76 @@
+extends ../../layouts/ui-kit-layout.pug
+include ../../components/card/card.pug
+include ../../components/room-review-widget/room-review-widget.pug
+include ../../components/date-dropdown/date-dropdown.pug
+
+block variables
+  - const title = "Cards"
+
+block header
+  +ui-kit-header({ background: true })  
+
+block content
+  .cards-page
+    main.cards-page__container
+      .cards-page__content
+        .cards-page__column
+          +card({
+            title: "Найдём номера под ваши\u00A0пожелания",
+            type: "search",
+            formAction: "error-page",
+            buttonText: "подобрать номер",
+            buttonType: "button",
+          })
+          +card({
+            title: "Регистрация аккаунта",
+            type: "registration",
+            formAction: "error-page",
+            buttonText: "перейти к оплате",
+            buttonType: "button",
+            question: "Уже есть аккаунт на Toxin",
+           })
+        .cards-page__column
+          +card({
+            type: "calculation",
+            formAction: "error-page",
+            buttonText: "забронировать",
+            buttonType: "button",
+            numberOfGuests: 3,
+          })
+          +card({
+            title: "Войти",
+            type: "entry",
+            formAction: "error-page",
+            buttonText: "войти",
+            buttonType: "button",
+            question: "Нет аккаунта на Toxin?",
+          })
+
+        .cards-page__column
+          .cards-page__calendar
+            +date-dropdown({ dataType: "inline-date-dropdown" })
+
+          +room-review-widget({
+            images: [
+              { name: "room-img-1.jpg"},
+              { name: "room-img-2.jpg"},
+              { name: "room-img-3.jpg"},
+              { name: "room-img-4.jpg"},
+            ],
+            roomNumber: { symbol: "№", value: "888", text: "люкс" },
+            roomPrice: { value: "9 990", text: "в сутки" },
+            rating: { rating: 5 },
+            commentCount: { value: "145", text: "Отзывов"} 
+           })
+          +room-review-widget({
+            images: [
+              { name: "room-img-2.jpg"},
+              { name: "room-img-5.jpg"},
+              { name: "room-img-6.jpg"},
+              { name: "room-img-7.jpg"},
+            ],
+            roomNumber: { symbol: "№", value: "840", text: "люкс" },
+            roomPrice: { value: "9 900", text: "в сутки"},
+            rating: { rating: 4 },
+            commentCount: { value: "65", text: "Отзывов"} 
+          })

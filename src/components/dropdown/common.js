@@ -1,12 +1,7 @@
 import Dropdown from './dropdown';
 
-$.fn.dropdown = function (options) {
-  return this.each(function () {
-    new Dropdown(this, options);
-  });
-};
-
-$('.js-dropdown__comfort').dropdown({
+const comfortDropdownNodes = document.querySelectorAll('[data-group="comfort"]');
+const comfortOptions = {
   type: 'comfort',
   defaultText: 'Удобства номера',
   minItems: 0,
@@ -17,9 +12,14 @@ $('.js-dropdown__comfort').dropdown({
     beds: ['кровать', 'кровати', 'кроватей'],
     baths: ['ванная комната', 'ванных комнаты', 'ванных комнат'],
   },
-});
+};
 
-$('.js-dropdown__guests').dropdown({
+if (comfortDropdownNodes.length > 0) {
+  comfortDropdownNodes.forEach((element) => new Dropdown(element, comfortOptions));
+}
+
+const guestsDropdownNodes = document.querySelectorAll('[data-group="guests"]');
+const guestsOptions = {
   type: 'guests',
   defaultText: 'Сколько гостей',
   minItems: 0,
@@ -29,4 +29,8 @@ $('.js-dropdown__guests').dropdown({
     guests: ['гость', 'гостя', 'гостей'],
     babies: ['младенец', 'младенца', 'младенцев'],
   },
-});
+};
+
+if (guestsDropdownNodes.length > 0) {
+  guestsDropdownNodes.forEach((element) => new Dropdown(element, guestsOptions));
+}

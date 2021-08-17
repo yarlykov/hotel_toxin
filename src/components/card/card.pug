@@ -7,6 +7,7 @@ include ../toggle/toggle.pug
 include ../radio/radio.pug
 include ../button/button.pug
 include ../price-calc/price-calc.pug
+include ../heading/heading.pug
 
 mixin card({ formMethod="", formAction="", title="", type="", buttonText="", buttonType="", question="", numberOfGuests=0 })
 
@@ -19,34 +20,29 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
     const entry = (type === "entry")
     const searchOrCalculation = (search || calculation)
 
-  .card__wrapper
+  .card
     if (calculation)
       .card__title-calculation
         +room-number({ symbol: "№", value: "888", text: "люкс" })
         +room-price({ value: "9 990", text: "в сутки"})
     else
-      h2.card__title #{title}
+      .card__title
+        +heading({ level: "h1", title: title })
     form(method=`${formMethod}`, action=`./${formAction}.html`)
       if (searchOrCalculation)
-        .card__date-dropdown
-          .date-dropdown__start
-            .text-field__header
-              span.text-field__title прибытие
+        section.card__date-dropdown
+          .card__date-dropdown-start
+            +heading({ level: "h3", title: "прибытие" })
             +text-field({
-                classList: [], dropdown: "start",
-                type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-                name: "date", autocomplete: "off", arrow: true
+                type: "text", dataType: "date-dropdown-start", placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", arrow: true
             })
-          .date-dropdown__end
-            .text-field__header
-              span.text-field__title выезд
+          .card__date-dropdown-end
+            +heading({ level: "h3", title: "выезд" })
             +text-field({
-                classList: [], dropdown: "end",
-                type: "text", placeholder: "ДД.ММ.ГГГГ", size:"small", 
-                name: "date", autocomplete: "off", arrow: true
+                type: "text", dataType: "date-dropdown-end", placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", arrow: true
             })
-        div(class= search ? "card__guests-dropdown_search" : "").card__guests-dropdown
-          span.card__guests-dropdown_title гости
+        div(class= search ? "card__guests-dropdown-search" : "card__guests-dropdown")
+          +heading({ level: "h3", title: "гости" })
           +dropdown({
             isOpen: false, 
             group: "guests", 
@@ -60,34 +56,31 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
             +price-calc()
 
       else if (registration)
-        .card__register-details
-          .register__details
-            .register__name
-              +text-field({ placeholder: "Имя", type: "text", name: "name", autocomplete: "on" })
-            .register__surname
-              +text-field({ placeholder: "Фамилия", type: "text", name: "surname", autocomplete: "on" })
-        .card__radio-buttons
+        section.card__register-details
+          .card__register-details-name
+            +text-field({ placeholder: "Имя", type: "text", name: "name", autocomplete: "on" })
+          .card__register-details-surname
+            +text-field({ placeholder: "Фамилия", type: "text", name: "surname", autocomplete: "on" })
+        section.card__radio-buttons
           +radio({ group: "gender", title: "Мужчина", checked: true})
           +radio({ group: "gender", title: "Женщина", checked: false})
         .card__birthday
-          .text-field__header
-            .text-field__title дата рождения
-          +text-field({ classList: ["js-masked__text-field"],placeholder: "ДД.ММ.ГГГГ", type: "text", name: "birthday", autocomplete: "on" })
-        .card__login-details
-          .text-field__header
-            .text-field__title данные для входа в сервис
-          .login-details__email
+          +heading({ level: "h3", title: "дата рождения" })
+          +text-field({ dataType: "masked-text-field", placeholder: "ДД.ММ.ГГГГ", type: "text", name: "birthday", autocomplete: "on" })
+        section.card__login-details
+          +heading({ level: "h3", title: "данные для входа в сервис" })
+          .card__login-details-email
             +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
-          .login-details__password
+          .card__login-details-password
             +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
         .card__toggle
           +toggle({ title: "Получать спецпредложения" })
 
       else if (entry)
-        .card__login-details
-          .login-details__email
+        section.card__login-details
+          .card__login-details-email
             +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
-          .login-details__password
+          .card__login-details-password
             +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
       //- Add button
       if (buttonText !== "")
@@ -96,6 +89,6 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
       //- Add question
       if (question !== "")
         .card__question
-          span.register__question_text #{question}
-          .register__question_button
+          span.card__question-text #{question}
+          .card__question-button
             +button({ buttonName: questionButton, buttonVariation: "fillWhite", textColor: "purple", size: "small", link: questionButtonLink })

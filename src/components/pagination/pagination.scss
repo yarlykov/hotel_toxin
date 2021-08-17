@@ -4,22 +4,22 @@
 .paginationjs {
   display: flex;
   flex-direction: column;
-  max-width: 22.8571rem;
-  font: 0.8571rem/1.0714rem $mainFont;
+  max-width: 320px;
+  font: 12px/15px $mainFont;
 }
 
-.js-pagination__next-button {
+.paginationjs-next-button {
   color: #fff;
-  line-height: 2.8571rem;
+  line-height: 40px;
 }
-.js-pagination__next-button::before {
+.paginationjs-next-button::before {
   @include font-material-icons;
   content: '\e5c8';
   color: #fff;
-  line-height: 2.8571rem;
+  line-height: 40px;
 }
 
-.js-pagination__next-button:hover::before {
+.paginationjs-next-button:hover::before {
   color: $textColor_75;
 }
 
@@ -28,18 +28,18 @@
 }
 
 .paginationjs .paginationjs-pages li > a {
-  min-width: 2.8571rem;
-  height: 2.8571rem;
-  line-height: 2.8571rem;
+  min-width: 40px;
+  height: 40px;
+  line-height: 40px;
   background: #fff;
-  font-size: 0.8571rem;
+  font-size: 12px;
   color: $textColor_50;
   outline: none;
 }
 
 .paginationjs .paginationjs-pages li > a:hover {
   background: #eee;
-  border-radius: 1.5714rem;
+  border-radius: 22px;
 }
 
 .paginationjs .paginationjs-pages li.active > a {
@@ -60,22 +60,22 @@
 
 .paginationjs .paginationjs-pages li:first-child,
 .paginationjs .paginationjs-pages li:first-child > a {
-  border-radius: 1.5714rem;
+  border-radius: 22px;
 }
 
 .paginationjs .paginationjs-pages li:last-child {
   border-right: none;
-  border-radius: 1.5714rem;
+  border-radius: 22px;
 }
 
 .paginationjs .paginationjs-pages li:last-child > a {
-  border-radius: 1.5714rem;
+  border-radius: 22px;
   background: $secondGradient;
   font-weight: 700;
 }
 
 .paginationjs .paginationjs-nav {
-  margin: 0.5714rem 0 0 0.3571rem;
+  margin: 8px 0 0 5px;
   color: $textColor_75;
-  font: 1rem/1.7143rem $mainFont;
+  font: 14px/24px $mainFont;
 }

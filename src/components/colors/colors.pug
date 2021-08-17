@@ -1,11 +1,11 @@
-//-colors
-mixin colors({ colorItems=[] })
-  each colorItem in colorItems
-    .colors
-      - const colorClass = "colors__square_" + colorItem.color
-      div&attributes({
-        class: ["colors__square", colorClass]
-      })
-      .colors__description
-        .colors__name #{colorItem.description}
-        span.colors__code #{colorItem.colorCode}
+mixin colors( colorItems=[] )
+  ul.colors
+    each colorItem in colorItems
+      li.colors__item
+        - const colorClass = "colors__preview_color_" + colorItem.color
+        div&attributes({
+          class: ["colors__preview", colorClass]
+        })
+        .colors__description
+          p.colors__name #{colorItem.description}
+          p.colors__code #{colorItem.colorCode}

@@ -3,12 +3,12 @@
 .info-icon {
   display: inline-flex;
   box-sizing: border-box;
-  width: 1.4286rem;
-  height: 1.4286rem;
-  margin: 0 auto 0 0.3571rem;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto 0 5px;
   border-radius: 50%;
   border: $infoIconBorder;
-  line-height: 1.7143rem;
+  line-height: 24px;
   cursor: pointer;
 
   &:hover {
@@ -27,10 +27,10 @@
     content: attr(data-tooltip);
     position: absolute;
     top: 0;
-    width: 14.2857rem;
-    right: -3.5714rem;
+    width: 200px;
+    right: -50px;
     border-radius: $mainBorderRadius;
-    padding: 0.5rem;
+    padding: 7px;
     opacity: 0;
     transition: 0.5s;
 
@@ -42,13 +42,13 @@
 
   & [data-tooltip]:hover:after {
     opacity: 1;
-    top: 1.5rem;
+    top: 21px;
   }
 
   &__text {
     font: 700 12px/14px Montserrat, Arial, sans-serif;
     align-self: center;
     color: rgba(85, 86, 126, 0.25);
-    padding: 0rem 0.5rem;
+    padding: 0px 7px;
   }
 }

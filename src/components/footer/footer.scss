@@ -2,88 +2,92 @@
 
 .footer {
   box-sizing: border-box;
-  display: flex;
-  padding: 7.1429rem 9rem 7.1429rem 10rem;
+  background-color: #fff;
 
-  @media (max-width: 1280px) {
-    justify-content: space-around;
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  &_with-top-border {
+    border-top: 1px solid $textColor_25;
   }
 
   &__wrapper {
     box-sizing: border-box;
-    background-color: #fff;
+    display: flex;
+    padding: 100px 126px 100px 140px;
 
-    &_border {
-      border-top: 1px solid $textColor_25;
-    }
-
-    @media (max-width: 767px) {
-      display: none;
+    @media (max-width: 1280px) {
+      justify-content: space-around;
     }
   }
 
   &__container {
-    max-width: 102.8571rem;
-    min-width: 22.8571rem;
+    max-width: 1440px;
+    min-width: 320px;
     margin: 0px auto;
   }
 
   &__links {
-    min-width: 40rem;
+    min-width: 560px;
     display: flex;
-    margin-left: 2.8571rem;
-    flex-basis: 10.7143rem;
+    margin-left: 40px;
+    flex-basis: 150px;
     justify-content: space-between;
-    padding-top: 0.2857rem;
+    padding-top: 4px;
     transition: all 0.3s;
 
     @media (max-width: 1280px) {
       display: none;
     }
+  }
 
-    &_column {
-      min-width: 11.4286rem;
-    }
+  &__links-column {
+    min-width: 160px;
   }
 
   & .subscribe {
     margin-left: auto;
   }
 
-  &__award {
-    padding-top: 0.9286rem;
-    max-width: 18.5714rem;
+  &__presentation {
+    padding-top: 13px;
+    max-width: 260px;
     margin: 0;
-    font-size: 1rem;
-    line-height: 1.7143rem;
+    font-size: 14px;
+    line-height: 24px;
     color: $textColor_75;
   }
+
   &__bottom {
     border-top: 1px solid rgba(31, 32, 65, 0.1);
     box-shadow: 0px 10px 20px $textColor_5;
+  }
 
-    &_wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.6071rem 0rem;
-      padding-left: 10rem;
-      padding-right: 9rem;
+  &__bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    min-width: 320px;
+    margin: 0px auto;
+    padding: 22.5px 0px;
+    padding-left: 140px;
+    padding-right: 126px;
 
-      @media (max-width: 1280px) {
-        justify-content: space-around;
-      }
+    @media (max-width: 1280px) {
+      justify-content: space-around;
     }
   }
 
   &__copyright-text {
     font-family: $mainFont;
-    font-size: 1rem;
-    line-height: 1.2143rem;
+    font-size: 14px;
+    line-height: 17px;
     color: $textColor_75;
   }
 
   &__social {
-    padding-right: 0.1429rem;
+    padding-right: 2px;
   }
 }

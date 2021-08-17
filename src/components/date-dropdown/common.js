@@ -1,10 +1,10 @@
 import 'air-datepicker/dist/js/datepicker';
 import 'air-datepicker/dist/css/datepicker.css';
-import DateDropdown from './DateDropdown';
+import DateDropdown from './date-dropdown';
 
 /* =============== Date dropdown ================== */
-const twoInputsDateDropdown = $('.js-date-dropdown__day-start');
-new DateDropdown(twoInputsDateDropdown, {
+const $twoInputsDateDropdown = $('[data-type="date-dropdown-start"]');
+new DateDropdown($twoInputsDateDropdown, {
   dateFormat: 'dd.mm.yyyy',
   position: 'bottom left',
   offset: 5,
@@ -18,8 +18,9 @@ new DateDropdown(twoInputsDateDropdown, {
 });
 
 /* =============== Filter date dropdown ================== */
-const filterDateDropdown = $('.js-date-dropdown__filter');
-new DateDropdown(filterDateDropdown, {
+const $filterDateDropdown = $('[data-type="filter-date-dropdown"]');
+new DateDropdown($filterDateDropdown, {
+  startDate: new Date('2019-08-08'),
   dateFormat: 'd M',
   multipleDatesSeparator: ' - ',
   offset: 5,
@@ -34,8 +35,9 @@ new DateDropdown(filterDateDropdown, {
 });
 
 /* =============== For Cards page ================== */
-const inlineDateDropdown = $('.js-date-dropdown__inline');
-new DateDropdown(inlineDateDropdown, {
+const $inlineDateDropdown = $('[data-type="inline-date-dropdown"]');
+new DateDropdown($inlineDateDropdown, {
+  startDate: new Date('2019-08-08'),
   dateFormat: 'd M',
   multipleDatesSeparator: ' - ',
   range: true,

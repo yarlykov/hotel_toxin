@@ -1,0 +1,11 @@
+mixin room-dignities({ icon="", title="", subtitle="", bottomLine=true})
+  - const iconClass = `room-dignities__icon_type_${icon}`
+  .room-dignities
+    div.room-dignities__item
+      div.room-dignities__icon-wrapper
+        span.room-dignities__icon(class=iconClass).room-dignities__icon_color_purple-gradient
+      .room-dignities__description
+        span.room-dignities__title #{title}
+        span.room-dignities__subtitle #{subtitle}
+    if (bottomLine)
+      hr.room-dignities__line

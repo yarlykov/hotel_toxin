@@ -1,0 +1,30 @@
+@import '@variables';
+@import '@mixins';
+
+.room-selection {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 3px;
+    margin-right: 13px;
+  }
+
+  &__widgets-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 270px);
+    grid-column-gap: 12px;
+    grid-row-gap: 20px;
+    padding: 22px 0 40.5px 0;
+    max-width: 834px;
+    list-style: none;
+
+    @media (max-width: 1280px) {
+      max-width: 1280px;
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+}

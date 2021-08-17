@@ -3,36 +3,38 @@
 
 .colors {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-bottom: 1.4286rem;
+  flex-direction: column;
+  min-width: 270px;
+  margin-right: 415px;
+  padding-left: 10px;
 
-  &__wrapper {
+  &__item {
     display: flex;
-    flex-direction: column;
-    min-width: 19.2857rem;
-    margin-right: 29.6429rem;
-    padding-left: 0.7143rem;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 20px;
   }
 
-  &__square {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 0.4286rem;
+  &__preview {
+    min-width: 70px;
+    min-height: 70px;
+    border-radius: 6px;
+  }
 
-    &_dark_100 {
+  &__preview_color {
+    &_opaque {
       background: $mainTextColor;
     }
-    &_dark_75 {
+    &_75-percent-transparent {
       background: $textColor_75;
     }
-    &_dark_50 {
+    &_translucent {
       background: $textColor_50;
     }
-    &_dark_25 {
+    &_25-percent-transparent {
       background: $textColor_25;
     }
-    &_dark_5 {
+    &_5-percent-transparent {
       background: $textColor_5;
     }
     &_purple {
@@ -44,8 +46,9 @@
   }
 
   &__description {
-    font: 400 1.3571rem/2.0714rem $mainFont;
-    padding-left: 2.8571rem;
+    max-width: 300px;
+    padding-left: 40px;
+    font: 400 19px/29px $mainFont;
   }
 
   &__name {

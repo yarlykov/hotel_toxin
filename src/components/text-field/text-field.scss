@@ -18,38 +18,65 @@ select:-webkit-autofill:focus {
   border-radius: $mainBorderRadius;
   box-sizing: border-box;
 
-  &__size {
+  &_size {
+    &_large {
+      max-width: 320px;
+    }
+
     &_medium {
-      width: 266px;
+      max-width: 266px;
     }
+
     &_small {
-      width: 150px;
+      max-width: 150px;
     }
   }
 
-  &__arrow {
-    &_down {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-
-      &::before {
-        @include font-material-icons;
-        content: '\e5cf';
-        color: $textColor_50;
-        cursor: pointer;
-      }
+  &_focused {
+    border: $focusBorder;
+    & .text-field__input {
+      border: none;
+    }
+    & .text-field__input::placeholder {
+      letter-spacing: -0.18px;
+      color: $textColor_75;
+    }
+    & .text-field__input {
+      padding-bottom: 2px;
+      color: $textColor_75;
     }
   }
 
-  &__subscribe_button {
+  &:hover,
+  &:focus-within {
+    border: $focusBorder;
+
+    & .text-field__input::placeholder {
+      color: $textColor_75;
+    }
+  }
+
+  &__arrow-down {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    &::before {
+      @include font-material-icons;
+      content: '\e5cf';
+      color: $textColor_50;
+      cursor: pointer;
+    }
+  }
+
+  &__arrow-subscribe {
     position: absolute;
     right: 0;
-    width: 3rem;
-    height: 3.1429rem;
+    width: 42px;
+    height: 44px;
     border: none;
     border-left: none;
-    border-radius: 0 0.2857rem 0.2857rem 0rem;
+    border-radius: 0 4px 4px 0px;
     outline: none;
 
     &::before {
@@ -57,13 +84,17 @@ select:-webkit-autofill:focus {
       content: '\e5c8';
       cursor: pointer;
     }
+
+    &_with-gradient-fill {
+      @include text-gradient-fill($mainGradient);
+    }
   }
 
   &__input {
     @include font-body;
     width: 100%;
-    height: 3rem;
-    padding: 0 0rem 0 1rem;
+    height: 42px;
+    padding: 0 0px 0 14px;
     box-sizing: border-box;
     border: none;
     border-radius: $mainBorderRadius;
@@ -79,42 +110,12 @@ select:-webkit-autofill:focus {
       color: $textColor_25;
     }
 
-    &_lowercase {
+    &_without-arrow {
+      width: 266px - $inputHeight;
+    }
+
+    &_lowercase-text {
       text-transform: lowercase;
-    }
-
-    &_placeholder_dark-75 {
-      &::placeholder {
-        color: $textColor_75;
-      }
-    }
-  }
-
-  &__subscribe {
-    width: 266px - $inputHeight;
-  }
-
-  &_hover {
-    border: $focusBorder;
-    & .text-field__input {
-      border: none;
-    }
-    & .text-field__input::placeholder {
-      letter-spacing: -0.18px;
-      color: $textColor_75;
-    }
-    & .text-field__input {
-      padding-bottom: 0.1429rem;
-      color: $textColor_75;
-    }
-  }
-
-  &:hover,
-  &:focus-within {
-    border: $focusBorder;
-    
-    & .text-field__input::placeholder {
-      color: $textColor_75;
     }
   }
 }

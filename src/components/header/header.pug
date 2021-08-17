@@ -8,15 +8,15 @@ mixin header({ logo={}, navigationList=[], buttonEntry="", buttonRegister="", lo
       .header__body
         +logo(logo)
         .header__menu-burger.js-header__menu-burger
-          span.header__menu-burger_line.js-header__menu-burger_line
-        .header__menu.js-header__menu
+          span.header__menu-burger-line
+        .header__menu
           .header__navigation
             +navigation({ navigationList, navigationSubList })
           if logged
-            .header__logged #{userName}
+            p.header__logged #{userName}
           else
             .header__login
-              .header__login_entry
-                +button({ classList: [], buttonName: buttonEntry, size: "stretch", textColor: "purple",  buttonVariation: "fillWhite", link: "sing-in-page" })
-              .header__login_register
-                +button({ classList: [], buttonName: buttonRegister, size: "stretch", textColor: "white", link: "registration-page" })
+              .header__login-entry
+                +button({ buttonName: buttonEntry, size: "stretching", textColor: "purple",  buttonVariation: "fillWhite", link: "sing-in-page" })
+              .header__login-register
+                +button({ buttonName: buttonRegister, size: "stretching", textColor: "white", link: "registration-page" })

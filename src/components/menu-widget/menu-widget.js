@@ -16,7 +16,7 @@ class MenuWidget {
     this.startPageStyle = this.$page.style;
 
     this.menuTextColor = this.$page.querySelectorAll('.js-menu-widget__text');
-    this.logo = this.$page.querySelector('.js-logo__color-with-text');
+    this.logo = this.$page.querySelector('.js-logo');
     this.logoTextColor = this.$page.querySelectorAll('.js-logo__letter');
 
     this.store.subscribe((state) => {

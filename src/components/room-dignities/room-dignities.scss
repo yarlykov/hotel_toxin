@@ -1,0 +1,67 @@
+@import '@variables';
+
+.room-dignities {
+  &__item {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 17px;
+  }
+
+  &__icon-wrapper {
+    padding-top: 4px;
+  }
+
+  &__icon {
+    display: inline-block;
+    font-family: 'Material Icons';
+    font-size: 48px;
+    line-height: 41px;
+
+    &_type {
+      &_mood:before {
+        content: '\e7f2';
+      }
+      &_location-city:before {
+        content: '\e7f1';
+      }
+      &_whatshot:before {
+        content: '\e80e';
+      }
+    }
+
+    &_color_purple-gradient {
+      background: $mainGradient;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    height: 48px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    font-weight: normal;
+  }
+
+  &__line {
+    border: none;
+    color: rgba(31, 32, 65, 0.1);
+    background-color: rgba(31, 32, 65, 0.1);
+    height: 1px;
+    margin: 0;
+  }
+}

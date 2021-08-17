@@ -2,48 +2,62 @@
 @import '@mixins';
 
 .checkbox {
-  min-width: 19rem;
-  max-width: 19rem;
+  min-width: 266px;
+  max-width: 266px;
 
-  &__header {
+  &__dropdown {
     @include font-h3;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 1.2143rem;
     cursor: pointer;
+  }
 
-    &_arrow-up {
-      &::before {
-        @include font-material-icons;
-        content: '\e5ce';
-        line-height: 1.0714rem;
-        padding-right: 0.7143rem;
-        color: $textColor_50;
-      }
+  &__dropdown-title {
+    font-size: 12px;
+  }
+
+  &__dropdown-arrow-up {
+    &::before {
+      @include font-material-icons;
+      content: '\e5ce';
+      line-height: 15px;
+      padding-right: 10px;
+      color: $textColor_50;
     }
-    &_arrow-down {
-      &::before {
-        @include font-material-icons;
-        content: '\e5cf';
-        line-height: 1.0714rem;
-        padding-right: 0.7143rem;
-        color: $textColor_50;
-      }
+  }
+  &__dropdown-arrow-down {
+    &::before {
+      @include font-material-icons;
+      content: '\e5cf';
+      line-height: 15px;
+      padding-right: 10px;
+      color: $textColor_50;
     }
   }
 
   &__title {
-    font-weight: inherit;
+    &_font_bold {
+      font-weight: bold;
+      color: $textColor_75;
+    }
+  }
+
+  &__list {
+    padding-top: 12px;
+    visibility: hidden;
+
+    &_opened {
+      visibility: visible;
+    }
   }
 
   &__item {
     display: block;
-    min-height: 1.4286rem;
-    margin-left: 2.1429rem;
-    padding-bottom: 0.7143rem;
+    min-height: 20px;
+    margin-left: 30px;
+    padding-bottom: 10px;
     box-sizing: content-box;
     color: $textColor_50;
-    cursor: pointer;
 
     &:last-child {
       padding-bottom: 0;
@@ -58,10 +72,14 @@
     }
   }
 
+  &__item-container {
+    cursor: pointer;
+  }
+
   &__input {
     position: absolute;
-    width: 0.0714rem;
-    height: 0.0714rem;
+    width: 1px;
+    height: 1px;
     overflow: hidden;
     clip: rect(0 0 0 0);
 
@@ -92,20 +110,15 @@
   &__box {
     box-sizing: border-box;
     position: absolute;
-    width: 1.4286rem;
-    height: 1.4286rem;
-    margin-left: -2.1429rem;
-    border-radius: 0.2857rem;
+    width: 20px;
+    height: 20px;
+    margin-left: -30px;
+    border-radius: 4px;
     background-color: #fff;
     border: $mainBorder;
   }
 
-  &__title_rich {
-    font-weight: bold;
-    color: $textColor_75;
-  }
-
-  &__description_rich {
+  &__description {
     display: inline-block;
     margin-top: 5px;
     color: $textColor_50;

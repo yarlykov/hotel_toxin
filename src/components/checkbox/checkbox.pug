@@ -1,28 +1,26 @@
-mixin checkbox({ mainTitle="", dropdown=false, rich=false, listItems=[]})
-
+mixin checkbox({ title="", dropdown=false, rich=false, listItems=[], isOpened=true})
   -
-    let titleClassName = "checkbox__title"
-    let descriptionClassName = "checkbox__description"
+    const titleClassName = "checkbox__title"
+    const descriptionClassName = "checkbox__description"
+    const titleFontBoldModifier = rich ? "checkbox__title_font_bold" : ""
+    const openDropdownModifier = isOpened ? "checkbox__list_opened" : ""
 
-    titleClassName += rich ? "_rich" : ""
-    descriptionClassName += rich ? "_rich" : ""
-
-    let isDropdown = dropdown ? "js-checkbox" : ""
-
-  div(class=isDropdown).checkbox
-    .checkbox__header
-      div.checkbox__title #{mainTitle}
-      if dropdown
-        .js-checkbox__header_arrow.checkbox__header_arrow-up
-    each item in listItems
-      label.checkbox__item
-        input&attributes({
-          class: "checkbox__input",
-          type: "checkbox",
-          title: item.title,
-          checked: item.checked,
-        })
-        span.checkbox__box
-        span(class = titleClassName) #{item.title}
-          if rich
-            span(class = descriptionClassName) #{item.description}
+  .checkbox
+    if dropdown
+      .checkbox__dropdown(data-id="checkbox-dropdown" tabindex=0)
+        h3.checkbox__dropdown-title #{title}
+        span.checkbox__dropdown-arrow-down(data-id="checkbox-dropdown-arrow")
+    ul.checkbox__list(class=openDropdownModifier data-id="checkbox-list")
+      each item in listItems
+        li.checkbox__item
+          label.checkbox__item-container
+            input&attributes({
+              class: "checkbox__input",
+              type: "checkbox",
+              title: item.title,
+              checked: item.checked,
+            })
+            span.checkbox__box
+            span&attributes({class: [titleClassName, titleFontBoldModifier]}) #{item.title}
+              if rich
+                span(class=descriptionClassName) #{item.description}

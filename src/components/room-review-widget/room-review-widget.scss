@@ -9,7 +9,7 @@
   border-radius: $mainBorderRadius;
 
   &__info {
-    padding: 1.2857rem 1.2143rem 1.3571rem 1.4286rem;
+    padding: 16px 17px 19px 20px;
   }
 
   &__data {
@@ -18,25 +18,25 @@
     align-items: baseline;
 
     & .room-number__value {
-      font-size: 1.4286rem;
+      font-size: 20px;
     }
   }
 
   &__price {
     & .room-price__text {
-      font-size: 0.8571rem;
+      font-size: 12px;
     }
   }
 
   &__border {
-    padding-top: 0.5rem;
+    padding-top: 7px;
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
   }
 
   &__rating {
     display: flex;
     justify-content: space-between;
-    padding-top: 0.5714rem;
+    padding-top: 8px;
   }
 
   &__item {

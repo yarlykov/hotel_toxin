@@ -2,6 +2,6 @@ include ../text-field/text-field.pug
 
 mixin subscribe({ title="", text=""})
   .subscribe
-    h2.subscribe__title #{title}
+    h3.subscribe__title #{title}
     p.subscribe__text #{text}
-    +text-field({ classList: ["text-field__subscribe"], type: "text", placeholder: "Email", name: "email", autocomplete: "on", subscribe: true})
+    +text-field({ type: "text", placeholder: "Email", name: "email", autocomplete: "on", subscribe: true})

@@ -1,56 +1,50 @@
-const captionsList = document.querySelectorAll('.legend__item');
-const unitsList = document.querySelectorAll('.unit');
-const sumOfVote = document.querySelector('.chart__sum-of-vote');
+class Chart {
+  constructor(selector, options) {
+    this.root = selector;
+    this.options = options;
+    this.init();
+  }
 
-const getTemplate = (number, color) => `
-  <g class="chart__sum-of-vote" fill=${color}>
-    <text class="sum-of-vote__number" text-anchor="middle" x="50%" y="49%">${number}</text>
-    <text class="sum-of-vote__text" text-anchor="middle" x="50%" y="67%">голосов</text>
-  </g>
+  init() {
+    this.chartBody = this.root.querySelector('[data-id="body"]');
+    this.sumOfVote = this.root.querySelector('[data-id="sum-of-vote"]');
+
+    this.root.addEventListener('mouseover', this.handleChartMouseover.bind(this));
+    this.root.addEventListener('mouseout', this.handleChartMouseout.bind(this));
+  }
+
+  handleChartMouseover({ target }) {
+    const { type } = target.dataset;
+
+    if (type) {
+      this.sumOfVote.innerHTML = this.getTemplate(type);
+      const currentCircle = this.chartBody.querySelector(`[data-type=${type}]`);
+      if (currentCircle) currentCircle.classList.add('chart__circle_focused');
+    }
+  }
+
+  handleChartMouseout({ target }) {
+    const { type } = target.dataset;
+    const currentCircle = this.chartBody.querySelector(`[data-type=${type}]`);
+    if (currentCircle) currentCircle.classList.remove('chart__circle_focused');
+  }
+
+  getTemplate(type) {
+    const { votes } = this.options;
+    const colors = {
+      sumptuously: '#FFE39C',
+      good: '#6FCF97',
+      satisfactorily: '#BC9CFF',
+      disappointed: '#000000',
+    };
+
+    return `
+      <g class="chart__sum-of-vote" fill=${colors[type]}>
+        <text class="chart__number" text-anchor="middle" x="50%" y="49%">${votes[type]}</text>
+        <text class="chart__text" text-anchor="middle" x="50%" y="67%">голосов</text>
+      </g>
   `;
-
-const sumOfVoteColors = (index) => {
-  switch (index) {
-    case 0:
-      sumOfVote.innerHTML = getTemplate(500, '#FFE39C');
-      break;
-    case 1:
-      sumOfVote.innerHTML = getTemplate(260, '#BC9CFF');
-      break;
-    case 2:
-      sumOfVote.innerHTML = getTemplate(260, '#6FCF97');
-      break;
-    default:
-      return index;
   }
-  return index;
-};
+}
 
-captionsList.forEach((item, index) => {
-  let changeIndex = index;
-  if (index === 1) {
-    changeIndex += 1;
-  } else if (index === 2) {
-    changeIndex -= 1;
-  }
-
-  item.addEventListener('mouseover', () => {
-    sumOfVoteColors(changeIndex);
-    unitsList[changeIndex].classList.add('js-legend-hovered');
-  });
-
-  item.addEventListener('mouseout', () => {
-    unitsList[changeIndex].classList.remove('js-legend-hovered');
-  });
-});
-
-unitsList.forEach((item, index) => {
-  item.addEventListener('mouseover', () => {
-    sumOfVoteColors(index);
-    unitsList[index].classList.add('js-legend-hovered');
-  });
-
-  item.addEventListener('mouseout', () => {
-    unitsList[index].classList.remove('js-legend-hovered');
-  });
-});
+export default Chart;

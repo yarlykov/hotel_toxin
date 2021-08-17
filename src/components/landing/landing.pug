@@ -1,9 +1,0 @@
-include ../card/card.pug
-
-mixin landing({ searchCard={}, selfPresentation="" })
-  main.landing__content
-    .landing__container
-      .landing__search-room
-        +card(searchCard)
-      .landing__self-presentation
-        p #{selfPresentation}

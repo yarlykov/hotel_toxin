@@ -1,0 +1,13 @@
+include ../pagination/pagination.pug
+include ../room-review-widget/room-review-widget.pug
+include ../heading/heading.pug
+
+mixin room-selection({ title, widgets })
+  .room-selection
+    +heading({ level: "h1", title: title })
+    ul.room-selection__widgets-list
+      each widget in widgets
+        li.room-selection__widgets-item
+          +room-review-widget(widget)
+    .room-selection__pagination
+      +pagination()

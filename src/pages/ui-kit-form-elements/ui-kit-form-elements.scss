@@ -1,0 +1,200 @@
+@import '@variables';
+@import '@mixins';
+
+.form-elements {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto;
+  column-gap: 126px;
+  margin: 0 auto;
+  max-width: 1158px;
+  min-width: 1158px;
+  padding-left: 8px;
+
+  &__text-field-wrapper {
+    padding-bottom: 20.5px;
+    &:nth-child(4) {
+      padding-top: 1px;
+    }
+    &:nth-child(5),
+    &:nth-child(6) {
+      padding-top: 20px;
+    }
+    &:nth-child(7) {
+      padding-top: 21px;
+    }
+  }
+
+  &__text-field-containers-date-dropdown {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__small-buttons-wrapper {
+    &:nth-child(2) {
+      padding-top: 41.5px;
+    }
+    &:nth-child(3) {
+      padding-top: 43px;
+    }
+    &:nth-child(4) {
+      padding-top: 46px;
+    }
+    &:nth-child(5) {
+      padding-top: 39.5px;
+    }
+    &:last-child {
+      padding-top: 40px;
+      padding-left: 1px;
+    }
+  }
+
+  &__radio-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 11px;
+    padding-right: 46px;
+  }
+
+  &__toggle-buttons-container {
+    padding-top: 11px;
+  }
+
+  &__like-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 11px;
+    padding-right: 176px;
+  }
+
+  &__rating-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 11px;
+    padding-right: 6px;
+  }
+
+  &__buttons-wrapper {
+    &:nth-child(1) {
+      padding-top: 0;
+    }
+    &:nth-child(2) {
+      padding-top: 30px;
+    }
+    &:nth-child(3) {
+      padding-top: 40px;
+    }
+  }
+
+  &__range-slider-container {
+    max-width: 266px;
+  }
+
+  &__buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    padding-top: 11px;
+
+    &:nth-child(3) {
+      padding-top: 0;
+    }
+
+    & .button:nth-child(1) {
+      margin-right: 19px;
+    }
+    & .button:nth-child(2) {
+      margin-right: 102px;
+    }
+    & .button:nth-child(3) {
+      margin-right: 102px;
+    }
+  }
+
+  &__buttons-container-inline {
+    display: inline-flex;
+    justify-content: space-between;
+    padding-bottom: 29px;
+    & .button_inline {
+      padding-right: 21px;
+    }
+  }
+
+  &__pagination-container {
+    padding-top: 11px;
+  }
+
+  &__dropdowns {
+    display: grid;
+    grid-column: span 3;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 60px;
+    max-width: 1158px;
+    padding-top: 79px;
+  }
+
+  &__dropdowns-wrapper {
+    margin-bottom: 20px;
+  }
+
+  &__dropdowns-container {
+    min-width: 320px;
+  }
+
+  &__dropdowns-block-right {
+    display: flex;
+    min-width: 712px;
+    justify-content: space-between;
+    grid-column: grid-column-start;
+  }
+
+  &__text-fields-buttons {
+    display: grid;
+    grid-template-columns: 320px auto 320px;
+    column-gap: 126px;
+    margin-top: 3px;
+  }
+
+  &__lists {
+    padding-top: 152px;
+    grid-column: span 3;
+    display: grid;
+    max-width: 1158px;
+    grid-template-columns: 266px 2fr;
+    column-gap: 180px;
+  }
+
+  &__lists-wrapper-expandable {
+    padding-bottom: 30px;
+  }
+
+  &__lists-block-other {
+    display: flex;
+    min-width: 712px;
+    justify-content: space-between;
+  }
+
+  &__lists-wrapper-bullet {
+    padding-right: 54px;
+  }
+
+  &__room-review {
+    display: grid;
+    grid-column: span 3;
+    grid-template-columns: 266px 2fr;
+    column-gap: 180px;
+    max-width: 1158px;
+    padding-top: 49px;
+  }
+
+  &__room-review-wrapper {
+    &:last-child {
+      padding-top: 30px;
+    }
+  }
+}
+
+.room-review__wrapper_comment {
+  padding-top: 30px;
+}

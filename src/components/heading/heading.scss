@@ -1,0 +1,35 @@
+@import '@variables';
+@import '@mixins';
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+
+  &__title {
+    &_level_h1 {
+      @include font-h1;
+    }
+    &_level_h2 {
+      @include font-h2;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+    &_level_h3 {
+      @include font-h3;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__description {
+    &_lowercase {
+      text-transform: lowercase;
+      font-size: 14px;
+    }
+
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $textColor_50;
+  }
+}

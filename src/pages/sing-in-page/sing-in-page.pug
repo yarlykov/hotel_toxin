@@ -1,0 +1,18 @@
+extends ../../layouts/main-layout.pug
+include ../../components/card/card.pug
+
+block variables
+  - const title = "Sing in page"
+
+block content
+  main.sing-in
+    .sing-in__container
+      .sing-in__entry
+        +card({
+          title: "Войти",
+          type: "entry",
+          buttonText: "войти",
+          formAction: 'sing-in-page',
+          buttonType: "submit",
+          question: "Нет аккаунта на Toxin?",
+        })

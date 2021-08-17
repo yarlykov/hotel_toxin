@@ -2,26 +2,27 @@ include ../text-field/text-field.pug
 include ../range-slider/range-slider.pug
 include ../checkbox/checkbox.pug
 include ../dropdown/dropdown.pug
+include ../heading/heading.pug
 
 mixin filter({ dateDropdown={}, dropdownGuests={}, rangeSlider={}, checkbox={}, richCheckbox={}, dropdownComfort={}, expandableCheckbox={} })
+  .filter
     .filter__date-dropdown
-      .text-field__header
-        span.text-field__title #{dateDropdown.title}
-    +text-field(dateDropdown.options)
+      +heading({ level: "h3", title: dateDropdown.title })
+      +text-field(dateDropdown.options)
     .filter__dropdown-guests
-      .text-field__header
-        span.text-field__title #{dropdownGuests.title}
+      +heading({ level: "h3", title: dropdownGuests.title })
       +dropdown(dropdownGuests.options)
     .filter__range-slider
       +range-slider(rangeSlider)
     .filter__checkbox
+      +heading({ level: "h3", title: checkbox.title })
       +checkbox(checkbox)
     .filter__rich-checkbox
+      +heading({ level: "h3", title: richCheckbox.title })
       +checkbox(richCheckbox)
     .filter__dropdown-comfort
-      .text-field__header
-        span.text-field__title #{dropdownComfort.title}
+      +heading({ level: "h3", title: dropdownComfort.title })
       +dropdown(dropdownComfort)
     .filter__expandable-checkbox
       +checkbox(expandableCheckbox)
-    .filter__icon.js-filter__icon
+    .filter__open-label.js-filter__open-label

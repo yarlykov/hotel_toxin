@@ -1,39 +1,40 @@
-mixin button({ classList=[], type="button", buttonName="button", link="", size="inline", textColor="gray", buttonVariation="inline"})
+mixin button({ classList=[], type="button", buttonName="button", link="", size="inline", textColor="gray", buttonVariation="inline", focused=false })
   -
-    const mainButtonClass = "button"
-    const buttonSizeClass = `button_size_${size}`
-    const buttonTextColor = `button_text-color_${textColor}`
-    classList.push(mainButtonClass, buttonSizeClass)
+    const mainClass = "button"
+    const sizeClassModifier = `button_${size}`
+    const textClassModifier = `button__text_${textColor}`
+    const focusedClassModifier = focused ? "button_focused" : ""
     
-    let buttonAttributes = {
+    const buttonAttributes = {
       link: {
-        class: classList,
+        class: [ mainClass, sizeClassModifier, focusedClassModifier ],
         href: `./${link}.html`,
       },
       button: {
-        class: classList,
+        class: [ mainClass, sizeClassModifier, focusedClassModifier ],
         type: type,
       }
     }
+
   if link
     a&attributes(buttonAttributes.link) 
       case buttonVariation
         when "fillWhite"
-          span(class=buttonTextColor) #{buttonName}
-          .button_fill-white
+          span.button__text(class=textClassModifier) #{buttonName}
+          span.button__fill.button__fill_white
         when "withArrow"
-          span(class=buttonTextColor) #{buttonName}
-          .button__arrow
+          span.button__text(class=textClassModifier) #{buttonName}
+          span.button__arrow
         default
-          span(class=buttonTextColor) #{buttonName}
+          span.button__text(class=textClassModifier) #{buttonName}
   else
     button&attributes(buttonAttributes.button) 
       case buttonVariation
         when "fillWhite"
-          span(class=buttonTextColor) #{buttonName}
-          .button_fill-white
+          span.button__text(class=textClassModifier) #{buttonName}
+          span.button__fill.button__fill_white
         when "withArrow"
-          span(class=buttonTextColor) #{buttonName}
-          .button__arrow
+          span.button__text(class=textClassModifier) #{buttonName}
+          span.button__arrow
         default
-          span(class=buttonTextColor) #{buttonName}
+          span.button__text(class=textClassModifier) #{buttonName}

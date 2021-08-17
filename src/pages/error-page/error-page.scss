@@ -1,0 +1,367 @@
+@import '@variables';
+
+.canvas-error {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 0 0 0;
+
+  transition: 0.3s ease;
+
+  perspective: 800px;
+}
+
+.box_front {
+  position: relative;
+  overflow: hidden;
+
+  width: 100vw;
+  height: 100vh;
+  animation: skyColor 90s linear infinite 20s;
+  background: skyblue;
+  box-shadow: 0 -400px 300px -300px steelblue inset;
+}
+
+@keyframes skyColor {
+  30% {
+    background: darkslateblue;
+    box-shadow: 0 -400px 300px -300px orangered inset;
+  }
+  50% {
+    background: darkslateblue;
+    box-shadow: 0 -400px 300px -300px transparent inset;
+  }
+  100% {
+    background: skyblue;
+    box-shadow: 0 -400px 300px -300px steelblue inset;
+  }
+}
+
+.ship::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100px;
+  height: 20px;
+
+  content: '';
+
+  border-radius: 0 0 0 20px;
+  background: #e25c45;
+}
+
+.ship::before {
+  position: absolute;
+  top: 0;
+  left: 10px;
+
+  width: 65px;
+  height: 16px;
+
+  content: '';
+
+  border-radius: 20px 0 0 0;
+  background: #fff;
+}
+
+.ship {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  bottom: 30px;
+  animation: ship 58s linear infinite 4s;
+  width: 100px;
+  height: 36px;
+}
+@keyframes ship {
+  0.001% {
+    transform: translateX(100px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-2000px);
+    opacity: 1;
+  }
+}
+
+.ship_smokestack {
+  position: absolute;
+  bottom: 36px;
+  left: 45px;
+
+  width: 10px;
+  height: 17px;
+
+  background: #a18e6e;
+}
+
+.ship_window {
+  position: absolute;
+  top: 6px;
+  left: 40px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+  background: #a18e6e;
+  box-shadow: 13px 0 0 0 #a18e6e, -13px 0 0 0 #a18e6e;
+}
+
+.smoke div {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+  background: #fff;
+}
+
+.smoke-1 {
+  top: -25px;
+  right: 44px;
+  animation: smoke 1.6s cubic-bezier(0.34, 0.91, 1, 0.43) 0.15s infinite;
+}
+
+.smoke-2 {
+  top: -25px;
+  right: 42px;
+  animation: smoke 1.6s cubic-bezier(0.34, 0.91, 1, 0.43) 1.15s infinite;
+}
+
+.smoke-3 {
+  top: -25px;
+  right: 49px;
+  animation: smoke 1.6s cubic-bezier(0.34, 0.91, 1, 0.43) 0.7s infinite;
+}
+
+@keyframes smoke {
+  0.001% {
+    transform: translateY(-5) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px) scale(2);
+    opacity: 0;
+  }
+}
+@keyframes sun {
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+.sun {
+  position: absolute;
+  animation: sun 20s linear infinite;
+  top: 30px;
+  right: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ffcf11;
+  box-shadow: 0 0 100px #ffdf05;
+  z-index: -1;
+}
+
+.sun-wrapper {
+  position: absolute;
+  transform: rotate(-90deg);
+  animation: sun 90s linear infinite;
+  width: 100%;
+  height: 100%;
+  transform-origin: bottom center;
+}
+
+.sun div {
+  position: absolute;
+  animation: sun-ray 16s linear infinite;
+  top: -20px;
+  left: 50%;
+  width: 2px;
+  height: 100px;
+  margin-left: -1px;
+  border: solid #ffcf11;
+  border-width: 10px 0 10px 0;
+  box-sizing: content-box;
+}
+
+.sun div:nth-child(2) {
+  transform: rotate(18deg);
+  animation: sun-ray 16s linear infinite;
+}
+
+.sun div:nth-child(3) {
+  transform: rotate(36deg);
+  animation: sun-ray 16s linear infinite;
+}
+
+.sun div:nth-child(4) {
+  transform: rotate(54deg);
+  animation: sun-ray 16s linear infinite;
+}
+
+.sun div:nth-child(5) {
+  transform: rotate(72deg);
+  animation: sun-ray 16s linear infinite;
+}
+
+.sun div:nth-child(6) {
+  transform: rotate(90deg);
+  animation: sun-ray 16s linear infinite;
+}
+
+.sun div:nth-child(7) {
+  transform: rotate(-18deg);
+  animation: sun-ray 16s linear infinite;
+}
+
+.sun div:nth-child(8) {
+  transform: rotate(-36deg);
+  animation: sun-ray 16s linear infinite;
+}
+
+.sun div:nth-child(9) {
+  transform: rotate(-54deg);
+  animation: sun-ray 16s linear infinite;
+}
+
+.sun div:nth-child(10) {
+  transform: rotate(-72deg);
+  animation: sun-ray 16s linear infinite;
+}
+
+.cloud {
+  position: absolute;
+  left: -180px;
+
+  width: 200px;
+  height: 60px;
+
+  opacity: 0.8;
+  border-radius: 200px;
+  background: #fff;
+}
+
+.cloud:before,
+.cloud:after {
+  position: absolute;
+  top: -15px;
+  left: 10px;
+
+  width: 100px;
+  height: 80px;
+
+  content: '';
+
+  border-radius: 100px;
+  background: #fff;
+}
+
+.cloud:after {
+  top: -55px;
+  right: 15px;
+  left: auto;
+
+  width: 120px;
+  height: 120px;
+}
+
+.cloud-1 {
+  top: 10px;
+  animation: cloud-1 70s linear infinite;
+}
+
+.cloud-2 {
+  top: 50px;
+  animation: cloud-2 60s linear infinite;
+}
+
+.cloud-3 {
+  top: 100px;
+  animation: cloud-3 50s linear infinite;
+}
+
+.cloud-4 {
+  top: 170px;
+  animation: cloud-4 40s linear infinite;
+}
+.cloud-5 {
+  top: 45%;
+  animation: cloud-5 30s linear infinite;
+}
+
+@keyframes cloud-1 {
+  from {
+    transform: translateX(0px) scale(0.3);
+  }
+  to {
+    transform: translateX(2000px) scale(0.3);
+  }
+}
+@keyframes cloud-2 {
+  from {
+    transform: translateX(-300px) scale(-0.4, 0.4);
+  }
+  to {
+    transform: translateX(2000px) scale(-0.4, 0.4);
+  }
+}
+@keyframes cloud-3 {
+  from {
+    transform: translateX(0px) scale(0.5);
+  }
+  to {
+    transform: translateX(2000px) scale(0.5);
+  }
+}
+@keyframes cloud-4 {
+  from {
+    transform: translateX(-500px) scale(-0.6, 0.6);
+  }
+  to {
+    transform: translateX(2000px) scale(-0.6, 0.6);
+  }
+}
+@keyframes cloud-5 {
+  from {
+    transform: translateX(-500px) scale(0.8);
+  }
+  to {
+    transform: translateX(2000px) scale(0.8);
+  }
+}
+
+.sea {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 40px;
+  background: #2a94d6;
+}
+
+.sea::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 10px;
+  content: '';
+  background: #1d7fbb;
+}
+
+/*----------------------*/
+.errorPage {
+  font-family: $mainFont;
+  text-transform: uppercase;
+  color: $mainTextColor;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  @media (max-width: 960px) {
+    left: 20%;
+  }
+}

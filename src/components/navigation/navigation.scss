@@ -8,47 +8,20 @@
 
   &__item {
     position: relative;
-    padding-right: 1.4286rem;
+    padding-right: 20px;
   }
 
   &__link {
     cursor: pointer;
 
+    &_active {
+      font-weight: 700;
+    }
+
     &:focus {
       outline: none;
       color: $textColor_75;
     }
-  }
-
-  &__item_dropdown {
-    position: relative;
-    padding-right: 3.2857rem;
-
-    &_arrow-up {
-      &::after {
-        @include font-material-icons;
-        content: '\e5ce';
-        position: absolute;
-        right: 20px;
-        line-height: 20px;
-        color: $textColor_50;
-        cursor: pointer;
-      }
-    }
-    &_arrow-down {
-      &::after {
-        @include font-material-icons;
-        content: '\e5cf';
-        position: absolute;
-        right: 20px;
-        line-height: 20px;
-        color: $textColor_50;
-        cursor: pointer;
-      }
-    }
-  }
-  &__link_active {
-    font-weight: 700;
   }
 
   &__dropdown {
@@ -61,6 +34,36 @@
     border-radius: $mainBorderRadius;
     background: $cardsBackground;
 
+    &_with-arrow-up {
+      position: relative;
+      padding-right: 46px;
+
+      &::after {
+        @include font-material-icons;
+        content: '\e5ce';
+        position: absolute;
+        right: 20px;
+        line-height: 20px;
+        color: $textColor_50;
+        cursor: pointer;
+      }
+    }
+
+    &_with-arrow-down {
+      position: relative;
+      padding-right: 46px;
+
+      &::after {
+        @include font-material-icons;
+        content: '\e5cf';
+        position: absolute;
+        right: 20px;
+        line-height: 20px;
+        color: $textColor_50;
+        cursor: pointer;
+      }
+    }
+
     &_visibility-hidden {
       visibility: hidden;
     }
@@ -71,12 +74,12 @@
     }
 
     & .links__item {
-      padding: 0.5rem 1rem;
+      padding: 7px 14px;
       text-align: center;
 
       @media (max-width: 960px) {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: 21px;
+        line-height: 21px;
       }
     }
   }

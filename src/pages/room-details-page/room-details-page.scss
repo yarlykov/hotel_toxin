@@ -1,0 +1,129 @@
+@import '@variables';
+@import '@mixins';
+
+.room-details {
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    min-height: 400px;
+    padding-top: 70px;
+    padding-left: 140px;
+    padding-right: 125px;
+
+    @media (max-width: 1200px) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      padding-top: 28px;
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+  }
+
+  &__information {
+    display: grid;
+    grid-template-columns: 291px 1fr;
+    grid-gap: 10px 70px;
+    padding-bottom: 71px;
+
+    @media (max-width: 800px) {
+      grid-template-columns: 320px;
+    }
+    @media (max-width: 400px) {
+      padding-left: 5px;
+    }
+  }
+
+  &__calculation {
+    margin-left: 20px;
+    @media (max-width: 1200px) {
+      padding-bottom: 70px;
+    }
+    @media (max-width: 800px) {
+      margin-left: 0;
+    }
+  }
+
+  &__cancel-text {
+    @include font-body;
+    padding-top: 19px;
+  }
+
+  &__rules-list {
+    padding-top: 10px;
+  }
+
+  &__title {
+    @include font-h2;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__subtitle {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    color: $textColor_50;
+  }
+
+  &__dignities {
+    box-sizing: border-box;
+    padding-right: 11px;
+
+    & .room-dignities.room-dignities__item:nth-last-child(2) {
+      padding-bottom: 0;
+    }
+    & .room-dignities.room-dignities__item:nth-last-child(2) + hr {
+      display: none;
+    }
+  }
+
+  &__impressions {
+    max-width: 320px;
+  }
+
+  &__feedback {
+    max-width: 711px;
+    grid-column: 1/3;
+    padding-top: 2px;
+    padding-bottom: 23px;
+
+    @media (max-width: 800px) {
+      grid-column: 1/2;
+    }
+  }
+
+  &__rules {
+    & .information__title {
+      padding: 0px 0 17px 20px;
+    }
+  }
+
+  &__cancel {
+    max-width: 341px;
+  }
+
+  &__feedback-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__feedback-item {
+    padding-top: 20px;
+
+    &:last-child {
+      padding-top: 23px;
+    }
+  }
+}

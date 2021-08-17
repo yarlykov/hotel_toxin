@@ -2,29 +2,27 @@
 @import '@mixins';
 
 .card {
-  &__wrapper {
-    max-width: 27.1429rem;
-    min-width: 14.2857rem;
-    border: $cardsBorder;
-    padding: 2.7857rem 2.1429rem 2.1429rem 2.0714rem;
-    border-radius: $cardsBorderRadius ;
-    box-sizing: border-box;
-    background: $cardsBackground ;
-    box-shadow: $mainBoxShadow;
+  max-width: 380px;
+  min-width: 200px;
+  border: $cardsBorder;
+  padding: 39px 30px 30px 29px;
+  border-radius: $cardsBorderRadius;
+  box-sizing: border-box;
+  background: $cardsBackground;
+  box-shadow: $mainBoxShadow;
 
-    @media (max-width: 480px) {
-      padding: 0.7143rem;
-      margin: 0 0.7143rem;
-    }
+  @media (max-width: 480px) {
+    padding: 10px;
+    margin: 0 10px;
   }
 
   &__title {
     @include font-h1;
 
     @media (max-width: 480px) {
-      padding: 1.4286rem 0 0 1.4286rem;
-      line-height: 1.8571rem;
-      font-size: 1.4286rem;
+      padding: 20px 0 0 20px;
+      line-height: 26px;
+      font-size: 20px;
     }
   }
 
@@ -36,44 +34,54 @@
 
   &__date-dropdown {
     display: flex;
-    padding-top: 1.5714rem;
-
-    & > :last-child {
-      padding-left: 1.4286rem;
-    }
+    padding-top: 22px;
 
     @media (max-width: 480px) {
       flex-direction: column;
-      padding: 1.4286rem;
+      padding: 20px;
 
-      .text-field__size_small {
+      .text-field_size-small {
         width: 100%;
       }
 
-      & > :last-child {
+      .card__date-dropdown-end {
         padding-left: 0;
-        padding-top: 0.7143rem;
+        padding-top: 10px;
       }
     }
   }
 
+  &__date-dropdown-end {
+    padding-left: 20px;
+  }
+
   &__guests-dropdown {
-    padding-top: 1.4286rem;
-
-    &_search {
-      padding-bottom: 0.8571rem;
-    }
-
-    &_title {
-      @include font-h3;
-      display: block;
-      margin: 0rem 0 0.3571rem 0;
-      color: $mainTextColor;
-
-    }
+    width: 320px;
+    padding-top: 20px;
 
     @media (max-width: 480px) {
-      padding: 1.4286rem;
+      padding: 20px;
+
+      .dropdown__guests {
+        width: 100%;
+      }
+    }
+  }
+
+  &__guests-dropdown-title {
+    @include font-h3;
+    display: block;
+    margin: 0px 0 5px 0;
+    color: $mainTextColor;
+  }
+
+  &__guests-dropdown-search {
+    width: 320px;
+    padding-top: 20px;
+    padding-bottom: 12px;
+
+    @media (max-width: 480px) {
+      padding: 20px;
 
       .dropdown__guests {
         width: 100%;
@@ -82,38 +90,38 @@
   }
 
   &__register-details {
-    padding-top: 1.4286rem;
-    & .register__surname {
-      padding-top: 0.7143rem;
+    padding-top: 20px;
+    & .card__register-details-surname {
+      padding-top: 10px;
     }
   }
 
   &__radio-buttons {
     display: flex;
     justify-content: space-between;
-    padding: 0.7143rem 7.1429rem 0 0;
-    padding-right: 7.1429rem;
+    padding: 10px 100px 0 0;
+    padding-right: 100px;
   }
 
   &__birthday {
-    padding-top: 1.7857rem;
+    padding-top: 25px;
   }
 
   &__login-details {
-    padding-top: 1.4286rem;
-    & .login-details__email {
-      padding-bottom: 0.7143rem;
+    padding-top: 20px;
+    & .card__login-details-email {
+      padding-bottom: 10px;
     }
   }
 
   &__toggle {
-    padding: 0.7143rem 0 0.5rem;
+    padding: 10px 0 7px;
   }
 
   &__button {
     padding-top: 20px;
     @media (max-width: 480px) {
-      padding: 1.4286rem;
+      padding: 20px;
     }
   }
 
@@ -121,18 +129,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 2.1429rem;
-    &_text {
-      display: block;
-      align-self: center;
-    }
-    &_button {
-      min-width: 7.0714rem;
-    }
+    padding-top: 30px;
+  }
+
+  &__question-text {
+    display: block;
+    align-self: center;
+  }
+
+  &__question-button {
+    min-width: 100px;
   }
 
   &__calculation {
-    padding-top: 1.2857rem;
-    padding-left: 0.0714rem;
+    padding-top: 19px;
+    padding-left: 1px;
   }
 }
