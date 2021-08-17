@@ -1,6 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const devServer = require('./webpack/devServer');
 const styles = require('./webpack/styles');
 const postcss = require('./webpack/postcss');
@@ -9,21 +14,16 @@ const images = require('./webpack/images');
 const fonts = require('./webpack/fonts');
 const javaScript = require('./webpack/javaScript');
 const sourceMap = require('./webpack/sourceMap');
-const { merge } = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
 const PAGES_DIR = path.resolve(__dirname, 'src/pages');
 const PAGES = fs
   .readdirSync(PAGES_DIR)
   .map((item) => item.replace(/\.[^/.]+$/, ''));
-  
-  const PATHS = {
-    src: path.join(__dirname, './src'), 
-    dist: path.join(__dirname, './dist'),
-  }
+
+const PATHS = {
+  src: path.join(__dirname, './src'),
+  dist: path.join(__dirname, './dist'),
+}
 
 const devMode = process.env.NODE_ENV === 'development';
 const productionMode = !devMode;
@@ -88,7 +88,7 @@ const common = merge([
   javaScript(),
 ]);
 
-module.exports = function() {
+module.exports = function () {
   if (productionMode) {
     return merge([
       common,
