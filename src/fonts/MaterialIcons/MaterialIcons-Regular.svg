@@ -1,0 +1,64 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20170731 at Mon Feb  8 22:58:05 2016
+ By Aleksey,,,
+Copyright 2015 Google, Inc. All Rights Reserved.
+</metadata>
+<defs>
+<font id="MaterialIcons-Regular" horiz-adv-x="512" >
+  <font-face 
+    font-family="Material Icons"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="512"
+    descent="0"
+    bbox="17 0 469 498"
+    underline-thickness="50"
+    underline-position="-200"
+    unicode-range="U+E5C4-E87E"
+  />
+<missing-glyph 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name=".notdef" 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name="glyph1" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="glyph2" 
+ />
+    <glyph glyph-name="zero" 
+d="M0 0z" />
+    <glyph glyph-name="uniE5C4" unicode="&#xe5c4;" 
+d="M427 277v-42h-260l119 -120l-30 -30l-171 171l171 171l30 -30l-119 -120h260z" />
+    <glyph glyph-name="uniE5C8" unicode="&#xe5c8;" 
+d="M256 427l171 -171l-171 -171l-30 30l119 120h-260v42h260l-119 120z" />
+    <glyph glyph-name="uniE5CE" unicode="&#xe5ce;" 
+d="M256 341l128 -128l-30 -30l-98 98l-98 -98l-30 30z" />
+    <glyph glyph-name="uniE5CF" unicode="&#xe5cf;" 
+d="M354 329l30 -30l-128 -128l-128 128l30 30l98 -98z" />
+    <glyph glyph-name="uniE7F1" unicode="&#xe7f1;" 
+d="M405 192v43h-42v-43h42zM405 107v42h-42v-42h42zM277 363v42h-42v-42h42zM277 277v43h-42v-43h42zM277 192v43h-42v-43h42zM277 107v42h-42v-42h42zM149 277v43h-42v-43h42zM149 192v43h-42v-43h42zM149 107v42h-42v-42h42zM320 277h128v-213h-384v299h128v42l64 64
+l64 -64v-128z" />
+    <glyph glyph-name="uniE7F2" unicode="&#xe7f2;" 
+d="M256 139q-37 0 -66.5 20.5t-42.5 53.5h218q-13 -33 -42.5 -53.5t-66.5 -20.5zM181 277q-13 0 -22.5 9.5t-9.5 22.5t9.5 22.5t22.5 9.5t22.5 -9.5t9.5 -22.5t-9.5 -22.5t-22.5 -9.5zM331 277q-13 0 -22.5 9.5t-9.5 22.5t9.5 22.5t22.5 9.5t22.5 -9.5t9.5 -22.5t-9.5 -22.5
+t-22.5 -9.5zM256 85q70 0 120.5 50.5t50.5 120.5t-50.5 120.5t-120.5 50.5t-120.5 -50.5t-50.5 -120.5t50.5 -120.5t120.5 -50.5zM256 469q88 0 150.5 -62.5t62.5 -150.5t-62.5 -150.5t-150.5 -62.5t-150.5 62.5t-62.5 150.5t62.5 150.5t150.5 62.5z" />
+    <glyph glyph-name="uniE7F3" unicode="&#xe7f3;" 
+d="M256 213q37 0 66.5 -20.5t42.5 -53.5h-218q13 33 42.5 53.5t66.5 20.5zM181 277q-13 0 -22.5 9.5t-9.5 22.5t9.5 22.5t22.5 9.5t22.5 -9.5t9.5 -22.5t-9.5 -22.5t-22.5 -9.5zM331 277q-13 0 -22.5 9.5t-9.5 22.5t9.5 22.5t22.5 9.5t22.5 -9.5t9.5 -22.5t-9.5 -22.5
+t-22.5 -9.5zM256 85q70 0 120.5 50.5t50.5 120.5t-50.5 120.5t-120.5 50.5t-120.5 -50.5t-50.5 -120.5t50.5 -120.5t120.5 -50.5zM256 469q88 0 150.5 -62.5t62.5 -150.5t-62.5 -150.5t-150.5 -62.5t-150.5 62.5t-62.5 150.5t62.5 150.5t150.5 62.5z" />
+    <glyph glyph-name="uniE80E" unicode="&#xe80e;" 
+d="M250 107q43 0 72.5 29.5t29.5 72.5q0 44 -12 86q-31 -41 -99 -55q-60 -13 -60 -66q0 -28 20 -47.5t49 -19.5zM288 498q64 -52 101.5 -126.5t37.5 -158.5q0 -70 -50 -120t-121 -50t-121 50t-50 120q0 108 69 190v-8q0 -33 22 -56t55 -23q32 0 52.5 22.5t20.5 56.5
+q0 20 -4 46t-8 41z" />
+    <glyph glyph-name="uniE838" unicode="&#xe838;" 
+d="M256 144l-132 -80l35 150l-116 101l153 13l60 141l60 -141l153 -13l-116 -101l35 -150z" />
+    <glyph glyph-name="uniE83A" unicode="&#xe83a;" 
+d="M256 183l80 -48l-21 91l71 62l-94 8l-36 86l-36 -86l-94 -8l71 -62l-21 -91zM469 315l-116 -101l35 -150l-132 80l-132 -80l35 150l-116 101l153 13l60 141l60 -141z" />
+    <glyph glyph-name="uniE87D" unicode="&#xe87d;" 
+d="M256 57l-31 28q-53 48 -77 71t-53.5 57t-40.5 61.5t-11 56.5q0 49 33.5 83t83.5 34q58 0 96 -45q38 45 96 45q50 0 83.5 -34t33.5 -83q0 -39 -26 -81t-56.5 -73t-99.5 -93z" />
+    <glyph glyph-name="uniE87E" unicode="&#xe87e;" 
+d="M258 116q48 43 71 65t50 52t37.5 53t10.5 45q0 32 -21.5 53t-53.5 21q-25 0 -46.5 -14t-29.5 -36h-40q-8 22 -29.5 36t-46.5 14q-32 0 -53.5 -21t-21.5 -53q0 -22 10.5 -45t37.5 -53t50 -52t71 -65l2 -2zM352 448q50 0 83.5 -34t33.5 -83q0 -29 -11 -56.5t-40.5 -61.5
+t-53.5 -57t-77 -71l-31 -28l-31 27q-69 62 -99.5 93t-56.5 73t-26 81q0 49 33.5 83t83.5 34q58 0 96 -45q38 45 96 45z" />
+  </font>
+</defs></svg>
