@@ -5,10 +5,10 @@
   font-family: 'Montserrat';
   font-display: swap;
   src: local('Montserrat'), local('Montserrat-Regular'),
-    url('../fonts/Montserrat/Montserrat-Regular.woff2') format('woff2'),
-    url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
-    url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'),
-    url('../fonts/Montserrat/Montserrat-Regular-Latin.svg') format('svg');
+    url('./Montserrat/Montserrat-Regular.woff2') format('woff2'),
+    url('./Montserrat/Montserrat-Regular.woff') format('woff'),
+    url('./Montserrat/Montserrat-Regular.ttf') format('truetype'),
+    url('./Montserrat/Montserrat-Regular-Latin.svg') format('svg');
   font-weight: 400;
   font-style: normal;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
@@ -20,10 +20,10 @@
   font-family: 'Montserrat';
   font-display: swap;
   src: local('Montserrat'), local('Montserrat-Regular'),
-    url('../fonts/Montserrat/Montserrat-Regular.woff2') format('woff2'),
-    url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
-    url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'),
-    url('../fonts/Montserrat/Montserrat-Regular-Cyrillic.svg') format('svg');
+    url('./Montserrat/Montserrat-Regular.woff2') format('woff2'),
+    url('./Montserrat/Montserrat-Regular.woff') format('woff'),
+    url('./Montserrat/Montserrat-Regular.ttf') format('truetype'),
+    url('./Montserrat/Montserrat-Regular-Cyrillic.svg') format('svg');
   font-weight: 400;
   font-style: normal;
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116, U+20BD;
@@ -34,10 +34,10 @@
   font-family: 'Montserrat';
   font-display: swap;
   src: local('Montserrat'), local('Montserrat-Bold'),
-    url('../fonts/Montserrat/Montserrat-Bold.woff2') format('woff2'),
-    url('../fonts/Montserrat/Montserrat-Bold.woff') format('woff'),
-    url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype'),
-    url('../fonts/Montserrat/Montserrat-Bold-Latin.svg') format('svg');
+    url('./Montserrat/Montserrat-Bold.woff2') format('woff2'),
+    url('./Montserrat/Montserrat-Bold.woff') format('woff'),
+    url('./Montserrat/Montserrat-Bold.ttf') format('truetype'),
+    url('./Montserrat/Montserrat-Bold-Latin.svg') format('svg');
   font-weight: 700;
   font-style: normal;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
@@ -49,10 +49,10 @@
   font-family: 'Montserrat';
   font-display: swap;
   src: local('Montserrat'), local('Montserrat-Bold'),
-    url('../fonts/Montserrat/Montserrat-Bold.woff2') format('woff2'),
-    url('../fonts/Montserrat/Montserrat-Bold.woff') format('woff'),
-    url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype'),
-    url('../fonts/Montserrat/Montserrat-Bold-Cyrillic.svg') format('svg');
+    url('./Montserrat/Montserrat-Bold.woff2') format('woff2'),
+    url('./Montserrat/Montserrat-Bold.woff') format('woff'),
+    url('./Montserrat/Montserrat-Bold.ttf') format('truetype'),
+    url('./Montserrat/Montserrat-Bold-Cyrillic.svg') format('svg');
   font-weight: 700;
   font-style: normal;
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116, U+20BD;
@@ -62,10 +62,10 @@
 @font-face {
   font-family: 'Material Icons';
   src: local('Material Icons'),
-    url('../fonts/MaterialIcons/MaterialIcons-Regular.woff2') format('woff2'),
-    url('../fonts/MaterialIcons/MaterialIcons-Regular.woff') format('woff'),
-    url('../fonts/MaterialIcons/MaterialIcons-Regular.ttf') format('truetype'),
-    url('../fonts/MaterialIcons/MaterialIcons-Regular.svg') format('svg');
+    url('./MaterialIcons/MaterialIcons-Regular.woff2') format('woff2'),
+    url('./MaterialIcons/MaterialIcons-Regular.woff') format('woff'),
+    url('./MaterialIcons/MaterialIcons-Regular.ttf') format('truetype'),
+    url('./MaterialIcons/MaterialIcons-Regular.svg') format('svg');
   font-style: normal;
   font-weight: 400;
   unicode-range: e5cf, e5ce, e5c8, e5c4, e7f2, e7f3, e7f1, e80e, e87d, e87e,
@@ -75,12 +75,12 @@
 @font-face {
   font-family: 'Font Awesome';
   src: local('Font Awesome'),
-    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.woff2')
+    url('./Fontawesome5/FontAwesome5Brands-Regular.woff2')
       format('woff2'),
-    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.woff') format('woff'),
-    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.ttf')
+    url('./Fontawesome5/FontAwesome5Brands-Regular.woff') format('woff'),
+    url('./Fontawesome5/FontAwesome5Brands-Regular.ttf')
       format('truetype'),
-    url('../fonts/Fontawesome5/FontAwesome5Brands-Regular.svg') format('svg');
+    url('./Fontawesome5/FontAwesome5Brands-Regular.svg') format('svg');
   font-style: normal;
   font-weight: 400;
   font-display: block;
@@ -89,10 +89,10 @@
 
 @font-face {
   font-family: 'Font Awesome solid';
-  src: url('../fonts/Fontawesome5/FontAwesome5Free-Solid.woff2') format('woff2'),
-    url('../fonts/Fontawesome5/FontAwesome5Free-Solid.woff') format('woff'),
-    url('../fonts/Fontawesome5/FontAwesome5Free-Solid.ttf') format('truetype'),
-    url('../fonts/Fontawesome5/FontAwesome5Free-Solid.svg') format('svg');
+  src: url('./Fontawesome5/FontAwesome5Free-Solid.woff2') format('woff2'),
+    url('./Fontawesome5/FontAwesome5Free-Solid.woff') format('woff'),
+    url('./Fontawesome5/FontAwesome5Free-Solid.ttf') format('truetype'),
+    url('./Fontawesome5/FontAwesome5Free-Solid.svg') format('svg');
   font-style: normal;
   font-weight: 400;
   font-display: block;
