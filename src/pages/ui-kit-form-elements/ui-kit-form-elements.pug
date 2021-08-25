@@ -209,7 +209,14 @@ block content
             dropdown: true,
             isOpened: false,
             rich: false,
-            listItems: []
+            listItems: [
+              { title: "Завтрак" }, 
+              { title: "Письменный стол", checked: true }, 
+              { title: "Стул для кормления", checked: true },
+              { title: "Кроватка", checked: true },
+              { title: "Телевизор" },
+              { title: "Шампунь" }
+            ]
           })
         .form-elements__lists-wrapper-expandable
           +checkbox({	

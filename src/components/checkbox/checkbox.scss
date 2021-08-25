@@ -44,10 +44,10 @@
 
   &__list {
     padding-top: 12px;
-    visibility: hidden;
+    display: none;
 
     &_opened {
-      visibility: visible;
+      display: block;
     }
   }
 
