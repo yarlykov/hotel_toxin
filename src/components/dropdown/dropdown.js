@@ -11,8 +11,6 @@ class Dropdown {
   }
 
   init() {
-    const { buttons } = this.options;
-
     this.totalItems = 0;
     this.maxItems = this.options.maxItems;
     this.menuItemValue = {
@@ -28,6 +26,16 @@ class Dropdown {
       'Ванные комнаты',
     ];
 
+    this.findDOMElements();
+    const { buttons } = this.options;
+    if (buttons) this.addButtons();
+    this.countInitialElements();
+    this.setInputText();
+    this.checkClearButton();
+    this.disabledDecrementButtons();
+  }
+
+  findDOMElements() {
     this.input = this.mainNode.querySelector('.js-dropdown__input');
     this.drop = this.mainNode.querySelector('.js-dropdown__drop');
     this.menuItems = this.mainNode.querySelectorAll('.js-dropdown__menu-item');
@@ -54,18 +62,6 @@ class Dropdown {
           ? Number(item.querySelector('.js-controls__counter').value)
           : 0,
     }));
-
-    if (buttons) {
-      this.addButtons();
-    }
-
-    this.countInitialElements();
-    this.writeTextInGuestInput();
-    this.writeTextInComfortInput();
-    this.deleteClearButton();
-
-    this.counter();
-    this.disabledButtons();
   }
 
   bindEventListeners() {
@@ -130,7 +126,13 @@ class Dropdown {
     this.menuItemValue.baths = bathsQuantity;
   }
 
-  writeTextInGuestInput() {
+  setInputText() {
+    const { type } = this.options;
+    if (type === 'comfort') this.input.value = this.createFinalComfortText();
+    if (type === 'guests') this.input.value = this.createFinalGuestsText();
+  }
+
+  createFinalGuestsText() {
     const { maxItems, defaultText } = this.options;
     const { guests = [], babies = [] } = this.options.plurals;
 
@@ -145,106 +147,71 @@ class Dropdown {
       : `${this.totalItems} ${declTextGuests}, ${this.menuItemValue.baby} ${declTextBabies}`;
 
     if (this.totalItems > 0 && this.totalItems <= maxItems) {
-      (this.input.value = textInput);
-    } else {
-      (this.input.value = defaultText);
+      return textInput;
     }
+    return defaultText;
   }
 
-  writeTextInComfortInput() {
-    const { maxItems, defaultText, type } = this.options;
+  createFinalComfortText() {
+    const { maxItems, defaultText } = this.options;
+    let textInput = '';
 
-    if (type === 'comfort') {
-      let textInput = '';
+    if (this.totalItems > 0 && this.totalItems <= maxItems) {
+      const pluralWords = Object.keys(this.options.plurals);
+      pluralWords.forEach((itemName) => {
+        const currentValue = this.menuItemValue[itemName];
+        const currentPluralWords = this.options.plurals[itemName];
 
-      if (this.totalItems > 0 && this.totalItems <= maxItems) {
-        const pluralWords = Object.keys(this.options.plurals);
-
-        pluralWords.forEach((itemName) => {
-          const currentValue = this.menuItemValue[itemName];
-          const currentPluralWords = this.options.plurals[itemName];
-
-          if (currentValue === 0) {
-            textInput += '';
-          } else {
-            textInput = addCommaInText(textInput);
-
-            textInput += `${`${currentValue} ${declensionsText(
-              currentValue,
-              currentPluralWords,
-            )}`}`;
-          }
-        });
-
-        this.input.value = cutLongText(textInput);
-      } else {
-        this.input.value = defaultText;
-      }
-    }
-  }
-
-  deleteClearButton() {
-    if (this.clearBtn) {
-      if (this.isNotEmpty) {
-        this.clearBtn.classList.add('dropdown__button-clear_show');
-      } else {
-        this.clearBtn.classList.remove('dropdown__button-clear_show');
-      }
-    }
-  }
-
-  counter() {
-    const that = this;
-
-    this.menuItem.forEach((item) => {
-      const amount = item.countInput;
-
-      item.increment.addEventListener('click', () => {
-        const currentValue = Number(amount.value);
-
-        if (that.totalItems < that.maxItems) {
-          amount.value = currentValue + 1;
-          that.totalItems += 1;
-
-          that.itemCounter(item.id, count.INCREMENT);
-        }
-
-        that.writeTextInGuestInput();
-        that.deleteClearButton();
-        that.disabledButtons();
-        that.writeTextInComfortInput();
-      });
-
-      item.decrement.addEventListener('click', () => {
-        const currentValue = Number(amount.value);
-
-        if (currentValue > 0) {
-          amount.value = currentValue - 1;
-          that.totalItems -= 1;
-
-          that.itemCounter(item.id, count.DECREMENT);
-
-          that.writeTextInGuestInput();
-          that.deleteClearButton();
-          that.disabledButtons();
-          that.writeTextInComfortInput();
+        if (currentValue === 0) {
+          textInput += '';
+        } else {
+          textInput = addCommaInText(textInput);
+          textInput += `${`${currentValue} ${declensionsText(
+            currentValue,
+            currentPluralWords,
+          )}`}`;
         }
       });
-    });
+      return cutLongText(textInput);
+    }
+    return defaultText;
   }
 
-  disabledButtons() {
-    const { minItems = 0 } = this.options;
+  increment(target) {
+    const parent = target.parentNode;
+    const counter = parent.querySelector('.js-controls__counter');
+    const decrement = parent.querySelector('.js-controls__decrement');
+    const { id } = parent.parentNode.dataset;
+    const currentValue = Number(counter.value);
 
-    this.menuItem.forEach((item) => {
-      const itemCount = Number(item.countInput.value);
+    if (this.totalItems < this.maxItems) {
+      counter.value = currentValue + 1;
+      this.totalItems += 1;
+      this.itemCounter(id, count.INCREMENT);
+      decrement.classList.remove('disabled');
+    }
 
-      if (itemCount <= minItems) {
-        item.decrement.classList.add('disabled');
-      } else {
-        item.decrement.classList.remove('disabled');
-      }
-    });
+    this.setInputText();
+    this.checkClearButton();
+  }
+
+  decrement(target) {
+    const parent = target.parentNode;
+    const counter = parent.querySelector('.js-controls__counter');
+    const decrement = parent.querySelector('.js-controls__decrement');
+    const { id } = parent.parentNode.dataset;
+    const currentValue = Number(counter.value);
+    const equalZero = (currentValue - 1) === 0;
+
+    if (equalZero) decrement.classList.add('disabled');
+    if (currentValue > 0) {
+      counter.value = currentValue - 1;
+      this.totalItems -= 1;
+      this.itemCounter(id, count.DECREMENT);
+    }
+
+    this.setInputText();
+    this.checkClearButton();
   }
 
   itemCounter(id, operator) {
@@ -259,18 +226,15 @@ class Dropdown {
     }
   }
 
-  handleDropdownClick(event) {
-    const { type } = event.target.dataset;
+  handleDropdownClick({ target }) {
+    const { type } = target.dataset;
 
-    if (type === targetType.APPLY) {
-      this.close();
-    }
-    if (type === targetType.CLEAR) {
-      this.clear();
-    }
-    if (type === targetType.INPUT || type === targetType.ARROW) {
-      this.toggle();
-    }
+    if (type === count.INCREMENT) this.increment(target);
+    if (type === count.DECREMENT) this.decrement(target);
+    if (type === targetType.APPLY) this.close();
+    if (type === targetType.CLEAR) this.clear();
+    if (type === targetType.INPUT) this.toggle();
+    if (type === targetType.ARROW) this.toggle();
   }
 
   handleOutsideClick(event) {
@@ -285,6 +249,30 @@ class Dropdown {
 
   get isNotEmpty() {
     return this.totalItems > 0;
+  }
+
+  disabledDecrementButtons() {
+    const { minItems = 0 } = this.options;
+
+    this.menuItem.forEach((item) => {
+      const itemCount = Number(item.countInput.value);
+
+      if (itemCount <= minItems) {
+        item.decrement.classList.add('disabled');
+      } else {
+        item.decrement.classList.remove('disabled');
+      }
+    });
+  }
+
+  checkClearButton() {
+    if (this.clearBtn) {
+      if (this.isNotEmpty) {
+        this.clearBtn.classList.add('dropdown__button-clear_show');
+      } else {
+        this.clearBtn.classList.remove('dropdown__button-clear_show');
+      }
+    }
   }
 
   toggle() {
@@ -307,7 +295,7 @@ class Dropdown {
     this.totalItems = 0;
     this.menuItemValue.baby = 0;
 
-    this.disabledButtons();
+    this.disabledDecrementButtons();
   }
 
   open() {
