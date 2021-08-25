@@ -20,7 +20,22 @@ mixin dropdown(options)
           .dropdown__menu-item.js-dropdown__menu-item(data-id= `${elem.title}`)
             .dropdown__menu-item-text #{elem.title}
             .dropdown__controls
-              div&attributes({class: "controls__decrement js-controls__decrement", "data-type": "decrement"})
-              input&attributes({class: "controls__counter js-controls__counter", type: "text", value: elem.count})
-              div&attributes({class: "controls__increment js-controls__increment", "data-type": "increment"})
+              button&attributes({
+                class: "controls__decrement js-controls__decrement",
+                type: "button",
+                "data-type": "decrement"
+                })
+              input&attributes({
+                class: "controls__counter js-controls__counter", 
+                type: "text", 
+                value: elem.count,
+                tabindex: -1,
+                readonly: "readonly",
+                onmousedown: "return false"
+              })
+              button&attributes({
+                class: "controls__increment js-controls__increment",
+                type: "button",
+                "data-type": "increment"
+                })
 

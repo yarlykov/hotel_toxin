@@ -234,7 +234,7 @@ class Dropdown {
   }
 
   disabledButtons() {
-    const { minItems } = this.options;
+    const { minItems = 0 } = this.options;
 
     this.menuItem.forEach((item) => {
       const itemCount = Number(item.countInput.value);

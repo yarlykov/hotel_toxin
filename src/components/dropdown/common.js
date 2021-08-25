@@ -4,8 +4,7 @@ const comfortDropdownNodes = document.querySelectorAll('[data-group="comfort"]')
 const comfortOptions = {
   type: 'comfort',
   defaultText: 'Удобства номера',
-  minItems: 0,
-  maxItems: 20,
+  maxItems: 999,
   buttons: false,
   plurals: {
     bedrooms: ['спальня', 'спальни', 'спален'],
@@ -22,8 +21,7 @@ const guestsDropdownNodes = document.querySelectorAll('[data-group="guests"]');
 const guestsOptions = {
   type: 'guests',
   defaultText: 'Сколько гостей',
-  minItems: 0,
-  maxItems: 20,
+  maxItems: 999,
   buttons: true,
   plurals: {
     guests: ['гость', 'гостя', 'гостей'],

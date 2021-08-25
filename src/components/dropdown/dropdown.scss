@@ -101,26 +101,36 @@
     justify-content: space-between;
 
     .controls__decrement {
-      font-size: 18px;
-      line-height: 22px;
       box-sizing: border-box;
       width: 30px;
       height: 30px;
+      font-size: 18px;
+      line-height: 27px;
+      text-align: center;
+      color: gray;
       border: $mainBorder;
+      background: none;
       border-radius: 50%;
       outline: none;
-      background: none;
-      color: gray;
       cursor: pointer;
-      text-align: center;
-      line-height: 27px;
 
       &::after {
         content: '-';
       }
 
+      &:hover,
+      &:focus {
+        border: $focusBorder;
+      }
+
       &.disabled {
         opacity: 0.5;
+
+        &:hover,
+        &:focus {
+          border: $focusBorder;
+          opacity: 1;
+        }
       }
     }
 
@@ -134,25 +144,30 @@
       text-align: center;
       font-style: normal;
       border: 0;
+      outline: none;
     }
 
     .controls__increment {
-      font-size: 18px;
-      line-height: 22px;
       box-sizing: border-box;
       width: 30px;
       height: 30px;
+      font-size: 18px;
+      line-height: 29px;
+      text-align: center;
+      color: gray;
       border: $mainBorder;
+      background: #fff;
       border-radius: 50%;
       outline: none;
-      background: #fff;
-      color: gray;
       cursor: pointer;
-      text-align: center;
-      line-height: 29px;
 
       &::after {
         content: '+';
+      }
+
+      &:hover,
+      &:focus {
+        border: $focusBorder;
       }
 
       &.disabled {
