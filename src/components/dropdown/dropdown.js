@@ -12,7 +12,7 @@ class Dropdown {
 
   init() {
     this.totalItems = 0;
-    this.maxItems = this.options.maxItems;
+    this.maxItems = this.options.maxItems || Number.MAX_SAFE_INTEGER;
     this.menuItemValue = {
       baby: 0,
       bedrooms: 0,
