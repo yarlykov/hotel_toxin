@@ -55,19 +55,11 @@ block content
           })
 
         .form-elements__text-field-wrapper
-          .form-elements__text-field-containers-date-dropdown
-            .form-elements__text-field-container
-              +heading({level: "h3", title: "date dropdown" })
-              +date-dropdown({ 
-                type: "text", dataType: "date-dropdown-start", placeholder: "ДД.ММ.ГГГГ",
-                size:"small", name: "date", autocomplete: "off", arrow: true 
-              })
-            .form-elements__text-field-container
-              +heading({level: "h3", title: "date dropdown" })
-              +date-dropdown({ 
-                type: "text", dataType: "date-dropdown-end", placeholder: "ДД.ММ.ГГГГ", 
-                size:"small", name: "date", autocomplete: "off", arrow: true 
-              })
+          +date-dropdown({ 
+            type: "text", dataType: "date-dropdown-start", dataTypeEnd: "date-dropdown-end",
+            placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", 
+            arrow: true, twoInputs: true, startTitle: "date dropdown", endTitle: "date dropdown"
+          })
 
         .form-elements__text-field-wrapper 
           +heading({level: "h3", title: "filter date dropdown" })  

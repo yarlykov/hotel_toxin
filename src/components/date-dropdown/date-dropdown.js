@@ -10,6 +10,7 @@ class DateDropdown {
   init() {
     this.$calendar = this.$root.datepicker(this.options).data('datepicker');
     this.input = this.$root.get(0);
+    this.twoDropdownContainer = this.input.closest('.date-dropdown__two-inputs');
     this.addButtons();
     this.buttons = this.$calendar.$datepicker.find('.js-datepicker__buttons');
     this.clearButton = this.$calendar.$datepicker.find('[data-type="clear"]');
@@ -30,8 +31,8 @@ class DateDropdown {
   }
 
   initTwoInputsDropdown() {
-    this.dateStart = document.querySelector('[data-type="date-dropdown-start"]');
-    this.dateEnd = document.querySelector('[data-type="date-dropdown-end"]');
+    this.dateStart = this.twoDropdownContainer.querySelector('[data-type="date-dropdown-start"]');
+    this.dateEnd = this.twoDropdownContainer.querySelector('[data-type="date-dropdown-end"]');
     this.dateEndArrow = this.dateEnd.nextElementSibling;
 
     this.twoInputHandlers();
@@ -140,6 +141,7 @@ class DateDropdown {
 
   hideClearButton() {
     this.clearButton.removeClass('display');
+    console.log(this.clearButton);
   }
 
   showClearButton() {

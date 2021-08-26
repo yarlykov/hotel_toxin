@@ -33,26 +33,7 @@
   }
 
   &__date-dropdown {
-    display: flex;
     padding-top: 22px;
-
-    @media (max-width: 480px) {
-      flex-direction: column;
-      padding: 20px;
-
-      .text-field_size-small {
-        width: 100%;
-      }
-
-      .card__date-dropdown-end {
-        padding-left: 0;
-        padding-top: 10px;
-      }
-    }
-  }
-
-  &__date-dropdown-end {
-    padding-left: 20px;
   }
 
   &__guests-dropdown {

@@ -1,5 +1,13 @@
 @import '@variables';
 
+.date-dropdown {
+  &__two-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
 .datepicker {
   z-index: 1500;
   min-width: 320px;

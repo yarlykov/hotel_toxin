@@ -1,4 +1,24 @@
 include ../text-field/text-field.pug
+include ../heading/heading.pug
 
-mixin date-dropdown({ type="", dataType="", placeholder="", size="", name="date", autocomplete="", arrow=false, readonly=false, lowercase=false })
-  +text-field({ type, dataType, placeholder, size, name, autocomplete, arrow, readonly, lowercase})
+mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size="", name="date", autocomplete="", arrow=false, readonly=false, lowercase=false, twoInputs=false, startTitle="", endTitle="" })
+  if twoInputs
+    .date-dropdown
+      .date-dropdown__two-inputs
+        .date-dropdown__start
+          +heading({ level: "h3", title: startTitle })
+          +text-field({
+            type, dataType, placeholder, 
+            size, name, autocomplete, 
+            arrow, readonly, lowercase,
+          })
+        .date-dropdown__end
+          +heading({ level: "h3", title: endTitle })
+          +text-field({
+            type, dataType: dataTypeEnd, placeholder, 
+            size, name, autocomplete, 
+            arrow, readonly, lowercase,
+          })
+  else
+    .date-dropdown
+      +text-field({ type, dataType, placeholder, size, name, autocomplete, arrow, readonly, lowercase})

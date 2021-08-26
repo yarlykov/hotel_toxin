@@ -8,6 +8,7 @@ include ../radio/radio.pug
 include ../button/button.pug
 include ../price-calc/price-calc.pug
 include ../heading/heading.pug
+include ../date-dropdown/date-dropdown.pug
 
 mixin card({ formMethod="", formAction="", title="", type="", buttonText="", buttonType="", question="", numberOfGuests=0 })
 
@@ -31,16 +32,11 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
     form(method=`${formMethod}`, action=`./${formAction}.html`)
       if (searchOrCalculation)
         section.card__date-dropdown
-          .card__date-dropdown-start
-            +heading({ level: "h3", title: "прибытие" })
-            +text-field({
-                type: "text", dataType: "date-dropdown-start", placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", arrow: true
-            })
-          .card__date-dropdown-end
-            +heading({ level: "h3", title: "выезд" })
-            +text-field({
-                type: "text", dataType: "date-dropdown-end", placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", arrow: true
-            })
+          +date-dropdown({ 
+            type: "text", dataType: "date-dropdown-start", dataTypeEnd: "date-dropdown-end",
+            placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", 
+            arrow: true, twoInputs: true, startTitle: "date dropdown", endTitle: "date dropdown"
+          })
         div(class= search ? "card__guests-dropdown-search" : "card__guests-dropdown")
           +heading({ level: "h3", title: "гости" })
           +dropdown({
