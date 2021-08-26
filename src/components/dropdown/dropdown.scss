@@ -4,11 +4,11 @@
 .dropdown {
   position: relative;
 
-  &_guests {
+  &_type_guests {
     min-width: 100%;
   }
 
-  &_comfort {
+  &_type_comfort {
     min-width: 266px;
   }
 
@@ -99,80 +99,76 @@
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+  }
 
-    .controls__decrement {
-      box-sizing: border-box;
-      width: 30px;
-      height: 30px;
-      font-size: 18px;
-      line-height: 27px;
-      text-align: center;
-      color: gray;
-      border: $mainBorder;
-      background: none;
-      border-radius: 50%;
-      outline: none;
-      cursor: pointer;
+  &__decrement {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: gray;
+    border: $mainBorder;
+    background: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
 
-      &::after {
-        content: '-';
-      }
-
-      &:hover,
-      &:focus {
-        border: $focusBorder;
-      }
-
-      &.disabled {
-        opacity: 0.5;
-
-        &:hover,
-        &:focus {
-          border: $focusBorder;
-          opacity: 1;
-        }
-      }
+    &::after {
+      content: '-';
     }
 
-    .controls__counter {
-      width: 30px;
-      height: 28px;
-      padding: 0px;
-      font-family: inherit;
-      font-size: 12px;
-      font-weight: bold;
-      text-align: center;
-      font-style: normal;
-      border: 0;
-      outline: none;
+    &:hover,
+    &:focus {
+      border: $focusBorder;
     }
 
-    .controls__increment {
-      box-sizing: border-box;
-      width: 30px;
-      height: 30px;
-      font-size: 18px;
-      line-height: 29px;
-      text-align: center;
-      color: gray;
-      border: $mainBorder;
-      background: #fff;
-      border-radius: 50%;
-      outline: none;
-      cursor: pointer;
+    &.disabled {
+      opacity: 0.4;
+      cursor: auto;
+    }
+  }
 
-      &::after {
-        content: '+';
-      }
+  &__counter {
+    width: 30px;
+    height: 28px;
+    padding: 0px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    font-style: normal;
+    border: 0;
+    outline: none;
+  }
 
-      &:hover,
-      &:focus {
-        border: $focusBorder;
-      }
+  &__increment {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 29px;
+    text-align: center;
+    color: gray;
+    border: $mainBorder;
+    background: #fff;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
 
-      &.disabled {
-        opacity: 0.5;
-      }
+    &::after {
+      content: '+';
+    }
+
+    &:hover,
+    &:focus {
+      border: $focusBorder;
+    }
+
+    &.disabled {
+      opacity: 0.4;
+      cursor: auto;
     }
   }
 
@@ -194,7 +190,7 @@
   }
 }
 
-.dropdown.dropdown__open {
+.dropdown.dropdown_open {
   .dropdown__drop {
     display: block;
     border: $focusBorder;

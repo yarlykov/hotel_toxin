@@ -1,10 +1,10 @@
 mixin dropdown(options)
   -
-    const isOpen = options.isOpen ? "dropdown__open" : ""
+    const isOpen = options.isOpen ? "dropdown_open" : ""
     const isGroupComfort = options.group == "comfort"
     const group = options.group == "guests" ? "Сколько гостей" : "Удобства номера"
 
-  .dropdown(class=isOpen, class=`dropdown_${options.group}` data-group=`${options.group}`,)
+  .dropdown(class=isOpen, class=`dropdown_type_${options.group}` data-group=`${options.group}`,)
     input&attributes({
       type: "text", 
       class: "dropdown__input js-dropdown__input", 
@@ -21,12 +21,12 @@ mixin dropdown(options)
             .dropdown__menu-item-text #{elem.title}
             .dropdown__controls
               button&attributes({
-                class: "controls__decrement js-controls__decrement",
+                class: "dropdown__decrement js-dropdown__decrement",
                 type: "button",
                 "data-type": "decrement"
                 })
               input&attributes({
-                class: "controls__counter js-controls__counter", 
+                class: "dropdown__counter js-dropdown__counter", 
                 type: "text", 
                 value: elem.count,
                 tabindex: -1,
@@ -34,7 +34,7 @@ mixin dropdown(options)
                 onmousedown: "return false"
               })
               button&attributes({
-                class: "controls__increment js-controls__increment",
+                class: "dropdown__increment js-dropdown__increment",
                 type: "button",
                 "data-type": "increment"
                 })

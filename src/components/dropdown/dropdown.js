@@ -32,7 +32,7 @@ class Dropdown {
     this.countInitialElements();
     this.setInputText();
     this.checkClearButton();
-    this.disabledDecrementButtons();
+    this.counterButtonsToggle();
   }
 
   findDOMElements() {
@@ -40,26 +40,26 @@ class Dropdown {
     this.drop = this.mainNode.querySelector('.js-dropdown__drop');
     this.menuItems = this.mainNode.querySelectorAll('.js-dropdown__menu-item');
     this.menuItem = Array.from(this.menuItems).map((item) => ({
-      increment: item.querySelector('.js-controls__increment'),
-      decrement: item.querySelector('.js-controls__decrement'),
-      countInput: item.querySelector('.js-controls__counter'),
+      increment: item.querySelector('.js-dropdown__increment'),
+      decrement: item.querySelector('.js-dropdown__decrement'),
+      countInput: item.querySelector('.js-dropdown__counter'),
       id: item.dataset.id,
-      value: Number(item.querySelector('.js-controls__counter').value),
+      value: Number(item.querySelector('.js-dropdown__counter').value),
       isBabyValue:
         item.dataset.id === 'Младенцы'
-          ? Number(item.querySelector('.js-controls__counter').value)
+          ? Number(item.querySelector('.js-dropdown__counter').value)
           : 0,
       isBedroomsValue:
         item.dataset.id === 'Спальни'
-          ? Number(item.querySelector('.js-controls__counter').value)
+          ? Number(item.querySelector('.js-dropdown__counter').value)
           : 0,
       isBedsValue:
         item.dataset.id === 'Кровати'
-          ? Number(item.querySelector('.js-controls__counter').value)
+          ? Number(item.querySelector('.js-dropdown__counter').value)
           : 0,
       isBathsValue:
         item.dataset.id === 'Ванные комнаты'
-          ? Number(item.querySelector('.js-controls__counter').value)
+          ? Number(item.querySelector('.js-dropdown__counter').value)
           : 0,
     }));
   }
@@ -133,7 +133,7 @@ class Dropdown {
   }
 
   createFinalGuestsText() {
-    const { maxItems, defaultText } = this.options;
+    const { defaultText } = this.options;
     const { guests = [], babies = [] } = this.options.plurals;
 
     const declTextGuests = declensionsText(this.totalItems, guests);
@@ -146,17 +146,17 @@ class Dropdown {
       ? `${this.totalItems} ${declTextGuests}`
       : `${this.totalItems} ${declTextGuests}, ${this.menuItemValue.baby} ${declTextBabies}`;
 
-    if (this.totalItems > 0 && this.totalItems <= maxItems) {
+    if (this.totalItems > 0) {
       return textInput;
     }
     return defaultText;
   }
 
   createFinalComfortText() {
-    const { maxItems, defaultText } = this.options;
+    const { defaultText } = this.options;
     let textInput = '';
 
-    if (this.totalItems > 0 && this.totalItems <= maxItems) {
+    if (this.totalItems > 0) {
       const pluralWords = Object.keys(this.options.plurals);
       pluralWords.forEach((itemName) => {
         const currentValue = this.menuItemValue[itemName];
@@ -179,16 +179,22 @@ class Dropdown {
 
   increment(target) {
     const parent = target.parentNode;
-    const counter = parent.querySelector('.js-controls__counter');
-    const decrement = parent.querySelector('.js-controls__decrement');
+    const counter = parent.querySelector('.js-dropdown__counter');
+    const increment = parent.querySelector('.js-dropdown__increment');
+    const decrement = parent.querySelector('.js-dropdown__decrement');
     const { id } = parent.parentNode.dataset;
     const currentValue = Number(counter.value);
 
-    if (this.totalItems < this.maxItems) {
+    if (currentValue === this.maxItems) {
+      increment.classList.add('disabled');
+      increment.setAttribute('disabled', 'disabled');
+    }
+    if (currentValue < this.maxItems) {
       counter.value = currentValue + 1;
       this.totalItems += 1;
       this.itemCounter(id, count.INCREMENT);
       decrement.classList.remove('disabled');
+      decrement.removeAttribute('disabled', 'disabled');
     }
 
     this.setInputText();
@@ -197,20 +203,27 @@ class Dropdown {
 
   decrement(target) {
     const parent = target.parentNode;
-    const counter = parent.querySelector('.js-controls__counter');
-    const decrement = parent.querySelector('.js-controls__decrement');
+    const counter = parent.querySelector('.js-dropdown__counter');
+    const increment = parent.querySelector('.js-dropdown__increment');
+    const decrement = parent.querySelector('.js-dropdown__decrement');
     const { id } = parent.parentNode.dataset;
     const currentValue = Number(counter.value);
     const equalZero = (currentValue - 1) === 0;
 
-    if (equalZero) decrement.classList.add('disabled');
+    if (equalZero) {
+      decrement.classList.add('disabled');
+      decrement.setAttribute('disabled', 'disabled');
+    }
     if (currentValue > 0) {
       counter.value = currentValue - 1;
       this.totalItems -= 1;
       this.itemCounter(id, count.DECREMENT);
+      increment.classList.remove('disabled');
+      increment.removeAttribute('disabled', 'disabled');
     }
 
     this.setInputText();
+    this.counterButtonsToggle();
     this.checkClearButton();
   }
 
@@ -244,14 +257,14 @@ class Dropdown {
   }
 
   get isOpen() {
-    return this.mainNode.classList.contains('dropdown__open');
+    return this.mainNode.classList.contains('dropdown_open');
   }
 
   get isNotEmpty() {
     return this.totalItems > 0;
   }
 
-  disabledDecrementButtons() {
+  counterButtonsToggle() {
     const { minItems = 0 } = this.options;
 
     this.menuItem.forEach((item) => {
@@ -259,8 +272,17 @@ class Dropdown {
 
       if (itemCount <= minItems) {
         item.decrement.classList.add('disabled');
+        item.decrement.setAttribute('disabled', 'disabled');
       } else {
         item.decrement.classList.remove('disabled');
+        item.decrement.removeAttribute('disabled', 'disabled');
+      }
+      if (itemCount >= this.maxItems) {
+        item.increment.classList.add('disabled');
+        item.increment.setAttribute('disabled', 'disabled');
+      } else {
+        item.increment.classList.remove('disabled');
+        item.increment.removeAttribute('disabled', 'disabled');
       }
     });
   }
@@ -295,15 +317,15 @@ class Dropdown {
     this.totalItems = 0;
     this.menuItemValue.baby = 0;
 
-    this.disabledDecrementButtons();
+    this.counterButtonsToggle();
   }
 
   open() {
-    this.mainNode.classList.add('dropdown__open');
+    this.mainNode.classList.add('dropdown_open');
   }
 
   close() {
-    this.mainNode.classList.remove('dropdown__open');
+    this.mainNode.classList.remove('dropdown_open');
   }
 }
 
