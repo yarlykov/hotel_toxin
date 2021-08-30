@@ -5,6 +5,8 @@
   display: flex;
   margin: 0;
   list-style-type: none;
+  flex-wrap: wrap;
+  padding-left: 50px;
 
   &__item {
     position: relative;
