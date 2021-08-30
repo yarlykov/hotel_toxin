@@ -38,7 +38,12 @@
   }
 
   &__guests-dropdown {
+    min-width: 320px;
     padding-top: 20px;
+
+    @media (max-width: 480px) {
+      min-width: 200px;
+    }
   }
 
   &__guests-dropdown-title {

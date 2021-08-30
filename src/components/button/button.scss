@@ -25,12 +25,12 @@
   }
 
   &_large {
-    padding: 15px 19px 14px;
+    padding: 15px 35px 14px 35px;
   }
 
   &_small {
-    min-width: 98px;
-    padding: 15px 0px 14px;
+    padding: 15px 15px 15px 14px;
+    text-align: center;
   }
 
   &_stretching {
@@ -82,7 +82,8 @@
   &__arrow {
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 53%;
+    transform: translateY(-50%);
 
     &:before {
       position: relative;
