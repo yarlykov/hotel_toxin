@@ -142,6 +142,11 @@
     min-width: 320px;
   }
 
+  &__dropdowns-block-left {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   &__dropdowns-block-right {
     display: flex;
     min-width: 712px;
