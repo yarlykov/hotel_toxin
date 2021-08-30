@@ -33,7 +33,7 @@ class DateDropdown {
 
     clearBtn.classList.add(
       'button_inline',
-      'buttons-dropdown__button_clear',
+      'datepicker__button-clear',
     );
     clearBtn.setAttribute('type', 'button');
     clearBtn.setAttribute('data-type', 'clear');
@@ -42,7 +42,7 @@ class DateDropdown {
 
     applyBtn.classList.add(
       'button_inline',
-      'buttons-dropdown__button_apply',
+      'datepicker__button-apply',
     );
     applyBtn.setAttribute('type', 'button');
     applyBtn.setAttribute('data-type', 'apply');
@@ -58,7 +58,7 @@ class DateDropdown {
     this.buttons = this.$calendar.$datepicker.find('.js-datepicker__buttons');
     this.clearBtn = this.$calendar.$datepicker.find(
       '[data-type="clear"]',
-    );
+    ).get(0);
   }
 
   onSelect(formattedDate) {
@@ -77,10 +77,6 @@ class DateDropdown {
     }
   }
 
-  setInitialDates(dates = []) {
-    this.$calendar.selectDate(dates);
-  }
-
   handleClearButtonClick() {
     this.$calendar.clear();
   }
@@ -93,10 +89,17 @@ class DateDropdown {
     this.$calendar.show();
   }
 
-  hideClearButton() {
+  showClearButton() {
+    this.clearBtn.classList.add('datepicker__button-clear_show');
   }
 
-  showClearButton() {
+  hideClearButton() {
+    this.clearBtn.classList.remove('datepicker__button-clear_show');
+  }
+
+  setInitialDates(dates = []) {
+    this.$calendar.selectDate(dates);
+    this.showClearButton();
   }
 
   calendarSmallSize() {
@@ -155,7 +158,6 @@ class DateDropdownDouble {
 
   open() {
     this.calendarBody.classList.add('active');
-    this.addHandleDocumentClick();
   }
 
   close() {
@@ -164,11 +166,16 @@ class DateDropdownDouble {
 
   clear() {
     this.$calendar.clear();
-    this.clearBtn.removeClass('display');
+    this.hideClearButton();
   }
 
   onSelect(formattedDate) {
     const { twoInputs } = this.options;
+    if (formattedDate) {
+      this.showClearButton();
+    } else {
+      this.hideClearButton();
+    }
     if (twoInputs) {
       const dates = formattedDate.split(',');
       const [startDate = '', endDate = ''] = dates;
@@ -197,7 +204,7 @@ class DateDropdownDouble {
 
     clearBtn.classList.add(
       'button_inline',
-      'buttons-dropdown__button_clear',
+      'datepicker__button-clear',
     );
     clearBtn.setAttribute('type', 'button');
     clearBtn.setAttribute('data-type', 'clear');
@@ -205,7 +212,7 @@ class DateDropdownDouble {
 
     applyBtn.classList.add(
       'button_inline',
-      'buttons-dropdown__button_apply',
+      'datepicker__button-apply',
     );
     applyBtn.setAttribute('type', 'button');
     applyBtn.setAttribute('data-type', 'apply');
@@ -217,11 +224,20 @@ class DateDropdownDouble {
     this.buttons = this.$calendar.$datepicker.find('.js-datepicker__buttons');
     this.clearBtn = this.$calendar.$datepicker.find(
       '[data-type="clear"]',
-    );
+    ).get(0);
   }
 
   setInitialDates(dates = []) {
     this.$calendar.selectDate(dates);
+    this.showClearButton();
+  }
+
+  showClearButton() {
+    this.clearBtn.classList.add('datepicker__button-clear_show');
+  }
+
+  hideClearButton() {
+    this.clearBtn.classList.remove('datepicker__button-clear_show');
   }
 
   handleChangeInput(event) {

@@ -41,6 +41,14 @@
     justify-content: space-between;
     padding: 0 20px 20px;
   }
+
+  &__button-clear {
+    visibility: hidden;
+
+    &.datepicker__button-clear_show {
+      visibility: visible;
+    }
+  }
 }
 
 .date-dropdown__two-inputs .datepicker-inline {
@@ -48,6 +56,7 @@
   z-index: 1500;
   transform: translateX(-100000px);
   opacity: 0;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.25);
 
   &.active {
     transform: translateX(0px);
