@@ -2,6 +2,7 @@
 
 .date-dropdown {
   &__two-inputs {
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -39,6 +40,19 @@
     display: flex;
     justify-content: space-between;
     padding: 0 20px 20px;
+  }
+}
+
+.date-dropdown__two-inputs .datepicker-inline {
+  position: absolute;
+  z-index: 1500;
+  transform: translateX(-100000px);
+  opacity: 0;
+
+  &.active {
+    transform: translateX(0px);
+    transform: translateY(70px);
+    opacity: 1;
   }
 }
 

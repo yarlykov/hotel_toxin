@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 class DateDropdown {
   constructor(selector, options) {
     if (selector.length !== 0) {
@@ -9,42 +10,16 @@ class DateDropdown {
 
   init() {
     this.$calendar = this.$root.datepicker(this.options).data('datepicker');
-    this.input = this.$root.get(0);
-    this.twoDropdownContainer = this.input.closest('.date-dropdown__two-inputs');
     this.addButtons();
-    this.buttons = this.$calendar.$datepicker.find('.js-datepicker__buttons');
-    this.clearButton = this.$calendar.$datepicker.find('[data-type="clear"]');
-    this.applyButton = this.$calendar.$datepicker.find('[data-type="apply"]');
-    const arrow = this.$root[0].nextElementSibling;
-    arrow.addEventListener('click', this.handleArrowDropdownClick.bind(this));
-    this.input.addEventListener('change', this.handleChangeInput.bind(this));
 
     this.$root.datepicker({
       onSelect: this.onSelect.bind(this),
       onChangeView: this.onChangeView.bind(this),
     });
 
-    const { smallSize, twoInputs, initialDates } = this.options;
+    const { smallSize, initialDates } = this.options;
     if (initialDates) this.setInitialDates(initialDates);
     if (smallSize) this.calendarSmallSize();
-    if (twoInputs) this.initTwoInputsDropdown();
-  }
-
-  initTwoInputsDropdown() {
-    this.dateStart = this.twoDropdownContainer.querySelector('[data-type="date-dropdown-start"]');
-    this.dateEnd = this.twoDropdownContainer.querySelector('[data-type="date-dropdown-end"]');
-    this.dateEndArrow = this.dateEnd.nextElementSibling;
-
-    this.twoInputHandlers();
-  }
-
-  twoInputHandlers() {
-    this.handleDateEndClick = this.handleDateEndClick.bind(this);
-
-    this.dateEnd.addEventListener('click', this.handleDateEndClick);
-    this.dateEndArrow.addEventListener('click', this.handleDateEndClick);
-    this.dateEnd.addEventListener('change', this.handleChangeInput.bind(this));
-    this.dateEnd.addEventListener('focus', this.handleDateEndFocus.bind(this));
   }
 
   addButtons() {
@@ -80,6 +55,10 @@ class DateDropdown {
     btnWrap.append(clearBtn);
     btnWrap.append(applyBtn);
     this.$calendar.$datepicker.append(btnWrap);
+    this.buttons = this.$calendar.$datepicker.find('.js-datepicker__buttons');
+    this.clearBtn = this.$calendar.$datepicker.find(
+      '[data-type="clear"]',
+    );
   }
 
   onSelect(formattedDate) {
@@ -88,8 +67,109 @@ class DateDropdown {
     } else {
       this.hideClearButton();
     }
+  }
 
-    if (this.options.twoInputs) {
+  onChangeView(view) {
+    if (view === 'months' || view === 'years') {
+      this.buttons.hide();
+    } else {
+      this.buttons.show();
+    }
+  }
+
+  setInitialDates(dates = []) {
+    this.$calendar.selectDate(dates);
+  }
+
+  handleClearButtonClick() {
+    this.$calendar.clear();
+  }
+
+  handleApplyButtonClick() {
+    this.$calendar.hide();
+  }
+
+  handleArrowDropdownClick() {
+    this.$calendar.show();
+  }
+
+  hideClearButton() {
+  }
+
+  showClearButton() {
+  }
+
+  calendarSmallSize() {
+    const calendarBody = this.$calendar.$datepicker.get(0);
+    calendarBody.classList.add('datepicker--small');
+  }
+}
+
+class DateDropdownDouble {
+  constructor(selector, options) {
+    this.$root = selector;
+    this.options = options;
+    this.init();
+  }
+
+  init() {
+    this.$calendar = this.$root.datepicker(this.options).data('datepicker');
+    this.addButtons();
+    this.container = this.$root.get(0);
+
+    this.$root.datepicker({
+      onSelect: this.onSelect.bind(this),
+      onChangeView: this.onChangeView.bind(this),
+    });
+
+    this.dateStart = this.container.querySelector('[data-type="date-dropdown-start"]');
+    this.dateEnd = this.container.querySelector('[data-type="date-dropdown-end"]');
+    this.container.addEventListener('click', this.handleDateDropdownClick.bind(this));
+    this.calendarBody = this.$calendar.$datepicker.get(0).parentElement;
+
+    const { initialDates } = this.options;
+    if (initialDates) this.setInitialDates(initialDates);
+  }
+
+  handleDateDropdownClick({ target }) {
+    const { type } = target.dataset;
+
+    if (type === 'date-dropdown-start') this.toggle();
+    if (type === 'date-dropdown-end') this.toggle();
+    if (type === 'arrow') this.toggle();
+    if (type === 'apply') this.close();
+    if (type === 'clear') this.clear();
+  }
+
+  get isOpen() {
+    return this.calendarBody.classList.contains('active');
+  }
+
+  toggle() {
+    if (this.isOpen) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+
+  open() {
+    this.calendarBody.classList.add('active');
+    this.addHandleDocumentClick();
+  }
+
+  close() {
+    this.calendarBody.classList.remove('active');
+  }
+
+  clear() {
+    this.$calendar.clear();
+    this.clearBtn.removeClass('display');
+  }
+
+  onSelect(formattedDate) {
+    const { twoInputs } = this.options;
+    if (twoInputs) {
       const dates = formattedDate.split(',');
       const [startDate = '', endDate = ''] = dates;
 
@@ -106,6 +186,40 @@ class DateDropdown {
     }
   }
 
+  addButtons() {
+    const btnWrap = document.createElement('div');
+    const clearBtn = document.createElement('button');
+    const applyBtn = document.createElement('button');
+    btnWrap.classList.add(
+      'datepicker__buttons',
+      'js-datepicker__buttons',
+    );
+
+    clearBtn.classList.add(
+      'button_inline',
+      'buttons-dropdown__button_clear',
+    );
+    clearBtn.setAttribute('type', 'button');
+    clearBtn.setAttribute('data-type', 'clear');
+    clearBtn.innerHTML = 'Очистить';
+
+    applyBtn.classList.add(
+      'button_inline',
+      'buttons-dropdown__button_apply',
+    );
+    applyBtn.setAttribute('type', 'button');
+    applyBtn.setAttribute('data-type', 'apply');
+    applyBtn.innerHTML = 'Применить';
+
+    btnWrap.append(clearBtn);
+    btnWrap.append(applyBtn);
+    this.$calendar.$datepicker.append(btnWrap);
+    this.buttons = this.$calendar.$datepicker.find('.js-datepicker__buttons');
+    this.clearBtn = this.$calendar.$datepicker.find(
+      '[data-type="clear"]',
+    );
+  }
+
   setInitialDates(dates = []) {
     this.$calendar.selectDate(dates);
   }
@@ -118,48 +232,6 @@ class DateDropdown {
     dates.push(new Date(correctDate));
     this.setInitialDates(dates);
   }
-
-  handleClearButtonClick() {
-    this.$calendar.clear();
-  }
-
-  handleApplyButtonClick() {
-    this.$calendar.hide();
-  }
-
-  handleDateEndClick() {
-    this.$calendar.show();
-  }
-
-  handleDateEndFocus() {
-    this.$calendar.show();
-  }
-
-  handleArrowDropdownClick() {
-    this.$calendar.show();
-  }
-
-  hideClearButton() {
-    this.clearButton.removeClass('display');
-    console.log(this.clearButton);
-  }
-
-  showClearButton() {
-    this.clearButton.addClass('display');
-  }
-
-  hideApplyButton() {
-    this.applyButton.removeClass('display');
-  }
-
-  showApplyButton() {
-    this.applyButton.addClass('display');
-  }
-
-  calendarSmallSize() {
-    const calendarBody = this.$calendar.$datepicker.get(0);
-    calendarBody.classList.add('datepicker--small');
-  }
 }
 
-export default DateDropdown;
+export { DateDropdown, DateDropdownDouble };

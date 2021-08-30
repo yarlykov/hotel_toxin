@@ -1,12 +1,13 @@
 import 'air-datepicker/dist/js/datepicker';
 import 'air-datepicker/dist/css/datepicker.css';
-import DateDropdown from './date-dropdown';
+import { DateDropdown, DateDropdownDouble } from './date-dropdown';
 
 /* =============== Date dropdown ================== */
-const $twoInputsDateDropdown = $('[data-type="date-dropdown-start"]');
+const $twoInputsDateDropdown = $('.date-dropdown__two-inputs');
 if ($twoInputsDateDropdown.length > 0) {
   $twoInputsDateDropdown.each(function () {
-    new DateDropdown($(this), {
+    new DateDropdownDouble($(this), {
+      inline: true,
       dateFormat: 'dd.mm.yyyy',
       position: 'bottom left',
       offset: 5,
