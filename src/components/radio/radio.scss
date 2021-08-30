@@ -33,6 +33,10 @@
       border-radius: 50%;
       background: $mainGradient;
     }
+
+    &:focus + .radio__box {
+      box-shadow: 3px 3px 2px $designColor_main;
+    }
   }
 
   &__box {
