@@ -39,7 +39,7 @@
 
   &__guests-dropdown {
     min-width: 320px;
-    padding-top: 20px;
+    padding-top: 21px;
 
     @media (max-width: 480px) {
       min-width: 200px;
@@ -73,7 +73,7 @@
   }
 
   &__birthday {
-    padding-top: 25px;
+    padding-top: 26px;
   }
 
   &__login-details {
@@ -84,7 +84,7 @@
   }
 
   &__toggle {
-    padding: 10px 0 7px;
+    padding: 9px 0 7px;
   }
 
   &__button {
@@ -98,7 +98,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 30px;
+    padding-top: 29px;
   }
 
   &__question-text {

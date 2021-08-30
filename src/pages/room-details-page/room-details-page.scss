@@ -13,7 +13,7 @@
     min-height: 400px;
     padding-top: 70px;
     padding-left: 140px;
-    padding-right: 125px;
+    padding-right: 140px;
 
     @media (max-width: 1240px) {
       flex-wrap: wrap;
@@ -32,7 +32,7 @@
   &__information {
     display: grid;
     grid-template-columns: 291px 1fr;
-    grid-gap: 10px 70px;
+    grid-gap: 12px 70px;
     padding-bottom: 71px;
 
     @media (max-width: 800px) {
@@ -43,6 +43,10 @@
     @media (max-width: 480px) {
       max-width: 300px;
     }
+
+    & .heading__description {
+      padding-top: 5px;
+    }
   }
 
   &__calculation {
@@ -52,6 +56,10 @@
     }
     @media (max-width: 800px) {
       margin-left: 0;
+    }
+
+    & .card__date-dropdown {
+      padding-top: 20px;
     }
   }
 
@@ -121,6 +129,10 @@
   }
 
   &__rules {
+    & .heading__title {
+      padding-left: 20px;
+    }
+
     & .information__title {
       padding: 0px 0 17px 20px;
     }
