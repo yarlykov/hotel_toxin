@@ -1,18 +1,18 @@
-mixin button({ classList=[], type="button", buttonName="button", link="", size="inline", textColor="gray", buttonVariation="inline", focused=false })
+mixin button({ classList=[], type="button", buttonName="button", link="", size="inline", textColor="gray", buttonVariation="inline", disabled=false })
   -
     const mainClass = "button"
     const sizeClassModifier = `button_${size}`
     const textClassModifier = `button__text_${textColor}`
-    const focusedClassModifier = focused ? "button_focused" : ""
     
     const buttonAttributes = {
       link: {
-        class: [ mainClass, sizeClassModifier, focusedClassModifier ],
+        class: [ mainClass, sizeClassModifier ],
         href: `./${link}.html`,
       },
       button: {
-        class: [ mainClass, sizeClassModifier, focusedClassModifier ],
+        class: [ mainClass, sizeClassModifier ],
         type: type,
+        disabled: disabled,
       }
     }
 

@@ -15,12 +15,13 @@
   outline: none;
   cursor: pointer;
 
-  &:hover,
-  &:focus {
+  &:disabled {
+    cursor: auto;
     background: $mainGradientTransparent;
   }
 
-  &_focused {
+  &:hover,
+  &:focus {
     background: $mainGradientTransparent;
   }
 
@@ -48,6 +49,12 @@
 
     &:hover,
     &:focus {
+      color: $textColor_50;
+      background: none;
+    }
+
+    &:disabled {
+      cursor: auto;
       color: $textColor_50;
       background: none;
     }

@@ -121,13 +121,13 @@ block content
           +heading({level: "h3", title: "buttons"})
           .form-elements__buttons-container
             +button({ buttonName: "click me", size: "small", textColor: "white" })
-            +button({ buttonName: "click me", size: "small", textColor:  "white", focused: true })
+            +button({ buttonName: "click me", size: "small", textColor:  "white", disabled: true })
           .form-elements__buttons-container
             +button({ buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" })
-            +button({ buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite", focused: true })
+            +button({ buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite", disabled: true })
           .form-elements__buttons-container-inline
             +button({ buttonName: "click me", textColor: "purple"})
-            +button({ buttonName: "click me", textColor: "gray"})
+            +button({ buttonName: "click me", textColor: "gray", disabled: true })
           +button({ buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"})
 
         .form-elements__buttons-wrapper
