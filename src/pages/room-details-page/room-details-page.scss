@@ -15,13 +15,14 @@
     padding-left: 140px;
     padding-right: 125px;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1240px) {
       flex-wrap: wrap;
       flex-direction: column;
       align-items: center;
+      padding-bottom: 50px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 980px) {
       padding-top: 28px;
       padding-right: 0px;
       padding-left: 0px;
@@ -36,6 +37,7 @@
 
     @media (max-width: 800px) {
       grid-template-columns: 320px;
+      grid-gap: 50px;
     }
 
     @media (max-width: 480px) {

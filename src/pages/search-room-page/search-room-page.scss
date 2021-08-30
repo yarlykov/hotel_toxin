@@ -36,14 +36,14 @@
     width: 100%;
 
     @media (max-width: 1190px) {
-      padding-left: calc(20% - 100px);
+      padding-left: calc(25% - 100px);
     }
-    @media (max-width: 918px) {
-      padding-left: calc(30% - 100px);
+    @media (max-width: 998px) {
+      padding-left: calc(35% - 100px);
       padding-top: 60px;
     }
-    @media (max-width: 645px) {
-      padding-left: calc(40% - 100px);
+    @media (max-width: 718px) {
+      padding-left: calc(45% - 100px);
     }
     @media (max-width: 400px) {
       padding: 60px 25px 25px 25px;

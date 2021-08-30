@@ -24,7 +24,17 @@
 
     @media (max-width: 1280px) {
       max-width: 1280px;
-      grid-template-rows: repeat(3, 1fr);
+      padding-right: 15px;
+    }
+
+    @media (max-width: 980px) {
+      max-width: 900px;
+    }
+  }
+
+  & .heading__title {
+    @media (max-width: 718px) {
+      max-width: 270px;
     }
   }
 }

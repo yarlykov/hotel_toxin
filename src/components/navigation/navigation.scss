@@ -8,6 +8,10 @@
   flex-wrap: wrap;
   padding-left: 50px;
 
+  @media (max-width: 1280px) {
+    padding-left: 20px;
+  }
+
   &__item {
     position: relative;
     padding-right: 20px;
