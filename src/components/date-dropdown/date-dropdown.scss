@@ -7,6 +7,12 @@
     justify-content: space-between;
     width: 100%;
   }
+
+  &__start {
+    @media (max-width: 480px) {
+      padding-right: 5px;
+    }
+  }
 }
 
 .datepicker {

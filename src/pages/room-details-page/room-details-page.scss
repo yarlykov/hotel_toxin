@@ -37,8 +37,9 @@
     @media (max-width: 800px) {
       grid-template-columns: 320px;
     }
-    @media (max-width: 400px) {
-      padding-left: 5px;
+
+    @media (max-width: 480px) {
+      max-width: 300px;
     }
   }
 
@@ -86,10 +87,19 @@
     & .room-dignities.room-dignities__item:nth-last-child(2) + hr {
       display: none;
     }
+
+    @media (max-width: 480px) {
+      padding: 0;
+    }
   }
 
   &__impressions {
     max-width: 320px;
+
+    @media (max-width: 480px) {
+      max-width: 300px;
+      padding: 5px 10px;
+    }
   }
 
   &__feedback {
@@ -101,16 +111,31 @@
     @media (max-width: 800px) {
       grid-column: 1/2;
     }
+
+    @media (max-width: 480px) {
+      max-width: 300px;
+      padding: 5px 10px;
+    }
   }
 
   &__rules {
     & .information__title {
       padding: 0px 0 17px 20px;
     }
+
+    @media (max-width: 480px) {
+      max-width: 300px;
+      padding: 5px 10px;
+    }
   }
 
   &__cancel {
     max-width: 341px;
+
+    @media (max-width: 480px) {
+      max-width: 300px;
+      padding: 5px 10px;
+    }
   }
 
   &__feedback-header {
