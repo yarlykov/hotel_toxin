@@ -57,7 +57,7 @@
   }
 }
 
-.date-dropdown__two-inputs .datepicker-inline {
+.date-dropdown .datepicker-inline {
   position: absolute;
   z-index: 1500;
   transform: translateX(-100000px);
@@ -66,9 +66,15 @@
 
   &.active {
     transform: translateX(0px);
-    transform: translateY(70px);
+    transform: translateY(5px);
     opacity: 1;
   }
+}
+
+[data-id='date-inline'] .datepicker-inline {
+  position: static;
+  transform: translateX(0px);
+  opacity: 1;
 }
 
 /* -------------------------------------------------

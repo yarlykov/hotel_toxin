@@ -2,8 +2,10 @@ include ../text-field/text-field.pug
 include ../heading/heading.pug
 
 mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size="", name="date", autocomplete="", arrow=false, readonly=false, lowercase=false, twoInputs=false, startTitle="", endTitle="" })
+  - const dataId = dataType === "inline-date-dropdown" ? "date-inline" : "date-filter"
+
   if twoInputs
-    .date-dropdown
+    .date-dropdown(data-id="date-filter-double")
       .date-dropdown__two-inputs
         .date-dropdown__start
           +heading({ level: "h3", title: startTitle })
@@ -20,5 +22,5 @@ mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size
             arrow, readonly, lowercase,
           })
   else
-    .date-dropdown
+    .date-dropdown(data-id=dataId)
       +text-field({ type, dataType, placeholder, size, name, autocomplete, arrow, readonly, lowercase})
