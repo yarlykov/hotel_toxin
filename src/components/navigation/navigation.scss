@@ -35,7 +35,8 @@
     z-index: 3000;
     min-width: 140px;
     top: 25px;
-    right: 8%;
+    left: 40%;
+    transform: translateX(-50%);
     box-shadow: $mainBoxShadow;
     border-radius: $mainBorderRadius;
     background: $cardsBackground;
