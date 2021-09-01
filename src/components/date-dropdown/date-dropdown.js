@@ -43,8 +43,16 @@ class DateDropdown {
     if (type === targetType.CLEAR) this.clear();
   }
 
+  handleOutsideClick(event) {
+    if (!this.isClickOnDateDropdown(event)) this.close();
+  }
+
   get isOpen() {
     return this.calendarBody.classList.contains('active');
+  }
+
+  isClickOnDateDropdown({ path }) {
+    return path.includes(this.container);
   }
 
   toggle() {
@@ -57,10 +65,12 @@ class DateDropdown {
 
   open() {
     this.calendarBody.classList.add('active');
+    document.addEventListener('click', this.handleOutsideClick.bind(this));
   }
 
   close() {
     this.calendarBody.classList.remove('active');
+    document.removeEventListener('click', this.handleOutsideClick.bind(this));
   }
 
   clear() {
