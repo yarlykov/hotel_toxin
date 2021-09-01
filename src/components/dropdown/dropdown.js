@@ -184,8 +184,9 @@ class Dropdown {
     const decrement = parent.querySelector('.js-dropdown__decrement');
     const { id } = parent.parentNode.dataset;
     const currentValue = Number(counter.value);
+    const maxValue = this.maxItems - 1;
 
-    if (currentValue === this.maxItems) {
+    if (currentValue === maxValue) {
       increment.classList.add('disabled');
       increment.setAttribute('disabled', 'disabled');
     }
