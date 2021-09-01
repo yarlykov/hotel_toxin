@@ -19,6 +19,14 @@
     }
   }
 
+  &:focus-within {
+    outline: none;
+    transform: translate3d(3px, -3px, -3px);
+  }
+  & a:focus-within {
+    outline: none;
+  }
+
   & [data-tooltip] {
     position: relative;
   }
@@ -36,7 +44,7 @@
 
     background: $uiKitPagesBackground;
     color: $textColor_50;
-    box-shadow: $infoIconBoxShadow ;
+    box-shadow: $infoIconBoxShadow;
     pointer-events: none;
   }
 

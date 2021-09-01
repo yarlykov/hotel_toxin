@@ -10,6 +10,11 @@
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+
+    &:focus-within {
+      outline: none;
+      box-shadow: 2px 2px 2px $designColor_main;
+    }
   }
 
   &__dropdown-title {
@@ -83,6 +88,10 @@
     overflow: hidden;
     clip: rect(0 0 0 0);
 
+    &:focus-within + .checkbox__box {
+      box-shadow: 3px 3px 2px $designColor_main;
+    }
+
     &:checked + .checkbox__box {
       border-color: $designColor_main;
     }
@@ -116,6 +125,10 @@
     border-radius: 4px;
     background-color: #fff;
     border: $mainBorder;
+
+    &:hover {
+      box-shadow: 3px 3px 2px $designColor_main;
+    }
   }
 
   &__description {

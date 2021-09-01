@@ -56,8 +56,10 @@
   border: 2px solid #fff;
   cursor: pointer;
 }
-.ui-slider .ui-slider-handle:focus {
+.ui-slider .ui-slider-handle:focus,
+.ui-slider .ui-slider-handle:hover {
   outline: none;
+  box-shadow: 3px 3px 2px $designColor_second;
 }
 
 .ui-widget.ui-widget-content {

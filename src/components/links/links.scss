@@ -20,6 +20,11 @@
     text-transform: none;
     white-space: wrap;
 
+    & a:focus {
+      outline: none;
+      color: $textColor_75;
+    }
+
     &:first-child {
       padding-top: 22px;
     }

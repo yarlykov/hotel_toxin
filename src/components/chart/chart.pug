@@ -24,4 +24,4 @@ mixin chart({ sumOfVote="", legendItems=[] })
     .chart__legend
       ul.chart__legend-list
         each item in legendItems
-          li.chart__legend-item(data-id="legend-item" data-type=`${item.type}`) #{item.label}
+          li.chart__legend-item(data-id="legend-item" data-type=`${item.type}` tabindex=0) #{item.label}

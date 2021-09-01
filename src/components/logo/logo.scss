@@ -1,6 +1,12 @@
 @import '@variables';
 
 .logo {
+  &:focus-within,
+  & a:focus-within {
+    outline: none;
+    transform: translate3d(3px, 3px, 3px);
+  }
+
   &__link {
     line-height: 0;
   }
@@ -10,15 +16,15 @@
       min-width: 48px;
       min-height: 48px;
     }
-  
+
     &_color {
       min-width: 40px;
     }
-  
+
     &_color-with-text {
       min-width: 106px;
     }
-  
+
     &_size_big {
       min-width: 200px;
       min-height: 80px;

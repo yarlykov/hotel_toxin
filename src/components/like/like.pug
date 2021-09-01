@@ -11,6 +11,7 @@ mixin like({ icon="", value=0, disable=false })
     type: "button",
     "data-id": "like-button",
     name: "like",
+    tabindex: 0,
   })
     span&attributes({
       class: ["like__text", disableText],

@@ -7,7 +7,8 @@ mixin range-slider({ title="", description="" })
         type: "text",
         readonly: "readonly",
         "data-id": "slider-value", 
-        })
+        tabindex: -1,
+      })
     .range-slider__scale.js-range-slider__scale
       .range-slider__scale-border
     p.slider-text #{description}

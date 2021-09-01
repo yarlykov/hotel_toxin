@@ -8,6 +8,11 @@
   font: 12px/15px $mainFont;
 }
 
+.paginationjs a:focus {
+  border: 2px solid $designColor_main;
+  border-radius: 50%;
+}
+
 .paginationjs-next-button {
   color: #fff;
   line-height: 40px;

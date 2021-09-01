@@ -24,7 +24,7 @@ class Checkbox {
   }
 
   handleCheckboxKeydown({ code }) {
-    if (code === 'Space') {
+    if (code === 'Enter') {
       this.arrowToggle();
       this.dropdownToggle();
     }

@@ -11,6 +11,10 @@
   outline: none;
   cursor: pointer;
 
+  &:focus-within {
+    box-shadow: 3px 3px 2px $designColor_main;
+  }
+
   &_inactive-border {
     background: $textColor_25;
   }

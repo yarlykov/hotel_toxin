@@ -49,6 +49,7 @@
 
     &:hover,
     &:focus {
+      outline: none;
       color: $textColor_50;
       background: none;
     }

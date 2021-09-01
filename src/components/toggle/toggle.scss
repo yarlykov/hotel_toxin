@@ -22,6 +22,10 @@
       border-color: $designColor_main;
     }
 
+    &:focus + .toggle__box {
+      box-shadow: 3px 3px 2px $designColor_main;
+    }
+
     &:hover ~ .toggle__title {
       color: $textColor_75;
     }
@@ -64,7 +68,7 @@
       left: 3px;
       border-radius: 50%;
       background: $textColor_25;
-      transition: .3s;
+      transition: 0.3s;
     }
   }
 }

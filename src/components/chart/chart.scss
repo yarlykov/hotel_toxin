@@ -77,6 +77,10 @@
     &:hover {
       color: $textColor_50;
     }
+    &:focus {
+      outline: none;
+      color: $textColor_50;
+    }
   }
 
   &__circle {
