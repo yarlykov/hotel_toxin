@@ -25,30 +25,4 @@
   &__expandable-checkbox {
     padding-top: 30px;
   }
-
-  &__open-label {
-    font-family: 'Font Awesome solid';
-    font-size: 24px;
-    line-height: 50px;
-    color: $textColor_75;
-
-    &::before {
-      content: '\f0b0';
-      position: absolute;
-      text-align: center;
-      display: none;
-      width: 50px;
-      height: 50px;
-      background: #ffffff;
-      box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.05);
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
-      top: 10px;
-      right: -49px;
-
-      @media (max-width: 1280px) {
-        display: inline-block;
-      }
-    }
-  }
 }

@@ -5,8 +5,14 @@ class Filter {
   }
 
   init() {
-    this.openLabel = this.root.querySelector('.js-filter__open-label');
-    this.openLabel.addEventListener('click', this.handleFilterOpenLabelClick.bind(this));
+    const filter = document.querySelector('[data-id="search-room-filter"]');
+    if (filter) {
+      const header = document.querySelector('.header__body');
+      const filterIcon = document.createElement('div');
+      filterIcon.classList.add('header__filter-label');
+      filterIcon.addEventListener('click', this.handleFilterOpenLabelClick.bind(this));
+      header.append(filterIcon);
+    }
   }
 
   handleFilterOpenLabelClick() {
