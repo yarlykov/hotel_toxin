@@ -33,12 +33,11 @@
     @media (max-width: 960px) {
       display: block;
       position: relative;
-      z-index: 2000;
       width: 36px;
       height: 36px;
       cursor: pointer;
 
-      .header__menu-burger-line {
+      .header__menu-burger-button {
         position: absolute;
         top: 17px;
         left: 0;
@@ -69,7 +68,9 @@
 
   &__menu-burger.header__menu-burger_active {
     position: fixed;
+    top: 15px;
     right: 30px;
+    z-index: 2000;
 
     &::before {
       top: 17px;
@@ -81,7 +82,7 @@
       transform: rotate(-45deg);
     }
 
-    & .header__menu-burger-line {
+    & .header__menu-burger-button {
       transform: scale(0);
     }
 
