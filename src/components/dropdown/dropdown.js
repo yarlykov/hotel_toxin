@@ -66,6 +66,7 @@ class Dropdown {
 
   bindEventListeners() {
     this.mainNode.addEventListener('click', this.handleDropdownClick.bind(this));
+    this.mainNode.addEventListener('keydown', this.handleDropdownKeydown.bind(this));
     document.addEventListener('click', this.handleOutsideClick.bind(this));
   }
 
@@ -249,6 +250,15 @@ class Dropdown {
     if (type === targetType.CLEAR) this.clear();
     if (type === targetType.INPUT) this.toggle();
     if (type === targetType.ARROW) this.toggle();
+  }
+
+  handleDropdownKeydown(event) {
+    const { code } = event;
+
+    if (code === 'Space') {
+      event.preventDefault();
+      this.toggle();
+    }
   }
 
   handleOutsideClick(event) {

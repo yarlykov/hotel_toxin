@@ -23,8 +23,10 @@ class Checkbox {
     this.dropdownToggle();
   }
 
-  handleCheckboxKeydown({ code }) {
-    if (code === 'Enter') {
+  handleCheckboxKeydown(event) {
+    const { code } = event;
+    if (code === 'Space') {
+      event.preventDefault();
       this.arrowToggle();
       this.dropdownToggle();
     }

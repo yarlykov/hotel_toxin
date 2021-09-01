@@ -14,12 +14,15 @@ class DateDropdown {
     this.container = this.$root.get(0);
     this.calendarBody = this.$calendar.$datepicker.get(0).parentElement;
     this.container.addEventListener('click', this.handleDateDropdownClick.bind(this));
+    this.container.addEventListener('keydown', this.handleDateDropdownKeydown.bind(this));
     this.filterDateDropdown = this.container.querySelector('[data-type="filter-date-dropdown"]');
 
     const { twoInputs, smallSize, initialDates } = this.options;
     if (twoInputs) {
       this.dateStart = this.container.querySelector('[data-type="date-dropdown-start"]');
       this.dateEnd = this.container.querySelector('[data-type="date-dropdown-end"]');
+      this.dateStart.addEventListener('change', this.handleChangeInput.bind(this));
+      this.dateEnd.addEventListener('change', this.handleChangeInput.bind(this));
     }
     this.addButtons();
 
@@ -41,6 +44,18 @@ class DateDropdown {
     if (type === targetType.ARROW) this.toggle();
     if (type === targetType.APPLY) this.close();
     if (type === targetType.CLEAR) this.clear();
+  }
+
+  handleDateDropdownKeydown(event) {
+    const { code } = event;
+
+    if (code === 'Space') {
+      event.preventDefault();
+      this.toggle();
+    }
+    if (code === 'Enter') {
+      event.preventDefault();
+    }
   }
 
   handleOutsideClick(event) {
