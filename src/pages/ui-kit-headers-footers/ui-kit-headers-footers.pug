@@ -108,9 +108,7 @@ block content
           },
         },
         subscribe: { title: "Подписка", text: "Получайте специальные предложения и новости сервиса" },
-        copyright: {
-          text: "Copyright © 2018 Toxin отель. Все\u00A0права\u00A0защищены."
-        },
+        copyright: "Copyright © 2018 Toxin отель. Все\u00A0права\u00A0защищены.",
         social: { 
           socialLinks: [
             { title: "twitter", link: "https://twitter.com"},
@@ -121,7 +119,7 @@ block content
       })
 
     .headers-footers__footer-mobile
-      +footer-mobile()
+      +footer-mobile( "Copyright © 2018 Toxin отель. Все права защищены." )
 
   block footer
   +ui-kit-footer({ 

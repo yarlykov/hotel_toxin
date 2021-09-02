@@ -1,12 +1,8 @@
-//- вспомогательный, для вывода пустых звезд
-mixin star_border({ emptyStar=0 })
-  - for (let i = 0; i < emptyStar; i++)
-    span.rating__empty-star
-  //-основной миксин принимает оценку и рассчитывает кол. пустых звезд
-mixin rating({ rating=0 }) 
+mixin rating( rating=0 ) 
   .rating
     if rating < 5
-    - let emptyStar = 5 - rating;
+    - const emptyStar = 5 - rating;
     - for(let i = 0; i < rating; i++)
       span.rating__star
-    +star_border({ emptyStar })
+    - for (let i = 0; i < emptyStar; i++)
+      span.rating__empty-star

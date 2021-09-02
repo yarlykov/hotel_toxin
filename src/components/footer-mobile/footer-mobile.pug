@@ -1,10 +1,10 @@
 include ../logo/logo.pug
 
-mixin footer-mobile()
+mixin footer-mobile( copyright )
   footer.footer-mobile.footer-mobile_show
     .footer-mobile__wrapper
       +logo({ type: "colorWithText" })
-      .footer-mobile__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
+      .footer-mobile__copyright-text #{copyright}
       .footer-mobile__social
         +social({ socialLinks: [
           { title: "twitter", link: "https://twitter.com"},

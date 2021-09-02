@@ -139,8 +139,8 @@ block content
         .form-elements__small-buttons-wrapper
           +heading({ level: "h3", title: "rate button" })
           .form-elements__rating-buttons-container
-            +rating({ rating: 5 })
-            +rating({ rating: 4 })
+            +rating(5)
+            +rating(4)
 
       .form-elements__buttons
         .form-elements__buttons-wrapper
@@ -279,9 +279,9 @@ block content
         .form-elements__lists-wrapper-bullet
           +heading({ level: "h3", title: "bullet list" })
           +bullet-list([ 
-            { title: "Нельзя с питомцами" }, 
-            { title: "Без вечеринок и мероприятий" },  
-            { title: "Время прибытия — после 13:00, а\u00A0выезд до 12:00" }
+            "Нельзя с питомцами", 
+            "Без вечеринок и мероприятий",  
+            "Время прибытия — после 13:00, а\u00A0выезд до 12:00",
           ])
 
     section.form-elements__room-review

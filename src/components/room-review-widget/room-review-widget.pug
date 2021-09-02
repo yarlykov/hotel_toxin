@@ -4,10 +4,10 @@ include ../rating/rating.pug
 include ../comment-count/comment-count.pug
 include ../room-price/room-price.pug
 
-mixin room-review-widget({ images=[], roomNumber={}, roomPrice={}, rating={}, commentCount={} })
+mixin room-review-widget({ images=[], roomNumber={}, roomPrice={}, rating=0, commentCount={} })
   .room-review-widget
     .room-review-widget__image
-      +carousel({ images })
+      +carousel(images)
     .room-review-widget__info
       .room-review-widget__data
         +room-number(roomNumber)

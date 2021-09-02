@@ -3,7 +3,7 @@ include ../../components/subscribe/subscribe.pug
 include ../../components/logo/logo.pug
 include ../../components/social/social.pug
 
-mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyright={}, social={}, border=false })
+mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyright="", social={}, border=false })
   - const borderTopClass = border ? "footer_with-top-border" : ""
   
   footer.footer(class=borderTopClass)
@@ -22,13 +22,13 @@ mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyri
         +subscribe(subscribe)
     .footer__bottom
       .footer__bottom-container
-        p.footer__copyright-text #{copyright.text}
+        p.footer__copyright-text #{copyright}
         section.footer__social
           +social(social)
 
   footer.footer-mobile
     .footer-mobile__wrapper
       +logo(logo)
-      p.footer-mobile__copyright-text #{copyright.text}
+      p.footer-mobile__copyright-text #{copyright}
       section.footer-mobile__social
         +social(social)
