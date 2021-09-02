@@ -3,7 +3,6 @@
 
 .chart {
   display: flex;
-  align-items: flex-end;
   justify-content: space-between;
   max-width: 313px;
   max-height: 148px;
@@ -37,7 +36,7 @@
   }
 
   &__legend-list {
-    padding: 0 2px 5px 0;
+    padding: 27px 2px 5px 0;
     list-style: none;
   }
 
@@ -62,17 +61,19 @@
       content: "";
     }
 
-    &:nth-child(1)::before {
-      background: $sumptuouslyRatingGradient;
-    }
-    &:nth-child(2)::before {
-      background: $goodRatingGradient;
-    }
-    &:nth-child(3)::before {
-      background: $satisfactorilyRatingGradient;
-    }
-    &:nth-child(4)::before {
-      background: $badRatingGradient;
+    &_type {
+      &_sumptuously::before {
+        background: $sumptuouslyRatingGradient;
+      }
+      &_good::before {
+        background: $goodRatingGradient;
+      }
+      &_satisfactorily::before {
+        background: $satisfactorilyRatingGradient;
+      }
+      &_disappointed::before {
+        background: $badRatingGradient;
+      }
     }
 
     &:hover {
@@ -91,28 +92,29 @@
     fill: none;
     stroke-width: 1.2;
 
-    &:hover {
-      stroke-width: 2.3;
-    }
-
-    &:nth-child(1) {
-      stroke-dasharray: 49 100;
-      stroke-dashoffset: -25.5;
-    }
-    &:nth-child(2) {
-      stroke-dasharray: 24.5 100;
-      stroke-dashoffset: -75;
-    }
-    &:nth-child(3) {
-      stroke-dasharray: 24.7 100;
-      stroke-dashoffset: -0.2;
-    }
-
-    &_hidden {
-      display: none;
+    &_type {
+      &_sumptuously {
+        stroke-dasharray: 49 100;
+        stroke-dashoffset: -25.5;
+      }
+      &_good {
+        stroke-dasharray: 24.5 100;
+        stroke-dashoffset: -75;
+      }
+      &_satisfactorily {
+        stroke-dasharray: 24.7 100;
+        stroke-dashoffset: -0.2;
+      }
+      &_disappointed {
+        stroke-dasharray: 0 100;
+      }
     }
 
     &_focused {
+      stroke-width: 2.3;
+    }
+
+    &:hover {
       stroke-width: 2.3;
     }
   }

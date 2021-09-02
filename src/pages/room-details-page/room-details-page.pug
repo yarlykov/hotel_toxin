@@ -32,11 +32,35 @@ block content
             +heading({ level: "h2",  title: "впечатления от номера" })
             +chart({
               sumOfVote: "260",
-              legendItems: [
-                { label: "великолепно", type: "sumptuously" },
-                { label: "хорошо", type: "good" },
-                { label: "удовлетворительно", type: "satisfactorily" },
-                { label: "разочарован", type: "disappointed" },
+              items: [
+                { 
+                  label: "великолепно", 
+                  type: "sumptuously",
+                  colorName: "yellow_gradient",
+                  firstStopColor: "#FFE39C",
+                  secondStopColor: "#FFBA9C",
+                },
+                { 
+                  label: "хорошо",
+                  type: "good",
+                  colorName: "green_gradient",
+                  firstStopColor: "#6FCF97",
+                  secondStopColor: "#66D2EA"
+                },
+                { 
+                  label: "удовлетворительно",
+                  type: "satisfactorily",
+                  colorName: "purple_gradient",
+                  firstStopColor: "#BC9CFF",
+                  secondStopColor: "#8BA4F9", 
+                },
+                { 
+                  label: "разочарован",
+                  type: "disappointed",
+                  colorName: "black_gradient",
+                  firstStopColor: "#919191",
+                  secondStopColor: "#3D4975",
+                },
               ]
             })
 
