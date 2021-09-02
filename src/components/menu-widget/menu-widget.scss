@@ -1,12 +1,12 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .menu-widget {
   &__list {
     display: flex;
     justify-content: space-around;
     padding: 0 100px 0 100px;
-    
+
     @media (max-width: 840px) {
       padding: 0;
     }
@@ -36,14 +36,14 @@
   &__text {
     display: block;
     margin-bottom: 14px;
-    font-size: 21px;
-    font-weight: 700;
     color: $mainTextColor;
-    transition: .3s;
+    font-weight: 700;
+    font-size: 21px;
+    transition: 0.3s;
   }
 
   &__text:hover {
-    color: #1D1E33;
+    color: #1d1e33;
     transform: translateX(-15px);
   }
 }

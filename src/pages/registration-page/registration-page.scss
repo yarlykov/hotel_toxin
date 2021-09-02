@@ -1,11 +1,11 @@
-@import '@variables';
+@import "@variables";
 
 .registration {
-  background: url('../../images/page-background/registration.jpg') no-repeat;
+  box-sizing: border-box;
+  background: url("../../images/page-background/registration.jpg") no-repeat;
+  background-position: 44.2% 51.5%;
   background-size: cover;
   background-size: 106.5%;
-  background-position: 44.2% 51.5%;
-  box-sizing: border-box;
 
   @media (max-width: 1280px) {
     background-size: cover;
@@ -15,10 +15,10 @@
     display: flex;
     justify-content: center;
     max-width: 1440px;
-    padding-top: 19px;
-    padding-left: 6px;
-    padding-bottom: 19px;
     margin: 0 auto;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    padding-left: 6px;
 
     @media (max-width: 960px) {
       flex-direction: row;
@@ -39,8 +39,8 @@
       padding-bottom: 100px;
     }
     @media (max-width: 480px) {
-      padding-bottom: 50px;
       min-width: 320px;
+      padding-bottom: 50px;
     }
   }
 }

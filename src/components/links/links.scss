@@ -1,5 +1,5 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .links {
   &__title {
@@ -8,21 +8,21 @@
 
   &__list {
     margin: 0;
-    list-style-type: none;
     font-family: $mainFont;
+    list-style-type: none;
   }
 
   &__item {
     padding-top: 21px;
-    font-size: $mainFont_size;
     font-weight: 400;
+    font-size: $mainFont_size;
     line-height: 17px;
-    text-transform: none;
     white-space: wrap;
+    text-transform: none;
 
     & a:focus {
-      outline: none;
       color: $textColor_75;
+      outline: none;
     }
 
     &:first-child {

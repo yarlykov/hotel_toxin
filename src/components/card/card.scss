@@ -1,19 +1,19 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .card {
-  max-width: 380px;
-  min-width: 200px;
-  border: $cardsBorder;
-  padding: 39px 30px 30px 29px;
-  border-radius: $cardsBorderRadius;
   box-sizing: border-box;
+  min-width: 200px;
+  max-width: 380px;
+  padding: 39px 30px 30px 29px;
   background: $cardsBackground;
+  border: $cardsBorder;
+  border-radius: $cardsBorderRadius;
   box-shadow: $mainBoxShadow;
 
   @media (max-width: 480px) {
-    padding: 10px;
     margin: 0 10px;
+    padding: 10px;
   }
 
   &__title {
@@ -22,15 +22,15 @@
     @media (max-width: 480px) {
       max-width: 300px;
       padding: 20px 0 0 20px;
-      line-height: 26px;
       font-size: 20px;
+      line-height: 26px;
     }
   }
 
   &__title-calculation {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
+    justify-content: space-between;
   }
 
   &__date-dropdown {
@@ -48,8 +48,9 @@
 
   &__guests-dropdown-title {
     @include font-h3;
+
     display: block;
-    margin: 0px 0 5px 0;
+    margin: 0 0 5px 0;
     color: $mainTextColor;
   }
 
@@ -96,8 +97,8 @@
 
   &__question {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding-top: 29px;
   }
 

@@ -1,13 +1,13 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .price-calc {
   @include font-body;
 
   &__header {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
+    justify-content: space-between;
   }
 
   &__undiscounted {
@@ -17,8 +17,8 @@
 
   &__service-charge {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
+    justify-content: space-between;
     padding-top: 10px;
   }
 
@@ -31,17 +31,18 @@
 }
 
 .service-charge {
-  max-width: 214px;
   min-width: 214px;
+  max-width: 214px;
 }
 
 .additional-services {
-  max-width: 214px;
   min-width: 214px;
+  max-width: 214px;
 }
 
 .total-price {
   @include font-h2;
+
   display: flex;
   align-items: baseline;
   padding-top: 28px;
@@ -52,9 +53,9 @@
   }
 
   &__points {
+    box-sizing: border-box;
     width: 100%;
     margin: 0 5px;
     border-bottom: dotted 1px $textColor_25;
-    box-sizing: border-box;
   }
 }

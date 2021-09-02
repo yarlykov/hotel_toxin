@@ -1,14 +1,14 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .form-elements {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
   grid-template-rows: auto;
-  column-gap: 126px;
-  margin: 0 auto;
-  max-width: 1158px;
+  grid-template-columns: 1fr auto 1fr;
   min-width: 1158px;
+  max-width: 1158px;
+  margin: 0 auto;
+  column-gap: 126px;
 
   &__text-field-wrapper {
     padding-bottom: 20.5px;
@@ -93,8 +93,8 @@
   &__buttons-container {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 30px;
     padding-top: 11px;
+    padding-bottom: 30px;
 
     &:nth-child(3) {
       padding-top: 0;
@@ -128,9 +128,9 @@
     display: grid;
     grid-column: span 3;
     grid-template-columns: 1fr 2fr;
-    column-gap: 60px;
     max-width: 1158px;
     padding-top: 79px;
+    column-gap: 60px;
   }
 
   &__dropdowns-wrapper {
@@ -148,24 +148,24 @@
 
   &__dropdowns-block-right {
     display: flex;
-    min-width: 712px;
-    justify-content: space-between;
     grid-column: grid-column-start;
+    justify-content: space-between;
+    min-width: 712px;
   }
 
   &__text-fields-buttons {
     display: grid;
     grid-template-columns: 320px auto 320px;
-    column-gap: 126px;
     margin-top: 3px;
+    column-gap: 126px;
   }
 
   &__lists {
-    padding-top: 152px;
-    grid-column: span 3;
     display: grid;
-    max-width: 1158px;
+    grid-column: span 3;
     grid-template-columns: 266px 2fr;
+    max-width: 1158px;
+    padding-top: 152px;
     column-gap: 180px;
   }
 
@@ -175,8 +175,8 @@
 
   &__lists-block-other {
     display: flex;
-    min-width: 712px;
     justify-content: space-between;
+    min-width: 712px;
   }
 
   &__lists-wrapper-bullet {
@@ -187,9 +187,9 @@
     display: grid;
     grid-column: span 3;
     grid-template-columns: 266px 2fr;
-    column-gap: 180px;
     max-width: 1158px;
     padding-top: 36px;
+    column-gap: 180px;
   }
 
   &__room-review-wrapper {

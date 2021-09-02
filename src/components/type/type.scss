@@ -1,5 +1,5 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .type {
   display: flex;
@@ -12,11 +12,11 @@
     justify-content: flex-end;
     min-width: 37px;
     max-width: 50px;
-    font-family: $mainFont;
-    font-weight: 400;
-    text-transform: capitalize;
-    color: $textColor_25;
     padding: 1px;
+    color: $textColor_25;
+    font-weight: 400;
+    font-family: $mainFont;
+    text-transform: capitalize;
   }
 
   &__text {
@@ -27,12 +27,14 @@
 
   &__h1 {
     @include font-h1;
+
     display: flex;
     padding-bottom: 52px;
   }
 
   &__h2 {
     @include font-h2;
+
     display: flex;
     padding-right: 20px;
     padding-bottom: 52px;
@@ -40,12 +42,14 @@
 
   &__h3 {
     @include font-h3;
+
     display: flex;
     padding-bottom: 48px;
   }
 
   &__body {
     @include font-body;
+
     display: flex;
     padding-right: 55px;
     padding-bottom: 52px;

@@ -1,10 +1,10 @@
-@import '@variables';
+@import "@variables";
 
 .comment-count {
   padding-top: 4px;
+  color: $textColor_50;
   font-size: 14px;
   line-height: 18px;
-  color: $textColor_50;
 
   &__value {
     font-weight: 700;

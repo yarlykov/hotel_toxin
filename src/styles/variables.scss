@@ -1,62 +1,63 @@
-//  colors
-$mainTextColor                   : #1F2041;
-$textColor_75                    : rgba(31, 32, 65, 0.75);
-$textColor_50                    : rgba(31, 32, 65, 0.50);
-$textColor_25                    : rgba(31, 32, 65, 0.25);
-$textColor_5                     : rgba(31, 32, 65, 0.05);
-$designColor_main                : #BC9CFF;
-$designColor_second              : #6FCF97;
-$mainGradient                    : linear-gradient(180deg,
-                                   #BC9CFF 0%, #8BA4F9 100%);
-$secondGradient                  : linear-gradient(180deg,
-                                   #6fcf97 0%, #66d2ea 100%);
-$mainGradientTransparent         : linear-gradient(180deg, 
-                                    rgba(#BC9CFF, 0.5) 0%, 
-                                    rgba(#8BA4F9, 0.5) 100%);
-$mainGradientTransparent_25      : linear-gradient(180deg, 
-                                    rgba(#BC9CFF, 0.25) 0%, 
-                                    rgba(#8BA4F9, 0.25) 100%);
-$gradientForShadow               : linear-gradient(
-                                    90deg,
-                                    rgba(0, 0, 0, 0.5) 0%,
-                                    rgba(0, 0, 0, 0) 99.99%,
-                                    rgba(255, 255, 255, 0) 100%); 
-$sumptuouslyRatingGradient       : linear-gradient(180deg,
-                                   #ffe39c 0%, #ffba9c 100%);
-$goodRatingGradient              : linear-gradient(180deg, 
-                                   #6fcf97 0%, #66d2ea 100%);
-$satisfactorilyRatingGradient    : linear-gradient(180deg,
-                                   #bc9cff 0%, #8ba4f9 100%);
-$badRatingGradient               : linear-gradient(180deg, 
-                                   #919191 0%, #3d4975 100%);
+$mainTextColor: #1f2041;
+$textColor_75: rgba(31, 32, 65, 0.75);
+$textColor_50: rgba(31, 32, 65, 0.5);
+$textColor_25: rgba(31, 32, 65, 0.25);
+$textColor_5: rgba(31, 32, 65, 0.05);
+$designColor_main: #bc9cff;
+$designColor_second: #6fcf97;
+$mainGradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$secondGradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+$mainGradientTransparent: linear-gradient(
+  180deg,
+  rgba(#bc9cff, 0.5) 0%,
+  rgba(#8ba4f9, 0.5) 100%
+);
+$mainGradientTransparent_25: linear-gradient(
+  180deg,
+  rgba(#bc9cff, 0.25) 0%,
+  rgba(#8ba4f9, 0.25) 100%
+);
+$gradientForShadow: linear-gradient(
+  90deg,
+  rgba(0, 0, 0, 0.5) 0%,
+  rgba(0, 0, 0, 0) 99.99%,
+  rgba(255, 255, 255, 0) 100%
+);
+$sumptuouslyRatingGradient: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+$goodRatingGradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+$satisfactorilyRatingGradient: linear-gradient(
+  180deg,
+  #bc9cff 0%,
+  #8ba4f9 100%
+);
+$badRatingGradient: linear-gradient(180deg, #919191 0%, #3d4975 100%);
 
+$arrowColorCarousel: #fff;
+$dotsBorderCarousel: 1px solid #fff;
 
-$arrowColorCarousel              : #fff;
-$dotsBorderCarousel              : 1px solid #fff;
-
-$mainBoxShadow                   : 0px 0px 25px rgba(0, 0, 0, 0.2);
-$avatarBoxShadow                 : 0px 10px 20px rgba(31, 32, 65, 0.1);
-$headerFooterBoxShadow           : 0px 10px 20px rgba(31, 32, 65, 0.05);
-$infoIconBoxShadow               : 2px 2px 5px rgba(0, 0, 0, 0.3);
-$mainBorderRadius                : 4px;
-$cardsBorderRadius               : 4px;
-$cardsBackground                 : #fff;
-$uiKitPagesBackground            : #e5e5e5;
-$headerFooterBackground          : #fff;
+$mainBoxShadow: 0 0 25px rgba(0, 0, 0, 0.2);
+$avatarBoxShadow: 0 10px 20px rgba(31, 32, 65, 0.1);
+$headerFooterBoxShadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+$infoIconBoxShadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+$mainBorderRadius: 4px;
+$cardsBorderRadius: 4px;
+$cardsBackground: #fff;
+$uiKitPagesBackground: #e5e5e5;
+$headerFooterBackground: #fff;
 
 // fonts
-$mainFont                        : Montserrat, Areal, san-serif;
-$mainFont_size                   : 14px;
+$mainFont: montserrat, areal, san-serif;
+$mainFont_size: 14px;
 
-$inputHeight                     : 44px;
-$inputWidthSizeL                 : 320px;
-$inputWidthSizeM                 : 266px;
-$inputWidthSizeS                 : 150px;
+$inputHeight: 44px;
+$inputWidthSizeL: 320px;
+$inputWidthSizeM: 266px;
+$inputWidthSizeS: 150px;
 
 //  borders
-$mainBorder                      : 1px solid rgba(31, 32, 65, 0.25);
-$colorBorder                     : 1px solid $designColor_main;
-$focusBorder                     : 1px solid rgba(31, 32, 65, 0.5); 
-$cardsBorder                     : 1px solid rgba(0, 0, 0, 0.12);
-$avatarBorder                    : 2px solid #fff;
-$infoIconBorder                  : 1px solid rgba(0, 0, 0, 0.12);
+$mainBorder: 1px solid rgba(31, 32, 65, 0.25);
+$colorBorder: 1px solid $designColor_main;
+$focusBorder: 1px solid rgba(31, 32, 65, 0.5);
+$cardsBorder: 1px solid rgba(0, 0, 0, 0.12);
+$avatarBorder: 2px solid #fff;
+$infoIconBorder: 1px solid rgba(0, 0, 0, 0.12);

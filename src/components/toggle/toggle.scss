@@ -1,14 +1,36 @@
-@import '@variables';
+@import "@variables";
 
 .toggle {
   display: block;
-  margin-left: 50px;
   box-sizing: border-box;
+  margin-left: 50px;
   color: $textColor_50;
   cursor: pointer;
 
   &:not(:last-child) {
     margin-bottom: 16px;
+  }
+
+  &__box {
+    position: absolute;
+    box-sizing: border-box;
+    width: 40px;
+    height: 20px;
+    margin-left: -50px;
+    border: $mainBorder;
+    border-radius: 10px;
+
+    &::before {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 12px;
+      height: 12px;
+      background: $textColor_25;
+      border-radius: 50%;
+      transition: 0.3s;
+      content: "";
+    }
   }
 
   &__input {
@@ -35,40 +57,18 @@
     }
 
     &:checked + .toggle__box::before {
-      content: '';
       position: absolute;
-      box-sizing: border-box;
       top: 3px;
       left: 3px;
+      box-sizing: border-box;
       width: 12px;
       height: 12px;
-      border-radius: 50%;
       background: $mainGradient;
+      border-radius: 50%;
       -webkit-transform: translateX(20px);
       -ms-transform: translateX(20px);
       transform: translateX(20px);
-    }
-  }
-
-  &__box {
-    position: absolute;
-    width: 40px;
-    height: 20px;
-    box-sizing: border-box;
-    border: $mainBorder;
-    border-radius: 10px;
-    margin-left: -50px;
-
-    &:before {
-      content: '';
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      top: 3px;
-      left: 3px;
-      border-radius: 50%;
-      background: $textColor_25;
-      transition: 0.3s;
+      content: "";
     }
   }
 }

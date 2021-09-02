@@ -1,5 +1,5 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .paginationjs {
   display: flex;
@@ -19,9 +19,10 @@
 }
 .paginationjs-next-button::before {
   @include font-material-icons;
-  content: '\e5c8';
+
   color: #fff;
   line-height: 40px;
+  content: "\e5c8";
 }
 
 .paginationjs-next-button:hover::before {
@@ -35,10 +36,10 @@
 .paginationjs .paginationjs-pages li > a {
   min-width: 40px;
   height: 40px;
+  color: $textColor_50;
+  font-size: 12px;
   line-height: 40px;
   background: #fff;
-  font-size: 12px;
-  color: $textColor_50;
   outline: none;
 }
 
@@ -49,14 +50,11 @@
 
 .paginationjs .paginationjs-pages li.active > a {
   height: 40px;
-  border-radius: 22px;
+  color: #fff;
+  font-weight: 700;
   line-height: 40px;
   background: $mainGradient;
-  font-weight: 700;
-  color: #fff;
-}
-.paginationjs .paginationjs-pages li.active > a:hover {
-  color: $textColor_75;
+  border-radius: 22px;
 }
 
 .paginationjs .paginationjs-pages li.disabled > a {
@@ -68,15 +66,19 @@
   border-radius: 22px;
 }
 
-.paginationjs .paginationjs-pages li:last-child {
-  border-right: none;
+.paginationjs .paginationjs-pages li:last-child > a {
+  font-weight: 700;
+  background: $secondGradient;
   border-radius: 22px;
 }
 
-.paginationjs .paginationjs-pages li:last-child > a {
+.paginationjs .paginationjs-pages li.active > a:hover {
+  color: $textColor_75;
+}
+
+.paginationjs .paginationjs-pages li:last-child {
+  border-right: none;
   border-radius: 22px;
-  background: $secondGradient;
-  font-weight: 700;
 }
 
 .paginationjs .paginationjs-nav {

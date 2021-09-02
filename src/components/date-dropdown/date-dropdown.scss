@@ -1,4 +1,4 @@
-@import '@variables';
+@import "@variables";
 
 .date-dropdown {
   &__two-inputs {
@@ -17,15 +17,15 @@
 
 .datepicker {
   z-index: 1500;
-  min-width: 320px;
   box-sizing: border-box;
+  min-width: 320px;
+  color: $textColor_50;
+  font-size: 12px;
   font-family: Montserrat, sans-serif;
   line-height: 15px;
-  font-size: 12px;
-  color: $textColor_50;
   border: $mainBorder;
   border-radius: 4px;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.25);
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.25);
   transition: none;
 
   @media (max-width: 400px) {
@@ -40,16 +40,16 @@
   }
 
   &__arrow {
-    font-family: 'Material Icons';
-    font-size: 24px;
-    line-height: 20px;
     color: #bc9cff;
+    font-size: 24px;
+    font-family: "Material Icons", sans-serif;
+    line-height: 20px;
 
     &_back::before {
-      content: '\e5c4';
+      content: "\e5c4";
     }
     &_forward::before {
-      content: '\e5c8';
+      content: "\e5c8";
     }
   }
 
@@ -71,41 +71,21 @@
 .date-dropdown .datepicker-inline {
   position: absolute;
   z-index: 1500;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.25);
   transform: translateX(-100000px);
   opacity: 0;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.25);
 
   &.active {
-    transform: translateX(0px);
+    transform: translateX(0);
     transform: translateY(5px);
     opacity: 1;
   }
 }
 
-[data-id='date-inline'] .datepicker-inline {
+[data-id="date-inline"] .datepicker-inline {
   position: static;
-  transform: translateX(0px);
+  transform: translateX(0);
   opacity: 1;
-}
-
-/* -------------------------------------------------
-    Small datepicker
-   ------------------------------------------------- */
-
-.datepicker.datepicker--small {
-  min-width: 266px;
-  .datepicker--cell {
-    height: 32px;
-  }
-
-  .datepicker--nav {
-    padding-bottom: 20px;
-  }
-}
-
-.datepicker--content {
-  box-sizing: border-box;
-  padding: 18px 20px 20px 21px;
 }
 
 /* -------------------------------------------------
@@ -115,20 +95,21 @@
 .datepicker--cells {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 12px;
 }
 
 .datepicker--cell {
-  border-radius: 22px;
   height: 40px;
+  border-radius: 22px;
 
   &.-focus- {
     background: $textColor_5;
   }
 
   &.-current- {
-    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     color: #fff;
     font-weight: bold;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 
     &.-in-range- {
       color: #fff;
@@ -136,8 +117,8 @@
   }
 
   &.-in-range- {
-    background: $mainGradientTransparent_25;
     color: $textColor_50;
+    background: $mainGradientTransparent_25;
     border-radius: 0;
 
     &.-focus- {
@@ -147,20 +128,20 @@
   }
 
   &.-range-from- {
-    border: none;
     background: $mainGradient;
+    border: none;
     border-radius: 22px;
 
-    &:after {
-      content: '';
+    &::after {
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
+      z-index: -1;
       background: $mainGradientTransparent_25;
       border-radius: 50% 0 0 50%;
-      z-index: -1;
+      content: "";
     }
 
     &.-focus- {
@@ -168,20 +149,20 @@
     }
   }
   &.-range-to- {
-    border: none;
     background: $mainGradient;
+    border: none;
     border-radius: 22px;
 
-    &:before {
-      content: '';
+    &::before {
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
+      z-index: -1;
       background: $mainGradientTransparent_25;
       border-radius: 0 50% 50% 0;
-      z-index: -1;
+      content: "";
     }
 
     &.-focus- {
@@ -196,8 +177,8 @@
   &.-selected- {
     color: #fff;
     font-weight: bold;
-    border: none;
     background: $mainGradient;
+    border: none;
 
     &.-current- {
       color: #fff;
@@ -214,9 +195,9 @@
 // -------------------------------------------------
 .datepicker--day-name {
   color: $designColor_main;
-  text-transform: none;
-  font-size: 12px;
   font-weight: 700;
+  font-size: 12px;
+  text-transform: none;
 }
 
 //  Months
@@ -231,34 +212,34 @@
 // -------------------------
 
 .datepicker--cell-month {
-  border-radius: 100px;
   width: 33.33%;
   height: 25%;
+  border-radius: 100px;
 
   &.-range-from- {
-    &:after {
-      content: '';
+    &::after {
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
+      z-index: -1;
       background: none;
       border-radius: 50% 0 0 50%;
-      z-index: -1;
+      content: "";
     }
   }
   &.-range-to- {
-    &:before {
-      content: '';
+    &::before {
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
+      z-index: -1;
       background: none;
       border-radius: 0 50% 50% 0;
-      z-index: -1;
+      content: "";
     }
   }
 
@@ -279,34 +260,34 @@
 // -------------------------
 
 .datepicker--cell-year {
-  border-radius: 100px;
   width: 33.33%;
   height: 35%;
+  border-radius: 100px;
 
   &.-range-from- {
-    &:after {
-      content: '';
+    &::after {
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
+      z-index: -1;
       background: none;
       border-radius: 50% 0 0 50%;
-      z-index: -1;
+      content: "";
     }
   }
   &.-range-to- {
-    &:before {
-      content: '';
+    &::before {
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
+      z-index: -1;
       background: none;
       border-radius: 0 50% 50% 0;
-      z-index: -1;
+      content: "";
     }
   }
 
@@ -319,14 +300,13 @@
     Navigation
 	 ------------------------------------------------- */
 .datepicker--nav {
-  border-bottom: none;
-  padding: 20px 20px 25px 20px;
   align-items: flex-start;
-
-  font-family: $mainFont;
-  font-size: 19px;
-  line-height: 24px;
+  padding: 20px 20px 25px 20px;
   color: $mainTextColor;
+  font-size: 19px;
+  font-family: $mainFont;
+  line-height: 24px;
+  border-bottom: none;
 }
 
 .datepicker--nav-title {
@@ -339,9 +319,9 @@
 }
 
 .datepicker--nav-action {
-  color: $designColor_main;
   max-width: 24px;
   padding-top: 2px;
+  color: $designColor_main;
   &:hover {
     background: none;
     opacity: 0.5;
@@ -352,14 +332,30 @@
   margin: 0;
 }
 
-.datepicker--cells {
-  padding-top: 12px;
-}
-
 /* -------------------------------------------------
     Pointer
 	 ------------------------------------------------- */
 
 .datepicker--pointer {
   display: none;
+}
+
+/* -------------------------------------------------
+    Small datepicker
+   ------------------------------------------------- */
+
+.datepicker.datepicker--small {
+  min-width: 266px;
+  .datepicker--cell {
+    height: 32px;
+  }
+
+  .datepicker--nav {
+    padding-bottom: 20px;
+  }
+}
+
+.datepicker--content {
+  box-sizing: border-box;
+  padding: 18px 20px 20px 21px;
 }

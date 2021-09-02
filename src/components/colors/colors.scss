@@ -1,5 +1,5 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .colors {
   display: flex;
@@ -10,8 +10,8 @@
 
   &__item {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
     padding-bottom: 20px;
   }
 

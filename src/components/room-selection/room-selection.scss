@@ -1,5 +1,5 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .room-selection {
   display: flex;
@@ -15,11 +15,11 @@
 
   &__widgets-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 270px);
-    grid-column-gap: 12px;
     grid-row-gap: 20px;
-    padding: 22px 0 40.5px 0;
+    grid-column-gap: 12px;
+    grid-template-columns: repeat(auto-fit, 270px);
     max-width: 834px;
+    padding: 22px 0 40.5px 0;
     list-style: none;
 
     @media (max-width: 1280px) {

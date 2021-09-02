@@ -1,4 +1,4 @@
-@import '@variables';
+@import "@variables";
 
 .search-room {
   &__container {
@@ -15,10 +15,10 @@
 
   &__filter {
     position: relative;
+    box-sizing: content-box;
     max-width: 266px;
     padding-top: 30px;
     transition: 0.1s;
-    box-sizing: content-box;
 
     @media (max-width: 1280px) {
       position: absolute;
@@ -31,15 +31,15 @@
   }
 
   &__room-selection {
-    padding: 30px 0 0px 59px;
     width: 100%;
+    padding: 30px 0 0 59px;
 
     @media (max-width: 1190px) {
       padding-left: calc(25% - 100px);
     }
     @media (max-width: 998px) {
-      padding-left: calc(35% - 100px);
       padding-top: 60px;
+      padding-left: calc(35% - 100px);
     }
     @media (max-width: 718px) {
       padding-left: calc(45% - 100px);

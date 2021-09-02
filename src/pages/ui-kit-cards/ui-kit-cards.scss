@@ -1,4 +1,4 @@
-@import '@variables';
+@import "@variables";
 
 .cards-page {
   display: flex;
@@ -16,8 +16,8 @@
   }
 
   &__container {
-    max-width: 1160px;
     min-width: 1160px;
+    max-width: 1160px;
     margin: 12px auto;
   }
 
@@ -30,7 +30,7 @@
   }
 }
 
-/*---------------CARDS_PAGE CALENDAR---------------*/
+/* ---------------CARDS_PAGE CALENDAR--------------- */
 .cards-page__calendar .text-field__input {
   display: none;
 }

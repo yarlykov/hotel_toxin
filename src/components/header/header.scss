@@ -1,19 +1,19 @@
-@import '@variables';
+@import "@variables";
 
 .header {
   background-color: $headerFooterBackground;
   box-shadow: $headerFooterBoxShadow;
 
   &__container {
-    max-width: 1440px;
     min-width: 320px;
+    max-width: 1440px;
     margin: 0 auto;
   }
 
   &__body {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     box-sizing: border-box;
     padding: 13px 140px 13px 140px;
     color: $textColor_50;
@@ -31,8 +31,8 @@
     display: none;
 
     @media (max-width: 960px) {
-      display: block;
       position: relative;
+      display: block;
       width: 36px;
       height: 36px;
       cursor: pointer;
@@ -43,19 +43,19 @@
         left: 0;
         width: 100%;
         height: 2px;
-        transition: all 0.3s ease 0s;
         background-color: $textColor_50;
+        transition: all 0.3s ease 0s;
       }
 
       &::after,
       &::before {
-        content: '';
         position: absolute;
         left: 0;
         width: 100%;
         height: 2px;
-        transition: all 0.3s ease 0s;
         background-color: $textColor_50;
+        transition: all 0.3s ease 0s;
+        content: "";
       }
       &::before {
         top: 0;
@@ -68,30 +68,48 @@
 
   &__filter-label {
     display: none;
-    font-family: 'Font Awesome solid';
-    font-size: 24px;
-    line-height: 50px;
     color: $textColor_75;
+    font-size: 24px;
+    font-family: "Font Awesome solid", sans-serif;
+    line-height: 50px;
 
     @media (max-width: 960px) {
-      display: block;
       position: absolute;
       right: 80px;
+      display: block;
     }
 
     &::before {
-      content: '\f0b0';
-      text-align: center;
       width: 50px;
       height: 50px;
-      background: #ffffff;
-      box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      background: #fff;
       border-radius: 0 4px 4px 0;
+      box-shadow: 10px 0 10px rgba(0, 0, 0, 0.05);
       cursor: pointer;
+      content: "\f0b0";
 
       @media (max-width: 1280px) {
         display: inline-block;
       }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 960px) {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      z-index: 1000;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 100%;
+      background-color: $uiKitPagesBackground;
+      transition: 0.1s;
     }
   }
 
@@ -117,24 +135,6 @@
 
     & + .header__menu {
       left: 0;
-    }
-  }
-
-  &__menu {
-    display: flex;
-    align-items: center;
-
-    @media (max-width: 960px) {
-      position: fixed;
-      flex-direction: column;
-      justify-content: space-evenly;
-      z-index: 1000;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      transition: 0.1s;
-      background-color: $uiKitPagesBackground;
     }
   }
 
@@ -180,14 +180,14 @@
   }
 
   &__logged {
-    border-left: $mainBorder;
     padding: 6px 0 6px 20px;
+    border-left: $mainBorder;
 
     @media (max-width: 960px) {
       padding: 0 50px 0 0;
-      border-left: none;
-      font-size: 21px;
       color: $mainTextColor;
+      font-size: 21px;
+      border-left: none;
     }
   }
 }

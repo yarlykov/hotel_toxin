@@ -1,4 +1,4 @@
-@import '@variables';
+@import "@variables";
 
 .info-icon {
   display: inline-flex;
@@ -6,10 +6,17 @@
   width: 20px;
   height: 20px;
   margin: 0 auto 0 5px;
-  border-radius: 50%;
-  border: $infoIconBorder;
   line-height: 24px;
+  border: $infoIconBorder;
+  border-radius: 50%;
   cursor: pointer;
+
+  &__text {
+    align-self: center;
+    padding: 0 7px;
+    color: rgba(85, 86, 126, 0.25);
+    font: 700 12px/14px Montserrat, Arial, sans-serif;
+  }
 
   &:hover {
     border: $focusBorder;
@@ -32,31 +39,23 @@
   }
 
   & [data-tooltip]::after {
-    content: attr(data-tooltip);
     position: absolute;
     top: 0;
-    width: 200px;
     right: -50px;
-    border-radius: $mainBorderRadius;
+    width: 200px;
     padding: 7px;
+    color: $textColor_50;
+    background: $uiKitPagesBackground;
+    border-radius: $mainBorderRadius;
+    box-shadow: $infoIconBoxShadow;
     opacity: 0;
     transition: 0.5s;
-
-    background: $uiKitPagesBackground;
-    color: $textColor_50;
-    box-shadow: $infoIconBoxShadow;
+    content: attr(data-tooltip);
     pointer-events: none;
   }
 
-  & [data-tooltip]:hover:after {
-    opacity: 1;
+  & [data-tooltip]:hover::after {
     top: 21px;
-  }
-
-  &__text {
-    font: 700 12px/14px Montserrat, Arial, sans-serif;
-    align-self: center;
-    color: rgba(85, 86, 126, 0.25);
-    padding: 0px 7px;
+    opacity: 1;
   }
 }

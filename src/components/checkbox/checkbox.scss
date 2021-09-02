@@ -1,5 +1,5 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .checkbox {
   min-width: 266px;
@@ -7,6 +7,7 @@
 
   &__dropdown {
     @include font-h3;
+
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -24,32 +25,34 @@
   &__dropdown-arrow-up {
     &::before {
       @include font-material-icons;
-      content: '\e5ce';
-      line-height: 15px;
+
       padding-right: 10px;
       color: $textColor_50;
+      line-height: 15px;
+      content: "\e5ce";
     }
   }
   &__dropdown-arrow-down {
     &::before {
       @include font-material-icons;
-      content: '\e5cf';
-      line-height: 15px;
+
       padding-right: 10px;
       color: $textColor_50;
+      line-height: 15px;
+      content: "\e5cf";
     }
   }
 
   &__title {
     &_font_bold {
-      font-weight: bold;
       color: $textColor_75;
+      font-weight: bold;
     }
   }
 
   &__list {
-    padding-top: 12px;
     display: none;
+    padding-top: 12px;
 
     &_opened {
       display: block;
@@ -58,10 +61,10 @@
 
   &__item {
     display: block;
+    box-sizing: content-box;
     min-height: 20px;
     margin-left: 30px;
     padding-bottom: 10px;
-    box-sizing: content-box;
     color: $textColor_50;
 
     &:last-child {
@@ -81,6 +84,21 @@
     cursor: pointer;
   }
 
+  &__box {
+    position: absolute;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    margin-left: -30px;
+    background-color: #fff;
+    border: $mainBorder;
+    border-radius: 4px;
+
+    &:hover {
+      box-shadow: 3px 3px 2px $designColor_main;
+    }
+  }
+
   &__input {
     position: absolute;
     width: 1px;
@@ -97,13 +115,12 @@
     }
 
     &:checked + .checkbox__box::after {
-      content: '';
       position: absolute;
       top: 4px;
       left: 6px;
+      box-sizing: border-box;
       width: 6px;
       height: 8px;
-      box-sizing: border-box;
       border-style: solid;
       border-width: 0 2px 2px 0;
       -webkit-border-image: $mainGradient;
@@ -113,21 +130,7 @@
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
-    }
-  }
-
-  &__box {
-    box-sizing: border-box;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    margin-left: -30px;
-    border-radius: 4px;
-    background-color: #fff;
-    border: $mainBorder;
-
-    &:hover {
-      box-shadow: 3px 3px 2px $designColor_main;
+      content: "";
     }
   }
 

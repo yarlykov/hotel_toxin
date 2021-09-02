@@ -1,52 +1,52 @@
-@import '@variables';
+@import "@variables";
 
 @mixin font-h1 {
-  font-family: $mainFont;
-  font-style: normal;
+  color: $mainTextColor;
   font-weight: 700;
   font-size: 24px;
+  font-family: $mainFont;
+  font-style: normal;
   line-height: 29px;
-  color: $mainTextColor;
 }
 
 @mixin font-h2 {
-  font-family: $mainFont;
-  font-style: normal;
+  color: $mainTextColor;
   font-weight: 700;
   font-size: 19px;
+  font-family: $mainFont;
+  font-style: normal;
   line-height: 23px;
-  color: $mainTextColor;
 }
 
 @mixin font-h3 {
-  font-family: $mainFont;
-  font-style: normal;
+  color: $mainTextColor;
   font-weight: 700;
   font-size: 12px;
+  font-family: $mainFont;
+  font-style: normal;
   line-height: 15px;
-  color: $mainTextColor;
   text-transform: uppercase;
 }
 
 @mixin font-body {
-  font-family: $mainFont;
-  font-style: normal;
+  color: $textColor_75;
   font-weight: 400;
   font-size: 14px;
+  font-family: $mainFont;
+  font-style: normal;
   line-height: 24px;
-  color: $textColor_75;
 }
 
 @mixin font-material-icons {
-  font-family: 'Material Icons';
-  font-size: 24.0002px;
-  line-height: 24.0002px;
   font-weight: 400;
+  font-size: 24.0002px;
+  font-family: "Material Icons", sans-serif;
+  line-height: 24.0002px;
 }
 
 @mixin text-gradient-fill($color) {
   background: $color;
-  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

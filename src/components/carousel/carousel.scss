@@ -1,5 +1,5 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .carousel {
   position: relative;
@@ -8,43 +8,34 @@
   &__item img {
     width: 100%;
     height: 151px;
-    border-radius: 4px 4px 0 0;
     object-fit: cover;
+    border-radius: 4px 4px 0 0;
   }
 }
 
-.slick-slider:hover:after {
-  content: '';
+.slick-slider:hover::after {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 5;
   width: 42px;
   height: 100%;
-  border-radius: $cardsBorderRadius 0 0 0;
   background: $gradientForShadow;
+  border-radius: $cardsBorderRadius 0 0 0;
+  content: "";
 }
 
-.slick-slider:hover:before {
-  content: '';
+.slick-slider:hover::before {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 5;
   width: 42px;
   height: 100%;
+  background: $gradientForShadow;
   border-radius: 0 0 0 $cardsBorderRadius;
   transform: rotate(180deg);
-  background: $gradientForShadow;
-}
-
-.slick-slider:hover {
-  .slick-arrow.slick-prev::before {
-    visibility: visible;
-  }
-  .slick-arrow.slick-next::before {
-    visibility: visible;
-  }
+  content: "";
 }
 
 /* Ограничивающая оболочка */
@@ -67,11 +58,11 @@
 /* Стрелка влево */
 .slick-arrow.slick-prev {
   left: 0;
-  transform: rotate(90deg);
-  background: transparent;
   font-size: 0;
+  background: transparent;
   border: none;
   outline: none;
+  transform: rotate(90deg);
 }
 
 .slick-arrow.slick-prev::after {
@@ -82,60 +73,71 @@
 
 .slick-arrow.slick-prev::before {
   @include font-material-icons;
-  content: '\e5cf';
-  visibility: hidden;
+
   z-index: 10;
   color: $arrowColorCarousel;
+  visibility: hidden;
   cursor: pointer;
+  content: "\e5cf";
 }
 
 /* Стрелка вправо */
 .slick-arrow.slick-next {
   right: 4px;
-  background: transparent;
   font-size: 0;
-  transform: rotate(-90deg);
+  background: transparent;
   border: none;
   outline: none;
+  transform: rotate(-90deg);
 }
 
 .slick-arrow.slick-next::before {
   @include font-material-icons;
-  content: '\e5cf';
-  visibility: hidden;
+
   z-index: 10;
   color: $arrowColorCarousel;
+  visibility: hidden;
   cursor: pointer;
+  content: "\e5cf";
+}
+
+.slick-slider:hover {
+  .slick-arrow.slick-prev::before {
+    visibility: visible;
+  }
+  .slick-arrow.slick-next::before {
+    visibility: visible;
+  }
 }
 
 /* Точки (булиты) */
 .slick-dots {
-  display: flex;
   position: absolute;
   right: 15px;
   bottom: 15px;
   z-index: 10;
+  display: flex;
 }
 
 .slick-dots li {
-  list-style: none;
   margin: 0 2px;
+  list-style: none;
 }
 
 .slick-dots li button {
+  box-sizing: border-box;
   width: 7px;
   height: 7px;
-  box-sizing: border-box;
   padding: 0;
   font-size: 0;
+  background-color: transparent;
   border: $dotsBorderCarousel;
   border-radius: 50%;
-  background-color: transparent;
   outline: none;
   cursor: pointer;
 }
 
 /* Активная точка */
 .slick-dots li.slick-active button {
-  background-color: $cardsBackground ;
+  background-color: $cardsBackground;
 }

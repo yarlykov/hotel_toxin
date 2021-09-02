@@ -1,12 +1,12 @@
-@import '@variables';
+@import "@variables";
 
 .room-review-widget {
+  box-sizing: border-box;
   max-width: 270px;
   max-height: 257.5px;
   background: $cardsBackground;
-  box-sizing: border-box;
-  box-shadow: $mainBoxShadow;
   border-radius: $mainBorderRadius;
+  box-shadow: $mainBoxShadow;
 
   &__info {
     padding: 16px 17px 19px 20px;
@@ -14,8 +14,8 @@
 
   &__data {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
+    justify-content: space-between;
 
     & .room-number__value {
       font-size: 20px;

@@ -1,17 +1,17 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .bullet-list {
   width: 266px;
   list-style: none;
 
   &__item {
-    @include font-body;
-
     display: flex;
     align-items: baseline;
     padding-top: 10px;
     text-transform: none;
+
+    @include font-body;
 
     &:first-child {
       padding-top: 9px;
@@ -19,12 +19,12 @@
   }
 
   &__item::before {
-    content: '';
     display: inline-block;
-    min-height: 10px;
     min-width: 10px;
+    min-height: 10px;
     margin-right: 11px;
-    border-radius: 50%;
     background: $textColor_25;
+    border-radius: 50%;
+    content: "";
   }
 }

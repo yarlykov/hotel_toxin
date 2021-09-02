@@ -1,5 +1,5 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .start-page {
   flex: 1 0 auto;
@@ -14,8 +14,8 @@
     @include text-gradient-fill($mainGradient);
 
     display: flex;
-    min-height: 60px;
     justify-content: space-around;
+    min-height: 60px;
     padding: 0 100px 0 100px;
     padding-top: 30px;
 
@@ -30,12 +30,10 @@
 
   &__toggle {
     display: flex;
-    padding: 20px 50px;
     justify-content: flex-end;
-  }
+    padding: 20px 50px;
 
-  &__toggle {
-    & .toggle__box:before {
+    & .toggle__box::before {
       transition: 0s;
     }
   }

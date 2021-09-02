@@ -1,5 +1,5 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .comment {
   z-index: 1;
@@ -11,16 +11,17 @@
   }
 
   &__avatar {
+    box-sizing: border-box;
     width: 47.67px;
     height: 48px;
     border: $avatarBorder;
-    box-sizing: border-box;
-    box-shadow: $avatarBoxShadow;
     border-radius: 32px;
+    box-shadow: $avatarBoxShadow;
   }
 
   &__description {
     @include font-body;
+
     padding-left: 10px;
   }
 
@@ -34,8 +35,8 @@
 
   &__body {
     display: flex;
-    line-height: 24px;
     color: $textColor_75;
+    line-height: 24px;
 
     p {
       margin: 0;
@@ -43,12 +44,12 @@
   }
 
   &__like {
-    padding-left: 3.5px;
     padding-top: 8px;
+    padding-left: 3.5px;
   }
 
   &__text {
-    padding-left: 14.3px;
     padding-top: 10px;
+    padding-left: 14.3px;
   }
 }

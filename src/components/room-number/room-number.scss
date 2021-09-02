@@ -1,25 +1,27 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .room-number {
   @include font-h1;
+
   font-weight: 700;
-  
+
   &__symbol {
+    color: $mainTextColor;
     font-size: 14px;
     line-height: 17px;
-    color: $mainTextColor;
   }
   &__value {
     padding-left: 4px;
+    color: $mainTextColor;
     font-size: 24px;
     line-height: 30px;
-    color: $mainTextColor;
   }
   &__text {
     @include font-h3;
+
     padding-left: 5px;
-    text-align: end;
     color: $designColor_main;
+    text-align: end;
   }
 }

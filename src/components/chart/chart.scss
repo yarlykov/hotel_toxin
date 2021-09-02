@@ -1,10 +1,10 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .chart {
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
+  justify-content: space-between;
   max-width: 313px;
   max-height: 148px;
   padding-top: 21px;
@@ -18,8 +18,8 @@
     box-sizing: content-box;
     width: 120px;
     height: 120px;
-    padding-bottom: 7px;
     margin-right: 25px;
+    padding-bottom: 7px;
   }
 
   &__sum-of-vote {
@@ -37,12 +37,13 @@
   }
 
   &__legend-list {
-    list-style: none;
     padding: 0 2px 5px 0;
+    list-style: none;
   }
 
   &__legend-item {
     @include font-body;
+
     position: relative;
     display: block;
     cursor: pointer;
@@ -52,13 +53,13 @@
     }
 
     &::before {
-      content: '';
       position: absolute;
       top: 7px;
       left: -15px;
       width: 10px;
       height: 10px;
       border-radius: 8px;
+      content: "";
     }
 
     &:nth-child(1)::before {
@@ -78,17 +79,17 @@
       color: $textColor_50;
     }
     &:focus {
-      outline: none;
       color: $textColor_50;
+      outline: none;
     }
   }
 
   &__circle {
+    cursor: pointer;
+    transition-duration: 0.5s;
+    transition-property: all;
     fill: none;
     stroke-width: 1.2;
-    transition-property: all;
-    transition-duration: 0.5s;
-    cursor: pointer;
 
     &:hover {
       stroke-width: 2.3;

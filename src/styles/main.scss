@@ -1,14 +1,14 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 html {
-  height: 100%;
   box-sizing: border-box;
+  height: 100%;
   margin: 0;
-  font-family: $mainFont;
-  font-size: 14px;
-  font-style: normal;
   font-weight: normal;
+  font-size: 14px;
+  font-family: $mainFont;
+  font-style: normal;
 }
 
 body {

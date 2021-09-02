@@ -1,4 +1,4 @@
-@import '@variables';
+@import "@variables";
 
 .footer {
   box-sizing: border-box;
@@ -13,8 +13,8 @@
   }
 
   &__wrapper {
-    box-sizing: border-box;
     display: flex;
+    box-sizing: border-box;
     padding: 100px 140px 100px 140px;
 
     @media (max-width: 1280px) {
@@ -23,17 +23,17 @@
   }
 
   &__container {
-    max-width: 1440px;
     min-width: 320px;
-    margin: 0px auto;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
   &__links {
-    min-width: 560px;
     display: flex;
-    margin-left: 40px;
     flex-basis: 150px;
     justify-content: space-between;
+    min-width: 560px;
+    margin-left: 40px;
     padding-top: 4px;
     transition: all 0.3s;
 
@@ -51,29 +51,29 @@
   }
 
   &__presentation {
-    padding-top: 13px;
     max-width: 260px;
     margin: 0;
+    padding-top: 13px;
+    color: $textColor_75;
     font-size: 14px;
     line-height: 24px;
-    color: $textColor_75;
   }
 
   &__bottom {
     border-top: 1px solid rgba(31, 32, 65, 0.1);
-    box-shadow: 0px 10px 20px $textColor_5;
+    box-shadow: 0 10px 20px $textColor_5;
   }
 
   &__bottom-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 1440px;
+    justify-content: space-between;
     min-width: 320px;
-    margin: 0px auto;
-    padding: 22.5px 0px;
-    padding-left: 140px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 22.5px 0;
     padding-right: 140px;
+    padding-left: 140px;
 
     @media (max-width: 1280px) {
       justify-content: space-around;
@@ -81,10 +81,10 @@
   }
 
   &__copyright-text {
-    font-family: $mainFont;
-    font-size: 14px;
-    line-height: 17px;
     color: $textColor_75;
+    font-size: 14px;
+    font-family: $mainFont;
+    line-height: 17px;
   }
 
   &__social {

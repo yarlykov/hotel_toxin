@@ -1,23 +1,24 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .button {
   @include font-h3;
+
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
+  justify-content: center;
   box-sizing: border-box;
+  width: 100%;
+  background: $mainGradient;
   border: none;
   border-radius: 100px;
-  background: $mainGradient;
   outline: none;
   cursor: pointer;
 
   &:disabled {
-    cursor: auto;
     background: $mainGradientTransparent;
+    cursor: auto;
   }
 
   &:hover,
@@ -40,24 +41,25 @@
 
   &_inline {
     @include font-h3;
-    padding: 0;
-    border: none;
-    background: none;
+
     display: inline-block;
+    padding: 0;
     color: $designColor_main;
+    background: none;
+    border: none;
     cursor: pointer;
 
     &:hover,
     &:focus {
-      outline: none;
       color: $textColor_50;
       background: none;
+      outline: none;
     }
 
     &:disabled {
-      cursor: auto;
       color: $textColor_50;
       background: none;
+      cursor: auto;
     }
   }
 
@@ -78,10 +80,10 @@
   &__fill {
     &_white {
       position: absolute;
-      width: calc(100% - 4px);
-      height: calc(100% - 4px);
       top: 2px;
       left: 2px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
       background: #fff;
       border-radius: 100px;
     }
@@ -89,15 +91,15 @@
 
   &__arrow {
     position: absolute;
-    right: 10px;
     top: 53%;
+    right: 10px;
     transform: translateY(-50%);
 
-    &:before {
+    &::before {
       position: relative;
-      content: '\e5c8';
-      font: 400 24px/24px 'Material Icons';
       color: #fff;
+      font: 400 24px/24px "Material Icons", sans-serif;
+      content: "\e5c8";
     }
   }
 }

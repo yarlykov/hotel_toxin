@@ -1,5 +1,5 @@
-@import '@variables';
-@import '@mixins';
+@import "@variables";
+@import "@mixins";
 
 .heading {
   display: flex;
@@ -18,18 +18,19 @@
     }
     &_level_h3 {
       @include font-h3;
+
       padding-bottom: 5px;
     }
   }
 
   &__description {
     &_lowercase {
-      text-transform: lowercase;
       font-size: 14px;
+      text-transform: lowercase;
     }
 
+    color: $textColor_50;
     font-size: 12px;
     text-transform: uppercase;
-    color: $textColor_50;
   }
 }
