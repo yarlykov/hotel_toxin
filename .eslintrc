@@ -13,7 +13,7 @@
     "$": "readonly",
     "jQuery": "readonly"
   },
-  "plugins": ["fsd"],
+  "plugins": ["fsd", "pug" ],
   "rules": {
     "linebreak-style": "off",
     "no-underscore-dangle": "off",

@@ -23,61 +23,93 @@ block content
     section.form-elements__text-fields-buttons
       .form-elements__text-fields
         .form-elements__text-field-wrapper
-          +heading({level: "h3", title: "text field", description: "default"})
+          +heading({ level: "h3", title: "text field", description: "default" })
           +text-field({ 
-            type: "text", placeholder: "Email", 
-            size:"large", name: "email", autocomplete: "on" 
+            type: "text",
+            placeholder: "Email", 
+            size:"large",
+            name: "email",
+            autocomplete: "on", 
           })
 
         .form-elements__text-field-wrapper
-          +heading({level: "h3", title: "text field", description: "hover / focus"})
+          +heading({ level: "h3", title: "text field", description: "hover / focus" })
           +text-field({ 
-            type: "text",  placeholder: "This is pretty awesome", 
-            size:"large", name: "email",  autocomplete: "off", focused: true, 
+            type: "text",
+            placeholder: "This is pretty awesome",
+            size: "large",
+            name: "email",
+            autocomplete: "off",
+            focused: true,
           })
 
         .form-elements__text-field-wrapper
-          +heading({level: "h3", title: "dropdown", description: "default"})
+          +heading({ level: "h3", title: "dropdown", description: "default" })
           +dropdown({
-            isOpen: false, group: "guests", 
+            isOpen: false,
+            group: "guests", 
             elements: [
-              {title: "Взрослые", count: 0},
-              {title: "Дети", count: 0}, 
-              {title: "Младенцы", count: 0}
+              { title: "Взрослые", count: 0 },
+              { title: "Дети", count: 0 }, 
+              { title: "Младенцы", count: 0 }
             ]
           })
 
         .form-elements__text-field-wrapper
-          +heading({level: "h3", title: "masked text field", description: "default"})
+          +heading({ level: "h3", title: "masked text field", description: "default" })
           +text-field({ 
-            type: "text", dataType: "masked-text-field", masked: true, 
-            placeholder: "ДД.ММ.ГГГГ", size:"large", name: "text"
+            type: "text",
+            dataType: "masked-text-field",
+            masked: true, 
+            placeholder: "ДД.ММ.ГГГГ",
+            size:"large",
+            name: "text",
           })
 
         .form-elements__text-field-wrapper
           +date-dropdown({ 
-            type: "text", dataType: "date-dropdown-start", dataTypeEnd: "date-dropdown-end",
-            placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", 
-            arrow: true, twoInputs: true, startTitle: "date dropdown", endTitle: "date dropdown"
+            type: "text",
+            dataType: "date-dropdown-start",
+            dataTypeEnd: "date-dropdown-end",
+            placeholder: "ДД.ММ.ГГГГ",
+            size:"small",
+            name: "date",
+            autocomplete: "off",
+            arrow: true,
+            twoInputs: true,
+            startTitle: "date dropdown",
+            endTitle: "date dropdown",
           })
 
         .form-elements__text-field-wrapper 
-          +heading({level: "h3", title: "filter date dropdown" })  
+          +heading({ level: "h3", title: "filter date dropdown" })  
           +date-dropdown({ 
-            type: "text", dataType: "filter-date-dropdown", placeholder: "ДД.ММ - ДД.ММ", size:"medium", name:"text",  autocomplete: "off", arrow: true,
-            readonly: true, lowercase: true,
-           })
+            type: "text",
+            dataType: "filter-date-dropdown",
+            placeholder: "ДД.ММ - ДД.ММ",
+            size:"medium",
+            name:"text",
+            autocomplete: "off",
+            arrow: true,
+            readonly: true,
+            lowercase: true,
+          })
 
         .form-elements__text-field-wrapper 
-          +heading({level: "h3", title: "subscription text field" })
+          +heading({ level: "h3", title: "subscription text field" })
           +text-field({ 
-            type: "text", dataType: "subscription-text-field", placeholder: "Email", size:"medium", 
-            name: "email", autocomplete: "on", subscribe: true,
+            type: "text",
+            dataType: "subscription-text-field",
+            placeholder: "Email",
+            size:"medium", 
+            name: "email",
+            autocomplete: "on",
+            subscribe: true,
           })    
 
       .form-elements__small-buttons
         .form-elements__small-buttons-wrapper
-          +heading({level: "h3", title: "checkbox buttons"})
+          +heading({ level: "h3", title: "checkbox buttons" })
           +checkbox({	
             listItems: [
               { title: "Можно курить" },
@@ -87,25 +119,25 @@ block content
           })
 
         .form-elements__small-buttons-wrapper
-          +heading({level: "h3", title: "radio buttons"})
+          +heading({ level: "h3", title: "radio buttons"  })
           .form-elements__radio-buttons-container
             +radio({ group: "gender", title: "Мужчина", checked: true })
             +radio({ group: "gender", title: "Женщина", checked: false })
 
         .form-elements__small-buttons-wrapper
-          +heading({level: "h3", title: "toggle"})
+          +heading({ level: "h3", title: "toggle" })
           .form-elements__toggle-buttons-container
-            +toggle({title: "Получать спецпредложения", checked: true })
-            +toggle({title: "Получать спецпредложения", checked: false})
+            +toggle({ title: "Получать спецпредложения", checked: true })
+            +toggle({ title: "Получать спецпредложения", checked: false })
 
         .form-elements__small-buttons-wrapper
-          +heading({level: "h3", title: "like button"})
+          +heading({ level: "h3", title: "like button" })
           .form-elements__like-buttons-container
             +like({ icon: "heart", value: 2, disable: true })
             +like({ icon: "heart", value: 12, disable: false })
 
         .form-elements__small-buttons-wrapper
-          +heading({level: "h3", title: "rate button"})
+          +heading({ level: "h3", title: "rate button" })
           .form-elements__rating-buttons-container
             +rating({ rating: 5 })
             +rating({ rating: 4 })
@@ -118,7 +150,7 @@ block content
             })
 
         .form-elements__buttons-wrapper
-          +heading({level: "h3", title: "buttons"})
+          +heading({ level: "h3", title: "buttons" })
           .form-elements__buttons-container
             +button({ buttonName: "click me", size: "small", textColor: "white" })
             +button({ buttonName: "click me", size: "small", textColor:  "white", disabled: true })
@@ -131,65 +163,65 @@ block content
           +button({ buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"})
 
         .form-elements__buttons-wrapper
-          +heading({level: "h3", title: "pagination"})
+          +heading({ level: "h3", title: "pagination" })
           .form-elements__pagination-container
           +pagination()
 
     section.form-elements__dropdowns
       .form-elements__dropdowns-block-left
         .form-elements__dropdowns-wrapper
-          +heading({level: "h3", title: "dropdown", description: "expanded"})
+          +heading({ level: "h3", title: "dropdown", description: "expanded" })
           +dropdown({
             title: "dropdown",
             subtitle: "expanded",
             isOpen: true, 
             group: "comfort", 
             elements: [
-              {title: "Спальни", count: 2}, 
-              {title: "Кровати", count: 2}, 
-              {title: "Ванные комнаты", count: 0}
+              { title: "Спальни", count: 2 }, 
+              { title: "Кровати", count: 2 }, 
+              { title: "Ванные комнаты", count: 0 }
             ]
           })
         .form-elements__dropdowns-wrapper
-          +heading({level: "h3", title: "dropdown", description: "default"})
+          +heading({ level: "h3", title: "dropdown", description: "default" })
           +dropdown({ 
             title: "dropdown",
             subtitle: "default",
             isOpen: false, 
             group: "comfort", 
             elements: [
-              {title: "Спальни", count: 2}, 
-              {title: "Кровати", count: 2}, 
-              {title: "Ванные комнаты", count: 0}
+              { title: "Спальни", count: 2 }, 
+              { title: "Кровати", count: 2 }, 
+              { title: "Ванные комнаты", count: 0 }
             ]
           })
 
       .form-elements__dropdowns-block-right
         .form-elements__dropdowns-wrapper
-          +heading({level: "h3", title: "dropdown"})
+          +heading({ level: "h3", title: "dropdown" })
           .form-elements__dropdowns-container
             +dropdown({
               title: "dropdown",
               isOpen: true, 
               group: "guests", 
               elements: [
-                {title: "Взрослые", count: 0},
-                {title: "Дети", count: 0}, 
-                {title: "Младенцы", count: 0}
+                { title: "Взрослые", count: 0 },
+                { title: "Дети", count: 0 }, 
+                { title: "Младенцы", count: 0 }
               ]
             })
 
         .form-elements__dropdowns-wrapper
-          +heading({level: "h3", title: "dropdown"})
+          +heading({ level: "h3", title: "dropdown" })
           .form-elements__dropdowns-container
             +dropdown({
               title: "dropdown",
               isOpen: true, 
               group: "guests", 
               elements: [
-                {title: "Взрослые", count: 2},
-                {title: "Дети", count: 1}, 
-                {title: "Младенцы", count: 0}
+                { title: "Взрослые", count: 2 },
+                { title: "Дети", count: 1 }, 
+                { title: "Младенцы", count: 0 }
               ]
             })
 
@@ -227,19 +259,25 @@ block content
 
       .form-elements__lists-block-other
         .form-elements__lists-wrapper
-          +heading({level: "h3", title: "rich checkbox buttons"})
+          +heading({ level: "h3", title: "rich checkbox buttons" })
           +checkbox({	
             rich: true,
             listItems: [
-              { title: "Широкий коридор", rich: true, 
-                description: "Ширина коридоров в номере не\u00A0менее 91 см." },
-              { title: "Помощник для инвалидов", rich: true, 
-                description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера." }
+              { 
+                title: "Широкий коридор",
+                rich: true, 
+                description: "Ширина коридоров в номере не\u00A0менее 91 см."
+              },
+              {
+                title: "Помощник для инвалидов",
+                rich: true, 
+                description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера."
+              }
             ]
           })
 
         .form-elements__lists-wrapper-bullet
-          +heading({level: "h3", title: "bullet list"})
+          +heading({ level: "h3", title: "bullet list" })
           +bullet-list([ 
             { title: "Нельзя с питомцами" }, 
             { title: "Без вечеринок и мероприятий" },  
@@ -257,5 +295,5 @@ block content
           name: "Мурад Сарафанов", 
           dateOfVisit: "5 дней назад", 
           commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", 
-          likeCount: 12
+          likeCount: 12,
         })

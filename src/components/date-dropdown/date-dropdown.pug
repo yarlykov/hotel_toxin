@@ -10,16 +10,28 @@ mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size
         .date-dropdown__start
           +heading({ level: "h3", title: startTitle })
           +text-field({
-            type, dataType, placeholder, 
-            size, name, autocomplete, 
-            arrow, readonly, lowercase,
+            type,
+            dataType,
+            placeholder, 
+            size,
+            name,
+            autocomplete,
+            arrow,
+            readonly,
+            lowercase,
           })
         .date-dropdown__end
           +heading({ level: "h3", title: endTitle })
           +text-field({
-            type, dataType: dataTypeEnd, placeholder, 
-            size, name, autocomplete, 
-            arrow, readonly, lowercase,
+            type,
+            placeholder, 
+            size,
+            name,
+            autocomplete, 
+            arrow,
+            readonly,
+            lowercase,
+            dataType: dataTypeEnd,
           })
   else
     .date-dropdown(data-id=dataId)

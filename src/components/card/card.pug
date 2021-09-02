@@ -33,9 +33,17 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
       if (searchOrCalculation)
         section.card__date-dropdown
           +date-dropdown({ 
-            type: "text", dataType: "date-dropdown-start", dataTypeEnd: "date-dropdown-end",
-            placeholder: "ДД.ММ.ГГГГ", size:"small", name: "date", autocomplete: "off", 
-            arrow: true, twoInputs: true, startTitle: "прибытие", endTitle: "выезд"
+            type: "text",
+            dataType: "date-dropdown-start",
+            dataTypeEnd: "date-dropdown-end",
+            placeholder: "ДД.ММ.ГГГГ",
+            size:"small",
+            name: "date",
+            autocomplete: "off", 
+            arrow: true,
+            twoInputs: true,
+            startTitle: "прибытие",
+            endTitle: "выезд",
           })
         div(class= search ? "card__guests-dropdown-search" : "card__guests-dropdown")
           +heading({ level: "h3", title: "гости" })
@@ -45,7 +53,7 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
             elements: [
               {title: "Взрослые", count: numberOfGuests},
               {title: "Дети", count: 0}, 
-              {title: "Младенцы", count: 0}
+              {title: "Младенцы", count: 0},
             ]})
         if calculation
           .card__calculation
@@ -62,7 +70,13 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
           +radio({ group: "gender", title: "Женщина", checked: false})
         .card__birthday
           +heading({ level: "h3", title: "дата рождения" })
-          +text-field({ dataType: "masked-text-field", placeholder: "ДД.ММ.ГГГГ", type: "text", name: "birthday", autocomplete: "on" })
+          +text-field({
+            dataType: "masked-text-field",
+            placeholder: "ДД.ММ.ГГГГ",
+            type: "text",
+            name: "birthday",
+            autocomplete: "on",
+          })
         section.card__login-details
           +heading({ level: "h3", title: "данные для входа в сервис" })
           .card__login-details-email
@@ -81,10 +95,22 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
       //- Add button
       if (buttonText !== "")
         .card__button
-          +button({ buttonName: buttonText, type: buttonType, buttonVariation: "withArrow", textColor: "white", size: "large"})
+          +button({
+            buttonName: buttonText,
+            type: buttonType,
+            buttonVariation: "withArrow",
+            textColor: "white",
+            size: "large",
+          })
       //- Add question
       if (question !== "")
         .card__question
           span.card__question-text #{question}
           .card__question-button
-            +button({ buttonName: questionButton, buttonVariation: "fillWhite", textColor: "purple", size: "small", link: questionButtonLink })
+            +button({
+              buttonName: questionButton,
+              buttonVariation: "fillWhite",
+              textColor: "purple",
+              size: "small",
+              link: questionButtonLink,
+            })

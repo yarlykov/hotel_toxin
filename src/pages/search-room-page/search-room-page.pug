@@ -13,14 +13,22 @@ block content
           dateDropdown: {
             title: "даты пребывания в отеле",
             options: { 
-              type: "text", dataType: "filter-date-dropdown", placeholder: "дд.мм - дд.мм", size:"medium", lowercase: true,
-              name:"text",  autocomplete: "off", arrow: true, readonly: true, 
+              type: "text",
+              dataType: "filter-date-dropdown",
+              placeholder: "дд.мм - дд.мм",
+              size:"medium",
+              lowercase: true,
+              name:"text", 
+              autocomplete: "off",
+              arrow: true,
+              readonly: true, 
             }
           },
           dropdownGuests: {
             title: "гости",
             options: {
-              isOpen: false, group: "guests", 
+              isOpen: false,
+              group: "guests", 
               elements: [
                 {title: "Взрослые", count: 2},
                 {title: "Дети", count: 0}, 
@@ -48,10 +56,16 @@ block content
             dropdown: false,
             rich: true,
             listItems: [
-              { title: "Широкий коридор", rich: true, 
-                description: "Ширина коридоров в номере не\u00A0менее 91 см." },
-              { title: "Помощник для инвалидов", rich: true, 
-                description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера." }
+              { 
+                title: "Широкий коридор",
+                rich: true, 
+                description: "Ширина коридоров в номере не\u00A0менее 91 см." 
+              },
+              { 
+                title: "Помощник для инвалидов",
+                rich: true, 
+                description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера."
+              }
             ]
           },
           dropdownComfort: { 
@@ -59,9 +73,9 @@ block content
             isOpen: false, 
             group: "comfort", 
             elements: [
-              {title: "Спальни", count: 2}, 
-              {title: "Кровати", count: 2}, 
-              {title: "Ванные комнаты", count: 0}
+              { title: "Спальни", count: 2 }, 
+              { title: "Кровати", count: 2 }, 
+              { title: "Ванные комнаты", count: 0 }
             ]
           },
           expandableCheckbox: {	
@@ -85,22 +99,22 @@ block content
           widgets: [
             {
               images: [
-                { name: "room-img-1.jpg"},
-                { name: "room-img-2.jpg"},
-                { name: "room-img-3.jpg"},
-                { name: "room-img-4.jpg"},
+                { name: "room-img-1.jpg" },
+                { name: "room-img-2.jpg" },
+                { name: "room-img-3.jpg" },
+                { name: "room-img-4.jpg" },
               ],
               roomNumber: { symbol: "№", value: "888", text: "люкс" },
-              roomPrice: { value: "9 990", text: "в сутки"},
+              roomPrice: { value: "9 990", text: "в сутки" },
               rating: { rating: 5 },
-              commentCount: { value: "145", text: "Отзывов"} 
+              commentCount: { value: "145", text: "Отзывов" } 
             },
             {
               images: [
-                { name: "room-img-2.jpg"},
-                { name: "room-img-5.jpg"},
-                { name: "room-img-6.jpg"},
-                { name: "room-img-7.jpg"},
+                { name: "room-img-2.jpg" },
+                { name: "room-img-5.jpg" },
+                { name: "room-img-6.jpg" },
+                { name: "room-img-7.jpg" },
               ],
               roomNumber: { symbol: "№", value: "840" },
               roomPrice: { value: "9 900", text: "в сутки"},
@@ -109,10 +123,10 @@ block content
             },
             {
               images: [
-                { name: "room-img-3.jpg"},
-                { name: "room-img-2.jpg"},
-                { name: "room-img-3.jpg"},
-                { name: "room-img-4.jpg"},
+                { name: "room-img-3.jpg" },
+                { name: "room-img-2.jpg" },
+                { name: "room-img-3.jpg" },
+                { name: "room-img-4.jpg" },
               ],
               roomNumber: { symbol: "№", value: "980", text: "люкс" },
               roomPrice: { value: "8 500", text: "в сутки"},
@@ -121,111 +135,111 @@ block content
             },
             {
               images: [
-                { name: "room-img-4.jpg"},
-                { name: "room-img-3.jpg"},
-                { name: "room-img-2.jpg"},
-                { name: "room-img-1.jpg"},
+                { name: "room-img-4.jpg" },
+                { name: "room-img-3.jpg" },
+                { name: "room-img-2.jpg" },
+                { name: "room-img-1.jpg" },
               ],
               roomNumber: { symbol: "№", value: "856" },
-              roomPrice: { value: "7 300", text: "в сутки"},
+              roomPrice: { value: "7 300", text: "в сутки" },
               rating: { rating: 5 },
-              commentCount: { value: "19", text: "Отзывов"} 
+              commentCount: { value: "19", text: "Отзывов" } 
             },
             {
               images: [
-                { name: "room-img-5.jpg"},
-                { name: "room-img-4.jpg"},
-                { name: "room-img-3.jpg"},
-                { name: "room-img-2.jpg"},
+                { name: "room-img-5.jpg" },
+                { name: "room-img-4.jpg" },
+                { name: "room-img-3.jpg" },
+                { name: "room-img-2.jpg" },
               ],
               roomNumber: { symbol: "№", value: "740" },
-              roomPrice: { value: "6 000", text: "в сутки"},
+              roomPrice: { value: "6 000", text: "в сутки" },
               rating: { rating: 4 },
-              commentCount: { value: "44", text: "Отзывов"} 
+              commentCount: { value: "44", text: "Отзывов" } 
             },
             {
               images: [
-                { name: "room-img-6.jpg"},
-                { name: "room-img-5.jpg"},
-                { name: "room-img-4.jpg"},
-                { name: "room-img-3.jpg"},
+                { name: "room-img-6.jpg" },
+                { name: "room-img-5.jpg" },
+                { name: "room-img-4.jpg" },
+                { name: "room-img-3.jpg" },
               ],
               roomNumber: { symbol: "№", value: "982" },
-              roomPrice: { value: "5 800", text: "в сутки"},
+              roomPrice: { value: "5 800", text: "в сутки" },
               rating: { rating: 3 },
-              commentCount: { value: "56", text: "Отзывов"} 
+              commentCount: { value: "56", text: "Отзывов" } 
             },
             {
               images: [
-                { name: "room-img-7.jpg"},
-                { name: "room-img-6.jpg"},
-                { name: "room-img-5.jpg"},
-                { name: "room-img-4.jpg"},
+                { name: "room-img-7.jpg" },
+                { name: "room-img-6.jpg" },
+                { name: "room-img-5.jpg" },
+                { name: "room-img-4.jpg" },
               ],
               roomNumber: { symbol: "№", value: "678" },
-              roomPrice: { value: "5 500", text: "в сутки"},
+              roomPrice: { value: "5 500", text: "в сутки" },
               rating: { rating: 5 },
-              commentCount: { value: "45", text: "Отзывов"} 
+              commentCount: { value: "45", text: "Отзывов" } 
             },
             {
               images: [
-                { name: "room-img-8.jpg"},
-                { name: "room-img-5.jpg"},
-                { name: "room-img-6.jpg"},
-                { name: "room-img-7.jpg"},
+                { name: "room-img-8.jpg" },
+                { name: "room-img-5.jpg" },
+                { name: "room-img-6.jpg" },
+                { name: "room-img-7.jpg" },
               ],
               roomNumber: { symbol: "№", value: "450" },
-              roomPrice: { value: "5 300", text: "в сутки"},
+              roomPrice: { value: "5 300", text: "в сутки" },
               rating: { rating: 4 },
-              commentCount: { value: "39", text: "Отзывов"} 
+              commentCount: { value: "39", text: "Отзывов" } 
             },
             {
               images: [
-                { name: "room-img-9.jpg"},
-                { name: "room-img-8.jpg"},
-                { name: "room-img-7.jpg"},
-                { name: "room-img-6.jpg"},
+                { name: "room-img-9.jpg" },
+                { name: "room-img-8.jpg" },
+                { name: "room-img-7.jpg" },
+                { name: "room-img-6.jpg" },
               ],
               roomNumber: { symbol: "№", value: "350" },
-              roomPrice: { value: "5 000", text: "в сутки"},
+              roomPrice: { value: "5 000", text: "в сутки" },
               rating: { rating: 3 },
-              commentCount: { value: "77", text: "Отзывов"} 
+              commentCount: { value: "77", text: "Отзывов" } 
             },
             {
               images: [
-                { name: "room-img-10.jpg"},
-                { name: "room-img-9.jpg"},
-                { name: "room-img-8.jpg"},
-                { name: "room-img-7.jpg"},
+                { name: "room-img-10.jpg" },
+                { name: "room-img-9.jpg" },
+                { name: "room-img-8.jpg" },
+                { name: "room-img-7.jpg" },
               ],
               roomNumber: { symbol: "№", value: "666" },
-              roomPrice: { value: "5 000", text: "в сутки"},
+              roomPrice: { value: "5 000", text: "в сутки" },
               rating: { rating: 5 },
-              commentCount: { value: "25", text: "Отзывов"} 
+              commentCount: { value: "25", text: "Отзывов" } 
             },
             {
               images: [
-                { name: "room-img-11.jpg"},
-                { name: "room-img-12.jpg"},
-                { name: "room-img-3.jpg"},
-                { name: "room-img-7.jpg"},
+                { name: "room-img-11.jpg" },
+                { name: "room-img-12.jpg" },
+                { name: "room-img-3.jpg" },
+                { name: "room-img-7.jpg" },
               ],
               roomNumber: { symbol: "№", value: "444" },
-              roomPrice: { value: "5 000", text: "в сутки"},
+              roomPrice: { value: "5 000", text: "в сутки" },
               rating: { rating: 3 },
-              commentCount: { value: "15", text: "Отзывов"} 
+              commentCount: { value: "15", text: "Отзывов" } 
             },
             {
               images: [
-                { name: "room-img-12.jpg"},
-                { name: "room-img-11.jpg"},
-                { name: "room-img-10.jpg"},
-                { name: "room-img-9.jpg"},
+                { name: "room-img-12.jpg" },
+                { name: "room-img-11.jpg" },
+                { name: "room-img-10.jpg" },
+                { name: "room-img-9.jpg" },
               ],
-              roomNumber: { symbol: "№", value: "352"},
-              roomPrice: { value: "5 000", text: "в сутки"},
+              roomNumber: { symbol: "№", value: "352" },
+              roomPrice: { value: "5 000", text: "в сутки" },
               rating: { rating: 3 },
-              commentCount: { value: "55", text: "Отзывов"} 
+              commentCount: { value: "55", text: "Отзывов" } 
             },
           ]
         })

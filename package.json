@@ -42,6 +42,7 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-fsd": "^1.0.1",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-pug": "^1.2.4",
     "file-loader": "^6.2.0",
     "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.5.0",
