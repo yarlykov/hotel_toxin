@@ -3,10 +3,8 @@
 
 .landing {
   box-sizing: border-box;
-  background: url("../../images/page-background/landing.jpg") no-repeat;
-  background-position: 50% 68%;
-  background-size: cover;
-  background-size: 106%;
+  background: 50% 68% / 106% url("../../images/page-background/landing.jpg")
+    no-repeat;
 
   @media (max-width: 1280px) {
     background-size: cover;
@@ -24,7 +22,7 @@
     @media (max-width: 960px) {
       flex-direction: row;
       justify-content: center;
-      padding: 100px 0 100px 0;
+      padding: 100px 0;
     }
 
     @media (max-width: 480px) {
@@ -49,9 +47,7 @@
 
     align-self: flex-end;
     max-width: 400px;
-    padding-top: 316px;
-    padding-right: 133px;
-    padding-bottom: 21px;
+    padding: 316px 133px 21px 0;
     text-align: end;
 
     @media (max-width: 960px) {

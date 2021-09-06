@@ -11,9 +11,7 @@
     display: flex;
     justify-content: space-between;
     min-height: 400px;
-    padding-top: 70px;
-    padding-right: 140px;
-    padding-left: 140px;
+    padding: 70px 140px 0 140px;
 
     @media (max-width: 1240px) {
       flex-direction: column;
@@ -23,9 +21,7 @@
     }
 
     @media (max-width: 980px) {
-      padding-top: 28px;
-      padding-right: 0;
-      padding-left: 0;
+      padding: 28px 0 0 0;
     }
   }
 
@@ -51,6 +47,7 @@
 
   &__calculation {
     margin-left: 20px;
+
     @media (max-width: 1200px) {
       padding-bottom: 70px;
     }
@@ -83,9 +80,7 @@
 
   &__subtitle {
     color: $textColor_50;
-    font-size: 14px;
-    font-family: Montserrat, Arial, sans-serif;
-    line-height: 14px;
+    font: 14px/14px $mainFont;
   }
 
   &__dignities {

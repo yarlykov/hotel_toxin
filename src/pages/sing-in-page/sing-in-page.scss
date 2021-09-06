@@ -2,10 +2,8 @@
 
 .sing-in {
   box-sizing: border-box;
-  background: url("../../images/page-background/sing-in.jpg") no-repeat;
-  background-position: 44% 53.5%;
-  background-size: cover;
-  background-size: 106%;
+  background: 44% 53.5% / 106% url("../../images/page-background/sing-in.jpg")
+    no-repeat;
 
   @media (max-width: 1280px) {
     background-size: cover;
@@ -16,12 +14,12 @@
     justify-content: center;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 172px 0 172px 0;
+    padding: 172px 0;
 
     @media (max-width: 960px) {
       flex-direction: row;
       justify-content: center;
-      padding: 100px 0 100px 0;
+      padding: 100px 0;
     }
 
     @media (max-width: 480px) {
@@ -31,6 +29,7 @@
 
   &__entry {
     min-width: 380px;
+
     & .card__wrapper {
       padding-bottom: 32px;
     }

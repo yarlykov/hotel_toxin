@@ -20,9 +20,7 @@
   box-sizing: border-box;
   min-width: 320px;
   color: $textColor_50;
-  font-size: 12px;
-  font-family: Montserrat, sans-serif;
-  line-height: 15px;
+  font: 12px/15px Montserrat, sans-serif;
   border: $mainBorder;
   border-radius: 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.25);
@@ -41,9 +39,7 @@
 
   &__arrow {
     color: #bc9cff;
-    font-size: 24px;
-    font-family: "Material Icons", sans-serif;
-    line-height: 20px;
+    font: 24px/20px "Material Icons", sans-serif;
 
     &_back::before {
       content: "\e5c4";
@@ -76,8 +72,7 @@
   opacity: 0;
 
   &.active {
-    transform: translateX(0);
-    transform: translateY(5px);
+    transform: translate(0, 5px);
     opacity: 1;
   }
 }
@@ -303,9 +298,7 @@
   align-items: flex-start;
   padding: 20px 20px 25px 20px;
   color: $mainTextColor;
-  font-size: 19px;
-  font-family: $mainFont;
-  line-height: 24px;
+  font: 19px/24px $mainFont;
   border-bottom: none;
 }
 
@@ -346,6 +339,7 @@
 
 .datepicker.datepicker--small {
   min-width: 266px;
+
   .datepicker--cell {
     height: 32px;
   }

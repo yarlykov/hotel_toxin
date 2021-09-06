@@ -14,9 +14,7 @@
 
   &__item {
     padding-top: 21px;
-    font-weight: 400;
-    font-size: $mainFont_size;
-    line-height: 17px;
+    font: 400 14px/17px $mainFont;
     white-space: wrap;
     text-transform: none;
 

@@ -2,46 +2,27 @@
 
 @mixin font-h1 {
   color: $mainTextColor;
-  font-weight: 700;
-  font-size: 24px;
-  font-family: $mainFont;
-  font-style: normal;
-  line-height: 29px;
+  font: 700 24px/29px $mainFont;
 }
 
 @mixin font-h2 {
   color: $mainTextColor;
-  font-weight: 700;
-  font-size: 19px;
-  font-family: $mainFont;
-  font-style: normal;
-  line-height: 23px;
+  font: 700 19px/23px $mainFont;
 }
 
 @mixin font-h3 {
   color: $mainTextColor;
-  font-weight: 700;
-  font-size: 12px;
-  font-family: $mainFont;
-  font-style: normal;
-  line-height: 15px;
+  font: 700 12px/15px $mainFont;
   text-transform: uppercase;
 }
 
 @mixin font-body {
   color: $textColor_75;
-  font-weight: 400;
-  font-size: 14px;
-  font-family: $mainFont;
-  font-style: normal;
-  line-height: 24px;
+  font: 400 14px/24px $mainFont;
 }
 
 @mixin font-material-icons {
-  font-weight: 400;
-  font-size: 24.0002px;
-  font-family: "Material Icons", sans-serif;
-  line-height: 24.0002px;
+  font: 400 24px/24px "Material Icons", sans-serif;
 }
 
 @mixin text-gradient-fill($color) {

@@ -46,14 +46,6 @@
     }
   }
 
-  &__guests-dropdown-title {
-    @include font-h3;
-
-    display: block;
-    margin: 0 0 5px 0;
-    color: $mainTextColor;
-  }
-
   &__guests-dropdown-search {
     padding-top: 20px;
     padding-bottom: 12px;
@@ -61,6 +53,7 @@
 
   &__register-details {
     padding-top: 20px;
+
     & .card__register-details-surname {
       padding-top: 10px;
     }
@@ -70,7 +63,6 @@
     display: flex;
     justify-content: space-between;
     padding: 10px 100px 0 0;
-    padding-right: 100px;
   }
 
   &__birthday {
@@ -79,6 +71,7 @@
 
   &__login-details {
     padding-top: 20px;
+
     & .card__login-details-email {
       padding-bottom: 10px;
     }
@@ -90,6 +83,7 @@
 
   &__button {
     padding-top: 20px;
+
     @media (max-width: 480px) {
       padding: 20px;
     }
@@ -112,7 +106,6 @@
   }
 
   &__calculation {
-    padding-top: 19px;
-    padding-left: 1px;
+    padding: 19px 0 0 1px;
   }
 }

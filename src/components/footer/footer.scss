@@ -15,7 +15,7 @@
   &__wrapper {
     display: flex;
     box-sizing: border-box;
-    padding: 100px 140px 100px 140px;
+    padding: 100px 140px;
 
     @media (max-width: 1280px) {
       justify-content: space-around;
@@ -71,9 +71,7 @@
     min-width: 320px;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 22.5px 0;
-    padding-right: 140px;
-    padding-left: 140px;
+    padding: 22.5px 140px;
 
     @media (max-width: 1280px) {
       justify-content: space-around;
@@ -82,9 +80,7 @@
 
   &__copyright-text {
     color: $textColor_75;
-    font-size: 14px;
-    font-family: $mainFont;
-    line-height: 17px;
+    font: 14px/17px $mainFont;
   }
 
   &__social {

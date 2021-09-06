@@ -5,10 +5,7 @@ html {
   box-sizing: border-box;
   height: 100%;
   margin: 0;
-  font-weight: normal;
-  font-size: 14px;
-  font-family: $mainFont;
-  font-style: normal;
+  font: 400 14px $mainFont;
 }
 
 body {

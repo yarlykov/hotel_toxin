@@ -2,7 +2,7 @@
 @import "@mixins";
 
 .bullet-list {
-  width: 266px;
+  max-width: 266px;
   list-style: none;
 
   &__item {

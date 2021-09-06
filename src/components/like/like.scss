@@ -33,8 +33,7 @@
     position: absolute;
     top: 4px;
     left: 5px;
-    font-size: 10px;
-    font-family: "Material Icons", sans-serif;
+    font: 10px "Material Icons", sans-serif;
 
     &_heart::before {
       background: $mainGradient;
@@ -58,8 +57,7 @@
     z-index: 1;
     margin: 2px 0 0 15px;
     color: $designColor_main;
-    font-size: 10px;
-    font-family: $mainFont;
+    font: 10px $mainFont;
 
     &_inactive {
       color: $textColor_25;

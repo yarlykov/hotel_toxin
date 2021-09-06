@@ -19,9 +19,7 @@
 
     &::before {
       color: $textColor_75;
-      font-size: 24px;
-      font-family: "Material Icons", sans-serif;
-      line-height: 24px;
+      font: 24px/24px "Material Icons", sans-serif;
       cursor: pointer;
       content: "\e5cf";
     }
@@ -33,9 +31,7 @@
     width: 100%;
     height: $inputHeight;
     padding: 0 0 0 14px;
-    font-size: $mainFont_size;
-    font-family: $mainFont;
-    line-height: 18px;
+    font: 14px/18px $mainFont;
     border: $mainBorder;
     border-radius: 4px;
     outline: none;
@@ -76,6 +72,7 @@
     box-sizing: border-box;
     padding: 7px 6px 0 6px;
     text-transform: uppercase;
+
     &:first-child {
       padding-top: 6px;
     }
@@ -86,8 +83,7 @@
   }
 
   &__menu-item-text {
-    padding-top: 6px;
-    padding-left: 8px;
+    padding: 6px 0 0 8px;
   }
 
   &__controls {
@@ -132,10 +128,7 @@
     width: 30px;
     height: 28px;
     padding: 0;
-    font-weight: bold;
-    font-size: 12px;
-    font-family: inherit;
-    font-style: normal;
+    font: 700 12px $mainFont;
     text-align: center;
     border: 0;
     outline: none;
