@@ -3,9 +3,17 @@ h2,
 h3,
 p,
 ul,
-li {
+li,
+html,
+body {
   margin: 0;
 }
+
+html,
+body {
+  height: 100%;
+}
+
 ul {
   padding: 0;
 }

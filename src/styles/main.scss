@@ -2,23 +2,21 @@
 @import "@mixins";
 
 html {
-  height: 100%;
-  margin: 0;
   font: 400 14px $mainFont;
 }
 
-body {
+.page-wrapper {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  min-height: 100%;
+
+  & .footer {
+    flex: 0 0 auto;
+  }
 }
 
-.page-wrapper {
+.page-content {
   flex: 1 0 auto;
-
-  &_background {
-    background: $uiKitPagesBackground;
-  }
 }
 
 a {
