@@ -14,6 +14,5 @@ mixin comment({ imageName="", name="", commentText="", dateOfVisit="", likeCount
     .comment__body
       .comment__like
         +like({ icon: "heart", value: likeCount, disable: isDisable})
-      .comment__text
-        p
-          | #{commentText}
+      p.comment__text
+        | #{commentText}

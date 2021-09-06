@@ -18,13 +18,16 @@
   }
 
   &__link {
+    color: $textColor_50;
+    text-decoration: none;
     cursor: pointer;
 
     &_active {
       font-weight: 700;
     }
 
-    &:focus {
+    &:focus,
+    &:hover {
       color: $textColor_75;
       outline: none;
     }

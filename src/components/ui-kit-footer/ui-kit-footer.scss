@@ -8,17 +8,19 @@
   margin: 0 auto;
   padding: 30px 0;
 
-  & a {
+  &__link {
+    color: $textColor_50;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      color: $textColor_75;
+      outline: none;
+    }
+
     &:not(:first-child) {
       margin-left: 50px;
-    }
-  }
-
-  @media (max-width: 960px) {
-    flex-direction: column;
-
-    a {
-      margin-bottom: 5px;
     }
   }
 

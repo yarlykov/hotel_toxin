@@ -19,6 +19,18 @@
   animation: skyColor 90s linear infinite 20s;
 }
 
+.errorPage__link {
+  color: $textColor_50;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    color: $textColor_75;
+    outline: none;
+  }
+}
+
 @keyframes skyColor {
   30% {
     background: darkslateblue;

@@ -39,6 +39,8 @@
     color: $mainTextColor;
     font: 700 21px $mainFont;
     transition: 0.3s;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   &__text:hover {
