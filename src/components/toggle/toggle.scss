@@ -2,7 +2,6 @@
 
 .toggle {
   display: block;
-  box-sizing: border-box;
   margin-left: 50px;
   color: $textColor_50;
   cursor: pointer;
@@ -13,7 +12,6 @@
 
   &__box {
     position: absolute;
-    box-sizing: border-box;
     width: 40px;
     height: 20px;
     margin-left: -50px;
@@ -60,7 +58,6 @@
       position: absolute;
       top: 3px;
       left: 3px;
-      box-sizing: border-box;
       width: 12px;
       height: 12px;
       background: $mainGradient;

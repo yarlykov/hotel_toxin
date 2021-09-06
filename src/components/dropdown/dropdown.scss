@@ -27,7 +27,6 @@
 
   &__input {
     position: relative;
-    box-sizing: border-box;
     width: 100%;
     height: $inputHeight;
     padding: 0 0 0 14px;
@@ -69,7 +68,6 @@
   &__menu-item {
     display: flex;
     justify-content: space-between;
-    box-sizing: border-box;
     padding: 7px 6px 0 6px;
     text-transform: uppercase;
 
@@ -89,14 +87,12 @@
   &__controls {
     display: flex;
     justify-content: space-between;
-    box-sizing: border-box;
     width: 92px;
     height: 30px;
     border: 0;
   }
 
   &__decrement {
-    box-sizing: border-box;
     width: 30px;
     height: 30px;
     color: gray;
@@ -135,7 +131,6 @@
   }
 
   &__increment {
-    box-sizing: border-box;
     width: 30px;
     height: 30px;
     color: gray;

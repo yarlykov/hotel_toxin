@@ -86,7 +86,6 @@
 
   &__box {
     position: absolute;
-    box-sizing: border-box;
     width: 20px;
     height: 20px;
     margin-left: -30px;
@@ -118,7 +117,6 @@
       position: absolute;
       top: 4px;
       left: 6px;
-      box-sizing: border-box;
       width: 6px;
       height: 8px;
       border-style: solid;

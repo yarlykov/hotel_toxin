@@ -3,7 +3,6 @@
 
 .comment {
   z-index: 1;
-  box-sizing: border-box;
   max-width: 711px;
 
   &__header {
@@ -11,7 +10,6 @@
   }
 
   &__avatar {
-    box-sizing: border-box;
     width: 47.67px;
     height: 48px;
     border: $avatarBorder;

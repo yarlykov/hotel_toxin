@@ -17,7 +17,6 @@
 
 .datepicker {
   z-index: 1500;
-  box-sizing: border-box;
   min-width: 320px;
   color: $textColor_50;
   font: 12px/15px Montserrat, sans-serif;
@@ -199,7 +198,6 @@
 // -------------------------------------------------
 
 .datepicker--cells-months {
-  box-sizing: border-box;
   height: 226px;
 }
 
@@ -247,7 +245,6 @@
 // -------------------------
 
 .datepicker--years {
-  box-sizing: border-box;
   height: 226px;
 }
 
@@ -350,6 +347,5 @@
 }
 
 .datepicker--content {
-  box-sizing: border-box;
   padding: 18px 20px 20px 21px;
 }

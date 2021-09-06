@@ -14,7 +14,6 @@ select:-webkit-autofill:focus {
 
 .text-field {
   position: relative;
-  box-sizing: border-box;
   border: $mainBorder;
   border-radius: $mainBorderRadius;
 
@@ -35,7 +34,6 @@ select:-webkit-autofill:focus {
   &__input {
     @include font-body;
 
-    box-sizing: border-box;
     width: 100%;
     height: 42px;
     padding: 0 0 0 14px;
