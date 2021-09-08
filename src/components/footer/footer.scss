@@ -1,6 +1,7 @@
 @import "@variables";
 
 .footer {
+  flex: 0 0 auto;
   background-color: #fff;
 
   @media (max-width: 767px) {
