@@ -1,4 +1,4 @@
-mixin checkbox({ title="", dropdown=false, rich=false, listItems=[], isOpened=true})
+mixin checkbox({ title="", dropdown=false, rich=false, listItems=[], isOpened=true })
   -
     const titleClassName = "checkbox__title"
     const descriptionClassName = "checkbox__description"
@@ -21,6 +21,6 @@ mixin checkbox({ title="", dropdown=false, rich=false, listItems=[], isOpened=tr
               checked: item.checked,
             })
             span.checkbox__box
-            span&attributes({class: [titleClassName, titleFontBoldModifier]}) #{item.title}
+            span&attributes({ class: [titleClassName, titleFontBoldModifier] }) #{item.title}
               if rich
                 span(class=descriptionClassName) #{item.description}

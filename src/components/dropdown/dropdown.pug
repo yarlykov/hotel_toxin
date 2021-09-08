@@ -13,7 +13,7 @@ mixin dropdown(options)
       readonly: "readonly",
       onmousedown: "return false"
       })
-    div(class="dropdown__arrow-down")&attributes({"data-type": "arrow", onmousedown: "return false"})
+    div(class="dropdown__arrow-down")&attributes({"data-type": "arrow", onmousedown: "return false" })
     .dropdown__drop.js-dropdown__drop
       .dropdown__menu.js-dropdown__menu
         each elem in options.elements

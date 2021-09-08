@@ -6,8 +6,10 @@ mixin footer-mobile( copyright )
       +logo({ type: "colorWithText" })
       .footer-mobile__copyright-text #{copyright}
       .footer-mobile__social
-        +social({ socialLinks: [
-          { title: "twitter", link: "https://twitter.com"},
-          { title: "facebook", link: "https://facebook.com"},
-          { title: "instagram", link: "https://instagram.com"},
-        ]})
+        +social({
+          socialLinks: [
+            { title: "twitter", link: "https://twitter.com" },
+            { title: "facebook", link: "https://facebook.com" },
+            { title: "instagram", link: "https://instagram.com" },
+          ]
+        })

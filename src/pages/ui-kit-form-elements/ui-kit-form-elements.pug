@@ -27,7 +27,7 @@ block content
           +text-field({ 
             type: "text",
             placeholder: "Email", 
-            size:"large",
+            size: "large",
             name: "email",
             autocomplete: "on", 
           })
@@ -62,7 +62,7 @@ block content
             dataType: "masked-text-field",
             masked: true, 
             placeholder: "ДД.ММ.ГГГГ",
-            size:"large",
+            size: "large",
             name: "text",
           })
 
@@ -72,7 +72,7 @@ block content
             dataType: "date-dropdown-start",
             dataTypeEnd: "date-dropdown-end",
             placeholder: "ДД.ММ.ГГГГ",
-            size:"small",
+            size: "small",
             name: "date",
             autocomplete: "off",
             arrow: true,
@@ -87,8 +87,8 @@ block content
             type: "text",
             dataType: "filter-date-dropdown",
             placeholder: "ДД.ММ - ДД.ММ",
-            size:"medium",
-            name:"text",
+            size: "medium",
+            name: "text",
             autocomplete: "off",
             arrow: true,
             readonly: true,
@@ -101,7 +101,7 @@ block content
             type: "text",
             dataType: "subscription-text-field",
             placeholder: "Email",
-            size:"medium", 
+            size: "medium", 
             name: "email",
             autocomplete: "on",
             subscribe: true,
@@ -158,9 +158,9 @@ block content
             +button({ buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" })
             +button({ buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite", disabled: true })
           .form-elements__buttons-container-inline
-            +button({ buttonName: "click me", textColor: "purple", size: "inline"})
+            +button({ buttonName: "click me", textColor: "purple", size: "inline" })
             +button({ buttonName: "click me", textColor: "gray", disabled: true })
-          +button({ buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow"})
+          +button({ buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow" })
 
         .form-elements__buttons-wrapper
           +heading({ level: "h3", title: "pagination" })

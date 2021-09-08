@@ -25,7 +25,7 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
     if (calculation)
       .card__title-calculation
         +room-number({ symbol: "№", value: "888", text: "люкс" })
-        +room-price({ value: "9 990", text: "в сутки"})
+        +room-price({ value: "9 990", text: "в сутки" })
     else
       .card__title
         +heading({ level: "h1", title: title })
@@ -37,7 +37,7 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
             dataType: "date-dropdown-start",
             dataTypeEnd: "date-dropdown-end",
             placeholder: "ДД.ММ.ГГГГ",
-            size:"small",
+            size: "small",
             name: "date",
             autocomplete: "off", 
             arrow: true,
@@ -51,10 +51,11 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
             isOpen: false, 
             group: "guests", 
             elements: [
-              {title: "Взрослые", count: numberOfGuests},
-              {title: "Дети", count: 0}, 
-              {title: "Младенцы", count: 0},
-            ]})
+              { title: "Взрослые", count: numberOfGuests },
+              { title: "Дети", count: 0 }, 
+              { title: "Младенцы", count: 0 },
+            ]
+          })
         if calculation
           .card__calculation
             +price-calc()
@@ -66,8 +67,8 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
           .card__register-details-surname
             +text-field({ placeholder: "Фамилия", type: "text", name: "surname", autocomplete: "on" })
         section.card__radio-buttons
-          +radio({ group: "gender", title: "Мужчина", checked: true})
-          +radio({ group: "gender", title: "Женщина", checked: false})
+          +radio({ group: "gender", title: "Мужчина", checked: true })
+          +radio({ group: "gender", title: "Женщина", checked: false })
         .card__birthday
           +heading({ level: "h3", title: "дата рождения" })
           +text-field({
