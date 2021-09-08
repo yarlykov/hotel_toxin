@@ -6,12 +6,15 @@
   flex-direction: column;
   min-width: 403px;
   max-width: 436px;
+  margin: 0 8px 0 0;
+  padding: 0;
 
   &__header {
     display: flex;
     justify-content: flex-end;
     min-width: 37px;
     max-width: 50px;
+    margin: 0;
     padding: 1px;
     color: $textColor_25;
     font-weight: 400;
@@ -21,6 +24,7 @@
 
   &__text {
     display: flex;
+    margin: 0;
     padding-left: 30px;
     color: $mainTextColor;
   }
@@ -44,7 +48,7 @@
     @include font-h3;
 
     display: flex;
-    padding-bottom: 48px;
+    padding-bottom: 45px;
   }
 
   &__body {
