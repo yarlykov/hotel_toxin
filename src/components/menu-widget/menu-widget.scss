@@ -12,9 +12,15 @@
     }
 
     &-ui-kit {
+      padding: 0;
+
       @media (max-width: 659px) {
         padding: 30px 0;
       }
+    }
+
+    &-pages {
+      padding: 0;
     }
 
     @media (max-width: 659px) {

@@ -9,6 +9,8 @@
 
   &__title {
     @include font-h3;
+
+    margin: 0;
   }
 
   &__text {

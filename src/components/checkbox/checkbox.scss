@@ -19,6 +19,7 @@
   }
 
   &__dropdown-title {
+    margin: 0;
     font-size: 12px;
   }
 
@@ -52,7 +53,8 @@
 
   &__list {
     display: none;
-    padding-top: 12px;
+    margin: 0;
+    padding: 12px 0 0 0;
 
     &_opened {
       display: block;

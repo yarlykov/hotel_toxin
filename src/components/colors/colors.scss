@@ -5,8 +5,8 @@
   display: flex;
   flex-direction: column;
   min-width: 270px;
-  margin-right: 415px;
-  padding-left: 10px;
+  margin: 0 415px 0 0;
+  padding: 0;
 
   &__item {
     display: flex;
@@ -52,6 +52,11 @@
   }
 
   &__name {
+    margin: 0;
     font-weight: 700;
+  }
+
+  &__code {
+    margin: 0;
   }
 }
