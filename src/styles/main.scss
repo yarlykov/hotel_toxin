@@ -6,21 +6,3 @@ html {
   font: 400 14px $mainFont;
   background: #fff;
 }
-
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-
-  & .footer {
-    flex: 0 0 auto;
-  }
-}
-
-.page-content {
-  flex: 1 0 auto;
-}
-
-.gradient {
-  @include text-gradient-fill($mainGradient);
-}
