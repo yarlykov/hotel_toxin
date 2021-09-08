@@ -10,8 +10,8 @@
     "lint:fix": "eslint src --fix",
     "build": "webpack  --mode production",
     "deploy": "npm run build && gh-pages -d dist",
-    "stylelint": "stylelint '**/*{.css,.scss}'",
-    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix"
+    "stylelint": "stylelint \"src/**/*.scss\"",
+    "stylelint:fix": "stylelint \"src/**/*.scss\" --fix"
   },
   "browserslist": [
     ">1%",
