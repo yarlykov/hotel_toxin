@@ -7,16 +7,10 @@
   padding-top: 4px;
   font-family: $mainFont;
 
-  &__title {
-    @include font-h3;
-
-    margin: 0;
-  }
-
   &__text {
     @include font-body;
 
     margin: 0;
-    padding: 18px 0 23px 0;
+    padding: 13px 0 23px 0;
   }
 }

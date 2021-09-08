@@ -71,14 +71,6 @@
     padding-top: 10px;
   }
 
-  &__title {
-    @include font-h2;
-
-    &::first-letter {
-      text-transform: uppercase;
-    }
-  }
-
   &__subtitle {
     color: $textColor_50;
     font: 14px/14px $mainFont;

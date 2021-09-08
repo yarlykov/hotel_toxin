@@ -22,7 +22,8 @@
   }
 
   &__sum-of-vote {
-    @include font-h1;
+    color: $mainTextColor;
+    font: 700 24px/29px $mainFont;
   }
 
   &__number {

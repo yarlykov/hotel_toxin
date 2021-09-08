@@ -9,19 +9,24 @@
     margin: 0;
 
     &_level_h1 {
-      @include font-h1;
+      color: $mainTextColor;
+      font: 700 24px/29px $mainFont;
     }
+
     &_level_h2 {
-      @include font-h2;
+      color: $mainTextColor;
+      font: 700 19px/23px $mainFont;
 
       &::first-letter {
         text-transform: uppercase;
       }
     }
-    &_level_h3 {
-      @include font-h3;
 
+    &_level_h3 {
       padding-bottom: 5px;
+      color: $mainTextColor;
+      font: 700 12px/15px $mainFont;
+      text-transform: uppercase;
     }
   }
 

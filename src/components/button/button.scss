@@ -2,13 +2,14 @@
 @import "@mixins";
 
 .button {
-  @include font-h3;
-
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: $mainTextColor;
+  font: 700 12px/15px $mainFont;
+  text-transform: uppercase;
   text-decoration: none;
   background: $mainGradient;
   border: none;
@@ -40,11 +41,11 @@
   }
 
   &_inline {
-    @include font-h3;
-
     display: inline-block;
     padding: 0;
     color: $designColor_main;
+    font: 700 12px/15px $mainFont;
+    text-transform: uppercase;
     background: none;
     border: none;
     cursor: pointer;

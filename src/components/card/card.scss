@@ -16,7 +16,8 @@
   }
 
   &__title {
-    @include font-h1;
+    color: $mainTextColor;
+    font: 700 24px/29px $mainFont;
 
     @media (max-width: 480px) {
       max-width: 300px;
