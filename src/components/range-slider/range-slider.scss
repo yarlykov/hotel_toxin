@@ -24,11 +24,12 @@
   }
 
   &__header {
-    @include font-h3;
-
     display: flex;
     flex-shrink: 0;
     justify-content: space-between;
+    color: $mainTextColor;
+    font: 700 12px/15px $mainFont;
+    text-transform: uppercase;
   }
 
   &__title {

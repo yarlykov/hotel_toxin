@@ -1,21 +1,5 @@
 @import "@variables";
 
-@mixin font-h1 {
-  color: $mainTextColor;
-  font: 700 24px/29px $mainFont;
-}
-
-@mixin font-h2 {
-  color: $mainTextColor;
-  font: 700 19px/23px $mainFont;
-}
-
-@mixin font-h3 {
-  color: $mainTextColor;
-  font: 700 12px/15px $mainFont;
-  text-transform: uppercase;
-}
-
 @mixin font-body {
   color: $textColor_75;
   font: 400 14px/24px $mainFont;

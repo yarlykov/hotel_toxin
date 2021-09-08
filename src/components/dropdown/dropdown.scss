@@ -58,10 +58,11 @@
   }
 
   &__menu {
-    @include font-h3;
-
     margin: 0;
     padding: 0;
+    color: $mainTextColor;
+    font: 700 12px/15px $mainFont;
+    text-transform: uppercase;
     list-style: none;
   }
 

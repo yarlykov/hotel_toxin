@@ -30,25 +30,26 @@
   }
 
   &__h1 {
-    @include font-h1;
-
     display: flex;
     padding-bottom: 52px;
+    color: $mainTextColor;
+    font: 700 24px/29px $mainFont;
   }
 
   &__h2 {
-    @include font-h2;
-
     display: flex;
     padding-right: 20px;
     padding-bottom: 52px;
+    color: $mainTextColor;
+    font: 700 19px/23px $mainFont;
   }
 
   &__h3 {
-    @include font-h3;
-
     display: flex;
     padding-bottom: 45px;
+    color: $mainTextColor;
+    font: 700 12px/15px $mainFont;
+    text-transform: uppercase;
   }
 
   &__body {
