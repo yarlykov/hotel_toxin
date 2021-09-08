@@ -3,4 +3,4 @@ mixin carousel( images=[] )
     each imageName in images
       .carousel__item
         a(href="./room-details-page.html")
-          img(src=require(`../../images/room-images/${imageName}`).default alt="room photo")
+          img(src=require(`../../pages/search-room-page/images/${imageName}`).default alt="room photo")

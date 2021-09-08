@@ -3,19 +3,19 @@ mixin room-photo({ main="", asideTop="", asideBottom="", alt="" })
     .room-photo__main
       img&attributes({
         class: "room-photo__item",
-        src: require(`../../images/page-background/${main}`).default,
+        src: require(`../../pages/room-details-page/images/room-photo/${main}`).default,
         alt: `${alt}`
       })
     .room-photo__aside
       .room-photo__aside-top
         img&attributes({
           class: "room-photo__item",
-          src: require(`../../images/page-background/${asideTop}`).default,
+          src: require(`../../pages/room-details-page/images/room-photo/${asideTop}`).default,
           alt: `${alt}`
         })
       .room-photo__aside-bottom
         img&attributes({
           class: "room-photo__item",
-          src: require(`../../images/page-background/${asideBottom}`).default,
+          src: require(`../../pages/room-details-page/images/room-photo/${asideBottom}`).default,
           alt: `${alt}`
         })
