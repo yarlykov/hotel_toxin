@@ -2,7 +2,9 @@
 @import "@mixins";
 
 html {
+  color: $mainTextColor;
   font: 400 14px $mainFont;
+  background: #fff;
 }
 
 .page-wrapper {
