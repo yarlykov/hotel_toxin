@@ -5,9 +5,11 @@ class MenuBurger {
   }
 
   init() {
-    this.root.addEventListener('click', () => {
-      this.root.classList.toggle('header__menu-burger_active');
-    });
+    this.root.addEventListener('click', this.active.bind(this));
+  }
+
+  active() {
+    this.root.classList.toggle('header__menu-burger_active');
   }
 }
 

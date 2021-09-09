@@ -30,11 +30,7 @@ class MenuWidget {
   }
 
   toggle() {
-    this.toggleStartPage.addEventListener('change', () => {
-      const newTheme = this.dayToggleTitle.textContent === 'День' ? 'night' : 'day';
-
-      this.store.dispatchEvent({ type: 'CHANGE_THEME', payload: newTheme });
-    });
+    this.toggleStartPage.addEventListener('change', this.newTheme.bind(this));
   }
 
   themeTextColor(timesOfDay) {
@@ -74,6 +70,11 @@ class MenuWidget {
     } else {
       this.night();
     }
+  }
+
+  newTheme() {
+    const newTheme = this.dayToggleTitle.textContent === 'День' ? 'night' : 'day';
+    this.store.dispatchEvent({ type: 'CHANGE_THEME', payload: newTheme });
   }
 }
 

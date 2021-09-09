@@ -5,7 +5,7 @@ import DateDropdown from './date-dropdown';
 /* =============== Date dropdown ================== */
 const $twoInputsDateDropdown = $('[data-id="date-filter-double"]');
 if ($twoInputsDateDropdown.length > 0) {
-  $twoInputsDateDropdown.each(function () {
+  $twoInputsDateDropdown.each(function init() {
     new DateDropdown($(this), {
       inline: true,
       dateFormat: 'dd.mm.yyyy',
@@ -25,7 +25,7 @@ if ($twoInputsDateDropdown.length > 0) {
 /* =============== Filter date dropdown ================== */
 const $filterDateDropdown = $('[data-id="date-filter"]');
 if ($filterDateDropdown.length > 0) {
-  $filterDateDropdown.each(function () {
+  $filterDateDropdown.each(function init() {
     new DateDropdown($(this), {
       startDate: new Date('2019-08-08'),
       dateFormat: 'd M',

@@ -45,11 +45,11 @@ class Like {
     }
   }
 
-  increment(value) {
+  static increment(value) {
     return `${value + 1}`;
   }
 
-  decrement(value) {
+  static decrement(value) {
     return `${value - 1}`;
   }
 }
