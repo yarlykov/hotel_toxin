@@ -1,12 +1,12 @@
-mixin checkbox({ title="", dropdown=false, rich=false, listItems=[], isOpened=true })
+mixin checkbox({ title="", isDropdown=false, isRich=false, listItems=[], isOpened=true })
   -
     const titleClassName = "checkbox__title"
     const descriptionClassName = "checkbox__description"
-    const titleFontBoldModifier = rich ? "checkbox__title_font_bold" : ""
+    const titleFontBoldModifier = isRich ? "checkbox__title_font_bold" : ""
     const openDropdownModifier = isOpened ? "checkbox__list_opened" : ""
 
   .checkbox
-    if dropdown
+    if isDropdown
       .checkbox__dropdown(data-id="checkbox-dropdown" tabindex=0)
         h3.checkbox__dropdown-title #{title}
         span.checkbox__dropdown-arrow-down(data-id="checkbox-dropdown-arrow")
@@ -22,5 +22,5 @@ mixin checkbox({ title="", dropdown=false, rich=false, listItems=[], isOpened=tr
             })
             span.checkbox__box
             span&attributes({ class: [titleClassName, titleFontBoldModifier] }) #{item.title}
-              if rich
+              if isRich
                 span(class=descriptionClassName) #{item.description}

@@ -1,7 +1,7 @@
 include ../logo/logo.pug
 
-mixin ui-kit-header({ background=false } = {})
-  - const backgroundClass = background ? "ui-kit-header_background_gray" : ""
+mixin ui-kit-header({ withGrayBackground=false } = {})
+  - const backgroundClass = withGrayBackground ? "ui-kit-header_background_gray" : ""
 
   header.ui-kit-header(class=backgroundClass)
     +logo({ type: "colorless" })

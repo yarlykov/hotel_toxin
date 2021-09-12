@@ -29,7 +29,7 @@
   &__menu-burger {
     display: none;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1000px) {
       position: relative;
       display: block;
       width: 36px;
@@ -70,10 +70,15 @@
     color: $textColor_75;
     font: 24px/50px "Font Awesome solid", sans-serif;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1280px) {
       position: absolute;
-      right: 80px;
+      left: 140px;
       display: block;
+    }
+
+    @media (max-width: 1000px) {
+      right: 80px;
+      left: auto;
     }
 
     &::before {
@@ -96,7 +101,7 @@
     display: flex;
     align-items: center;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1000px) {
       position: fixed;
       top: 0;
       left: -100%;
@@ -136,13 +141,13 @@
   }
 
   &__navigation .navigation {
-    @media (max-width: 960px) {
+    @media (max-width: 1000px) {
       flex-direction: column;
       padding-bottom: 70px;
     }
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1000px) {
     .navigation__item {
       padding: 0 50px 20px 0;
       text-align: center;
@@ -163,7 +168,7 @@
   &__login {
     display: flex;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1000px) {
       flex-direction: column;
     }
   }
@@ -171,7 +176,7 @@
   &__login-entry {
     margin-right: 20px;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1000px) {
       margin: 0 0 15px 0;
     }
   }
@@ -181,7 +186,7 @@
     padding: 6px 0 6px 20px;
     border-left: $mainBorder;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1000px) {
       padding: 0 50px 0 0;
       color: $mainTextColor;
       font-size: 21px;

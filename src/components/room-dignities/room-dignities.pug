@@ -1,4 +1,4 @@
-mixin room-dignities({ icon="", title="", subtitle="", bottomLine=true })
+mixin room-dignities({ icon="", title="", subtitle="", hasBottomLine=true })
   - const iconClass = `room-dignities__icon_type_${icon}`
   .room-dignities
     div.room-dignities__item
@@ -7,5 +7,5 @@ mixin room-dignities({ icon="", title="", subtitle="", bottomLine=true })
       .room-dignities__description
         span.room-dignities__title #{title}
         span.room-dignities__subtitle #{subtitle}
-    if (bottomLine)
+    if (hasBottomLine)
       hr.room-dignities__line

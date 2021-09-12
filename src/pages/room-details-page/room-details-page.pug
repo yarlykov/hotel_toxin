@@ -26,7 +26,7 @@ block content
             +heading({ level: "h2",  title: "сведения о номере" })
             +room-dignities({ icon: "mood", title: "Комфорт", subtitle: "Шумопоглощающие стены" })
             +room-dignities({ icon: "location-city", title: "Удобство", subtitle: "Окно в каждой из спален" })
-            +room-dignities({ icon: "whatshot", title: "Уют", subtitle: "Номер оснащён камином", bottomLine: false })
+            +room-dignities({ icon: "whatshot", title: "Уют", subtitle: "Номер оснащён камином", hasBottomLine: false })
 
           section.room-details__impressions
             +heading({ level: "h2",  title: "впечатления от номера" })
@@ -81,7 +81,7 @@ block content
                 dateOfVisit: "Неделю назад", 
                 commentText: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент", 
                 likeCount: 2,
-                isDisable: true
+                disabled: true
               })
 
           section.room-details__rules

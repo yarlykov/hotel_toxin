@@ -17,8 +17,8 @@ class DateDropdown {
     this.container.addEventListener('keydown', this.handleDateDropdownKeydown.bind(this));
     this.filterDateDropdown = this.container.querySelector('[data-type="filter-date-dropdown"]');
 
-    const { twoInputs, smallSize, initialDates } = this.options;
-    if (twoInputs) {
+    const { hasTwoInputs, smallSize, initialDates } = this.options;
+    if (hasTwoInputs) {
       this.dateStart = this.container.querySelector('[data-type="date-dropdown-start"]');
       this.dateEnd = this.container.querySelector('[data-type="date-dropdown-end"]');
       this.dateStart.addEventListener('change', this.handleChangeInput.bind(this));
@@ -97,26 +97,35 @@ class DateDropdown {
     const btnWrap = document.createElement('div');
     const clearBtn = document.createElement('button');
     const applyBtn = document.createElement('button');
+    const clearText = document.createElement('span');
+    const applyText = document.createElement('span');
+
     btnWrap.classList.add(
       'datepicker__buttons',
       'js-datepicker__buttons',
     );
 
     clearBtn.classList.add(
+      'button',
       'button_inline',
       'datepicker__button-clear',
     );
     clearBtn.setAttribute('type', 'button');
-    clearBtn.setAttribute('data-type', 'clear');
-    clearBtn.innerHTML = 'Очистить';
+    clearText.setAttribute('data-type', 'clear');
+    clearText.innerHTML = 'Очистить';
+    clearText.classList.add('button__inner', 'button__inner_text-color_purple');
+    clearBtn.append(clearText);
 
     applyBtn.classList.add(
+      'button',
       'button_inline',
       'datepicker__button-apply',
     );
     applyBtn.setAttribute('type', 'button');
-    applyBtn.setAttribute('data-type', 'apply');
-    applyBtn.innerHTML = 'Применить';
+    applyText.setAttribute('data-type', 'apply');
+    applyText.innerHTML = 'Применить';
+    applyText.classList.add('button__inner', 'button__inner_text-color_purple');
+    applyBtn.append(applyText);
 
     btnWrap.append(clearBtn);
     btnWrap.append(applyBtn);
@@ -128,13 +137,13 @@ class DateDropdown {
   }
 
   onSelect(formattedDate) {
-    const { twoInputs } = this.options;
+    const { hasTwoInputs } = this.options;
     if (formattedDate) {
       this.showClearButton();
     } else {
       this.hideClearButton();
     }
-    if (twoInputs) {
+    if (hasTwoInputs) {
       const dates = formattedDate.split(',');
       const [startDate = '', endDate = ''] = dates;
 

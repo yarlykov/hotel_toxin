@@ -1,3 +1,4 @@
+import { apply } from 'file-loader';
 import { addCommaInText, cutLongText, declensionsText } from './utils';
 import { count, targetType } from './constants';
 
@@ -74,21 +75,28 @@ class Dropdown {
     const btnWrap = document.createElement('div');
     const clearBtn = document.createElement('button');
     const applyBtn = document.createElement('button');
+    const clearText = document.createElement('span');
+    const applyText = document.createElement('span');
 
     btnWrap.classList.add('dropdown__buttons');
 
     clearBtn.classList.add(
+      'button',
       'button_inline',
       'dropdown__button-clear',
     );
     clearBtn.setAttribute('type', 'button');
-    clearBtn.setAttribute('data-type', 'clear');
-    clearBtn.innerHTML = 'Очистить';
+    clearText.setAttribute('data-type', 'clear');
+    clearText.innerHTML = 'Очистить';
+    clearText.classList.add('button__inner', 'button__inner_text-color_purple');
+    clearBtn.append(clearText);
 
-    applyBtn.classList.add('button_inline');
+    applyBtn.classList.add('button', 'button_inline');
     applyBtn.setAttribute('type', 'button');
-    applyBtn.setAttribute('data-type', 'apply');
-    applyBtn.innerHTML = 'Применить';
+    applyText.setAttribute('data-type', 'apply');
+    applyText.innerHTML = 'Применить';
+    applyText.classList.add('button__inner', 'button__inner_text-color_purple');
+    applyBtn.append(applyText);
 
     btnWrap.appendChild(clearBtn);
     btnWrap.appendChild(applyBtn);

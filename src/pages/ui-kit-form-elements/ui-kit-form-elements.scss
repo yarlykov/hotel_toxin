@@ -94,8 +94,8 @@
   &__buttons-container {
     display: flex;
     justify-content: space-between;
-    padding-top: 11px;
-    padding-bottom: 28px;
+    padding-top: 10px;
+    padding-bottom: 30px;
 
     &:nth-child(3) {
       padding-top: 0;
@@ -115,7 +115,7 @@
   &__buttons-container-inline {
     display: inline-flex;
     justify-content: space-between;
-    padding-bottom: 29px;
+    padding-bottom: 27px;
 
     & .button_inline {
       padding-right: 21px;

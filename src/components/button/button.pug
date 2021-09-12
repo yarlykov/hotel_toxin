@@ -1,16 +1,19 @@
-mixin button({ type="button", buttonName="button", link="", size="inline", textColor="gray", buttonVariation="inline", disabled=false } = {})
+mixin button({ type="button", buttonName="button", link="", size="", textColor="gray", buttonVariation="", disabled=false } = {})
   -
     const mainClass = "button"
-    const sizeClassModifier = `button_${size}`
-    const textClassModifier = `button__text_${textColor}`
+    const buttonSizeModifier = size ? `button__inner_size_${size}` : ""
+    const textColorModifier = `button__inner_text-color_${textColor}`
+    const buttonInlineModifier = buttonVariation === "inline" ? "button_inline" : ""
+    const buttonFillModifier = buttonVariation === "fillWhite" ? "button__inner_fill_white" : ""
+    const textDecorationModifier = "button_no-text-decoration"
     
     const buttonAttributes = {
       link: {
-        class: [ mainClass, sizeClassModifier ],
+        class: [mainClass, buttonInlineModifier, textDecorationModifier],
         href: `./${link}.html`,
       },
       button: {
-        class: [ mainClass, sizeClassModifier ],
+        class: [mainClass, buttonInlineModifier],
         type: type,
         disabled: disabled,
       }
@@ -20,21 +23,19 @@ mixin button({ type="button", buttonName="button", link="", size="inline", textC
     a&attributes(buttonAttributes.link) 
       case buttonVariation
         when "fillWhite"
-          span.button__text(class=textClassModifier) #{buttonName}
-          span.button__fill.button__fill_white
+          span.button__inner(class=[textColorModifier, buttonSizeModifier, buttonFillModifier]) #{buttonName}
         when "withArrow"
-          span.button__text(class=textClassModifier) #{buttonName}
+          span.button__inner(class=[textColorModifier, buttonSizeModifier ]) #{buttonName}
           span.button__arrow
         default
-          span.button__text(class=textClassModifier) #{buttonName}
+          span.button__inner(class=[textColorModifier, buttonSizeModifier ]) #{buttonName}
   else
     button&attributes(buttonAttributes.button) 
       case buttonVariation
         when "fillWhite"
-          span.button__text(class=textClassModifier) #{buttonName}
-          span.button__fill.button__fill_white
+          span.button__inner(class=[textColorModifier, buttonSizeModifier, buttonFillModifier]) #{buttonName}
         when "withArrow"
-          span.button__text(class=textClassModifier) #{buttonName}
+          span.button__inner(class=[textColorModifier, buttonSizeModifier]) #{buttonName}
           span.button__arrow
         default
-          span.button__text(class=textClassModifier) #{buttonName}
+          span.button__inner(class=[textColorModifier, buttonSizeModifier ]) #{buttonName}

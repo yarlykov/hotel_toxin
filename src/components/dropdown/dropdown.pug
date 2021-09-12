@@ -15,9 +15,9 @@ mixin dropdown(options)
       })
     div(class="dropdown__arrow-down")&attributes({"data-type": "arrow", onmousedown: "return false" })
     .dropdown__drop.js-dropdown__drop
-      .dropdown__menu.js-dropdown__menu
+      ul.dropdown__menu.js-dropdown__menu
         each elem in options.elements
-          .dropdown__menu-item.js-dropdown__menu-item(data-id= `${elem.title}`)
+          li.dropdown__menu-item.js-dropdown__menu-item(data-id= `${elem.title}`)
             .dropdown__menu-item-text #{elem.title}
             .dropdown__controls
               button&attributes({

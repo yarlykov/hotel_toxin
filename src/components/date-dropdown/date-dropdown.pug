@@ -1,10 +1,10 @@
 include ../text-field/text-field.pug
 include ../heading/heading.pug
 
-mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size="", name="date", autocomplete="", arrow=false, readonly=false, lowercase=false, twoInputs=false, startTitle="", endTitle="" })
+mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size="", name="date", autocomplete="", hasArrow=false, isReadonly=false, isLowercase=false, hasTwoInputs=false, startTitle="", endTitle="" })
   - const dataId = dataType === "inline-date-dropdown" ? "date-inline" : "date-filter"
 
-  if twoInputs
+  if hasTwoInputs
     .date-dropdown(data-id="date-filter-double")
       .date-dropdown__two-inputs
         .date-dropdown__start
@@ -16,9 +16,9 @@ mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size
             size,
             name,
             autocomplete,
-            arrow,
-            readonly,
-            lowercase,
+            hasArrow,
+            isReadonly,
+            isLowercase,
           })
         .date-dropdown__end
           +heading({ level: "h3", title: endTitle })
@@ -28,11 +28,11 @@ mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size
             size,
             name,
             autocomplete, 
-            arrow,
-            readonly,
-            lowercase,
+            hasArrow,
+            isReadonly,
+            isLowercase,
             dataType: dataTypeEnd,
           })
   else
     .date-dropdown(data-id=dataId)
-      +text-field({ type, dataType, placeholder, size, name, autocomplete, arrow, readonly, lowercase })
+      +text-field({ type, dataType, placeholder, size, name, autocomplete, hasArrow, isReadonly, isLowercase })

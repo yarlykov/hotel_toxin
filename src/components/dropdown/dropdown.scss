@@ -63,7 +63,6 @@
     color: $mainTextColor;
     font: 700 12px/15px $mainFont;
     text-transform: uppercase;
-    list-style: none;
   }
 
   &__menu-item {
@@ -171,7 +170,7 @@
   &__button-clear {
     visibility: hidden;
 
-    &.dropdown__button-clear_show {
+    & .dropdown__button-clear_show {
       visibility: visible;
     }
   }

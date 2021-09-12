@@ -1,16 +1,13 @@
 @import "@variables";
-@import "@mixins";
 
 .button {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  color: $mainTextColor;
+  padding: 2px;
   font: 700 12px/15px $mainFont;
   text-transform: uppercase;
-  text-decoration: none;
   background: $mainGradient;
   border: none;
   border-radius: 100px;
@@ -27,31 +24,63 @@
     background: $mainGradientTransparent;
   }
 
-  &_large {
-    padding: 15px 35px 14px 35px;
+  &_no-text-decoration {
+    text-decoration: none;
   }
 
-  &_small {
-    padding: 15px 15px 15px 14px;
-    text-align: center;
-  }
+  &__inner {
+    width: 100%;
+    color: $mainTextColor;
+    border-radius: 100px;
 
-  &_stretching {
-    padding: 9px 20px 10px;
+    &_size {
+      &_large {
+        padding: 13px 32px 12px 64px;
+      }
+
+      &_small {
+        padding: 12px 12px 13px 11px;
+        text-align: center;
+      }
+
+      &_stretching {
+        padding: 7px 18px 8px;
+      }
+    }
+
+    &_text-color {
+      &_purple {
+        color: $designColor_main;
+      }
+      &_gray {
+        color: $textColor_50;
+      }
+      &_white {
+        color: #fff;
+      }
+    }
+
+    &_fill {
+      &_white {
+        background: #fff;
+      }
+    }
   }
 
   &_inline {
-    display: inline-block;
+    width: fit-content;
     padding: 0;
-    color: $designColor_main;
-    font: 700 12px/15px $mainFont;
-    text-transform: uppercase;
     background: none;
-    border: none;
-    cursor: pointer;
 
     &:hover,
     &:focus {
+      color: $textColor_50;
+      background: none;
+      outline: none;
+    }
+
+    & .button__inner:hover,
+    & .button__inner:focus {
       color: $textColor_50;
       background: none;
       outline: none;
@@ -64,40 +93,10 @@
     }
   }
 
-  &__text {
-    &_purple {
-      position: relative;
-      z-index: 1;
-      color: $designColor_main;
-    }
-    &_gray {
-      color: $textColor_50;
-    }
-    &_white {
-      color: #fff;
-    }
-  }
-
-  &__fill {
-    &_white {
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: calc(100% - 4px);
-      height: calc(100% - 4px);
-      background: #fff;
-      border-radius: 100px;
-    }
-  }
-
   &__arrow {
-    position: absolute;
-    top: 53%;
-    right: 10px;
-    transform: translateY(-50%);
+    padding-right: 8px;
 
     &::before {
-      position: relative;
       color: #fff;
       font: 400 24px/24px "Material Icons", sans-serif;
       content: "\e5c8";

@@ -17,11 +17,11 @@ block content
               dataType: "filter-date-dropdown",
               placeholder: "дд.мм - дд.мм",
               size: "medium",
-              lowercase: true,
+              isLowercase: true,
               name: "text", 
               autocomplete: "off",
-              arrow: true,
-              readonly: true, 
+              hasArrow: true,
+              isReadonly: true, 
             }
           },
           dropdownGuests: {
@@ -44,7 +44,7 @@ block content
           checkbox: {	
             title: "Правила дома",
             dropdown: false,
-            rich: false,
+            isRich: false,
             listItems: [
               { title: "Можно курить" },
               { title: "Можно с питомцами" },
@@ -54,16 +54,16 @@ block content
           richCheckbox: {	
             title: "доступность",
             dropdown: false,
-            rich: true,
+            isRich: true,
             listItems: [
               { 
                 title: "Широкий коридор",
-                rich: true, 
+                isRich: true, 
                 description: "Ширина коридоров в номере не\u00A0менее 91 см." 
               },
               { 
                 title: "Помощник для инвалидов",
-                rich: true, 
+                isRich: true, 
                 description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера."
               }
             ]
@@ -80,8 +80,8 @@ block content
           },
           expandableCheckbox: {	
             title: "дополнительные удобства",
-              dropdown: true,
-              rich: false,
+              isDropdown: true,
+              isRich: false,
               listItems: [
                 { title: "Завтрак" }, 
                 { title: "Письменный стол", checked: true }, 

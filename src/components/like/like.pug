@@ -1,8 +1,8 @@
-mixin like({ icon="", value=0, disable=false } = {})
+mixin like({ icon="", value=0, disabled=false } = {})
   -
-    const btnDisableClassName = disable ? "like_inactive-border" : ""
-    const disableText = disable ? "like__text_inactive" : ""
-    const iconName = disable ? `empty-${icon}` : icon 
+    const btnDisableClassName = disabled ? "like_inactive-border" : ""
+    const disableText = disabled ? "like__text_inactive" : ""
+    const iconName = disabled ? `empty-${icon}` : icon 
     const likeIconClass = "like__icon"
     const likeIconModifier = `like__icon_${iconName}`
 

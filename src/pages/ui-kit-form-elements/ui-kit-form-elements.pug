@@ -75,8 +75,8 @@ block content
             size: "small",
             name: "date",
             autocomplete: "off",
-            arrow: true,
-            twoInputs: true,
+            hasArrow: true,
+            hasTwoInputs: true,
             startTitle: "date dropdown",
             endTitle: "date dropdown",
           })
@@ -90,9 +90,9 @@ block content
             size: "medium",
             name: "text",
             autocomplete: "off",
-            arrow: true,
-            readonly: true,
-            lowercase: true,
+            hasArrow: true,
+            isReadonly: true,
+            isLowercase: true,
           })
 
         .form-elements__text-field-wrapper 
@@ -104,7 +104,7 @@ block content
             size: "medium", 
             name: "email",
             autocomplete: "on",
-            subscribe: true,
+            isSubscription: true,
           })    
 
       .form-elements__small-buttons
@@ -133,8 +133,8 @@ block content
         .form-elements__small-buttons-wrapper
           +heading({ level: "h3", title: "like button" })
           .form-elements__like-buttons-container
-            +like({ icon: "heart", value: 2, disable: true })
-            +like({ icon: "heart", value: 12, disable: false })
+            +like({ icon: "heart", value: 2, disabled: true })
+            +like({ icon: "heart", value: 12, disabled: false })
 
         .form-elements__small-buttons-wrapper
           +heading({ level: "h3", title: "rate button" })
@@ -153,13 +153,13 @@ block content
           +heading({ level: "h3", title: "buttons" })
           .form-elements__buttons-container
             +button({ buttonName: "click me", size: "small", textColor: "white" })
-            +button({ buttonName: "click me", size: "small", textColor:  "white", disabled: true })
+            +button({ buttonName: "click me", size: "small", textColor: "white", disabled: true })
           .form-elements__buttons-container
             +button({ buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" })
-            +button({ buttonName: "click me", size: "small", textColor:  "purple", buttonVariation: "fillWhite", disabled: true })
+            +button({ buttonName: "click me", size: "small", textColor: "purple", buttonVariation: "fillWhite", disabled: true })
           .form-elements__buttons-container-inline
-            +button({ buttonName: "click me", textColor: "purple", size: "inline" })
-            +button({ buttonName: "click me", textColor: "gray", disabled: true })
+            +button({ buttonName: "click me", textColor: "purple", buttonVariation: "inline" })
+            +button({ buttonName: "click me", textColor: "gray", disabled: true, buttonVariation: "inline" })
           +button({ buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow" })
 
         .form-elements__buttons-wrapper
@@ -230,9 +230,9 @@ block content
         .form-elements__lists-wrapper-expandable
           +checkbox({	
             title: "Expandable checkbox list",
-            dropdown: true,
+            isDropdown: true,
             isOpened: false,
-            rich: false,
+            isRich: false,
             listItems: [
               { title: "Завтрак" }, 
               { title: "Письменный стол", checked: true }, 
@@ -245,8 +245,8 @@ block content
         .form-elements__lists-wrapper-expandable
           +checkbox({	
             title: "Expandable checkbox list",
-            dropdown: true,
-            rich: false,
+            isDropdown: true,
+            isRich: false,
             listItems: [
               { title: "Завтрак" }, 
               { title: "Письменный стол", checked: true }, 
@@ -261,16 +261,16 @@ block content
         .form-elements__lists-wrapper
           +heading({ level: "h3", title: "rich checkbox buttons" })
           +checkbox({	
-            rich: true,
+            isRich: true,
             listItems: [
               { 
                 title: "Широкий коридор",
-                rich: true, 
+                isRich: true, 
                 description: "Ширина коридоров в номере не\u00A0менее 91 см."
               },
               {
                 title: "Помощник для инвалидов",
-                rich: true, 
+                isRich: true, 
                 description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера."
               }
             ]

@@ -17,7 +17,7 @@ if ($twoInputsDateDropdown.length > 0) {
       },
       prevHtml: '<span class="datepicker__arrow datepicker__arrow_back"></span>',
       nextHtml: '<span class="datepicker__arrow datepicker__arrow_forward"></span>',
-      twoInputs: true,
+      hasTwoInputs: true,
     });
   });
 }

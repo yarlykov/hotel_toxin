@@ -5,15 +5,13 @@
   max-width: 266px;
   margin: 0;
   padding: 0;
-  list-style: none;
 
   &__item {
+    @include font-body;
+
     display: flex;
     align-items: baseline;
     padding-top: 10px;
-    text-transform: none;
-
-    @include font-body;
 
     &:first-child {
       padding-top: 9px;
@@ -21,7 +19,6 @@
   }
 
   &__item::before {
-    display: inline-block;
     min-width: 10px;
     min-height: 10px;
     margin-right: 11px;

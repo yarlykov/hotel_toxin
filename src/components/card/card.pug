@@ -10,19 +10,19 @@ include ../price-calc/price-calc.pug
 include ../heading/heading.pug
 include ../date-dropdown/date-dropdown.pug
 
-mixin card({ formMethod="", formAction="", title="", type="", buttonText="", buttonType="", question="", numberOfGuests=0 })
+mixin card({ formMethod="", formAction="error-page", title="", type="", buttonText="", buttonType="", question="", numberOfGuests=0 })
 
   -
     const questionButton = question.toLowerCase().indexOf("нет") !== -1 ? "Создать" : "Войти"
     const questionButtonLink = questionButton === "Создать" ? "registration-page" : "sing-in-page"
-    const search = (type === "search")
-    const registration = (type === "registration")
-    const calculation = (type === "calculation")
-    const entry = (type === "entry")
-    const searchOrCalculation = (search || calculation)
+    const isSearch = (type === "search")
+    const isRegistration = (type === "registration")
+    const isCalculation = (type === "calculation")
+    const isEntry = (type === "entry")
+    const isSearchOrCalculation = (isSearch || isCalculation)
 
   .card
-    if (calculation)
+    if (isCalculation)
       .card__title-calculation
         +room-number({ symbol: "№", value: "888", text: "люкс" })
         +room-price({ value: "9 990", text: "в сутки" })
@@ -30,7 +30,7 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
       .card__title
         +heading({ level: "h1", title: title })
     form(method=`${formMethod}`, action=`./${formAction}.html`)
-      if (searchOrCalculation)
+      if (isSearchOrCalculation)
         section.card__date-dropdown
           +date-dropdown({ 
             type: "text",
@@ -40,12 +40,12 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
             size: "small",
             name: "date",
             autocomplete: "off", 
-            arrow: true,
-            twoInputs: true,
+            hasArrow: true,
+            hasTwoInputs: true,
             startTitle: "прибытие",
             endTitle: "выезд",
           })
-        div(class= search ? "card__guests-dropdown-search" : "card__guests-dropdown")
+        div(class=isSearch ? "card__guests-dropdown-search" : "card__guests-dropdown")
           +heading({ level: "h3", title: "гости" })
           +dropdown({
             isOpen: false, 
@@ -56,11 +56,11 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
               { title: "Младенцы", count: 0 },
             ]
           })
-        if calculation
+        if isCalculation
           .card__calculation
             +price-calc()
 
-      else if (registration)
+      else if (isRegistration)
         section.card__register-details
           .card__register-details-name
             +text-field({ placeholder: "Имя", type: "text", name: "name", autocomplete: "on" })
@@ -87,7 +87,7 @@ mixin card({ formMethod="", formAction="", title="", type="", buttonText="", but
         .card__toggle
           +toggle({ title: "Получать спецпредложения" })
 
-      else if (entry)
+      else if (isEntry)
         section.card__login-details
           .card__login-details-email
             +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })

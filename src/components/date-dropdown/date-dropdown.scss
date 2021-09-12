@@ -57,7 +57,7 @@
   &__button-clear {
     visibility: hidden;
 
-    &.datepicker__button-clear_show {
+    & .datepicker__button-clear_show {
       visibility: visible;
     }
   }

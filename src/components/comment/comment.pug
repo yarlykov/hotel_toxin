@@ -1,6 +1,6 @@
 include ../like/like.pug
 
-mixin comment({ imageName="", name="", commentText="", dateOfVisit="", likeCount=0, isDisable=false })
+mixin comment({ imageName="", name="", commentText="", dateOfVisit="", likeCount=0, disabled=false })
   .comment
     .comment__header
       img&attributes({
@@ -13,6 +13,6 @@ mixin comment({ imageName="", name="", commentText="", dateOfVisit="", likeCount
         .comment__date-of-visit #{dateOfVisit}
     .comment__body
       .comment__like
-        +like({ icon: "heart", value: likeCount, disable: isDisable })
+        +like({ icon: "heart", value: likeCount, disabled: disabled })
       p.comment__text
         | #{commentText}

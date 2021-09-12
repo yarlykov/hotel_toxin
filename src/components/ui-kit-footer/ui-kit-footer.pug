@@ -1,5 +1,5 @@
-mixin ui-kit-footer({ footerLinks=[], background=false })
-  - const backgroundClass = background ? "ui-kit-header_background_gray" : ""
+mixin ui-kit-footer({ footerLinks=[], withGrayBackground=false })
+  - const backgroundClass = withGrayBackground ? "ui-kit-header_background_gray" : ""
 
   footer.ui-kit-footer
     .ui-kit-footer__container
