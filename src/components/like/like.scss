@@ -1,10 +1,10 @@
 @import "@variables";
 
 .like {
-  position: relative;
-  display: inline-flex;
+  display: flex;
   min-width: 40px;
-  height: 20px;
+  min-height: 20px;
+  padding: 1px;
   background: $mainGradient;
   border: none;
   border-radius: 100px;
@@ -15,47 +15,43 @@
     box-shadow: 3px 3px 2px $designColor_main;
   }
 
-  &_inactive-border {
+  &_inactive {
     background: $textColor_25;
   }
 
-  &__button-border {
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
+  &__inner {
+    display: flex;
+    justify-content: start;
+    width: 100%;
     background: #fff;
     border-radius: 100px;
   }
 
   &__icon {
-    position: absolute;
-    top: 4px;
-    left: 5px;
+    padding: 4px 2px 3px 4px;
     font: 10px "Material Icons", sans-serif;
 
-    &_heart::before {
-      background: $mainGradient;
-      -webkit-background-clip: text;
-      background-clip: text;
-      content: "\e87d";
-      -webkit-text-fill-color: transparent;
-    }
+    &_type {
+      &_heart::before {
+        background: $mainGradient;
+        -webkit-background-clip: text;
+        background-clip: text;
+        content: "\e87d";
+        -webkit-text-fill-color: transparent;
+      }
 
-    &_empty-heart::before {
-      background: $textColor_25;
-      -webkit-background-clip: text;
-      background-clip: text;
-      content: "\e87e";
-      -webkit-text-fill-color: transparent;
+      &_empty-heart::before {
+        background: $textColor_25;
+        -webkit-background-clip: text;
+        background-clip: text;
+        content: "\e87e";
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
 
   &__text {
-    position: relative;
-    z-index: 1;
-    margin: 2px 0 0 15px;
+    padding: 2px 4px 3px 4px;
     color: $designColor_main;
     font: 10px $mainFont;
 
