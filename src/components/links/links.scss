@@ -1,5 +1,4 @@
 @import "@variables";
-@import "@mixins";
 
 .links {
   &__list {
@@ -12,8 +11,6 @@
   &__item {
     padding-top: 21px;
     font: 400 14px/17px $mainFont;
-    white-space: wrap;
-    text-transform: none;
 
     & a:focus {
       color: $textColor_75;

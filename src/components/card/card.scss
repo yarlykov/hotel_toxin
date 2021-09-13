@@ -1,5 +1,4 @@
 @import "@variables";
-@import "@mixins";
 
 .card {
   min-width: 200px;
@@ -94,11 +93,6 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 29px;
-  }
-
-  &__question-text {
-    display: block;
-    align-self: center;
   }
 
   &__question-button {

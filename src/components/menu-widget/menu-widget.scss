@@ -1,5 +1,4 @@
 @import "@variables";
-@import "@mixins";
 
 .menu-widget {
   &__list {
@@ -30,9 +29,9 @@
   }
 
   &__item {
-    display: block;
     max-width: 230px;
     margin-bottom: 20px;
+    list-style: none;
 
     @media (max-width: 480px) {
       margin-left: 0;

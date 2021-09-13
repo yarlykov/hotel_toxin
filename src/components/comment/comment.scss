@@ -9,7 +9,7 @@
   }
 
   &__avatar {
-    width: 47.67px;
+    width: 47.5px;
     height: 48px;
     border: $avatarBorder;
     border-radius: 32px;
@@ -37,11 +37,11 @@
   }
 
   &__like {
-    padding: 8px 0 0 3.5px;
+    padding: 12px 0 0 3.5px;
   }
 
   &__text {
     margin: 0;
-    padding: 10px 0 0 14.3px;
+    padding: 10px 0 0 14px;
   }
 }

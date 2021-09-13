@@ -1,5 +1,4 @@
 @import "@variables";
-@import "@mixins";
 
 .dropdown {
   position: relative;
@@ -28,14 +27,13 @@
   &__input {
     position: relative;
     width: 100%;
-    height: $inputHeight;
+    min-height: $inputHeight;
     padding: 0 0 0 14px;
     font: 14px/18px $mainFont;
     border: $mainBorder;
     border-radius: 4px;
     outline: none;
     cursor: pointer;
-    caret-color: transparent;
 
     &:hover,
     &:focus-within {
@@ -74,6 +72,7 @@
     &:first-child {
       padding-top: 6px;
     }
+
     &:last-child {
       padding-bottom: 7px;
       border-radius: 0 0 4px 4px;
@@ -97,11 +96,9 @@
     height: 30px;
     color: gray;
     font-size: 18px;
-    line-height: 27px;
-    text-align: center;
-    background: none;
+    background: #fff;
     border: $mainBorder;
-    border-radius: 50%;
+    border-radius: 100px;
     outline: none;
     cursor: pointer;
 
@@ -133,13 +130,12 @@
   &__increment {
     width: 30px;
     height: 30px;
+    padding-top: 3px;
     color: gray;
     font-size: 18px;
-    line-height: 29px;
-    text-align: center;
     background: #fff;
     border: $mainBorder;
-    border-radius: 50%;
+    border-radius: 100px;
     outline: none;
     cursor: pointer;
 
@@ -184,6 +180,7 @@
     border: $focusBorder;
     border-top: none;
   }
+
   .dropdown__input {
     border: $focusBorder;
     border-radius: 4px 4px 0 0;
