@@ -1,10 +1,11 @@
 mixin toggle({ title="", checked=false } = {})
   label.toggle
-    input&attributes({
-      class: "toggle__input",
-      type: "checkbox",
-      name: title,
-      checked: checked
-    })
-    span.toggle__box
-    span.js-toggle-title.toggle__title #{title}
+    .toggle__container
+      input&attributes({
+        class: "toggle__input",
+        type: "checkbox",
+        name: title,
+        checked: checked
+      })
+      span.toggle__box
+      span.js-toggle-title.toggle__title #{title}

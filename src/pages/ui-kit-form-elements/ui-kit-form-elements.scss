@@ -2,13 +2,15 @@
 @import "@mixins";
 
 .form-elements {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr auto 1fr;
-  min-width: 1158px;
-  max-width: 1158px;
-  margin: 0 auto;
-  column-gap: 126px;
+  &__container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr auto 1fr;
+    min-width: 1158px;
+    max-width: 1158px;
+    margin: 0 auto;
+    column-gap: 126px;
+  }
 
   &__text-field-wrapper {
     padding-bottom: 20.5px;

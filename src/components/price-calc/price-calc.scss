@@ -20,6 +20,10 @@
     align-items: baseline;
     justify-content: space-between;
     padding-top: 10px;
+
+    & .info-icon {
+      margin: 0 auto 0 5px;
+    }
   }
 
   &__additional-services {
@@ -27,6 +31,10 @@
     justify-content: space-between;
     padding-top: 14px;
     line-height: 18px;
+
+    & .info-icon {
+      margin: 0 auto 0 5px;
+    }
   }
 }
 

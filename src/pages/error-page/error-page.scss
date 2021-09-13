@@ -19,15 +19,25 @@
   animation: skyColor 90s linear infinite 20s;
 }
 
-.errorPage__link {
-  color: $textColor_50;
-  text-decoration: none;
-  cursor: pointer;
+.errorPage {
+  &__title {
+    margin: 0;
+  }
 
-  &:focus,
-  &:hover {
-    color: $textColor_75;
-    outline: none;
+  &__text {
+    margin: 0;
+  }
+
+  &__link {
+    color: $textColor_50;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      color: $textColor_75;
+      outline: none;
+    }
   }
 }
 

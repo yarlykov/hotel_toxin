@@ -2,9 +2,12 @@
 
 .radio {
   display: inline-block;
-  margin-left: 30px;
   color: $textColor_50;
   cursor: pointer;
+
+  &__container {
+    margin-left: 30px;
+  }
 
   &__box {
     position: absolute;
