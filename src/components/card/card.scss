@@ -58,7 +58,7 @@
     }
   }
 
-  &__radio-buttons {
+  &__sex {
     display: flex;
     justify-content: space-between;
     padding: 10px 100px 0 0;
@@ -76,11 +76,11 @@
     }
   }
 
-  &__toggle {
+  &__special-offers-subscription {
     padding: 9px 0 7px;
   }
 
-  &__button {
+  &__submit-button {
     padding-top: 20px;
 
     @media (max-width: 480px) {

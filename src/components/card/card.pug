@@ -66,7 +66,7 @@ mixin card({ formMethod="", formAction="error-page", title="", type="", buttonTe
             +text-field({ placeholder: "Имя", type: "text", name: "name", autocomplete: "on" })
           .card__register-details-surname
             +text-field({ placeholder: "Фамилия", type: "text", name: "surname", autocomplete: "on" })
-        section.card__radio-buttons
+        section.card__sex
           +radio({ group: "gender", title: "Мужчина", checked: true })
           +radio({ group: "gender", title: "Женщина", checked: false })
         .card__birthday
@@ -84,7 +84,7 @@ mixin card({ formMethod="", formAction="error-page", title="", type="", buttonTe
             +text-field({ placeholder: "Email", type: "email", name: "email", autocomplete: "on" })
           .card__login-details-password
             +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
-        .card__toggle
+        .card__special-offers-subscription
           +toggle({ title: "Получать спецпредложения" })
 
       else if (isEntry)
@@ -95,7 +95,7 @@ mixin card({ formMethod="", formAction="error-page", title="", type="", buttonTe
             +text-field({ placeholder: "Пароль", type: "password", name: "password", autocomplete: "on" })
       //- Add button
       if (buttonText !== "")
-        .card__button
+        .card__submit-button
           +button({
             buttonName: buttonText,
             type: buttonType,
