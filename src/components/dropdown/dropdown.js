@@ -1,4 +1,3 @@
-import { apply } from 'file-loader';
 import { addCommaInText, cutLongText, declensionsText } from './utils';
 import { count, targetType } from './constants';
 
