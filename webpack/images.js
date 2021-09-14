@@ -5,12 +5,9 @@ module.exports = function () {
         {
           test: /\.(png|svg|jpg|gif)$/,
           exclude: [/fonts/],
-          use: {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'assets/images',
-            },
+          type: 'asset/resource',
+          generator: {
+            filename: 'assets/images/[name][ext]',
           },
         },
       ],

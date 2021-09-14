@@ -5,7 +5,6 @@ const { merge } = require('webpack-merge');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const devServer = require('./webpack/devServer');
 const styles = require('./webpack/styles');
 const postcss = require('./webpack/postcss');
@@ -28,7 +27,7 @@ const PATHS = {
 const devMode = process.env.NODE_ENV === 'development';
 const productionMode = !devMode;
 
-const filename = (ext) => (devMode ? `[name].${ext}` : `[name].[hash].${ext}`);
+const filename = (ext) => (devMode ? `[name].${ext}` : `[name].[contenthash].${ext}`);
 
 const common = merge([
   {
@@ -36,8 +35,9 @@ const common = merge([
       main: `${PATHS.src}/index.js`,
     },
     output: {
-      path: PATHS.dist,
       filename: filename('js'),
+      path: PATHS.dist,
+      clean: true,
     },
     resolve: {
       alias: {
@@ -48,7 +48,7 @@ const common = merge([
     optimization: {
       splitChunks: {
         cacheGroups: {
-          vendor: {
+          defaultVendors: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
@@ -69,7 +69,6 @@ const common = merge([
             template: `${PAGES_DIR}/${page}/${page}.pug`,
           })
       ),
-      new CleanWebpackPlugin(),
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',

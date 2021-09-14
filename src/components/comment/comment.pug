@@ -5,7 +5,7 @@ mixin comment({ imageName="", name="", commentText="", dateOfVisit="", likeCount
     .comment__header
       img&attributes({
         class: "comment__avatar",
-        src: require(`../../pages/room-details-page/images/avatars/${imageName}`).default,
+        src: require(`../../pages/room-details-page/images/avatars/${imageName}`),
         alt: "avatar"
       })
       .comment__description

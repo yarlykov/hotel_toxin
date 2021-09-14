@@ -5,10 +5,9 @@ module.exports = function () {
         {
           test: /\.(ttf|woff|woff2|svg|eot)$/,
           exclude: [/images/],
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'assets/fonts',
+          type: 'asset/resource',
+          generator: {
+            filename: 'assets/fonts/[name][ext]',
           },
         },
       ],
