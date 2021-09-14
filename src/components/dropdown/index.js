@@ -1,3 +1,4 @@
+import './dropdown.scss';
 import Dropdown from './dropdown';
 
 const comfortDropdownNodes = document.querySelectorAll('[data-group="comfort"]');

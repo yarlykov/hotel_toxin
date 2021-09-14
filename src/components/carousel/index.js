@@ -1,3 +1,4 @@
+import './carousel.scss';
 import Carousel from './carousel';
 
 const carouselElements = document.querySelectorAll('.js-carousel');

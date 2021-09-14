@@ -1,3 +1,7 @@
+import 'paginationjs/dist/pagination';
+import 'paginationjs/dist/pagination.css';
+
+import './pagination.scss';
 import Pagination from './pagination';
 
 const paginationElement = document.querySelector('.js-pagination');

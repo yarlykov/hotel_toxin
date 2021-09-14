@@ -16,6 +16,7 @@
   "plugins": ["fsd", "pug" ],
   "rules": {
     "no-new": "off",
+    "import/no-unresolved": "off",
     "fsd/hof-name-prefix": "error",
     "fsd/no-heavy-constructor": "error",
     "fsd/jq-cache-dom-elements": "error",

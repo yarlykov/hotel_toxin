@@ -1,3 +1,4 @@
+import './chart.scss';
 import Chart from './chart';
 
 const chartElement = document.querySelector('[data-id="chart"]');

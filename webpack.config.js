@@ -18,7 +18,6 @@ const PAGES_DIR = path.resolve(__dirname, 'src/pages');
 const PAGES = fs
   .readdirSync(PAGES_DIR)
   .map((item) => item.replace(/\.[^/.]+$/, ''));
-
 const PATHS = {
   src: path.join(__dirname, './src'),
   dist: path.join(__dirname, './dist'),
@@ -26,35 +25,25 @@ const PATHS = {
 
 const devMode = process.env.NODE_ENV === 'development';
 const productionMode = !devMode;
-
-const filename = (ext) => (devMode ? `[name].${ext}` : `[name].[contenthash].${ext}`);
+const filename = (ext) => (devMode ? `${ext}/[name].${ext}` : `${ext}/[name].[contenthash].${ext}`);
+const entryPoints = PAGES.map(page => ({ [page]: `${PAGES_DIR}/${page}/index.js`, }));
+const entryPointsCorrect = Object.assign({}, ...entryPoints);
 
 const common = merge([
   {
-    entry: {
-      main: `${PATHS.src}/index.js`,
-    },
+    entry: entryPointsCorrect,
     output: {
       filename: filename('js'),
       path: PATHS.dist,
       clean: true,
     },
+
     resolve: {
       alias: {
         '@variables': path.resolve(__dirname, `${PATHS.src}/styles/variables.scss`),
         '@mixins': path.resolve(__dirname, `${PATHS.src}/styles/mixins.scss`),
-      },
-    },
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          defaultVendors: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            enforce: true,
-          },
-        },
+        'src': path.resolve(__dirname, `${PATHS.src}`),
+        'components': path.resolve(__dirname, `${PATHS.src}/components`),
       },
     },
 
@@ -67,6 +56,7 @@ const common = merge([
           new HtmlWebpackPlugin({
             filename: `${page}.html`,
             template: `${PAGES_DIR}/${page}/${page}.pug`,
+            chunks: [page],
           })
       ),
       new webpack.ProvidePlugin({

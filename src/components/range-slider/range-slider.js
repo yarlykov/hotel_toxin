@@ -1,6 +1,3 @@
-import 'jquery-ui-slider/jquery-ui';
-import 'jquery-ui-slider/jquery-ui.css';
-
 class RangeSlider {
   constructor(selector, options) {
     this.$root = $(selector);

@@ -1,3 +1,4 @@
+import './like.scss';
 import Like from './like';
 
 const likeButtonNodes = document.querySelectorAll('[data-id="like-button"]');

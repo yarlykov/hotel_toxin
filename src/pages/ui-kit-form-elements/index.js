@@ -1,0 +1,21 @@
+import 'src/main';
+import 'components/bullet-list';
+import 'components/button';
+import 'components/checkbox';
+import 'components/comment';
+import 'components/date-dropdown';
+import 'components/dropdown';
+import 'components/heading';
+import 'components/like';
+import 'components/mask';
+import 'components/pagination';
+import 'components/radio';
+import 'components/range-slider';
+import 'components/rating';
+import 'components/room-dignities';
+import 'components/text-field';
+import 'components/toggle';
+import 'components/ui-kit-header';
+import 'components/ui-kit-footer';
+
+import './ui-kit-form-elements.scss';

@@ -1,5 +1,6 @@
 import 'air-datepicker/dist/js/datepicker';
 import 'air-datepicker/dist/css/datepicker.css';
+import './date-dropdown.scss';
 import DateDropdown from './date-dropdown';
 
 /* =============== Date dropdown ================== */
