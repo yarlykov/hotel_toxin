@@ -33,7 +33,7 @@ const filename = (ext) => (devMode ? `[name].${ext}` : `[name].[hash].${ext}`);
 const common = merge([
   {
     entry: {
-      main: ['@babel/polyfill', `${PATHS.src}/index.js`],
+      main: `${PATHS.src}/index.js`,
     },
     output: {
       path: PATHS.dist,
