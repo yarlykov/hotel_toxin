@@ -20,6 +20,17 @@
 }
 
 .errorPage {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: $mainTextColor;
+  font-family: $mainFont;
+  text-transform: uppercase;
+
+  @media (max-width: 960px) {
+    left: 20%;
+  }
+
   &__title {
     margin: 0;
   }
@@ -353,17 +364,4 @@
   height: 10px;
   background: #1d7fbb;
   content: "";
-}
-
-/* ---------------------- */
-.errorPage {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  color: $mainTextColor;
-  font-family: $mainFont;
-  text-transform: uppercase;
-  @media (max-width: 960px) {
-    left: 20%;
-  }
 }
