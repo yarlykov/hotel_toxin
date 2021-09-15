@@ -5,23 +5,14 @@
     "jquery": true,
     "node": true
   },
-  "extends": [
-    "airbnb/base",
-    "plugin:fsd/all"
-  ],
+  "extends": ["airbnb/base", "plugin:fsd/all"],
   "globals": {
     "$": "readonly",
     "jQuery": "readonly"
   },
-  "plugins": ["fsd", "pug" ],
+  "plugins": ["fsd", "pug"],
   "rules": {
     "no-new": "off",
-    "import/no-unresolved": "off",
-    "fsd/hof-name-prefix": "error",
-    "fsd/no-heavy-constructor": "error",
-    "fsd/jq-cache-dom-elements": "error",
-    "fsd/jq-use-js-prefix-in-selector": "error",
-    "fsd/no-function-declaration-in-event-listener": "error",
-    "fsd/split-conditionals": "error"
+    "import/no-unresolved": "off"
   }
 }
