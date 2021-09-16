@@ -9,12 +9,12 @@
 
     &_level_h1 {
       color: $mainTextColor;
-      font: 700 24px/29px $mainFont;
+      font: 700 1.7143rem/29px $mainFont;
     }
 
     &_level_h2 {
       color: $mainTextColor;
-      font: 700 19px/23px $mainFont;
+      font: 700 1.3571rem/23px $mainFont;
 
       &::first-letter {
         text-transform: uppercase;
@@ -24,19 +24,19 @@
     &_level_h3 {
       padding-bottom: 5px;
       color: $mainTextColor;
-      font: 700 12px/15px $mainFont;
+      font: 700 0.8571rem/15px $mainFont;
       text-transform: uppercase;
     }
   }
 
   &__description {
     &_lowercase {
-      font-size: 14px;
+      font-size: 1rem;
       text-transform: lowercase;
     }
 
     color: $textColor_50;
-    font-size: 12px;
+    font-size: 0.8571rem;
     text-transform: uppercase;
   }
 }

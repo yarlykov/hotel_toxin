@@ -29,7 +29,7 @@
 
   &__icon {
     padding: 4px 2px 3px 4px;
-    font: 10px 'Material Icons', sans-serif;
+    font: 0.7143rem 'Material Icons', sans-serif;
 
     &_type {
       &_heart::before {
@@ -53,7 +53,7 @@
   &__text {
     padding: 2px 4px 3px 4px;
     color: $designColor_main;
-    font: 10px $mainFont;
+    font: 0.7143rem $mainFont;
 
     &_inactive {
       color: $textColor_25;

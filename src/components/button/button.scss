@@ -6,7 +6,7 @@
   justify-content: center;
   width: 100%;
   padding: 2px;
-  font: 700 12px/15px $mainFont;
+  font: 700 0.8571rem/15px $mainFont;
   text-transform: uppercase;
   background: $mainGradient;
   border: none;
@@ -99,7 +99,7 @@
 
     &::before {
       color: #fff;
-      font: 400 24px/24px 'Material Icons', sans-serif;
+      font: 400 1.7143rem/24px 'Material Icons', sans-serif;
       content: '\e5c8';
     }
   }

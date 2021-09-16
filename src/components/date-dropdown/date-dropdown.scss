@@ -19,7 +19,7 @@
   z-index: 1500;
   min-width: 320px;
   color: $textColor_50;
-  font: 12px/15px Montserrat, sans-serif;
+  font: 0.8571rem/15px $mainFont, sans-serif;
   border: $mainBorder;
   border-radius: 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.25);
@@ -39,7 +39,7 @@
 
   &__arrow {
     color: #bc9cff;
-    font: 24px/20px 'Material Icons', sans-serif;
+    font: 24.0002px/20px 'Material Icons', sans-serif;
 
     &_back::before {
       content: '\e5c4';
@@ -192,7 +192,7 @@
 .datepicker--day-name {
   color: $designColor_main;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 0.8571rem;
   text-transform: none;
 }
 
@@ -297,7 +297,7 @@
   align-items: flex-start;
   padding: 20px 20px 25px 20px;
   color: $mainTextColor;
-  font: 19px/24px $mainFont;
+  font: 1.3571rem/24px $mainFont;
   border-bottom: none;
 }
 

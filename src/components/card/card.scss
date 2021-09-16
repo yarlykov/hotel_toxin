@@ -21,12 +21,12 @@
 
   &__title {
     color: $mainTextColor;
-    font: 700 24px/29px $mainFont;
+    font: 700 1.7143rem/29px $mainFont;
 
     @media (max-width: 480px) {
       max-width: 300px;
       padding: 20px 0 0 20px;
-      font-size: 20px;
+      font-size: 1.4286rem;
       line-height: 26px;
     }
   }

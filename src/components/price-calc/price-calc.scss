@@ -47,10 +47,10 @@
   align-items: baseline;
   padding-top: 28px;
   color: $mainTextColor;
-  font: 700 19px/23px $mainFont;
+  font: 700 1.3571rem/23px $mainFont;
 
   &__text {
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: $mainFont, Arial, sans-serif;
     vertical-align: text-bottom;
   }
 

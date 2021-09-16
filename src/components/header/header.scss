@@ -68,7 +68,7 @@
   &__filter-label {
     display: none;
     color: $textColor_75;
-    font: 24px/50px 'Font Awesome solid', sans-serif;
+    font: 1.7143rem/50px 'Font Awesome solid', sans-serif;
 
     @media (max-width: 1280px) {
       position: absolute;
@@ -153,13 +153,13 @@
       text-align: center;
     }
     .navigation__link {
-      font-size: 21px;
+      font-size: 1.5rem;
     }
     .navigation__item-dropdown {
       padding-right: 50px;
 
       &::after {
-        font-size: 31px;
+        font-size: 2.2143rem;
         line-height: 28px;
       }
     }
@@ -189,7 +189,7 @@
     @media (max-width: 1000px) {
       padding: 0 50px 0 0;
       color: $mainTextColor;
-      font-size: 21px;
+      font-size: 1.5rem;
       border-left: none;
     }
   }

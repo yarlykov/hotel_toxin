@@ -14,7 +14,7 @@
 
   &__icon {
     display: inline-block;
-    font: 48px/41px 'Material Icons', sans-serif;
+    font: 3.4286rem/41px 'Material Icons', sans-serif;
 
     &_type {
       &_mood::before {
@@ -43,7 +43,7 @@
     height: 48px;
     padding-left: 10px;
     color: rgba(31, 32, 65, 0.75);
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 24px;
   }
 

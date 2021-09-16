@@ -3,25 +3,25 @@
 
 .room-number {
   color: $mainTextColor;
-  font: 700 24px/29px $mainFont;
+  font: 700 1.7143rem/29px $mainFont;
 
   &__symbol {
     color: $mainTextColor;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 17px;
   }
 
   &__value {
     padding-left: 4px;
     color: $mainTextColor;
-    font-size: 24px;
+    font-size: 1.7143rem;
     line-height: 30px;
   }
 
   &__text {
     padding-left: 5px;
     color: $designColor_main;
-    font: 700 12px/15px $mainFont;
+    font: 700 0.8571rem/15px $mainFont;
     text-align: end;
     text-transform: uppercase;
   }

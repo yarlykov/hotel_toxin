@@ -11,7 +11,7 @@
     flex-shrink: 0;
     justify-content: space-between;
     color: $mainTextColor;
-    font: 700 12px/15px $mainFont;
+    font: 700 0.8571rem/15px $mainFont;
     text-transform: uppercase;
   }
 
@@ -23,7 +23,7 @@
     @include font-body;
 
     color: $textColor_50;
-    font-size: 12px;
+    font-size: 0.8571rem;
     line-height: 15px;
     text-align: right;
     border: none;
@@ -44,7 +44,7 @@
     margin: 0;
     padding-top: 36px;
     color: rgba(31, 32, 65, 0.5);
-    font: 400 12px/14px Montserrat, sans-serif;
+    font: 400 0.8571rem/14px $mainFont, sans-serif;
   }
 }
 

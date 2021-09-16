@@ -5,7 +5,7 @@
   &__link {
     @include text-gradient-fill($mainGradient);
 
-    font: 24px 'Font Awesome', sans-serif;
+    font: 1.7143rem 'Font Awesome', sans-serif;
 
     &:focus {
       border: $colorBorder;

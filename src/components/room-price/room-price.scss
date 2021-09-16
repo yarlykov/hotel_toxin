@@ -2,18 +2,18 @@
 
 .room-price {
   color: $textColor_50;
-  font: 12px/18px $mainFont;
+  font: 0.8571rem/18px $mainFont;
 
   &__value {
     color: $textColor_50;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 18px;
   }
 
   &__text {
     padding-left: 5px;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 0.8571rem;
   }
 }

@@ -56,16 +56,16 @@
 
   &__sum-of-vote {
     color: $mainTextColor;
-    font: 700 24px/29px $mainFont;
+    font: 700 1.7143rem/29px $mainFont;
   }
 
   &__number {
-    font-size: 6.5px;
+    font-size: 0.4643rem;
     line-height: 30px;
   }
 
   &__text {
-    font-size: 3.5px;
+    font-size: 0.25rem;
     line-height: 15px;
     text-transform: uppercase;
   }

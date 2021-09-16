@@ -16,7 +16,7 @@
     width: 100%;
     min-height: $inputHeight;
     padding: 0 0 0 14px;
-    font: 14px/18px $mainFont;
+    font: 1rem/18px $mainFont;
     border: $mainBorder;
     border-radius: 4px;
     outline: none;
@@ -39,7 +39,7 @@
 
     &::before {
       color: $textColor_75;
-      font: 24px/24px 'Material Icons', sans-serif;
+      font: 1.7143rem/24px 'Material Icons', sans-serif;
       cursor: pointer;
       content: '\e5cf';
     }
@@ -59,7 +59,7 @@
     margin: 0;
     padding: 0;
     color: $mainTextColor;
-    font: 700 12px/15px $mainFont;
+    font: 700 0.8571rem/15px $mainFont;
     text-transform: uppercase;
   }
 
@@ -95,7 +95,7 @@
     width: 30px;
     height: 30px;
     color: gray;
-    font-size: 18px;
+    font-size: 1.2857rem;
     background: #fff;
     border: $mainBorder;
     border-radius: 100px;
@@ -121,7 +121,7 @@
     width: 30px;
     height: 28px;
     padding: 0;
-    font: 700 12px $mainFont;
+    font: 700 0.8571rem $mainFont;
     text-align: center;
     border: 0;
     outline: none;
@@ -132,7 +132,7 @@
     height: 30px;
     padding-top: 3px;
     color: gray;
-    font-size: 18px;
+    font-size: 1.2857rem;
     background: #fff;
     border: $mainBorder;
     border-radius: 100px;

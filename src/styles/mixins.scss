@@ -2,11 +2,11 @@
 
 @mixin font-body {
   color: $textColor_75;
-  font: 400 14px/24px $mainFont;
+  font: 400 1rem/24px $mainFont;
 }
 
 @mixin font-material-icons {
-  font: 400 24px/24px 'Material Icons', sans-serif;
+  font: 400 1.7143rem/24px 'Material Icons', sans-serif;
 }
 
 @mixin text-gradient-fill($color) {
