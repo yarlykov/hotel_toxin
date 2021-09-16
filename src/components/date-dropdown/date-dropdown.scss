@@ -1,4 +1,4 @@
-@import "@variables";
+@import '@variables';
 
 .date-dropdown {
   &__two-inputs {
@@ -38,13 +38,13 @@
 
   &__arrow {
     color: #bc9cff;
-    font: 24px/20px "Material Icons", sans-serif;
+    font: 24px/20px 'Material Icons', sans-serif;
 
     &_back::before {
-      content: "\e5c4";
+      content: '\e5c4';
     }
     &_forward::before {
-      content: "\e5c8";
+      content: '\e5c8';
     }
   }
 
@@ -76,7 +76,7 @@
   }
 }
 
-[data-id="date-inline"] .datepicker-inline {
+[data-id='date-inline'] .datepicker-inline {
   position: static;
   transform: translateX(0);
   opacity: 1;
@@ -135,7 +135,7 @@
       z-index: -1;
       background: $mainGradientTransparent_25;
       border-radius: 50% 0 0 50%;
-      content: "";
+      content: '';
     }
 
     &.-focus- {
@@ -156,7 +156,7 @@
       z-index: -1;
       background: $mainGradientTransparent_25;
       border-radius: 0 50% 50% 0;
-      content: "";
+      content: '';
     }
 
     &.-focus- {
@@ -219,7 +219,7 @@
       z-index: -1;
       background: none;
       border-radius: 50% 0 0 50%;
-      content: "";
+      content: '';
     }
   }
   &.-range-to- {
@@ -232,7 +232,7 @@
       z-index: -1;
       background: none;
       border-radius: 0 50% 50% 0;
-      content: "";
+      content: '';
     }
   }
 
@@ -266,7 +266,7 @@
       z-index: -1;
       background: none;
       border-radius: 50% 0 0 50%;
-      content: "";
+      content: '';
     }
   }
   &.-range-to- {
@@ -279,7 +279,7 @@
       z-index: -1;
       background: none;
       border-radius: 0 50% 50% 0;
-      content: "";
+      content: '';
     }
   }
 

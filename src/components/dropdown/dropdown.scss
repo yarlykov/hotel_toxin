@@ -1,4 +1,4 @@
-@import "@variables";
+@import '@variables';
 
 .dropdown {
   position: relative;
@@ -18,9 +18,9 @@
 
     &::before {
       color: $textColor_75;
-      font: 24px/24px "Material Icons", sans-serif;
+      font: 24px/24px 'Material Icons', sans-serif;
       cursor: pointer;
-      content: "\e5cf";
+      content: '\e5cf';
     }
   }
 
@@ -103,7 +103,7 @@
     cursor: pointer;
 
     &::after {
-      content: "-";
+      content: '-';
     }
 
     &:hover,
@@ -140,7 +140,7 @@
     cursor: pointer;
 
     &::after {
-      content: "+";
+      content: '+';
     }
 
     &:hover,

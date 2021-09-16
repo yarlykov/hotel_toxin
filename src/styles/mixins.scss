@@ -1,4 +1,4 @@
-@import "@variables";
+@import '@variables';
 
 @mixin font-body {
   color: $textColor_75;
@@ -6,7 +6,7 @@
 }
 
 @mixin font-material-icons {
-  font: 400 24px/24px "Material Icons", sans-serif;
+  font: 400 24px/24px 'Material Icons', sans-serif;
 }
 
 @mixin text-gradient-fill($color) {

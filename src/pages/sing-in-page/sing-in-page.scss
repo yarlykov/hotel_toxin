@@ -1,8 +1,8 @@
-@import "@variables";
+@import '@variables';
 
 .sing-in {
   background: 44% 53.5% / 106%
-    url("../../pages/sing-in-page/images/sing-in.jpg") no-repeat;
+    url('../../pages/sing-in-page/images/sing-in.jpg') no-repeat;
 
   @media (max-width: 1280px) {
     background-size: cover;

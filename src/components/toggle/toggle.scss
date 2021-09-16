@@ -1,4 +1,4 @@
-@import "@variables";
+@import '@variables';
 
 .toggle {
   display: block;
@@ -30,7 +30,7 @@
       background: $textColor_25;
       border-radius: 50%;
       transition: 0.3s;
-      content: "";
+      content: '';
     }
   }
 
@@ -68,7 +68,7 @@
       -webkit-transform: translateX(20px);
       -ms-transform: translateX(20px);
       transform: translateX(20px);
-      content: "";
+      content: '';
     }
   }
 }

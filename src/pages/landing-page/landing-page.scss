@@ -1,8 +1,8 @@
-@import "@variables";
-@import "@mixins";
+@import '@variables';
+@import '@mixins';
 
 .landing {
-  background: 50% 68% / 106% url("../../pages/landing-page/images/landing.jpg")
+  background: 50% 68% / 106% url('../../pages/landing-page/images/landing.jpg')
     no-repeat;
 
   @media (max-width: 1280px) {

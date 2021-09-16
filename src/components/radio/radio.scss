@@ -1,4 +1,4 @@
-@import "@variables";
+@import '@variables';
 
 .radio {
   display: inline-block;
@@ -42,7 +42,7 @@
       height: 12px;
       background: $mainGradient;
       border-radius: 50%;
-      content: "";
+      content: '';
     }
 
     &:focus + .radio__box {

@@ -1,4 +1,4 @@
-@import "@variables";
+@import '@variables';
 
 .like {
   display: flex;
@@ -29,14 +29,14 @@
 
   &__icon {
     padding: 4px 2px 3px 4px;
-    font: 10px "Material Icons", sans-serif;
+    font: 10px 'Material Icons', sans-serif;
 
     &_type {
       &_heart::before {
         background: $mainGradient;
         -webkit-background-clip: text;
         background-clip: text;
-        content: "\e87d";
+        content: '\e87d';
         -webkit-text-fill-color: transparent;
       }
 
@@ -44,7 +44,7 @@
         background: $textColor_25;
         -webkit-background-clip: text;
         background-clip: text;
-        content: "\e87e";
+        content: '\e87e';
         -webkit-text-fill-color: transparent;
       }
     }

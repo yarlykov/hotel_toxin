@@ -1,5 +1,5 @@
-@import "@variables";
-@import "@mixins";
+@import '@variables';
+@import '@mixins';
 
 .bullet-list {
   max-width: 266px;
@@ -24,6 +24,6 @@
     margin-right: 11px;
     background: $textColor_25;
     border-radius: 50%;
-    content: "";
+    content: '';
   }
 }

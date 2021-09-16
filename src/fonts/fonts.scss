@@ -1,13 +1,13 @@
 /* -------Montserrat--Regular--Latin---- */
 @font-face {
   font-weight: 400;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
-  src: local("Montserrat"), local("Montserrat-Regular"),
-    url("./Montserrat/Montserrat-Regular.woff2") format("woff2"),
-    url("./Montserrat/Montserrat-Regular.woff") format("woff"),
-    url("./Montserrat/Montserrat-Regular.ttf") format("truetype"),
-    url("./Montserrat/Montserrat-Regular-Latin.svg") format("svg");
+  src: local('Montserrat'), local('Montserrat-Regular'),
+    url('./Montserrat/Montserrat-Regular.woff2') format('woff2'),
+    url('./Montserrat/Montserrat-Regular.woff') format('woff'),
+    url('./Montserrat/Montserrat-Regular.ttf') format('truetype'),
+    url('./Montserrat/Montserrat-Regular-Latin.svg') format('svg');
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
@@ -17,13 +17,13 @@
 /* -------Montserrat--Regular--Cyrillic---- */
 @font-face {
   font-weight: 400;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
-  src: local("Montserrat"), local("Montserrat-Regular"),
-    url("./Montserrat/Montserrat-Regular.woff2") format("woff2"),
-    url("./Montserrat/Montserrat-Regular.woff") format("woff"),
-    url("./Montserrat/Montserrat-Regular.ttf") format("truetype"),
-    url("./Montserrat/Montserrat-Regular-Cyrillic.svg") format("svg");
+  src: local('Montserrat'), local('Montserrat-Regular'),
+    url('./Montserrat/Montserrat-Regular.woff2') format('woff2'),
+    url('./Montserrat/Montserrat-Regular.woff') format('woff'),
+    url('./Montserrat/Montserrat-Regular.ttf') format('truetype'),
+    url('./Montserrat/Montserrat-Regular-Cyrillic.svg') format('svg');
   font-display: swap;
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116, U+20BD;
 }
@@ -31,13 +31,13 @@
 /* -------Montserrat--Bold--Latin---- */
 @font-face {
   font-weight: 700;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
-  src: local("Montserrat"), local("Montserrat-Bold"),
-    url("./Montserrat/Montserrat-Bold.woff2") format("woff2"),
-    url("./Montserrat/Montserrat-Bold.woff") format("woff"),
-    url("./Montserrat/Montserrat-Bold.ttf") format("truetype"),
-    url("./Montserrat/Montserrat-Bold-Latin.svg") format("svg");
+  src: local('Montserrat'), local('Montserrat-Bold'),
+    url('./Montserrat/Montserrat-Bold.woff2') format('woff2'),
+    url('./Montserrat/Montserrat-Bold.woff') format('woff'),
+    url('./Montserrat/Montserrat-Bold.ttf') format('truetype'),
+    url('./Montserrat/Montserrat-Bold-Latin.svg') format('svg');
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
@@ -47,13 +47,13 @@
 /* -------Montserrat--Bold--Cyrillic---- */
 @font-face {
   font-weight: 700;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
-  src: local("Montserrat"), local("Montserrat-Bold"),
-    url("./Montserrat/Montserrat-Bold.woff2") format("woff2"),
-    url("./Montserrat/Montserrat-Bold.woff") format("woff"),
-    url("./Montserrat/Montserrat-Bold.ttf") format("truetype"),
-    url("./Montserrat/Montserrat-Bold-Cyrillic.svg") format("svg");
+  src: local('Montserrat'), local('Montserrat-Bold'),
+    url('./Montserrat/Montserrat-Bold.woff2') format('woff2'),
+    url('./Montserrat/Montserrat-Bold.woff') format('woff'),
+    url('./Montserrat/Montserrat-Bold.ttf') format('truetype'),
+    url('./Montserrat/Montserrat-Bold-Cyrillic.svg') format('svg');
   font-display: swap;
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116, U+20BD;
 }
@@ -61,38 +61,38 @@
 /* -------Material Icon--------- */
 @font-face {
   font-weight: 400;
-  font-family: "Material Icons";
+  font-family: 'Material Icons';
   font-style: normal;
-  src: local("Material Icons"),
-    url("./MaterialIcons/MaterialIcons-Regular.woff2") format("woff2"),
-    url("./MaterialIcons/MaterialIcons-Regular.woff") format("woff"),
-    url("./MaterialIcons/MaterialIcons-Regular.ttf") format("truetype"),
-    url("./MaterialIcons/MaterialIcons-Regular.svg") format("svg");
+  src: local('Material Icons'),
+    url('./MaterialIcons/MaterialIcons-Regular.woff2') format('woff2'),
+    url('./MaterialIcons/MaterialIcons-Regular.woff') format('woff'),
+    url('./MaterialIcons/MaterialIcons-Regular.ttf') format('truetype'),
+    url('./MaterialIcons/MaterialIcons-Regular.svg') format('svg');
   unicode-range: e5cf, e5ce, e5c8, e5c4, e7f2, e7f3, e7f1, e80e, e87d, e87e,
     e5c8, e838, e83a;
 }
 
 @font-face {
   font-weight: 400;
-  font-family: "Font Awesome";
+  font-family: 'Font Awesome';
   font-style: normal;
-  src: local("Font Awesome"),
-    url("./Fontawesome5/FontAwesome5Brands-Regular.woff2") format("woff2"),
-    url("./Fontawesome5/FontAwesome5Brands-Regular.woff") format("woff"),
-    url("./Fontawesome5/FontAwesome5Brands-Regular.ttf") format("truetype"),
-    url("./Fontawesome5/FontAwesome5Brands-Regular.svg") format("svg");
+  src: local('Font Awesome'),
+    url('./Fontawesome5/FontAwesome5Brands-Regular.woff2') format('woff2'),
+    url('./Fontawesome5/FontAwesome5Brands-Regular.woff') format('woff'),
+    url('./Fontawesome5/FontAwesome5Brands-Regular.ttf') format('truetype'),
+    url('./Fontawesome5/FontAwesome5Brands-Regular.svg') format('svg');
   font-display: block;
   unicode-range: f099, f082, f16d, f189;
 }
 
 @font-face {
   font-weight: 400;
-  font-family: "Font Awesome solid";
+  font-family: 'Font Awesome solid';
   font-style: normal;
-  src: url("./Fontawesome5/FontAwesome5Free-Solid.woff2") format("woff2"),
-    url("./Fontawesome5/FontAwesome5Free-Solid.woff") format("woff"),
-    url("./Fontawesome5/FontAwesome5Free-Solid.ttf") format("truetype"),
-    url("./Fontawesome5/FontAwesome5Free-Solid.svg") format("svg");
+  src: url('./Fontawesome5/FontAwesome5Free-Solid.woff2') format('woff2'),
+    url('./Fontawesome5/FontAwesome5Free-Solid.woff') format('woff'),
+    url('./Fontawesome5/FontAwesome5Free-Solid.ttf') format('truetype'),
+    url('./Fontawesome5/FontAwesome5Free-Solid.svg') format('svg');
   font-display: block;
   unicode-range: f0b0;
 }

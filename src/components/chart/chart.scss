@@ -1,5 +1,5 @@
-@import "@variables";
-@import "@mixins";
+@import '@variables';
+@import '@mixins';
 
 .chart {
   display: flex;
@@ -59,7 +59,7 @@
       width: 10px;
       height: 10px;
       border-radius: 8px;
-      content: "";
+      content: '';
     }
 
     &_type {

@@ -1,4 +1,4 @@
-@import "@variables";
+@import '@variables';
 
 .button {
   display: flex;
@@ -99,8 +99,8 @@
 
     &::before {
       color: #fff;
-      font: 400 24px/24px "Material Icons", sans-serif;
-      content: "\e5c8";
+      font: 400 24px/24px 'Material Icons', sans-serif;
+      content: '\e5c8';
     }
   }
 }

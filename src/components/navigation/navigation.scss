@@ -1,5 +1,5 @@
-@import "@variables";
-@import "@mixins";
+@import '@variables';
+@import '@mixins';
 
 .navigation {
   display: flex;
@@ -56,7 +56,7 @@
         color: $textColor_50;
         line-height: 20px;
         cursor: pointer;
-        content: "\e5ce";
+        content: '\e5ce';
       }
     }
 
@@ -72,7 +72,7 @@
         color: $textColor_50;
         line-height: 20px;
         cursor: pointer;
-        content: "\e5cf";
+        content: '\e5cf';
       }
     }
 

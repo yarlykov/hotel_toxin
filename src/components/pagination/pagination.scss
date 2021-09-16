@@ -1,5 +1,5 @@
-@import "@variables";
-@import "@mixins";
+@import '@variables';
+@import '@mixins';
 
 .paginationjs {
   display: flex;
@@ -23,7 +23,7 @@
 
   color: #fff;
   line-height: 40px;
-  content: "\e5c8";
+  content: '\e5c8';
 }
 
 .paginationjs-next-button:hover::before {

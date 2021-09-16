@@ -1,5 +1,5 @@
-@import "@variables";
-@import "@mixins";
+@import '@variables';
+@import '@mixins';
 
 .checkbox {
   min-width: 266px;
@@ -44,7 +44,7 @@
       padding-right: 10px;
       color: $textColor_50;
       line-height: 15px;
-      content: "\e5ce";
+      content: '\e5ce';
     }
   }
   &__dropdown-arrow-down {
@@ -54,7 +54,7 @@
       padding-right: 10px;
       color: $textColor_50;
       line-height: 15px;
-      content: "\e5cf";
+      content: '\e5cf';
     }
   }
 
@@ -134,7 +134,7 @@
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
-      content: "";
+      content: '';
     }
   }
 

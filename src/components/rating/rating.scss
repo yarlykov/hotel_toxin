@@ -1,21 +1,21 @@
-@import "@variables";
-@import "@mixins";
+@import '@variables';
+@import '@mixins';
 
 .rating {
   @include font-material-icons;
 
   display: inline-block;
-  font-family: "Material Icons", sans-serif;
+  font-family: 'Material Icons', sans-serif;
   background: $mainGradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
   &__star::before {
-    content: "\e838";
+    content: '\e838';
   }
 
   &__empty-star::before {
-    content: "\e83a";
+    content: '\e83a';
   }
 }

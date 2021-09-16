@@ -1,4 +1,4 @@
-@import "@variables";
+@import '@variables';
 
 .room-dignities {
   &__item {
@@ -14,17 +14,17 @@
 
   &__icon {
     display: inline-block;
-    font: 48px/41px "Material Icons", sans-serif;
+    font: 48px/41px 'Material Icons', sans-serif;
 
     &_type {
       &_mood::before {
-        content: "\e7f2";
+        content: '\e7f2';
       }
       &_location-city::before {
-        content: "\e7f1";
+        content: '\e7f1';
       }
       &_whatshot::before {
-        content: "\e80e";
+        content: '\e80e';
       }
     }
 

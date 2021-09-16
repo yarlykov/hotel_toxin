@@ -1,5 +1,5 @@
-@import "@variables";
-@import "@mixins";
+@import '@variables';
+@import '@mixins';
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -94,7 +94,7 @@ select:-webkit-autofill:focus {
 
       color: $textColor_50;
       cursor: pointer;
-      content: "\e5cf";
+      content: '\e5cf';
     }
   }
 
@@ -112,7 +112,7 @@ select:-webkit-autofill:focus {
       @include font-material-icons;
 
       cursor: pointer;
-      content: "\e5c8";
+      content: '\e5c8';
     }
 
     &_with-gradient-fill {

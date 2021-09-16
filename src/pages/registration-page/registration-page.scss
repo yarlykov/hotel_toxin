@@ -1,8 +1,8 @@
-@import "@variables";
+@import '@variables';
 
 .registration {
   background: 44.2% 51.5% / 106.5%
-    url("../../pages/registration-page/images/registration.jpg") no-repeat;
+    url('../../pages/registration-page/images/registration.jpg') no-repeat;
 
   @media (max-width: 1280px) {
     background-size: cover;

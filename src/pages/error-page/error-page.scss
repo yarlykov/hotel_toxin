@@ -1,4 +1,4 @@
-@import "@variables";
+@import '@variables';
 
 .canvas-error {
   position: relative;
@@ -75,7 +75,7 @@
   height: 20px;
   background: #e25c45;
   border-radius: 0 0 0 20px;
-  content: "";
+  content: '';
 }
 
 .ship::before {
@@ -86,7 +86,7 @@
   height: 16px;
   background: #fff;
   border-radius: 20px 0 0 0;
-  content: "";
+  content: '';
 }
 
 .ship {
@@ -270,7 +270,7 @@
   height: 80px;
   background: #fff;
   border-radius: 100px;
-  content: "";
+  content: '';
 }
 
 .cloud::after {
@@ -363,5 +363,5 @@
   left: 0;
   height: 10px;
   background: #1d7fbb;
-  content: "";
+  content: '';
 }

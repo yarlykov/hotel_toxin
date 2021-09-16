@@ -1,4 +1,4 @@
-@import "@variables";
+@import '@variables';
 
 .header {
   background-color: $headerFooterBackground;
@@ -54,7 +54,7 @@
         height: 2px;
         background-color: $textColor_50;
         transition: all 0.3s ease 0s;
-        content: "";
+        content: '';
       }
       &::before {
         top: 0;
@@ -68,7 +68,7 @@
   &__filter-label {
     display: none;
     color: $textColor_75;
-    font: 24px/50px "Font Awesome solid", sans-serif;
+    font: 24px/50px 'Font Awesome solid', sans-serif;
 
     @media (max-width: 1280px) {
       position: absolute;
@@ -89,7 +89,7 @@
       border-radius: 0 4px 4px 0;
       box-shadow: 10px 0 10px rgba(0, 0, 0, 0.05);
       cursor: pointer;
-      content: "\f0b0";
+      content: '\f0b0';
 
       @media (max-width: 1280px) {
         display: inline-block;

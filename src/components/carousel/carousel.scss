@@ -1,5 +1,5 @@
-@import "@variables";
-@import "@mixins";
+@import '@variables';
+@import '@mixins';
 
 .carousel {
   position: relative;
@@ -21,7 +21,7 @@
   height: 100%;
   background: $gradientForShadow;
   border-radius: $cardsBorderRadius 0 0 0;
-  content: "";
+  content: '';
 }
 
 .slick-slider:hover::before {
@@ -34,7 +34,7 @@
   background: $gradientForShadow;
   border-radius: 0 0 0 $cardsBorderRadius;
   transform: rotate(180deg);
-  content: "";
+  content: '';
 }
 
 /* Ограничивающая оболочка */
@@ -76,7 +76,7 @@
   color: $arrowColorCarousel;
   visibility: hidden;
   cursor: pointer;
-  content: "\e5cf";
+  content: '\e5cf';
 }
 
 /* Стрелка вправо */
@@ -95,7 +95,7 @@
   color: $arrowColorCarousel;
   visibility: hidden;
   cursor: pointer;
-  content: "\e5cf";
+  content: '\e5cf';
 }
 
 .slick-slider:hover {

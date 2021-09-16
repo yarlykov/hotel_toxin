@@ -1,11 +1,11 @@
-@import "@variables";
-@import "@mixins";
+@import '@variables';
+@import '@mixins';
 
 .social {
   &__link {
     @include text-gradient-fill($mainGradient);
 
-    font: 24px "Font Awesome", sans-serif;
+    font: 24px 'Font Awesome', sans-serif;
 
     &:focus {
       border: $colorBorder;
@@ -19,16 +19,16 @@
     }
 
     &_twitter::before {
-      content: "\f099";
+      content: '\f099';
     }
     &_facebook::before {
-      content: "\f082";
+      content: '\f082';
     }
     &_instagram::before {
-      content: "\f16d";
+      content: '\f16d';
     }
     &_vk::before {
-      content: "\f189";
+      content: '\f189';
     }
   }
 }
