@@ -29,7 +29,7 @@ mixin card({ formMethod="", formAction="error-page", title="", type="", buttonTe
     else
       .card__title
         +heading({ level: "h1", title: title })
-    form(method=`${formMethod}`, action=`./${formAction}.html`)
+    form(class="card__form" method=`${formMethod}`, action=`./${formAction}.html`)
       if (isSearchOrCalculation)
         section.card__date-dropdown
           +date-dropdown({ 
