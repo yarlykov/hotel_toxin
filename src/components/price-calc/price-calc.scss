@@ -4,12 +4,6 @@
 .price-calc {
   @include font-body;
 
-  &__header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-  }
-
   &__undiscounted {
     display: flex;
     justify-content: space-between;

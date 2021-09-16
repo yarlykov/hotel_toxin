@@ -13,6 +13,12 @@
     padding: 10px;
   }
 
+  &__title-calculation {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
   &__title {
     color: $mainTextColor;
     font: 700 24px/29px $mainFont;
@@ -25,14 +31,13 @@
     }
   }
 
-  &__title-calculation {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-  }
-
   &__date-dropdown {
     padding-top: 22px;
+  }
+
+  &__guests-dropdown-search {
+    padding-top: 20px;
+    padding-bottom: 12px;
   }
 
   &__guests-dropdown {
@@ -44,9 +49,8 @@
     }
   }
 
-  &__guests-dropdown-search {
-    padding-top: 20px;
-    padding-bottom: 12px;
+  &__calculation {
+    padding: 19px 0 0 1px;
   }
 
   &__register-details {
@@ -96,9 +100,5 @@
 
   &__question-button {
     min-width: 100px;
-  }
-
-  &__calculation {
-    padding: 19px 0 0 1px;
   }
 }

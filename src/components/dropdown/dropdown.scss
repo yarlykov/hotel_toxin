@@ -11,19 +11,6 @@
     min-width: 266px;
   }
 
-  &__arrow-down {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-
-    &::before {
-      color: $textColor_75;
-      font: 24px/24px 'Material Icons', sans-serif;
-      cursor: pointer;
-      content: '\e5cf';
-    }
-  }
-
   &__input {
     position: relative;
     width: 100%;
@@ -42,6 +29,19 @@
 
     &[value] {
       color: rgba(31, 32, 65, 0.75);
+    }
+  }
+
+  &__arrow-down {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    &::before {
+      color: $textColor_75;
+      font: 24px/24px 'Material Icons', sans-serif;
+      cursor: pointer;
+      content: '\e5cf';
     }
   }
 

@@ -9,25 +9,6 @@
   margin: 0;
   padding: 0 8px 0 0;
 
-  &__header {
-    display: flex;
-    justify-content: flex-end;
-    min-width: 37px;
-    max-width: 50px;
-    margin: 0;
-    padding: 1px;
-    color: $textColor_25;
-    font-weight: 400;
-    font-family: $mainFont;
-    text-transform: capitalize;
-  }
-
-  &__text {
-    margin: 0;
-    padding-left: 30px;
-    color: $mainTextColor;
-  }
-
   &__h1 {
     display: flex;
     padding-bottom: 52px;
@@ -57,5 +38,24 @@
     display: flex;
     padding-right: 55px;
     padding-bottom: 52px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 37px;
+    max-width: 50px;
+    margin: 0;
+    padding: 1px;
+    color: $textColor_25;
+    font-weight: 400;
+    font-family: $mainFont;
+    text-transform: capitalize;
+  }
+
+  &__text {
+    margin: 0;
+    padding-left: 30px;
+    color: $mainTextColor;
   }
 }

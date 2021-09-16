@@ -8,17 +8,50 @@
   max-height: 148px;
   padding-top: 21px;
 
-  &__body {
-    width: 100%;
-    height: 100%;
-  }
-
   &__doughnut {
     box-sizing: content-box;
     width: 120px;
     height: 120px;
     margin-right: 25px;
     padding-bottom: 7px;
+  }
+
+  &__body {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__circle {
+    cursor: pointer;
+    transition: all 0.5s;
+    fill: none;
+    stroke-width: 1.2;
+
+    &_type {
+      &_sumptuously {
+        stroke-dasharray: 49 100;
+        stroke-dashoffset: -25.5;
+      }
+      &_good {
+        stroke-dasharray: 24.5 100;
+        stroke-dashoffset: -75;
+      }
+      &_satisfactorily {
+        stroke-dasharray: 24.7 100;
+        stroke-dashoffset: -0.2;
+      }
+      &_disappointed {
+        stroke-dasharray: 0 100;
+      }
+    }
+
+    &_focused {
+      stroke-width: 2.3;
+    }
+
+    &:hover {
+      stroke-width: 2.3;
+    }
   }
 
   &__sum-of-vote {
@@ -30,6 +63,7 @@
     font-size: 6.5px;
     line-height: 30px;
   }
+
   &__text {
     font-size: 3.5px;
     line-height: 15px;
@@ -83,39 +117,6 @@
     &:focus {
       color: $textColor_50;
       outline: none;
-    }
-  }
-
-  &__circle {
-    cursor: pointer;
-    transition: all 0.5s;
-    fill: none;
-    stroke-width: 1.2;
-
-    &_type {
-      &_sumptuously {
-        stroke-dasharray: 49 100;
-        stroke-dashoffset: -25.5;
-      }
-      &_good {
-        stroke-dasharray: 24.5 100;
-        stroke-dashoffset: -75;
-      }
-      &_satisfactorily {
-        stroke-dasharray: 24.7 100;
-        stroke-dashoffset: -0.2;
-      }
-      &_disappointed {
-        stroke-dasharray: 0 100;
-      }
-    }
-
-    &_focused {
-      stroke-width: 2.3;
-    }
-
-    &:hover {
-      stroke-width: 2.3;
     }
   }
 }

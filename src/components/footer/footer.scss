@@ -12,6 +12,12 @@
     border-top: 1px solid $textColor_25;
   }
 
+  &__container {
+    min-width: 320px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
   &__wrapper {
     display: flex;
     padding: 100px 140px;
@@ -21,10 +27,13 @@
     }
   }
 
-  &__container {
-    min-width: 320px;
-    max-width: 1440px;
-    margin: 0 auto;
+  &__presentation {
+    max-width: 260px;
+    margin: 0;
+    padding-top: 13px;
+    color: $textColor_75;
+    font-size: 14px;
+    line-height: 24px;
   }
 
   &__links {
@@ -47,15 +56,6 @@
 
   & .subscribe {
     margin-left: auto;
-  }
-
-  &__presentation {
-    max-width: 260px;
-    margin: 0;
-    padding-top: 13px;
-    color: $textColor_75;
-    font-size: 14px;
-    line-height: 24px;
   }
 
   &__bottom {

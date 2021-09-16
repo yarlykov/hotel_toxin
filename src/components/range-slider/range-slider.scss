@@ -2,6 +2,23 @@
 @import '@mixins';
 
 .range-slider {
+  &:focus {
+    border: none;
+  }
+
+  &__header {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    color: $mainTextColor;
+    font: 700 12px/15px $mainFont;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    flex-shrink: 0;
+  }
+
   &__value {
     @include font-body;
 
@@ -23,21 +40,11 @@
     border-radius: 6px;
   }
 
-  &__header {
-    display: flex;
-    flex-shrink: 0;
-    justify-content: space-between;
-    color: $mainTextColor;
-    font: 700 12px/15px $mainFont;
-    text-transform: uppercase;
-  }
-
-  &__title {
-    flex-shrink: 0;
-  }
-
-  &:focus {
-    border: none;
+  &__description {
+    margin: 0;
+    padding-top: 36px;
+    color: rgba(31, 32, 65, 0.5);
+    font: 400 12px/14px Montserrat, sans-serif;
   }
 }
 
@@ -76,11 +83,4 @@
 .ui-slider .ui-slider-handle:hover {
   outline: none;
   box-shadow: 3px 3px 2px $designColor_second;
-}
-
-.slider-text {
-  margin: 0;
-  padding-top: 36px;
-  color: rgba(31, 32, 65, 0.5);
-  font: 400 12px/14px Montserrat, sans-serif;
 }

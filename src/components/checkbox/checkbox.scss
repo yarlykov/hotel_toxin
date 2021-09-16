@@ -5,16 +5,6 @@
   min-width: 266px;
   max-width: 266px;
 
-  &__list {
-    display: none;
-    margin: 0;
-    padding: 12px 0 0 0;
-
-    &_opened {
-      display: block;
-    }
-  }
-
   &__dropdown {
     display: flex;
     justify-content: space-between;
@@ -23,10 +13,6 @@
     &:focus-within {
       outline: none;
       box-shadow: 2px 2px 2px $designColor_main;
-    }
-
-    & + .checkbox__list {
-      padding-top: 9px;
     }
   }
 
@@ -58,10 +44,13 @@
     }
   }
 
-  &__title {
-    &_font_bold {
-      color: $textColor_75;
-      font-weight: bold;
+  &__list {
+    display: none;
+    margin: 0;
+    padding: 12px 0 0 0;
+
+    &_opened {
+      display: block;
     }
   }
 
@@ -135,6 +124,13 @@
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
       content: '';
+    }
+  }
+
+  &__title {
+    &_font_bold {
+      color: $textColor_75;
+      font-weight: bold;
     }
   }
 

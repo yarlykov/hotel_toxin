@@ -27,6 +27,7 @@
 
   @media (max-width: 400px) {
     min-width: 266px;
+
     .datepicker--cell {
       height: 32px;
     }
@@ -43,6 +44,7 @@
     &_back::before {
       content: '\e5c4';
     }
+
     &_forward::before {
       content: '\e5c8';
     }

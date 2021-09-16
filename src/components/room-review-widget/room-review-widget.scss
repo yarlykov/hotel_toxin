@@ -38,9 +38,3 @@
     padding-top: 8px;
   }
 }
-
-.carousel {
-  &:focus-within {
-    box-shadow: 3px 3px 2px $designColor_main;
-  }
-}

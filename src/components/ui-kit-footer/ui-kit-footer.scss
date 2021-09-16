@@ -7,6 +7,10 @@
   max-width: 100%;
   padding: 30px 0;
 
+  &_background_gray {
+    background: $uiKitPagesBackground;
+  }
+
   &__link {
     color: $textColor_50;
     text-decoration: none;
@@ -21,9 +25,5 @@
     &:not(:first-child) {
       margin-left: 50px;
     }
-  }
-
-  &_background_gray {
-    background: $uiKitPagesBackground;
   }
 }

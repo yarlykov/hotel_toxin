@@ -28,6 +28,33 @@
     text-decoration: none;
   }
 
+  &_inline {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0;
+    background: none;
+
+    &:hover,
+    &:focus {
+      color: $textColor_50;
+      background: none;
+      outline: none;
+    }
+
+    & :hover,
+    & :focus {
+      color: $textColor_50;
+      background: none;
+      outline: none;
+    }
+
+    &:disabled {
+      color: $textColor_50;
+      background: none;
+      cursor: auto;
+    }
+  }
+
   &__inner {
     width: 100%;
     color: $mainTextColor;
@@ -64,33 +91,6 @@
       &_white {
         background: #fff;
       }
-    }
-  }
-
-  &_inline {
-    width: -moz-fit-content;
-    width: fit-content;
-    padding: 0;
-    background: none;
-
-    &:hover,
-    &:focus {
-      color: $textColor_50;
-      background: none;
-      outline: none;
-    }
-
-    & .button__inner:hover,
-    & .button__inner:focus {
-      color: $textColor_50;
-      background: none;
-      outline: none;
-    }
-
-    &:disabled {
-      color: $textColor_50;
-      background: none;
-      cursor: auto;
     }
   }
 

@@ -6,11 +6,10 @@
   flex-direction: column;
   min-height: 100%;
 
-  &__pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 3px;
-    margin-right: 13px;
+  & .heading__title {
+    @media (max-width: 718px) {
+      max-width: 270px;
+    }
   }
 
   &__widgets-list {
@@ -33,9 +32,10 @@
     }
   }
 
-  & .heading__title {
-    @media (max-width: 718px) {
-      max-width: 270px;
-    }
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 3px;
+    margin-right: 13px;
   }
 }
