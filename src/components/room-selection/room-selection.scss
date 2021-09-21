@@ -2,8 +2,6 @@
 @import '@mixins';
 
 .room-selection {
-  display: flex;
-  flex-direction: column;
   min-height: 100%;
 
   & .heading__title {
