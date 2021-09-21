@@ -22,28 +22,11 @@
   }
 
   &__circle {
+    transform: rotateY(180deg) rotateX(0deg) rotate(92deg)
+      translate(-1.4px, 1.5px);
     cursor: pointer;
     transition: all 0.5s;
     fill: none;
-    stroke-width: 1.2;
-
-    &_type {
-      &_sumptuously {
-        stroke-dasharray: 49 100;
-        stroke-dashoffset: -25.5;
-      }
-      &_good {
-        stroke-dasharray: 24.5 100;
-        stroke-dashoffset: -75;
-      }
-      &_satisfactorily {
-        stroke-dasharray: 24.7 100;
-        stroke-dashoffset: -0.2;
-      }
-      &_disappointed {
-        stroke-dasharray: 0 100;
-      }
-    }
 
     &_focused {
       stroke-width: 2.3;
@@ -86,31 +69,6 @@
       text-transform: uppercase;
     }
 
-    &::before {
-      position: absolute;
-      top: 7px;
-      left: -15px;
-      width: 10px;
-      height: 10px;
-      border-radius: 8px;
-      content: '';
-    }
-
-    &_type {
-      &_sumptuously::before {
-        background: $sumptuouslyRatingGradient;
-      }
-      &_good::before {
-        background: $goodRatingGradient;
-      }
-      &_satisfactorily::before {
-        background: $satisfactorilyRatingGradient;
-      }
-      &_disappointed::before {
-        background: $badRatingGradient;
-      }
-    }
-
     &:hover {
       color: $textColor_50;
     }
@@ -118,5 +76,15 @@
       color: $textColor_50;
       outline: none;
     }
+  }
+
+  &__legend-item-point {
+    position: absolute;
+    top: 7px;
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 8px;
+    content: '';
   }
 }
