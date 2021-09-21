@@ -1,26 +1,17 @@
-mixin checkbox({ title="", isDropdown=false, isRich=false, listItems=[], isOpened=true })
+mixin checkbox({ title="checkbox", description="", isRich=false, checked=false } = {})
   -
     const titleClassName = "checkbox__title"
     const descriptionClassName = "checkbox__description"
     const titleFontBoldModifier = isRich ? "checkbox__title_font_bold" : ""
-    const openDropdownModifier = isOpened ? "checkbox__list_opened" : ""
 
-  .checkbox
-    if isDropdown
-      .checkbox__dropdown(data-id="checkbox-dropdown" tabindex=0)
-        h3.checkbox__dropdown-title #{title}
-        span.checkbox__dropdown-arrow-down(data-id="checkbox-dropdown-arrow")
-    ul.checkbox__list(class=openDropdownModifier data-id="checkbox-list")
-      each item in listItems
-        li.checkbox__item
-          label.checkbox__item-container
-            input&attributes({
-              class: "checkbox__input",
-              type: "checkbox",
-              title: item.title,
-              checked: item.checked,
-            })
-            span.checkbox__box
-            span&attributes({ class: [titleClassName, titleFontBoldModifier] }) #{item.title}
-              if isRich
-                span(class=descriptionClassName) #{item.description}
+  label.checkbox
+    input&attributes({
+      class: "checkbox__input",
+      type: "checkbox",
+      title: title,
+      checked: checked,
+    })
+    span.checkbox__box
+    span&attributes({ class: [titleClassName, titleFontBoldModifier]}) #{title}
+      if isRich
+        span(class=descriptionClassName) #{description}

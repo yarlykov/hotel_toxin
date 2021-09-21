@@ -1,0 +1,18 @@
+include ../checkbox/checkbox.pug
+
+mixin checkbox-list({ title="", isDropdown=false, isRich=false, listItems=[], isOpened=true })
+  -
+    const titleClassName = "checkbox__title"
+    const descriptionClassName = "checkbox__description"
+    const titleFontBoldModifier = isRich ? "checkbox__title_font_bold" : ""
+    const openDropdownModifier = isOpened ? "checkbox-list__list_opened" : ""
+
+  .checkbox-list
+    if isDropdown
+      .checkbox-list__dropdown(data-id="checkbox-list-dropdown" tabindex=0)
+        h3.checkbox-list__dropdown-title #{title}
+        span.checkbox-list__dropdown-arrow-down(data-id="checkbox-list-dropdown-arrow")
+    ul.checkbox-list__list(class=openDropdownModifier data-id="checkbox-list")
+      each item in listItems
+        li.checkbox-list__item
+          +checkbox({ title: item.title, description: item.description, checked: item.checked, isRich })

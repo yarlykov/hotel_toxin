@@ -2,7 +2,7 @@ extends ../../layouts/ui-kit-layout.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/like/like.pug
-include ../../components/checkbox/checkbox.pug
+include ../../components/checkbox-list/checkbox-list.pug
 include ../../components/radio/radio.pug
 include ../../components/toggle/toggle.pug
 include ../../components/rating/rating.pug
@@ -111,7 +111,7 @@ block content
         .form-elements__small-buttons
           .form-elements__small-buttons-wrapper
             +heading({ level: "h3", title: "checkbox buttons" })
-            +checkbox({	
+            +checkbox-list({	
               listItems: [
                 { title: "Можно курить" },
                 { title: "Можно с питомцами" },
@@ -229,7 +229,7 @@ block content
       section.form-elements__lists
         .form-elements__lists-block-expandable
           .form-elements__lists-wrapper-expandable
-            +checkbox({	
+            +checkbox-list({	
               title: "Expandable checkbox list",
               isDropdown: true,
               isOpened: false,
@@ -244,7 +244,7 @@ block content
               ]
             })
           .form-elements__lists-wrapper-expandable
-            +checkbox({	
+            +checkbox-list({	
               title: "Expandable checkbox list",
               isDropdown: true,
               isRich: false,
@@ -261,7 +261,7 @@ block content
         .form-elements__lists-block-other
           .form-elements__lists-wrapper
             +heading({ level: "h3", title: "rich checkbox buttons" })
-            +checkbox({	
+            +checkbox-list({	
               isRich: true,
               listItems: [
                 { 

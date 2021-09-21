@@ -1,0 +1,77 @@
+@import '@variables';
+@import '@mixins';
+
+.checkbox-list {
+  min-width: 266px;
+  max-width: 266px;
+
+  &__dropdown {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &:focus-within {
+      outline: none;
+      box-shadow: 2px 2px 2px $designColor_main;
+    }
+  }
+
+  &__dropdown-title {
+    margin: 0;
+    color: $mainTextColor;
+    font: 700 0.8571rem/15px $mainFont;
+    text-transform: uppercase;
+  }
+
+  &__dropdown-arrow-up {
+    &::before {
+      @include font-material-icons;
+
+      padding-right: 10px;
+      color: $textColor_50;
+      line-height: 15px;
+      content: '\e5ce';
+    }
+  }
+  &__dropdown-arrow-down {
+    &::before {
+      @include font-material-icons;
+
+      padding-right: 10px;
+      color: $textColor_50;
+      line-height: 15px;
+      content: '\e5cf';
+    }
+  }
+
+  &__list {
+    display: none;
+    margin: 0;
+    padding: 12px 0 0 0;
+
+    &_opened {
+      display: block;
+    }
+  }
+
+  &__item {
+    display: block;
+    box-sizing: content-box;
+    min-height: 20px;
+    margin-left: 30px;
+    padding-bottom: 10px;
+    color: $textColor_50;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:hover {
+      color: $textColor_75;
+    }
+
+    &:focus-within {
+      color: $textColor_75;
+    }
+  }
+}

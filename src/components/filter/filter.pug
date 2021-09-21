@@ -1,4 +1,4 @@
-include ../checkbox/checkbox.pug
+include ../checkbox-list/checkbox-list.pug
 include ../heading/heading.pug
 include ../date-dropdown/date-dropdown.pug
 include ../dropdown/dropdown.pug
@@ -17,13 +17,13 @@ mixin filter({ dateDropdown={}, dropdownGuests={}, rangeSlider={}, checkbox={}, 
       +range-slider(rangeSlider)
     .filter__checkbox
       +heading({ level: "h3", title: checkbox.title })
-      +checkbox(checkbox)
+      +checkbox-list(checkbox)
     .filter__rich-checkbox
       +heading({ level: "h3", title: richCheckbox.title })
-      +checkbox(richCheckbox)
+      +checkbox-list(richCheckbox)
     .filter__dropdown-comfort
       +heading({ level: "h3", title: dropdownComfort.title })
       +dropdown(dropdownComfort)
     .filter__expandable-checkbox
-      +checkbox(expandableCheckbox)
+      +checkbox-list(expandableCheckbox)
     .filter__open-label.js-filter__open-label

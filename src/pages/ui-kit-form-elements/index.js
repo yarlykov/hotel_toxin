@@ -1,7 +1,7 @@
 import 'src/main';
 import 'components/bullet-list';
 import 'components/button';
-import 'components/checkbox';
+import 'components/checkbox-list';
 import 'components/comment';
 import 'components/date-dropdown';
 import 'components/dropdown';

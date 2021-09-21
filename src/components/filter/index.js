@@ -1,4 +1,4 @@
-import 'components/checkbox';
+import 'components/checkbox-list';
 import 'components/heading';
 import 'components/date-dropdown';
 import 'components/dropdown';
