@@ -8,7 +8,6 @@
 
   &__header {
     display: flex;
-    flex-shrink: 0;
     justify-content: space-between;
     color: $mainTextColor;
     font: 700 0.8571rem/15px $mainFont;
@@ -16,12 +15,14 @@
   }
 
   &__title {
-    flex-shrink: 0;
+    max-width: 50%;
   }
 
   &__value {
     @include font-body;
 
+    max-width: 50%;
+    margin-left: 5px;
     color: $textColor_50;
     font-size: 0.8571rem;
     line-height: 15px;
