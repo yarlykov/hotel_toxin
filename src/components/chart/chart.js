@@ -32,14 +32,14 @@ class Chart {
       const strokeDashoffset = segmentLength * -1;
       this.chartBody.insertAdjacentHTML(
         'afterbegin',
-        Chart.getChartBodyTemplate(vote.type, strokeDasharray, strokeDashoffset),
+        Chart.getChartBodyTemplate(vote.id, strokeDasharray, strokeDashoffset),
       );
     });
 
     votes.forEach((vote) => {
       this.chartBody.insertAdjacentHTML(
         'beforeend',
-        Chart.getLinearGradientTemplate(vote.type, vote.firstStopColor, vote.secondStopColor),
+        Chart.getLinearGradientTemplate(vote.id, vote.firstStopColor, vote.secondStopColor),
       );
     });
 
@@ -51,9 +51,9 @@ class Chart {
     const legend = this.root.querySelector('[data-id="chart-legend"]');
 
     votes.forEach((vote) => {
-      const { firstStopColor, secondStopColor, type } = vote;
-      legend.insertAdjacentHTML('beforeend', Chart.getLegendItemTemplate(vote.type, vote.name));
-      const item = legend.querySelector(`[data-id="item-point-${type}"]`);
+      const { firstStopColor, secondStopColor, id } = vote;
+      legend.insertAdjacentHTML('beforeend', Chart.getLegendItemTemplate(vote.id, vote.name));
+      const item = legend.querySelector(`[data-id="item-point-${id}"]`);
       item.style.background = `-webkit-linear-gradient(${firstStopColor}, ${secondStopColor})`;
     });
   }
@@ -71,25 +71,25 @@ class Chart {
   }
 
   handleChartFocus({ target }) {
-    const { type } = target.dataset;
+    const { id } = target.dataset;
 
-    if (type) {
+    if (id) {
       const { votes } = this.options;
       votes.forEach((vote) => {
-        if (vote.type === type) {
+        if (vote.id === id) {
           const template = Chart.getSumOfVotesTemplate(vote.votesAmount, vote.firstStopColor);
           this.sumOfVote.innerHTML = template;
         }
       });
 
-      const currentCircle = this.chartBody.querySelector(`[data-type=${type}]`);
+      const currentCircle = this.chartBody.querySelector(`[data-id=${id}]`);
       if (currentCircle) currentCircle.classList.add('chart__circle_focused');
     }
   }
 
   handleChartBlur({ target }) {
-    const { type } = target.dataset;
-    const currentCircle = this.chartBody.querySelector(`[data-type=${type}]`);
+    const { id } = target.dataset;
+    const currentCircle = this.chartBody.querySelector(`[data-id=${id}]`);
     this.sumOfVote.innerHTML = Chart.getSumOfVotesTemplate(this.sumOfAllVotes, '#919191');
     if (currentCircle) currentCircle.classList.remove('chart__circle_focused');
   }
@@ -105,24 +105,24 @@ class Chart {
     `;
   }
 
-  static getLinearGradientTemplate(type = '', firstStopColor = '', secondStopColor = '') {
+  static getLinearGradientTemplate(id = '', firstStopColor = '', secondStopColor = '') {
     return `
-      <linearGradient id="${type}" gradientTransform="rotate(90)">
+      <linearGradient id="${id}" gradientTransform="rotate(90)">
         <stop offset="0" stop-color=${firstStopColor}></stop>
         <stop offset="1" stop-color=${secondStopColor}></stop>
       </linearGradient>
     `;
   }
 
-  static getChartBodyTemplate(type = '', strokeDasharray = 0, strokeDashoffset = 0) {
+  static getChartBodyTemplate(id = '', strokeDasharray = 0, strokeDashoffset = 0) {
     let strokeWithIntervals = 0;
     if (strokeDasharray !== 0) {
       strokeWithIntervals = strokeDasharray - 1;
     }
 
     return `
-      <circle class="chart__circle" r="15.9" cx="50%" cy="50%" stroke="url(#${type})"
-      data-id="circle" data-type=${type} stroke-dasharray="${strokeWithIntervals} 100"
+      <circle class="chart__circle" r="15.9" cx="50%" cy="50%" stroke="url(#${id})"
+      data-id=${id} stroke-dasharray="${strokeWithIntervals} 100"
       stroke-dashoffset="${strokeDashoffset}">
       </circle>
     `;
@@ -137,11 +137,11 @@ class Chart {
     `;
   }
 
-  static getLegendItemTemplate(type = '', name = '') {
+  static getLegendItemTemplate(id = '', name = '') {
     return `
-      <li class="chart__legend-item" data-id="legend-item" data-type=${type} tabindex="0">
+      <li class="chart__legend-item" data-id=${id} tabindex="0">
         ${name}
-        <div class="chart__legend-item-point" data-id="item-point-${type}"></div>
+        <div class="chart__legend-item-point" data-id="item-point-${id}"></div>
       </li>
     `;
   }
