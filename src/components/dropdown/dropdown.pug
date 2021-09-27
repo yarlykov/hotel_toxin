@@ -1,22 +1,22 @@
-mixin dropdown(options)
+mixin dropdown({ isOpen=false, group="", elements=[] })
   -
-    const isOpen = options.isOpen ? "dropdown_open" : ""
-    const isGroupComfort = options.group == "comfort"
-    const group = options.group == "guests" ? "Сколько гостей" : "Удобства номера"
+    const openClassModifier = isOpen ? "dropdown_open" : ""
+    const isGroupComfort = group === "comfort"
+    const inputValue = group === "guests" ? "Сколько гостей" : "Удобства номера"
 
-  .dropdown(class=isOpen, class=`dropdown_type_${options.group}` data-group=`${options.group}`,)
+  .dropdown(class=openClassModifier, class=`dropdown_type_${group}` data-group=`${group}`,)
     input&attributes({
       type: "text", 
       class: "dropdown__input js-dropdown__input", 
       "data-type": "input", 
-      value: group,
+      value: inputValue,
       readonly: "readonly",
       onmousedown: "return false"
       })
     div(class="dropdown__arrow-down")&attributes({"data-type": "arrow", onmousedown: "return false" })
     .dropdown__drop.js-dropdown__drop
       ul.dropdown__menu.js-dropdown__menu
-        each elem in options.elements
+        each elem in elements
           li.dropdown__menu-item.js-dropdown__menu-item(data-id= `${elem.title}`)
             .dropdown__menu-item-text #{elem.title}
             .dropdown__controls
