@@ -13,36 +13,7 @@
   }
 
   &__item {
-    position: relative;
     padding-right: 20px;
-  }
-
-  &__link {
-    color: $textColor_50;
-    text-decoration: none;
-    cursor: pointer;
-
-    &_active {
-      font-weight: 700;
-    }
-
-    &:focus,
-    &:hover {
-      color: $textColor_75;
-      outline: none;
-    }
-  }
-
-  &__dropdown {
-    position: absolute;
-    top: 25px;
-    left: 40%;
-    z-index: 3000;
-    min-width: 140px;
-    background: $cardsBackground;
-    border-radius: $mainBorderRadius;
-    box-shadow: $mainBoxShadow;
-    transform: translateX(-50%);
 
     &_with-arrow-up {
       position: relative;
@@ -75,6 +46,34 @@
         content: '\e5cf';
       }
     }
+  }
+
+  &__link {
+    color: $textColor_50;
+    text-decoration: none;
+    cursor: pointer;
+
+    &_active {
+      font-weight: 700;
+    }
+
+    &:focus,
+    &:hover {
+      color: $textColor_75;
+      outline: none;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 25px;
+    left: 40%;
+    z-index: 3000;
+    min-width: 140px;
+    background: $cardsBackground;
+    border-radius: $mainBorderRadius;
+    box-shadow: $mainBoxShadow;
+    transform: translateX(-50%);
 
     &_visibility-hidden {
       visibility: hidden;

@@ -9,8 +9,8 @@ class Navigation {
   init() {
     this.itemDropdown = this.mainNode.querySelector('.navigation__dropdown');
     this.visibilityHiddenClass = 'navigation__dropdown_visibility-hidden';
-    this.UpArrowDropdownClass = 'navigation__dropdown_with-arrow-up';
-    this.DownArrowDropdownClass = 'navigation__dropdown_with-arrow-down';
+    this.upArrowDropdownClass = 'navigation__item_with-arrow-up';
+    this.downArrowDropdownClass = 'navigation__item_with-arrow-down';
   }
 
   setup() {
@@ -33,13 +33,13 @@ class Navigation {
   }
 
   arrowToggle() {
-    this.mainNode.classList.toggle(this.DownArrowDropdownClass);
-    this.mainNode.classList.toggle(this.UpArrowDropdownClass);
+    this.mainNode.classList.toggle(this.downArrowDropdownClass);
+    this.mainNode.classList.toggle(this.upArrowDropdownClass);
   }
 
   arrowDown() {
-    this.mainNode.classList.remove(this.UpArrowDropdownClass);
-    this.mainNode.classList.add(this.DownArrowDropdownClass);
+    this.mainNode.classList.remove(this.upArrowDropdownClass);
+    this.mainNode.classList.add(this.downArrowDropdownClass);
   }
 
   clickHandler(event) {
