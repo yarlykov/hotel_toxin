@@ -51,9 +51,9 @@ mixin card({ formMethod="", formAction="error-page", title="", type="", buttonTe
             isOpen: false, 
             group: "guests", 
             elements: [
-              { title: "Взрослые", count: numberOfGuests },
-              { title: "Дети", count: 0 }, 
-              { title: "Младенцы", count: 0 },
+              { title: "Взрослые", id: "adults", count: numberOfGuests },
+              { title: "Дети", id: "children", count: 0 }, 
+              { title: "Младенцы", id: "babies", count: 0 },
             ]
           })
         if isCalculation

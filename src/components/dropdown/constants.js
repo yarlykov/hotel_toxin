@@ -1,4 +1,6 @@
 const count = {
+  INIT: 'init',
+  TOTAL: 'totalItems',
   INCREMENT: 'increment',
   DECREMENT: 'decrement',
 };

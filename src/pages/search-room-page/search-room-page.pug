@@ -30,9 +30,9 @@ block content
               isOpen: false,
               group: "guests", 
               elements: [
-                { title: "Взрослые", count: 2 },
-                { title: "Дети", count: 0 }, 
-                { title: "Младенцы", count: 1 }
+                { title: "Взрослые", id: "adults", count: 2 },
+                { title: "Дети", id: "children", count: 0 }, 
+                { title: "Младенцы", id: "babies", count: 1 },
               ]
             }
           },
@@ -73,9 +73,9 @@ block content
             isOpen: false, 
             group: "comfort", 
             elements: [
-              { title: "Спальни", count: 2 }, 
-              { title: "Кровати", count: 2 }, 
-              { title: "Ванные комнаты", count: 0 }
+              { title: "Спальни", id: "bedrooms", count: 2 }, 
+              { title: "Кровати", id: "beds", count: 2 }, 
+              { title: "Ванные комнаты", id: "bathrooms", count: 0 }
             ]
           },
           expandableCheckbox: {	

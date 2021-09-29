@@ -17,7 +17,7 @@ mixin dropdown({ isOpen=false, group="", elements=[] })
     .dropdown__drop.js-dropdown__drop
       ul.dropdown__menu.js-dropdown__menu
         each elem in elements
-          li.dropdown__menu-item.js-dropdown__menu-item(data-id= `${elem.title}`)
+          li.dropdown__menu-item.js-dropdown__menu-item(data-id=`${elem.id}`)
             .dropdown__menu-item-text #{elem.title}
             .dropdown__controls
               button&attributes({

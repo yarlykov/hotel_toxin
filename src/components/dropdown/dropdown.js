@@ -1,67 +1,61 @@
 import { addCommaInText, cutLongText, declensionsText } from './utils';
 import { count, targetType } from './constants';
+import rootReducer from './redux/rootReducer';
+import createStore from './createStore';
 
 class Dropdown {
   constructor(selector, options) {
     this.mainNode = selector;
     this.options = options;
+    this.store = createStore(rootReducer, {});
 
     this.init();
     this.bindEventListeners();
   }
 
   init() {
-    this.totalItems = 0;
     this.maxItems = this.options.maxItems || Number.MAX_SAFE_INTEGER;
-    this.menuItemValue = {
-      baby: 0,
-      bedrooms: 0,
-      beds: 0,
-      baths: 0,
-    };
-    this.menuItemRusNames = [
-      'Младенцы',
-      'Спальни',
-      'Кровати',
-      'Ванные комнаты',
-    ];
+    this.store.subscribe((state) => {
+      this.state = { ...state };
+    });
 
     this.findDOMElements();
+    this.addInitValuesToStore();
+    this.countTotalItems();
+
     const { buttons } = this.options;
     if (buttons) this.addButtons();
-    this.countInitialElements();
     this.setInputText();
     this.checkClearButton();
     this.counterButtonsToggle();
   }
 
+  addInitValuesToStore() {
+    this.menuItemsData.forEach((item) => {
+      this.store.dispatchEvent({ type: count.INIT, id: item.id, value: item.value });
+    });
+  }
+
   findDOMElements() {
     this.input = this.mainNode.querySelector('.js-dropdown__input');
     this.drop = this.mainNode.querySelector('.js-dropdown__drop');
-    this.menuItems = this.mainNode.querySelectorAll('.js-dropdown__menu-item');
-    this.menuItem = Array.from(this.menuItems).map((item) => ({
+    const menuItemNodes = this.mainNode.querySelectorAll('.js-dropdown__menu-item');
+
+    this.menuItemsData = Array.from(menuItemNodes).map((item) => ({
       increment: item.querySelector('.js-dropdown__increment'),
       decrement: item.querySelector('.js-dropdown__decrement'),
       countInput: item.querySelector('.js-dropdown__counter'),
       id: item.dataset.id,
-      value: Number(item.querySelector('.js-dropdown__counter').value),
-      isBabyValue:
-        item.dataset.id === 'Младенцы'
-          ? Number(item.querySelector('.js-dropdown__counter').value)
-          : 0,
-      isBedroomsValue:
-        item.dataset.id === 'Спальни'
-          ? Number(item.querySelector('.js-dropdown__counter').value)
-          : 0,
-      isBedsValue:
-        item.dataset.id === 'Кровати'
-          ? Number(item.querySelector('.js-dropdown__counter').value)
-          : 0,
-      isBathsValue:
-        item.dataset.id === 'Ванные комнаты'
-          ? Number(item.querySelector('.js-dropdown__counter').value)
-          : 0,
+      value: Number(item.querySelector('.js-dropdown__counter').value) || 0,
+      [item.dataset.id]: Number(item.querySelector('.js-dropdown__counter').value),
     }));
+  }
+
+  countTotalItems() {
+    const totalItems = this.menuItemsData.reduce(
+      (acc, item) => item.value + acc, 0,
+    );
+    this.store.dispatchEvent({ type: count.INIT, id: count.TOTAL, value: totalItems });
   }
 
   bindEventListeners() {
@@ -106,81 +100,53 @@ class Dropdown {
     );
   }
 
-  countInitialElements() {
-    const itemsQuantity = this.menuItem.reduce(
-      (acc, item) => item.value + acc, 0,
-    );
-    const babiesQuantity = this.menuItem.reduce(
-      (acc, item) => item.isBabyValue + acc,
-      0,
-    );
-    const bedroomsQuantity = this.menuItem.reduce(
-      (acc, item) => item.isBedroomsValue + acc,
-      0,
-    );
-    const bedsQuantity = this.menuItem.reduce(
-      (acc, item) => item.isBedsValue + acc,
-      0,
-    );
-    const bathsQuantity = this.menuItem.reduce(
-      (acc, item) => item.isBathsValue + acc,
-      0,
-    );
-
-    this.totalItems = itemsQuantity;
-    this.menuItemValue.baby = babiesQuantity;
-    this.menuItemValue.bedrooms = bedroomsQuantity;
-    this.menuItemValue.beds = bedsQuantity;
-    this.menuItemValue.baths = bathsQuantity;
-  }
-
   setInputText() {
-    const { type } = this.options;
-    if (type === 'comfort') this.input.value = this.createFinalComfortText();
-    if (type === 'guests') this.input.value = this.createFinalGuestsText();
+    this.input.value = this.createFinalText();
   }
 
-  createFinalGuestsText() {
-    const { defaultText } = this.options;
-    const { guests = [], babies = [] } = this.options.plurals;
-
-    const declTextGuests = declensionsText(this.totalItems, guests);
-    const declTextBabies = declensionsText(
-      this.menuItemValue.baby,
-      babies,
-    );
-
-    const textInput = this.menuItemValue.baby === 0
-      ? `${this.totalItems} ${declTextGuests}`
-      : `${this.totalItems} ${declTextGuests}, ${this.menuItemValue.baby} ${declTextBabies}`;
-
-    if (this.totalItems > 0) {
-      return textInput;
-    }
-    return defaultText;
-  }
-
-  createFinalComfortText() {
-    const { defaultText } = this.options;
+  createFinalText() {
+    const { defaultText, total } = this.options;
+    const { totalItems } = this.state;
     let textInput = '';
 
-    if (this.totalItems > 0) {
-      const pluralWords = Object.keys(this.options.plurals);
-      pluralWords.forEach((itemName) => {
-        const currentValue = this.menuItemValue[itemName];
-        const currentPluralWords = this.options.plurals[itemName];
+    if (totalItems > 0) {
+      const { plurals, numberOfLetters = 19 } = this.options;
+      if (total) {
+        this.totalPluralWords = plurals.totalItems;
+        textInput = addCommaInText(textInput);
+        textInput += `${`${totalItems} ${declensionsText(
+          totalItems,
+          this.totalPluralWords,
+        )}`}`;
+      }
 
+      this.menuItemsData.forEach((item) => {
+        const { id } = item;
+        const currentValue = this.state[id];
+
+        if (Object.prototype.hasOwnProperty.call(plurals, id)) {
+          this.currentPluralWords = plurals[id];
+        } else {
+          this.currentPluralWords = '';
+        }
         if (currentValue === 0) {
           textInput += '';
-        } else {
+        }
+
+        const hasCurrentValueAndPlurals = currentValue && Array.isArray(this.currentPluralWords);
+
+        if (hasCurrentValueAndPlurals) {
           textInput = addCommaInText(textInput);
           textInput += `${`${currentValue} ${declensionsText(
             currentValue,
-            currentPluralWords,
+            this.currentPluralWords,
           )}`}`;
+        } else if (currentValue && !total) {
+          textInput = addCommaInText(textInput);
+          textInput += ` ${currentValue} add plurals `;
         }
       });
-      return cutLongText(textInput);
+      return cutLongText(textInput, numberOfLetters);
     }
     return defaultText;
   }
@@ -199,9 +165,11 @@ class Dropdown {
       increment.setAttribute('disabled', 'disabled');
     }
     if (currentValue < this.maxItems) {
+      const { totalItems } = this.state;
+      this.store.dispatchEvent({ type: count.INCREMENT, id, value: currentValue });
+      this.store.dispatchEvent({ type: count.INCREMENT, id: count.TOTAL, value: totalItems });
+
       counter.value = currentValue + 1;
-      this.totalItems += 1;
-      this.itemCounter(id, count.INCREMENT);
       decrement.classList.remove('disabled');
       decrement.removeAttribute('disabled', 'disabled');
     }
@@ -224,9 +192,11 @@ class Dropdown {
       decrement.setAttribute('disabled', 'disabled');
     }
     if (currentValue > 0) {
+      const { totalItems } = this.state;
+      this.store.dispatchEvent({ type: count.DECREMENT, id, value: currentValue });
+      this.store.dispatchEvent({ type: count.DECREMENT, id: count.TOTAL, value: totalItems });
+
       counter.value = currentValue - 1;
-      this.totalItems -= 1;
-      this.itemCounter(id, count.DECREMENT);
       increment.classList.remove('disabled');
       increment.removeAttribute('disabled', 'disabled');
     }
@@ -234,18 +204,6 @@ class Dropdown {
     this.setInputText();
     this.counterButtonsToggle();
     this.checkClearButton();
-  }
-
-  itemCounter(id, operator) {
-    const menuItemEngName = Object.keys(this.menuItemValue);
-    const index = this.menuItemRusNames.indexOf(id);
-    const translateId = menuItemEngName[index];
-
-    if (operator === count.INCREMENT) {
-      this.menuItemValue[translateId] += 1;
-    } else {
-      this.menuItemValue[translateId] -= 1;
-    }
   }
 
   handleDropdownClick({ target }) {
@@ -279,13 +237,14 @@ class Dropdown {
   }
 
   get isNotEmpty() {
-    return this.totalItems > 0;
+    const { totalItems } = this.state;
+    return totalItems > 0;
   }
 
   counterButtonsToggle() {
     const { minItems = 0 } = this.options;
 
-    this.menuItem.forEach((item) => {
+    this.menuItemsData.forEach((item) => {
       const itemCount = Number(item.countInput.value);
 
       if (itemCount <= minItems) {
@@ -326,15 +285,15 @@ class Dropdown {
   clear() {
     const { defaultText } = this.options;
 
-    this.menuItem.forEach((item) => {
+    this.menuItemsData.forEach((item) => {
       // eslint-disable-next-line no-param-reassign
       item.countInput.value = 0;
+      this.store.dispatchEvent({ type: count.INIT, id: item.id, value: 0 });
     });
+    this.store.dispatchEvent({ type: count.INIT, id: count.TOTAL, value: 0 });
+
     this.clearBtn.classList.remove('dropdown__button-clear_show');
     this.input.value = defaultText;
-    this.totalItems = 0;
-    this.menuItemValue.baby = 0;
-
     this.counterButtonsToggle();
   }
 
