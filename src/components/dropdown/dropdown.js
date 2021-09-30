@@ -39,6 +39,7 @@ class Dropdown {
   findDOMElements() {
     this.input = this.mainNode.querySelector('.js-dropdown__input');
     this.drop = this.mainNode.querySelector('.js-dropdown__drop');
+    this.arrow = this.mainNode.querySelector('[data-type="arrow"]');
     const menuItemNodes = this.mainNode.querySelectorAll('.js-dropdown__menu-item');
 
     this.menuItemsData = Array.from(menuItemNodes).map((item) => ({
@@ -277,9 +278,21 @@ class Dropdown {
   toggle() {
     if (this.isOpen) {
       this.close();
+      this.arrowDown();
     } else {
       this.open();
+      this.arrowUp();
     }
+  }
+
+  arrowUp() {
+    this.arrow.classList.remove('dropdown__arrow_down');
+    this.arrow.classList.add('dropdown__arrow_up');
+  }
+
+  arrowDown() {
+    this.arrow.classList.remove('dropdown__arrow_up');
+    this.arrow.classList.add('dropdown__arrow_down');
   }
 
   clear() {
@@ -303,6 +316,7 @@ class Dropdown {
 
   close() {
     this.mainNode.classList.remove('dropdown_open');
+    this.arrowDown();
   }
 }
 

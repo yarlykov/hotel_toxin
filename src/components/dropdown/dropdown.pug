@@ -1,6 +1,7 @@
 mixin dropdown({ isOpen=false, group="", elements=[] })
   -
     const openClassModifier = isOpen ? "dropdown_open" : ""
+    const arrowClassModifier = isOpen ? "dropdown__arrow_up" : "dropdown__arrow_down"
     const isGroupComfort = group === "comfort"
     const inputValue = group === "guests" ? "Сколько гостей" : "Удобства номера"
 
@@ -12,7 +13,7 @@ mixin dropdown({ isOpen=false, group="", elements=[] })
       value: inputValue,
       readonly: "readonly",
     })
-    div(class="dropdown__arrow-down")&attributes({"data-type": "arrow" })
+    div(class=`dropdown__arrow ${arrowClassModifier}`)&attributes({"data-type": "arrow" })
     .dropdown__drop.js-dropdown__drop
       ul.dropdown__menu.js-dropdown__menu
         each elem in elements

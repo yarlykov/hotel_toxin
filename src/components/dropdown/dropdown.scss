@@ -37,6 +37,40 @@
     }
   }
 
+  &__arrow {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: $textColor_75;
+    font: 1.7143rem/24px 'Material Icons', sans-serif;
+    cursor: pointer;
+
+    &_up {
+      &::before {
+        content: '\e5ce';
+      }
+    }
+
+    &_down {
+      &::before {
+        content: '\e5cf';
+      }
+    }
+  }
+
+  &__arrow-up {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    &::before {
+      color: $textColor_75;
+      font: 1.7143rem/24px 'Material Icons', sans-serif;
+      cursor: pointer;
+      content: '\e5ce';
+    }
+  }
+
   &__arrow-down {
     position: absolute;
     top: 10px;

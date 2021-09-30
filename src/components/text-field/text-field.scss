@@ -84,17 +84,25 @@ select:-webkit-autofill:focus {
     }
   }
 
-  &__arrow-down {
+  &__arrow {
+    @include font-material-icons;
+
     position: absolute;
     top: 10px;
     right: 10px;
+    color: $textColor_50;
+    cursor: pointer;
 
-    &::before {
-      @include font-material-icons;
+    &_up {
+      &::before {
+        content: '\e5ce';
+      }
+    }
 
-      color: $textColor_50;
-      cursor: pointer;
-      content: '\e5cf';
+    &_down {
+      &::before {
+        content: '\e5cf';
+      }
     }
   }
 
