@@ -11,9 +11,8 @@ mixin dropdown({ isOpen=false, group="", elements=[] })
       "data-type": "input", 
       value: inputValue,
       readonly: "readonly",
-      onmousedown: "return false"
-      })
-    div(class="dropdown__arrow-down")&attributes({"data-type": "arrow", onmousedown: "return false" })
+    })
+    div(class="dropdown__arrow-down")&attributes({"data-type": "arrow" })
     .dropdown__drop.js-dropdown__drop
       ul.dropdown__menu.js-dropdown__menu
         each elem in elements
@@ -31,7 +30,6 @@ mixin dropdown({ isOpen=false, group="", elements=[] })
                 value: elem.count,
                 tabindex: -1,
                 readonly: "readonly",
-                onmousedown: "return false"
               })
               button&attributes({
                 class: "dropdown__increment js-dropdown__increment",
