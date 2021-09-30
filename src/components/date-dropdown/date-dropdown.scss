@@ -16,7 +16,7 @@
 }
 
 .datepicker {
-  z-index: 1500;
+  z-index: 3;
   min-width: 320px;
   color: $textColor_50;
   font: 0.8571rem/15px $mainFont, sans-serif;
@@ -67,7 +67,7 @@
 
 .date-dropdown .datepicker-inline {
   position: absolute;
-  z-index: 1500;
+  z-index: 3;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.25);
   transform: translateX(-100000px);
   opacity: 0;

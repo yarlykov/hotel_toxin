@@ -155,7 +155,7 @@
   }
 
   &__buttons {
-    z-index: 1000;
+    z-index: 3;
     display: flex;
     justify-content: space-between;
     padding: 12px 7px 13px 14px;
@@ -174,7 +174,7 @@
 
 .dropdown.dropdown_open {
   .dropdown__drop {
-    z-index: 1000;
+    z-index: 3;
     display: block;
     background: #fff;
     border: $focusBorder;
