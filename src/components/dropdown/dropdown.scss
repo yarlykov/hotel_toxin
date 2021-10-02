@@ -57,32 +57,6 @@
     }
   }
 
-  &__arrow-up {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-
-    &::before {
-      color: $textColor_75;
-      font: 1.7143rem/24px 'Material Icons', sans-serif;
-      cursor: pointer;
-      content: '\e5ce';
-    }
-  }
-
-  &__arrow-down {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-
-    &::before {
-      color: $textColor_75;
-      font: 1.7143rem/24px 'Material Icons', sans-serif;
-      cursor: pointer;
-      content: '\e5cf';
-    }
-  }
-
   &__drop {
     position: absolute;
     top: $inputHeight;
@@ -126,38 +100,16 @@
     justify-content: space-between;
     width: 92px;
     height: 30px;
-    border: 0;
   }
 
   &__decrement {
-    width: 30px;
-    height: 30px;
-    color: gray;
-    font-size: 1.2857rem;
-    background: #fff;
-    border: $mainBorder;
-    border-radius: 100px;
-    outline: none;
-    cursor: pointer;
-
     &::after {
       content: '-';
-    }
-
-    &:hover,
-    &:focus {
-      border: $focusBorder;
-    }
-
-    &.disabled {
-      cursor: auto;
-      opacity: 0.4;
     }
   }
 
   &__counter {
     width: 30px;
-    height: 28px;
     padding: 0;
     font: 700 0.8571rem $mainFont;
     text-align: center;
@@ -165,10 +117,8 @@
     outline: none;
   }
 
-  &__increment {
+  &__counter-button {
     width: 30px;
-    height: 30px;
-    padding-top: 3px;
     color: gray;
     font-size: 1.2857rem;
     background: #fff;
@@ -176,10 +126,6 @@
     border-radius: 100px;
     outline: none;
     cursor: pointer;
-
-    &::after {
-      content: '+';
-    }
 
     &:hover,
     &:focus {
@@ -189,6 +135,14 @@
     &.disabled {
       cursor: auto;
       opacity: 0.4;
+    }
+  }
+
+  &__increment {
+    padding-top: 3px;
+
+    &::after {
+      content: '+';
     }
   }
 
