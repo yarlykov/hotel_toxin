@@ -10,12 +10,12 @@ class Filter {
       const header = document.querySelector('.header__body');
       const filterIcon = document.createElement('div');
       filterIcon.classList.add('header__filter-label');
-      filterIcon.addEventListener('click', this.handleFilterOpenLabelClick.bind(this));
+      filterIcon.addEventListener('click', this.handleFilterLabelClick.bind(this));
       header.append(filterIcon);
     }
   }
 
-  handleFilterOpenLabelClick() {
+  handleFilterLabelClick() {
     this.filterToggle();
   }
 

@@ -62,7 +62,7 @@ class Dropdown {
   bindEventListeners() {
     this.mainNode.addEventListener('click', this.handleDropdownClick.bind(this));
     this.mainNode.addEventListener('keydown', this.handleDropdownKeydown.bind(this));
-    document.addEventListener('click', this.handleOutsideClick.bind(this));
+    document.addEventListener('click', this.handleDocumentClick.bind(this));
   }
 
   addButtons() {
@@ -227,7 +227,7 @@ class Dropdown {
     }
   }
 
-  handleOutsideClick(event) {
+  handleDocumentClick(event) {
     if (!event.target.closest('.dropdown')) {
       this.close();
     }

@@ -58,7 +58,7 @@ class DateDropdown {
     }
   }
 
-  handleOutsideClick(event) {
+  handleDocumentClick(event) {
     if (!this.isClickOnDateDropdown(event)) this.close();
   }
 
@@ -80,12 +80,12 @@ class DateDropdown {
 
   open() {
     this.calendarBody.classList.add('active');
-    document.addEventListener('click', this.handleOutsideClick.bind(this));
+    document.addEventListener('click', this.handleDocumentClick.bind(this));
   }
 
   close() {
     this.calendarBody.classList.remove('active');
-    document.removeEventListener('click', this.handleOutsideClick.bind(this));
+    document.removeEventListener('click', this.handleDocumentClick.bind(this));
   }
 
   clear() {

@@ -8,10 +8,10 @@ class Like {
     this.text = this.root.querySelector('[data-id="like-text"]');
     this.heart = this.root.querySelector('[data-id="like-icon"]');
 
-    this.root.addEventListener('click', this.handleLikeButtonClick.bind(this));
+    this.root.addEventListener('click', this.handleLikeClick.bind(this));
   }
 
-  handleLikeButtonClick() {
+  handleLikeClick() {
     this.buttonToggle();
     this.iconToggle();
     this.counter();

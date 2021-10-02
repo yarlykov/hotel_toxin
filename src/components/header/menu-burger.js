@@ -5,10 +5,10 @@ class MenuBurger {
   }
 
   init() {
-    this.root.addEventListener('click', this.active.bind(this));
+    this.root.addEventListener('click', this.handleMenuBurgerClick.bind(this));
   }
 
-  active() {
+  handleMenuBurgerClick() {
     this.root.classList.toggle('header__menu-burger_active');
   }
 }

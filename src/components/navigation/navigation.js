@@ -14,12 +14,8 @@ class Navigation {
   }
 
   setup() {
-    this.clickHandler = this.clickHandler.bind(this);
-    this.keydownHandler = this.keydownHandler.bind(this);
-    this.hideAll = this.hideAll.bind(this);
-
-    this.mainNode.addEventListener('click', this.clickHandler);
-    this.mainNode.addEventListener('keydown', this.keydownHandler);
+    this.mainNode.addEventListener('click', this.handleNavigationClick.bind(this));
+    this.mainNode.addEventListener('keydown', this.handleNavigationKeydown.bind(this));
   }
 
   toggleDropdown() {
@@ -42,22 +38,22 @@ class Navigation {
     this.mainNode.classList.add(this.downArrowDropdownClass);
   }
 
-  clickHandler(event) {
+  handleNavigationClick(event) {
     this.toggleDropdown();
     this.addDocumentHandlers();
     event.stopPropagation();
   }
 
   addDocumentHandlers() {
-    document.addEventListener('click', this.hideAll);
+    document.addEventListener('click', this.handleDocumentClick.bind(this));
   }
 
-  keydownHandler(event) {
+  handleNavigationKeydown(event) {
     this.onDropdownEnterPress(event);
     this.onDropdownEscapePress(event);
   }
 
-  hideAll(event) {
+  handleDocumentClick(event) {
     if (event.target.dataset.type !== 'link-dropdown') {
       this.closeDropdown();
       this.removeDocumentHandlers();
@@ -78,7 +74,7 @@ class Navigation {
   }
 
   removeDocumentHandlers() {
-    document.removeEventListener('click', this.hideAll);
+    document.removeEventListener('click', this.handleDocumentClick);
   }
 }
 
