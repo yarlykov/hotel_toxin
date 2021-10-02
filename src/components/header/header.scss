@@ -139,7 +139,7 @@
     }
   }
 
-  &__navigation .navigation {
+  &__navigation .navigation__list {
     @media (max-width: 1000px) {
       flex-direction: column;
       padding-bottom: 70px;

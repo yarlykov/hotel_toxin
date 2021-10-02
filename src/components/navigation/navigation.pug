@@ -1,8 +1,8 @@
 include ../links/links.pug
 
 mixin navigation({ navigationList=[] })
-  nav
-    ul.navigation
+  nav.navigation
+    ul.navigation__list
       each navigationItem in navigationList
         -
           const activeLinkClass = navigationItem.active ? "navigation__link_active" : ""

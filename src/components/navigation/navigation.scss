@@ -2,14 +2,16 @@
 @import '@mixins';
 
 .navigation {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding-left: 50px;
-  list-style-type: none;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 50px;
+    list-style-type: none;
 
-  @media (max-width: 1280px) {
-    padding-left: 20px;
+    @media (max-width: 1280px) {
+      padding-left: 20px;
+    }
   }
 
   &__item {
