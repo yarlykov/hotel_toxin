@@ -1,8 +1,9 @@
 include ../heading/heading.pug
 include ../text-field/text-field.pug
 
-mixin subscribe({ title="", text="" } = {})
+mixin subscribe({ title="", text="", formMethod="", formAction="" } = {})
   .subscribe
     +heading({ level: "h3", title: title })
     p.subscribe__text #{text}
-    +text-field({ type: "text", placeholder: "Email", name: "email", autocomplete: "on", isSubscription: true })
+    form(class="subscribe__form" method=`${formMethod}`, action=`${formAction}`)
+      +text-field({ type: "email", placeholder: "Email", name: "email", autocomplete: "on", isSubscription: true })
