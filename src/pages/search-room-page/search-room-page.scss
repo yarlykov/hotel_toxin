@@ -2,7 +2,6 @@
 
 .search-room {
   &__container {
-    position: relative;
     display: flex;
     max-width: 1160px;
     margin: 0 auto;
@@ -14,7 +13,6 @@
   }
 
   &__filter {
-    position: relative;
     box-sizing: content-box;
     max-width: 266px;
     padding-top: 30px;
