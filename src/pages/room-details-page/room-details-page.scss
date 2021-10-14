@@ -156,7 +156,46 @@
     }
   }
 
-  & .room-photo {
+  &__room-photo {
+    display: flex;
+    max-width: 1440px;
+    max-height: 485px;
     margin: 0 auto;
+
+    &-item {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-main {
+      flex: 1 0 981px;
+      min-width: 320px;
+
+      @media (max-width: 981px) {
+        flex-grow: 0;
+        flex-shrink: 1;
+      }
+    }
+
+    &-aside {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 400px;
+
+      @media (max-width: 1280px) {
+        display: none;
+      }
+    }
+
+    &-aside-top {
+      height: 50%;
+      transform: scale(-1, 1);
+    }
+
+    &-aside-bottom {
+      height: 50%;
+    }
   }
 }

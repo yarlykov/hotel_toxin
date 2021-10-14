@@ -1,5 +1,4 @@
 extends ../../layouts/main-layout.pug
-include ../../components/room-photo/room-photo.pug
 include ../../components/room-dignities/room-dignities.pug
 include ../../components/comment/comment.pug
 include ../../components/chart/chart.pug
@@ -16,7 +15,25 @@ block variables
 block content
   .room-details
     .room-details__room-photo
-      +room-photo()
+      .room-details__room-photo-main
+        img&attributes({
+          class: "room-details__room-photo-item",
+          src: require("./images/room-photo/room-details-main.jpg"),
+          alt: "room photo",
+        })
+      .room-details__room-photo-aside
+        .room-details__room-photo-aside-top
+          img&attributes({
+            class: "room-details__room-photo-item",
+            src: require("./images/room-photo/room-details-aside-top.jpg"),
+            alt: "room photo",
+          })
+        .room-details__room-photo-aside-bottom
+          img&attributes({
+            class: "room-details__room-photo-item",
+            src: require("./images/room-photo/room-details-aside-bottom.jpg"),
+            alt: "room photo",
+          })
     .room-details__container
       .room-details__content
         .room-details__information
