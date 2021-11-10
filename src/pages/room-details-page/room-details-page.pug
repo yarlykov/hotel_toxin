@@ -45,12 +45,39 @@ block content
 
           section.room-details__impressions
             +heading({ level: "h2",  title: "впечатления от номера" })
-            +chart([
-              { id: "sumptuously", amount: "520" },
-              { id: "good", amount: "260" },
-              { id: "satisfactorily", amount: "260" },
-              { id: "disappointed", amount: "0" },
-            ])
+            +chart({
+              chartId: "impressions",
+              votes: [
+                {
+                  id: 'sumptuously',
+                  name: 'великолепно',
+                  votesAmount: 520,
+                  firstStopColor: '#FFE39C',
+                  secondStopColor: '#FFBA9C',
+                },
+                {
+                  id: 'good',
+                  votesAmount: 260,
+                  name: 'хорошо',
+                  firstStopColor: '#6FCF97',
+                  secondStopColor: '#66D2EA',
+                },
+                {
+                  id: 'satisfactorily',
+                  name: 'удовлетворительно',
+                  votesAmount: 260,
+                  firstStopColor: '#BC9CFF',
+                  secondStopColor: '#8BA4F9',
+                },
+                {
+                  id: 'disappointed',
+                  name: 'разочарован',
+                  votesAmount: 0,
+                  firstStopColor: '#919191',
+                  secondStopColor: '#3D4975',
+                },
+              ]
+            })
 
           section.room-details__feedback
             +heading({ level: "h2",  title: "Отзывы посетителей номера", description: "2 отзыва" })

@@ -1,17 +1,16 @@
 class Chart {
-  constructor(selector, options) {
+  constructor(chartId, selector) {
     this.root = selector;
-    this.options = options;
+    this.chartId = chartId;
     this.init();
   }
 
   init() {
-    this.votesAmount = this.root.querySelector('.js-chart').dataset;
+    const votesNode = this.root.parentElement.querySelector(`[data-id="${this.chartId}"]`);
+    const votesData = votesNode.dataset.votes;
+    this.votes = JSON.parse(votesData);
     this.root.insertAdjacentHTML('afterbegin', Chart.getMainTemplate());
-    this.sumOfAllVotes = Object.values(this.votesAmount)
-      .map((item) => Number(item))
-      .filter((item) => item)
-      .reduce((acc, item) => item + acc, 0);
+    this.sumOfAllVotes = this.votes.reduce((acc, item) => item.votesAmount + acc, 0);
 
     this.addChartElements();
     this.addLegendList();
@@ -21,15 +20,14 @@ class Chart {
 
   addChartElements() {
     this.chartBody = this.root.querySelector('[data-id="body"]');
-    const { votes } = this.options;
     const PI = 3.14;
     const radius = 15.9;
     const circumference = Math.ceil(2 * PI * radius);
     let segmentLength = circumference;
 
-    votes.forEach((vote) => {
-      const { id } = vote;
-      const strokeDasharray = ((this.votesAmount[id] * circumference) / this.sumOfAllVotes);
+    this.votes.forEach((vote) => {
+      const { votesAmount = 1 } = vote;
+      const strokeDasharray = ((votesAmount * circumference) / this.sumOfAllVotes);
       segmentLength -= strokeDasharray;
       const strokeDashoffset = segmentLength * -1;
       this.chartBody.insertAdjacentHTML(
@@ -38,7 +36,7 @@ class Chart {
       );
     });
 
-    votes.forEach((vote) => {
+    this.votes.forEach((vote) => {
       this.chartBody.insertAdjacentHTML(
         'beforeend',
         Chart.getLinearGradientTemplate(vote.id, vote.firstStopColor, vote.secondStopColor),
@@ -49,10 +47,9 @@ class Chart {
   }
 
   addLegendList() {
-    const { votes } = this.options;
     const legend = this.root.querySelector('[data-id="chart-legend"]');
 
-    votes.forEach((vote) => {
+    this.votes.forEach((vote) => {
       const { firstStopColor, secondStopColor, id } = vote;
       legend.insertAdjacentHTML('beforeend', Chart.getLegendItemTemplate(vote.id, vote.name));
       const item = legend.querySelector(`[data-id="item-point-${id}"]`);
@@ -76,10 +73,9 @@ class Chart {
     const { id } = target.dataset;
 
     if (id) {
-      const { votes } = this.options;
-      votes.forEach((vote) => {
+      this.votes.forEach((vote) => {
         if (vote.id === id) {
-          const template = Chart.getSumOfVotesTemplate(this.votesAmount[id], vote.firstStopColor);
+          const template = Chart.getSumOfVotesTemplate(vote.votesAmount, vote.firstStopColor);
           this.sumOfVote.innerHTML = template;
         }
       });
@@ -130,7 +126,7 @@ class Chart {
     `;
   }
 
-  static getSumOfVotesTemplate(numberOfVotes = '0', textFillColor = '#919191') {
+  static getSumOfVotesTemplate(numberOfVotes = 0, textFillColor = '#919191') {
     return `
       <g class="chart__sum-of-vote" fill=${textFillColor} data-id="sum-of-vote">
         <text class="chart__number" text-anchor="middle" x="50%" y="49%">${numberOfVotes}</text>
