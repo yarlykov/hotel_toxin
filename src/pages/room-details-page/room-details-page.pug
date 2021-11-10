@@ -45,7 +45,12 @@ block content
 
           section.room-details__impressions
             +heading({ level: "h2",  title: "впечатления от номера" })
-            +chart()
+            +chart([
+              { id: "sumptuously", amount: "520" },
+              { id: "good", amount: "260" },
+              { id: "satisfactorily", amount: "260" },
+              { id: "disappointed", amount: "0" },
+            ])
 
           section.room-details__feedback
             +heading({ level: "h2",  title: "Отзывы посетителей номера", description: "2 отзыва" })
