@@ -44,6 +44,13 @@ mixin card({ formMethod="", formAction="error-page", title="", type="", buttonTe
             hasTwoInputs: true,
             startTitle: "прибытие",
             endTitle: "выезд",
+            options: {
+              inline: true,
+              dateFormat: 'dd.mm.yyyy',
+              position: 'bottom left',
+              hasTwoInputs: true,
+              initialDates: ['2019-08-19', '2019-08-23'],
+            },
           })
         div(class=isSearch ? "card__guests-dropdown-search" : "card__guests-dropdown")
           +heading({ level: "h3", title: "гости" })

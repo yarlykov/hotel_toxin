@@ -1,10 +1,29 @@
 import targetType from './constants';
 
 class DateDropdown {
-  constructor(selector, options) {
+  constructor(selector) {
     if (selector.length !== 0) {
       this.$root = selector;
-      this.options = options;
+      const { options } = this.$root.get(0).dataset;
+      const inlineOptions = JSON.parse(options);
+      const { initialDates } = inlineOptions;
+      if (initialDates) {
+        this.initialDates = initialDates.map((item) => new Date(item));
+      }
+      const defaultOptions = {
+        offset: 5,
+        range: true,
+        navTitles: {
+          days: 'MM yyyy',
+        },
+        prevHtml: '<span class="datepicker__arrow datepicker__arrow_back"></span>',
+        nextHtml: '<span class="datepicker__arrow datepicker__arrow_forward"></span>',
+      };
+      this.options = {
+        ...defaultOptions,
+        ...inlineOptions,
+        initialDates: this.initialDates,
+      };
       this.init();
     }
   }

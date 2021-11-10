@@ -48,7 +48,15 @@ block content
 
         .cards-page__column
           .cards-page__calendar
-            +date-dropdown({ dataType: "inline-date-dropdown" })
+            +date-dropdown({ 
+              dataType: "inline-date-dropdown",
+              inline: true,
+              options: {
+                dateFormat: 'd M',
+                inline: true,
+                initialDates: ['2019-08-19', '2019-08-23'],
+              }, 
+            })
 
           +room-review-widget({
             images: [

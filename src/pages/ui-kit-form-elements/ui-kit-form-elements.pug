@@ -80,6 +80,13 @@ block content
               hasTwoInputs: true,
               startTitle: "date dropdown",
               endTitle: "date dropdown",
+              options: {
+                inline: true,
+                dateFormat: 'dd.mm.yyyy',
+                position: 'bottom left',
+                hasTwoInputs: true,
+                initialDates: ['2019-08-19', '2019-08-23'],
+              },
             })
 
           .form-elements__text-field-wrapper 
@@ -94,6 +101,12 @@ block content
               hasArrow: true,
               isReadonly: true,
               isLowercase: true,
+              options: {
+                dateFormat: 'd M',
+                multipleDatesSeparator: ' - ',
+                initialDates: ['2019-08-19', '2019-08-23'],
+                smallSize: true,
+              },
             })
 
           .form-elements__text-field-wrapper 

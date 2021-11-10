@@ -24,7 +24,13 @@ block content
               name: "text", 
               autocomplete: "off",
               hasArrow: true,
-              isReadonly: true, 
+              isReadonly: true,
+              options: {
+                dateFormat: 'd M',
+                multipleDatesSeparator: ' - ',
+                initialDates: ['2019-08-19', '2019-08-23'],
+                smallSize: true,
+              },
             }
           },
           dropdownGuests: {
