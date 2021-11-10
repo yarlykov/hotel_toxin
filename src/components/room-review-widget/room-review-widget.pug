@@ -1,5 +1,4 @@
 include ../carousel/carousel.pug
-include ../comment-count/comment-count.pug
 include ../rating/rating.pug
 include ../room-number/room-number.pug
 include ../room-price/room-price.pug
@@ -16,4 +15,6 @@ mixin room-review-widget({ images=[], roomNumber={}, roomPrice={}, rating=0, com
       .room-review-widget__border
       .room-review-widget__rating
         +rating(rating)
-        +comment-count(commentCount)
+        .room-review-widget__comment-count
+          span.room-review-widget__comment-count-value #{commentCount.value}
+          span.room-review-widget__comment-count-text #{commentCount.text}
