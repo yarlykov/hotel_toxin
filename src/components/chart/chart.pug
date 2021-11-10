@@ -1,4 +1,4 @@
-mixin chart( { chartId="", votes=[] } )
+mixin chart( votes=[] )
   - const votesData = JSON.stringify(votes)
 
-  .chart(data-id=`${chartId}`).js-chart(data-votes=`${votesData}`)
+  .chart.js-chart(data-votes=`${votesData}`)

@@ -1,14 +1,12 @@
 class Chart {
-  constructor(chartId, selector) {
+  constructor(selector) {
     this.root = selector;
-    this.chartId = chartId;
     this.init();
   }
 
   init() {
-    const votesNode = this.root.parentElement.querySelector(`[data-id="${this.chartId}"]`);
-    const votesData = votesNode.dataset.votes;
-    this.votes = JSON.parse(votesData);
+    const { votes } = this.root.dataset;
+    this.votes = JSON.parse(votes);
     this.root.insertAdjacentHTML('afterbegin', Chart.getMainTemplate());
     this.sumOfAllVotes = this.votes.reduce((acc, item) => item.votesAmount + acc, 0);
 

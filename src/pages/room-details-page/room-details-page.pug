@@ -45,9 +45,7 @@ block content
 
           section.room-details__impressions
             +heading({ level: "h2",  title: "впечатления от номера" })
-            +chart({
-              chartId: "impressions",
-              votes: [
+            +chart([
                 {
                   id: 'sumptuously',
                   name: 'великолепно',
@@ -76,8 +74,7 @@ block content
                   firstStopColor: '#919191',
                   secondStopColor: '#3D4975',
                 },
-              ]
-            })
+            ])
 
           section.room-details__feedback
             +heading({ level: "h2",  title: "Отзывы посетителей номера", description: "2 отзыва" })
