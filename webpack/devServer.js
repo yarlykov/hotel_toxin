@@ -4,6 +4,7 @@ module.exports = function () {
       static: './dist',
       port: 8081,
       open: '/start-page.html',
+      hot: false,
     },
   };
 };
