@@ -1,7 +1,7 @@
 class RangeSlider {
-  constructor(selector, options) {
+  constructor(selector) {
     this.$root = $(selector);
-    this.options = options;
+    this.options = JSON.parse(selector.dataset.options);
     this.init();
   }
 

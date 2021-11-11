@@ -4,9 +4,10 @@ import rootReducer from './redux/rootReducer';
 import createStore from './createStore';
 
 class Dropdown {
-  constructor(selector, options) {
+  constructor(selector) {
     this.mainNode = selector;
-    this.options = options;
+    const { options } = this.mainNode.dataset;
+    this.options = JSON.parse(options);
     this.store = createStore(rootReducer, {});
 
     this.init();

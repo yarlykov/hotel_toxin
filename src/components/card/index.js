@@ -3,7 +3,6 @@ import 'components/heading';
 import 'components/dropdown';
 import 'components/date-dropdown';
 import 'components/info-icon';
-import 'components/mask';
 import 'components/price-calc';
 import 'components/room-number';
 import 'components/room-price';

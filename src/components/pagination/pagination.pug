@@ -1,2 +1,3 @@
-mixin pagination()
-	.js-pagination
+mixin pagination( options={} )
+  - const paginationOptions = JSON.stringify(options)
+  .js-pagination(data-options=`${paginationOptions}`)

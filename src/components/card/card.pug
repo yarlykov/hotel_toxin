@@ -44,6 +44,7 @@ mixin card({ formMethod="", formAction="error-page", title="", type="", buttonTe
             hasTwoInputs: true,
             startTitle: "прибытие",
             endTitle: "выезд",
+            withMask: true,
             options: {
               inline: true,
               dateFormat: 'dd.mm.yyyy',
@@ -61,7 +62,17 @@ mixin card({ formMethod="", formAction="error-page", title="", type="", buttonTe
               { title: "Взрослые", id: "adults", count: numberOfGuests },
               { title: "Дети", id: "children", count: 0 }, 
               { title: "Младенцы", id: "babies", count: 0 },
-            ]
+            ],
+            options: {
+              defaultText: 'Сколько гостей',
+              buttons: true,
+              total: true,
+              numberOfLetters: 35,
+              plurals: {
+                totalItems: ['гость', 'гостя', 'гостей'],
+                babies: ['младенец', 'младенца', 'младенцев'],
+              },
+            }
           })
         if isCalculation
           .card__calculation
@@ -79,11 +90,11 @@ mixin card({ formMethod="", formAction="error-page", title="", type="", buttonTe
         .card__birthday
           +heading({ level: "h3", title: "дата рождения" })
           +text-field({
-            dataType: "masked-text-field",
             placeholder: "ДД.ММ.ГГГГ",
             type: "text",
             name: "birthday",
             autocomplete: "on",
+            withMask: true,
           })
         section.card__login-details
           +heading({ level: "h3", title: "данные для входа в сервис" })

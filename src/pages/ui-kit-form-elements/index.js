@@ -7,7 +7,6 @@ import 'components/date-dropdown';
 import 'components/dropdown';
 import 'components/heading';
 import 'components/like';
-import 'components/mask';
 import 'components/pagination';
 import 'components/radio';
 import 'components/range-slider';

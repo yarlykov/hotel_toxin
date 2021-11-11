@@ -1,11 +1,12 @@
-mixin dropdown({ isOpen=false, group="", elements=[] })
+mixin dropdown({ isOpen=false, group="", elements=[], options={} })
   -
     const openClassModifier = isOpen ? "dropdown_open" : ""
     const arrowClassModifier = isOpen ? "dropdown__arrow_up" : "dropdown__arrow_down"
     const isGroupComfort = group === "comfort"
     const inputValue = group === "guests" ? "Сколько гостей" : "Удобства номера"
+    const dropdownOptions = JSON.stringify(options)
 
-  .dropdown(class=openClassModifier, class=`dropdown_type_${group}` data-group=`${group}`,)
+  .dropdown(class=openClassModifier class=`dropdown_type_${group}` data-options=`${dropdownOptions}`).js-dropdown
     input&attributes({
       type: "text", 
       class: "dropdown__input js-dropdown__input", 

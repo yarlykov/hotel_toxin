@@ -53,18 +53,28 @@ block content
                 { title: "Взрослые", id: "adults", count: 0 },
                 { title: "Дети", id: "children", count: 0 }, 
                 { title: "Младенцы", id: "babies", count: 0 },
-              ]
+              ],
+              options: {
+                defaultText: 'Сколько гостей',
+                buttons: true,
+                total: true,
+                numberOfLetters: 35,
+                plurals: {
+                  totalItems: ['гость', 'гостя', 'гостей'],
+                  babies: ['младенец', 'младенца', 'младенцев'],
+                },
+              }
             })
 
           .form-elements__text-field-wrapper
             +heading({ level: "h3", title: "masked text field", description: "default" })
             +text-field({ 
               type: "text",
-              dataType: "masked-text-field",
               masked: true, 
               placeholder: "ДД.ММ.ГГГГ",
               size: "large",
               name: "text",
+              withMask: true,
             })
 
           .form-elements__text-field-wrapper
@@ -80,6 +90,7 @@ block content
               hasTwoInputs: true,
               startTitle: "date dropdown",
               endTitle: "date dropdown",
+              withMask: true,
               options: {
                 inline: true,
                 dateFormat: 'dd.mm.yyyy',
@@ -160,7 +171,14 @@ block content
           .form-elements__buttons-wrapper
             .form-elements__range-slider-container
               +range-slider({
-                title: "range slider"
+                title: "range slider",
+                options: {
+                  range: true,
+                  min: 0,
+                  max: 15000,
+                  step: 100,
+                  values: [5000, 10000],
+                }
               })
 
           .form-elements__buttons-wrapper
@@ -179,7 +197,11 @@ block content
           .form-elements__buttons-wrapper
             +heading({ level: "h3", title: "pagination" })
             .form-elements__pagination-container
-            +pagination()
+            +pagination({
+              dataSource: [1, 2, 3, 4, 5],
+              showNavigator: true,
+              formatNavigator: '<span><%= currentPage %></span> – 12 из 100+ вариантов аренды',
+            })
 
       section.form-elements__dropdowns
         .form-elements__dropdowns-block-left
@@ -192,7 +214,17 @@ block content
                 { title: "Спальни", id: "bedrooms", count: 2 }, 
                 { title: "Кровати", id: "beds", count: 2 }, 
                 { title: "Ванные комнаты", id: "bathrooms", count: 0 }
-              ]
+              ],
+              options: {
+                defaultText: 'Удобства номера',
+                maxItems: 5,
+                buttons: false,
+                plurals: {
+                  bedrooms: ['спальня', 'спальни', 'спален'],
+                  beds: ['кровать', 'кровати', 'кроватей'],
+                  bathrooms: ['ванная комната', 'ванных комнаты', 'ванных комнат'],
+                },
+              }
             })
           .form-elements__dropdowns-wrapper
             +heading({ level: "h3", title: "dropdown", description: "default" })
@@ -203,7 +235,17 @@ block content
                 { title: "Спальни", id: "bedrooms", count: 2 }, 
                 { title: "Кровати", id: "beds", count: 2 }, 
                 { title: "Ванные комнаты", id: "bathrooms", count: 0 }
-              ]
+              ],
+              options: {
+                defaultText: 'Удобства номера',
+                maxItems: 5,
+                buttons: false,
+                plurals: {
+                  bedrooms: ['спальня', 'спальни', 'спален'],
+                  beds: ['кровать', 'кровати', 'кроватей'],
+                  bathrooms: ['ванная комната', 'ванных комнаты', 'ванных комнат'],
+                },
+              }
             })
 
         .form-elements__dropdowns-block-right
@@ -217,7 +259,17 @@ block content
                   { title: "Взрослые", id: "adults", count: 0 },
                   { title: "Дети", id: "children", count: 0 }, 
                   { title: "Младенцы", id: "babies", count: 0 },
-                ]
+                ],
+                options: {
+                  defaultText: 'Сколько гостей',
+                  buttons: true,
+                  total: true,
+                  numberOfLetters: 35,
+                  plurals: {
+                    totalItems: ['гость', 'гостя', 'гостей'],
+                    babies: ['младенец', 'младенца', 'младенцев'],
+                  },
+                }
               })
 
           .form-elements__dropdowns-wrapper
@@ -230,7 +282,17 @@ block content
                   { title: "Взрослые", id: "adults", count: 2 },
                   { title: "Дети", id: "children", count: 0 }, 
                   { title: "Младенцы", id: "babies", count: 1 },
-                ]
+                ],
+                options: {
+                  defaultText: 'Сколько гостей',
+                  buttons: true,
+                  total: true,
+                  numberOfLetters: 35,
+                  plurals: {
+                    totalItems: ['гость', 'гостя', 'гостей'],
+                    babies: ['младенец', 'младенца', 'младенцев'],
+                  },
+                }
               })
 
       section.form-elements__lists

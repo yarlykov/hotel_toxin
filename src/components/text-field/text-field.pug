@@ -1,4 +1,4 @@
-mixin text-field({ type="", dataType="", placeholder="", size="", name="", autocomplete="off", focused=false, isLowercase=false, withSpellcheck=false, isSubscription=false, hasArrow=false, isReadonly=false } = {})
+mixin text-field({ type="", dataType="", placeholder="", size="", name="", autocomplete="off", focused=false, isLowercase=false, withSpellcheck=false, isSubscription=false, hasArrow=false, isReadonly=false, withMask=false } = {})
 
   -
     const mainClass = "text-field__input"
@@ -6,9 +6,10 @@ mixin text-field({ type="", dataType="", placeholder="", size="", name="", autoc
     const focusedClass = focused ? "text-field_focused" : ""
     const textLowercaseClass = isLowercase ? "text-field__input_lowercase-text" : ""
     const inputWithoutArrowClass = isSubscription ? "text-field__input_without-arrow" : ""
+    const inputWithMaskClass = withMask ? 'js-text-field__input_with-mask' : ""
 
     const inputAttributes = {
-      class: [mainClass, maskedClass, filterDropdown, textLowercaseClass, inputWithoutArrowClass],
+      class: [mainClass, inputWithMaskClass, filterDropdown, textLowercaseClass, inputWithoutArrowClass],
       type: type,
       "data-type": dataType,
       name: name,

@@ -1,7 +1,7 @@
 include ../text-field/text-field.pug
 include ../heading/heading.pug
 
-mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size="", name="date", autocomplete="", hasArrow=false, isReadonly=false, isLowercase=false, hasTwoInputs=false, startTitle="", endTitle="", options={}, inline=false })
+mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size="", name="date", autocomplete="", hasArrow=false, isReadonly=false, isLowercase=false, hasTwoInputs=false, startTitle="", endTitle="", options={}, inline=false, withMask=false })
   - const inlineClass = inline ? "date-dropdown_inline" : ""
   - const optionsData = JSON.stringify(options)
 
@@ -20,6 +20,7 @@ mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size
             hasArrow,
             isReadonly,
             isLowercase,
+            withMask,
           })
         .date-dropdown__end
           +heading({ level: "h3", title: endTitle })
@@ -33,6 +34,7 @@ mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size
             isReadonly,
             isLowercase,
             dataType: dataTypeEnd,
+            withMask,
           })
   else
     .date-dropdown&attributes({

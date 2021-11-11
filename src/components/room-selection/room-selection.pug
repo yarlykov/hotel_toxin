@@ -10,4 +10,8 @@ mixin room-selection({ title, widgets })
         li.room-selection__widgets-item
           +room-review-widget(widget)
     .room-selection__pagination
-      +pagination()
+      +pagination({
+        dataSource: [1, 2, 3, 4, 5],
+        showNavigator: true,
+        formatNavigator: '<span><%= currentPage %></span> – 12 из 100+ вариантов аренды',
+      })
