@@ -1,5 +1,5 @@
 import 'src/main';
-import 'components/card';
+import 'components/login-card';
 import 'components/header';
 import 'components/footer';
 

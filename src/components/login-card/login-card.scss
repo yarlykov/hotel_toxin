@@ -1,0 +1,26 @@
+@import '@variables';
+@import '@mixins';
+
+.login-card {
+  @include card;
+
+  &__title {
+    @include card-title;
+  }
+
+  &__fields {
+    margin-top: 20px;
+  }
+
+  &__password {
+    margin-top: 10px;
+  }
+
+  &__button {
+    margin-top: 20px;
+  }
+
+  &__question {
+    @include question;
+  }
+}

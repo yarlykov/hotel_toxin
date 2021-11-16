@@ -1,6 +1,7 @@
 extends ../../layouts/ui-kit-layout.pug
 include ../../components/room-search-card/room-search-card.pug
 include ../../components/registration-card/registration-card.pug
+include ../../components/login-card/login-card.pug
 include ../../components/card/card.pug
 include ../../components/room-review-widget/room-review-widget.pug
 include ../../components/date-dropdown/date-dropdown.pug
@@ -134,13 +135,39 @@ block content
             buttonType: "button",
             numberOfGuests: 3,
           })
-          +card({
+          +login-card({
             title: "Войти",
-            type: "entry",
             formAction: "error-page",
-            buttonText: "войти",
-            buttonType: "button",
-            question: "Нет аккаунта на Toxin?",
+            textField: {
+              login: {
+                placeholder:"Email",
+                type: "email",
+                name: "email",
+                autocomplete: "on"
+              },
+              password: {
+                placeholder: "Пароль",
+                type: "password",
+                name: "password",
+                autocomplete: "on"
+              }
+            },
+            button: {
+              submit: {
+                buttonName: "войти",
+                type: "button",
+                buttonVariation: "withArrow",
+                textColor: "white",
+                size: "large",
+              },
+              question: {
+                buttonName: "создать",
+                buttonVariation: "fillWhite",
+                textColor: "purple",
+                size: "small",
+                link: "sign-in-page",
+              }
+            }
           })
 
         .cards-page__column

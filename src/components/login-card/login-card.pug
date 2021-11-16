@@ -1,0 +1,20 @@
+include ../heading/heading.pug
+include ../button/button.pug
+include ../text-field/text-field.pug
+
+mixin login-card({ title="", formMethod="", formAction="", textField={}, button={} })
+  .login-card
+    .login-card__title
+      +heading({ level: "h1", title: title })
+      form(class="login-card__form" method=`${formMethod}`, action=`./${formAction}.html`)
+        section.login-card__fields
+          .login-card__email
+            +text-field(textField.login)
+          .login-card__password
+            +text-field(textField.password)
+        .login-card__button
+          +button(button.submit)
+        .login-card__question
+          span.login-card__question-text Нет аккаунта на Toxin?
+          .login-card__question-button
+            +button(button.question)
