@@ -1,5 +1,5 @@
+import Dropdown from './Dropdown';
 import './dropdown.scss';
-import Dropdown from './dropdown';
 
 const dropdownNodes = document.querySelectorAll('.js-dropdown');
 

@@ -1,2 +1,2 @@
+import './MenuWidget';
 import './menu-widget.scss';
-import './menu-widget';

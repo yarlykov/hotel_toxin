@@ -1,5 +1,5 @@
 import './chart.scss';
-import Chart from './chart';
+import Chart from './Chart';
 
 const chartElements = document.querySelectorAll('.js-chart');
 

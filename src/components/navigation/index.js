@@ -1,7 +1,7 @@
 import 'components/links';
 
 import './navigation.scss';
-import Navigation from './navigation';
+import Navigation from './Navigation';
 
 const navigationItemDropdown = document.querySelectorAll('[data-id="navigation-dropdown-item"]');
 

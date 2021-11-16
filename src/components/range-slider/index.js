@@ -1,8 +1,8 @@
 import 'jquery-ui-slider/jquery-ui';
 import 'jquery-ui-slider/jquery-ui.css';
 
+import RangeSlider from './RangeSlider';
 import './range-slider.scss';
-import RangeSlider from './range-slider';
 
 const rangeSliderNodes = document.querySelectorAll('.js-range-slider__scale');
 
