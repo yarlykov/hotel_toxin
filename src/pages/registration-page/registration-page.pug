@@ -1,5 +1,5 @@
 extends ../../layouts/main-layout.pug
-include ../../components/card/card.pug
+include ../../components/registration-card/registration-card.pug
 
 block variables
   -
@@ -11,11 +11,60 @@ block content
   main.registration
     .registration__container
       .registration__registration-card
-        +card({
+        +registration-card({
           title: "Регистрация аккаунта",
-          type: "registration",
-          buttonText: "зарегистрироваться",
-          formAction: 'registration-page',
-          buttonType: "submit",
-          question: "Уже есть аккаунт на Toxin",
+          formAction: "registration-page",
+          textField: {
+            name: { 
+              placeholder: "Имя",
+              type: "text",
+              name: "name",
+              autocomplete: "on"
+            },
+            surname: {
+              placeholder: "Фамилия",
+              type: "text",
+              name: "surname",
+              autocomplete: "on"
+            },
+            birthday: {
+              placeholder: "ДД.ММ.ГГГГ",
+              type: "text",
+              name: "birthday",
+              autocomplete: "on",
+              withMask: true,
+            },
+            login: {
+              placeholder:"Email",
+              type: "email",
+              name: "email",
+              autocomplete: "on"
+            },
+            password: {
+              placeholder: "Пароль",
+              type: "password",
+              name: "password",
+              autocomplete: "on"
+            }
+          },
+          radio: {
+            men: { group: "gender", title: "Мужчина", checked: true },
+            women: { group: "gender", title: "Женщина", checked: false }
+          },
+          button: {
+            submit: {
+              buttonName: "зарегистрироваться",
+              type: "submit",
+              buttonVariation: "withArrow",
+              textColor: "white",
+              size: "large",
+            },
+            question: {
+              buttonName: "войти",
+              buttonVariation: "fillWhite",
+              textColor: "purple",
+              size: "small",
+              link: "sign-in-page",
+            }
+          }
         })

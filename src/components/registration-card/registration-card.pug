@@ -1,0 +1,36 @@
+include ../heading/heading.pug
+include ../button/button.pug
+include ../text-field/text-field.pug
+include ../radio/radio.pug
+include ../toggle/toggle.pug
+
+mixin registration-card({ title="", formMethod="", formAction="", textField={}, radio={}, button={} })
+  .registration-card
+    .registration-card__title
+      +heading({ level: "h1", title: title })
+      form(class="registration-card__form" method=`${formMethod}`, action=`./${formAction}.html`)
+        section.registration-card__details
+          .registration-card__details_type_name
+            +text-field(textField.name)
+          .registration-card__details_type_surname
+            +text-field(textField.surname)
+        section.registration-card__sex
+          +radio(radio.men)
+          +radio(radio.women)
+        .registration-card__birthday
+          +heading({ level: "h3", title: "дата рождения" })
+          +text-field(textField.birthday)
+        section.registration-card__login-details
+          +heading({ level: "h3", title: "данные для входа в сервис" })
+          .registration-card__login-details_type_email
+            +text-field(textField.login)
+          .registration-card__login-details_type_password
+            +text-field(textField.password)
+        .registration-card__special
+          +toggle({ title: "Получать спецпредложения" })
+        .registration-card__button
+          +button(button.submit)
+        .registration-card__question
+          span.registration-card__question-text Уже есть аккаунт на Toxin?
+          .registration-card__question-button
+            +button(button.question)

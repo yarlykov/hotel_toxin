@@ -14,6 +14,7 @@ block content
       .landing__search-room-card
         +room-search-card({
           title: "Найдём номера под ваши\u00A0пожелания",
+          formAction: "search-room-page",
           dateDropdown: { 
             type: "text",
             dataType: "date-dropdown-start",
@@ -56,7 +57,7 @@ block content
           },
           button: {
             buttonName: "подобрать номер",
-            type: "button",
+            type: "submit",
             buttonVariation: "withArrow",
             textColor: "white",
             size: "large",

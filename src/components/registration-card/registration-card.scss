@@ -1,0 +1,62 @@
+@import '@variables';
+@import '@mixins';
+
+.registration-card {
+  @include card;
+
+  &__title {
+    @include card-title;
+  }
+
+  &__details {
+    margin-top: 20px;
+
+    & .registration-card__details {
+      &_type_surname {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__sex {
+    margin-top: 10px;
+    font: 400 14px $mainFont;
+
+    & .radio:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &__birthday {
+    margin-top: 26px;
+  }
+
+  &__login-details {
+    margin-top: 20px;
+
+    &_type_password {
+      margin-top: 10px;
+    }
+  }
+
+  &__special {
+    margin-top: 9px;
+    font: 400 14px $mainFont;
+  }
+
+  &__button {
+    margin-top: 27px;
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 29px;
+    font: 400 14px $mainFont;
+
+    &-button {
+      min-width: 100px;
+    }
+  }
+}

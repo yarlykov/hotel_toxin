@@ -1,5 +1,6 @@
 extends ../../layouts/ui-kit-layout.pug
 include ../../components/room-search-card/room-search-card.pug
+include ../../components/registration-card/registration-card.pug
 include ../../components/card/card.pug
 include ../../components/room-review-widget/room-review-widget.pug
 include ../../components/date-dropdown/date-dropdown.pug
@@ -17,6 +18,7 @@ block content
         .cards-page__column
           +room-search-card({
             title: "Найдём номера под ваши\u00A0пожелания",
+            formAction: "error-page",
             dateDropdown: { 
               type: "text",
               dataType: "date-dropdown-start",
@@ -65,15 +67,65 @@ block content
               size: "large",
             }
           })
-
-          +card({
+          
+          +registration-card({
             title: "Регистрация аккаунта",
-            type: "registration",
             formAction: "error-page",
-            buttonText: "перейти к оплате",
-            buttonType: "button",
-            question: "Уже есть аккаунт на Toxin",
-           })
+            textField: {
+              name: { 
+                placeholder: "Имя",
+                type: "text",
+                name: "name",
+                autocomplete: "on"
+              },
+              surname: {
+                placeholder: "Фамилия",
+                type: "text",
+                name: "surname",
+                autocomplete: "on"
+              },
+              birthday: {
+                placeholder: "ДД.ММ.ГГГГ",
+                type: "text",
+                name: "birthday",
+                autocomplete: "on",
+                withMask: true,
+              },
+              login: {
+                placeholder:"Email",
+                type: "email",
+                name: "email",
+                autocomplete: "on"
+              },
+              password: {
+                placeholder: "Пароль",
+                type: "password",
+                name: "password",
+                autocomplete: "on"
+              }
+            },
+            radio: {
+              men: { group: "gender", title: "Мужчина", checked: true },
+              women: { group: "gender", title: "Женщина", checked: false }
+            },
+            button: {
+              submit: {
+                buttonName: "зарегистрироваться",
+                type: "button",
+                buttonVariation: "withArrow",
+                textColor: "white",
+                size: "large",
+              },
+              question: {
+                buttonName: "войти",
+                buttonVariation: "fillWhite",
+                textColor: "purple",
+                size: "small",
+                link: "sign-in-page",
+              }
+            }
+          })
+
         .cards-page__column
           +card({
             type: "calculation",
