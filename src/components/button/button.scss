@@ -63,6 +63,10 @@
     &_size {
       &_large {
         padding: 13px 32px 12px 64px;
+
+        @media (max-width: 480px) {
+          padding: 13px 10px 12px;
+        }
       }
 
       &_small {
