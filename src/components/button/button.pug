@@ -1,6 +1,7 @@
 mixin button({ type="button", buttonName="button", link="", size="", textColor="gray", buttonVariation="", disabled=false } = {})
   -
     const mainClass = "button"
+    const buttonTag = link ? 'a' : 'button'
     const buttonSizeModifier = size ? `button__inner_size_${size}` : ""
     const textColorModifier = `button__inner_text-color_${textColor}`
     const buttonInlineModifier = buttonVariation === "inline" ? "button_inline" : ""
@@ -8,7 +9,7 @@ mixin button({ type="button", buttonName="button", link="", size="", textColor="
     const textDecorationModifier = "button_no-text-decoration"
     
     const buttonAttributes = {
-      link: {
+      a: {
         class: [mainClass, buttonInlineModifier, textDecorationModifier],
         href: `./${link}.html`,
       },
@@ -19,23 +20,7 @@ mixin button({ type="button", buttonName="button", link="", size="", textColor="
       }
     }
 
-  if link
-    a&attributes(buttonAttributes.link) 
-      case buttonVariation
-        when "fillWhite"
-          span.button__inner(class=[textColorModifier, buttonSizeModifier, buttonFillModifier]) #{buttonName}
-        when "withArrow"
-          span.button__inner(class=[textColorModifier, buttonSizeModifier ]) #{buttonName}
-          span.button__arrow
-        default
-          span.button__inner(class=[textColorModifier, buttonSizeModifier ]) #{buttonName}
-  else
-    button&attributes(buttonAttributes.button) 
-      case buttonVariation
-        when "fillWhite"
-          span.button__inner(class=[textColorModifier, buttonSizeModifier, buttonFillModifier]) #{buttonName}
-        when "withArrow"
-          span.button__inner(class=[textColorModifier, buttonSizeModifier]) #{buttonName}
-          span.button__arrow
-        default
-          span.button__inner(class=[textColorModifier, buttonSizeModifier ]) #{buttonName}
+  #{buttonTag}&attributes(buttonAttributes[buttonTag])
+    span.button__inner(class=[textColorModifier, buttonSizeModifier, buttonFillModifier ]) #{buttonName}
+    if buttonVariation === 'withArrow'
+      span.button__arrow
