@@ -19,7 +19,8 @@ mixin footer({ logo={}, footerText="", footerNavigation={}, subscribe={}, copyri
             +links(footerNavigation.column2)
           .footer__links-column
             +links(footerNavigation.column3)
-        +subscribe(subscribe)
+        .footer__subscribe
+          +subscribe(subscribe)
     .footer__bottom
       .footer__bottom-container
         p.footer__copyright-text #{copyright}
