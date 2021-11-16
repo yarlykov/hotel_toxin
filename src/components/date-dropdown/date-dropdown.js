@@ -58,8 +58,8 @@ class DateDropdown {
     const { type } = target.dataset;
 
     if (type === targetType.FILTER) this.toggle();
-    if (type === targetType.START_DROPDOWN) this.toggle();
-    if (type === targetType.END_DROPDOWN) this.toggle();
+    if (type === targetType.START_DROPDOWN) this.open();
+    if (type === targetType.END_DROPDOWN) this.open();
     if (type === targetType.ARROW) this.toggle();
     if (type === targetType.APPLY) this.close();
     if (type === targetType.CLEAR) this.clear();
