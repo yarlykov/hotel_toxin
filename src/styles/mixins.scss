@@ -17,7 +17,7 @@
 }
 
 @mixin card() {
-  min-width: 200px;
+  min-width: 380px;
   max-width: 380px;
   padding: 39px 30px 30px 29px;
   background: $cardsBackground;
@@ -26,6 +26,7 @@
   box-shadow: $mainBoxShadow;
 
   @media (max-width: 480px) {
+    min-width: 200px;
     padding: 10px;
   }
 }

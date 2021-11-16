@@ -1,0 +1,28 @@
+@import '@variables';
+@import '@mixins';
+
+.booking-card {
+  @include card;
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__date-dropdown {
+    margin-top: 22px;
+  }
+
+  &__dropdown {
+    margin-top: 20px;
+  }
+
+  &__calculation {
+    margin-top: 19px;
+  }
+
+  &__button {
+    margin-top: 20px;
+  }
+}

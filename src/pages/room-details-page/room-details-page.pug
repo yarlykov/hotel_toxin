@@ -3,7 +3,7 @@ include ../../components/room-dignities/room-dignities.pug
 include ../../components/comment/comment.pug
 include ../../components/chart/chart.pug
 include ../../components/bullet-list/bullet-list.pug
-include ../../components/card/card.pug
+include ../../components/booking-card/booking-card.pug
 include ../../components/heading/heading.pug
 
 block variables
@@ -110,10 +110,59 @@ block content
             p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
         .room-details__calculation
-          +card({
-            type: "calculation",
-            buttonText: "забронировать",
-            numberOfGuests: 3,
+          +booking-card({
             formAction: "room-details-page",
-            buttonType: "submit"
+            header: {
+              number: { symbol: "№", value: "888", text: "люкс" },
+              price: { value: "9 990", text: "в сутки" },
+            },            
+            dateDropdown: { 
+              type: "text",
+              dataType: "date-dropdown-start",
+              dataTypeEnd: "date-dropdown-end",
+              placeholder: "ДД.ММ.ГГГГ",
+              size: "small",
+              name: "date",
+              autocomplete: "off", 
+              hasArrow: true,
+              hasTwoInputs: true,
+              startTitle: "прибытие",
+              endTitle: "выезд",
+              withMask: true,
+              options: {
+                inline: true,
+                dateFormat: 'dd.mm.yyyy',
+                position: 'bottom left',
+                hasTwoInputs: true,
+                initialDates: ['2019-08-19', '2019-08-23'],
+              },
+            },
+            dropdown: {
+              isOpen: false, 
+              group: "guests", 
+              elements: [
+                { title: "Взрослые", id: "adults", count: 3 },
+                { title: "Дети", id: "children", count: 0 }, 
+                { title: "Младенцы", id: "babies", count: 0 },
+              ],
+              options: {
+                defaultText: 'Сколько гостей',
+                buttons: true,
+                total: true,
+                numberOfLetters: 35,
+                plurals: {
+                  totalItems: ['гость', 'гостя', 'гостей'],
+                  babies: ['младенец', 'младенца', 'младенцев'],
+                },
+              }
+            },
+            button: {
+              submit: {
+                buttonName: "забронировать",
+                type: "submit",
+                buttonVariation: "withArrow",
+                textColor: "white",
+                size: "large",
+              },
+            }
           })

@@ -1,6 +1,6 @@
 import 'src/main';
 import 'components/bullet-list';
-import 'components/card';
+import 'components/booking-card';
 import 'components/chart';
 import 'components/comment';
 import 'components/footer';

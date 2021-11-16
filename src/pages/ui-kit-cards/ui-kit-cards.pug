@@ -2,7 +2,7 @@ extends ../../layouts/ui-kit-layout.pug
 include ../../components/room-search-card/room-search-card.pug
 include ../../components/registration-card/registration-card.pug
 include ../../components/login-card/login-card.pug
-include ../../components/card/card.pug
+include ../../components/booking-card/booking-card.pug
 include ../../components/room-review-widget/room-review-widget.pug
 include ../../components/date-dropdown/date-dropdown.pug
 
@@ -128,12 +128,61 @@ block content
           })
 
         .cards-page__column
-          +card({
-            type: "calculation",
+          +booking-card({
             formAction: "error-page",
-            buttonText: "забронировать",
-            buttonType: "button",
-            numberOfGuests: 3,
+            header: {
+              number: { symbol: "№", value: "888", text: "люкс" },
+              price: { value: "9 990", text: "в сутки" },
+            },            
+            dateDropdown: { 
+              type: "text",
+              dataType: "date-dropdown-start",
+              dataTypeEnd: "date-dropdown-end",
+              placeholder: "ДД.ММ.ГГГГ",
+              size: "small",
+              name: "date",
+              autocomplete: "off", 
+              hasArrow: true,
+              hasTwoInputs: true,
+              startTitle: "прибытие",
+              endTitle: "выезд",
+              withMask: true,
+              options: {
+                inline: true,
+                dateFormat: 'dd.mm.yyyy',
+                position: 'bottom left',
+                hasTwoInputs: true,
+                initialDates: ['2019-08-19', '2019-08-23'],
+              },
+            },
+            dropdown: {
+              isOpen: false, 
+              group: "guests", 
+              elements: [
+                { title: "Взрослые", id: "adults", count: 3 },
+                { title: "Дети", id: "children", count: 0 }, 
+                { title: "Младенцы", id: "babies", count: 0 },
+              ],
+              options: {
+                defaultText: 'Сколько гостей',
+                buttons: true,
+                total: true,
+                numberOfLetters: 35,
+                plurals: {
+                  totalItems: ['гость', 'гостя', 'гостей'],
+                  babies: ['младенец', 'младенца', 'младенцев'],
+                },
+              }
+            },
+            button: {
+              submit: {
+                buttonName: "забронировать",
+                type: "button",
+                buttonVariation: "withArrow",
+                textColor: "white",
+                size: "large",
+              },
+            }
           })
           +login-card({
             title: "Войти",
