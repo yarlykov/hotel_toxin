@@ -9,7 +9,7 @@ mixin checkbox-list({ title="", isDropdown=false, isRich=false, listItems=[], is
 
   .checkbox-list
     if isDropdown
-      .checkbox-list__dropdown(data-id="checkbox-list-dropdown" tabindex=0)
+      .checkbox-list__dropdown.js-checkbox-list__dropdown(tabindex=0)
         h3.checkbox-list__dropdown-title #{title}
         span.checkbox-list__dropdown-arrow-down(data-id="checkbox-list-dropdown-arrow")
     ul.checkbox-list__list(class=openDropdownModifier data-id="checkbox-list")

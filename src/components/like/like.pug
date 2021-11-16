@@ -7,9 +7,8 @@ mixin like({ icon="", value=0, disabled=false } = {})
     const likeIconTypeModifier = `like__icon_type_${iconState}`
 
   button&attributes({
-    class: ["like", btnDisableClassName],
+    class: ["like", "js-like", btnDisableClassName],
     type: "button",
-    "data-id": "like-button",
     name: "like",
     tabindex: 0,
   })

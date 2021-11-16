@@ -5,7 +5,7 @@ class Filter {
   }
 
   init() {
-    const filter = document.querySelector('[data-id="search-room-filter"]');
+    const filter = document.querySelector('.js-search-room__filter');
     if (filter) {
       const header = document.querySelector('.header__body');
       const filterIcon = document.createElement('div');
