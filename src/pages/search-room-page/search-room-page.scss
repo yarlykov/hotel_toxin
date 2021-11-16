@@ -32,18 +32,8 @@
     width: 100%;
     padding: 30px 0 0 59px;
 
-    @media (max-width: 1190px) {
-      padding-left: calc(25% - 100px);
-    }
-    @media (max-width: 998px) {
-      padding-top: 60px;
-      padding-left: calc(35% - 100px);
-    }
-    @media (max-width: 718px) {
-      padding-left: calc(45% - 100px);
-    }
-    @media (max-width: 400px) {
-      padding: 60px 25px 25px 25px;
+    @media (max-width: 1280px) {
+      padding: 30px 0 0;
     }
   }
 }

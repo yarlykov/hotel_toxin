@@ -5,6 +5,9 @@
   min-height: 100%;
 
   & .heading__title {
+    @media (max-width: 1280px) {
+      padding-left: 60px;
+    }
     @media (max-width: 718px) {
       max-width: 270px;
     }
@@ -15,6 +18,7 @@
     grid-row-gap: 20px;
     grid-column-gap: 12px;
     grid-template-columns: repeat(auto-fit, 270px);
+    justify-content: center;
     max-width: 834px;
     margin: 0;
     padding: 22px 0 40.5px 0;
@@ -22,7 +26,7 @@
 
     @media (max-width: 1280px) {
       max-width: 1280px;
-      padding-right: 15px;
+      padding: 20px 15px 40px;
     }
 
     @media (max-width: 980px) {
@@ -35,5 +39,9 @@
     justify-content: center;
     margin-top: 3px;
     margin-right: 13px;
+
+    @media (max-width: 1280px) {
+      margin: 0;
+    }
   }
 }
