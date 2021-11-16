@@ -3,19 +3,19 @@ include ../../components/card/card.pug
 
 block variables
   -
-    const title = "Sing in page"
+    const title = "Sign in page"
     const description = "Отель Toxin в самом центре приглашает остановиться в одном из уютных номеров. Отличный вид, просторная закрытая парковка. Онлайн-бронирование"
     const keywords = "жильё, проживание, Отель, Отели, специальные предложения, пакеты услуг, предложения на выходные со скидками, специальные предложения."
 
 block content
-  main.sing-in
-    .sing-in__container
-      .sing-in__entry-card
+  main.sign-in
+    .sign-in__container
+      .sign-in__entry-card
         +card({
           title: "Войти",
           type: "entry",
           buttonText: "войти",
-          formAction: 'sing-in-page',
+          formAction: 'sign-in-page',
           buttonType: "submit",
           question: "Нет аккаунта на Toxin?",
         })

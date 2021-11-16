@@ -3,4 +3,4 @@ import 'components/card';
 import 'components/header';
 import 'components/footer';
 
-import './sing-in-page.scss';
+import './sign-in-page.scss';

@@ -14,7 +14,7 @@ mixin card({ formMethod="", formAction="error-page", title="", type="", buttonTe
 
   -
     const questionButton = question.toLowerCase().indexOf("нет") !== -1 ? "Создать" : "Войти"
-    const questionButtonLink = questionButton === "Создать" ? "registration-page" : "sing-in-page"
+    const questionButtonLink = questionButton === "Создать" ? "registration-page" : "sign-in-page"
     const isSearch = (type === "search")
     const isRegistration = (type === "registration")
     const isCalculation = (type === "calculation")
