@@ -2,7 +2,7 @@ mixin text-field({ type="", dataType="", placeholder="", size="", name="", autoc
 
   -
     const mainClass = "text-field__input"
-    const sizeClass = `text-field_size_${size}`
+    const sizeClass = size ? `text-field_size_${size}` : ""
     const focusedClass = focused ? "text-field_focused" : ""
     const textLowercaseClass = isLowercase ? "text-field__input_lowercase-text" : ""
     const inputWithoutArrowClass = isSubscription ? "text-field__input_without-arrow" : ""
