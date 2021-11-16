@@ -62,9 +62,11 @@
   }
 
   &__sex {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 100px 0 0;
+    padding-top: 10px;
+
+    & .radio:first-child {
+      margin-right: 20px;
+    }
   }
 
   &__birthday {
