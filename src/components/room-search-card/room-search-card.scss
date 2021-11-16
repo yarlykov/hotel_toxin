@@ -1,0 +1,26 @@
+@import '@variables';
+@import '@mixins';
+
+.room-search-card {
+  @include card;
+
+  &__title {
+    @include card-title;
+  }
+
+  &__date-dropdown {
+    margin-top: 22px;
+  }
+
+  &__dropdown {
+    margin-top: 20px;
+  }
+
+  &__button {
+    margin-top: 32px;
+
+    @media (max-width: 480px) {
+      margin: 20px;
+    }
+  }
+}

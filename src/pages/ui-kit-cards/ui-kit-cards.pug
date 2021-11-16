@@ -1,4 +1,5 @@
 extends ../../layouts/ui-kit-layout.pug
+include ../../components/room-search-card/room-search-card.pug
 include ../../components/card/card.pug
 include ../../components/room-review-widget/room-review-widget.pug
 include ../../components/date-dropdown/date-dropdown.pug
@@ -14,13 +15,57 @@ block content
     main.cards-page__container
       .cards-page__content
         .cards-page__column
-          +card({
+          +room-search-card({
             title: "Найдём номера под ваши\u00A0пожелания",
-            type: "search",
-            formAction: "error-page",
-            buttonText: "подобрать номер",
-            buttonType: "button",
+            dateDropdown: { 
+              type: "text",
+              dataType: "date-dropdown-start",
+              dataTypeEnd: "date-dropdown-end",
+              placeholder: "ДД.ММ.ГГГГ",
+              size: "small",
+              name: "date",
+              autocomplete: "off", 
+              hasArrow: true,
+              hasTwoInputs: true,
+              startTitle: "прибытие",
+              endTitle: "выезд",
+              withMask: true,
+              options: {
+                inline: true,
+                dateFormat: 'dd.mm.yyyy',
+                position: 'bottom left',
+                hasTwoInputs: true,
+                initialDates: ['2019-08-19', '2019-08-23'],
+              },
+            },
+            dropdown: {
+              isOpen: false, 
+              group: "guests", 
+              elements: [
+                { title: "Взрослые", id: "adults", count: 0 },
+                { title: "Дети", id: "children", count: 0 }, 
+                { title: "Младенцы", id: "babies", count: 0 },
+              ],
+              options: {
+                defaultText: 'Сколько гостей',
+                buttons: true,
+                total: true,
+                numberOfLetters: 35,
+                plurals: {
+                  totalItems: ['гость', 'гостя', 'гостей'],
+                  babies: ['младенец', 'младенца', 'младенцев'],
+                },
+              }
+            },
+            button: {
+              buttonName: "подобрать номер",
+              type: "button",
+              buttonVariation: "withArrow",
+              textColor: "white",
+              size: "large",
+            }
           })
+
           +card({
             title: "Регистрация аккаунта",
             type: "registration",
