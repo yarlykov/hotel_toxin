@@ -1,6 +1,7 @@
 @import '@variables';
 
 .header {
+  z-index: 1;
   box-shadow: $headerFooterBoxShadow;
 
   &__container {
