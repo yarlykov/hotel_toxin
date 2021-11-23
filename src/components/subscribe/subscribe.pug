@@ -6,4 +6,10 @@ mixin subscribe({ title="", text="", formMethod="", formAction="" } = {})
     +heading({ level: "h3", title: title })
     p.subscribe__text #{text}
     form(class="subscribe__form" method=`${formMethod}`, action=`${formAction}`)
-      +text-field({ type: "email", placeholder: "Email", name: "email", autocomplete: "on", isSubscription: true })
+      +text-field({
+        type: "email",
+        placeholder: "Email",
+        name: "email",
+        autocomplete: "on",
+        isSubscription: true
+      })

@@ -6,7 +6,11 @@ mixin dropdown({ isOpen=false, group="", elements=[], options={} })
     const inputValue = group === "guests" ? "Сколько гостей" : "Удобства номера"
     const dropdownOptions = JSON.stringify(options)
 
-  .dropdown(class=openClassModifier class=`dropdown_type_${group}` data-options=`${dropdownOptions}`).js-dropdown
+  .dropdown(
+    class=openClassModifier
+    class=`dropdown_type_${group}`
+    data-options=`${dropdownOptions}`
+    ).js-dropdown
     input&attributes({
       type: "text", 
       class: "dropdown__input js-dropdown__input", 
@@ -14,7 +18,9 @@ mixin dropdown({ isOpen=false, group="", elements=[], options={} })
       value: inputValue,
       readonly: "readonly",
     })
-    div(class=`dropdown__arrow js-dropdown__arrow ${arrowClassModifier}`)&attributes({"data-type": "arrow" })
+    div(
+      class=`dropdown__arrow js-dropdown__arrow ${arrowClassModifier}`
+    )&attributes({"data-type": "arrow" })
     .dropdown__drop.js-dropdown__drop
       ul.dropdown__menu.js-dropdown__menu
         each elem in elements
@@ -22,7 +28,11 @@ mixin dropdown({ isOpen=false, group="", elements=[], options={} })
             .dropdown__menu-item-text #{elem.title}
             .dropdown__controls
               button&attributes({
-                class: "dropdown__counter-button dropdown__counter-button_type_decrement js-dropdown__counter-button_type_decrement",
+                class: [
+                  "dropdown__counter-button",
+                  "dropdown__counter-button_type_decrement",
+                  "js-dropdown__counter-button_type_decrement"
+                ],
                 type: "button",
                 "data-type": "decrement"
               })
@@ -34,7 +44,11 @@ mixin dropdown({ isOpen=false, group="", elements=[], options={} })
                 readonly: "readonly",
               })
               button&attributes({
-                class: "dropdown__counter-button dropdown__counter-button_type_increment js-dropdown__counter-button_type_increment",
+                class: [
+                  "dropdown__counter-button",
+                  "dropdown__counter-button_type_increment",
+                  "js-dropdown__counter-button_type_increment"
+                ],
                 type: "button",
                 "data-type": "increment"
               })

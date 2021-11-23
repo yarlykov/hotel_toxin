@@ -3,7 +3,16 @@ include ../rating/rating.pug
 include ../room-number/room-number.pug
 include ../room-price/room-price.pug
 
-mixin room-review-widget({ carousel={}, roomNumber={}, roomPrice={}, rating=0, commentCount={} })
+mixin room-review-widget(params = {})
+  -
+    const {
+      carousel={},
+      roomNumber={},
+      roomPrice={},
+      rating=0,
+      commentCount={}
+    } = params
+
   .room-review-widget
     .room-review-widget__image
       +carousel(carousel)

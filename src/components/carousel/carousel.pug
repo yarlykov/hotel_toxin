@@ -5,4 +5,8 @@ mixin carousel({ images=[], options={} })
     each imageName in images
       .carousel__item
         a(class="carousel__link" href="./room-details-page.html")
-          img(class="carousel__image" src=require(`../../pages/search-room-page/images/${imageName}`) alt="room photo")
+          img(
+            class="carousel__image"
+            src=require(`../../pages/search-room-page/images/${imageName}`)
+            alt="room photo"
+          )

@@ -15,4 +15,8 @@ mixin checkbox-list({ title="", isDropdown=false, isRich=false, listItems=[], is
     ul.checkbox-list__list.js-checkbox-list__list(class=openDropdownModifier)
       each item in listItems
         li.checkbox-list__item
-          +checkbox({ title: item.title, description: item.description, checked: item.checked, isRich })
+          +checkbox({
+            title: item.title,
+            description: item.description,
+            checked: item.checked, isRich
+          })

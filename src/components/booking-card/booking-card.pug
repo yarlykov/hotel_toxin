@@ -6,7 +6,18 @@ include ../dropdown/dropdown.pug
 include ../price-calc/price-calc.pug
 include ../button/button.pug
 
-mixin booking-card({ title="", formMethod="", formAction="", header={}, dateDropdown={}, dropdown={}, button={}})
+mixin booking-card(params = {})
+  -
+    const {
+      title="", 
+      ormMethod="",
+      formAction="",
+      header={},
+      dateDropdown={},
+      dropdown={},
+      button={}
+    } = params
+
   .booking-card
     form(class="booking-card__form" method=`${formMethod}`, action=`./${formAction}.html`)
       .booking-card__header

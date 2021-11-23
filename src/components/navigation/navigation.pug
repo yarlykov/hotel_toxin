@@ -5,8 +5,12 @@ mixin navigation({ navigationList=[] })
     ul.navigation__list
       each navigationItem in navigationList
         -
-          const activeLinkClass = navigationItem.active ? "navigation__link_active" : ""
-          const itemArrowModifier = navigationItem.dropdown ? "navigation__item_with-arrow-down js-navigation__item_with-arrow-down" : ""
+          const activeLinkClass = navigationItem.active 
+            ? "navigation__link_active" 
+            : ""
+          const itemArrowModifier = navigationItem.dropdown
+            ? "navigation__item_with-arrow-down js-navigation__item_with-arrow-down"
+            : ""
 
         li.navigation__item(class=itemArrowModifier)
           a&attributes({

@@ -1,6 +1,22 @@
-mixin text-field({ type="", dataType="", placeholder="", size="", name="", autocomplete="off", focused=false, isLowercase=false, withSpellcheck=false, isSubscription=false, hasArrow=false, isReadonly=false, withMask=false } = {})
+mixin text-field(params = {})
 
   -
+    const {
+      type="",
+      dataType="",
+      placeholder="",
+      size="",
+      name="",
+      autocomplete="off",
+      focused=false,
+      isLowercase=false,
+      withSpellcheck=false,
+      isSubscription=false,
+      hasArrow=false,
+      isReadonly=false,
+      withMask=false
+    } = params
+
     const mainClass = "text-field__input"
     const sizeClass = size ? `text-field_size_${size}` : ""
     const focusedClass = focused ? "text-field_focused" : ""
@@ -22,10 +38,15 @@ mixin text-field({ type="", dataType="", placeholder="", size="", name="", autoc
   .text-field(class=[focusedClass, sizeClass])
     input&attributes(inputAttributes)
     if hasArrow
-      div(class="text-field__arrow text-field__arrow_down")&attributes({ "data-type": "arrow" })
+      div(
+        class="text-field__arrow text-field__arrow_down"
+      )&attributes({ "data-type": "arrow" })
     if isSubscription
       button&attributes({
-        class: ["text-field__arrow-subscribe", "text-field__arrow-subscribe_with-gradient-fill"],
+        class: [
+          "text-field__arrow-subscribe",
+          "text-field__arrow-subscribe_with-gradient-fill"
+        ],
         type: "submit",
         name: "subscribe"
       })

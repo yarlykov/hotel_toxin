@@ -1,5 +1,15 @@
-mixin button({ type="button", buttonName="button", link="", size="", textColor="gray", buttonVariation="", disabled=false } = {})
+mixin button(params = {})
   -
+    const {
+      type="button",
+      buttonName="button",
+      link="",
+      size="",
+      textColor="gray",
+      buttonVariation="",
+      disabled=false
+    } =  params
+
     const mainClass = "button"
     const buttonTag = link ? 'a' : 'button'
     const buttonSizeModifier = size ? `button__inner_size_${size}` : ""
@@ -21,6 +31,8 @@ mixin button({ type="button", buttonName="button", link="", size="", textColor="
     }
 
   #{buttonTag}&attributes(buttonAttributes[buttonTag])
-    span.button__inner(class=[textColorModifier, buttonSizeModifier, buttonFillModifier ]) #{buttonName}
+    span.button__inner(
+      class=[textColorModifier, buttonSizeModifier, buttonFillModifier ]
+    ) #{buttonName}
     if buttonVariation === 'withArrow'
       span.button__arrow

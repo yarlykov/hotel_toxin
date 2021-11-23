@@ -3,7 +3,17 @@ include ../date-dropdown/date-dropdown.pug
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin room-search-card({ title="", formMethod="", formAction="error-page", dateDropdown={}, dropdown={}, button={} })
+mixin room-search-card(params = {})
+  -
+    const {
+      title="",
+      formMethod="",
+      formAction="error-page",
+      dateDropdown={},
+      dropdown={},
+      button={}
+    } = params
+
   .room-search-card
     .room-search-card__title
       +heading({ level: "h1", title: title })

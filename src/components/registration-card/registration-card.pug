@@ -4,11 +4,25 @@ include ../text-field/text-field.pug
 include ../radio/radio.pug
 include ../toggle/toggle.pug
 
-mixin registration-card({ title="", formMethod="", formAction="", textField={}, radio={}, button={} })
+mixin registration-card(params = {})
+  -
+    const {
+      title="",
+      formMethod="",
+      formAction="",
+      textField={},
+      radio={},
+      button={}
+    } = params
+
   .registration-card
     .registration-card__title
       +heading({ level: "h1", title: title })
-      form(class="registration-card__form" method=`${formMethod}`, action=`./${formAction}.html`)
+      form(
+        class="registration-card__form"
+        method=`${formMethod}`,
+        action=`./${formAction}.html`
+      )
         section.registration-card__details
           .registration-card__details_type_name
             +text-field(textField.name)

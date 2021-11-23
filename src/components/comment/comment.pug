@@ -1,6 +1,16 @@
 include ../like/like.pug
 
-mixin comment({ imageName="", name="", commentText="", dateOfVisit="", likeCount=0, disabled=false })
+mixin comment(params = {})
+  -
+    const {
+      imageName="",
+      name="",
+      commentText="",
+      dateOfVisit="",
+      likeCount=0,
+      disabled=false
+    } = params
+
   .comment
     .comment__header
       img&attributes({

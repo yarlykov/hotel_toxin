@@ -2,7 +2,17 @@ include ../../components/logo/logo.pug
 include ../../components/navigation/navigation.pug
 include ../../components/button/button.pug
 
-mixin header({ logo={}, navigationList=[], buttonEntry="", buttonRegister="", logged=false, userName="" })
+mixin header(params = {})
+  -
+    const {
+      logo={},
+      navigationList=[],
+      buttonEntry="",
+      buttonRegister="",
+      logged=false,
+      userName=""
+    } = params
+
   header.header
     .header__container
       .header__body
@@ -17,6 +27,17 @@ mixin header({ logo={}, navigationList=[], buttonEntry="", buttonRegister="", lo
           else
             .header__login
               .header__login-entry
-                +button({ buttonName: buttonEntry, size: "stretching", textColor: "purple",  buttonVariation: "fillWhite", link: "sign-in-page" })
+                +button({
+                  buttonName: buttonEntry,
+                  size: "stretching",
+                  textColor: "purple",
+                  buttonVariation: "fillWhite",
+                  link: "sign-in-page"
+                })
               .header__login-register
-                +button({ buttonName: buttonRegister, size: "stretching", textColor: "white", link: "registration-page" })
+                +button({
+                  buttonName: buttonRegister,
+                  size: "stretching",
+                  textColor: "white",
+                  link: "registration-page"
+                })

@@ -5,7 +5,18 @@ include ../dropdown/dropdown.pug
 include ../range-slider/range-slider.pug
 include ../text-field/text-field.pug
 
-mixin filter({ dateDropdown={}, dropdownGuests={}, rangeSlider={}, checkbox={}, richCheckbox={}, dropdownComfort={}, expandableCheckbox={} })
+mixin filter(params = {})
+  -
+    const {
+      dateDropdown={},
+      dropdownGuests={},
+      rangeSlider={},
+      checkbox={},
+      richCheckbox={},
+      dropdownComfort={},
+      expandableCheckbox={}
+    } = params
+
   .filter
     .filter__date-dropdown
       +heading({ level: "h3", title: dateDropdown.title })

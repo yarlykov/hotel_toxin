@@ -184,15 +184,49 @@ block content
           .form-elements__buttons-wrapper
             +heading({ level: "h3", title: "buttons" })
             .form-elements__buttons-container
-              +button({ buttonName: "click me", size: "small", textColor: "white" })
-              +button({ buttonName: "click me", size: "small", textColor: "white", disabled: true })
+              +button({
+                buttonName: "click me",
+                size: "small",
+                textColor: "white"
+              })
+              +button({
+                buttonName: "click me",
+                size: "small",
+                textColor: "white",
+                disabled: true
+              })
             .form-elements__buttons-container
-              +button({ buttonName: "click me", size: "small", textColor: "purple",  buttonVariation: "fillWhite" })
-              +button({ buttonName: "click me", size: "small", textColor: "purple", buttonVariation: "fillWhite", disabled: true })
+              +button({
+                buttonName: "click me",
+                size: "small",
+                textColor: "purple",
+                buttonVariation: "fillWhite"
+              })
+              +button({
+                buttonName: "click me",
+                size: "small",
+                textColor: "purple",
+                buttonVariation: "fillWhite",
+                disabled: true
+              })
             .form-elements__buttons-container-inline
-              +button({ buttonName: "click me", textColor: "purple", buttonVariation: "inline" })
-              +button({ buttonName: "click me", textColor: "gray", disabled: true, buttonVariation: "inline" })
-            +button({ buttonName: "перейти к оплате", textColor: "white", size: "large",buttonVariation: "withArrow" })
+              +button({
+                buttonName: "click me",
+                textColor: "purple",
+                buttonVariation: "inline"
+              })
+              +button({
+                buttonName: "click me",
+                textColor: "gray",
+                disabled: true,
+                buttonVariation: "inline"
+              })
+            +button({
+              buttonName: "перейти к оплате",
+              textColor: "white",
+              size: "large",
+              buttonVariation: "withArrow"
+              })
 
           .form-elements__buttons-wrapper
             +heading({ level: "h3", title: "pagination" })
@@ -356,14 +390,24 @@ block content
 
       section.form-elements__room-review
         .form-elements__room-review-wrapper
-          +room-dignities({ icon: "mood", title: "Комфорт", subtitle: "Шумопоглощающие стены" })
-          +room-dignities({ icon: "location-city", title: "Удобство", subtitle: "Окно в каждой из спален" })
+          +room-dignities({
+            icon: "mood",
+            title: "Комфорт",
+            subtitle: "Шумопоглощающие стены"
+          })
+          +room-dignities({
+            icon: "location-city",
+            title: "Удобство",
+            subtitle: "Окно в каждой из спален"
+          })
             
         .form-elements__room-review-wrapper
           +comment({ 
             imageName: "murad_sarafanov.jpg", 
             name: "Мурад Сарафанов", 
             dateOfVisit: "5 дней назад", 
-            commentText: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", 
+            commentText: "Великолепный матрас на кровати в основной спальне!\
+            А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.\
+            Выкрикивал комплименты повару — никто не жаловался из соседей.", 
             likeCount: 12,
           })
