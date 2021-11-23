@@ -7,7 +7,7 @@ class Navigation {
   }
 
   init() {
-    this.itemDropdown = this.mainNode.querySelector('.navigation__dropdown');
+    this.itemDropdown = this.mainNode.querySelector('.js-navigation__dropdown');
     this.visibilityHiddenClass = 'navigation__dropdown_visibility-hidden';
     this.upArrowDropdownClass = 'navigation__item_with-arrow-up';
     this.downArrowDropdownClass = 'navigation__item_with-arrow-down';

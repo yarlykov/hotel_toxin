@@ -17,7 +17,7 @@ class Chart {
   }
 
   addChartElements() {
-    this.chartBody = this.root.querySelector('[data-id="body"]');
+    this.chartBody = this.root.querySelector('.js-chart-body');
     const PI = 3.14;
     const radius = 15.9;
     const circumference = Math.ceil(2 * PI * radius);
@@ -45,7 +45,7 @@ class Chart {
   }
 
   addLegendList() {
-    const legend = this.root.querySelector('[data-id="chart-legend"]');
+    const legend = this.root.querySelector('.js-chart-legend');
 
     this.votes.forEach((vote) => {
       const { firstStopColor, secondStopColor, id } = vote;
@@ -56,7 +56,7 @@ class Chart {
   }
 
   addSumOfVotes() {
-    this.sumOfVote = this.chartBody.querySelector('[data-id="sum-of-vote"]');
+    this.sumOfVote = this.chartBody.querySelector('.js-chart__sum-of-vote');
     this.sumOfVote.innerHTML = Chart.getSumOfVotesTemplate(this.sumOfAllVotes, '#919191');
   }
 
@@ -93,10 +93,10 @@ class Chart {
   static getMainTemplate() {
     return `
       <div class="chart__doughnut">
-        <svg class="chart__body" viewBox="0 0 34 30" data-id="body"></svg>
+        <svg class="chart__body js-chart-body" viewBox="0 0 34 30"></svg>
       </div>
-      <div class="chart__legend" data-id="chart-legend">
-        <ul class="chart__legend-list" data-id="chart-legend"></ul>
+      <div class="chart__legend js-chart-legend" >
+        <ul class="chart__legend-list"></ul>
       </div>
     `;
   }
@@ -126,7 +126,7 @@ class Chart {
 
   static getSumOfVotesTemplate(numberOfVotes = 0, textFillColor = '#919191') {
     return `
-      <g class="chart__sum-of-vote" fill=${textFillColor} data-id="sum-of-vote">
+      <g class="chart__sum-of-vote js-chart__sum-of-vote" fill=${textFillColor}>
         <text class="chart__number" text-anchor="middle" x="50%" y="49%">${numberOfVotes}</text>
         <text class="chart__text" text-anchor="middle" x="50%" y="67%">голосов</text>
       </g>

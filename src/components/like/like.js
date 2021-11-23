@@ -5,8 +5,8 @@ class Like {
   }
 
   init() {
-    this.text = this.root.querySelector('[data-id="like-text"]');
-    this.heart = this.root.querySelector('[data-id="like-icon"]');
+    this.text = this.root.querySelector('.js-like__text');
+    this.heart = this.root.querySelector('.js-like__icon');
 
     this.root.addEventListener('click', this.handleLikeClick.bind(this));
   }

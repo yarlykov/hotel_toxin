@@ -9,7 +9,7 @@ mixin text-field({ type="", dataType="", placeholder="", size="", name="", autoc
     const inputWithMaskClass = withMask ? 'js-text-field__input_with-mask' : ""
 
     const inputAttributes = {
-      class: [mainClass, inputWithMaskClass, filterDropdown, textLowercaseClass, inputWithoutArrowClass],
+      class: [mainClass, inputWithMaskClass, textLowercaseClass, inputWithoutArrowClass],
       type: type,
       "data-type": dataType,
       name: name,

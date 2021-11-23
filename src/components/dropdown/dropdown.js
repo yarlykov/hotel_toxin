@@ -40,7 +40,7 @@ class Dropdown {
   findDOMElements() {
     this.input = this.mainNode.querySelector('.js-dropdown__input');
     this.drop = this.mainNode.querySelector('.js-dropdown__drop');
-    this.arrow = this.mainNode.querySelector('[data-type="arrow"]');
+    this.arrow = this.mainNode.querySelector('.js-dropdown__arrow');
     const menuItemNodes = this.mainNode.querySelectorAll('.js-dropdown__menu-item');
 
     this.menuItemsData = Array.from(menuItemNodes).map((item) => ({
@@ -79,6 +79,7 @@ class Dropdown {
       'button',
       'button_inline',
       'dropdown__button-clear',
+      'js-dropdown__button-clear',
     );
     clearBtn.setAttribute('type', 'button');
     clearText.setAttribute('data-type', 'clear');
@@ -98,7 +99,7 @@ class Dropdown {
     this.drop.appendChild(btnWrap);
 
     this.clearBtn = this.mainNode.querySelector(
-      '[data-type="clear"]',
+      '.js-dropdown__button-clear',
     );
   }
 

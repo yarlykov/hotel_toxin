@@ -5,9 +5,9 @@ class CheckboxList {
   }
 
   init() {
-    this.arrow = this.root.querySelector('[data-id="checkbox-list-dropdown-arrow"]');
+    this.arrow = this.root.querySelector('.js-checkbox-list__dropdown-arrow-down');
     this.parentElement = this.root.parentElement;
-    this.checkboxList = this.parentElement.querySelector('[data-id="checkbox-list"]');
+    this.checkboxList = this.parentElement.querySelector('.js-checkbox-list__list');
     const isOpened = this.checkboxList.classList.contains('checkbox-list__list_opened');
     if (isOpened) this.arrowToggle();
     this.bindEventListeners();

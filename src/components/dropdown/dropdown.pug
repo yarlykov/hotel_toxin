@@ -14,7 +14,7 @@ mixin dropdown({ isOpen=false, group="", elements=[], options={} })
       value: inputValue,
       readonly: "readonly",
     })
-    div(class=`dropdown__arrow ${arrowClassModifier}`)&attributes({"data-type": "arrow" })
+    div(class=`dropdown__arrow js-dropdown__arrow ${arrowClassModifier}`)&attributes({"data-type": "arrow" })
     .dropdown__drop.js-dropdown__drop
       ul.dropdown__menu.js-dropdown__menu
         each elem in elements
@@ -25,7 +25,7 @@ mixin dropdown({ isOpen=false, group="", elements=[], options={} })
                 class: "dropdown__counter-button dropdown__counter-button_type_decrement js-dropdown__counter-button_type_decrement",
                 type: "button",
                 "data-type": "decrement"
-                })
+              })
               input&attributes({
                 class: "dropdown__counter js-dropdown__counter", 
                 type: "text", 
@@ -37,5 +37,5 @@ mixin dropdown({ isOpen=false, group="", elements=[], options={} })
                 class: "dropdown__counter-button dropdown__counter-button_type_increment js-dropdown__counter-button_type_increment",
                 type: "button",
                 "data-type": "increment"
-                })
+              })
 

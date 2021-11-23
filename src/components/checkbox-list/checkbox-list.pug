@@ -11,8 +11,8 @@ mixin checkbox-list({ title="", isDropdown=false, isRich=false, listItems=[], is
     if isDropdown
       .checkbox-list__dropdown.js-checkbox-list__dropdown(tabindex=0)
         h3.checkbox-list__dropdown-title #{title}
-        span.checkbox-list__dropdown-arrow-down(data-id="checkbox-list-dropdown-arrow")
-    ul.checkbox-list__list(class=openDropdownModifier data-id="checkbox-list")
+        span.checkbox-list__dropdown-arrow-down.js-checkbox-list__dropdown-arrow-down
+    ul.checkbox-list__list.js-checkbox-list__list(class=openDropdownModifier)
       each item in listItems
         li.checkbox-list__item
           +checkbox({ title: item.title, description: item.description, checked: item.checked, isRich })

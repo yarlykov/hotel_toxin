@@ -10,7 +10,7 @@ class RangeSlider {
     this.$root.slider({
       slide: this.slide.bind(this),
     });
-    this.sliderInput = document.querySelector('[data-id="slider-value"]');
+    this.sliderInput = document.querySelector('.js-range-slider__value');
     const values = this.getValues();
     const [startValue, endValue] = values;
     this.setValues(startValue, endValue);

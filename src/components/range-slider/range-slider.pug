@@ -5,10 +5,9 @@ mixin range-slider({ title="", description="", options={} } = {})
     .range-slider__header
       .range-slider__title #{title}
       input&attributes({
-        class: "range-slider__value",
+        class: "range-slider__value js-range-slider__value",
         type: "text",
         readonly: "readonly",
-        "data-id": "slider-value", 
         tabindex: -1,
       })
     .range-slider__scale.js-range-slider__scale(data-options=`${sliderOptions}`)
