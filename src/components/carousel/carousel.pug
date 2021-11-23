@@ -1,5 +1,7 @@
-mixin carousel( images=[] )
-  .carousel.js-carousel
+mixin carousel({ images=[], options={} })
+  - const carouselOptions = JSON.stringify(options)
+
+  .carousel.js-carousel(data-options=`${carouselOptions}`)
     each imageName in images
       .carousel__item
         a(class="carousel__link" href="./room-details-page.html")

@@ -233,24 +233,36 @@ block content
             })
 
           +room-review-widget({
-            images: [
-              "room-img-1.jpg",
-              "room-img-2.jpg",
-              "room-img-3.jpg",
-              "room-img-4.jpg",
-            ],
+            carousel: {
+              images: [
+                "room-img-1.jpg",
+                "room-img-2.jpg",
+                "room-img-3.jpg",
+                "room-img-4.jpg",
+              ],
+              options: {
+                dots: true,
+                zIndex: 10,
+              }
+            },
             roomNumber: { symbol: "№", value: "888", text: "люкс" },
             roomPrice: { value: "9 990", text: "в сутки" },
             rating: 5,
             commentCount: { value: "145", text: "Отзывов" } 
            })
           +room-review-widget({
-            images: [
-              "room-img-2.jpg",
-              "room-img-5.jpg",
-              "room-img-6.jpg",
-              "room-img-7.jpg",
-            ],
+            carousel: {
+              images: [
+                "room-img-2.jpg",
+                "room-img-5.jpg",
+                "room-img-6.jpg",
+                "room-img-7.jpg",
+              ],
+              options: {
+                dots: true,
+                zIndex: 10,
+              }
+            },
             roomNumber: { symbol: "№", value: "840", text: "люкс" },
             roomPrice: { value: "9 900", text: "в сутки" },
             rating: 4,
