@@ -22,7 +22,7 @@ mixin dropdown({ isOpen=false, group="", elements=[], options={} })
             .dropdown__menu-item-text #{elem.title}
             .dropdown__controls
               button&attributes({
-                class: "dropdown__decrement dropdown__counter-button js-dropdown__decrement",
+                class: "dropdown__counter-button dropdown__counter-button_type_decrement js-dropdown__counter-button_type_decrement",
                 type: "button",
                 "data-type": "decrement"
                 })
@@ -34,7 +34,7 @@ mixin dropdown({ isOpen=false, group="", elements=[], options={} })
                 readonly: "readonly",
               })
               button&attributes({
-                class: "dropdown__increment dropdown__counter-button js-dropdown__increment",
+                class: "dropdown__counter-button dropdown__counter-button_type_increment js-dropdown__counter-button_type_increment",
                 type: "button",
                 "data-type": "increment"
                 })

@@ -44,8 +44,8 @@ class Dropdown {
     const menuItemNodes = this.mainNode.querySelectorAll('.js-dropdown__menu-item');
 
     this.menuItemsData = Array.from(menuItemNodes).map((item) => ({
-      increment: item.querySelector('.js-dropdown__increment'),
-      decrement: item.querySelector('.js-dropdown__decrement'),
+      increment: item.querySelector('.js-dropdown__counter-button_type_increment'),
+      decrement: item.querySelector('.js-dropdown__counter-button_type_decrement'),
       countInput: item.querySelector('.js-dropdown__counter'),
       id: item.dataset.id,
       value: Number(item.querySelector('.js-dropdown__counter').value) || 0,
@@ -156,8 +156,8 @@ class Dropdown {
   increment(target) {
     const parent = target.parentNode;
     const counter = parent.querySelector('.js-dropdown__counter');
-    const increment = parent.querySelector('.js-dropdown__increment');
-    const decrement = parent.querySelector('.js-dropdown__decrement');
+    const increment = parent.querySelector('.js-dropdown__counter-button_type_increment');
+    const decrement = parent.querySelector('.js-dropdown__counter-button_type_decrement');
     const { id } = parent.parentNode.dataset;
     const currentValue = Number(counter.value);
     const maxValue = this.maxItems - 1;
@@ -183,8 +183,8 @@ class Dropdown {
   decrement(target) {
     const parent = target.parentNode;
     const counter = parent.querySelector('.js-dropdown__counter');
-    const increment = parent.querySelector('.js-dropdown__increment');
-    const decrement = parent.querySelector('.js-dropdown__decrement');
+    const increment = parent.querySelector('.js-dropdown__counter-button_type_increment');
+    const decrement = parent.querySelector('.js-dropdown__counter-button_type_decrement');
     const { id } = parent.parentNode.dataset;
     const currentValue = Number(counter.value);
     const equalZero = (currentValue - 1) === 0;
