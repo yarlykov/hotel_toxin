@@ -1,31 +1,29 @@
 @import '@variables';
 
 .menu-widget {
-  &__list {
-    display: flex;
-    justify-content: space-around;
-    padding: 0 100px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 100px;
 
-    @media (max-width: 840px) {
-      padding: 0;
-    }
+  @media (max-width: 840px) {
+    padding: 0;
+  }
 
-    &-ui-kit {
-      padding: 0;
-
-      @media (max-width: 659px) {
-        padding: 30px 0;
-      }
-    }
-
-    &-pages {
-      padding: 0;
-    }
+  &__ui-kit {
+    padding: 0;
 
     @media (max-width: 659px) {
-      flex-direction: column;
-      align-items: center;
+      padding: 30px 0;
     }
+  }
+
+  &__pages {
+    padding: 0;
+  }
+
+  @media (max-width: 659px) {
+    flex-direction: column;
+    align-items: center;
   }
 
   &__item {
