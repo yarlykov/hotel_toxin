@@ -39,10 +39,6 @@
     @media (max-width: 480px) {
       max-width: 300px;
     }
-
-    & .heading__description {
-      padding-top: 5px;
-    }
   }
 
   &__calculation {
@@ -54,10 +50,6 @@
 
     @media (max-width: 800px) {
       margin-left: 0;
-    }
-
-    & .card__date-dropdown {
-      padding-top: 20px;
     }
   }
 
@@ -79,13 +71,6 @@
 
   &__dignities {
     padding-right: 11px;
-
-    & .room-dignities.room-dignities__item:nth-last-child(2) {
-      padding-bottom: 0;
-    }
-    & .room-dignities.room-dignities__item:nth-last-child(2) + hr {
-      display: none;
-    }
 
     @media (max-width: 480px) {
       max-width: 300px;
@@ -119,18 +104,14 @@
   }
 
   &__rules {
-    & .heading__title {
-      padding-left: 20px;
-    }
-
-    & .information__title {
-      padding: 0 0 17px 20px;
-    }
-
     @media (max-width: 480px) {
       max-width: 300px;
       padding: 5px 10px;
     }
+  }
+
+  &__rules-heading {
+    padding-left: 20px;
   }
 
   &__cancel {

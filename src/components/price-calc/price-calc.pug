@@ -10,13 +10,15 @@ mixin price-calc()
       .service-change
         span.service-charge__text Сбор за услуги: 
         span.service-charge__discount скидка 2 179₽
-      +info-icon({ href: "error-page", text: "Здесь будет ваша подсказка, а подробности можно узнать кликнув на иконку" })
+      .price-calc__icon
+        +info-icon({ href: "error-page", text: "Здесь будет ваша подсказка, а подробности можно узнать кликнув на иконку" })
       span.service-charge__full-value 0₽
 
     .price-calc__additional-services
       .additional-services
         span.additional-services__text Сбор за дополнительные услуги
-      +info-icon({ href: "error-page", text: "Здесь будет ваша подсказка, а подробности можно узнать кликнув на иконку" })
+      .price-calc__icon
+        +info-icon({ href: "error-page", text: "Здесь будет ваша подсказка, а подробности можно узнать кликнув на иконку" })
       span.additional-services__full-value 300₽
 
     .price-calc__total-price

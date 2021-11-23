@@ -29,10 +29,6 @@
   &__entry-card {
     min-width: 380px;
 
-    & .card__wrapper {
-      padding-bottom: 32px;
-    }
-
     @media (max-width: 960px) {
       align-items: center;
       padding-bottom: 100px;

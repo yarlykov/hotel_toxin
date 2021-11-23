@@ -4,7 +4,8 @@ include ../room-review-widget/room-review-widget.pug
 
 mixin room-selection({ title, widgets })
   .room-selection
-    +heading({ level: "h1", title: title })
+    .room-selection__heading
+      +heading({ level: "h1", title: title })
     ul.room-selection__widgets-list
       each widget in widgets
         li.room-selection__widgets-item

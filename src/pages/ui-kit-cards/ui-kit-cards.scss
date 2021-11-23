@@ -28,18 +28,3 @@
     flex-shrink: 0;
   }
 }
-
-/* ---------------CARDS_PAGE CALENDAR--------------- */
-.cards-page__calendar .text-field__input {
-  display: none;
-}
-.cards-page__calendar .text-field {
-  border: none;
-
-  &:hover {
-    border: none;
-  }
-}
-.cards-page__calendar .datepicker-inline .datepicker {
-  border: none;
-}

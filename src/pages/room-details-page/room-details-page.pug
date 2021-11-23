@@ -97,7 +97,8 @@ block content
               })
 
           section.room-details__rules
-            +heading({ level: "h2",  title: "правила" })
+            .room-details__rules-heading
+              +heading({ level: "h2",  title: "правила" })
             .room-details__rules-list
               +bullet-list([ 
                 "Нельзя с питомцами", 

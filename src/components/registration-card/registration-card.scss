@@ -11,20 +11,16 @@
   &__details {
     margin-top: 20px;
 
-    & .registration-card__details {
-      &_type_surname {
-        margin-top: 10px;
-      }
+    &_type_surname {
+      margin-top: 10px;
     }
   }
 
   &__sex {
+    display: flex;
+    gap: 20px;
     margin-top: 10px;
     font: 400 14px $mainFont;
-
-    & .radio:first-child {
-      margin-right: 20px;
-    }
   }
 
   &__birthday {

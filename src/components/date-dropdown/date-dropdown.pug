@@ -1,11 +1,15 @@
 include ../text-field/text-field.pug
 include ../heading/heading.pug
 
-mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size="", name="date", autocomplete="", hasArrow=false, isReadonly=false, isLowercase=false, hasTwoInputs=false, startTitle="", endTitle="", options={}, inline=false, withMask=false })
+mixin date-dropdown({ type="", dataType="", dataTypeEnd="", placeholder="", size="", name="date", autocomplete="", hasArrow=false, isReadonly=false, isLowercase=false, hasTwoInputs=false, startTitle="", endTitle="", options={}, inline=false, withMask=false, demo=false })
   - const inlineClass = inline ? "date-dropdown_inline" : ""
   - const optionsData = JSON.stringify(options)
 
-  if hasTwoInputs
+  if demo
+    .date-dropdown&attributes({
+      class: inlineClass,
+    }).js-date-dropdown(data-options=`${optionsData}`)
+  else if hasTwoInputs
     .date-dropdown.js-date-dropdown(data-options=`${optionsData}`)
       .date-dropdown__two-inputs
         .date-dropdown__start

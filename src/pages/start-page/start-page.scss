@@ -32,10 +32,6 @@
     display: flex;
     justify-content: flex-end;
     padding: 20px 50px;
-
-    & .toggle__box::before {
-      transition: 0s;
-    }
   }
 
   &__logo {

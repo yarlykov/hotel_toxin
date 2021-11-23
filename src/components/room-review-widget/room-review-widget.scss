@@ -15,16 +15,6 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-
-    & .room-number__value {
-      font-size: 1.4286rem;
-    }
-  }
-
-  &__price {
-    & .room-price__text {
-      font-size: 0.8571rem;
-    }
   }
 
   &__border {

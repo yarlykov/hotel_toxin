@@ -102,26 +102,13 @@
     &:nth-child(3) {
       padding-top: 0;
     }
-
-    & .button:nth-child(1) {
-      margin-right: 19px;
-    }
-    & .button:nth-child(2) {
-      margin-right: 102px;
-    }
-    & .button:nth-child(3) {
-      margin-right: 102px;
-    }
   }
 
   &__buttons-container-inline {
     display: inline-flex;
     justify-content: space-between;
+    min-width: 140px;
     padding-bottom: 27px;
-
-    & .button_inline {
-      padding-right: 21px;
-    }
   }
 
   &__pagination-container {
@@ -201,8 +188,4 @@
       padding-top: 30px;
     }
   }
-}
-
-.room-review__wrapper_comment {
-  padding-top: 30px;
 }
