@@ -1,12 +1,6 @@
 @import '@variables';
 
 .logo {
-  &:focus-within,
-  & a:focus-within {
-    outline: none;
-    transform: translate3d(3px, 3px, 3px);
-  }
-
   &__link {
     line-height: 0;
   }

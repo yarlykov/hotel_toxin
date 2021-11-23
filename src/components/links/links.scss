@@ -12,11 +12,6 @@
     padding-top: 21px;
     font: 400 1rem/17px $mainFont;
 
-    & a:focus {
-      color: $textColor_75;
-      outline: none;
-    }
-
     &:first-child {
       padding-top: 17px;
     }

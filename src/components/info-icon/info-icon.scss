@@ -15,6 +15,10 @@
     color: rgba(85, 86, 126, 0.25);
     font: 700 0.8571rem/14px $mainFont, Arial, sans-serif;
     text-decoration: none;
+
+    &:focus-within {
+      outline: none;
+    }
   }
 
   &:hover {
@@ -28,10 +32,6 @@
   &:focus-within {
     outline: none;
     transform: translate3d(3px, -3px, -3px);
-  }
-
-  & a:focus-within {
-    outline: none;
   }
 
   & [data-tooltip] {
