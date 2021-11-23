@@ -5,7 +5,8 @@ import DateDropdown from './DateDropdown';
 import './date-dropdown.scss';
 
 const $dataDropdown = $('.js-date-dropdown');
-if ($dataDropdown.length > 0) {
+
+if ($dataDropdown) {
   $dataDropdown.each(function init() {
     new DateDropdown($(this));
   });

@@ -3,6 +3,6 @@ import './dropdown.scss';
 
 const dropdownNodes = document.querySelectorAll('.js-dropdown');
 
-if (dropdownNodes.length > 0) {
+if (dropdownNodes) {
   dropdownNodes.forEach((element) => new Dropdown(element));
 }

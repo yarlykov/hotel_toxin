@@ -5,6 +5,6 @@ import Navigation from './Navigation';
 
 const navigationItemDropdown = document.querySelectorAll('.js-navigation__item_with-arrow-down');
 
-if (navigationItemDropdown.length > 0) {
+if (navigationItemDropdown) {
   navigationItemDropdown.forEach((selector) => new Navigation(selector));
 }

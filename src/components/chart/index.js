@@ -3,6 +3,6 @@ import Chart from './Chart';
 
 const chartElements = document.querySelectorAll('.js-chart');
 
-if (chartElements.length > 0) {
+if (chartElements) {
   chartElements.forEach((element) => new Chart(element));
 }

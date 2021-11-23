@@ -6,6 +6,6 @@ import './range-slider.scss';
 
 const rangeSliderNodes = document.querySelectorAll('.js-range-slider__scale');
 
-if (rangeSliderNodes.length > 0) {
+if (rangeSliderNodes) {
   rangeSliderNodes.forEach((element) => new RangeSlider(element));
 }

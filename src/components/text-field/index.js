@@ -3,7 +3,7 @@ import './text-field.scss';
 
 const maskedTextFieldNodes = document.querySelectorAll('.js-text-field__input_with-mask');
 
-if (maskedTextFieldNodes.length > 0) {
+if (maskedTextFieldNodes) {
   maskedTextFieldNodes.forEach((selector) => {
     Inputmask('datetime', {
       inputFormat: 'dd.mm.yyyy',

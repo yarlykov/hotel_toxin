@@ -3,6 +3,6 @@ import './pagination.scss';
 
 const paginationNodes = document.querySelectorAll('.js-pagination');
 
-if (paginationNodes.length > 0) {
+if (paginationNodes) {
   paginationNodes.forEach((element) => new Pagination(element));
 }
