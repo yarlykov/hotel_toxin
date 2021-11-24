@@ -158,8 +158,8 @@ block content
           .form-elements__small-buttons-wrapper
             +heading({ level: "h3", title: "like button" })
             .form-elements__like-buttons-container
-              +like({ icon: "heart", value: 2, inactive: true })
-              +like({ icon: "heart", value: 12, inactive: false })
+              +like({ value: 2 })
+              +like({ value: 12, active: true })
 
           .form-elements__small-buttons-wrapper
             +heading({ level: "h3", title: "rate button" })
@@ -410,4 +410,5 @@ block content
             А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие.\
             Выкрикивал комплименты повару — никто не жаловался из соседей.", 
             likeCount: 12,
+            likeActive: true,
           })

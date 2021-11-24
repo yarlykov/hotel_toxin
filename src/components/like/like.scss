@@ -30,20 +30,20 @@
     padding: 4px 2px 3px 4px;
     font: 0.7143rem 'Material Icons', sans-serif;
 
-    &_type {
-      &_heart::before {
+    &::before {
+      background: $textColor_25;
+      -webkit-background-clip: text;
+      background-clip: text;
+      content: '\e87e';
+      -webkit-text-fill-color: transparent;
+    }
+
+    &.like__icon_active {
+      &::before {
         background: $mainGradient;
         -webkit-background-clip: text;
         background-clip: text;
         content: '\e87d';
-        -webkit-text-fill-color: transparent;
-      }
-
-      &_empty-heart::before {
-        background: $textColor_25;
-        -webkit-background-clip: text;
-        background-clip: text;
-        content: '\e87e';
         -webkit-text-fill-color: transparent;
       }
     }

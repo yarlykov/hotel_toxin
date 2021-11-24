@@ -7,6 +7,7 @@ class Like {
   init() {
     this.text = this.root.querySelector('.js-like__text');
     this.heart = this.root.querySelector('.js-like__icon');
+    if (!this.isEnabled()) this.disabled();
 
     this.root.addEventListener('click', this.handleLikeClick.bind(this));
   }
@@ -23,17 +24,16 @@ class Like {
   }
 
   isEnabled() {
-    return this.heart.classList.contains('like__icon_type_heart');
+    return this.heart.classList.contains('like__icon_active');
+  }
+
+  disabled() {
+    this.root.classList.add('like_inactive-background');
+    this.text.classList.add('like__text_inactive-text');
   }
 
   iconToggle() {
-    if (this.isEnabled()) {
-      this.heart.classList.remove('like__icon_type_heart');
-      this.heart.classList.add('like__icon_type_empty-heart');
-    } else {
-      this.heart.classList.remove('like__icon_type_empty-heart');
-      this.heart.classList.add('like__icon_type_heart');
-    }
+    this.heart.classList.toggle('like__icon_active');
   }
 
   counter() {
