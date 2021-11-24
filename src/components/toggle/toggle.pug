@@ -2,7 +2,7 @@ mixin toggle({ title="", checked=false } = {})
   label.toggle
     .toggle__container
       input&attributes({
-        class: "toggle__input",
+        class: "toggle__input js-toggle__input",
         type: "checkbox",
         name: title,
         checked: checked

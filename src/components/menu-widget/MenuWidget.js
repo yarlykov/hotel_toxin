@@ -11,8 +11,9 @@ class MenuWidget {
 
   init() {
     this.toggleStartPage = this.$page.querySelector('.js-start-page__toggle');
-    this.toggleInput = this.$page.querySelector('.toggle__input');
-    this.dayToggleTitle = this.$page.querySelector('.js-toggle-title');
+    if (!this.toggleStartPage) throw new Error('MenuWidget: Toggle is not defined');
+    this.toggleInput = this.toggleStartPage.querySelector('.js-toggle__input');
+    this.dayToggleTitle = this.toggleStartPage.querySelector('.js-toggle-title');
     this.startPageStyle = this.$page.style;
 
     this.menuTextColor = this.$page.querySelectorAll('.js-menu-widget__text');
@@ -78,9 +79,4 @@ class MenuWidget {
   }
 }
 
-const isStartPage = document.querySelector('.start-page');
-
-if (isStartPage !== null) {
-  const startPage = document.body;
-  new MenuWidget(startPage);
-}
+export default MenuWidget;
