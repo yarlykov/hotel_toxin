@@ -22,11 +22,27 @@ class Pagination {
       showNext: true,
       autoHideNext: true,
       pageRange: 1,
-      pageSize: 0.35,
+      formatNavigator: this.formatNavigator,
     };
-    const options = { ...this.options, ...defaultParams };
+    const options = {
+      ...this.options,
+      ...defaultParams,
+      dataSource: Pagination.dataSourceFill(this.options.amountOfElements),
+    };
+    this.pageSize = this.options.pageSize;
+    this.amountOfElements = this.options.amountOfElements;
 
     this.$root.pagination(options);
+  }
+
+  static dataSourceFill(amountOfElements) {
+    return Array.from(Array(amountOfElements).keys());
+  }
+
+  formatNavigator(currentPage) {
+    const form = this.pageSize * currentPage - this.pageSize + 1;
+    const to = this.pageSize * currentPage;
+    return `${form} – ${to} из 100+ вариантов аренды`;
   }
 }
 

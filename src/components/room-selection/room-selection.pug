@@ -12,7 +12,7 @@ mixin room-selection({ title, widgets })
           +room-review-widget(widget)
     .room-selection__pagination
       +pagination({
-        dataSource: [1, 2, 3, 4, 5],
+        pageSize: 12,
+        amountOfElements: 180,
         showNavigator: true,
-        formatNavigator: '<span><%= currentPage %></span> – 12 из 100+ вариантов аренды',
       })
