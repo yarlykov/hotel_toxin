@@ -7,7 +7,8 @@ class Filter {
   init() {
     const filter = document.querySelector('.js-search-room__filter');
     if (filter) {
-      const header = document.querySelector('.header__body');
+      const header = document.querySelector('.js-header__body');
+      if (!header) throw new Error('Filter: header element is not defined');
       const filterIcon = document.createElement('div');
       filterIcon.classList.add('header__filter-label');
       filterIcon.addEventListener('click', this.handleFilterLabelClick.bind(this));
