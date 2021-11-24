@@ -1,7 +1,13 @@
 class RangeSlider {
   constructor(selector) {
     this.$root = $(selector);
-    this.options = JSON.parse(selector.dataset.options);
+
+    try {
+      this.options = JSON.parse(selector.dataset.options);
+    } catch (e) {
+      throw new Error('Incorrect options passed to the RangeSlider class', e);
+    }
+
     this.init();
   }
 

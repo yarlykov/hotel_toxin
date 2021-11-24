@@ -6,7 +6,13 @@ class Chart {
 
   init() {
     const { votes } = this.root.dataset;
-    this.votes = JSON.parse(votes);
+
+    try {
+      this.votes = JSON.parse(votes);
+    } catch (e) {
+      throw new Error('Incorrect options passed to the Chart class', e);
+    }
+
     this.root.insertAdjacentHTML('afterbegin', Chart.getMainTemplate());
     this.sumOfAllVotes = this.votes.reduce((acc, item) => item.votesAmount + acc, 0);
 

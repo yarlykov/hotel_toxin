@@ -1,27 +1,35 @@
 import targetType from './constants';
 
+const defaultOptions = {
+  offset: 5,
+  range: true,
+  navTitles: {
+    days: 'MM yyyy',
+  },
+  prevHtml: '<span class="datepicker__arrow datepicker__arrow_back"></span>',
+  nextHtml: '<span class="datepicker__arrow datepicker__arrow_forward"></span>',
+};
+
 class DateDropdown {
   constructor(selector) {
     if (selector.length !== 0) {
       this.$root = selector;
       const { options } = this.$root.get(0).dataset;
-      const inlineOptions = JSON.parse(options);
-      const { initialDates } = inlineOptions;
-      if (initialDates) {
-        this.initialDates = initialDates.map((item) => new Date(item));
+
+      try {
+        this.inlineOptions = JSON.parse(options);
+        const { initialDates } = this.inlineOptions;
+
+        if (initialDates) {
+          this.initialDates = initialDates.map((item) => new Date(item));
+        }
+      } catch (e) {
+        throw new Error('Incorrect options passed to the DateDropdown class', e);
       }
-      const defaultOptions = {
-        offset: 5,
-        range: true,
-        navTitles: {
-          days: 'MM yyyy',
-        },
-        prevHtml: '<span class="datepicker__arrow datepicker__arrow_back"></span>',
-        nextHtml: '<span class="datepicker__arrow datepicker__arrow_forward"></span>',
-      };
+
       this.options = {
         ...defaultOptions,
-        ...inlineOptions,
+        ...this.inlineOptions,
         initialDates: this.initialDates,
       };
       this.init();

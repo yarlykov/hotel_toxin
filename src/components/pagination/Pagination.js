@@ -5,7 +5,12 @@ class Pagination {
   constructor(selector) {
     this.$root = $(selector);
     const { options } = selector.dataset;
-    this.options = JSON.parse(options);
+
+    try {
+      this.options = JSON.parse(options);
+    } catch (e) {
+      throw new Error('Incorrect options passed to the Pagination class', e);
+    }
 
     this.init();
   }

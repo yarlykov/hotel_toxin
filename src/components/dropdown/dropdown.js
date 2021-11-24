@@ -7,7 +7,13 @@ class Dropdown {
   constructor(selector) {
     this.mainNode = selector;
     const { options } = this.mainNode.dataset;
-    this.options = JSON.parse(options);
+
+    try {
+      this.options = JSON.parse(options);
+    } catch (e) {
+      throw new Error('Incorrect options passed to the Dropdown class', e);
+    }
+
     this.store = createStore(rootReducer, {});
 
     this.init();
