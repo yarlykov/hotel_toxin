@@ -14,7 +14,7 @@
     box-shadow: 3px 3px 2px $designColor_main;
   }
 
-  &_inactive {
+  &_inactive-background {
     background: $textColor_25;
   }
 
@@ -54,7 +54,7 @@
     color: $designColor_main;
     font: 0.7143rem $mainFont;
 
-    &_inactive {
+    &_inactive-text {
       color: $textColor_25;
     }
   }

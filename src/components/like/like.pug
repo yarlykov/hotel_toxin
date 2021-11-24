@@ -1,13 +1,13 @@
-mixin like({ icon="", value=0, disabled=false } = {})
+mixin like({ icon="", value=0, inactive=false } = {})
   -
-    const btnDisableClassName = disabled ? "like_inactive" : ""
-    const disabledButtonTextModifier = disabled ? "like__text_inactive" : ""
-    const iconState = disabled ? `empty-${icon}` : icon 
+    const btnInactiveClassName = inactive ? "like_inactive-background" : ""
+    const btnTextInactiveClassName = inactive ? "like__text_inactive-text" : ""
+    const iconState = inactive ? `empty-${icon}` : icon 
     const likeIconClass = "like__icon js-like__icon"
     const likeIconTypeModifier = `like__icon_type_${iconState}`
 
   button&attributes({
-    class: ["like", "js-like", btnDisableClassName],
+    class: ["like", "js-like", btnInactiveClassName],
     type: "button",
     name: "like",
     tabindex: 0,
@@ -20,5 +20,5 @@ mixin like({ icon="", value=0, disabled=false } = {})
         ],
       })
       span&attributes({
-        class: ["like__text js-like__text", disabledButtonTextModifier],
+        class: ["like__text js-like__text", btnTextInactiveClassName],
       }) #{value}

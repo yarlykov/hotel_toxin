@@ -18,8 +18,8 @@ class Like {
   }
 
   buttonToggle() {
-    this.root.classList.toggle('like_inactive');
-    this.text.classList.toggle('like__text_inactive');
+    this.root.classList.toggle('like_inactive-background');
+    this.text.classList.toggle('like__text_inactive-text');
   }
 
   isEnabled() {

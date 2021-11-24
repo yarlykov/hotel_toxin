@@ -8,7 +8,7 @@ mixin comment(params = {})
       commentText="",
       dateOfVisit="",
       likeCount=0,
-      disabled=false
+      inactive=false
     } = params
 
   .comment
@@ -23,6 +23,6 @@ mixin comment(params = {})
         .comment__date-of-visit #{dateOfVisit}
     .comment__body
       .comment__like
-        +like({ icon: "heart", value: likeCount, disabled: disabled })
+        +like({ icon: "heart", value: likeCount, inactive: inactive })
       p.comment__text
         | #{commentText}
