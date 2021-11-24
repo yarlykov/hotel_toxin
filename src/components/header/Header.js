@@ -1,16 +1,16 @@
-class MenuBurger {
+class Header {
   constructor(selector) {
     this.root = selector;
     this.init();
   }
 
   init() {
-    this.root.addEventListener('click', this.handleMenuBurgerClick.bind(this));
+    this.root.addEventListener('click', this.handleHeaderBurgerClick.bind(this));
   }
 
-  handleMenuBurgerClick() {
+  handleHeaderBurgerClick() {
     this.root.classList.toggle('header__menu-burger_active');
   }
 }
 
-export default MenuBurger;
+export default Header;
