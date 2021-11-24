@@ -39,18 +39,10 @@ class Like {
   counter() {
     const currentValue = Number(this.text.textContent);
     if (!this.isEnabled()) {
-      this.text.innerHTML = Like.decrement(currentValue);
+      this.text.textContent = `${currentValue - 1}`;
     } else {
-      this.text.innerHTML = Like.increment(currentValue);
+      this.text.textContent = `${currentValue + 1}`;
     }
-  }
-
-  static increment(value) {
-    return `${value + 1}`;
-  }
-
-  static decrement(value) {
-    return `${value - 1}`;
   }
 }
 
