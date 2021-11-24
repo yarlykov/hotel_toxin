@@ -1,34 +1,49 @@
 include ../info-icon/info-icon.pug
 
-mixin price-calc()
+mixin price-calc(params = {})
+  -
+    const {
+      coast=0,
+      days=0,
+      discount=0,
+      serviceCharge=0,
+      additionalServiceCharge=0,
+      serviceChargeInfo,
+    } = params
+
+    const formatCost = (cost) => {
+      return cost.toLocaleString('ru-RU', { minimumFractionDigits: 0 })
+    };
+    const undiscountedValue = formatCost(coast)
+    const undiscountedFillValue = formatCost(coast * days)
+    const discountValue = formatCost(discount)
+    const serviceChargeValue = formatCost(serviceCharge)
+    const additionalServiceChargeValue = formatCost(additionalServiceCharge)
+    const totalServiceCharge = serviceCharge + additionalServiceCharge
+    const total = formatCost(coast * days - discount + totalServiceCharge)
+
   section.price-calc
     .price-calc__undiscounted
-      span.price-calc__undiscounted-value 9 990₽ x 4 суток
-      span.price-calc__undiscounted-full-value 39 960₽
+      span.price-calc__undiscounted-value #{undiscountedValue}₽ x #{days} суток
+      span.price-calc__undiscounted-full-value #{undiscountedFillValue}₽
 
     .price-calc__service-charge
       .service-change
         span.service-charge__text Сбор за услуги: 
-        span.service-charge__discount скидка 2 179₽
+        span.service-charge__discount скидка #{discountValue}₽
       .price-calc__icon
-        +info-icon({
-          href: "error-page",
-          text: "Здесь будет ваша подсказка, а подробности можно узнать кликнув на иконку"
-        })
-      span.service-charge__full-value 0₽
+        +info-icon(serviceChargeInfo.main)
+      span.service-charge__full-value #{serviceChargeValue}₽
 
     .price-calc__additional-services
       .additional-services
         span.additional-services__text Сбор за дополнительные услуги
       .price-calc__icon
-        +info-icon({
-          href: "error-page",
-          text: "Здесь будет ваша подсказка, а подробности можно узнать кликнув на иконку"
-        })
-      span.additional-services__full-value 300₽
+        +info-icon(serviceChargeInfo.additional)
+      span.additional-services__full-value #{additionalServiceChargeValue}₽
 
     .price-calc__total-price
       .total-price
         span.total-price__text Итого
         .total-price__points
-        span.total-price__value 38&nbsp;081₽
+        span.total-price__value #{total}₽

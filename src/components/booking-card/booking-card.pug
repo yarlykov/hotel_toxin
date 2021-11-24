@@ -19,7 +19,11 @@ mixin booking-card(params = {})
     } = params
 
   .booking-card
-    form(class="booking-card__form" method=`${formMethod}`, action=`./${formAction}.html`)
+    form(
+      class="booking-card__form"
+      method=`${formMethod}`
+      action=`./${formAction}.html`
+    )
       .booking-card__header
         +room-number(header.number)
         +room-price(header.price)
@@ -29,6 +33,23 @@ mixin booking-card(params = {})
         +heading({ level: "h3", title: "гости" })
         +dropdown(dropdown)
       .booking-card__calculation
-        +price-calc()
+        +price-calc({
+          coast: 9990,
+          days: 4,
+          discount: 2179,
+          additionalServiceCharge: 300,
+          serviceChargeInfo: {
+            main: {
+              href: "error-page",
+              text: "Здесь будет ваша подсказка,\
+              а подробности можно узнать кликнув на иконку"
+            },
+            additional: {
+              href: "error-page",
+              text: "Здесь будет ваша подсказка,\
+              а подробности можно узнать кликнув на иконку"
+            },
+          },
+        })
       .booking-card__button
         +button(button.submit)
