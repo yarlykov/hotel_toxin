@@ -142,7 +142,7 @@
       border: $focusBorder;
     }
 
-    &.disabled {
+    &:disabled {
       cursor: auto;
       opacity: 0.4;
     }

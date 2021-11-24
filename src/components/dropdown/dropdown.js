@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { addCommaInText, cutLongText, declensionsText } from './utils';
 import { count, targetType } from './constants';
 import rootReducer from './redux/rootReducer';
@@ -170,8 +171,7 @@ class Dropdown {
     const maxValue = this.maxItems - 1;
 
     if (currentValue === maxValue) {
-      increment.classList.add('disabled');
-      increment.setAttribute('disabled', 'disabled');
+      increment.disabled = true;
     }
     if (currentValue < this.maxItems) {
       const { totalItems } = this.state;
@@ -179,8 +179,7 @@ class Dropdown {
       this.store.dispatchEvent({ type: count.INCREMENT, id: count.TOTAL, value: totalItems });
 
       counter.value = currentValue + 1;
-      decrement.classList.remove('disabled');
-      decrement.removeAttribute('disabled', 'disabled');
+      decrement.disabled = false;
     }
 
     this.setInputText();
@@ -197,8 +196,7 @@ class Dropdown {
     const equalZero = (currentValue - 1) === 0;
 
     if (equalZero) {
-      decrement.classList.add('disabled');
-      decrement.setAttribute('disabled', 'disabled');
+      decrement.disabled = false;
     }
     if (currentValue > 0) {
       const { totalItems } = this.state;
@@ -206,8 +204,7 @@ class Dropdown {
       this.store.dispatchEvent({ type: count.DECREMENT, id: count.TOTAL, value: totalItems });
 
       counter.value = currentValue - 1;
-      increment.classList.remove('disabled');
-      increment.removeAttribute('disabled', 'disabled');
+      increment.disabled = true;
     }
 
     this.setInputText();
@@ -257,18 +254,14 @@ class Dropdown {
       const itemCount = Number(item.countInput.value);
 
       if (itemCount <= minItems) {
-        item.decrement.classList.add('disabled');
-        item.decrement.setAttribute('disabled', 'disabled');
+        item.decrement.disabled = true;
       } else {
-        item.decrement.classList.remove('disabled');
-        item.decrement.removeAttribute('disabled', 'disabled');
+        item.decrement.disabled = false;
       }
       if (itemCount >= this.maxItems) {
-        item.increment.classList.add('disabled');
-        item.increment.setAttribute('disabled', 'disabled');
+        item.increment.disabled = true;
       } else {
-        item.increment.classList.remove('disabled');
-        item.increment.removeAttribute('disabled', 'disabled');
+        item.increment.disabled = false;
       }
     });
   }
@@ -307,7 +300,6 @@ class Dropdown {
     const { defaultText } = this.options;
 
     this.menuItemsData.forEach((item) => {
-      // eslint-disable-next-line no-param-reassign
       item.countInput.value = 0;
       this.store.dispatchEvent({ type: count.INIT, id: item.id, value: 0 });
     });
