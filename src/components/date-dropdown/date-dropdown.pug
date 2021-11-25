@@ -8,7 +8,6 @@ mixin date-dropdown(params = {})
       dataType="",
       dataTypeEnd="",
       placeholder="",
-      size="",
       name="date",
       autocomplete="",
       hasArrow=false,
@@ -39,7 +38,6 @@ mixin date-dropdown(params = {})
             type,
             dataType,
             placeholder, 
-            size,
             name,
             autocomplete,
             hasArrow,
@@ -52,7 +50,6 @@ mixin date-dropdown(params = {})
           +text-field({
             type,
             placeholder, 
-            size,
             name,
             autocomplete, 
             hasArrow,
@@ -65,4 +62,4 @@ mixin date-dropdown(params = {})
     .date-dropdown&attributes({
       class: inlineClass,
     }).js-date-dropdown(data-options=`${optionsData}`)
-        +text-field({ type, dataType, placeholder, size, name, autocomplete, hasArrow, isReadonly, isLowercase })
+        +text-field({ type, dataType, placeholder, name, autocomplete, hasArrow, isReadonly, isLowercase })

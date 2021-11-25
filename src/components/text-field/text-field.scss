@@ -17,20 +17,6 @@ select:-webkit-autofill:focus {
   border: $mainBorder;
   border-radius: $mainBorderRadius;
 
-  &_size {
-    &_large {
-      max-width: 320px;
-    }
-
-    &_medium {
-      max-width: 266px;
-    }
-
-    &_small {
-      max-width: 150px;
-    }
-  }
-
   &__input {
     @include font-body;
 

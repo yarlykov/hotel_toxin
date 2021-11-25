@@ -5,8 +5,7 @@ mixin text-field(params = {})
       type="",
       dataType="",
       placeholder="",
-      size="",
-      name="",
+      name="text-field",
       autocomplete="off",
       focused=false,
       isLowercase=false,
@@ -18,7 +17,6 @@ mixin text-field(params = {})
     } = params
 
     const mainClass = "text-field__input"
-    const sizeClass = size ? `text-field_size_${size}` : ""
     const focusedClass = focused ? "text-field_focused" : ""
     const textLowercaseClass = isLowercase ? "text-field__input_lowercase-text" : ""
     const inputWithoutArrowClass = isSubscription ? "text-field__input_without-arrow" : ""
@@ -35,7 +33,7 @@ mixin text-field(params = {})
       readonly: isReadonly,
     }
 
-  .text-field(class=[focusedClass, sizeClass])
+  .text-field(class=[focusedClass])
     input&attributes(inputAttributes)
     if hasArrow
       div(

@@ -8,9 +8,15 @@
   }
 
   &__start {
+    max-width: 150px;
+
     @media (max-width: 480px) {
       padding-right: 5px;
     }
+  }
+
+  &__end {
+    max-width: 150px;
   }
 }
 

@@ -15,6 +15,12 @@
   &__text-field-wrapper {
     padding-bottom: 20.5px;
 
+    &_size {
+      &_medium {
+        max-width: 266px;
+      }
+    }
+
     &:nth-child(4) {
       padding-top: 1px;
     }

@@ -28,7 +28,6 @@ block content
             +text-field({ 
               type: "text",
               placeholder: "Email", 
-              size: "large",
               name: "email",
               autocomplete: "on", 
             })
@@ -38,7 +37,6 @@ block content
             +text-field({ 
               type: "text",
               placeholder: "This is pretty awesome",
-              size: "large",
               name: "email",
               autocomplete: "off",
               focused: true,
@@ -72,7 +70,6 @@ block content
               type: "text",
               masked: true, 
               placeholder: "ДД.ММ.ГГГГ",
-              size: "large",
               name: "text",
               withMask: true,
             })
@@ -83,7 +80,6 @@ block content
               dataType: "date-dropdown-start",
               dataTypeEnd: "date-dropdown-end",
               placeholder: "ДД.ММ.ГГГГ",
-              size: "small",
               name: "date",
               autocomplete: "off",
               hasArrow: true,
@@ -100,37 +96,37 @@ block content
               },
             })
 
-          .form-elements__text-field-wrapper 
-            +heading({ level: "h3", title: "filter date dropdown" })  
-            +date-dropdown({ 
-              type: "text",
-              dataType: "filter-date-dropdown",
-              placeholder: "ДД.ММ - ДД.ММ",
-              size: "medium",
-              name: "text",
-              autocomplete: "off",
-              hasArrow: true,
-              isReadonly: true,
-              isLowercase: true,
-              options: {
-                dateFormat: 'd M',
-                multipleDatesSeparator: ' - ',
-                initialDates: ['2019-08-19', '2019-08-23'],
-                smallSize: true,
-              },
-            })
+          .form-elements__text-field-wrapper
+            .form-elements__text-field-wrapper_size_medium 
+              +heading({ level: "h3", title: "filter date dropdown" })  
+              +date-dropdown({ 
+                type: "text",
+                dataType: "filter-date-dropdown",
+                placeholder: "ДД.ММ - ДД.ММ",
+                name: "text",
+                autocomplete: "off",
+                hasArrow: true,
+                isReadonly: true,
+                isLowercase: true,
+                options: {
+                  dateFormat: 'd M',
+                  multipleDatesSeparator: ' - ',
+                  initialDates: ['2019-08-19', '2019-08-23'],
+                  smallSize: true,
+                },
+              })
 
           .form-elements__text-field-wrapper 
-            +heading({ level: "h3", title: "subscription text field" })
-            +text-field({ 
-              type: "text",
-              dataType: "subscription-text-field",
-              placeholder: "Email",
-              size: "medium", 
-              name: "email",
-              autocomplete: "on",
-              isSubscription: true,
-            })    
+            .form-elements__text-field-wrapper_size_medium
+              +heading({ level: "h3", title: "subscription text field" })
+              +text-field({ 
+                type: "text",
+                dataType: "subscription-text-field",
+                placeholder: "Email",
+                name: "email",
+                autocomplete: "on",
+                isSubscription: true,
+              })    
 
         .form-elements__small-buttons
           .form-elements__small-buttons-wrapper
