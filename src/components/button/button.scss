@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-height: 44px;
   padding: 2px;
   font: 700 0.8571rem/15px $mainFont;
   text-transform: uppercase;
@@ -58,6 +59,7 @@
   &__inner {
     width: 100%;
     color: $mainTextColor;
+    white-space: nowrap;
     border-radius: 100px;
 
     &_size {

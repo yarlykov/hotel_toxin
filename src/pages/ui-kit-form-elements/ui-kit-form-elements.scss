@@ -101,9 +101,9 @@
 
   &__buttons-container {
     display: flex;
+    gap: 20px;
     justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 30px;
+    margin: 10px 100px 30px 0;
 
     &:nth-child(3) {
       padding-top: 0;
