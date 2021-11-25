@@ -1,8 +1,11 @@
-mixin colors( colorItems=[] )
+mixin colors({ colorItems=[], colors=[] })
   ul.colors
     each colorItem in colorItems
       li.colors__item
-        - const colorClass = "colors__preview_color_" + colorItem.color
+        -
+          const { color } = colorItem
+          const colorClass = colors.includes(color) ? `colors__preview_color_${color}`: ""
+
         div&attributes({
           class: ["colors__preview", colorClass]
         })

@@ -1,7 +1,10 @@
-mixin social({ socialLinks })
+mixin social({ socialLinks=[], titles=[] })
   .social
     each socialLink in socialLinks
-      - const socialClass = "social__link_" + socialLink.title
+      -
+        const { title } = socialLink
+        const socialClass = titles.includes(title) ? `social__link_${title}` : ""
+
       a&attributes({
         class: ["social__link", socialClass], 
         href: `${socialLink.link}`,

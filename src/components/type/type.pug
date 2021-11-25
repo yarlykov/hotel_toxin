@@ -1,7 +1,9 @@
-mixin type( typeList=[] )
+mixin type({ typeList=[], types=[] })
   ul.type
     each typeListItem in typeList
-      - const typeClassBlock = "type__" + typeListItem.type
+      -
+        const { type } = typeListItem
+        const typeClassBlock = types.includes(type) ? `type__${type}` : ""
 
       li&attributes({ class: [typeClassBlock] })
         p.type__header #{typeListItem.title}

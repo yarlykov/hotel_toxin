@@ -1,5 +1,8 @@
 mixin room-dignities({ icon="", title="", subtitle="", hasBottomLine=true })
-  - const iconClass = `room-dignities__icon_type_${icon}`
+  -
+    const icons = ["mood", "location-city", "whatshot"]
+    const iconClass = icons.includes(icon) ? `room-dignities__icon_type_${icon}` : ""
+
   .room-dignities
     div.room-dignities__item
       div.room-dignities__icon-wrapper
