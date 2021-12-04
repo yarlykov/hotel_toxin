@@ -13,7 +13,7 @@
   }
 
   &__text-field-wrapper {
-    padding-bottom: 20.5px;
+    margin-bottom: 20.5px;
 
     &_size {
       &_medium {
@@ -22,14 +22,14 @@
     }
 
     &:nth-child(4) {
-      padding-top: 1px;
+      margin-top: 1px;
     }
     &:nth-child(5),
     &:nth-child(6) {
-      padding-top: 20px;
+      margin-top: 20px;
     }
     &:nth-child(7) {
-      padding-top: 21px;
+      margin-top: 21px;
     }
   }
 
@@ -41,57 +41,57 @@
 
   &__small-buttons-wrapper {
     &:nth-child(2) {
-      padding-top: 41.5px;
+      margin-top: 41.5px;
     }
     &:nth-child(3) {
-      padding-top: 43px;
+      margin-top: 43px;
     }
     &:nth-child(4) {
-      padding-top: 46px;
+      margin-top: 46px;
     }
     &:nth-child(5) {
-      padding-top: 39.5px;
+      margin-top: 39.5px;
     }
     &:last-child {
-      padding-top: 40px;
-      padding-left: 1px;
+      margin-top: 40px;
+      margin-left: 1px;
     }
   }
 
   &__radio-buttons-container {
     display: flex;
     justify-content: space-between;
-    padding-top: 11px;
-    padding-right: 46px;
+    margin-top: 11px;
+    margin-right: 46px;
   }
 
   &__toggle-buttons-container {
-    padding-top: 11px;
+    margin-top: 11px;
   }
 
   &__like-buttons-container {
     display: flex;
     justify-content: space-between;
-    padding-top: 11px;
-    padding-right: 176px;
+    margin-top: 11px;
+    margin-right: 176px;
   }
 
   &__rating-buttons-container {
     display: flex;
     justify-content: space-between;
-    padding-top: 11px;
-    padding-right: 6px;
+    margin-top: 11px;
+    margin-right: 6px;
   }
 
   &__buttons-wrapper {
     &:nth-child(1) {
-      padding-top: 0;
+      margin-top: 0;
     }
     &:nth-child(2) {
-      padding-top: 30px;
+      margin-top: 30px;
     }
     &:nth-child(3) {
-      padding-top: 40px;
+      margin-top: 40px;
     }
   }
 
@@ -106,7 +106,7 @@
     margin: 10px 100px 30px 0;
 
     &:nth-child(3) {
-      padding-top: 0;
+      margin-top: 0;
     }
   }
 
@@ -114,11 +114,11 @@
     display: inline-flex;
     justify-content: space-between;
     min-width: 140px;
-    padding-bottom: 27px;
+    margin-bottom: 27px;
   }
 
   &__pagination-container {
-    padding-top: 11px;
+    margin-top: 11px;
   }
 
   &__dropdowns {
@@ -126,7 +126,7 @@
     grid-column: span 3;
     grid-template-columns: 1fr 2fr;
     max-width: 1158px;
-    padding-top: 79px;
+    margin-top: 79px;
     column-gap: 60px;
   }
 
@@ -162,12 +162,12 @@
     grid-column: span 3;
     grid-template-columns: 266px 2fr;
     max-width: 1158px;
-    padding-top: 152px;
+    margin-top: 152px;
     column-gap: 180px;
   }
 
   &__lists-wrapper-expandable {
-    padding-bottom: 43px;
+    margin-bottom: 43px;
   }
 
   &__lists-block-other {
@@ -177,7 +177,7 @@
   }
 
   &__lists-wrapper-bullet {
-    padding-right: 54px;
+    margin-right: 54px;
   }
 
   &__room-review {
@@ -185,13 +185,13 @@
     grid-column: span 3;
     grid-template-columns: 266px 2fr;
     max-width: 1158px;
-    padding-top: 36px;
+    margin-top: 36px;
     column-gap: 180px;
   }
 
   &__room-review-wrapper {
     &:last-child {
-      padding-top: 30px;
+      margin-top: 30px;
     }
   }
 }

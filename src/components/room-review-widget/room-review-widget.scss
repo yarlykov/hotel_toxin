@@ -18,14 +18,14 @@
   }
 
   &__border {
-    padding-top: 7px;
+    margin-top: 7px;
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
   }
 
   &__rating {
     display: flex;
     justify-content: space-between;
-    padding-top: 8px;
+    margin-top: 8px;
   }
 
   &__comment-count {

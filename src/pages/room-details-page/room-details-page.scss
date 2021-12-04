@@ -56,12 +56,11 @@
   &__cancel-text {
     @include font-body;
 
-    margin: 0;
-    padding-top: 19px;
+    margin: 19px 0 0;
   }
 
   &__rules-list {
-    padding-top: 10px;
+    margin-top: 10px;
   }
 
   &__subtitle {
