@@ -5,7 +5,4 @@ import RangeSlider from './RangeSlider';
 import './range-slider.scss';
 
 const rangeSliderNodes = document.querySelectorAll('.js-range-slider__scale');
-
-if (rangeSliderNodes) {
-  rangeSliderNodes.forEach((element) => new RangeSlider(element));
-}
+rangeSliderNodes.forEach((element) => new RangeSlider(element));

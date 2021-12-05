@@ -7,7 +7,4 @@ import './header.scss';
 import MenuBurger from './Header';
 
 const menuBurgerNode = document.querySelectorAll('.js-header__menu-burger');
-
-if (menuBurgerNode) {
-  menuBurgerNode.forEach((selector) => new MenuBurger(selector));
-}
+menuBurgerNode.forEach((selector) => new MenuBurger(selector));

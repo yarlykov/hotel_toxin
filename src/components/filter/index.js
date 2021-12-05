@@ -9,4 +9,4 @@ import './filter.scss';
 import Filter from './Filter';
 
 const filterNode = document.querySelector('.js-search-room__filter');
-if (filterNode !== null) new Filter(filterNode);
+new Filter(filterNode);
