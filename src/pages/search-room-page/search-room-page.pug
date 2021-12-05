@@ -12,7 +12,7 @@ block variables
     пакеты услуг, предложения на выходные со скидками, специальные предложения."
 
 block content
-  main.search-room
+  main.search-room.js-search-room
     .search-room__container
       aside.search-room__filter.js-search-room__filter
         +filter({
@@ -129,6 +129,7 @@ block content
               ]
           },
         })
+        .search-room__filter-button.js-search-room__filter-button
         
       section.search-room__room-selection
         +room-selection({
@@ -351,4 +352,4 @@ block content
               commentCount: { value: "55", text: "Отзывов" } 
             },
           ]
-        })
+        })      
