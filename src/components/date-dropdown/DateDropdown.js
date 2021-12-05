@@ -191,11 +191,11 @@ class DateDropdown {
   }
 
   showClearButton() {
-    this.clearBtn.classList.add('datepicker__button-clear_show');
+    this.clearBtn.classList.add('datepicker__button-clear_displayed');
   }
 
   hideClearButton() {
-    this.clearBtn.classList.remove('datepicker__button-clear_show');
+    this.clearBtn.classList.remove('datepicker__button-clear_displayed');
   }
 
   setInitialDates(dates = []) {

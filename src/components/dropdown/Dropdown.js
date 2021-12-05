@@ -269,9 +269,9 @@ class Dropdown {
   checkClearButton() {
     if (this.clearBtn) {
       if (this.isNotEmpty) {
-        this.clearBtn.classList.add('dropdown__button-clear_show');
+        this.clearBtn.classList.add('dropdown__button-clear_displayed');
       } else {
-        this.clearBtn.classList.remove('dropdown__button-clear_show');
+        this.clearBtn.classList.remove('dropdown__button-clear_displayed');
       }
     }
   }
@@ -305,7 +305,7 @@ class Dropdown {
     });
     this.store.dispatchEvent({ type: count.INIT, id: count.TOTAL, value: 0 });
 
-    this.clearBtn.classList.remove('dropdown__button-clear_show');
+    this.clearBtn.classList.remove('dropdown__button-clear_displayed');
     this.input.value = defaultText;
     this.counterButtonsToggle();
   }
