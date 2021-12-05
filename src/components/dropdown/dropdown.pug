@@ -8,7 +8,6 @@ mixin dropdown({ isOpen=false, group="", elements=[], options={} })
 
   .dropdown(
     class=openClassModifier
-    class=`dropdown_type_${group}`
     data-options=`${dropdownOptions}`
     ).js-dropdown
     input&attributes({

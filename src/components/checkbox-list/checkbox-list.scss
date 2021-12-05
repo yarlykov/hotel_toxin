@@ -2,8 +2,7 @@
 @import '@mixins';
 
 .checkbox-list {
-  min-width: 266px;
-  max-width: 266px;
+  width: 100%;
 
   &__dropdown {
     display: flex;

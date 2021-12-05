@@ -2,14 +2,7 @@
 
 .dropdown {
   position: relative;
-
-  &_type_guests {
-    min-width: 100%;
-  }
-
-  &_type_comfort {
-    min-width: 266px;
-  }
+  width: 100%;
 
   &__input {
     width: 100%;

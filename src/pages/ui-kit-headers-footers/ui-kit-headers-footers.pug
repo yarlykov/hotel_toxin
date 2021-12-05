@@ -124,7 +124,17 @@ block content
       })
 
     .headers-footers__footer-mobile
-      +footer-mobile( "Copyright © 2018 Toxin отель. Все права защищены." )
+      +footer-mobile({
+        copyright: "Copyright © 2018 Toxin отель. Все\u00A0права\u00A0защищены.",
+        social: {
+          titles: ["twitter", "facebook", "instagram"],
+          socialLinks: [
+              { title: "twitter", link: "https://twitter.com" },
+              { title: "facebook", link: "https://facebook.com" },
+              { title: "instagram", link: "https://instagram.com" },
+            ]
+        }
+      })
 
   block footer
   +ui-kit-footer({ 
