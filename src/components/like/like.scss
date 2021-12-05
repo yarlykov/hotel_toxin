@@ -1,4 +1,5 @@
 @import '@variables';
+@import '@mixins';
 
 .like {
   min-width: 40px;
@@ -20,7 +21,7 @@
 
   &__inner {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     width: 100%;
     background: #fff;
     border-radius: 100px;
@@ -31,20 +32,15 @@
     font: 0.7143rem 'Material Icons', sans-serif;
 
     &::before {
-      background: $textColor_25;
-      -webkit-background-clip: text;
-      background-clip: text;
+      color: $textColor_25;
       content: '\e87e';
-      -webkit-text-fill-color: transparent;
     }
 
     &.like__icon_active {
       &::before {
-        background: $mainGradient;
-        -webkit-background-clip: text;
-        background-clip: text;
+        @include text-gradient-fill($mainGradient);
+
         content: '\e87d';
-        -webkit-text-fill-color: transparent;
       }
     }
   }

@@ -10,13 +10,10 @@
   }
 
   &__header {
-    @include text-gradient-fill($mainGradient);
-
     display: flex;
     justify-content: space-around;
-    min-height: 60px;
+    min-height: 80px;
     padding: 30px 100px 0 100px;
-    color: $mainTextColor;
     font: 700 1.3571rem/23px $mainFont;
 
     @media (max-width: 840px) {
@@ -28,6 +25,14 @@
     }
   }
 
+  &__header-text {
+    @include text-gradient-fill($mainGradient);
+
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+  }
+
   &__toggle {
     display: flex;
     justify-content: flex-end;
@@ -36,7 +41,7 @@
 
   &__logo {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     padding-top: 5vh;
     padding-left: 50px;
   }

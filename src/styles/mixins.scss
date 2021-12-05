@@ -10,10 +10,9 @@
 }
 
 @mixin text-gradient-fill($color) {
-  background: $color;
-  -webkit-background-clip: text;
+  color: transparent;
+  background-image: $color;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 @mixin card() {

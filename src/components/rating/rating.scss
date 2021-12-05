@@ -3,13 +3,10 @@
 
 .rating {
   @include font-material-icons;
+  @include text-gradient-fill($mainGradient);
 
   display: inline-block;
   font-family: 'Material Icons', sans-serif;
-  background: $mainGradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 
   &__star::before {
     content: '\e838';

@@ -1,4 +1,5 @@
 @import '@variables';
+@import '@mixins';
 
 .room-dignities {
   &__item {
@@ -29,10 +30,7 @@
     }
 
     &_color_purple-gradient {
-      background: $mainGradient;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      @include text-gradient-fill($mainGradient);
     }
   }
 
