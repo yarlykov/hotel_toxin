@@ -5,7 +5,7 @@
   min-width: 40px;
   min-height: 20px;
   padding: 1px;
-  background: $mainGradient;
+  background: $textColor_25;
   border: none;
   border-radius: 100px;
   outline: none;
@@ -15,16 +15,10 @@
     box-shadow: 3px 3px 2px $designColor_main;
   }
 
-  &_inactive-background {
-    background: $textColor_25;
-  }
-
-  &__inner {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    background: #fff;
-    border-radius: 100px;
+  &__text {
+    padding: 2px 4px 3px 4px;
+    color: $textColor_25;
+    font: 0.7143rem $mainFont;
   }
 
   &__icon {
@@ -35,23 +29,27 @@
       color: $textColor_25;
       content: '\e87e';
     }
-
-    &.like__icon_active {
-      &::before {
-        @include text-gradient-fill($mainGradient);
-
-        content: '\e87d';
-      }
-    }
   }
 
-  &__text {
-    padding: 2px 4px 3px 4px;
-    color: $designColor_main;
-    font: 0.7143rem $mainFont;
+  &__inner {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    background: #fff;
+    border-radius: 100px;
+  }
 
-    &_inactive-text {
-      color: $textColor_25;
+  &_active {
+    background: $mainGradient;
+
+    & .like__icon::before {
+      @include text-gradient-fill($mainGradient);
+
+      content: '\e87d';
+    }
+
+    & .like__text {
+      color: $designColor_main;
     }
   }
 }

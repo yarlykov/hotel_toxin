@@ -1,20 +1,14 @@
 mixin like({ value=0, active=false } = {})
-  - const isActive = active ? "like__icon_active" : ""
+  - const isActive = active ? "like_active" : ""
 
   button&attributes({
-    class: ["like", "js-like"],
+    class: ["like", "js-like", isActive],
     type: "button",
     name: "like",
     tabindex: 0,
   })
     span.like__inner
-      span&attributes({
-        class: [
-          "like__icon",
-          "js-like__icon",
-          isActive,
-        ],
-      })
+      span.like__icon
       span&attributes({
         class: ["like__text js-like__text"],
       }) #{value}
