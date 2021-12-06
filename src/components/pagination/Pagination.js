@@ -8,11 +8,10 @@ class Pagination {
 
     try {
       this.options = JSON.parse(options);
+      this.init();
     } catch (e) {
       throw new Error('Incorrect options passed to the Pagination class', e);
     }
-
-    this.init();
   }
 
   init() {

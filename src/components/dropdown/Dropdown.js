@@ -1,8 +1,10 @@
 /* eslint-disable no-param-reassign */
-import { addCommaInText, cutLongText, declensionsText } from './utils';
-import { count, targetType } from './constants';
 import rootReducer from './redux/rootReducer';
-import createStore from './createStore';
+import createStore from './redux/createStore';
+import addCommaInText from './helpers/addCommaInText';
+import declensionsText from './helpers/declensionsText';
+import cutLongText from './helpers/cutLongText';
+import { count, targetType } from './constants';
 
 class Dropdown {
   constructor(selector) {
@@ -11,14 +13,11 @@ class Dropdown {
 
     try {
       this.options = JSON.parse(options);
+      this.store = createStore(rootReducer, {});
+      this.init();
     } catch (e) {
       throw new Error('Incorrect options passed to the Dropdown class', e);
     }
-
-    this.store = createStore(rootReducer, {});
-
-    this.init();
-    this.bindEventListeners();
   }
 
   init() {
@@ -36,6 +35,7 @@ class Dropdown {
     this.setInputText();
     this.checkClearButton();
     this.counterButtonsToggle();
+    this.bindEventListeners();
   }
 
   addInitValuesToStore() {

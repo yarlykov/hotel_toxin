@@ -23,16 +23,16 @@ class DateDropdown {
         if (initialDates) {
           this.initialDates = initialDates.map((item) => new Date(item));
         }
+
+        this.options = {
+          ...defaultOptions,
+          ...this.inlineOptions,
+          initialDates: this.initialDates,
+        };
+        this.init();
       } catch (e) {
         throw new Error('Incorrect options passed to the DateDropdown class', e);
       }
-
-      this.options = {
-        ...defaultOptions,
-        ...this.inlineOptions,
-        initialDates: this.initialDates,
-      };
-      this.init();
     }
   }
 
