@@ -1,6 +1,9 @@
 @import '@variables';
 
 .checkbox {
+  display: inline-block;
+  width: 100%;
+  min-height: 20px;
   cursor: pointer;
 
   &__box {
