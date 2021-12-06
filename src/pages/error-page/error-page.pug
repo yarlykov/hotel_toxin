@@ -17,16 +17,16 @@ block content
         .ship_window
       .sun-wrapper
         .sun
-          div
-          div
-          div
-          div
-          div
-          div
-          div
-          div
-          div
-          div
+          div.sun__ray
+          div.sun__ray
+          div.sun__ray
+          div.sun__ray
+          div.sun__ray
+          div.sun__ray
+          div.sun__ray
+          div.sun__ray
+          div.sun__ray
+          div.sun__ray
       .cloud.cloud-1
       .cloud.cloud-2
       .cloud.cloud-3
@@ -35,7 +35,10 @@ block content
       .errorPage
         h1.errorPage__title Страница находится в разработке
         h2.errorPage__text Пожалуйста, возвращайтесь позже
-          p на главную
-            a.errorPage__link(href=`./start-page.html`)  тык
+          ul.errorPage__links
+            li.errorPage__link-item
+              a.errorPage__link(href=`./start-page.html`) перейти к списку страниц
+            li.errorPage__link-item
+              a.errorPage__link(href=`./landing-page.html`) на главную
 
 block footer
