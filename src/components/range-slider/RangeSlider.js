@@ -1,18 +1,23 @@
 class RangeSlider {
   constructor(selector) {
-    this.$root = $(selector);
+    this.root = selector;
 
-    try {
-      this.options = JSON.parse(selector.dataset.options);
-      this.init();
-    } catch (e) {
-      throw new Error('Incorrect options passed to the RangeSlider class', e);
-    }
+    this.init();
   }
 
   init() {
-    this.$root.slider(this.options);
-    this.$root.slider({
+    const slider = this.root.querySelector('.js-range-slider__scale');
+    this.$slider = $(slider);
+
+    try {
+      this.options = JSON.parse(slider.dataset.options);
+    } catch (e) {
+      this.options = {};
+      throw new Error('Incorrect options passed to the RangeSlider class', e);
+    }
+
+    this.$slider.slider(this.options);
+    this.$slider.slider({
       slide: this.slide.bind(this),
     });
     this.sliderInput = document.querySelector('.js-range-slider__value');
@@ -30,8 +35,8 @@ class RangeSlider {
   }
 
   getValues() {
-    const startValue = `${this.$root.slider('values', 0).toLocaleString('ru-RU', { minimumFractionDigits: 0 })}₽`;
-    const endValue = `${this.$root.slider('values', 1).toLocaleString('ru-RU', { minimumFractionDigits: 0 })}₽`;
+    const startValue = `${this.$slider.slider('values', 0).toLocaleString('ru-RU', { minimumFractionDigits: 0 })}₽`;
+    const endValue = `${this.$slider.slider('values', 1).toLocaleString('ru-RU', { minimumFractionDigits: 0 })}₽`;
     return [startValue, endValue];
   }
 
