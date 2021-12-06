@@ -1,24 +1,23 @@
-import createStore from './createStore';
+import storage from './helpers/storage';
 import rootReducer from './redux/rootReducer';
-import storage from './utils';
+import createStore from './redux/createStore';
 
 class MenuWidget {
   constructor(selector) {
-    this.$page = selector;
+    this.menuWidget = selector;
     this.store = createStore(rootReducer, storage('theme'));
     this.init();
   }
 
   init() {
-    this.toggleStartPage = this.$page.querySelector('.js-start-page__toggle');
-    if (!this.toggleStartPage) throw new Error('MenuWidget: Toggle is not defined');
-    this.toggleInput = this.toggleStartPage.querySelector('.js-toggle__input');
-    this.dayToggleTitle = this.toggleStartPage.querySelector('.js-toggle-title');
-    this.startPageStyle = this.$page.style;
+    this.toggleButton = this.menuWidget.querySelector('.js-menu-widget__toggle');
+    this.toggleInput = this.toggleButton.querySelector('.js-toggle__input');
+    this.dayToggleTitle = this.toggleButton.querySelector('.js-toggle-title');
 
-    this.menuTextColor = this.$page.querySelectorAll('.js-menu-widget__text');
-    this.logo = this.$page.querySelector('.js-logo');
-    this.logoTextColor = this.$page.querySelectorAll('.js-logo__letter');
+    this.menuTextColor = this.menuWidget.querySelectorAll('.js-menu-widget__text');
+    const logo = this.menuWidget.querySelector('.js-menu-widget__logo');
+    this.logo = logo.querySelector('.js-logo');
+    this.logoTextColor = this.menuWidget.querySelectorAll('.js-logo__letter');
 
     this.store.subscribe((state) => {
       storage('theme', state.value);
@@ -31,7 +30,7 @@ class MenuWidget {
   }
 
   toggle() {
-    this.toggleStartPage.addEventListener('change', this.handleToggleChange.bind(this));
+    this.toggleButton.addEventListener('change', this.handleToggleChange.bind(this));
   }
 
   themeTextColor(timesOfDay) {
@@ -51,7 +50,7 @@ class MenuWidget {
   day() {
     this.dayToggleTitle.textContent = 'День';
     this.dayToggleTitle.style.color = '#c7c7d0';
-    this.startPageStyle.background = '#fff';
+    this.menuWidget.style.background = '#fff';
 
     this.themeTextColor('day');
   }
@@ -59,7 +58,7 @@ class MenuWidget {
   night() {
     this.dayToggleTitle.textContent = 'Ночь';
     this.dayToggleTitle.style.color = '#BC9CFF';
-    this.startPageStyle.background = '#1D1E33';
+    this.menuWidget.style.background = '#1D1E33';
     this.toggleInput.checked = true;
 
     this.themeTextColor('night');

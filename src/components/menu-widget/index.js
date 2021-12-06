@@ -1,9 +1,11 @@
+import 'components/logo';
+import 'components/toggle';
+
 import MenuWidget from './MenuWidget';
 import './menu-widget.scss';
 
-const isStartPage = document.querySelector('.start-page');
+const menuWidgetNode = document.querySelector('.js-menu-widget');
 
-if (isStartPage) {
-  const startPage = document.body;
-  new MenuWidget(startPage);
+if (menuWidgetNode) {
+  new MenuWidget(menuWidgetNode);
 }
