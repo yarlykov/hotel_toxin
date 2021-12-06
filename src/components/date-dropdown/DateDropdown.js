@@ -59,7 +59,7 @@ class DateDropdown {
     });
 
     if (initialDates) this.setInitialDates(initialDates);
-    if (smallSize) this.calendarSmallSize();
+    if (smallSize) this.buildSmallCalendar();
   }
 
   handleDateDropdownClick({ target }) {
@@ -203,7 +203,7 @@ class DateDropdown {
     this.showClearButton();
   }
 
-  calendarSmallSize() {
+  buildSmallCalendar() {
     const calendarBody = this.$calendar.$datepicker.get(0);
     calendarBody.classList.add('datepicker--small');
   }

@@ -22,7 +22,7 @@ class MenuWidget {
     this.store.subscribe((state) => {
       storage('theme', state.value);
 
-      this.theme(storage('theme'));
+      this.changeTheme(storage('theme'));
     });
 
     this.store.dispatchEvent({ type: 'INIT_APPLICATION' });
@@ -33,7 +33,7 @@ class MenuWidget {
     this.toggleButton.addEventListener('change', this.handleToggleChange.bind(this));
   }
 
-  themeTextColor(timesOfDay) {
+  changeThemeColor(timesOfDay) {
     const color = timesOfDay === 'day' ? '#1F2041' : '#66d2ea';
 
     this.menuTextColor.forEach((item) => {
@@ -47,28 +47,28 @@ class MenuWidget {
     });
   }
 
-  day() {
+  enableDaytime() {
     this.dayToggleTitle.textContent = 'День';
     this.dayToggleTitle.style.color = '#c7c7d0';
     this.menuWidget.style.background = '#fff';
 
-    this.themeTextColor('day');
+    this.changeThemeColor('day');
   }
 
-  night() {
+  turnOnNightTime() {
     this.dayToggleTitle.textContent = 'Ночь';
     this.dayToggleTitle.style.color = '#BC9CFF';
     this.menuWidget.style.background = '#1D1E33';
     this.toggleInput.checked = true;
 
-    this.themeTextColor('night');
+    this.changeThemeColor('night');
   }
 
-  theme(timesOfDay = 'day') {
+  changeTheme(timesOfDay = 'day') {
     if (timesOfDay === 'day') {
-      this.day();
+      this.enableDaytime();
     } else {
-      this.night();
+      this.turnOnNightTime();
     }
   }
 

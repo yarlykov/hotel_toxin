@@ -34,7 +34,7 @@ class Dropdown {
     if (buttons) this.addButtons();
     this.setInputText();
     this.checkClearButton();
-    this.counterButtonsToggle();
+    this.toggleButtonsCounter();
     this.bindEventListeners();
   }
 
@@ -208,7 +208,7 @@ class Dropdown {
     }
 
     this.setInputText();
-    this.counterButtonsToggle();
+    this.toggleButtonsCounter();
     this.checkClearButton();
   }
 
@@ -247,7 +247,7 @@ class Dropdown {
     return totalItems > 0;
   }
 
-  counterButtonsToggle() {
+  toggleButtonsCounter() {
     const { minItems = 0 } = this.options;
 
     this.menuItemsData.forEach((item) => {
@@ -279,19 +279,19 @@ class Dropdown {
   toggle() {
     if (this.isOpen) {
       this.close();
-      this.arrowDown();
+      this.turnArrowDown();
     } else {
       this.open();
-      this.arrowUp();
+      this.turnArrowUp();
     }
   }
 
-  arrowUp() {
+  turnArrowUp() {
     this.arrow.classList.remove('dropdown__arrow_down');
     this.arrow.classList.add('dropdown__arrow_up');
   }
 
-  arrowDown() {
+  turnArrowDown() {
     this.arrow.classList.remove('dropdown__arrow_up');
     this.arrow.classList.add('dropdown__arrow_down');
   }
@@ -307,7 +307,7 @@ class Dropdown {
 
     this.clearBtn.classList.remove('dropdown__button-clear_displayed');
     this.input.value = defaultText;
-    this.counterButtonsToggle();
+    this.toggleButtonsCounter();
   }
 
   open() {
@@ -316,7 +316,7 @@ class Dropdown {
 
   close() {
     this.mainNode.classList.remove('dropdown_open');
-    this.arrowDown();
+    this.turnArrowDown();
   }
 }
 

@@ -21,12 +21,12 @@ class Pagination {
       showNext: true,
       autoHideNext: true,
       pageRange: 1,
-      formatNavigator: this.formatNavigator,
+      formatNavigator: this.setNavigationFormat,
     };
     const options = {
       ...this.options,
       ...defaultParams,
-      dataSource: Pagination.dataSourceFill(this.options.amountOfElements),
+      dataSource: Pagination.fillArrayWIthData(this.options.amountOfElements),
     };
     this.pageSize = this.options.pageSize;
     this.amountOfElements = this.options.amountOfElements;
@@ -34,11 +34,11 @@ class Pagination {
     this.$root.pagination(options);
   }
 
-  static dataSourceFill(amountOfElements) {
+  static fillArrayWIthData(amountOfElements) {
     return Array.from(Array(amountOfElements).keys());
   }
 
-  formatNavigator(currentPage) {
+  setNavigationFormat(currentPage) {
     const form = this.pageSize * currentPage - this.pageSize + 1;
     const to = this.pageSize * currentPage;
     return `${form} – ${to} из 100+ вариантов аренды`;

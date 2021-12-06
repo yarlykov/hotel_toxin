@@ -20,20 +20,20 @@ class Navigation {
 
   toggleDropdown() {
     this.itemDropdown.classList.toggle(this.visibilityHiddenClass);
-    this.arrowToggle();
+    this.toggleArrow();
   }
 
   closeDropdown() {
     this.itemDropdown.classList.add(this.visibilityHiddenClass);
-    this.arrowDown();
+    this.turnArrowDown();
   }
 
-  arrowToggle() {
+  toggleArrow() {
     this.mainNode.classList.toggle(this.downArrowDropdownClass);
     this.mainNode.classList.toggle(this.upArrowDropdownClass);
   }
 
-  arrowDown() {
+  turnArrowDown() {
     this.mainNode.classList.remove(this.upArrowDropdownClass);
     this.mainNode.classList.add(this.downArrowDropdownClass);
   }

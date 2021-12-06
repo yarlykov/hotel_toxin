@@ -6,25 +6,25 @@ class Like {
 
   init() {
     this.text = this.root.querySelector('.js-like__text');
-    if (!this.isEnabled()) this.disabled();
+    if (!this.isEnabled()) this.disableButton();
 
     this.root.addEventListener('click', this.handleLikeClick.bind(this));
   }
 
   handleLikeClick() {
     this.root.classList.toggle('like_active');
-    this.counter();
+    this.startCounter();
   }
 
   isEnabled() {
     return this.root.classList.contains('like_active');
   }
 
-  disabled() {
+  disableButton() {
     this.root.classList.remove('like_active');
   }
 
-  counter() {
+  startCounter() {
     const currentValue = Number(this.text.textContent);
     if (!this.isEnabled()) {
       this.text.textContent = `${currentValue - 1}`;
