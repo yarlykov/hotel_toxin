@@ -1,4 +1,7 @@
-mixin type({ typeList=[], types=[] })
+mixin type( typeList=[] )
+  -
+    const types = ["h1", "h2", "h3", "body"]
+
   ul.type
     each typeListItem in typeList
       -

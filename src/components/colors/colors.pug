@@ -1,4 +1,11 @@
-mixin colors({ colorItems=[], colors=[] })
+mixin colors( colorItems=[] )
+  -
+    const colors = [
+      "opaque", "75-percent-transparent", "translucent",
+      "25-percent-transparent","5-percent-transparent",
+      "purple", "green"
+    ]
+
   ul.colors
     each colorItem in colorItems
       li.colors__item

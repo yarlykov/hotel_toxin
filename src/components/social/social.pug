@@ -1,4 +1,7 @@
-mixin social({ socialLinks=[], titles=[] })
+mixin social( socialLinks=[] )
+  -
+    const titles = ["twitter", "facebook", "instagram"]
+
   .social
     each socialLink in socialLinks
       -
