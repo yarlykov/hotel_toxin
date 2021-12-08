@@ -2,9 +2,13 @@
 
 .checkbox {
   display: inline-block;
-  width: 100%;
   min-height: 20px;
   cursor: pointer;
+
+  &__container {
+    min-height: 20px;
+    margin-left: 30px;
+  }
 
   &__box {
     position: absolute;
