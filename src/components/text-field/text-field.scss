@@ -27,7 +27,6 @@ select:-webkit-autofill:focus {
     border: none;
     border-radius: $mainBorderRadius;
     outline: none;
-    cursor: pointer;
 
     &:focus {
       border: none;
@@ -43,6 +42,10 @@ select:-webkit-autofill:focus {
 
     &_lowercase-text {
       text-transform: lowercase;
+    }
+
+    &_cursor-pointer {
+      cursor: pointer;
     }
   }
 

@@ -21,9 +21,16 @@ mixin text-field(params = {})
     const textLowercaseClass = isLowercase ? "text-field__input_lowercase-text" : ""
     const inputWithoutArrowClass = isSubscription ? "text-field__input_without-arrow" : ""
     const inputWithMaskClass = withMask ? 'js-text-field__input_with-mask' : ""
+    const inputPointerTypeClass = isReadonly ? "text-field__input_cursor-pointer" : ""
 
     const inputAttributes = {
-      class: [mainClass, inputWithMaskClass, textLowercaseClass, inputWithoutArrowClass],
+      class: [
+        mainClass,
+        inputWithMaskClass,
+        textLowercaseClass,
+        inputWithoutArrowClass,
+        inputPointerTypeClass
+      ],
       type: type,
       "data-type": dataType,
       name: name,
