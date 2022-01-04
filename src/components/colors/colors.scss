@@ -19,19 +19,19 @@
   }
 
   &__preview_color {
-    &_opaque {
+    &_darkest-gray {
       background: $mainTextColor;
     }
-    &_75-percent-transparent {
+    &_dark-gray {
       background: $textColor_75;
     }
-    &_translucent {
+    &_gray {
       background: $textColor_50;
     }
-    &_25-percent-transparent {
+    &_light-gray {
       background: $textColor_25;
     }
-    &_5-percent-transparent {
+    &_lightest-gray {
       background: $textColor_5;
     }
     &_purple {
