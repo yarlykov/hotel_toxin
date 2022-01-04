@@ -25,10 +25,6 @@
   content: '\e5c8';
 }
 
-.paginationjs-next-button:hover::before {
-  color: $textColor_75;
-}
-
 .paginationjs .paginationjs-pages li {
   border: none;
 }
@@ -41,6 +37,8 @@
   line-height: 40px;
   background: #fff;
   outline: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 .paginationjs .paginationjs-pages li > a:hover {
@@ -70,10 +68,6 @@
   font-weight: 700;
   background: $secondGradient;
   border-radius: 22px;
-}
-
-.paginationjs .paginationjs-pages li.active > a:hover {
-  color: $textColor_75;
 }
 
 .paginationjs .paginationjs-pages li:last-child {
