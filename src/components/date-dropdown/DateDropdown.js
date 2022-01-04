@@ -171,8 +171,12 @@ class DateDropdown {
       this.hideClearButton();
     }
     if (hasTwoInputs) {
+      const isNaN = formattedDate.includes('NaN');
+      const currentDate = new Date();
       const dates = formattedDate.split(',');
       const [startDate = '', endDate = ''] = dates;
+
+      if (isNaN) this.setInitialDates([currentDate]);
 
       this.dateStart.value = startDate;
       this.dateEnd.value = endDate;
