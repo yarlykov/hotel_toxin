@@ -6,7 +6,7 @@ mixin social( socialLinks=[] )
     each socialLink in socialLinks
       -
         const { title } = socialLink
-        const socialClass = titles.includes(title) ? `social__link_${title}` : ""
+        const socialClass = titles.includes(title) && `social__link_${title}`
 
       a&attributes({
         class: ["social__link", socialClass], 

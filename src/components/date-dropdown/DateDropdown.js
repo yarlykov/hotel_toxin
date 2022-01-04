@@ -134,7 +134,7 @@ class DateDropdown {
 
     clearBtn.classList.add(
       'button',
-      'button_inline',
+      'button_variant_inline',
       'datepicker__button-clear',
     );
     clearBtn.setAttribute('type', 'button');
@@ -145,7 +145,7 @@ class DateDropdown {
 
     applyBtn.classList.add(
       'button',
-      'button_inline',
+      'button_variant_inline',
       'datepicker__button-apply',
     );
     applyBtn.setAttribute('type', 'button');

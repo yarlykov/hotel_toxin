@@ -9,20 +9,25 @@ mixin button(params = {})
       buttonVariation="",
       disabled=false
     } =  params
-    const sizes = ["small", "stretching", "large"]
-    const colors = ["purple", "gray", "white"]
+    const sizeModifiers = {
+      small: "button__inner_size_small",
+      large: "button__inner_size_large",
+      stretching: "button__inner_size_stretching" 
+    }
+    const colorModifiers = {
+      purple: "button__inner_text-color_purple",
+      gray: "button__inner_text-color_gray",
+      white: "button__inner_text-color_white"
+    }
 
     const mainClass = "button"
     const buttonTag = link ? 'a' : 'button'
-    const buttonSizeModifier = sizes.includes(size) ? `button__inner_size_${size}` : ""
-    const textColorModifier = colors.includes(textColor) ? `button__inner_text-color_${textColor}` : ""
-    const buttonInlineModifier = buttonVariation === "inline" ? "button_inline" : ""
+    const buttonInlineModifier = buttonVariation === "inline" ? "button_variant_inline" : ""
     const buttonFillModifier = buttonVariation === "fillWhite" ? "button__inner_fill_white" : ""
-    const textDecorationModifier = "button_no-text-decoration"
     
     const buttonAttributes = {
       a: {
-        class: [mainClass, buttonInlineModifier, textDecorationModifier],
+        class: [mainClass, buttonInlineModifier],
         href: `./${link}.html`,
       },
       button: {
@@ -34,7 +39,7 @@ mixin button(params = {})
 
   #{buttonTag}&attributes(buttonAttributes[buttonTag])
     span.button__inner(
-      class=[textColorModifier, buttonSizeModifier, buttonFillModifier ]
+      class=[colorModifiers[textColor], sizeModifiers[size], buttonFillModifier ]
     ) #{buttonName}
     if buttonVariation === 'withArrow'
       span.button__arrow

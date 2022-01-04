@@ -84,7 +84,7 @@ class Dropdown {
 
     clearBtn.classList.add(
       'button',
-      'button_inline',
+      'button_variant_inline',
       'dropdown__button-clear',
       'js-dropdown__button-clear',
     );
@@ -94,7 +94,7 @@ class Dropdown {
     clearText.classList.add('button__inner', 'button__inner_text-color_purple');
     clearBtn.append(clearText);
 
-    applyBtn.classList.add('button', 'button_inline');
+    applyBtn.classList.add('button', 'button_variant_inline');
     applyBtn.setAttribute('type', 'button');
     applyText.setAttribute('data-type', 'apply');
     applyText.innerHTML = 'Применить';

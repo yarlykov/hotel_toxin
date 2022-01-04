@@ -9,6 +9,7 @@
   padding: 2px;
   font: 700 0.8571rem/15px $mainFont;
   text-transform: uppercase;
+  text-decoration: none;
   background: $mainGradient;
   border: none;
   border-radius: 100px;
@@ -25,33 +26,31 @@
     background: $mainGradientTransparent;
   }
 
-  &_no-text-decoration {
-    text-decoration: none;
-  }
-
-  &_inline {
-    width: fit-content;
-    padding: 0;
-    background: none;
-
-    &:hover,
-    &:focus {
-      color: $textColor_50;
+  &_variant {
+    &_inline {
+      width: fit-content;
+      padding: 0;
       background: none;
-      outline: none;
-    }
 
-    & :hover,
-    & :focus {
-      color: $textColor_50;
-      background: none;
-      outline: none;
-    }
+      &:hover,
+      &:focus {
+        color: $textColor_50;
+        background: none;
+        outline: none;
+      }
 
-    &:disabled {
-      color: $textColor_50;
-      background: none;
-      cursor: auto;
+      & :hover,
+      & :focus {
+        color: $textColor_50;
+        background: none;
+        outline: none;
+      }
+
+      &:disabled {
+        color: $textColor_50;
+        background: none;
+        cursor: auto;
+      }
     }
   }
 

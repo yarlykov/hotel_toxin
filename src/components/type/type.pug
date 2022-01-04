@@ -6,7 +6,7 @@ mixin type( typeList=[] )
     each typeListItem in typeList
       -
         const { type } = typeListItem
-        const typeClassBlock = types.includes(type) ? `type__${type}` : ""
+        const typeClassBlock = types.includes(type) && `type__${type}`
 
       li&attributes({ class: [typeClassBlock] })
         p.type__header #{typeListItem.title}
